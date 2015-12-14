@@ -1,0 +1,63 @@
+<html>
+            <style>body {
+                background-color: black;
+            }
+            </style>
+             <!-- Rainbow effect by Nolen Felten. http://nolenfelten.github.io -->
+        <script>
+ // Declaring variables:
+ // colorTime
+ // waveTheta
+ // maxCount
+ // colorIncrement
+ // waveIncrement
+var colorTime = 0,
+    waveTheta = 0,
+    maxCount = 9,
+    colorIncrement = -13,
+    waveIncrement = 0.091,
+ 
+ // Declaring arrays
+ // xPos (as in x Position)
+ // yPos
+    xPos = [-2, -1, 0, 1, 2],
+    yPos = [-2, -1, 0, 1, 2],
+ 
+ // Setting up the show
+    props = {}, getTextShadow = function(e, t, o) {
+        return ", " + e + "px " + t + "px hsl(" + o + ", 100%, 55%)"
+    }, animate = function() {
+        var e, t, o, n, a = "0 0 transparent",
+            r = colorTime % 360,
+            i = xPos.length,
+            m = yPos.length;
+         
+         //These for loops change the position and colors of the text shadow effect   
+        for (e = 0; i > e; e++)
+            for (o = xPos[e], t = 0; m > t; t++) n = yPos[t], a += getTextShadow(o, n, r);
+        for (e = 0; maxCount > e; e++) {
+            var s = e / maxCount,
+                c = (360 * s * 0.9 + colorTime) % 360;
+            o = ~~ (15 * (Math.sin(s * Math.PI * 1 + waveTheta) - Math.sin(waveTheta))), n = 1 * e, a += getTextShadow(o, n, c)
+        }
+        //Apply the animation loop to the style attribute of the <h1> HTML element, found within the <div id=title> element
+        props.title.querySelector("h1").style.textShadow = a, colorTime += colorIncrement, waveTheta += waveIncrement, setTimeout(animate, 20)
+    }, init = function() {
+        props.title = document.getElementById("title"),setTimeout(animate, 10)
+    };
+    
+    //When page is loaded, fire up the loops!
+window.addEventListener("DOMContentLoaded", init, !1);
+
+
+
+</script>
+<body>
+            <div id="title">
+                
+                <h1><a href="#">Way Out There <3</a></h1>
+            
+            </div>
+            <p><img src=http://files.shroomery.org/smileys/bananahorsey.gif></p>
+            </body>
+            </html>
