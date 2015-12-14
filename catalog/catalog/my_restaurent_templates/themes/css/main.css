@@ -1,0 +1,26 @@
+.vegas-loading {
+	/* Loading Gif by http://preloaders.net/ */
+	-moz-border-radius:16px; -webkit-border-radius:16px; border-radius:16px;
+	background:#000 url(../images/loading.gif) no-repeat center center;
+	background:rgba(0, 0, 0, 0.7) url(../images/loading.gif) no-repeat center center;
+	width:32px; 
+	height:32px;
+	left:30px;
+	top:30px;
+	position:fixed;
+	z-index:0;
+}
+
+.vegas-overlay {
+	background:transparent url(../images/06.png);
+	opacity:0.8;
+	z-index:-1;
+}
+
+.vegas-background {
+	image-rendering: optimizeQuality;
+	-ms-interpolation-mode: bicubic;
+	z-index:-2;
+    /* counteracts global img modification by twitter bootstrap library */
+    max-width: none !important;
+}
