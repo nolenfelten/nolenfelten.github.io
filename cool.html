@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+    background-color: black; 
+    display:block; 
+}
+canvas { 
+    display:block; 
+    position: absolute;
+    width:98%;
+    height:95%;
+}
+</style>
+
+<head>
+  <title>Hacks</title>
+</head>
+
+<body>
+
+<!-- If a program doesn't have any input or output, then whats the point of running it? -->
+<canvas id="canned" style="border:solid black"></canvas>
+
+<script type="text/javascript">
+  //Set Width x Height 
+  var cW = window.innerWidth;;
+  var cH = window.innerHeight;
+      
+  //Fire it up!
+  window.onload = windowReady(0);
+  
+  function windowReady(ascii_start) {
+    //Grab the canvas element
+    var context = document.getElementById('canned').getContext("2d");
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      render();
+  }
+  
+  var charArray = [];
+  fadestart = 6275039;
+  
+  for (var i = 0; i < 200; i++) {
+    var temp = [];
+    var fadestart = fadestart + 1000;
+    var yspeed = 7;
+    var xspacing = 0;
+    var fontSize = 1;
+    var charlengh = 70;
+    
+    for (var j = 0; j < charlengh; j++) {
+      temp.push(new create_chars(i * 14 + xspacing, j * 5, yspeed, j, fontSize + "Ĥ̥̬͌̋͒i̗̭̩̊̓͗͊̉r̩̰e̮̣̾ ͚̞̓͛a͚̭̲͇̦̤͒̊ͬ̀ ͇̹͖h̫̺a̭ck͉͇̼̱̹̠͍e̼͎̰̲r̦̙͈̓̋̈"));
+    }
+    charArray.push(temp);
+  }
+    
+  function create_chars(xloc, yloc, yspeed, j, fontSize) {
+    this.x = xloc;
+    this.y = -yloc;
+    this.dy = yspeed;
+    this.fontSize = fontSize;
+    if (j == 0) {
+    }
+    else {
+      this.color = "#5F00FF";
+      this.text = String.fromCharCode(ascii_start + Math.floor(Math.random() * 36));
+    }
+  }
+         
+  function Draw() {
+    context.globalCompositeOperation = "xor";
+    
+    context.fillStyle = "rgba(0,0,0,0.1)";
+    context.fillRect(0, 0, cW, cH);
+            
+    context.globalCompositeOperation = "lighter";
+    
+    for (var k = 0; k < charArray.length; k++) {
+      for (var m = 5; m < charArray[k].length; m++) {
+        var charObject = charArray[k][m];
+          
+        context.fillStyle = charObject.color;
+        context.font = "bold" +charObject.fontSize+"px Courier";
+        context.fillText(charObject.text, charObject.x, charObject.y);
+        context.fill();
+          
+        charObject.y += charObject.dy;
+        if (charObject.y > cH) { 
+          charObject.y = 0;
+        }
+      }
+    }
+  }
+  
+  setInterval(Draw, 1);
+</script>
+
+
+    
+</body>
+</html>
