@@ -22,8 +22,8 @@
 
 			#yo{ 
 				opacity: 0; 
-				transition: opacity 6s;
-					transition-delay: 10s;
+				-webkit-animation:bounceIn 4s;
+				transition: 6s;
 			}
 			video {
 				background-size: cover;
@@ -268,7 +268,7 @@
 				<img src="http://i.imgur.com/uM8y3CQ.png" width='125px' height='105px'>
 			</a>
 		</div>
-		<p id='yo' onload='document.getElementById("#yo").style.opacity = "1"'>If you are on a mobile device or a tablet, and you are reading this, then you might not be able to see the epic background. Your connection speed might play a factor also. the background is only 10MB.</p>
+		<p id='yo' onload="this.style.opacity=1">If you are on a mobile device or a tablet, and you are reading this, then you might not be able to see the epic background. Your connection speed might play a factor also. the background is only 10MB.</p>
 		
 	</body>
 </html>
