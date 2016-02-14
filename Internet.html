@@ -9,8 +9,8 @@
   var a = 255/2;
 
   el = d.createElement('canvas');
-  el.width = screen.width;
-  el.height = screen.height;
+  el.width = screen.width + 10;
+  el.height = screen.height + 10;
 
   d.body.appendChild(el);
 
@@ -21,7 +21,7 @@
   var s = Math.sin;
   var p = parseInt;
   ctx.translate(screen.width, 0);
-  
+  ctx.scale(-1, 1);
 
   function getColour(f){
 	
