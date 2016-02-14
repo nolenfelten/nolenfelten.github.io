@@ -6,11 +6,11 @@
   <script>
 
   var d = document;
-  var a = 255 / 2;
+  var a = 255/2;
 
   el = d.createElement('canvas');
-  el.width = screen.width();
-  el.height = screen.height();
+  el.width = screen.width;
+  el.height = screen.height;
 
   d.body.appendChild(el);
 
@@ -20,7 +20,7 @@
   var random = Math.random;
   var s = Math.sin;
   var p = parseInt;
-  ctx.translate(el.wdith, 0);
+  ctx.translate(screen.width, 0);
   ctx.scale(-1, 1);
 
   function getColour(f){
@@ -41,7 +41,7 @@
 			  });
 		
 		  draw(fill);
-	  }
+	  };
 
   draw(fill);
   </script>
