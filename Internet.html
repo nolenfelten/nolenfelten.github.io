@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Nolen Felten</title>
+</head>
+<body>
+  <script>
+
+  var d = document;
+  var a = 255/2;
+
+  el = d.createElement('canvas');
+  el.width = 800;
+  el.height = 600;
+
+  d.body.appendChild(el);
+
+  var columns = Array(300).join().split(',')
+  var draw = requestAnimationFrame;
+  var ctx = el.getContext('2d');
+  var random = Math.rando;
+  var s = Math.sin;
+  var p=parseInt;
+  var ctx.translate(el.width, 0);
+  ctx.scale(-1,1);
+
+  function getColour(f){
+	
+	  return 'rgb(' + [p(s(3 * f) * a + a), p(s(3 * f + 2) * a + a), p(s(3 * f + 4) * a + a)].join(',') + ')';}
+	
+	
+	  function fill(now) {
+		  ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+		
+		  ctx.fillRect(0, 0, el.width, el.height);
+		  ctx.fillStyle = getColour(now);
+		  columns.map(	function(y, index){
+		
+			  	text = String.fromCharCode(12448 + random() * 96);
+				  ctx.fillText(text, (index * 10) + 10, (y || 0));
+				  columns[index] = (y || 0) > 100 + random() * 1e4? 0 : y + 10;
+			  });
+		
+		  draw(fill);
+	  }
+
+  draw(fill);
+  </script>
+  </body>
+</html>
