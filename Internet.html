@@ -29,9 +29,9 @@
             return 'rgb(' + [p(s(3 * f) * (255 / 2) + (255 / 2)), p(s(3 * f + 2) * (255 / 2) + (255 / 2)), p(s(3 * f + 4) * (255 / 2) + (255 / 2))].join(',') + ')';}
 	
 	    function fill(now) {
-	        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+	        ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
 		
-		ctx.fillRect(0, 0, el.width, el.height);
+		ctx.fillRect(0, 0, screen.width, screen.height);
 		
 		ctx.fillStyle = getColour(now);
 		
