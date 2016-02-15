@@ -9,8 +9,8 @@
   var a = 255/2;
 
   el = d.createElement('canvas');
-  el.width = screen.width + 10;
-  el.height = screen.height + 10;
+  el.width = screen.width;
+  el.height = screen.height;
 
   d.body.appendChild(el);
 
@@ -29,7 +29,7 @@
 	
 	
 	  function fill(now) {
-		  ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+		  ctx.fillStyle = 'rgba(0, 3, 0, 0.05)';
 		
 		  ctx.fillRect(0, 0, el.width, el.height);
 		  ctx.fillStyle = getColour(now);
