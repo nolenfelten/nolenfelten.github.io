@@ -1,49 +1,51 @@
 <html>
 <head>
-  <title>Nolen Felten</title>
+    <title>Nolen Felten</title>
 </head>
 <body>
-  <script>
+    <script>
+        /* Store the web page in a variable */
+        var object = document;
+        
+        /* Crate a canvas element in the document */
+        frame = object.createElement('canvas');
+        /* Place the canvas in the document */
+        object.body.appendChild(frame);
 
-  var d = document;
-  var a = 255/2;
+        /* Create an array of 320 colums */
+        /* | | | | | | | | | | | | | | | */
+        var columns = Array(320).join().split(',');
+        
+        var draw = requestAnimationFrame;
+        var ctx = frame.getContext('2d');
+        var random = Math.random;
+        var s = Math.sin;
+        var p = parseInt;
+        
+        ctx.translate(screen.width, 0);
+        ctx.scale(-1, 1);
 
-  el = d.createElement('canvas');
-  el.width = screen.width + 10;
-  el.height = screen.height + 10;
-
-  d.body.appendChild(el);
-
-  var columns = Array(300).join().split(',')
-  var draw = requestAnimationFrame;
-  var ctx = el.getContext('2d');
-  var random = Math.random;
-  var s = Math.sin;
-  var p = parseInt;
-  ctx.translate(screen.width, 0);
-  ctx.scale(-1, 1);
-
-  function getColour(f){
+        function getColour(f) {
+            return 'rgb(' + [p(s(3 * f) * (255 / 2) + (255 / 2)), p(s(3 * f + 2) * (255 / 2) + (255 / 2)), p(s(3 * f + 4) * (255 / 2) + (255 / 2))].join(',') + ')';}
 	
-	  return 'rgb(' + [p(s(3 * f) * a + a), p(s(3 * f + 2) * a + a), p(s(3 * f + 4) * a + a)].join(',') + ')';}
-	
-	
-	  function fill(now) {
-		  ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+	    function fill(now) {
+	        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
 		
-		  ctx.fillRect(0, 0, el.width, el.height);
-		  ctx.fillStyle = getColour(now);
-		  columns.map(	function(y, index){
+		ctx.fillRect(0, 0, el.width, el.height);
 		
-			  	text = String.fromCharCode(12448 + random() * 96);
-				  ctx.fillText(text, (index * 10) + 10, (y || 0));
-				  columns[index] = (y || 0) > 100 + random() * 1e4? 0 : y + 10;
-			  });
+		ctx.fillStyle = getColour(now);
 		
-		  draw(fill);
-	  };
-
-  draw(fill);
-  </script>
-  </body>
+		columns.map(function(y, index) {
+			text = String.fromCharCode(12448 + random() * 96);
+			ctx.fillText(text, (index * 10) + 10, (y || 0));
+                        columns[index] = (y || 0) > 100 + random() * 1e4? 0 : y + 10;
+		});
+		
+	    draw(fill);
+	};
+        
+        
+        draw(fill);
+    </script>
+</body>
 </html>
