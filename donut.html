@@ -70,7 +70,7 @@
     } else {
       clearInterval(tmr1);
       tmr1 = undefined;
-    }
+    };
   };
 
   // This is a reimplementation according to my math derivation on the page
@@ -86,7 +86,7 @@
     if(tmr1 === undefined) { // only update A and B if the first animation isn't doing it already
       A += 0.07;
       B += 0.03;
-    }
+    };
     // precompute cosines and sines of A, B, theta, phi, same as before
     var cA=Math.cos(A), sA=Math.sin(A),
         cB=Math.cos(B), sB=Math.sin(B);
