@@ -29,12 +29,12 @@
           var cA = Math.cos(A);
           var sA = Math.sin(A);
           
-          cB=Math.cos(B); 
-          sB=Math.sin(B);
+          var cB = Math.cos(B); 
+          var sB = Math.sin(B);
     
           for(var k = 0; k < 1760; k++) {
-            b[k] = k%80 == 79 ? "\n" : " ";
-            z[k] = 0;
+            var b[k] = k%80 == 79 ? "\n" : " ";
+            var z[k] = 0;
           }
         
         
@@ -56,8 +56,8 @@
             var N = 0 | (8 * ((st * sA - sp * ct * cA) * cB - sp * ct * sA - st * cA - cp * ct *sB));
             
             if(y < 22 && y >= 0 && x >= 0 && x < 79 && D > z[o]) {
-              z[o] = D;
-              b[o] = ".,-~:;=!*#$@"[N > 0 ? N:0];
+              var z[o] = D;
+              var b[o] = ".,-~:;=!*#$@"[N > 0 ? N:0];
             }
       }
     }
@@ -66,10 +66,10 @@
 
   window.anim1 = function() {
     if(tmr1 === undefined) {
-      tmr1 = setInterval(frame, 50);
+      var tmr1 = setInterval(frame, 50);
     } else {
       clearInterval(tmr1);
-      tmr1 = undefined;
+      var tmr1 = undefined;
     };
   };
 
@@ -88,15 +88,22 @@
       B += 0.03;
     };
     // precompute cosines and sines of A, B, theta, phi, same as before
-    var cA=Math.cos(A), sA=Math.sin(A),
-        cB=Math.cos(B), sB=Math.sin(B);
+    var cA = Math.cos(A);
+    var sA = Math.sin(A);
+    var cB = Math.cos(B);
+    var sB = Math.sin(B);
+    
+    
     for(var j=0;j<6.28;j+=0.3) { // j <=> theta
-      var ct=Math.cos(j),st=Math.sin(j); // cosine theta, sine theta
-      for(i=0;i<6.28;i+=0.1) {   // i <=> phi
-        var sp=Math.sin(i),cp=Math.cos(i); // cosine phi, sine phi
-        var ox = R2 + R1*ct, // object x, y = (R2,0,0) + (R1 cos theta, R1 sin theta, 0)
-            oy = R1*st;
-
+      var ct = Math.cos(j);
+      var st = Math.sin(j);
+      for(var i = 0; i < 6.28;i += 0.1) {   // i <=> phi
+        var sp = Math.sin(i);
+        var cp = Math.cos(i); // cosine phi, sine phi
+        
+        var ox = R2 + R1*ct; // object x, y = (R2,0,0) + (R1 cos theta, R1 sin theta, 0)
+        var oy = R1*st;
+        
         var x = ox*(cB*cp + sA*sB*sp) - oy*cA*sB; // final 3D x coordinate
         var y = ox*(sB*cp - sA*cB*sp) + oy*cA*cB; // final 3D y
         var ooz = 1/(K2 + cA*ox*sp + sA*oy); // one over z
