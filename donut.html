@@ -125,13 +125,16 @@
   canvasframe();
 }
 
-if(document.all)
+if(document.all) {
   window.attachEvent('onload',_onload);
-else
+}
+else {
   window.addEventListener("load",_onload,false);
-})();
+}};)();
+
 </script>
-<pre id=d>
+<button onclick="anim1();">toggle animation</button>
+<pre id = d style = "background-color:#000; color:#ccc; font-size: 10pt;">
 </pre>
 </body>
 </html>
