@@ -16,13 +16,16 @@
 			/* This style code may appear to be randomly sorted, and that may be true, but it's order was a breaking factor during development. */
 			body {
 				margin: 0;
-				background: url("http://i.imgur.com/yKZrwRu.gif");
-				background-size: cover;
+				/* I am able to count using base 16 comfertably */
+				background-image: "http://i.imgur.com/yKZrwRu.gif";
+				background-size: fill;
 			}
 
 			#yo{ 
 				opacity: 0; 
-				}
+				-webkit-animation:bounceIn 4s;
+				transition: 6s;
+			}
 			
 			
 			
@@ -244,7 +247,7 @@
 				<img src="http://i.imgur.com/uM8y3CQ.png" width='125px' height='105px'>
 			</a>
 		</div>
-		
+		<p id='yo' onload="this.style.opacity=1" style="transition: 6s; color: #FFFFFF">If you are on a mobile device or a tablet, and you are reading this, then you might not be able to see the epic background. Your connection speed might play a factor also. the background is only 10MB.</p>
 	</div>
 	</body>
 </html>
