@@ -7,12 +7,12 @@
 
   
     if (document.all || document.getElementById){
-      document.write('<p><b><hr width=50% /><span id="highlight"><center><h2>Nolen Felten</center></h2></span><hr width=50% /></b></p>')
+      document.write('<p><b><hr width=50% /><center><h2>Nolen Felten</center></h2><hr width=50% /></b></p>')
       
-      var storetext=document.getElementById? document.getElementById("highlight") : document.all.highlight
+      var storetext=document.getElementById? document.getElementById("h2") : document.all.highlight
     } else {
       
-      document.write(text)
+      document.write("Nolen Felten")
       var hex = new Array("00","14","28","3C","50","64","78","8C","A0","B4","C8","DC","F0")
       
       var red = 1;
@@ -103,7 +103,7 @@
   <center>
     <table border="1" style="width:30%">
       <tr>
-        <td><b>HTML/>CSS</b></td>
+        <td><b>HTML/CSS</b></td>
         <td><b>Javascript</b></td>
         <td><b>PHP</b></td>
       </tr>
