@@ -1,8 +1,102 @@
 <html>
 <head>
   <title>Nolen Felten</title>
+  <script>
+
+    var text="RAINBOW TEXT" // YOUR TEXT
+    var speed=80 // SPEED OF FADE
+
+  
+    if (document.all||document.getElementById){
+      document.write('<span id="highlight">' + text + '</span>')
+      
+      var storetext=document.getElementById? document.getElementById("highlight") : document.all.highlight
+    } else {
+      
+      document.write(text)
+      var hex = new Array("00","14","28","3C","50","64","78","8C","A0","B4","C8","DC","F0")
+      
+      var red = 1;
+      var green = 1;
+      var blue = 1;
+
+
+      var seq = 1;
+
+      function changetext(){
+        rainbow = "#" + hex[red] + hex[green] + hex[blue]
+
+        storetext.style.color = rainbow
+      };
+      
+      
+
+      function change(){
+        if(seq == 6){
+          blue--
+
+          if(blue == 0)
+            seq = 1
+          }
+
+
+          if(seq == 5){
+            red++
+
+            if(red == 12)
+              seq = 6
+            }
+
+
+            if(seq == 4){
+              green--
+
+              if(green == 0){
+                seq = 5
+              }
+            }
+
+            if(seq == 3){
+              blue++
+              
+              if(blue == 12)
+                seq = 4
+
+              }
+            }
+
+
+            if(seq == 2){
+              red--
+
+              if (red == 0){
+                seq = 3
+              }
+            }
+
+
+            if(seq == 1){
+              green++
+              
+              if (green == 12){
+                seq = 2
+              }
+            }
+            
+          changetext()
+        }
+        
+        function starteffect(){
+          if(document.all || document.getElementById){
+            flash = setInterval("change()", speed)
+          }
+        }
+      
+      starteffect()
+  </script>
 </head>
 <body>
+  
   <p>
     <b>
       <hr width=50% />
@@ -11,6 +105,8 @@
     </b>
   </p>
 
+  
+  
   <hr/>
   <p><b><center><u>Programming Languages</u></center></b></p>
   <center>
@@ -30,7 +126,7 @@
     </table>
   </center>
     
- <hr/>
+  <hr/>
   <p><b><center><u>Skills</u></center></b></p>
   
   <li>Rapid and cross platform GUI development:</li>
@@ -53,15 +149,13 @@
   <p>Take advantage of <a href="https://pages.github.com/">Github Pages</a> and quickly roll out using Jekyll.</p>
   <p>Custom Wordpress template/plugin design. Experience with Dreamweaver.</p>
   <br>
-
-<hr/>
-  <p><b><center><u>Original Work</u></center></b></p>
-  <p><b><a href="#">See my blog ^_^</a></b></p>
-  <p><a href="https://github.com/nolenfelten/Original-Xbox-Game-Installer">Xbox Game Pirating App</a></p>
+  
+  
   
   
   <hr/>
   <p><b><center><u>Education</u></center></b></p>
+    <center>
     <table border="1" style="width:70%">
       <tr>
         <td>Rancho Cotate High School</td>
@@ -94,7 +188,7 @@
       </tr>
     </table>
   
-  
+  </center>
 
 
   <p><b><center><u>Previous Employers</u></center></b></p>
@@ -162,6 +256,14 @@
         transition: 2s; 
       }
     </style>
+
+    <p>
+      <ul style="padding: 5px;">
+        <li>Sonoma County Volunteer </li>
+      </ul>
+    </p>
+    
+    
     
     <p>
       <ul style="padding: 5px;">
@@ -179,10 +281,6 @@
 
 
 
-
-
-
-
      <p>
        <ul style="padding: 5px;">
          <li>Direct3D/DirectX/OpenGL</li>
@@ -194,7 +292,6 @@
          <li>Vector-space search engines</li>
        </ul>
      </p>
-
 
 
 
@@ -237,7 +334,6 @@
 
 
 
-
      <p>
        <ul style="padding: 5px;">
          <li>Object Oriented</li>
@@ -248,10 +344,5 @@
        </ul>
      </p>
 
-    <p>
-      <ul style="padding: 5px;">
-        <li>Sonoma County Volunteer </li>
-      </ul>
-    </p>
 </body>
 </html>
