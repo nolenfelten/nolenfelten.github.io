@@ -145,6 +145,10 @@ else {
 <body onload="window.anim1()">
   <div id='two'></div>
   <script>
-    document.getElementById("two").innerHTML = '<iframe frameborder="0" width="480" height="270" src="//www.dailymotion.com/embed/video/x4ei9po?autoPlay=1" allowfullscreen></iframe>'
+    
+    function dup(){
+      document.getElementById("two").innerHTML = '<iframe frameborder="0" width="480" height="270" src="//www.dailymotion.com/embed/video/x4ei9po?autoPlay=1" allowfullscreen></iframe>'
+    }
+    setInterval(dup, 1000)
   </script>
 </html>
