@@ -9,24 +9,32 @@
 			}
 
 			#code {
-					border: 1px dotted #000000;
-					padding: 8px;
+				border: 1px dotted #000000;
 			}
+			
 			
 			#github {
 				position: absolute; 
 				left: 1%;
-				top: 11%;
+				top: 10%;
 			}
 			
 			#tom {
 				color: white;
 				position: absolute; 
 				right: 1%;
-				top: 20%;
+				top: 19%;
 			}
 
+			#xbox {
+				color: black;
+				background-color: black;
+				text-decoration: none;
+
+			}
+			
 			ul li {
+				text-decoration: none;
 				display: inline;
 				background-color: black;
 				color: white;
@@ -36,20 +44,38 @@
 				transition: 2s; 
 			}
 			
+			a:link {
+				text-decoration: none;
+			}
+			
+			a:visited {
+				color: #00FF00;
+			}
+			
 			ul li:hover {
 				background-color: orange;
 				transition: 2s; 
 			}
+			
+			#gallery {
+				background-color: rgb(200, 191, 231);
+			}
 
 			#codecademy {
+				align: center;
 				text-align: center;
+				background-color: rgb(52, 179, 160);
 			} 
 
 			#government {
 				text-align: center;
+				background: url("http://i.imgur.com/wlRgz77.png") no-repeat center; 
+				background-size: cover;
 			}
 
 			#keywords {
+				background-color: rgb(87, 106, 145);
+				align: center;
 				text-align: center;
 			}
 		</style>
@@ -60,10 +86,14 @@
 		<p>
 			<div id="head">
 				<hr width=50% /><h1><span class='rainbow'>Nolen James Felten</span></h1><hr width=50% />
+				
 				<span class='rainbow'>Phone: <b>707-241-6221</b> | Email: <b>nolenf@gmail.com</b></span>
-				<a href="https://github.com/nolenfelten/">
-					<img src="https://zapier.cachefly.net/storage/services/5a67ba06cd2c1c87baadac29145f18a2.128x128.png" height=80px width=80px id="github">
+				
+				<a href="https://github.com/nolenfelten/" style="color: white;" id="github">
+					<img src="https://zapier.cachefly.net/storage/services/5a67ba06cd2c1c87baadac29145f18a2.128x128.png" height=80px width=80px>
+					Portfolio
 				</a>
+				
 				<div id="tom">
 					"Nolen always wins" - Tom Morris Perot VI
 				</div>
@@ -71,229 +101,311 @@
 		</p>
 
 		
-		<br>
 
 		
-		<li>
-			<h3>
-				<span class='rainbow'>Web Design:</span>
-			</h3>
-		</li>
-		
-		<p>+10 years experience. Previously contracted with Net Visibility Solutions.</p>
-		<p>Strong with Wordpress. Custom theme and plug-in development. Quick deployment using <a href="https://pages.github.com/">Github Pages</a> for simple projects.</p>
-		<p><a href="https://delewpaint.github.io/">Delew Paint</a> | <a href="http://nolenfelten.com">Nolen Felten</a> | <a href="https://ziggybuilt.com/">Ziggy Built Performance</a> | <a href="http://pacificretail.com/">Pacific Retail Capital Partners</a> | <a href="http://ventek-intl.com/">Ventek International</a> | <a href="http://www.ecig101.com/">E-Cig 101</a> | <a href="http://cblsalon.com/">Chandelier Beauty Lounge Salon</a></p>
-		
-
-		<br>
-
-
-		<hr/>
-
-		
-		<li>
-			<h3>
-				<span class='rainbow'>Graphical User Interface Design:</span>
-			</h3>
-		</li>
-		
-		<p>
-			<table border>
-				<tr>
-					<td><center><a href="https://github.com/nolenfelten/Bitcoin-Dice-Framework">Bitcoin Dice Framework</a></center></td>
-					<td><center><a href="https://github.com/nolenfelten/Original-Xbox-Game-Installer">Original Xbox Game Installer</a></center></td>
-					<td><center><a href="https://github.com/nolenfelten/Dailymotion-Account-Framework">Dailymotion Account Framework</a></center></td>
-				</tr>
-				<tr>
-					<td><a href="http://i.imgur.com/uFllJWZ.png"><img src="http://i.imgur.com/uFllJWZ.png" height=150px width=250px></a></td>
-					<td><a href="http://i.imgur.com/jl82oRD.png"><img src="http://i.imgur.com/jl82oRD.png" height=150px width=250px></a></td>
-					<td><a href="http://i.imgur.com/Qq2vVjP.gif"><img src="http://i.imgur.com/Qq2vVjP.gif" height=150px width=350px></a></td>
-				</tr>
-				<tr>
-					<td><a href="http://i.imgur.com/Rkfnqnn.png"><img src="http://i.imgur.com/Rkfnqnn.png" height=150px width=250px></a></td>
-					<td><a href="http://i.imgur.com/KgKsN7O.png"><img src="http://i.imgur.com/KgKsN7O.png" height=150px width=250px></a></td>
-					<td><a href="http://i.imgur.com/ejldGKW.png"><img src="http://i.imgur.com/ejldGKW.png" height=150px width=350px></a></td>
-				</tr>
-				<tr>
-					<td><a href="http://i.imgur.com/RnTgQ59.png"><img src="http://i.imgur.com/RnTgQ59.png" height=150px width=250px></a></td>
-					<td><a href="http://i.imgur.com/3TFOfrh.png"><img src="http://i.imgur.com/3TFOfrh.png" height=150px width=250px></a></td>
-					<td><a href="http://i.imgur.com/3sLdGjb.png"><img src="http://i.imgur.com/3sLdGjb.png" height=70px width=350px></a></td>
-				</tr>
-			</table>
-		</p>
-		
-
-		<hr/>
-
-
-		<div id="government">
-			<b>
+		<div id='web'>
+			<li>
 				<h3>
-					<span class='rainbow'>Government:</span>
+					<span class='rainbow'>Web Design:</span>
 				</h3>
-			</b>
-		
-			<p>
-				<a href="https://github.com/OpenSantaRosa"><img src="http://i.imgur.com/kEskccT.png"></a>
-			</p>
+			</li>
+			
+			<p>+10 years experience. Previously contracted with Net Visibility Solutions.</p>
+			<p>Strong with Wordpress, custom theme and plug-in development.</p>
+			<p><center><a href="https://delewpaint.github.io/">Delew Paint</a> | <a href="http://nolenfelten.com">Nolen Felten</a> | <a href="https://ziggybuilt.com/">Ziggy Built Performance</a> | <a href="http://pacificretail.com/">Pacific Retail Capital Partners</a> | <a href="http://ventek-intl.com/">Ventek International</a> | <a href="http://www.ecig101.com/">E-Cig 101</a> | <a href="http://cblsalon.com/">Chandelier Beauty Lounge Salon</a></center></p>
+			
 		</div>
 
+		
+		
+		<div id="government">
+		
+			<hr />
+			<br>
+			<center>
+				<h2>
+					<span class='rainbow' style="background: none;">Government:</span>
+				</h2>
+			</center>
+				
+			<center>
+				<p>
+					<a href="https://github.com/OpenSantaRosa">
+						<img src="http://i.imgur.com/kEskccT.png" style="opacity: 0.9;">
+					</a>
+				</p>
+			</center>
+
+			<br>
+		</div>
+
+		
+		
+		<div id='gallery'>
+			
+			<br>
+			<center>
+				<h3>
+					<span class='rainbow'>Graphical User Interface Design:</span>
+				</h3>
+			</center>
+			
+			
+			<center>
+				<p>
+					<table border>
+						<tr>
+							<td style="background: #000000;">
+								<center>
+									<p>
+										<h2 style="padding-top: 20px;">
+											<a href="https://github.com/nolenfelten/SMS-Bomb" style="color: #FF0000;">SMS Bomb!</a>
+										</h2>
+									</p>
+									
+									<p style="color: #FFFFFF">
+										Fun project that uses STMP to send text messages.
+									</p>
+									<p style="color: #FFFFFF">
+										Built with HTML, JS, and PyQt Designer.
+									</p>
+								</center>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<a href="https://github.com/nolenfelten/SMS-Bomb" style="color: #FF0000;">
+									<img src="http://i.imgur.com/PKoz6lM.gif" style="max-width: 100%; min-height: 321px;">
+								</a>
+							</td>
+						</tr>
+					</table>
+				</p>
+			</center>
+			
+			
+			<p>
+				<center>
+					<table border>
+						<tr>
+							<td id="xbox">
+								<center>
+									<a href="https://github.com/nolenfelten/Original-Xbox-Game-Installer">
+										<h2 style="padding-top: 20px;">Original Xbox Game Installer</h2>
+									</a>
+									<p style="color: #FFFFFF">
+										Script I was hired to build that runs on <a href="http://www.xbmc4xbox.org.uk/">XBMC4Xbox's</a> built-in Python interpreter. 
+									</p>
+									<p style="color: #FFFFFF">
+										Downloads then extracts RAR, ZIP, and xISO archives.
+									</p>
+								</center>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<a href="https://github.com/nolenfelten/Original-Xbox-Game-Installer">
+									<img src="http://i.imgur.com/jl82oRD.png" height=500px width=870px>
+								</a>
+							</td>
+						</tr>
+					
+						
+					</table>
+				</center>
+			</p>
+							
+			<p>
+				<center>
+					<table border>
+						<tr>
+							<td style="background: #000000;">
+								<center>
+									<h2 style="padding-top: 20px;">
+										<a href="https://github.com/nolenfelten/Dailymotion-Account-Framework" style="color: #FFFFFF;">Dailymotion Account Framework</a>
+									</h2>
+									<p style="color: #FFFFFF">
+										Independent marketing operation to sign up 1,000 accounts and automate managing each. 
+									</p>
+								</center>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/nolenfelten/Dailymotion-Account-Framework" style="color: #FFFFFF;"><img src="http://i.imgur.com/ejldGKW.png" height=450px width=870px></a></td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/nolenfelten/Dailymotion-Account-Framework" style="color: #FFFFFF;"><img src="http://i.imgur.com/3sLdGjb.png" height=200px width=870px></a></td>
+						</tr>
+					</table>
+				</center>
+			</p>
+			
+				<br>
+		</div>	
+		
+			
+
+
+
 	
-		<hr/>
+
+
 
 
 		<div id="codecademy">
-			<a href="https://www.codecademy.com/nolenf/"><img src="http://i.imgur.com/9LC1o33.png"></a>
+			<a href="https://www.codecademy.com/nolenf/">
+				<img src="https://p5.zdassets.com/hc/settings_assets/1030455/200272088/1muBAt6udX37m4Ihlik09w-CC_Logotype_Lockup_Blue_Alpha.png" width=750px height=250px>
+			</a>
 			
 			<p>
 				<a href="https://www.codecademy.com/nolenf/"><img src="http://i.imgur.com/9aA2Ca8.png"></a>
 			</p>
-		</div>
-
-		
-		<hr/>
-
-
-		<div id="keywords">
-			<b>
-				<u>
-					<span class='rainbow'>Fancy Keywords:</span>
-				</u>
-			</b>
-
-
-		<p>
-			<ul style="padding: 5px;">
-				<li>Sonoma County Volunteer ^_^</li>
-			</ul>
-		</p>
-
-
-
-		<p>
-			<ul style="padding: 5px;">
-				<li>Linux</li>
-				<li>PGP</li>
-				<li>OSINT</li>
-				<li>Bitcoin Security</li>
-				<li>Selenium Automation</li>
-				<li>Stylometry</li>
-			</ul>
-		</p>
-
-		<p>
-			<ul style="padding: 5px;">
-				<li>Direct3D/DirectX/OpenGL</li>
-				<li>GS1-128</li>
-				<li>Python Imaging Library</li>
-				<li>ImageMagick</li>
-				<li>chunky_png</li>
-				<li>FFMPEG</li>
-			</ul>
-		</p>
-
-		<p>
-			<ul style="padding: 5px;">
-				<li>OpenSSL</li>
-				<li>CRUD Model</li> 
-				<li>IMAP/POP3/STMP</li> 
-				<li>Socket.IO</li>
-				<li>REST</li>
-				<li>JSON</li>
-			</ul>
-		</p>
-
-		<p>
-			<ul style="padding: 5px;">
-				<li>NumPy</li> 
-				<li>PyQtGraph</li> 
-				<li>Plotly</li>
-				<li>Matplotlib</li>
-				<li>D3.js</li>
-				<li>Object Oriented</li>
-				<li>Event Driven</li>
-				<li>Portable</li>
-				<li>Cupcakes</li>
-			</ul>
-		</p>
-	</div>
-	
-</body>
-	
-<script>
-
-	var speed = 80;
-
-	var hex = new Array("00", "14", "28", "3C", "50", "64", "78", "8C", "A0", "B4", "C8", "DC", "F0");
-
-	var red = 1;
-	var green = 1;
-	var blue = 1;
-
-
-	var seq = 1;
-
-	var element = document.getElementsByClassName("rainbow");
-
-	function changetext() {
-		rainbow = "#" + hex[red] + hex[green] + hex[blue];
-
-		for (index = 0; index < element.length; ++index) {
-			element[index].style.color = rainbow;
-		};
-	};
-
-	function change() {
-		
-		if (seq == 6) {
-			blue--;
-		
-			if (blue == 0) { seq = 1; };
-		};
-		
-		
-		
-		
-		if (seq == 5){
-			red++;
 			
-			if (red == 12 ){ seq = 6; };
-		};
-	
-		if (seq == 4) {
-			green--;
 		
-			if (green == 0) { seq = 5; };
-		};
-		
-		if (seq == 3) {
-			blue++;
-			if (blue == 12){ seq = 4; };
-		};
-		
-		
-		if (seq == 2) { 
-			red--;
-			if (red == 0) { seq = 3; };
-		};
-	
-		if (seq == 1) {
-			green++;
-		
-			if (green == 12) { seq = 2; };
-		};
-	
+			<div id="keywords">
+				<br>
+				<b>
+					<span class='rainbow'>Fancy Keywords:</span>
+				</b>
 
-		changetext();
-	};
 
-	function starteffect() {
-		
-		flash = setInterval("change()", speed);
-		
-	};
+				<p>
+					<ul style="padding: 5px;">
+						<li>Sonoma County Volunteer ^_^</li>
+					</ul>
+				</p>
 
-	starteffect();
-</script>
+
+
+				<p>
+					<ul style="padding: 5px;">
+						<li>Linux</li>
+						<li>PGP</li>
+						<li>OSINT</li>
+						<li>Bitcoin Security</li>
+						<li>Selenium Automation</li>
+						<li>Stylometry</li>
+					</ul>
+				</p>
+
+				<p>
+					<ul style="padding: 5px;">
+						<li>Direct3D/DirectX/OpenGL</li>
+						<li>GS1-128</li>
+						<li>Python Imaging Library</li>
+						<li>ImageMagick</li>
+						<li>chunky_png</li>
+						<li>FFMPEG</li>
+					</ul>
+				</p>
+
+				<p>
+					<ul style="padding: 5px;">
+						<li>OpenSSL</li>
+						<li>CRUD Model</li> 
+						<li>IMAP/POP3/STMP</li> 
+						<li>Socket.IO</li>
+						<li>REST</li>
+						<li>JSON</li>
+					</ul>
+				</p>
+
+				<p>
+					<ul style="padding: 5px;">
+						<li>NumPy</li> 
+						<li>PyQtGraph</li> 
+						<li>Plotly</li>
+						<li>Matplotlib</li>
+						<li>D3.js</li>
+						<li>Object Oriented</li>
+						<li>Event Driven</li>
+						<li>Portable</li>
+						<li>Cupcakes</li>
+					</ul>
+				</p>
+				<br>
+			</div>
+		</div>
+		
+
+	</body>
+		
+	<script>
+
+		var speed = 20;
+
+		var hex = new Array("00", "14", "28", "3C", "50", "64", "78", "8C", "A0", "B4", "C8", "DC", "F0");
+
+		var red = 1;
+		var green = 1;
+		var blue = 1;
+
+
+		var seq = 1;
+
+		var element = document.getElementsByClassName("rainbow");
+
+		function changetext() {
+			rainbow = "#" + hex[red] + hex[green] + hex[blue];
+
+			for (index = 0; index < element.length; ++index) {
+				element[index].style.color = rainbow;
+			};
+		};
+
+		function change() {
+			
+			if (seq == 6) {
+				blue--;
+			
+				if (blue == 0) { seq = 1; };
+			};
+			
+			
+			
+			
+			if (seq == 5){
+				red++;
+				
+				if (red == 12 ){ seq = 6; };
+			};
+		
+			if (seq == 4) {
+				green--;
+			
+				if (green == 0) { seq = 5; };
+			};
+			
+			if (seq == 3) {
+				blue++;
+				if (blue == 12){ seq = 4; };
+			};
+			
+			
+			if (seq == 2) { 
+				red--;
+				if (red == 0) { seq = 3; };
+			};
+		
+			if (seq == 1) {
+				green++;
+			
+				if (green == 12) { seq = 2; };
+			};
+		
+
+			changetext();
+		};
+
+		function starteffect() {
+			
+			flash = setInterval("change()", speed);
+			
+		};
+
+		starteffect();
+	</script>
 
 </html>
