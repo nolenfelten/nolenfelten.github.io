@@ -111,8 +111,7 @@
 			</li>
 			
 			<p>+10 years experience. Previously contracted with Net Visibility Solutions.</p>
-			<p>Strong with Wordpress, custom theme and plug-in development.</p>
-			<p><center><a href="https://delewpaint.github.io/">Delew Paint</a> | <a href="http://nolenfelten.com">Nolen Felten</a> | <a href="https://ziggybuilt.com/">Ziggy Built Performance</a> | <a href="http://pacificretail.com/">Pacific Retail Capital Partners</a> | <a href="http://ventek-intl.com/">Ventek International</a> | <a href="http://www.ecig101.com/">E-Cig 101</a> | <a href="http://cblsalon.com/">Chandelier Beauty Lounge Salon</a></center></p>
+			<p><center style="border: 2px solid black;"><a href="https://delewpaint.github.io/">Delew Paint</a> | <a href="http://nolenfelten.com">Nolen Felten</a> | <a href="https://ziggybuilt.com/">Ziggy Built Performance</a> | <a href="http://pacificretail.com/">Pacific Retail Capital Partners</a> | <a href="http://ventek-intl.com/">Ventek International</a> | <a href="http://www.ecig101.com/">E-Cig 101</a> | <a href="http://cblsalon.com/">Chandelier Beauty Lounge Salon</a></center></p>
 			
 		</div>
 
@@ -131,7 +130,7 @@
 			<center>
 				<p>
 					<a href="https://github.com/OpenSantaRosa">
-						<img src="http://i.imgur.com/kEskccT.png" style="opacity: 0.9;">
+						<img src="http://i.imgur.com/kEskccT.png" style="opacity: 0.9; border: 2px solid black;">
 					</a>
 				</p>
 			</center>
@@ -150,9 +149,15 @@
 				</h3>
 			</center>
 			
-			
 			<center>
 				<p>
+					<h1><a style="border: 2px solid black" onclick="plusDivs(-1)"><=</a><a style="border: 2px solid black" onclick="plusDivs(1)">=></a></h1>
+				</p>
+			</center>
+			
+			
+			<center>
+				<p class="mySlides">
 					<table border>
 						<tr>
 							<td style="background: #000000;">
@@ -185,8 +190,8 @@
 			</center>
 			
 			
-			<p>
-				<center>
+			<center>
+				<p class="mySlides">
 					<table border>
 						<tr>
 							<td id="xbox">
@@ -214,11 +219,11 @@
 					
 						
 					</table>
-				</center>
-			</p>
+				</p>
+			</center>
 							
-			<p>
-				<center>
+			<center>
+				<p class="mySlides">
 					<table border>
 						<tr>
 							<td style="background: #000000;">
@@ -239,10 +244,38 @@
 							<td><a href="https://github.com/nolenfelten/Dailymotion-Account-Framework" style="color: #FFFFFF;"><img src="http://i.imgur.com/3sLdGjb.png" height=200px width=870px></a></td>
 						</tr>
 					</table>
-				</center>
-			</p>
+				</p>
+			</center>
 			
-				<br>
+			<script>
+				var slideIndex = 1;
+				showDivs(slideIndex);
+
+				function plusDivs(n) {
+					showDivs(slideIndex += n);
+				}
+
+				function showDivs(n) {
+					var i;
+					var x = document.getElementsByClassName("mySlides");
+					
+					if (n > x.length) {
+						slideIndex = 1
+					}
+				
+					if (n < 1) {
+						slideIndex = x.length
+					}
+				  
+					for (i = 0; i < x.length; i++) {
+						x[i].style.display = "none";
+					}
+				  
+					x[slideIndex-1].style.display = "block";
+				}
+			</script>
+			
+			<br>
 		</div>	
 		
 			
@@ -267,7 +300,7 @@
 			<div id="keywords">
 				<br>
 				<b>
-					<span class='rainbow'>Fancy Keywords:</span>
+					<span class='rainbow'>Fancy Technology Keywords:</span>
 				</b>
 
 
@@ -282,49 +315,47 @@
 				<p>
 					<ul style="padding: 5px;">
 						<li>Linux</li>
-						<li>PGP</li>
-						<li>OSINT</li>
-						<li>Bitcoin Security</li>
-						<li>Selenium Automation</li>
-						<li>Stylometry</li>
+						<li>Selenium Webdriver</li>
+						<li>Python</li>
+						<li>Ruby</li>
+						<li>NodeJS</li>
 					</ul>
 				</p>
 
 				<p>
 					<ul style="padding: 5px;">
-						<li>Direct3D/DirectX/OpenGL</li>
-						<li>GS1-128</li>
-						<li>Python Imaging Library</li>
-						<li>ImageMagick</li>
-						<li>chunky_png</li>
-						<li>FFMPEG</li>
-					</ul>
-				</p>
-
-				<p>
-					<ul style="padding: 5px;">
-						<li>OpenSSL</li>
-						<li>CRUD Model</li> 
+						<li>Wget/cURL</li> 
 						<li>IMAP/POP3/STMP</li> 
-						<li>Socket.IO</li>
 						<li>REST</li>
 						<li>JSON</li>
+						<li>CRUD Model</li> 
+						<li>GS1-128</li>
+					</ul>
+				</p>
+
+
+				<p>
+					<ul style="padding: 5px;">
+						<li>Qt Designer</li> 
+						<li>Python Imaging Library</li>
+						<li>ImageMagick</li>
+						<li>Chunky_PNG</li>
+						<li>FFMPEG</li>
+						<li>Matplotlib</li>
+						<li>D3.js</li>
 					</ul>
 				</p>
 
 				<p>
 					<ul style="padding: 5px;">
-						<li>NumPy</li> 
-						<li>PyQtGraph</li> 
-						<li>Plotly</li>
-						<li>Matplotlib</li>
-						<li>D3.js</li>
 						<li>Object Oriented</li>
 						<li>Event Driven</li>
 						<li>Portable</li>
 						<li>Cupcakes</li>
+						<li>Kittens</li>
 					</ul>
 				</p>
+
 				<br>
 			</div>
 		</div>
