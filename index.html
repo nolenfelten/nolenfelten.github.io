@@ -2,6 +2,10 @@
 	<head>
 		<title>Nolen James Felten</title>
 		<style>
+          body {
+            margin: 0px;
+            padding: 0px;
+          }
 			#head {
 				background-color: #000000;
 				padding: 5px;
@@ -11,7 +15,6 @@
 			#code {
 				border: 1px dotted #000000;
 			}
-			
 
 			#xbox {
 				color: black;
@@ -61,12 +64,21 @@
 				background-size: cover;
 			}
 
-			#keywords {
+			#notes {
 				background-color: rgb(87, 106, 145);
 				align: center;
 				text-align: center;
-				margin: 5px;
+                background-size: cover;
 			}
+          
+            #cpp {
+              overflow: hidden;
+              width: 80%;
+              z-index: -2;
+              background-color: #FFFFFF;
+            }
+          
+          
 		</style>
 	</head>
 
@@ -103,6 +115,7 @@
 					<span class="rainbow" style="background: none; color: rgb(0, 40, 240);">Government:</span>
 				</h2>
 				
+                <b>Sonoma County Volunteer</b>
 				<p>
 					<a href="https://github.com/OpenSantaRosa">
 						<img src="http://i.imgur.com/kEskccT.png" style="opacity: 0.9; border: 2px solid black;">
@@ -118,13 +131,12 @@
 
 				<br>
 				<h3>
-					<span class="rainbow" style="color: rgb(0, 40, 240);">Graphical User Interface Design:</span>
+					<span class="rainbow">Graphical User Interface Design:</span>
 				</h3>
 
-
-				<br>
-				<input type="button" onclick="plusDivs(-1)" value="&lt;="></input>
-				<input type="button" onclick="plusDivs(1)" value="=&gt;"></input>
+                <p>Click an image to view the project page.</p>
+				<input type="button" onclick="plusDivs(-1)" value="&lt;=="></input>
+				<input type="button" onclick="plusDivs(1)" value="==&gt;"></input>
 				<br>
 
 
@@ -165,7 +177,7 @@
 						<tbody>
 							<tr>
 								<td id="xbox">
-									<center?
+									<center>
 										<a href="https://github.com/nolenfelten/Original-Xbox-Game-Installer">
 											<h2 style="padding-top: 20px; color: #00FF00;">Original Xbox Game Installer</h2>
 										</a>
@@ -222,34 +234,6 @@
 					</table>
 				</p>
 			
-				<script>
-					var slideIndex = 1;
-					showDivs(slideIndex);
-
-					function plusDivs(n) {
-						showDivs(slideIndex += n);
-					}
-
-					function showDivs(n) {
-						var i;
-						var x = document.getElementsByClassName("mySlides");
-
-						if (n > x.length) {
-							slideIndex = 1
-						}
-
-						if (n < 1) {
-							slideIndex = x.length
-						}
-
-						for (i = 0; i < x.length; i++) {
-							x[i].style.display = "none";
-						}
-
-						x[slideIndex - 1].style.display = "block";
-					}
-				</script>
-
 				<br>
 			</div>	
 		
@@ -261,82 +245,65 @@
 
 
 
-
+            
 			<div id="codecademy">
-				<a href="https://www.codecademy.com/nolenf/">
-					<img src="https://p5.zdassets.com/hc/settings_assets/1030455/200272088/1muBAt6udX37m4Ihlik09w-CC_Logotype_Lockup_Blue_Alpha.png" width="750px" height="250px">
-				</a>
+              <br>
+              <h2><span class="rainbow">Education:</span></h2>
+              
+              
+              <a href="https://www.codecademy.com/nolenf/">
+				<img src="https://p5.zdassets.com/hc/settings_assets/1030455/200272088/1muBAt6udX37m4Ihlik09w-CC_Logotype_Lockup_Blue_Alpha.png" width="750px" height="250px">
+			  </a>
 			
 				<p>
 					<a href="https://www.codecademy.com/nolenf/"><img src="http://i.imgur.com/9aA2Ca8.png"></a>
 				</p>
-			
-		
-				<div id="keywords">
-					<br>
-					<b>
-						<span class="rainbow" style="color: rgb(0, 40, 240);">Fancy Technology Keywords:</span>
-					</b>
-					
-					<br />
-					
-					<ul style="padding: 5px;">
-						<li>Sonoma County Volunteer ^_^</li>
-					</ul>
-					
-					<br />
-
-
-					<ul style="padding: 5px;">
-						<li>Linux</li>
-						<li>Selenium Webdriver</li>
-						<li>Python</li>
-						<li>Ruby</li>
-						<li>NodeJS</li>
-					</ul>
-					
-					<br />
-
-				
-					<ul style="padding: 5px;">
-						<li>Wget/cURL</li> 
-						<li>IMAP/POP3/STMP</li> 
-						<li>REST</li>
-						<li>JSON</li>
-						<li>CRUD Model</li> 
-						<li>GS1-128</li>
-					</ul>
-					
-					<br />
-
-
-					<ul style="padding: 5px;">
-						<li>Qt Designer</li> 
-						<li>Python Imaging Library</li>
-						<li>ImageMagick</li>
-						<li>Chunky_PNG</li>
-						<li>FFMPEG</li>
-						<li>Matplotlib</li>
-						<li>D3.js</li>
-					</ul>
-					
-					<br />
-
-					<ul style="padding: 5px;">
-						<li>Object Oriented</li>
-						<li>Event Driven</li>
-						<li>Portable</li>
-						<li>Cupcakes</li>
-						<li>Kittens</li>
-					</ul>
-				
-					<br />
-				</div>
+			   <br />
 			</div>
 		
 
-	
-		
+            <div id="notes">
+			   <br>
+              <iframe src="http://nolenfelten.github.io/cpp.html" id="cpp"></iframe>
+					
+			</div>	
+		    
+			<script>
+                   
+				function plusDivs(n) {
+                    // Move to next slide
+					showDivs(slideIndex += n);
+				}
+
+				function showDivs(n) {
+                  // Get Array of Slide Elements
+                  var x = document.getElementsByClassName("mySlides");
+
+                  // If slide number is out of index, set back to 1
+                  if (n > x.length) {
+                    slideIndex = 1
+                  }
+                  
+                  if (n < 1) {
+                    slideIndex = x.length
+                  }
+
+                  // Hide last element
+                  for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                  }
+
+                  // Show new element
+				  x[slideIndex - 1].style.display = "block";
+				}
+                  
+                // Slide Index
+				var slideIndex = 1;
+					
+                // Set First Slide
+                showDivs(slideIndex);
+			</script>
+
 			<script>
 
 				var speed = 20;
