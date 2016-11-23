@@ -1,52 +1,1160 @@
 <html>
-<head>
-    <style>
-        #helloworld {
-            background: #DDDDDD;
-        }
-        
-        #printf {
-            background: #DDDDDD;
-        }
-    </style>
-</head>
-<body>
-    <center>
-        <h1>C++ Notes</h1>
-        <p>By Nolen Felten</p>
-        
-        
-        <hr>
-        <li>Most C++ compilers don't care what extension you give your source code, but if you don't specify otherwise, many will use .cpp by default.</li>
 
-        <li>Frequently used and free available compiler is GNU C/C++ compiler, otherwise you can have compilers either from HP or Solaris if you have respective Operating Systems.</li>
-        <li>C++ was developed by Bjarne Stroustrup starting in 1979 at Bell Labs in Murray Hill, New Jersey, as an enhancement to the C language and originally named C with Classes but later it was renamed C++ in 1983.</li>
+	<head>
+<meta name="description" content="C">
+		<style>
+			#helloworld {
+				background: "#DDDDDD";
+			}
+			
+			#printf {
+				background: "#DDDDDD";
+			}
+			
+			h1 {
+				color: "#DD0000";
+			}
+		</style>
+	</head>
 
-        <li>C++ is a superset of C, and that virtually any legal C program is a legal C++ program.</li>
-        
-        
-        
-        
-        <hr>
-        <p><b>Comments:</b></p>
-    </center>
-    
-    <p style="background-color: #DDDDDD;">
-        <b>//</b> <font style="color:#00AA00">One line comment.</font>
-    </p>
-    
-    <div style="background-color: #DDDDDD;">
-        <b>/*</b>
-        <p style="color:#00AA00">&emsp;Multiline comment.</p><p style="color:#00AA00">&emsp;Multiline comment.</p>
-        <b>*/</b>
-        <hr>
-    </div>    
-    
-    
-    <center>
-        
-        <b>int main() Function:</b>
-        <li>Must return an integer.</li>
+	<body>
+
+		<center>
+			<p>In order to better communicate to our computers what exactly it is we want them to do, we've developed a wide range of programming languages to make the communication process easier. </p>
+		</center>
+
+		<ul>
+
+			<li><u><b>Compiled languages</b></u> are translated to the target machine's native language by a program called a compiler. This can result in very fast code, especially if the compiler is effective at optimizing, however the resulting code may not port well across operating systems and the compilation process may take a while. </li>
+
+
+			<br>
+			<li><u><b>Interpreted languages</b></u> are read by a program called an interpreter and are executed by that program. While they are as portable as their interpreter and have no long compile times, interpreted languages are usually much slower than an equivalent compiled program.</li>
+
+
+			<br>
+			<li><u><b>Just-In-Time compiled</b></u> languages are quickly compiled when programs written in them need to be run (usually with very little optimization), offering a balance between performance and portability</li>
+
+
+			<br>
+			<li>
+				A <b><u>type system</u></b> refers to the rules that the different types of variables of a language have to follow.
+
+
+				<br>
+				<br>
+
+
+				<ul>
+					<li><b><u>Type Strength</u></b>: <b>Strong</b> or <b>Weak</b></li>
+					<b><u>Strong</u></b> typing system <b><u>puts restrictions</u></b> on how different <b>types of variables can be converted to each other without any converting statements</b>.<br /> A <b><u>weak</u></b> typing system would <u>try to find some way to make the cast work</u>.<br />
+
+					<br>
+					<li><b><u>Type Expression</u></b>: <b>Manifest</b> or <b>Inferred</b></li>
+					This deals with how the compiler/interpreter infers the types of variables.<br /> Many languages <b><u>require variables types to be explicitly defined, and thus rely on manifest typing</u></b>.<br /> Some however, will <u><b>infer the type of the variable based on the contexts in which it is used</u></b>, and thus use <u><b>inferred typing</u></b>.
+
+					<br>
+					<br>
+					<li><b><u>Type Checking</b></u>: <b>Static</b> or <b>Dynamic</b></li>
+					If a language is statically typed, then the compiler/interpreter does the type checking once before the program runs/is compiled. If the language is dynamically type checked, then the types are checked at run-time.
+
+					<br>
+					<br>
+					<li><b><u>Type Safety</b></u>: <b>Safe</b> or <b>Unsafe</b></li>
+					These refer to the degree to which a language will prohibit operations on typed variables that might lead to undefined behavior or errors. A safe language will do more to ensure that such operations or conversions do not occur, while an unsafe language will give more responsibility to the user in this regard.
+
+				</ul>
+			</li>
+
+          
+
+			<br>
+			<br>
+			<li>Most compilers <b><u>don't care</u></b> what extension you give your source code, but if you don't specify otherwise, many will use .cpp by default.</li>
+
+			<br>
+			<li>Frequently used and available free is the <b><u>GNU C/C++</u> Compiler</u></b>.</li>
+
+			<br>
+			<li>C++ was developed by Bjarne Stroustrup starting in 1979 at Bell Labs in Murray Hill, New Jersey, as an enhancement to the C language and originally named C with Classes but later it was renamed C++ in 1983.</li>
+
+			<br>
+			<li>C++ is a superset of C, and that virtually any legal C program is a legal C++ program.</li>
+
+			<br>
+			<li><u>ISO-standardized.</u> <br>For a time, and to this bloody day, C++ had no official standard and was maintained by a de-facto standard, however since 1998, C++ is standardized by a committee of the ISO. Their page may be accessed <a href="http://www.open-std.org/jtc1/sc22/wg21/">here</a>. <br> <br></li>
+
+			<br>
+			<li> <u>C is a compiled language.</u> <br>C++ compiles directly to a machine's native code, allowing it to be one of the fastest languages in the world, if optimized. <br> <br></li>
+
+  			<br>
+            <li> <u>Strongly-typed</u> <u>Unsafe Language.</u> <br>C++ is a language that expects the programmer to know what he or she is doing, but allows for incredible amounts of control as a result. <br> <br></li>
+  
+  			<br>
+			<li> <u>...supports both manifest and inferred typing.</u> <br>As of the latest C++ standard, C++ supports both manifest and inferred typing, allowing flexibility and a means of avoiding verbosity where desired. <br> <br></li>
+			
+  			<br>
+            <li> <u>...supports both static and dynamic type checking.</u> <br>C++ allows type conversions to be checked either at compile-time or at run-time, again offering another degree of flexibility. Most C++ type checking is, however, static. <br> <br></li>
+  
+  			<br>
+			<li> <u>...offers many paradigm choices.</u> <br>C++ offers remarkable support for procedural, generic, and object-oriented programming paradigms, with many other paradigms being possible as well. <br> <br></li>
+			
+   			<br>
+			<li> <u>...is upwards compatible with C</u> <br>C++, being a language that directly builds off C, is compatible with almost all C code. C++ can use C libraries with few to no modifications of the libraries' code. <br> <br></li>
+		</ul>
+
+
+		<p><u>These typing characteristics are not necessarily mutually exclusive, and some languages mix them</u></p>
+
+
+		<br>
+		<hr>
+        <center>
+          <img src="http://i.imgur.com/tRC3q2l.png">
+        </center>
+		<hr>
+        <br>
+
+
+		<center>
+			<h2>Paradigms</h2>
+		</center>
+
+
+		<p>A programming paradigm is a methodology of programming.</p>
+
+
+		<ul>
+			<li>
+				<b>Declarative</b>
+				<br>A declarative language will focus more on specifying what a language is supposed to accomplish rather than by what means it is supposed to accomplish it. Such a paradigm might be used to avoid undesired side-effects resulting from having to write one's own code. <br> <br></li>
+
+
+			<li><b>Functional</b>
+				<br>Functional programming is a subset of declarative programming that tries to express problems in terms of mathematical equations and functions. It goes out of its way to avoid the concepts of states and mutable variables which are common in imperative languages. <br> <br></li>
+
+
+			<li><b>Generic</b>
+				<br>Generic programming focuses on writing skeleton algorithms in terms of types that will be specified when the algorithm is actually used, thus allowing some leniency to programmers who wish to avoid strict strong typing rules. It can be a very powerful paradigm if well-implemented. <br> <br></li>
+
+
+			<li><b>Imperative</b>
+				<br>Imperative languages allow programmers to give the computer ordered lists of instructions without necessarily having to explicitly state the task. It can be thought of being the opposite of declarative programming. <br> <br></li>
+
+
+			<li><b>Structured</b>
+				<br>Structured programming languages aim to provide some form of noteworthy structure to a language, such as intuitive control over the order in which statements are executed (if X then do Y otherwise do Z, do X while Y is Z). Such languages generally deprecate "jumps", such as those provided by the goto statement in C and C++. <br> <br></li>
+
+
+			<li><b>Procedural</b>
+				<br>Although it is sometimes used as a synonym for imperative programming, a procedural programming language can also refer to an imperative structured programming language which supports the concept of procedures and subroutines (also known as functions in C or C++). <br> <br></li>
+
+
+			<li><b>Object-Oriented</b>
+				<br>Object-Oriented programming (sometimes abbreviated to OOP) is a subset of structured programming which expresses programs in the terms of "objects", which are meant to model objects in the real world. Such a paradigm allows code to be reused in remarkable ways and is meant to be easy to understand.<br> <br>
+			</li>
+
+
+		</ul>
+
+
+		<br>
+		<hr>
+		<br>
+
+
+		<center>
+			<p>
+				<b>Comments:</b>
+			</p>
+		</center>
+
+
+		<p style="background-color: #DDDDDD;">
+			<b>//</b>
+			<font style="color:#00AA00">One line comment.</font>
+		</p>
+
+		<div style="background-color: #DDDDDD;">
+			<b>/*</b>
+			<p style="color:#00AA00">&emsp;Multiline comment.</p>
+			<p style="color:#00AA00">&emsp;Multiline comment.</p>
+			<b>*/</b>
+		</div>
+
+
+		<center>
+			<br>
+
+			<b>int main() Function:</b>
+			<li>Must return an integer.</li>
+			<li>Must only be one "main" function.</li>
+
+
+			<hr>
+
+
+			<b>Statements:</b>
+			<li>Statements can strech over multiple lines.</li>
+			<li>Statements must end with <b>;</b></li>
+
+
+			<hr>
+
+
+			<b>Identifiers:</b>
+			<li>Can not use reserved keywords.</li>
+			<li>Identifier refers to name given to objects such as variables, functions, structures, etc.</li>
+			<li>May have letters (both uppercase and lowercase letters), digits and underscores.</li>
+			<li>The first 63 characters are checked for uniqueness.</li>
+			<li>Starting with _ is common for private identifiers.</li>
+			<li>Starting with __ is for system level private identifiers</li>
+
+
+			<hr>
+
+
+			<img src="http://i.imgur.com/PgsuJmD.png" width=600px height=400px>
+
+
+			<hr>
+
+
+			<b>Expression:</b>
+			<li>Anything that returns a value.</li>
+
+
+			<hr>
+
+
+			<b>Assignment Expression:</b> >li>Assigns a value to a variable.</li>
+			<li>Data type must be declared.</li>
+			<div style="border: 1px solid #000000; width: 100px;">int x;<br/>x = 69;</div>
+
+			<b>or:</b>
+
+			<div style="border: 1px solid #000000; width: 100px;">int x = 69;</div>
+
+
+			<hr>
+
+
+			<b>Refrence Variable:</b>
+			<li>Much like a pointer.</li>
+			<li>Can not define a Refrence without initalizing it.</li>
+
+
+			<hr>
+
+
+			<b>C-String:</b>
+			<li>String is an array of characters strung together and terminated with a 0. <b>Called a NULL terminated string.</b></li>
+
+
+			<div style="border: 1px solid #000000; width: 300px;">char s[] = { "s", "t", "r", "i", "n", "g", 0 };</div>
+
+
+			<b>Same as:</b>
+			<div style="border: 1px solid #000000; width: 150px;">char s[] = "string";</div>
+
+
+			<br>
+			<li>Use the string library. Known as an <b>STL string</b>:</li>
+
+
+		</center>
+
+
+		<div style="border: 1px solid #000000; width: 175px; margin: auto;">
+			#include &lt;string &gt;<br/> string s1 = "Have a";<br/>string s2 = " nice day";
+		</div>
+
+
+		<center>
+			<br>
+			<li>To concatenate to strings use the plus sign:</li>
+		</center>
+
+
+		<div style="border: 1px solid #000000; width: 153px; margin: auto;">
+			string s3 = s1 + s2;<br/>cout &lt;&lt;s3 &lt;&lt;endl;
+
+		</div>
+
+
+		<center>
+
+			<p><b>Output:</b>Have a nice day</p>
+
+			<li>Length of a String:</li>
+
+		</center>
+
+
+		<div style="border: 1px solid #000000; width: 80px; margin: auto;">s3.length()</div>
+
+
+		<center>
+			<br>
+			<li>Check if String is empty or not:</li>
+		</center>
+
+
+		<div style="border: 1px solid #000000; width: 80px; margin: auto;">s4.empty()</div>
+
+
+		<center>
+			<br>
+			<li>Convert string into constant character array:</li>
+		</center>
+
+
+		<div style="border: 1px solid #000000; width: 209px; margin: auto;">const char* cstr = s3.c_str();</div>
+
+
+		<center>
+			<br>
+			<li>Compare two strings. This function will return 0, if the strings are equal; negative value, if string1 is less than string2 and positive value if string1 is greater than string2.</li>
+		</center>
+
+
+		<div style="border: 1px solid #000000; width: 183px; margin: auto;">strcmp(string1, string2)</div>
+
+
+		<center>
+			<hr>
+			<b>C-Array:</b>
+			<div style="border: 1px solid #000000; width: 150px;">char s[] = { };</div>
+			<li>Fixed sized container for elements of a common data type. After declaring an array, we cannot change the size of the array. That means we can't reduce the size nor increase the size of an array.</li>
+			<br>
+			<li>Index uses integer value. x[0]; x[1];</li>
+			<div style="border: 1px solid #000000; width: 350px; margin: auto;">int n[ 10 ]; // n is an array of 10 integers</div>
+		</center>
+
+
+		<div style="border: 1px solid #000000; width: 400px; margin: auto;">
+			// initialize elements of array n to 0 <br/> for( int i = 0; i &lt;10; i++ ) {<br/> &emsp;n[ i ] = i + 100; // set element at location i to i + 100<br/>}
+		</div>
+
+
+		<center>
+			<hr>
+			<b>Void:</b>
+			<li>Specifies that no value is available.</li>
+
+
+			<hr>
+			<b>Built-in Types:</b>
+
+
+			<table style="border: 1px solid #000000;">
+				<tbody>
+					<tr>
+						<th width="50%">Type</th>
+						<th>Keyword</th>
+					</tr>
+					<tr>
+						<td>Boolean</td>
+						<td>bool</td>
+					</tr>
+					<tr>
+						<td>Character</td>
+						<td>char</td>
+					</tr>
+					<tr>
+						<td>Integer</td>
+						<td>int</td>
+					</tr>
+					<tr>
+						<td>Floating point</td>
+						<td>float</td>
+					</tr>
+					<tr>
+						<td>Double floating point</td>
+						<td>double</td>
+					</tr>
+					<tr>
+						<td>Valueless</td>
+						<td>void</td>
+					</tr>
+					<tr>
+						<td>Wide character</td>
+						<td>wchar_t</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+
+
+			<b>Integer Types</b>
+			<table style="border: 1px solid #000000;">
+				<tbody>
+					<tr>
+						<th style="width:23%;">Type</th>
+						<th style="width:20%;">Storage size</th>
+						<th>Value range</th>
+					</tr>
+					<tr>
+						<td>char</td>
+						<td>1 byte</td>
+						<td>-128 to 127 or 0 to 255</td>
+					</tr>
+					<tr>
+						<td>unsigned char</td>
+						<td>1 byte</td>
+						<td>0 to 255</td>
+					</tr>
+					<tr>
+						<td>signed char</td>
+						<td>1 byte</td>
+						<td>-128 to 127</td>
+					</tr>
+					<tr>
+						<td>int</td>
+						<td>2 or 4 bytes</td>
+						<td>-32,768 to 32,767 or -2,147,483,648 to 2,147,483,647</td>
+					</tr>
+					<tr>
+						<td>unsigned int</td>
+						<td>2 or 4 bytes</td>
+						<td>0 to 65,535 or 0 to 4,294,967,295</td>
+					</tr>
+					<tr>
+						<td>short</td>
+						<td>2 bytes</td>
+						<td>-32,768 to 32,767</td>
+					</tr>
+					<tr>
+						<td>unsigned short</td>
+						<td>2 bytes</td>
+						<td>0 to 65,535</td>
+					</tr>
+					<tr>
+						<td>long</td>
+						<td>4 bytes</td>
+						<td>-2,147,483,648 to 2,147,483,647</td>
+					</tr>
+					<tr>
+						<td>unsigned long</td>
+						<td>4 bytes</td>
+						<td>0 to 4,294,967,295</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<b>Floating-Point Types</b>
+			<table style="border: 1px solid #000000;">
+				<tbody>
+					<tr>
+						<th>Type</th>
+						<th>Storage size</th>
+						<th>Value range</th>
+						<th>Precision</th>
+					</tr>
+					<tr>
+						<td>float</td>
+						<td>4 byte</td>
+						<td>1.2E-38 to 3.4E+38</td>
+						<td>6 decimal places</td>
+					</tr>
+					<tr>
+						<td>double</td>
+						<td>8 byte</td>
+						<td>2.3E-308 to 1.7E+308</td>
+						<td>15 decimal places</td>
+					</tr>
+					<tr>
+						<td>long double</td>
+						<td>10 byte</td>
+						<td>3.4E-4932 to 1.1E+4932</td>
+						<td>19 decimal places</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<b>Modifier Types:</b>
+			<li>
+				<b>Signedness</b> is a property of data types representing numbers in computer programs. A numeric variable is
+				<b>
+					<u>signed</u>
+					if it can represent <i>both</i>
+					positive <i>and</i>
+					negative numbers, and <u>unsigned</u>
+					if it can <i>only</i>
+					represent non-negative numbers
+				</b> (zero or positive numbers).
+			</li>
+			<br>
+			<li>A modifier is used to alter the meaning of the base type so that it more precisely fits the needs of various situations.</li>
+			<li>All four modifiers can be applied to the int type.</li>
+			<li>char type allows only signed and unsigned modifiers.</li>
+			<li>double type can be used with the long modifier</li>
+			<li>int type allows use of the shorthand notation. So, the following variable definitions are identical:</li>
+			<div style="border: 1px solid #000000; width: 300px; margin: auto;">short int a;
+			</div>
+			and
+			<div style="border: 1px solid #000000; width: 300px; margin: auto;">short a;
+			</div>
+			<br>
+			<div style="border: 1px solid #000000; width: 300px; margin: auto;">unsigned int a;
+			</div>
+			and
+			<div style="border: 1px solid #000000; width: 300px; margin: auto;">unsigned a;
+			</div>
+			<br>
+			<div style="border: 1px solid #000000; width: 300px; margin: auto;">long int a;
+			</div>
+			and
+			<div style="border: 1px solid #000000; width: 300px; margin: auto;">long a;
+			</div>
+			<li>
+				(<b>Signed</b> ) <b>int</b> can have value -2,147,483,648 to 2,147,483,647. <b>Unsigned int</b> can have value 0 to 4,294,967,295.
+			</li>
+			<hr>
+			<br>
+			<b>sizeof(type):</b>
+			<li>Yields the storage size of the object or type in bytes.</li>
+			<div style="border: 1px solid #000000; width: 400px;">printf("Storage size for int : %d \n", sizeof(int));
+			</div>
+			<br>
+			<hr>
+			<b>Constants/Literals:</b>
+			<li>Constants refer to fixed values that the program may not alter and they are called literals.</li>
+			<li>
+				Known as a <b>Read-only variable.</b>
+			</li>
+			<li>Constants can be of any of the basic data types and can be divided in Integer Numerals, Floating-Point Numerals, Characters, Strings and Boolean Values.</li>
+			<br>
+			<hr>
+			<p>
+				<b>Pointers:</b>
+			</p>
+			<li>Variable whose value is the address of another variable.</li>
+			<br>
+		</center>
+		<div style="border: 1px solid #000000; width: 400px; margin: auto;">
+			int var = 20; // actual variable declaration.<br/> int *ip; // pointer variable <br/>ip = &var;// store address of var in pointer variable
+
+		</div>
+		<div style="border: 1px solid #000000; width: 250px; margin: auto;">
+			int *ip; // pointer to an integer<br/> double *dp; // pointer to a double<br/> float *fp; // pointer to a float<br/> char *ch // pointer to character<br/>
+		</div>
+		<div style="border: 1px solid #000000; width: 400px; margin: auto;">
+			<p>
+				// print the address stored in ip pointer variable<br/>cout &lt;&lt;"Address stored in ip variable: " &lt;&lt;ip;
+			</p>
+			<p>
+				// access the value at the address available in pointer<br/> cout &lt;&lt;"Value of *ip variable: ";<br/>cout &lt;&lt;*ip &lt;&lt;endl
+			</p>
+		</div>
+		<center>
+			<br>
+			<li>You can define arrays to hold a number of pointers.</li>
+			<br>
+			<li>There are four arithmetic operators that can be used on pointers: ++, --, +, -</li>
+			<br>
+			<li>C++ supports null pointer, which is a constant with a value of zero defined in several standard libraries.</li>
+			<br>
+			<li>C++ allows you to have pointer on a pointer and so on.</li>
+			<br>
+			<li>Passing an argument by reference or by address both enable the passed argument to be changed in the calling function by the called function.</li>
+			<br>
+			<li>C++ allows a function to return a pointer to local variable, static variable and dynamically allocated memory as well.</li>
+			<br>
+			<hr>
+			<p>
+				<b>Loops:</b>
+			</p>
+			<li>A loop can be nested inside of another loop. C++ allows at least 256 levels of nesting.</li>
+			<li>When the conditional expression is absent, it is assumed to be true. You may have an initialization and increment expression, but C++ programmers more commonly use the for(;;) construct to signify an infinite loop.</li>
+			<br>
+			<hr>
+			<p>
+				<b>while loop:</b>
+			</p>
+			<li>Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</li>
+		</center>
+		<div style="border: 1px solid #000000; width: 300px; margin: auto;">
+			while( a &lt;20 ) {<br/> &emsp;cout &lt;&lt;"value of a: " &lt;&lt;a &lt;&lt;endl;<br/> &emsp;a++;
+			<br/>};
+
+		</div>
+		<center>
+			<p>
+				<img src="https://www.tutorialspoint.com/cplusplus/images/cpp_while_loop.jpg">
+			</p>
+			<hr>
+			<p>
+				<b>do...while loop:</b>
+			</p>
+			<li>Unlike for and while loops, which test the loop condition at the top of the loop, the do...while loop checks its condition at the bottom of the loop.</li>
+			<li>A do...while loop is similar to a while loop, except that a do...while loop is guaranteed to execute at least one time.</li>
+		</center>
+		<div style="border: 1px solid #000000; width: 300px; margin: auto;">
+			do {<br/> &emsp;cout &lt;&lt;"value of a: " &lt;&lt;a &lt;&lt;endl;<br/> &emsp;a = a + 1;<br/>} while( a &lt;20 );
+
+		</div>
+
+		<center>
+			<img src="https://www.tutorialspoint.com/cplusplus/images/cpp_do_while_loop.jpg">
+			<hr>
+			<p>
+				<b>for loop:</b>
+			</p>
+			<li>Execute a sequence of statements multiple times and abbreviates the code that manages the loop variable.</li>
+		</center>
+		<div style="border: 1px solid #000000; width: 220px; margin: auto;">
+			for (int i = 0; i &lt;5; i++) {<br/> &emsp;cout &lt;&lt;"i is " &lt;&lt;i &lt;&lt;endl;<br/>}
+
+		</div>
+		<center>
+			<img src="https://www.tutorialspoint.com/cplusplus/images/cpp_for_loop.jpg">
+			<br>
+			<hr>
+			<table style="border: 1px solid #000000;">
+				<tbody>
+					<tr>
+						<th width="30%">Control Statement</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>
+							<p>break statement
+							</p>
+						</td>
+						<td>
+							Terminates the <b>loop</b> or <b>switch</b> statement and transfers execution to the statement immediately following the loop or switch.
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>continue statement
+							</p>
+						</td>
+						<td>Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>goto statement
+							</p>
+						</td>
+						<td>Transfers control to the labeled statement. Though it is not advised to use goto statement in your program.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<hr>
+			<p>
+				<b>Conditional Statements:</b>
+			</p>
+			<br>
+			<li>If Statement:</li>
+			<br>
+		</center>
+		<div style="border: 1px solid #000000; width: 120px; margin: auto;">
+			if (1 == 1) {<br/> &emsp;puts("True");
+			<br/>}
+
+		</div>
+		<center>
+			<p>
+				<img src="https://www.tutorialspoint.com/cplusplus/images/cpp_if_statement.jpg">
+			</p>
+			<br>
+			<hr>
+			<li>If-Else Statement:</li>
+			<br>
+		</center>
+		<div style="border: 1px solid #000000; width: 180px; margin: auto;">
+			if (1 == 1) {<br/> &emsp;puts("Equal");
+			<br/> } else if (1 &lt;0) {<br/> &emsp;puts("Lesser Then");<br/> } else {<br/> &emsp;puts("Greater Then");<br/>}
+
+		</div>
+		<center>
+			<p>
+				<img src="https://www.tutorialspoint.com/cplusplus/images/cpp_if_else_statement.jpg">
+			</p>
+			<hr>
+			<b>Switch Statement:</b>
+			<br>
+			<li>Compares parameter to constants</li>
+		</center>
+
+		<div style="border: 1px solid #000000; width: 320px; margin: auto;">
+			// local variable declaration:<br/> char grade = 'D';<br/>
+			<p>
+				switch (grade) {<br/> &emsp;case 'A' :<br/> &emsp;&emsp;cout &lt;&lt;"Excellent!" &lt;&lt;endl; <br/> &emsp;&emsp;break;
+				<br/> &emsp;case 'B' :<br/> &emsp;case 'C' :<br/> &emsp;&emsp;cout &lt;&lt;"Well done" &lt;&lt;endl;<br/> &emsp;&emsp;break;
+				<br/> &emsp;case 'D' :<br/> &emsp;&emsp;cout &lt;&lt;"You passed" &lt;&lt;endl;<br/> &emsp;&emsp;break;
+				<br/> &emsp;case 'F' :<br/> &emsp;&emsp;cout &lt;&lt;"Better try again" &lt;&lt;endl;<br/> &emsp;&emsp;break;
+				<br/> &emsp;default :<br/> &emsp;&emsp;cout &lt;&lt;"Invalid grade" &lt;&lt;endl;<br/> }
+				<br /> cout &lt;&lt;"Your grade is " &lt;&lt;grade &lt;&lt;endl;
+			</p>
+		</div>
+
+
+		<center>
+			<p>
+				<img src="https://www.tutorialspoint.com/cplusplus/images/cpp_switch_statement.jpg">
+			</p>
+
+			<br>
+			<hr>
+			<p>
+				<b>Conditional Expressions:</b>
+			</p>
+		</center>
+
+
+		<div style="border: 1px solid #000000; width: 380px; margin: auto;">conditional Expression ? expression1 : expression2;</div>
+
+
+		<center>
+			<li>** if the conditional Expression is true, expression1 executes, otherwise if the conditional Expression is false, expression 2 executes.</li>
+
+			<br>
+			<li>If both the true and false expressions assign values to the same variable, you can improve the efficiency by assigning the variable one time:</li>
+
+			<p>
+				<div style="border: 1px solid #000000; width: 200px;">(a &gt;b) ? (c = 25) : (c = 45);</div>
+			</p>
+
+			<p>Can be written as:</p>
+
+			<div style="border: 1px solid #000000; width: 180px;">c = (a &gt;b) ? 25 : 45;</div>
+
+			<br>
+			<li>The question mark helps the statement read as follows: <br/>"Is a greater than b? If so, put 25 in c. Otherwise, put 45 in c."</li>
+
+			<br>
+		</center>
+
+
+		<hr>
+		<br>
+		<div style="border: 1px solid #000000; width: 80px; margin: auto;">
+			if (a &gt;b) {<br/> &emsp;c = 25;<br/> } else {<br/> &emsp;c = 45;<br/>}
+		</div>
+
+
+		<center>
+			<p>Can be replaced with:</p>
+
+			<p>
+				<div style="border: 1px solid #000000; width: 200px;">(a &gt;b) ? (c = 25) : (c = 45);</div>
+			</p>
+
+			<br>
+			<hr>
+			<b>Classes &Objects:</b>
+
+			<p><img src="https://www.tutorialcup.com/images/cplusplus/class-objects/1.png"></p>
+
+			<li>A class definition <u>must</u> be followed either by a semicolon or a list of declarations.</li>
+
+			<li>Access type specifies the possibility to access data members and member functions.</li>
+
+			<br>
+			<li><b>Public</b> class members and functions can be used from outside of a class by any function or other classes. You can access public data members or function directly by using dot operator (.) or (arrow operator-&gt;with pointers).</li>
+
+			<li><b>Private</b> class members and functions can be used inside its class. Protected members and functions cannot be accessed from other classes directly.</li>
+
+			<li><b>Protected</b> access specifier allows friend functions and classes to access these data members and functions. Protected data members and functions can be used by the class derived from this class.</li>
+
+			<p><img src="https://www.tutorialcup.com/images/cplusplus/42/1.png"></p>
+
+			<br>
+			<hr>
+			<br>
+			<p><b>Preprocessor:</b></p>
+			<li>Give instruction to the compiler to preprocess the information before actual compilation starts.</li>
+
+			<li>Begin with <b>#</b>.</li>
+
+			<li>Only white-space characters may appear before a preprocessor directive on a line.</li>
+
+			<li>Preprocessor directives are not C++ statements, so they do not end in a semicolon (;).</li>
+
+			<br>
+			<li><b>#include</b> is used to include a header file into the source file.</li>
+
+			<br>
+			<li><b>#define</b> creates symbolic constants. The symbolic constant is called a <b>macro</b> and the general form of the directive is:</li>
+
+		</center>
+
+
+		<div style="border: 1px solid #000000; width: 279px; margin: auto;">
+			<b>#define</b>macro-name replacement-text
+		</div>
+
+		<div style="border: 1px solid #000000; width: 279px; margin: auto;">
+			<b>#define</b> MIN(a, b) (((a) &lt;(b)) ? a : b)
+		</div>
+
+		<div style="border: 1px solid #000000; width: 370px; margin: auto;">
+			<b>#define</b> DEBUG<br/> ....
+			<br/> #ifdef DEBUG<br/> &emsp;cerr &lt;&lt;"Trace: Inside main function" &lt;&lt;endl;<br/> #endif
+		</div>
+
+		<center>
+			<br>
+
+			<li><b>#if</b></li>
+
+			<br>
+
+			<li><b>#else</b></li>
+
+			<br>
+
+			<li><b>#line</b></li>
+
+			<br>
+
+			<b>Predefined C++ Macros:</b>
+			<table style="border: 1px solid #000000;">
+				<tbody>
+					<tr>
+						<th width="30%">Macro</th>
+						<th>Description</th>
+					</tr>
+
+					<tr>
+						<td>__LINE__</td>
+						<td>This contain the current line number of the program when it is being compiled.</td>
+					</tr>
+
+					<tr>
+						<td>__FILE__</td>
+						<td>This contain the current file name of the program when it is being compiled.</td>
+					</tr>
+
+					<tr>
+						<td>__DATE__</td>
+						<td>This contains a string of the form month/day/year that is the date of the translation of the source file into object code.</td>
+					</tr>
+
+					<tr>
+						<td>__TIME__</td>
+						<td>This contains a string of the form hour:minute:second that is the time at which the program was compiled.</td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
+
+
+		<div style="border: 1px solid #000000; width: 420px; margin: auto;">
+			cout &lt;&lt;"Value of __LINE__ : " &lt;&lt;__LINE__ &lt;&lt;endl;<br/> cout &lt;&lt;"Value of __FILE__ : " &lt;&lt;__FILE__ &lt;&lt;endl;<br/> cout &lt;&lt;"Value of __DATE__ : " &lt;&lt;__DATE__ &lt;&lt;endl;<br/>cout &lt;&lt;"Value of __TIME__ : " &lt;&lt;__TIME__ &lt;&lt;endl;
+		</div>
+
+		<center>
+			<br>
+			<hr>
+			<b>Function:</b>
+
+			<p>
+				<li>A <b>Function</b> is a block of code that may be called by and return a value to other code.</li>
+			</p>
+
+			<li>
+				<p>Function parameters can be an Assignment Expression</p>
+			</li>
+
+
+			<div style="border: 1px solid #000000; width: 200px;">
+				int x;<br/>printf("%d", x = 32);
+			</div>
+
+
+			<br>
+			<p><b>Call by value:</b></p>
+
+			<li><b>Function arguements</b> are passed to functions by value. If you pass in a variable, a copy of the variable is passed to the function. <i>Caller</i> variable is unmodified.</li>
+
+			<img src="http://i.imgur.com/cZh8yLa.png">
+			<br>
+
+			<p>
+				<b>Call by reference:</b>
+			</p>
+
+			<li></li>
+
+			<p><img src="http://i.imgur.com/VnOzKW3.png"></p>
+
+			<br>
+			<hr>
+
+
+			<p><b>The # and ## Operators:</b></p>
+
+			<li>The # and ## preprocessor operators are available in C++ and ANSI/ISO C.</li>
+
+			<li>The # operator causes a replacement-text token to be converted to a string surrounded by quotes.</li>
+		</center>
+
+		<div style="border: 1px solid #000000; width: 320px; margin: auto;">
+			#include &lt;iostream &gt;<br/> using namespace std;<br/> #define MKSTR( x ) #x<br/> int main () {<br/> &emsp;cout &lt;&lt;MKSTR(HELLO C++) &lt;&lt;endl;<br/> &emsp;return 0;<br/>}
+		</div>
+
+		<center>
+			<p><b>Output (No "" Around The String):</b></p>
+		</center>
+
+		<div style="border: 1px solid #000000; width: 100px; margin: auto;">HELLO C++</div>
+
+		<center>
+			<br>
+			<li>Preprocessor turns the line:</li>
+
+			<p>cout &lt;&lt;MKSTR(HELLO C++) &lt;&lt;endl;</p>
+
+			<p><b>To:</b></p>
+
+			<p>cout &lt;&lt;"HELLO C++" &lt;&lt;endl;</p>
+
+			<br>
+
+			<li>The ## operator is used to concatenate two tokens.</li>
+
+			<br>
+			<hr>
+
+			<p><b>cout requires lot of STL:</b></p>
+
+			<img src="http://i.imgur.com/uzOKehY.png">
+
+			<br>
+			<hr>
+
+			<p><b>printf:</b></p>
+
+			<p><b>%c</b> used for printing character object. Not a string. "x";</p>
+
+			<p><b>%d</b> and <b>%i</b> converts a signed integer into decimal representation.</p>
+
+			<p><b>%f</b> converts floating-point to the decimal notation.</p>
+
+			<p><b>%n</b> returns the <b>number of characters written so far by this call</b> to the function.</p>
+
+			<p><b>%s</b> writes a character string.</p>
+
+			<p><b>%x</b> converts an unsigned integer into hexadecimal representation.</p>
+		</center>
+
+
+		<div id="printf">
+			<hr> #include &lt;cstdio &gt;<br/> #include &lt;limits &gt;<br/> #include &lt;cstdint &gt;<br/> #include &lt;cinttypes &gt;<br/>
+			<p>using namespace std;</p>
+			<b>int</b> main() {<br/>
+			<p>&emsp;<b>printf</b>("Strings:\n");</p>
+			<p>&emsp;<b>const char</b> * <b>s</b> = "Hello";</p>
+			&emsp;<b>printf</b>("\t[%10s]\n\t[%-10s]\n\t[%*s]\n\t[%-10.*s]\n\t[%-*.*s]\n", s, s, 10, s, 4, s, 10, 4, s);<br/> &emsp;
+			<b>printf</b>("Characters:\t%c %%\n", 65);<br/> &emsp;
+			<b>printf</b>("Integers\n");<br/> &emsp;
+			<b>printf</b>("Decimal:\t%i %d %.6i %i %.0i %+i %u\n", 1, 2, 3, 0, 0, 4, -1);<br/> &emsp;
+			<b>printf</b>("Hexadecimal:\t%x %x %X %#x\n", 5, 10, 10, 6);<br/> &emsp;
+			<b>printf</b>("Octal:\t%o %#o %#o\n", 10, 10, 4);<br/> &emsp;
+			<b>printf</b>("Floating point\n");<br/> &emsp;
+			<b>printf</b>("Rounding:\t%f %.0f %.32f\n", 1.5, 1.5, 1.3);<br/> &emsp;
+			<b>printf</b>("Padding:\t%05.2f %.2f %5.2f\n", 1.5, 1.5, 1.5);<br/> &emsp;
+			<b>printf</b>("Scientific:\t%E %e\n", 1.5, 1.5);<br/> &emsp;
+			<b>printf</b>("Hexadecimal:\t%a %A\n", 1.5, 1.5);<br/> &emsp;
+			<b>printf</b>("Special values:\t0/0=%g 1/0=%g\n", 0./0, 1./0);<br/> &emsp;
+			<b>printf</b>("Variable width control:\n");<br/> &emsp;
+			<b>printf</b>("right-justified variable width: '%*c'\n", 5, 'x');<br/> &emsp;
+			<b>int</b> r = <b>printf</b>("left-justified variable width : '%*c'\n", -5, 'x');<br/> &emsp;
+			<b>printf</b>("(the last printf printed %d characters)\n", r);<br/>
+			<p>&emsp;//
+				<font color="#00AA00">fixed-width types</font><br/> &emsp;
+				<b>uint32_t</b> val = numeric_limits &lt;uint32_t &gt;::max();<br/> &emsp;
+				<b>printf</b>("Largest 32-bit value is %" PRIu32 " or %#" PRIx32 "\n", val, val);<br/> &emsp;
+				<b>return</b> 0;<br/> }
+				<hr>
+		</div>
+
+		<center>
+			<h2>Output:</h2>
+		</center>
+
+		<div id="printf">
+			<hr> Strings:
+			<br/> &emsp;[&emsp;Hello]
+			<br/> &emsp;[Hello &emsp;]<br/> &emsp;[&emsp;Hello]
+			<br/> Characters: A %<br/> Integers
+			<br/> Decimal: 1 2 000003 0 +4 4294967295<br/> Hexadecimal: 5 a A 0x6<br/> Octal: 12 012 04<br/> Floating point Rounding: 1.500000 2 1.30000000000000004440892098500626<br/> Padding: 01.50 1.50 1.50<br/> Scientific: 1.500000E+000 1.500000e+000<br/> Hexadecimal: 0x0p-63 0X0P-63<br/> Special values: 0/0=nan 1/0=inf<br/> Variable width control:<br/> right-justified variable width: ' x'<br/> left-justified variable width : 'x '<br/> (the last printf printed 40 characters)<br/> Largest 32-bit value is 4294967295 or 0xffffffff<br/>
+			<hr>
+		</div>
+		</ul>
+		<br>
+		<br>
+
+
+		<center>
+			<h2>windows.h:</h2>
+			<br>
+			<hr>
+		</center>
+
+		<ul>
+
+			<br>
+			<li>Windows-specific header file which contains declarations for all of the functions in the Windows API, all the common macros used by Windows programmers, and all the data types used by the various functions and subsystems.</li>
+
+			<br>
+			<li>windows.h header file <u>should be included before any other library</u>. <b><u>Even the C standard library</u></b>. This is because the windows.h file includes macros and other components that may modify, extend, or replace things in these libraries.</li>
+
+			<br>
+			<li>windows.h will cause <u><b>all the string functions to use UNICODE.</b></u></li>
+
+			<br>
+			<li>Many of the standard C library functions are <b><u>already included in the Windows kernel</b></u> without needing to load the standard libraries.</li>
+
+			<br>
+			<hr style="width: 200px;">
+
+			<br>
+			<li>Unlike the <b>main</b>() function, <b><u>arguments of the WinMain() function are not optional</u></b>.</li>
+
+			<br>
+			<li>The first argument, <b><i>hInstance</i></b>, is a handle to the instance of the program you are writing.</li>
+
+			<br>
+			<li>The second argument, <b><i>hPrevInstance</i></b>, is used if your program had any previous instance. If not, this argument can be ignored.</li>
+
+			<br>
+			<li>The third argument, <b><i>lpCmdLine</i></b>, is a string that represents all items used on the command line to compile the application.</li>
+
+			<br>
+			<li>The last argument, <b><i>nCmdShow</i></b>, controls how the window you are building will be displayed.</li>
+
+			<br>
+			<hr style="width: 200px;">
+
+			<br>
+			<li>This <b>main window</b> is created using a class object.</li>
+
+			<br>
+			<li>The Win32 library provides two classes for creating the main window. They are <b><u>WNDCLASS</u></b> and <b><u>WNDCLASSEX</u></b>.</li>
+
+			<br>
+			<center>
+				<table border="0" width="560" style="background-color: #DDDDDD; max-width: 275px;">
+					<tbody>
+						<tr>
+							<td width="275px" style="border-right: 1px solid #000000; padding: 2px" valign="top">
+								<pre>
+typedef struct _WNDCLASS { 
+  UINT       style; 
+  WNDPROC    lpfnWndProc; 
+  int        cbClsExtra; 
+  int        cbWndExtra; 
+  HINSTANCE  hInstance; 
+  HICON      hIcon; 
+  HCURSOR    hCursor; 
+  HBRUSH     hbrBackground; 
+  LPCTSTR    lpszMenuName; 
+  LPCTSTR    lpszClassName; 
+} WNDCLASS, *PW</pre>
+							</td>
+
+
+							<td width="275px" style="padding: 5px">
+								<pre>
+typedef struct _WNDCLASSEX { 
+  UINT       cbSize; 
+  UINT       style; 
+  WNDPROC    lpfnWndProc; 
+  int        cbClsExtra; 
+  int        cbWndExtra; 
+  HINSTANCE  hInstance; 
+  HICON      hIcon; 
+  HCURSOR    hCursor; 
+  HBRUSH     hbrBackground; 
+  LPCTSTR    lpszMenuName; 
+  LPCTSTR    lpszClassName; 
+  HICON      hIconSm; 
+} WNDCLASSEX, *PWNDCLASSEX;</pre>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</center>
+
+			<br>
+			<hr style="width: 200px;">
+
+			<br>
+			<li>When the window is on the screen, WinMain() dispatches messages to its message-handling function.</li>
+
+			<br>
+			<li>How does the compiler know to invoke wWinMain instead of the standard main function? What actually happens is that the Microsoft C runtime library (CRT) provides an implementation of main that calls either WinMain or wWinMain.</li>
+
+			<br>
+			<li>Everything in Windows is a window. That includes buttons, menus, menu items, sliders, and, of course, windows.</li>
+
+			<br>
+			<li>Nearly everything in Windows can send or receive messages.</li>
+
+		</ul>
+
+		<br>
+		<center>
+			<b><u style="color: #FF0000;">Restriction!</u></b><br />
+			<u>Pointers may not be passed BYREF, so the lpszCmdLine parameter of WINMAIN must be declared to be passed BYVAL.</u>
+		</center>
+
+
+		<br>
+		<div style="background-color: #DDDDDD;">
+			#include &lt;windows.h&gt;<br />
+
+			<p><b>int</b> WINAPI <b>WinMain</b>(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {<br /> &emsp;
+				<b>MessageBox</b>(NULL, "Goodbye, cruel world!", "Note", MB_OK);<br /> &emsp;
+				<b>return</b> 0;<br /> }
+		</div>
+
+
+		<div style="background-color: #DDDDDD;">
+			#include &lt;windows.h&gt;<br />
+
+			<p><b>int main</b>() {<br /> &emsp;MessageBox(0, "Press OK", "Hi", MB_SETFOREGROUND);<br /> &emsp;return 0;<br /> }
+		</div>
+
+		<br>
+		<ul style="border: 1px dotted #000000;">
+			<br>
+			<center><b>Child header files:</b></center>
+			<hr style="width: 150px;">
+			<li>excpt.h – Exception handling</li>
+			<li>stdarg.h – Variable-argument functions (standard C header)</li>
+			<li>windef.h – Macros and types</li>
+			<li>winnt.h – Macros and types (for Windows NT)</li>
+			<li>basetsd.h – More vrious types</li>
+			<li>guiddef.h – the GUID type</li>
+			<li>ctype.h – character classification (standard C header)</li>
+			<li>string.h – strings and buffers (standard C header)</li>
+			<li>winbase.h – kernel32.dll, advapi32.dll</li>
+			<li>winerror.h – Windows error codes</li>
+			<li>wingdi.h – Graphics Device Interface</li>
+			<li>winuser.h – user32.dll: user services</li>
+			<li>winnls.h – NLS (Native Language Support)</li>
+			<li>wincon.h – console services</li>
+			<li>winver.h – version information</li>
+			<li>winreg.h – Windows registry</li>
+			<li>winnetwk.h – WNet (Windows Networking)</li>
+			<li>winsvc.h – Windows services and the SCM (Service Control Manager)</li>
+			<li>imm.h – Input Method Editor</li>
+			<br>
+		</ul>
+
+	</body>
+
+</html>
         <li>Must only be one "main" function.</li>
 
         
