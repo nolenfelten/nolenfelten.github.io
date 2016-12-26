@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+	  color: white;
+      background-color: black;
+  	  text-decoration: none;
+	  text-align: center;
+    }
+    
+    h2 {
+      color: green;
+    }
+    
+    b {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><b>Original Xbox</b> is a home video game console and the first installment in the Xbox series of consoles manufactured by Microsoft. It was released on November 15, 2001, in North America, followed by Australia, Europe and Japan in 2002.</li>
+    <li>Last game in North America was Madden NFL 09 released in August 2008. Support for out-of-warranty Xbox consoles was discontinued on March 1, 2009. Support for Xbox Live on the console ended on April 15, 2010.</li>
+    <li>It was Microsoft's first video game console after collaborating with Sega to port Windows CE to the Dreamcast console. Microsoft repeatedly delayed the console, which was first mentioned publicly in late 1999 during interviews with Microsoft's then-CEO Bill Gates. Gates stated that “we want Xbox to be the platform of choice for the best and most creative game developers in the world.”</li>
+    <li>The Xbox consists of a Pentium III Celeron mobile 733 MHz CPU, 64 MB of RAM, a GeForce 3 MX with TV out, a 10 GB IDE hard disk, an IDE DVD drive, Fast Ethernet, as well as USB for the gamepads. It runs a simplified Windows 2000 kernel, and the games include adapted versions of Win32, libc and DirectX statically linked to them</li>
+    <li>Its GPU is Nvidia's 233 MHz NV2A. It has a floating-point performance of 7.3 GFLOPS, capable of geometry calculations for up to a theoretical 115 million vertices/second. It has a peak fillrate of 932 megapixels/second, capable of rendering a theoretical 29 million 32-pixel triangles/second. With bandwidth limitations, it has a realistic fillrate of 250–700 megapixels/second, with Z-buffering, fogging, alpha blending, giving it 7.8–21 million 32-pixel triangles/second.</li>
+    <li>The Xbox runs a custom operating system which is based on the Windows architecture kernel. It exposes APIs similar to APIs found in Microsoft Windows, such as Direct3D 8.1.</li>
+    <li>The user interface for the Xbox is called the Xbox Dashboard.</li>
+  </ul>
+  
+    <p><img src="http://i.imgur.com/JKNUiej.png" width=400px height=400px><img src="http://i.imgur.com/G8VjQCL.png" width=400px height=400px></p>
+  
+    <br>
+    <p>Within a few months of its release the initial layer of security on the Xbox BIOS (which relied heavily on obfuscation) was broken by MIT student <a href="http://i.imgur.com/pv3e6j2.png">Andrew Huang</a> and the contents of the "hidden" boot ROM was extracted using some custom built hardware. Once this information was available, the code was soon modified so that it would skip digital signature checks and media flags, allowing unsigned code to be run.</p>
+    <p>The book written by Andrew Huang, <a href="http://bunniefoo.com/nostarch/HackingTheXbox_Free.pdf"><i>Hacking the Xbox: An Introduction to Reverse Engineering.</i></a>, you will find the story of when an MIT student, extracted security keys from the Xbox. Then crushing disappointment of receiving a letter from MIT repudiating any association with the work, effectively leaving him to face Microsoft.</p>
+    
+    <br>    
+  </center>
+  <hr>
+  <br>
+  <center><h2>Motivation for the Security System</h2></center>
+  <p>There were limitations to the console to prevent abuse. However, there is an intense desire from multiple groups, legitimate and illegitimate, to get the Xbox to run code from arbitrary sources without hardware modifications. The Xbox is also a popular target for pirates because of the ease of porting legacy game emulators, and because of its high profile and ease of obtaining compatible debugging and testing hardware.</p>
+  <p>Additionally, the similarity of the Xbox architecture to the PC architecture makes the Xbox a good educational vehicle. </p>
+  <ul>
+    <li>The hardware is subsidized and money is gained with the games, therefore people should not be able to buy an Xbox without the intent to buy any games.</li>
+    <li>Nobody should be able to publish unlicensed software, because Microsoft wants to gain money with the games to amortize the hardware losses</li>
+    <li>Xbox couldn't read burned games or music disc. Preventing counterfeiting. [Software Restriction]</li>
+    <li>Can not read a game disc with a standard PC disc drive. [Hardware Restriction]</li>
+    <li>Retail consoles would require all code to signed by Microsoft to be executed by the CPU. Developer Xbox's did not require this, however could NOT run code that was signed by Microsoft.</li>
+  </ul>
+  <p>Xbox Developer Kit (XDK):</p>
+  <p><img src="http://i.imgur.com/tRJgope.png"><img src="http://i.imgur.com/5gL6Apg.png" width=250px height=200px><img src="http://i.imgur.com/rgRBvYa.png"  width=300px height=200px><img src="http://i.imgur.com/92fIbBc.png" width=300px height=200px><img src='http://i.imgur.com/HJCP7JO.png' width=250px height=200px><img src="http://i.imgur.com/RvGl8ee.png" width=200px height=150px></p>
+  <p>In order to allow only licensed and authentic code to run, it is necessary to build a TCPA/Palladiumlike chain of trust, which reaches from system boot to the actual execution of the game. The first link is from the CPU to the code in ROM, which includes the Windows kernel, and the second link is from the kernel to the game.</p>
+  <p>There are several reasons that the operating system is contained in ROM (256 KB) instead of being stored on hard disk, like on a PC. First, it allows a faster startup, as the kernel can initialize while the hard disk is spinning up, furthermore, there is one link less in the chain of trust, and in case verification of the kernel gets compromised, it is harder to overwrite a ROM chip than modify data on a hard disk.</p>
+  <br>
+  <hr>
+  <br>
+  <center><h2>Startup Security</h2></center>
+  
+  <p>When turned on, x86-compatible CPUs start at the address 0xFFFFFFF0 in the address space, which is usually flash memory. For the Xbox, this is obviously no good idea, as flash memory can be:</p>
+    <ul>
+      <li><u>Replaced</u>. By removing the chip, fitting a socket and inserting a replacement chip.</li>
+      <li><u>Overridden</u>. By adding another flash memory chip to the LPC bus. This override functionality is necessary, because during manufacturing, an empty flash memory chip gets soldered onto the board, an override LPC ROM chip gets connected to the board and the system boots from the external ROM, which then programs the internal flash memory. This procedure is significantly cheaper than preprogramming the flash memory chips.
+      <li><u>Reprogrammed</u>. Because flash memory can be written to many times. It would be possible to use ROM instead of flash memory, but ROM is more expensive than flash memory.</li>
+  </ul>
+  <p>Thus, the machine must not start from flash memoery.</p> 
+  <p>To make two of the attacks impossible, by using ROM (<u>Read Only Memory</u>) chips instead of flash. There would be no way to reprogram them, and it would be possible to disable the LPC override functionality in the chipset, because it is not needed for the manufacturing process any more.</p>
+  <br>
+  <hr>
+  <br>
+  <center><h2>The Hidden ROM</h2></center>
+  <p>There is a solution between flash memory and ROM that combines advantages of both these approaches.</p>
+
+  <p>This trick is rather old and had already been used in the Nintendo 64. Use a tiny non-replaceable startup ROM, and put the bulk of the firmware data (i.e. the Windows kernel) into flash memory. The “internal” ROM checks whether the contents of the flash memory are authentic, and if yes, it passes execution to it.</p>
+  <p>This way, there will be another link in the chain of trust, but the ROM code can be trusted (if it is nonreplaceable), and if, in addition, it is non-accessible, an attacker may not even have a clue how verification works.</p>
+  
+  <center><h2>Location of the ROM</h2></center>
+  <p>But where can this ROM be put? It cannot be a separate chip, as it would be replaceable. It would have to be included into another chip. The CPU would be ideal, as the ROM contents would not travel over any visible bus, but then it would be impossible to use cheap off-the-shelf Celerons. Including it in any other chip would make it nonreplaceable, but data would travel over a bus. It seems to be a good compromise to store the ROM data in the Southbridge (”MCPX”), as it is connected via the very fast HyperTransport bus, so it is very hard to sniff. A former Microsoft employee confirmed that the developers tought that nobody was able to sniff HyperTransport.</p>
+  
+  <center><h2>Verification Algorithm</h2></center>
+  <p>This secret ROM stored in the Southbridge must verify the Windows kernel in the external flash memory before executing it.</p>
+  <p>One idea would be to checksum (hash) the flash contents using an algorithm like MD5 or SHA-1, but this would mean that the hash of the kernel has to be stored in the secret ROM as well, which would make it imposible to ship updated versions of the kernel in future Xboxes without also updating the ROM contents - which would be very expensive.</p>
+  <p>A digital signature algorithm like RSA would be better. It would be possible to update the kernel without changing the ROM, but an RSA implementation takes up a lot of space, and embedded ROM in the Southbridge is expensive. It would be ideal if the algorithm fit in only 512 bytes, which is impossible for RSA.</p>
+  <br>
+    
+  <hr>
+  <br>
+  
+  
+  <center><h2>Second Bootloader (”2bl”)</h2></center>
+  <p>A solution for this problem is again to introduce another link in the chain of trust. The ROM only hashes a small loader (”2bl”, “second bootloader”) in flash memory, which can never be changed.</p>
+  <p>It is then the job of this loader to verify the rest of flash, and as the second loader can be any size, there are no restrictions.</p>
+  <p>The final chain of trust looks like this: The CPU boots from the secret ROM embedded into the Southbridge, which cannot be changed. The secret ROM verifies the second bootloader in flash memory using a hash algorithm, and if it is authentic, runs it.</p>
+  <p>Second bootloader checks the kernel, and if authentic, runs it. </p>
+  <p>Now the second bootloader and the Windows kernel would be stored in flash memory in plain text, which is a bad idea. An attacker can immediately see how the second bootloader verifies the integrity of the kernel, and even analyze the complex kernel for possible exploits.</p>
+  <p>Encrypting all the flash contents will not solve possible vulnerability problems, but it will buy us time until the decryption of the flash contents is understood by hackers.</p>
+  <p>The decryption key would have to be stored in the secret ROM, and the 2bl verification code would also have to decrypt the flash contents into RAM while reading it.</p>
+  <p>Decrypting flash memory contents into RAM is a challenge if we are living inside the first few hundred bytes of code after the machine has started up. At this point, RAM might not be stable yet.</p>
+  <p>
+  <br>
+    
+  <center>
+    <h2>TSOP Flash</h2>
+    <a href="http://archive.is/dK88D">Tutorial</a> - <a href="http://archive.is/zdS6B">TSOP Flashing Unlock points</a>
+  </center>
+  
+  <p>The type of ROM used in the Xbox is an electrically erasable and programmable variety known as FLASH ROM. Typically comes in one of a few package types, and the Xbox uses one of the most popular packages, the TSOP (Thin Small Outline Package).</p>
+  <p>It is located in sector U7, on the top side of the Xbox motherboard.</p>
+  <p>The reference designator for the part is U7D1. The TSOP package is very recognizable because it is one of the few chip packages that is rectangular and has pins only on the narrow edges of the package.</p>
+  <p>Most other packages put pins on the long edge or all edges to maximize connectivity, but FLASH ROM has relatively low I/O requirements per silicon area. A quick check on the base part number, 29F080, with a Web search engine verifies that this part is indeed an 8 Mbit FLASH ROM.</p>
+  
+  <p>It is write protected by default, but disabling the write protection is as easy as soldering a single bridge on the motherboard. After all, this bridge has to be closed temporarily during manufacturing when programming flash memory for the first time.</p>
+  <p>Using this hack, it is possible, only with a USB stick, one of several games (007 Agent Under Fire, MechAssault, Splinter Cell) and a soldering iron, to permanently modify the Xbox.
+  <p>Only early Xbox Motherboards had a 1 MB flash chip. You could flash multiple ROM images!</p>
+  <p><img src="http://i.imgur.com/xXwD52R.png"></p>  
+  <hr>
+  <br>
+  <center><h2>Game Exploits</h2></center>
+  <p>What data do games load? Graphics data, audio data, video data... - but we cannot alter them, because it is not easily possible to create authentic Xbox DVDs, and the Xbox won't boot originals from DVD-R.</p>
+  <p>But most games can load savegames, and these can easily be changed. The Xbox memory units are more or less standard USB storage devices.</p>
+  <p>It is possible to use most USB sticks with the Xbox, and just store hacked savegames on them.</p>
+  
+  <p>Plenty of Xbox games had <u>buffer vulnerabilities</u> in their savegame handlers. It was often as easy as extending the length of strings like the name of the player, and the game would overwrite its stack with our data and eventually jump to the code we embedded in the savegame.</p>
+  <p>The procedure for the user was then to simply copy a hacked savegame from a USB stick onto the Xbox hard disk, run the game and load the savegame.</p>
+  <p>After a buffer exploit, we would normally only be in user mode - not on the Xbox, as all Xbox games run in kernel mode. The reason for this is probably a slight speed advantage, or, less likely, a simpler environment for the game, but Microsoft tried to make the environment as similar to the Windows/DirectX environment as possible, so user mode would have actually made the environment “simpler” for many Windows/DirectX developers.</p>
+  
+  
+  <center><h2>Dashboard Exploits</h2></center>
+  
+  <p>The problem with the savegame hack was that, if you didn't want to overwrite the flash memory chip, you had to insert the game and load the savegame every time you wanted to run unsigned code. Having full control of the machine using the savegame exploit also meant we could access the hard disk without opening the Xbox.</p>
+  
+  <p>This way, it became interesting to closely examine the hard disk contents for vulnerabilities. </p>
+  <p>The Dashboard is the main program on hard disk, executed every time the Xbox is started without a game in the DVD drive. While the settings menu and savegame management on the Nintendo GameCube fit well into 2 MB of ROM, the Xbox Dashboard, which is roughly comparable in its functionality, occupies more than 100 MB. So the original idea why to include a hard disk might have been initiated by the inability to compress the Dashboard into typical ROM sizes.</p>
+  <p>The dashboard loads its data files, like audio and graphics, from hard disk. With the savegame exploit, we can now alter the hard disk contents, even without opening the Xbox.</p>
+  
+  <p>The dashboard executable is signed and can therefore not be altered, and all data files are hashed, with the hashes stored inside the dashboard executable. Well, all files, except for two font files.</p>
+
+  <p>There was an integer vulnerability in the font handling routines, so that we could run our own code by replacing the font files. Combined with the savegame exploit, it was as easy as transferring the savegame and loading it, which would run a script that modifies the fonts.</p>
+  
+  
+  </body>
+
+</html>
