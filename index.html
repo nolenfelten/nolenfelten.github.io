@@ -237,7 +237,7 @@ function loop() {
 	for( var i = 0; i < vertices.length; i++ ) {
 		var v = vertices[i];
 		var r = v.rotateX(angle).rotateY(angle);
-		var p = r.project((width - 5), (height + 55), 200, 4.9);
+		var p = r.project((width), (height + 55), 200, 4.9);
 		t.push(p)
 		
 	}
