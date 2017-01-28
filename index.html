@@ -1,3 +1,4 @@
+
 <html>
 	<head>
 		<title>Nolen James Felten</title>
@@ -6,25 +7,21 @@
               margin: 0px;
               padding: 0px;
           }
-
           #head {
               background-color: #000000;
               text-align: center;
               margin: 0px;
               padding: 15px;
           }
-
           #code {
               border: 1px dotted #000000;
           }
-
           #xbox {
               color: black;
               background-color: black;
               text-decoration: none;
               text-align: center;
           }
-
           ul li {
               text-decoration: none;
               display: inline;
@@ -35,17 +32,678 @@
               border-radius: 4px 4px 0 0;
               transition: 2s; 
           }
-
           a:link {
               text-decoration: none;
           }
-
           a:visited {
               color: #0099CC;
           }
-
           ul li:hover {
               background-color: orange;
+              transition: 2s; 
+          }
+          #gallery {
+              background-color: rgb(200, 191, 231);
+          }
+          #codecademy {
+              align: center;
+              text-align: center;
+              background-color: rgb(52, 179, 160);
+          } 
+          #government {
+              text-align: center;
+              background: url("http://i.imgur.com/wlRgz77.png") no-repeat center; 
+              background-size: cover;
+          }
+          #notes {
+              background-color: rgb(87, 106, 145);
+              align: center;
+              text-align: center;
+              background-size: cover;
+          }
+          #cpp {
+              overflow: hidden;
+              width: 80%;
+              z-index: 1;
+              margin: 25px;
+              background-color: #FFFFFF;
+          }
+           #thesis {
+             background-color: rgb(0, 0, 0);
+              align: center;
+              text-align: center;
+               z-index: -4;
+           }
+          #thesis img {
+              margin: 0px;
+              z-index: -5;
+              align: center;
+              width: 80%;
+          }
+		#xbox_notes {
+			width: 80%;
+			z-index: 1;
+			position: relative;
+			bottom: 75;
+			height: 250px;
+			background-color: #FFFFFF;
+		}
+          
+        .programSectionModule {
+          width: 300px;
+          border: 1px solid white;
+          margin: 10px;
+          display: inline-block;
+          vertical-align: top;
+  `     }
+          
+          
+        .programSectionHead {
+            background-color: #f50;
+            color: white;
+            font-family: 'Vollkorn', serif;
+            text-align: center;
+            width: 300px;
+            float: left;
+            font-size: 16pt;
+            font-variant: small-caps;
+            padding-bottom: 3px;
+        }
+        
+        .programSectionCourse {
+          width: 300px;
+          text-align: left;
+          float: left;
+          cursor: pointer;
+          font-size: 10pt;
+        }
+          
+         .programSection {
+            width: 100%;
+            float: left;
+            overflow: auto;
+            text-align: center;
+            display: table;
+          }
+		</style>
+	</head>
+
+	<body>
+		<div id="head">
+          <canvas id="gui" width="625px" height="250px" style="border: 2px dotted #ff00ff; z-index: 0;"></canvas>	
+          
+		</div>
+       <script>
+          /* Constructs a CSS RGB value from an array of 3 elements. */
+          function arrayToRGB(arr) {
+              if( arr.length == 3 ) {
+                  return "rgba(" + arr[0] + "," + arr[1] + "," + arr[2] + ", 0.4)";
+              }
+              return "rgb(0,0,0)";
+          }
+      </script>
+	   <script>
+          // Screen
+          var chart = document.getElementById("gui").getContext("2d");
+          var width = document.getElementById("gui").width
+          var height = document.getElementById("gui").height
+          var text;
+          var text1;
+          var text2;
+         
+          chart.lineWidth = "4"
+          chart.strokeStyle = "#DD0AFF"
+          chart.font = "23px Arial";
+          chart.fillStyle = "#ffffff";
+          
+          text = "Nolen James Felten"
+          chart.fillText(text, width / 2 -(chart.measureText(text).width / 2), 20)
+                    
+          
+          chart.moveTo( width / 2 - (chart.measureText(text).width / 2) , 24)
+          chart.lineTo( width / 2 + (chart.measureText(text).width / 2) , 24)
+          chart.stroke()
+          
+          
+          chart.font = "17px Helvetica";
+          text = "Developer"
+          
+          chart.fillText(text, width / 2 -(chart.measureText(text).width / 2), 45)
+                    
+          chart.moveTo( width / 2 - (chart.measureText(text).width / 2) , 50)
+          chart.lineTo( width / 2 + (chart.measureText(text).width / 2) , 50)
+          chart.stroke()
+          
+          chart.font = "17px Helvetica";
+          text1 = "Phone: "
+          text = "707-241-6221"
+          text2 = "Email: "
+          text3 = "nolenf@gmail.com"
+          
+          chart.fillText(text1, width - chart.measureText(text1).width - chart.measureText(text).width - 5, height - 30)
+          chart.fillText(text2, width - chart.measureText(text3).width - chart.measureText(text2).width - 5, height - 8)
+          
+          chart.fillStyle = "#FF66FF";
+         chart.fillText(text, width - chart.measureText(text).width - 5, height - 30) 
+         chart.fillText(text3, width - chart.measureText(text3).width - 5, height - 8)
+          
+          
+        </script>
+      
+      <script>
+        
+function Point3D(x,y,z) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.rotateX = function(angle) {
+        var rad, cosa, sina, y, z
+        rad = angle * Math.PI / 180
+        
+        cosa = Math.cos(rad)
+        sina = Math.sin(rad)
+        
+        y = this.y * cosa - this.z * sina
+        z = this.y * sina + this.z * cosa
+       
+        return new Point3D(this.x, y, z)
+    }
+    this.rotateY = function(angle) {
+        var rad, cosa, sina, x, z
+        
+        rad = angle * Math.PI / 180
+        
+        cosa = Math.cos(rad)
+        sina = Math.sin(rad)
+        
+        z = this.z * cosa - this.x * sina
+        x = this.z * sina + this.x * cosa
+        
+        return new Point3D(x,this.y, z)
+    }
+    this.rotateZ = function(angle) {
+        var rad, cosa, sina, x, y
+        
+        rad = angle * Math.PI / 180
+        
+        cosa = Math.cos(rad)
+        sina = Math.sin(rad)
+        
+        x = this.x * cosa - this.y * sina
+        y = this.x * sina + this.y * cosa
+        
+        return new Point3D(x, y, this.z)
+    }
+    this.project = function(viewWidth, viewHeight, fov, viewDistance) {
+        var factor, x, y
+        
+        factor = fov / (viewDistance + this.z)
+        x = this.x * factor + viewWidth / 2
+        y = this.y * factor + viewHeight / 2
+        return new Point3D(x, y, this.z)
+    }
+}
+      </script>
+      
+<script>
+function loop() {
+	var t = new Array();
+	
+	// background
+	chart.fillStyle = "rgb(1, 1, 1)";
+	chart.fillRect(250, 250, 4, 5);
+	for( var i = 0; i < vertices.length; i++ ) {
+		var v = vertices[i];
+		var r = v.rotateX(angle).rotateY(angle);
+		var p = r.project((width), (height + 55), 200, 4.9);
+		t.push(p)
+		
+	}
+	var avg_z = new Array();
+	for( var i = 0; i < faces.length; i++ ) {
+		var f = faces[i];
+		avg_z[i] = {"index":i, "z":(t[f[0]].z + t[f[1]].z + t[f[2]].z + t[f[3]].z) / 4.0};
+	}
+	avg_z.sort(function(a,b) { return b.z - a.z;} );
+	for( var i = 0; i < faces.length; i++ ) {
+		var f = faces[avg_z[i].index]
+		// Faces
+		chart.fillStyle = arrayToRGB(colors[avg_z[i].index]);
+		chart.beginPath()
+		chart.moveTo(t[f[0]].x,t[f[0]].y)
+		chart.lineTo(t[f[1]].x,t[f[1]].y)
+		chart.lineTo(t[f[2]].x,t[f[2]].y)
+		chart.lineTo(t[f[3]].x,t[f[3]].y)
+		chart.closePath()
+		chart.fill()
+		
+		// Edges
+		chart.strokeStyle = "rgba(255, 255, 255, 0.12)";
+		chart.lineWidth = "9"
+		chart.beginPath()
+		chart.moveTo(t[f[0]].x,t[f[0]].y)
+		chart.lineTo(t[f[1]].x,t[f[1]].y)
+		chart.lineTo(t[f[2]].x,t[f[2]].y)
+		chart.lineTo(t[f[3]].x,t[f[3]].y)
+		chart.closePath()
+		chart.stroke()
+		
+		// Vertex
+		chart.strokeStyle = "rgba(0, 0, 255, 1)";
+		chart.lineWidth = "0.1"
+		chart.beginPath()
+		chart.moveTo(t[f[0]].x,t[f[0]].y)
+		chart.lineTo(t[f[1]].x,t[f[1]].y)
+		chart.lineTo(t[f[2]].x,t[f[2]].y)
+		chart.lineTo(t[f[3]].x,t[f[3]].y)
+		chart.closePath()
+		chart.stroke()
+	}
+	angle += 3
+}
+var vertices = [
+	new Point3D(-1,1,-1),
+	new Point3D(1,1,-1),
+	new Point3D(1,-1,-1),
+	new Point3D(-1,-1,-1),
+	new Point3D(-1,1,1),
+	new Point3D(1,1,1),
+	new Point3D(1,-1,1),
+	new Point3D(-1,-1,1)
+];
+// Define the vertices that compose each of the 6 faces. These numbers are
+// indices to the vertex list defined above.
+var faces  = [
+	[0,1,2,3],
+	[1,5,6,2],
+	[5,4,7,6],
+	[4,0,3,7],
+	[0,4,5,1],
+	[3,2,6,7]
+];
+// Define the colors for each face.
+var colors = [
+	[255,0,20],
+	[30,255,0],
+	[0,0,0],
+	[105,205,205],
+	[0,0,255],
+	[86,26,139]
+];
+var angle = 0;
+setInterval(loop,33);
+</script>
+      <br>
+		
+
+		<center>
+			<div id="web">
+				<h3>
+					<span class="rainbow">Web Developer:</span>
+				</h3>
+			
+			
+				<p style="border: 2px solid black;"><a href="https://delewpaint.github.io/">Delew Paint</a> | <a href="http://nolenfelten.com">Nolen Felten</a> | <a href="https://ziggybuilt.com/">Ziggy Built Performance</a> | <a href="http://pacificretail.com/">Pacific Retail Capital Partners</a> | <a href="http://ventek-intl.com/">Ventek International</a> | <a href="http://www.ecig101.com/">E-Cig 101</a> | <a href="http://cblsalon.com/">Chandelier Beauty Lounge Salon</a></p>
+			
+			</div>
+
+		
+		
+			<div id="government">
+		
+				<hr>
+				<br>
+				<h2>
+					<span class="rainbow" style="background: none; color: rgb(0, 40, 240);">Government:</span>
+				</h2>
+				
+                <b>Sonoma County Volunteer</b>
+				<p>
+					<a href="https://github.com/OpenSantaRosa">
+						<img src="http://i.imgur.com/kEskccT.png" style="opacity: 0.9; border: 2px solid black;">
+					</a>
+				</p>
+				
+				<br>
+			</div>
+
+
+
+			<div id="gallery">
+
+				<br>
+				<h3>
+					<span class="rainbow">Graphical User Interface Design:</span>
+				</h3>
+
+                <p>Click an image to view the project page.</p>
+				<input type="button" onclick="plusDivs(-1)" value="&lt;=="></input>
+				<input type="button" onclick="plusDivs(1)" value="==&gt;"></input>
+				<br>
+
+
+				
+				<p class="mySlides">
+					<table border="">
+						<tbody>
+							<tr>
+								<td style="background: #000000;">
+									<center>
+										<h2 style="padding-top: 20px;">
+											<a href="https://github.com/nolenfelten/SMS-Bomb" style="color: #FF0000;">SMS Bomb!</a>
+										</h2>
+									
+						
+										<p style="color: #FFFFFF">
+											Fun project that uses STMP to send text messages.<br />
+											Built with HTML, JS, and PyQt Designer.
+										</p>
+									</center>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<a href="https://github.com/nolenfelten/SMS-Bomb" style="color: #FF0000;">
+										<img src="http://i.imgur.com/PKoz6lM.gif" style="max-width: 100%; min-height: 321px;">
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</p>
+
+
+				<p class="mySlides">
+					<table border="">
+						<tbody>
+							<tr>
+								<td id="xbox">
+									<center>
+										<a href="https://github.com/nolenfelten/Original-Xbox-Game-Installer">
+											<h2 style="padding-top: 20px; color: #00FF00;">Original Xbox Game Installer</h2>
+										</a>
+
+										<p style="color: #FFFFFF">
+											Script I was hired to build that runs on <a href="http://www.xbmc4xbox.org.uk/">XBMC4Xbox's</a> built-in Python interpreter.<br />
+											Downloads then extracts RAR, ZIP, and xISO archives.
+										</p>
+									</center>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<a href="https://github.com/nolenfelten/Original-Xbox-Game-Installer">
+										<img src="http://i.imgur.com/jl82oRD.png" height="500px" width="870px">
+									</a>
+								</td>
+							</tr>
+
+
+						</tbody>
+					</table>
+				</p>
+			
+				<p class="mySlides">
+					<table border="">
+						<tbody>
+							<tr>
+								<td style="background: #000000;">
+									<center>
+										<h2 style="padding-top: 20px;">
+											<a href="https://github.com/nolenfelten/Dailymotion-Account-Framework" style="color: #FFFFFF;">Dailymotion Account Framework</a>
+										</h2>
+										<p style="color: #FFFFFF">
+											Independent marketing operation to sign up 1,000 accounts and automate managing each. 
+										</p>
+									</center>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<a href="https://github.com/nolenfelten/Dailymotion-Account-Framework" style="color: #FFFFFF;"><img src="http://i.imgur.com/ejldGKW.png" height="450px" width="870px"></a>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<a href="https://github.com/nolenfelten/Dailymotion-Account-Framework" style="color: #FFFFFF;"><img src="http://i.imgur.com/3sLdGjb.png" height="200px" width="870px"></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</p>
+			<img src="http://i.imgur.com/okuVhnh.png" height="200" width="500px">
+				<br>
+                
+                <br>
+			</div>	
+		
+			
+
+
+
+	
+
+
+
+            
+			<div id="codecademy">
+              <br>
+              <h2><span class="rainbow">Education:</span></h2>
+              
+              <a href="https://www.codecademy.com/nolenf/"><img src="https://p5.zdassets.com/hc/settings_assets/1030455/200272088/1muBAt6udX37m4Ihlik09w-CC_Logotype_Lockup_Blue_Alpha.png" width="750px" height="250px"></a>
+			
+			  <p><a href="https://www.codecademy.com/nolenf/"><img src="http://i.imgur.com/9aA2Ca8.png"></a></p>
+              
+              <br>
+              <a href="http://www.webglacademy.com/"><u><b><font size="26px" style="color: #204056;">WebGL Academy</font></b></u></a>
+  		      <br>
+              
+                                              <p>
+                    <div class="programSectionModule">
+
+                        <a class="programSectionHead" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#0">WebGL basis</a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#0"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>0</b> - <u>HTML Hello world</div>Understand how WebGL Academy works.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#1"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>1</b> - <u>2D colored Triangle</div> Draw your first triangle face with WebGL. It is not 3D yet.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#20"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>20</b> - <u>Rebuild the GLSL sandbox</div> Rebuild the GLSL sandbox. This tutorial can be skipped.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#2"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>2</b> - <u>3D colored Triangle</div> Our first triangle face becomes 3D and rotates in the space.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#3"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>3</b> - <u>Rotating cube</div>The hello world of 3D programming. At last !</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#4"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>4</b> - <u>Mouse events</div>Use the mouse to control the rotation of the cube.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#23"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>23</b> - <u>Duplicate objects</div>Efficiently duplicate 3D objects. Fundamental for the webgl comprehension and optimization.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#5"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>5</b> - <u>Textures</div>Apply a color texture to the 3D cube.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#6"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>6</b> - <u>Import from Blender</div>Import a 3D dragon model from the modeling tool <i>Blender</i>.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#7"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>7</b> - <u>Phong shading model</div>Learn the most common lighting model, separating the light into 3 parts : ambient, diffuse and specular.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=0|1|20|2|3|4|23|5|6|7|10#10"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>10</b> - <u>Render as a texture</div>Render a scene in a texture, then use the texture for the final rendering.</u></div></a>
+
+                    </div>
+
+                    <div class="programSectionModule">
+
+                        <a class="programSectionHead" target="_blank" href="courses.php?courses=19|25|27|33#19">Three.JS</a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=19|25|27|33#19"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>19</b> - <u>Three.JS camera movement</div>Basics of three.js : lights, cameras, shadows, import a 3D model</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=19|25|27|33#25"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>25</b> - <u>Three.JS picking</div>Picking (select a 3D object into the scene with the mouse pointer) with three.JS</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=19|25|27|33#27"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>27</b> - <u>Advanced camera movement with Three.JS</div>Camera travelling in a nuclear power plant. Continuous passage from an orthographic 3D view to a 3D perspective view.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=19|25|27|33#33"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>33</b> - <u>Three.JS 3D surface viewer</div>Tool to see and browse a 3D surface (plain and wireframe rendering).</u></div></a>
+
+                    </div>
+
+                    <div class="programSectionModule">
+
+                        <a class="programSectionHead" target="_blank" href="courses.php?courses=8|14|15|16|17#8">WebGL with video</a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=8|14|15|16|17#8"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>8</b> - <u>Video as a texture</div>Use an HTML5 video as a texture</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=8|14|15|16|17#14"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>14</b> - <u>Color video filter</div>Use webgl to apply whatever color effect from an image editing software to a video</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=8|14|15|16|17#15"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>15</b> - <u>Smoke screen</div>Make a screen with particles, and project a video on the smoke screen.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=8|14|15|16|17#16"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>16</b> - <u>Video in a glass sphere</div>Develop a cool 3D video menu, and learn the basics of picking and how to compute the intersection between a ray and a sphere.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=8|14|15|16|17#17"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>17</b> - <u>Optical flow</div>Use WebGL to distinguish moving elements in a video by computing the optical flow.</u></div></a>
+
+                    </div>
+                </p>
+
+
+                <p>
+                    <div class="programSectionModule"><a class="programSectionHead" target="_blank" href="courses.php?courses=22|11|18|26#22">Advanced rendering</a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=22|11|18|26#22"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>22</b> - <u>Wireframe and point rendering</div>Draw with points and lines instead of triangles</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=22|11|18|26#11"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>11</b> - <u>The Blending</div>The art of OpenGL blending...</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=22|11|18|26#18"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>18</b> - <u>Gamma correction</div>Change the perception of the dark using gamma correction.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=22|11|18|26#26"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>26</b> - <u>The distance mapping</div>Properly display vector images such text in WebGL using the distance mapping algorithm.</u></div></a>
+
+                    </div>
+
+                    <div class="programSectionModule">
+
+                        <a class="programSectionHead" target="_blank" href="courses.php?courses=28|29|30|31#28">Lights and shadows</a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=28|29|30|31#28"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>28</b> - <u>Shadow mapping</div>Learn the main general-shading algorithm.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=28|29|30|31#29"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>29</b> - <u>Shadow mapping with PCF</div>Learn a first improvement of shadow mapping : the shadow mapping with Percentage Close Filtering</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=28|29|30|31#30"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>30</b> - <u>Variance shadow mapping</div>Learn an other improvement of shadow mapping : the VSM</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=28|29|30|31#31"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>31</b> - <u>Deferred Shading</div>Learn a 3D algorithm to display many lights without exploding the rendering speed. This algorithm occurs in the screen space.</u></div></a>
+
+                    </div>
+
+                    <div class="programSectionModule">
+
+                        <a class="programSectionHead" target="_blank" href="courses.php?courses=21|32#21">Simulations</a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=21|32#21"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>21</b> - <u>Shallow water simulation</div>Physically simulate water in 2D using shallow water equations.</u></div></a>
+
+                        <a class="programSectionCourse" target="_blank" href="courses.php?courses=21|32#32"><div class="programSectionCourseDescription"><div class="programSectionCourseLabel"><b>32</b> - <u>Optical Lens Simulation</div>Physically simulate an optical lens using optical laws and raytracing.</u></div></a>
+
+                    </div>
+                </p>
+
+                
+<br />
+			</div>
+		
+
+            <div id="notes">
+			   <br>
+              <h1><span class="rainbow">C / C ++</span></h1>
+              <iframe src="http://nolenfelten.github.io/cpp.html" id="cpp"></iframe>
+					
+			</div>	
+		    
+		<div id='thesis'>
+            <br>
+            <h1><span class="rainbow">Original Xbox</span></h1>
+			<img src="http://i.imgur.com/FuH8fOD.png">
+          <iframe src="http://nolenfelten.github.io/xbox.html" id="xbox_notes"></iframe>
+            
+		</div>
+			<script>
+                   
+				function plusDivs(n) {
+                    // Move to next slide
+					showDivs(slideIndex += n);
+				}
+				function showDivs(n) {
+                  // Get Array of Slide Elements
+                  var x = document.getElementsByClassName("mySlides");
+                  // If slide number is out of index, set back to 1
+                  if (n > x.length) {
+                    slideIndex = 1
+                  }
+                  
+                  if (n < 1) {
+                    slideIndex = x.length
+                  }
+                  // Hide last element
+                  for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                  }
+                  // Show new element
+				  x[slideIndex - 1].style.display = "block";
+				}
+                  
+                // Slide Index
+				var slideIndex = 1;
+					
+                // Set First Slide
+                showDivs(slideIndex);
+			</script>
+
+			<script>
+				var speed = 20;
+				var hex = new Array("00", "14", "28", "3C", "50", "64", "78", "8C", "A0", "B4", "C8", "DC", "F0");
+				var red = 1;
+				var green = 1;
+				var blue = 1;
+				var seq = 1;
+				var element = document.getElementsByClassName("rainbow");
+				function changetext() {
+					rainbow = "#" + hex[red] + hex[green] + hex[blue];
+					for (index = 0; index < element.length; ++index) {
+						element[index].style.color = rainbow;
+					};
+				};
+				function change() {
+					if (seq == 6) {
+						blue--;
+	
+						if (blue == 0) { seq = 1; };
+					};
+					if (seq == 5){
+						red++;
+						if (red == 12 ){ seq = 6; };
+					};
+				
+					if (seq == 4) {
+						green--;
+						if (green == 0) { seq = 5; };
+					};
+					if (seq == 3) {
+						blue++;
+						if (blue == 12){ seq = 4; };
+					};
+					if (seq == 2) { 
+						red--;
+						if (red == 0) { seq = 3; };
+					};
+					if (seq == 1) {
+						green++;
+						if (green == 12) { seq = 2; };
+					};
+					changetext();
+				};
+				function starteffect() {
+	
+					flash = setInterval("change()", speed);
+				};
+				starteffect();
+			</script>
+		</center>
+	</body>
+</html>
               transition: 2s; 
           }
 
