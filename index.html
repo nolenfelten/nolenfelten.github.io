@@ -1,114 +1,113 @@
-
-
-
 <html>
 	<head>
 		<title>Nolen James Felten</title>
 		<style>
           body {
-            margin: 0px;
-            padding: 0px;
+              margin: 0px;
+              padding: 0px;
           }
-			#head {
-				background-color: #000000;
-				text-align: center;
-			}
 
-			#code {
-				border: 1px dotted #000000;
-			}
-
-			#xbox {
-				color: black;
-				background-color: black;
-				text-decoration: none;
-				text-align: center;
-
+          #head {
+              background-color: #000000;
+              text-align: center;
+              margin: 0px;
+              padding: 15px;
           }
-			
-			ul li {
-				text-decoration: none;
-				display: inline;
-				background-color: black;
-				color: white;
-				padding: 10px 10px;
-				text-decoration: none;
-				border-radius: 4px 4px 0 0;
-				transition: 2s; 
-			}
-			
-			a:link {
-				text-decoration: none;
-			}
-			
-			a:visited {
-				color: #0099CC;
-			}
-			
-			ul li:hover {
-				background-color: orange;
-				transition: 2s; 
-			}
-			
-			#gallery {
-				background-color: rgb(200, 191, 231);
-			}
 
-			#codecademy {
-				align: center;
-				text-align: center;
-				background-color: rgb(52, 179, 160);
-			} 
+          #code {
+              border: 1px dotted #000000;
+          }
 
-			#government {
-				text-align: center;
-				background: url("http://i.imgur.com/wlRgz77.png") no-repeat center; 
-				background-size: cover;
-			}
+          #xbox {
+              color: black;
+              background-color: black;
+              text-decoration: none;
+              text-align: center;
+          }
 
-			#notes {
-				background-color: rgb(87, 106, 145);
-				align: center;
-				text-align: center;
-                background-size: cover;
-			}
-          
-            #cpp {
+          ul li {
+              text-decoration: none;
+              display: inline;
+              background-color: black;
+              color: white;
+              padding: 10px 10px;
+              text-decoration: none;
+              border-radius: 4px 4px 0 0;
+              transition: 2s; 
+          }
+
+          a:link {
+              text-decoration: none;
+          }
+
+          a:visited {
+              color: #0099CC;
+          }
+
+          ul li:hover {
+              background-color: orange;
+              transition: 2s; 
+          }
+
+          #gallery {
+              background-color: rgb(200, 191, 231);
+          }
+
+          #codecademy {
+              align: center;
+              text-align: center;
+              background-color: rgb(52, 179, 160);
+          } 
+
+          #government {
+              text-align: center;
+              background: url("http://i.imgur.com/wlRgz77.png") no-repeat center; 
+              background-size: cover;
+          }
+
+          #notes {
+              background-color: rgb(87, 106, 145);
+              align: center;
+              text-align: center;
+              background-size: cover;
+          }
+
+          #cpp {
               overflow: hidden;
               width: 80%;
               z-index: 1;
               margin: 25px;
               background-color: #FFFFFF;
-            }
-          
-	     #thesis {
-	       background-color: rgb(0, 0, 0);
-			align: center;
-			text-align: center;
-             z-index: -4;
-         }
-          #thesis img {
-            margin: 0px;
-            z-index: -5;
-            align: center;
-            width: 80%;
           }
-          
-          #xbox_notes {
+
+           #thesis {
+             background-color: rgb(0, 0, 0);
+              align: center;
+              text-align: center;
+               z-index: -4;
+           }
+
+          #thesis img {
+              margin: 0px;
+              z-index: -5;
+              align: center;
               width: 80%;
-              z-index: 1;
-              position: relative;
-              bottom: 75;
-              height: 250px;
-              background-color: #FFFFFF;
-            }
+          }
+
+		#xbox_notes {
+			width: 80%;
+			z-index: 1;
+			position: relative;
+			bottom: 75;
+			height: 250px;
+			background-color: #FFFFFF;
+		}
 		</style>
 	</head>
 
 	<body>
-		<br />
 		<div id="head">
-          <canvas id="gui" width="625px" height="200px" style="border: 2px dotted #551a8b; z-index: 0;"></canvas>	
+          <canvas id="gui" width="625px" height="250px" style="border: 2px dotted #ff00ff; z-index: 0;"></canvas>	
           
 		</div>
        <script>
@@ -129,9 +128,9 @@
           var text1;
           var text2;
          
-          chart.lineWidth = "3"
+          chart.lineWidth = "4"
           chart.strokeStyle = "#DD0AFF"
-          chart.font = "20px Arial";
+          chart.font = "23px Arial";
           chart.fillStyle = "#ffffff";
           
           text = "Nolen James Felten"
@@ -161,7 +160,7 @@
           chart.fillText(text1, width - chart.measureText(text1).width - chart.measureText(text).width - 5, height - 30)
           chart.fillText(text2, width - chart.measureText(text3).width - chart.measureText(text2).width - 5, height - 8)
           
-          chart.fillStyle = "#FF00FF";
+          chart.fillStyle = "#FF66FF";
          chart.fillText(text, width - chart.measureText(text).width - 5, height - 30) 
          chart.fillText(text3, width - chart.measureText(text3).width - 5, height - 8)
           
@@ -233,12 +232,12 @@ function loop() {
 	
 	// background
 	chart.fillStyle = "rgb(1, 1, 1)";
-	chart.fillRect(50, 50, 4, 5);
+	chart.fillRect(250, 250, 4, 5);
 
 	for( var i = 0; i < vertices.length; i++ ) {
 		var v = vertices[i];
 		var r = v.rotateX(angle).rotateY(angle);
-		var p = r.project((width - 5), (height + 50), 100, 5);
+		var p = r.project((width - 5), (height + 55), 200, 4.9);
 		t.push(p)
 		
 	}
@@ -266,7 +265,7 @@ function loop() {
 		chart.fill()
 		
 		// Edges
-		chart.strokeStyle = "rgba(255, 255, 255, 0.2)";
+		chart.strokeStyle = "rgba(255, 255, 255, 0.12)";
 		chart.lineWidth = "9"
 		chart.beginPath()
 		chart.moveTo(t[f[0]].x,t[f[0]].y)
@@ -277,8 +276,8 @@ function loop() {
 		chart.stroke()
 		
 		// Vertex
-		chart.strokeStyle = "rgba(255, 0, 255, 0.6)";
-		chart.lineWidth = "4"
+		chart.strokeStyle = "rgba(0, 0, 255, 1)";
+		chart.lineWidth = "0.1"
 		chart.beginPath()
 		chart.moveTo(t[f[0]].x,t[f[0]].y)
 		chart.lineTo(t[f[1]].x,t[f[1]].y)
