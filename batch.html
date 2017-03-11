@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Batch Script - Nolen Felten</title>
+	<style>
+		body {
+			background: #000000;
+			margin: 0;
+			color: #FFFFFF;
+		}
+		
+		p {
+			color: #00AA00;
+			text-align: center;
+		}
+		
+		a {
+			color: #00FFFF;
+			text-decoration: none;
+		}
+		
+		b {
+			color: #00FFFF;
+			text-decoration: none;
+		}
+		
+		h1 {
+			color: #00FF00;
+			text-align: center;
+			text-decoration: underline;
+		}
+		
+		h2 {
+			color: #FF00FF;
+			text-align: center;
+			text-decoration: underline;
+		}
+		
+		h3 {
+			color: #FF00FF;
+			text-align: center;
+		}
+		
+		hr {
+			background: #0000FF;
+			color: #00FF00;
+		}
+		
+		td {
+			border: 2px solid #ffffff;
+		}
+		
+		.w3-example {
+			border: 2px dotted #AA00AA;
+		}
+		
+		.w3-code {
+			margin-top: 10px;
+			line-height: 1.14;
+			width: auto;
+			border: 1px solid #AA00AA;
+			word-wrap: break-word;
+			background-color: #354551;
+			color: #FFFFFF;
+			text-shadow: 1px 1px 1px rgba(43, 56, 66, 0.3);
+			font-size: 13px;
+			font-family: Monaco, Menlo, "Ubuntu Mono", "Droid Sans Mono", Consolas, monospace;
+			font-weight: 300;
+		}
+		
+		.w3-code b {
+			color: #AA0000;
+		}
+		
+		.w3-code,
+		.w3-codespan {
+			font-family: Consolas, "courier new";
+			font-size: 16px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Batch Script</h1>
+	<hr>
+	<h3>What is it?</h3>
+	<p><u>A</u> <a href="lmgtfy.com/?q=batch%20script"><i>Batch Script</i></a> <u>is an ASCII text document with the file extension</u> <b>.bat</b></a>;</p>
+
+	<center><img src="http://i.imgur.com/2B8v2ue.png?1"></center>
+	<p>A tool for running a sequence of commands on Windows.<br />The commands are read/interpreted when executed.<br /> Require no compiling.</p>
+
+	<p><i>Batch is Microsoft's verison of Linux's SH (SHell)</i>.</p>
+
+	<hr>
+	<table class="table table-bordered">
+		<tbody>
+			<tr>
+				<th style="text-align:center;">
+					<h2>Commands &amp; Description</h2>
+				</th>
+			</tr>
+
+
+			<tr>
+				<td><a href="/batch_script/batch_script_assoc.htm">ASSOC</a>
+					<p>This is a batch command that associates an extension with a file type (FTYPE), displays existing associations, or deletes an association.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_attrib.htm">ATTRIB</a>
+					<p>Displays or sets the attributes of the files in the curret directory</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_cd.htm">CD</a>
+					<p>This batch command helps in making changes to a different directory, or displays the current directory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_chkdsk.htm">CHKDSK</a>
+					<p>This batch command checks the disk for any problems.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_choice.htm">CHOICE</a>
+					<p>This batch command provides a list of options to the user.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_cls.htm">CLS</a>
+					<p>This batch command clears the screen.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_cmd.htm">CMD</a>
+					<p>This batch command invokes another instance of command prompt.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_comp.htm">COMP</a>
+					<p>This batch command compares 2 files based on the file size.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_convert.htm">CONVERT</a>
+					<p>This batch command converts a volume from FAT16 or FAT32 file system to NTFS file system.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_copy.htm">COPY</a>
+					<p>This batch command is used for copying files from one location to the other.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_date.htm">DATE</a>
+					<p>This batch command help to find the system date.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_del.htm">DEL</a>
+					<p>This batch command deletes files and not directories.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_dir.htm">DIR</a>
+					<p>This batch command lists the contents of a directory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_diskpart.htm">DISKPART</a>
+					<p>This batch command shows and configures the properties of disk partitions.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_driverquery.htm">DRIVERQUERY</a>
+					<p>This batch command shows all installed device drivers and their properties.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_echo.htm">ECHO</a>
+					<p>This batch command displays messages, or turns command echoing on or off.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_exit.htm">EXIT</a>
+					<p>This batch command exits the DOS console.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_expand.htm">EXPAND</a>
+					<p>This batch command extracts files from compressed .cab cabinet files.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_fc.htm">FC</a>
+					<p>This batch command lists the actual differences between two files.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_find.htm">FIND</a>
+					<p>This batch command searches for a string in files or input, outputting matching lines.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_format.htm">FORMAT</a>
+					<p>This batch command formats a disk to use Windows-supported file system such as FAT, FAT32 or NTFS, thereby overwriting the previous content of the disk.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_help.htm">HELP</a>
+					<p>This batch command shows the list of Windows-supplied commands.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_ipconfig.htm">IPCONFIG</a>
+					<p>This batch command displays Windows IP Configuration. Shows configuration by connection and the name of that connection.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_label.htm">LABEL</a>
+					<p>This batch command adds, sets or removes a disk label.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_md.htm">MD</a>
+					<p>This batch command creates a new directory in the current location.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_more.htm">MORE</a>
+					<p>This batch command displays the contents of a file or files, one screen at a time.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_move.htm">MOVE</a>
+					<p>This batch command moves files or directories between directories.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_net.htm">NET</a>
+					<p>Provides various network services, depending on the command used.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_path.htm">PATH</a>
+					<p>This batch command displays or sets the path variable.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_pause.htm">PAUSE</a>
+					<p>This batch command prompts the user and waits for a line of input to be entered.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_ping.htm">PING</a>
+					<p>This batch command sends ICMP/IP "echo" packets over the network to the designated address.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_prompt.htm">PROMPT</a>
+					<p>This batch command can be used to change or reset the cmd.exe prompt.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_rd.htm">RD</a>
+					<p>This batch command removes directories, but the directories need to be empty before they can be removed.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_rem.htm">REM</a>
+					<p>This batch command is used for remarks in batch files, preventing the content of the remark from being executed.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_ren.htm">REN</a>
+					<p>Renames files and directories</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_set.htm">SET</a>
+					<p>Displays the list of environment variables on the current system.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_shutdown.htm">SHUTDOWN</a>
+					<p>This batch command shuts down a computer, or logs off the current user.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_sort.htm">SORT</a>
+					<p>This batch command takes the input from a source file and sorts its contents alphabetically, from A to Z or Z to A. It prints the output on the console.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_start.htm">START</a>
+					<p>This batch command starts a program in new window, or opens a document.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_subst.htm">SUBST</a>
+					<p>This batch command assigns a drive letter to a local folder, displays current assignments, or removes an assignment.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_systeminfo.htm">SYSTEMINFO</a>
+					<p>This batch command shows configuration of a computer and its operating system.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_taskkill.htm">TASKKILL</a>
+					<p>This batch command ends one or more tasks.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_tasklist.htm">TASKLIST</a>
+					<p>This batch command lists tasks, including task name and process id (PID).</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_time.htm">TIME</a>
+					<p>This batch command sets or displays the time.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_title.htm">TITLE</a>
+					<p>This batch command sets the title displayed in the console window.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_tree.htm">TREE</a>
+					<p>This batch command displays a tree of all subdirectories of the current directory to any level of recursion or depth.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_type.htm">TYPE</a>
+					<p>This batch command prints the content of a file or files to the output.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_ver.htm">VER</a>
+					<p>This batch command shows the version of MS-DOS you are using.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_vol.htm">VOL</a>
+					<p>This batch command displays the volume labels.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/batch_script/batch_script_xcopy.htm">XCOPY</a>
+					<p>This batch command copies files and directories in a more advanced way.</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<hr>
+	<h2>Notes</h2>
+
+	<div class="w3-code notranslate jsHigh">
+		<h3>Redirection Symbol</h3>
+		<p>The ‘&gt;’ command is used to redirect the output to the file</p>
+	</div>
+
+
+	<div class="w3-code notranslate jsHigh">
+		<p>
+			<font style='color: #FF0000;'>@</font>
+			<font style='color: #b3ccff;'>echo
+				<font style='color: #FF0000;'>off</font>
+			</font>
+		</p>
+		<p>The first line in a batch file.<br />By default, a batch file will display its commands as it runs.<br />The purpose of this first command is to turn off this display.</p>
+
+		<p>"
+			<font style='color: #b3ccff;'>echo
+				<font style='color: #FF0000;'>off</font>
+			</font>" turns off the display for the whole script.<br/>
+			<a><i>Except</i></a> for the "
+			<font style='color: #b3ccff;'>echo
+				<font style='color: #FF0000;'>off</font>
+			</font>" command itself.<br/> The "
+			<font style='color: #ff0000;'>@</font>" makes the command apply to itself as well. </p>
+	</div>
+
+	<p>The full path name must be used, unless the file's path is in the path environment.</p>
+
+
+	<hr>
+	<h2>Examples</h2>
+
+	<div class="w3-code notranslate jsHigh">
+		<p>
+			<font style="color: #b3ccff;">List files in path</font>
+			<font style="color: #00c3ff;">-&gt;</font>
+			<font style="color: #ffffff;">Output to file</font>
+		</p>
+
+		<div class="w3-code notranslate jsHigh">
+			<font style='color: #ff0000;'>@</font>
+			<font color="#b3ccff">echo</font>
+			<font style='color: #FF0000;'>off</font>
+			<br />
+			<font style='color: #b3ccff;'>dir
+				<font color="#ffffff">%1</font>
+			</font>
+			<font color="#ff0000">&lt;</font>
+			<font color="#ffffff">%2</font>
+		</div>
+	</div>
+</body>
+
+</html>
