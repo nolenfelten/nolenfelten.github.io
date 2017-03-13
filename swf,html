@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="./swf2js.js"></script>
+  <title>Acid Trip in a Can</title>
+</head>
+<body>
+  <script type="text/javascript">
+      swf2js.load('./AcidTripInaCan.swf');
+  </script>  
+</body>
+</html>
