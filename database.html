@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' href='style.css'/>
+	<script src='script.js'></script>
+</head>
+<body>
+
+<center><h1>Database</h1></center>
+
+
+<p><b>Database</b> is a set of named <b>relations</b> (or <b>tables</b>).</p>
+
+
+<p><b>Database Management System</b> (<b>DBMS</b> ) provides <u><i>efficient</u></i>, <u><i>reliable</u></i>, <u><i>convenient</u></i>, and <u><i>safe</u></i> <u><i>multi-user</u></i> <u><i>storage</u></i> of and <u><i>access</u></i> to <u><i>massive</u></i> amounts of <u><i>persistent</u></i> data.<br />
+
+<b>DBMS</b> may be programmed with frameworks. Ruby on Rails, Django etc. Often ran with middleware, file server applications, etc.</p>
+
+<p>The amount of data needing to be stored everyday is growing faster then our computer RAM can store.</p>
+
+<ul>
+    <li><b>Massive</b> - Terabytes.</li>
+    <li><b>Persistent</b> - Will outlive the program that made it.</li>
+    <li><b>Safe</b> - High integrety. Resistent of hardware, software, and power failure.</li>
+    <li><b>Multi-user</b> - Concurrency control (prevent 2 people from withdrawling the same money from the bank).</li>
+    <li><b>Reliability</b> - <b>99.99999%</b> uptime.</li>
+    <li><b>Efficiency</b> - Most important. Performance, performance, performance.</li>
+    <li><b>Convenient</b> - Physical data indendent. How an application accesses data should remain the same, even if the DBMS is changed. Use high-level abstract languages.</li>
+</ul>
+
+
+<hr>
+
+<h2><i><u>Key People</u></i>:</h2>
+<ul>
+    <li><b>DBMS Implementer</b></li>
+    Builds system.
+        
+    <li><b>Database Designer</b></li>
+    Establishes schema.
+        
+    </b></li>Database Application Developer</b></li>
+    Write applications that interact with system.
+        
+    <li><b>Database Admin (DBA)</b></li>
+    Loads data, keeps things running smooth.
+</ul>
+
+
+<hr>
+
+<center><h1><u>CRUD</u></h1></center>
+<p>In information theory, data can be created, data can be read, data can be updated, and data can be deleted.</p>
+
+<center><h3>Create - Read - Update - Delete</h3>C - R - U - D</center>
+
+<hr>
+
+<center><h1><u>ACID</u></h1></center>
+
+<p><b>Atomicity</b> requires that each transaction be "all or nothing": if one part of the transaction fails, then the entire transaction fails, and the database state is left unchanged.</p>
+
+<p>An atomic system must guarantee atomicity in each and every situation, including power failures, errors, and crashes. To the outside world, a committed transaction appears (by its effects on the database) to be indivisible ("atomic"), and an aborted transaction does not happen.</p>
+
+<p><b>Consistency</b> property ensures that any transaction will bring the database from one valid state to another.</p>
+
+<p><b>Isolation</b> property ensures that the concurrent execution of transactions results in a system state that would be obtained if transactions were executed sequentially.</p>
+
+<p>Providing isolation is the main goal of concurrency control. Depending on the concurrency control method, the effects of an incomplete transaction might not even be visible to another transaction.</p>
+
+<p><b>Durability</b> property ensures that once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors.</p>
+
+<p>In a relational database, for instance, once a group of SQL statements execute, the results need to be stored permanently (even if the database crashes immediately thereafter). To defend against power loss, transactions (or their effects) must be recorded in a non-volatile memory.</p>
+
+<center><h3><u>A</u>tomicity - <u>C</u>onsistency - <u>I</u>solation - <u>D</u>urability</h3> A - C - I - D</center>
+
+<hr>
+
+<center><h2>Schema</h2>
+
+The strucure of relations, and the attributes of those relations.
+            
+<p><b>Schema <i>vs.</i> Data</b><br />
+<u>Schema</u> = <u>Types</u>. Rarely changes.<br />
+<u>Data</u> = <u>Variables</u>. Changes rapidly.</p>
+
+</center>
+
+
+<hr>
+
+
+<center><h2>Data Model</h2>
+
+How the data is structered.</center>
+
+
+<hr>
+
+
+<center><h2>Data Definition Language (<u>DDL</u>)</h2>
+Used to setup <i>Schema</i>. Write applications that interact with system. Executes Queries.</center>
+
+
+<hr>
+
+
+<center><h2>Data Manipulation Language (<u>DML</u>)</h2></center>
+<center>Programming syntax for using data. High level (abstract) language. Query Language.</center>
+
+
+<hr>
+
+
+<center><h2>Data-Type</h2></center>
+
+<p>Pretty much what <i>kind of</i> data a piece of information is.</p>
+
+<p>Like an integer (<b>number</b>), an array of characters (<b>string</b>), set of dates (<b>date</b>), or <i>true</i> and <i>false</i> (<b>boolean</b>). These are called <b>type names</b>.</p>
+
+<p>It is important to understand that relational theory <i>does not</i> dictate what types are to be supported.</p>
+
+<p>Nowadays provisions are expected to be available for <i>user-defined</i> data-types in addition to the <i>built-in</i> ones provided by the system.</p>
+
+
+<hr>
+
+
+<center><h1><u>The Relational Model</u></h1></center>
+
+
+<center><img src="http://i.imgur.com/CsslWeT.png"></center>
+
+
+<p><b>Relational Model</b> (<b>RM</b>) for <b>database management</b> is an approach to managing data using a <b>structure</b> (<b>Data Model</b>) and <b>language</b>.</p>
+
+
+<ul>
+    <li>It is used by all major commerical database systems.</li>
+    <li>It is very simple.</li>
+    <li>Efficent Implementations.</li>
+</ul>
+
+<hr>
+
+
+<center><h2>Relation = Table</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Column 0</th>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+        <tr>
+            <th>Row 0</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</center>
+
+<p>A <b>table</b> is an accepted visual representation of a <b>relation</b>.</p>
+
+
+<hr>
+
+
+<center><h2>Attribute = Column</h2></center>
+
+<center>
+    <table>
+        <tr>
+            <th></th>
+            <th>Attribute 0</th>
+            <th>Attribute 1</th>
+            <th>Attribute 2</th>
+        </tr>
+        <tr>
+            <th>-</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</center>
+<p>Each <b>relation</b> (<b>table</b>) has a set of named <b>attributes</b> (<b>columns</b>).<br />
+
+An <b>attribute</b> name might be "name" or "age".</p>
+
+<p>Each <b>attribute</b> (<b>column</b>) has a <b>type</b> (or <b>domain</b>). Like an image, floating point number, integer, or a string.</p>
+
+<hr>
+
+<center><h2>Tuple = Row</h2></center>
+
+<center>
+    <table>
+        <tr>
+            <th></th>
+            <th>Attribute 0</th>
+            <th>Attribute 1</th>
+            <th>Attribute 2</th>
+        </tr>
+        <tr>
+            <th>Tuple 0</th>
+            <td style="color: #FF0000; text-align: center;">Value</td>
+            <td style="color: #00FF00; text-align: center;">Value</td>
+            <td style="color: #0000FF; text-align: center;">Value</td>
+        </tr>
+        
+        <tr>
+            <th>Tuple 1</th>
+            <td style="color: #FF0000; text-align: center;">Value</td>
+            <td style="color: #00FF00; text-align: center;">Value</td>
+            <td style="color: #0000FF; text-align: center;">Value</td>
+        </tr>
+    </table>
+</center>
+
+<p>Each <b>tuple</b> (or <b>rows</b>) has a <b>value</b> for each <b>attribute</b> (<b>column</b>).</p>
+
+
+<p>A <b>tuple</b> is basically the same thing as a <b>row</b>, except in an SQL DBMS, where the <b>column</b> values in a <b>row</b> are ordered.<br />
+(<b>Tuples</b> are <u>NOT</u> ordered. Instead, each <b>attribute</b> value is identified solely by the <b>attribute name</b> and <u>NEVER</u> by its ordinal position within the <b>tuple</b>).</p>
+
+<hr>
+
+<center><h2>Key</h2></center>
+
+<center>
+    <table>
+        <tr>
+            <th><i>Key</i></th>
+            <th>Attribute</th>
+        </tr>
+        <tr>
+            <td style="color: #FF0000; text-align: center;">Key 0</td>
+            <td style="border: 1px solid #FF0000; color: #FF0000; text-align: center;">Value</td>
+        </tr>
+        
+        <tr>
+            <td style="color: #0000FF; text-align: center;">Key 1</td>
+            <td style="border: 1px solid #0000FF; color: #0000FF; text-align: center;">Value</td>
+        </tr>
+    </table>
+</center>
+
+<p>Each <b>relation</b>/<b>tuple</b> can have a unqiue <b>Key</b>, an <b>attribute</b> (<b>column</b>) whose <b>value</b> is unique in each <b>tuple</b> (<b>row</b>). Or set of <b>attributes</b> whose combined <b>values</b> are unique.</p>
+
+
+<center><img src="http://i.imgur.com/NO8vvd8.png"></center>
+
+<hr>
+
+<center><h2>Steps in creating and using a (relational) database.</h2></center>
+
+<b><i>1</i>.</b> Design the strucure of relations, and the attributes of those relations. Known as the <b>Schema</b>.<br />
+<b><i>2</i>.</b> Load inital data.<br />
+<b><i>3</i>.</b> Query and modify data. Repeat.<br />
+
+<hr>
+
+
+    <center><h3>Creating Relations (Tables) in SQL</h3></center>
+    
+<div class="w3-code notranslate jsHigh">
+    
+    <p><font style='color: #b3ccff;'>CREATE TABLE <font style='color: #FFFFFF;'>College</font>(<font style='color: #FF0000;'>name</font> <font style='color: #0000FF;'>string</font>, <font style='color: #FF0000;'>state</font> <font style='color: #0000FF;'>char</font>(<font style='color: #FF00AA;'>2</font>), <font style='color: #FF0000;'>enrollment</font> <font style='color: #0000FF;'>integer</font>);</font></p>
+
+</div>
+
+<p>A <b><u>statement</u></b> is text that the database recognizes as a valid command. <u>Statements always end in a semi-colon</u>.<br />Let's break down the components of a <b><u>statement</u></b>:</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">Create Table</font> is a <i>clause</i>.<br /> 
+<u>Clauses perform specific tasks in SQL</u>.<br /> 
+By convention, <b>clauses are written in capital letters</b>. Clauses can also be referred to as <b>commands</b>.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">College</font> refers to the <u>name of the table that the command is applied to</u>.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">(name string, state char(2), enrollment integer);</font> is a <b>parameter</b>.<br /> 
+A <b>parameter</b> is a <u>list of <b>columns</b>, <b>data-type's</b>, or <b>value's</b> that are <i>passed</i> to a <i>clause</i> as an <i>argument</i></u>.</p>
+
+<p>Here, the <b>parameter</b> is a list of <b>column</b> names and the associated <b>data-type</b>.<br />
+The structure of SQL statements vary.<br />The number of lines used <b>do not</b> matter.</p>
+
+<hr>
+
+
+<center><h2><font style="background: #D5D5D5; color: #204056;">NULL</font></h2></center>
+
+<center>A special <b>value</b> data type for "unknown" or "undefined".<br/> <font style="background: #D5D5D5; color: #204056;">NULL</font> is part of <u>The Relational Model</u>.</center>
+
+<p>When querying a database containing peoples <i>name</i> and <i>age</i> to return <b>tuples</b> (<b>rows</b>) with <i><u>age</u></i> (<b>attribute</b>):</p>
+
+<div class="w3-example"><center><u>lesser</u> then <b>OR</b> <u>greater</u> then <b>OR</b> <u>equal</u> to <b>21</b></center></div>
+
+<p>The <b>tuples</b> (<b>rows</b>) with <font style="background: #D5D5D5; color: #204056;">NULL</font> <i><u>age</u></i> (<b>attribute</b>) will <b>NOT</b> be returned.</p>
+
+
+<hr>
+
+<center><h3>Inserting Rows (Tuples) into Table</h3></center>
+
+<div class="w3-code notranslate jsHigh">
+    <p><font style='color: #b3ccff;'>INSERT INTO <font style='color: #FFFFFF;'>College</font>(<font style='color: #FF0000;'>name</font>, <font style='color: #FF0000;'>state</font>, <font style='color: #FF0000;'>enrollment</font>) <font style='color: #b3ccff;'>VALUES</font>(<font style='color: #FF0000;'>"Sonoma State University"</font>, <font style='color: #FF0000;'>'CA'</font>, <font style='color: #FF0000;'>8668</font>);</font><br />
+<font style='color: #b3ccff;'>INSERT INTO <font style='color: #FFFFFF;'>College</font>(<font style='color: #FF0000;'>name</font>, <font style='color: #FF0000;'>state</font>, <font style='color: #FF0000;'>enrollment</font>) <font style='color: #b3ccff;'>VALUES</font>(<font style='color: #FF0000;'>"Oregon State University"</font>, <font style='color: #FF0000;'>'OR'</font>, <font style='color: #FF0000;'>28886</font>);</font>    
+</p>
+</div>
+
+
+<p><font style="background: #D5D5D5; color: #204056;">INSERT INTO</font> is a <i>clause</i>. <u>Clauses perform specific tasks in SQL</u>.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">College(<font style='color: #FF0000;'>name</font>, <font style='color: #FF0000;'>state</font>, <font style='color: #FF0000;'>enrollment</font>)</font> are the <b>parameters</b> that the following <font style="background: #D5D5D5; color: #204056;">VALUES</font> will inserted into. <u>In that order</u>.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">VALUES</font> is a <i>clause</i>. <u>Clauses perform specific tasks in SQL</u>.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">(<font style='color: #FF0000;'>"Sonoma State University"</font>, <font style='color: #FF0000;'>'CA'</font>, <font style='color: #FF0000;'>8668</font>);</font> is a parameter identifying the values being inserted. </p>
+
+
+
+<hr>
+
+<center><h3><font style="background: #D5D5D5; color: #204056;">SELECT</font> Statements</h3></center>
+<div class="w3-code notranslate jsHigh">
+    <p><font style='color: #b3ccff;'>SELECT <font style="color: #FFFFFF">name</font> FROM <font style="color: #FFFFFF">College</font>;</font></p>
+</div>
+    <p>This <font style="background: #D5D5D5; color: #204056;">SELECT</font> <b>statement</b> returns <u>all data in the <i>name</i> <b>column/attribute</b></u> of the <i>College</i> <b>table</b>.</p>
+    
+    <p><font style="background: #D5D5D5; color: #204056;">SELECT</font> <b>statements</b> are used to fetch data from a database.</p> 
+
+<p>1. <font style="background: #D5D5D5; color: #204056;">SELECT</font> is a <b>clause</b> that <u>indicates that the statement is a query</u>. You will use <font style="background: #D5D5D5; color: #204056;">SELECT</font> <i>every time you query data from a database</i>.</p>
+
+<p>2. <i>name</i> specifies the <b>column/attribute</b> to <u>query data from</u>.</p>
+
+<p>3. <font style="background: #D5D5D5; color: #204056;">FROM College</font> specifies the <i>name</i> of the <b>table</b> to <b>query</b> data from.</p>
+
+<p><u>Multiple columns can be queried at once by separating column names with a comma.</u></p>
+
+<p>You can also <b>query</b> data from all <b>columns/attributes</b> in a <b>table</b> with <font style="background: #D5D5D5; color: #204056;">SELECT</font>:</p>
+
+
+
+<div class="w3-code notranslate jsHigh">
+    <p><font style='color: #b3ccff;'>SELECT <font style="color: #FFFFFF">*</font> FROM <font style="color: #FFFFFF">College</font>;</font></p></div>
+    
+    <p><font style="background: #354551; color: #FFFFFF">*</font> is a special wildcard character. It allows you to <u>select every column in a table</u> <b>without</b> <u>having to name each one individually.</u></p>
+    
+<p><font style="background: #D5D5D5; color: #204056;">SELECT</font> <b>statements</b> always return a new table, called the <i>result</i> set.</p>
+
+
+
+<center><h3><font style="background: #D5D5D5; color: #204056;">SELECT DISTINCT</font> Statements</h3></center>
+<div class="w3-code notranslate jsHigh">
+    <p><font style='color: #b3ccff;'>SELECT DISTINCT <font style="color: #FFFFFF;">name</font> FROM <font style="color: #FFFFFF;">College</font>;</font></div>
+    
+<p><u><font style="background: #D5D5D5; color: #204056;">SELECT DISTINCT</font> is used to return unique values in the result set.</u> It filters out all duplicate values.</p>
+
+<p>1. <font style="background: #D5D5D5; color: #204056;">SELECT DISTINCT</font> specifies that the statement is going to be a query that returns unique values in the specified column(s).</p>
+
+<p>2. genre is the name of the column to display in the result set.</p>
+
+<p>3. <font style="background: #D5D5D5; color: #204056;">FROM movies</font> indicates the table name to query from.</p>
+
+<p>Filtering the results of a query is an important skill in SQL. It is easier to see the different possible genres a movie can have after the data has been filtered, than to scan every row in the table.</p>
+
+<hr>
+
+<center><h3><font style="background: #D5D5D5; color: #204056;">WHERE</font> Clause</h3></center>
+
+<p><font style="background: #D5D5D5; color: #204056;">WHERE</font> is a clause that indicates you want to filter the result set to include only rows where the following condition is true.</p>
+
+<p>Operators create a condition that can be evaluated as either true or false. Common operators used with the <font style="background: #D5D5D5; color: #204056;">WHERE</font> clause are:</p>
+
+<ul>
+    <li>= equals</li>
+    <li>!= not equals</li>
+    <li>> greater than</li>
+    <li>< less than</li>
+    <li>>= greater than or equal to</li>
+    <li><= less than or equal to</li>
+    <li>AND combine multiple conditions in a <font style="background: #D5D5D5; color: #204056;">WHERE</font> clause .</li>
+    <li>OR evaluates each condition separately and if any of the conditions are true then the row is added to the result set.</li>
+    <li>LIKE is a special operator that can be used in a WHERE clause.</li>
+    <li>_ means you can substitute any individual character here without breaking the pattern.</li>
+    <li>BETWEEN filter the result set within a certain range.</li>
+</ul>
+
+<p><font style="background: #D5D5D5; color: #204056;">LIKE</font> is a special operator used with the <font style="background: #D5D5D5; color: #204056;">WHERE</font> clause to search for a specific pattern in a column</p>
+
+<p>The <font style="background: #D5D5D5; color: #204056;">BETWEEN</font> operator is used to filter the result set within a certain range. <u>The values can be numbers, text or dates</u>.</p>
+
+<p>% is another wildcard character that can be used with <font style="background: #D5D5D5; color: #204056;">LIKE</font>. % is a wildcard character that matches zero or more missing letters in the pattern. You can use % both before and after a pattern.</p>
+
+<ul>
+    <li>A% matches all movies with names that begin with "A".</li>
+    <li>%a matches all movies that end with "a".</li>
+</ul>
+
+
+<hr>
+
+<center><h3><font style="background: #D5D5D5; color: #204056;">ORDER BY</font> Clause</h3></center>
+
+<p>You can sort the results of your query using <font style="background: #D5D5D5; color: #204056;">ORDER BY</font>. Sorting the results often makes the data more useful and easier to analyze.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">ORDER BY</font> is a clause that indicates you want to sort the result set by a particular column either alphabetically or numerically.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">DESC</font> is a keyword in SQL that is used with <font style="background: #D5D5D5; color: #204056;">ORDER BY</font> to sort the results in descending order (high to low or Z-A).</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">ASC</font> is a keyword in SQL that is used with <font style="background: #D5D5D5; color: #204056;">ORDER BY</font> to sort the results in ascending order (low to high or A-Z).</p>
+
+
+<hr>
+
+<center><h3><font style="background: #D5D5D5; color: #204056;">LIMIT</font> Clause</h3></center>
+
+<p>Sometimes even filtered results can return thousands of rows in large databases. In these situations it becomes important to cap the number of rows in a result set.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">LIMIT</font> is a clause that lets you specify the maximum number of rows the result set will have. </p>
+
+
+<hr>
+
+<center><h3><font style="background: #D5D5D5; color: #204056;">UPDATE</font> Statements</h3></center>
+<div class="w3-code notranslate jsHigh">
+    <p><font style='color: #b3ccff;'>UPDATE <font style="color: #FFFFFF">College</font> SET <font style="color: #FFFFFF">enrollment</font> = <font style="color: #FFFFFF">8700</font> WHERE <font style="color: #FFFFFF">name</font> = <font style="color: #FFFFFF">"Sonoma State University"</font>;</font></div>
+    
+<p>The <font style="background: #D5D5D5; color: #204056;">UPDATE</font> <b>statements</b> edits a <b>row</b> in the <b>table</b>. You can use the <font style="background: #D5D5D5; color: #204056;">UPDATE</font> <b>statements</b> when you want to change existing records.</p>
+
+<p>1. <font style="background: #D5D5D5; color: #204056;">UPDATE</font> is a clause that edits a row in the table.</p>
+
+<p>2. <i>name</i> is the name of the table.</p>
+
+<p>3. <font style="background: #D5D5D5; color: #204056;">SET</font> is a clause that indicates the column to edit. <i>age</i> is the name of the column that is going to be updated. 22 is the new value that is going to be inserted into the age column.</p>
+
+<p>4. <font style="background: #D5D5D5; color: #204056;">WHERE</font> is a clause that indicates which row(s) to update with the new column value. Here the row with a 1 in the id column is the row that will have the age updated to 22.</p>
+
+
+<hr>
+
+<center><h3><font style="background: #D5D5D5; color: #204056;">ALTER TABLE</font> Statements</h3></center>
+<div class="w3-code notranslate jsHigh">
+    <p><font style='color: #b3ccff;'>ALTER TABLE <font style="color: #FFFFFF">College</font> ADD COLUMN <font style="color: #FFFFFF">twitter</font>;</font></div>
+    
+<p>1. <font style="background: #D5D5D5; color: #204056;">ALTER TABLE</font> is a clause that lets you make the specified changes.</p>
+
+<p>2. College is the name of the table that is being changed.</p>
+
+<p>3. <font style="background: #D5D5D5; color: #204056;">ADD COLUMN</font> is a clause that lets you add a new column to a table.</p>
+
+<p>twitter is the name of the new column being added,
+<font style="background: #D5D5D5; color: #204056;">TEXT</font> is the data type for the new column.</p>
+
+<p>4. Here, the rows that existed before the column was added have <font style="background: #D5D5D5; color: #204056;">NULL</font> values for twitter.</p>
+
+<hr> 
+
+<center><h3><font style="background: #D5D5D5; color: #204056;">DELETE</font> Statements</h3></center>
+<div class="w3-code notranslate jsHigh">
+    <p><font style='color: #b3ccff;'>DELETE FROM <font style='color: #ffffff;'>College</font> WHERE <font style='color: #ffffff;'>twitter</font> IS <font style='color: #ff0000;'>NULL</font>;</font></p></div>
+
+<p>The <font style="background: #D5D5D5; color: #204056;">DELETE FROM</font> statement deletes one or more rows from a table. You can use the statement when you want to delete existing records.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">DELETE FROM</font> is a clause that lets you delete rows from a table.</p>
+
+<p>College is the name of the table we want to delete rows from.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">WHERE</font> is a clause that lets you select which rows you want to delete. Here we want to delete all of the rows where the twitter_handle column <font style="background: #D5D5D5; color: #204056;">IS NULL</font>.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">IS NULL</font> is a condition in SQL that returns true when the value is <font style="background: #D5D5D5; color: #204056;">NULL</font> and false otherwise.</p>
+
+
+
+<hr>
+<center><h2><u>Aggregate Functions</u></h2></center>
+
+<p>Aggregate Functions compute a single result from a set of input values. For instance, when we need the sum or average of a particular column, we can use aggregate functions to quickly compute it for us.</p>
+
+<p>The fastest way to calculate the number of rows in a table is to use the <font style="background: #D5D5D5; color: #204056;">COUNT()</font> function.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">COUNT()</font> is a function that takes the name of a column as an argument and counts the number of rows where the column is not <font style="background: #D5D5D5; color: #204056;">NULL</font>.</p>
+
+<p>Aggregate Functions are more useful when they organize data into groups.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">GROUP BY</font> is a clause in SQL that is only used with aggregate functions. It is used in collaboration with the <font style="background: #D5D5D5; color: #204056;">SELECT</font> statement to arrange identical data into groups.</p>
+
+<p>It is usually helpful to <font style="background: #D5D5D5; color: #204056;">SELECT</font> the column you pass as an argument to <font style="background: #D5D5D5; color: #204056;">GROUP BY</font>. </p>
+
+<p><font style="background: #D5D5D5; color: #204056;">SUM()</font> is a function that takes the name of a column as an argument and returns the sum of all the values in that column.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">MAX()</font> is a function that takes the name of a column as an argument and returns the largest value in that column.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">MIN()</font> is a function that takes the name of a column as an argument and returns the smallest value in that column.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">AVG()</font> function works by taking a column name as an argument and returns the average value for that column.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">ROUND()</font> is a function that takes a column name and an integer as an argument. It rounds the values in the column to the number of decimal places specified by the integer. </p>
+
+
+<hr>
+<center><h2><u>Multiple Tables</u></h2></center>
+<p>Most of the time, data is distributed across multiple tables in the database.</p>
+
+<p>Imagine a database with two tables, artists and albums. An artist can produce many different albums, and an album is produced by an artist.</p>
+
+<p>The data in these tables are related to each other. Through SQL, we can write queries that combine data from multiple tables that are related to one another. This is one of the most powerful features of relational databases.</p>
+
+<p>A <font style="background: #D5D5D5; color: #204056;">PRIMARY KEY</font> serves as a unique identifier for each row or record in a given table. The <font style="background: #D5D5D5; color: #204056;">PRIMARY KEY</font> is literally an id value for a record. We're going to use this value to connect artists to the albums they have produced.</p>
+
+<p>By specifying that the id column is the <font style="background: #D5D5D5; color: #204056;">PRIMARY KEY</font>, SQL makes sure that:</p>
+<ul>
+    <li>None of the values in this column are <font style="background: #D5D5D5; color: #204056;">NULL</font>.</li>
+    <li>Value in this column is unique.</li>
+</ul>
+
+<p>A table can not have more than one <font style="background: #D5D5D5; color: #204056;">PRIMARY KEY</font> column.</p>
+
+<p>A <font style="background: #D5D5D5; color: #204056;">FOREIGN KEY</font> is a column that contains the <font style="background: #D5D5D5; color: #204056;">PRIMARY KEY</font> of another table in the database. We use <font style="background: #D5D5D5; color: #204056;">FOREIGN KEY</font> and <font style="background: #D5D5D5; color: #204056;">PRIMARY KEY</font> to connect rows in two different tables. One table's <font style="background: #D5D5D5; color: #204056;">FOREIGN KEY</font> holds the value of another table's <font style="background: #D5D5D5; color: #204056;">PRIMARY KEY</font>. Unlike <font style="background: #D5D5D5; color: #204056;">PRIMARY KEY</font>, <font style="background: #D5D5D5; color: #204056;">FOREIGN KEY</font> do not need to be unique and can be <font style="background: #D5D5D5; color: #204056;">NULL</font>.</p>
+
+<p>One way to query multiple tables is to write a <font style="background: #D5D5D5; color: #204056;">SELECT</font> statement with multiple table names separated by a comma. This is also known as a cross join.</p>
+
+<p>When querying more than one table, column names need to be specified by <font style="background: #D5D5D5; color: #204056;">table_name.column_name</font>. </p>
+
+<p>Joins are used to combine rows from two or more tables. The most common type of join in SQL is an inner join.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">INNER JOIN</font> will combine rows from different tables if the join condition is true.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">LEFT OUTER JOIN</font> will return every row in the left table, and if the join condition is not met, <font style="background: #D5D5D5; color: #204056;">NULL</font> values are used to fill in the columns from the right table.</p>
+
+<p><font style="background: #D5D5D5; color: #204056;">AS</font> is a keyword in SQL that allows you to rename a column or table in the result set using an alias.</p>
+
+<hr>
+<center><h1><u>Table Transformation</u></h1></center>
+
+<p>While working with databases, we often need to transform data from one format to achieve a desired result. In SQL, this is often called data transformation or table transformation.</p>
+
+<p>Subqueries, sometimes referred to as inner queries or nested queries, are used to transform table data by nesting one query within another query. Subqueries are used to complete an SQL transformation by nesting one query within another query.</p>
+
+<p>A non-correlated subquery is a subquery that can be run independently of the outer query and be used to complete a multi-step transformation.</p>
+
+<p>A correlated subquery is a subquery that cannot be run independently of the outer query. The order of operations in a correlated subquery is as follows:</p>
+
+<p>1. A row is processed in the outer query.</p>
+
+<p>2. Then, for that particular row in the outer query, the subquery is executed.</p>
+
+<p>Unions allow us to utilize information from multiple tables in our queries. In this lesson, we’ll utilize data from an e-commerce store. Let’s explore the available data we’ll be using.</p>
+
+<p>Sometimes, in order to answer certain questions based on data, we need to merge two tables together and then query the merged result. Perhaps we have two tables that contain information about products in an ecommerce store that we would like to combine.</p>
+
+<p>There are two ways of doing this:</p>
+
+<p>- Merge the rows, called a join.</p>
+
+<p>- Merge the columns, called a union.</p>
+
+<p>We'll focus on unions here. Union combines the result of two or more <font style="background: #D5D5D5; color: #204056;">SELECT</font> statements, using the following syntax:</p>
+
+<div class="w3-code notranslate jsHigh">
+<font style='color: #b3ccff;'>SELECT <font style='color: #ffffff;'>column_name(s)</font> FROM <font style='color: #ffffff;'>table1</font><br />
+UNION<br />
+SELECT <font style='color: #ffffff;'>column_name(s)</font> FROM <font style='color: #ffffff;'>table2</font>;
+</div>
+
+<p>Each <font style="background: #D5D5D5; color: #204056;">SELECT</font> statement within the <font style="background: #D5D5D5; color: #204056;">UNION</font> must have the same number of columns with similar data types. The columns in each <font style="background: #D5D5D5; color: #204056;">SELECT</font> statement must be in the same order. By default, the <font style="background: #D5D5D5; color: #204056;">UNION</font> operator selects only distinct values.</p>
+
+<p> What if we wanted to allow duplicate values? We can do this by using the <font style="background: #D5D5D5; color: #204056;">ALL</font> keyword with <font style="background: #D5D5D5; color: #204056;">UNION</font>.</p>
+
+
+<hr>
+<center><h1><u>Alternatives</u></h1></center>
+
+<p>Other models are the <font style='color: #AA00FF;'>Hierarchical Model</font> and <font style='color: #AA00FF;'>Network Model</font>. Some systems using these older architectures are still in use today in data centers with high data volume needs, or where existing systems are so complex and abstract, it would be cost-prohibitive to migrate to systems employing the relational model. Also of note are newer <font style='color: #AA00FF;'>Object-Oriented Database</font>.</p>
+
+
+
+<center><img src="http://i.imgur.com/Dgm3tPJ.png"></center>
+<p>Similar to the <b>Parent -&gt; Child Model</b> and <b>Organization Chart</b>:</p>
+<center><img src="http://i.imgur.com/qhuI4r6.png"></center>
+
+<br />
+<hr>
+<br />
+
+
+<center><h1><u>E<span style="color: #0000FF;">x</span>tensible <span style="color: #0000FF;">M</span>arkup <span style="color: #0000FF;">L</span>anguage</u> (<span style="color: #0000FF;">XML</span>)</h1></center>
+
+
+<p><b>XML</b> is a standard for <u>data representation and exchange</u>.</p>
+
+<p>Its format is similar to HTML, where the elements contain data and the tag is the attribute (column) name.</p>
+
+<p><b>XML</b> is a method for putting structured data in a text file. <b>XML</b> is license-free, platform-independent and well-supported</p>
+
+
+
+<div class="w3-code notranslate jsHigh" font style='color: #b3ccff;'>
+    <span style="color: #00CF00;">&lt;?XML VERSION="1.0" STANDALONE="no"&gt;</span><br />
+<span style="color: #FF0000">&lt;BOOKSTORE&gt;</span><br />
+	<span style="color: #FF0000">&lt;BOOK ISBN="0-13-861337-0" Price="$50"&gt;</span><br />
+		<span style="color: #FF0000">&lt;TITLE&gt;</span>A First Course in Database Systems<span style="color: #FF0000">&lt;/TITLE&gt;</span><br />
+		<span style="color: #FF0000">&lt;AUTHORS&gt;</span><br />
+			<span style="color: #FF0000">&lt;AUTHOR&gt;</span><br />
+				<span style="color: #FF0000">&lt;FIRSTNAME&gt;</span>Jeffrey<span style="color: #FF0000">&lt;/FIRSTNAME&gt;</span><br />
+				<span style="color: #FF0000">&lt;LASTNAME&gt;</span>Ullman<span style="color: #FF0000">&lt;/LASTNAME&gt;</span><br />
+			<span style="color: #FF0000">&lt;/AUTHOR&gt;</span><br />
+			<span style="color: #FF0000">&lt;AUTHOR&gt;</span><br />
+				<span style="color: #FF0000">&lt;FIRSTNAME&gt;</span>Jennifer<span style="color: #FF0000">&lt;/FIRSTNAME&gt;</span><br />
+				<span style="color: #FF0000">&lt;LASTNAME&gt;</span>Widom<span style="color: #FF0000">&lt;/LASTNAME&gt;</span><br />
+			<span style="color: #FF0000">&lt;/AUTHOR&gt;</span><br />
+		<span style="color: #FF0000">&lt;/AUTHORS&gt;</span><br />
+	<span style="color: #FF0000">&lt;/BOOK&gt;</span><br />
+	<span style="color: #FF0000">&lt;BOOK ISBN="0-13-040264-8" Price="$60"&gt;</span><br />
+		<span style="color: #FF0000">&lt;TITLE&gt;</span>Database System Implementation<span style="color: #FF0000">&lt;/TITLE&gt;</span><br />
+		<span style="color: #FF0000">&lt;AUTHORS&gt;</span><br />
+			<span style="color: #FF0000">&lt;AUTHOR&gt;</span><br />
+				<span style="color: #FF0000">&lt;FIRSTNAME&gt;</span>Hector<span style="color: #FF0000">&lt;/FIRSTNAME&gt;</span><br />
+				<span style="color: #FF0000">&lt;LASTNAME&gt;</span>Garcia-Molina<span style="color: #FF0000">&lt;/LASTNAME&gt;</span><br />
+			<span style="color: #FF0000">&lt;/AUTHOR&gt;</span><br />
+			<span style="color: #FF0000">&lt;AUTHOR&gt;</span><br />
+				<span style="color: #FF0000">&lt;FIRSTNAME&gt;</span>Jeffrey<span style="color: #FF0000">&lt;/FIRSTNAME&gt;</span><br />
+				<span style="color: #FF0000">&lt;LASTNAME&gt;</span>Ullman<span style="color: #FF0000">&lt;/LASTNAME&gt;</span><br />
+			<span style="color: #FF0000">&lt;/AUTHOR&gt;</span><br />
+			<span style="color: #FF0000">&lt;AUTHOR&gt;</span><br />
+				<span style="color: #FF0000">&lt;FIRSTNAME&gt;</span>Jennifer<span style="color: #FF0000">&lt;/FIRSTNAME&gt;</span><br />
+				<span style="color: #FF0000">&lt;LASTNAME&gt;</span>Widom<span style="color: #FF0000">&lt;/LASTNAME&gt;</span><br />
+			<span style="color: #FF0000">&lt;/AUTHOR&gt;</span><br />
+		<span style="color: #FF0000">&lt;/AUTHORS&gt;</span><br />
+		<span style="color: #FF0000">&lt;REMARK&gt;</span><br />
+		 Buy this book bundled with "A First Course", it's a great deal!<br />
+		<span style="color: #FF0000">&lt;/REMARK&gt;</span><br />
+	<span style="color: #FF0000">&lt;/BOOK&gt;</span><br />
+<span style="color: #FF0000">&lt;/BOOKSTORE&gt;</span><br />
+</div>
+
+<hr>
+
+
+<center><h2>"Well-Formed" XML</h2></center>
+
+<p><b>"Well-Formed" XML</b> has been returned by the <b>XML Parser</b>.  "Well-Formed XML" is any XML document that follows the basic rules.</p>
+
+<p>The <b>XML Parser</b> ensures incoming <b>XML</b> meets structural requirements:</p>
+
+<ul>
+    <li>Single root element.</li>
+    <li>Matched tags, proper nesting. All tags must close. &lt;Tag&gt;...&lt;/Tag&gt;</li>
+    <li>Unique attributes within elements.</li>
+</ul>
+    
+<p><u>"Well-formed" XML means the document is structed</u>.</p>
+
+
+<center><h2>"Valid" XML</h2></center>
+
+<p><b>"Valid" XML</b> is <b>"Well-Formed" XML</b> that also adheres to specific criteria.</p>
+
+<p><u>"Valid" XML means the document is structed AND the attributes, etc, meet the schema.</u> STRUCTURE + SCHEMA</p>
+
+
+    
+<hr>
+
+
+
+
+<center><h2>Document Type Descriptor (DTD)</h2></center>
+
+<p>It is possible to define the schema for XML data (<b>XSD</b>), called a <u>Document Type Descriptor</u> (<b>DTD</b>).</p>
+
+<p>A <u>Document Type Descriptor</u> is a grammar that describes the legal nesting of tags and attributes. It is specified at the top of the document, or in a separate file referenced at the top of the document.</p>
+
+
+<div class="w3-code notranslate jsHigh" font style='color: #b3ccff;'>
+
+<span style="color: #FF0000">&lt;!DOCTYPE Bookstore [<br />
+   &lt;!ELEMENT <span style="color: #0000FF">BOOKSTORE</span> (<span style="color: #0000FF">BOOK*, AUTHOR*</span>)&gt;<br />
+   &lt;!ELEMENT <span style="color: #0000FF">BOOK</span> (<span style="color: #0000FF">TITLE, REMARK?</span>)&gt;<br />
+   &lt;!ATTLIST <span style="color: #b3ccff">BOOK ISBN ID Price CDATA Authors IDREFS</span>&gt;<br />
+   &lt;!ELEMENT <span style="color: #0000FF">TITLE</span> (<span style="color: #0000FF">#PCDATA</span>)&gt;<br />
+   &lt;!ELEMENT <span style="color: #0000FF">REMARK</span> (<span style="color: #0000FF">#PCDATA | BOOKREF)+</span>)&gt;<br />
+   &lt;!ELEMENT <span style="color: #0000FF">BOOKREF</span>&gt;<br />
+   &lt;!ATTLIST <span style="color: #0000AA">BOOKREF</span> <span style="color: #00FF00">book IDREF</span>&gt;<br />
+   &lt;!ELEMENT <span style="color: #0000FF">AUTHOR</span> (<span style="color: #0000FF">FIRSTNAME, LASTNAME</span>)&gt;<br />
+   &lt;!ATTLIST <span style="color: #0000AA">AUTHOR</span> <span style="color: #00FF00">Ident ID</span>&gt;<br />
+   &lt;!ELEMENT <span style="color: #0000FF">FIRSTNAME</span> (<span style="color: #0000FF">#PCDATA</span>)&gt;<br />
+   &lt;!ELEMENT <span style="color: #0000FF">LASTNAME</span> (<span style="color: #0000FF">#PCDATA</span>)&gt;<br />
+]&gt;
+</div>
+
+<hr> 
+
+
+<center><h2>DTD/XSD vs. None</h2></center>
+
+<center><table>
+  <tr>
+    <th></th>
+    <th style="background: #FFCCFF; color: #0000FF; border: 1px solid #000000;">Relational</th>
+    <th style="background: #FFCCFF; color: #0000FF; border: 1px solid #000000;">XML</th>
+  </tr>
+  
+  <tr>
+    <td style="background: #FFCCFF; color: #0000FF;">Structure</td>
+    <td>Tables.</td>
+    <td>Hierarchical.</td>
+  </tr>
+  
+  <tr>
+    <td style="background: #FFCCFF; color: #0000FF;">Schema</td>
+    <td>Fixed in Advance.</td>
+    <td>Flexable, "Self-describing".</td>
+  </tr>
+  
+  <tr>
+    <td style="background: #FFCCFF; color: #0000FF;">Queries</td>
+    <td>Simple and easy languages.</td>
+    <td>Not so much.
+  </tr>
+  
+  <tr>
+    <td style="background: #FFCCFF; color: #0000FF;">Ordering</td>
+    <td>None.</td>
+    <td>Implied.</td>
+  </tr>
+  
+  <tr>
+    <td style="background: #FFCCFF; color: #0000FF;">Implementation</td>
+    <td>Native.</td>
+    <td>Add-on.</td>
+  </tr>
+</table></center>
+
+
+
+<center><h2>Relational Model vs. XML</h2></center>
+
+<center><table>
+  <tr>
+    <th></th>
+    <th style="background: #FFCCFF; color: #0000FF; border: 1px solid #000000;">Relational</th>
+    <th style="background: #FFCCFF; color: #0000FF; border: 1px solid #000000;">XML</th>
+  </tr>
+  
+  <tr>
+    <td style="background: #FFCCFF; color: #0000FF;">Structure</td>
+    <td>Tables.</td>
+    <td>Hierarchical.</td>
+  </tr>
+  
+  <tr>
+    <td style="background: #FFCCFF; color: #0000FF;">Schema</td>
+    <td>Fixed in Advance.</td>
+    <td>Flexable, "Self-describing".</td>
+  </tr>
+  
+  <tr>
+    <td style="background: #FFCCFF; color: #0000FF;">Queries</td>
+    <td>Simple and easy languages.</td>
+    <td>Not so much.
+  </tr>
+  
+  <tr>
+    <td style="background: #FFCCFF; color: #0000FF;">Ordering</td>
+    <td>None.</td>
+    <td>Implied.</td>
+  </tr>
+  
+  <tr>
+    <td style="background: #FFCCFF; color: #0000FF;">Implementation</td>
+    <td>Native.</td>
+    <td>Add-on.</td>
+  </tr>
+</table></center>
+<hr>
+
+
+<center><h1><u>JavaScript Object Notation (<span style="color: #0000FF;">JSON</span>)</u></h1></center>
+<center><img src="http://i.imgur.com/CzC4Orq.png"></center>
+
+<p><b>JSON</b> is a <b>format</b> for <u>storing and exchanging data</u>.</p>
+
+<ul>
+    <li>When exchanging data between a browser and a server, <u>the data can only be text</u>.</li>
+    
+    <li>It is easy for humans to read and write.</li>
+    
+    <li>We can also convert any <b>JSON</b> received from the server into JavaScript objects.</li>
+    
+    <li>It is easy for machines to parse and generate. </li>
+
+    <li><b>JSON</b> is text, and we can convert any JavaScript object into <b>JSON</b>, and send it to the server.</li>
+    
+    <li>It is based on a subset of the JavaScript Programming Language. <b>Standard ECMA-262 3rd Edition</b> - Dec '99.</li>
+    
+</ul>
+    
+<p>If you have data stored in a JavaScript object, you can convert the object into <b>JSON</b>, and send it to a server.</p>
+
+<p><b>JSON</b> makes it possible to store JavaScript objects as text.</p>
+    
+<p>When storing data, the data has to be a certain format. Regardless of where you store it, <b>text is always one of the legal formats</b>.</p>
+    
+<p><b>JSON is language independent!!!</b></p>
+    
+<p><b>JSON</b> <u>only</u> uses the JavaScript <u>syntax</u>. That is it. <b>JSON</b> format is text only, and a sepetate concept from Javascript. Text can be read and used as a data format by any programming language.</p>
+
+<h3>Example - Storing JSON data in local storage.</h3>
+    
+<div class="w3-code notranslate jsHigh">
+    <span style="color: #00CF00;">//Storing data:</span><br>
+            
+    <b>var</b> object = { 
+        
+    <span style="color: #00AAFF;">"name"</span>: <span style="color: #FF0000;">"John"</span>, 
+        
+    <span style="color: #00AAFF;">"age"</span>: <span style="color: #FF00FF;">31</span>,
+        
+    <span style="color: #00AAFF;">"city"</span>: <span style="color: #FF0000;">"New York"</span>
+        
+    }; <br>
+        
+    object = JSON.<span style="color: #00AAFF;">stringify</span>(object);<br>
+        
+    localStorage.<span style="color: #00AAFF;">setItem</span>(<span style="color: #FF0000;">"testJSON"</span>, object);<br><br>
+        
+    <span style="color: #00CF00;">//Retrieving data:</span><br>
+        
+    <b>var</b> text = localStorage.<span style="color: #00AAFF;">getItem</span>(<span style="color: #FF0000">"testJSON"</span>);<br>
+        
+    text = JSON.<span style="color: #00AAFF;">parse</span>(text);<br>
+        
+    document.<span style="color: #00AAFF;">getElementById</span>(<span style="color: #FF0000">"demo"</span>).innerHTML = text.<span style="color: #00AAFF;">name</span>;
+
+</div>
+
+
+</body>
+</html>
