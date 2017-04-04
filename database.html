@@ -1,8 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel='stylesheet' href='style.css'/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+body {
+  font-size: 18px;
+  margin: 0;
+}
+
+table {
+    border: 1px solid #000000;
+}
+
+tr {
+    border: 1px solid #000000;
+}
+
+td {
+    border: 1px solid #000000;
+}
+
+
+.w3-example {
+	border: 2px dotted #AA00AA;
+}
+
+.w3-code {
+	margin-top: 10px;
+	line-height: 1.14;
+	width: auto;
+	border: 1px solid #AA00AA;
+	word-wrap: break-word;
+	background-color: #354551;
+	color: #FFFFFF;
+	text-shadow: 1px 1px 1px rgba(43,56,66,0.3);
+	font-size: 13px;
+	font-family: Monaco,Menlo,"Ubuntu Mono","Droid Sans Mono",Consolas,monospace;
+	font-weight: 300;
+}
+
+.w3-code b {
+    color: #AA0000;
+}
+
+.w3-code, .w3-codespan {
+  font-family: Consolas,"courier new";
+  font-size: 16px;
+}
+      
+#crudacid {
+  background: #7777FF;
+  margin:0;
+}
+      
+#keypeople {
+  background: #DDDDDD;
+  margin:0;
+}
+
+#design {
+  background: #82AA82;
+  margin:0;
+}
+
+#relation1 {
+  background: #BB99AA;
+  margin:0;
+}
+      
+#rdbms {
+  background: #008888;
+  margin:0;
+}
+      
+      
+
+  </style>
 	<script src='script.js'></script>
+    <title>DBMS - Nolen Felten</title>
 </head>
 <body>
 
@@ -28,239 +113,288 @@
     <li><b>Convenient</b> - Physical data indendent. How an application accesses data should remain the same, even if the DBMS is changed. Use high-level abstract languages.</li>
 </ul>
 
+<div id="keypeople">
+  <hr>
 
-<hr>
+  <h2><i><u>Key People</u></i>:</h2>
+  <ul>
+      <li><b>DBMS Implementer</b></li>
+      Builds system.
 
-<h2><i><u>Key People</u></i>:</h2>
-<ul>
-    <li><b>DBMS Implementer</b></li>
-    Builds system.
-        
-    <li><b>Database Designer</b></li>
-    Establishes schema.
-        
-    </b></li>Database Application Developer</b></li>
-    Write applications that interact with system.
-        
-    <li><b>Database Admin (DBA)</b></li>
-    Loads data, keeps things running smooth.
-</ul>
+      <li><b>Database Designer</b></li>
+      Establishes schema.
 
+      <li><b>Database Application Developer</b></li>
+      Write applications that interact with system.
 
-<hr>
+      <li><b>Database Admin (DBA)</b></li>
+      Loads data, keeps things running smooth.
+  </ul>
+  
+  <hr>
+  </div><div id="crudacid">
+  <hr>
+  <center><h2><b><i>What IS</i></b> a Database?</h2></center>
 
-<center><h1><u>CRUD</u></h1></center>
-<p>In information theory, data can be created, data can be read, data can be updated, and data can be deleted.</p>
+  <center><h2><u>CRUD</u></h2></center>
+  <p>In information theory, data can be created, data can be read, data can be updated, and data can be deleted.</p>
 
-<center><h3>Create - Read - Update - Delete</h3>C - R - U - D</center>
+  <hr width=50%>
 
-<hr>
+  <center><h3>Create - Read - Update - Delete</h3>C - R - U - D</center>
 
-<center><h1><u>ACID</u></h1></center>
+  <hr width=50%>
 
-<p><b>Atomicity</b> requires that each transaction be "all or nothing": if one part of the transaction fails, then the entire transaction fails, and the database state is left unchanged.</p>
+  <center><h2><u>ACID</u></h2></center>
 
-<p>An atomic system must guarantee atomicity in each and every situation, including power failures, errors, and crashes. To the outside world, a committed transaction appears (by its effects on the database) to be indivisible ("atomic"), and an aborted transaction does not happen.</p>
+  <p><b>Atomicity</b> requires that each transaction be "all or nothing": if one part of the transaction fails, then the entire transaction fails, and the database state is left unchanged.<br>
+  An atomic system must guarantee atomicity in each and every situation, including power failures, errors, and crashes. To the outside world, a committed transaction appears (by its effects on the database) to be indivisible ("atomic"), and an aborted transaction does not happen.</p>
 
-<p><b>Consistency</b> property ensures that any transaction will bring the database from one valid state to another.</p>
+  <p><b>Consistency</b> property ensures that any transaction will bring the database from one valid state to another.</p>
 
-<p><b>Isolation</b> property ensures that the concurrent execution of transactions results in a system state that would be obtained if transactions were executed sequentially.</p>
+  <p><b>Isolation</b> property ensures that the concurrent execution of transactions results in a system state that would be obtained if transactions were executed sequentially.<br>
+  Providing isolation is the main goal of concurrency control. Depending on the concurrency control method, the effects of an incomplete transaction might not even be visible to another transaction.</p>
 
-<p>Providing isolation is the main goal of concurrency control. Depending on the concurrency control method, the effects of an incomplete transaction might not even be visible to another transaction.</p>
+  <p><b>Durability</b> property ensures that once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors.<br>
+  In a relational database, for instance, once a group of SQL statements execute, the results need to be stored permanently (even if the database crashes immediately thereafter). To defend against power loss, transactions (or their effects) must be recorded in a non-volatile memory.</p>
 
-<p><b>Durability</b> property ensures that once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors.</p>
+  <hr width=50%>
 
-<p>In a relational database, for instance, once a group of SQL statements execute, the results need to be stored permanently (even if the database crashes immediately thereafter). To defend against power loss, transactions (or their effects) must be recorded in a non-volatile memory.</p>
+  <center><h3><u>A</u>tomicity - <u>C</u>onsistency - <u>I</u>solation - <u>D</u>urability</h3> A - C - I - D</center>
 
-<center><h3><u>A</u>tomicity - <u>C</u>onsistency - <u>I</u>solation - <u>D</u>urability</h3> A - C - I - D</center>
-
-<hr>
-
-<center><h2>Schema</h2>
-
-The strucure of relations, and the attributes of those relations.
-            
-<p><b>Schema <i>vs.</i> Data</b><br />
-<u>Schema</u> = <u>Types</u>. Rarely changes.<br />
-<u>Data</u> = <u>Variables</u>. Changes rapidly.</p>
-
-</center>
+    <hr width=50%>
+  
+    <hr>
+  </div>
 
 
-<hr>
+  <div id="design">
+    <hr>
+  
+    <center><h1>Database Design Concepts:</h1></center>
+
+    <center><h3>Data-Type</h3><p>Pretty much what <i>kind of</i> data a piece of information. Called the <b>type name</b>.<br>It is important to understand that relational theory <i>does not</i> dictate what types are to be supported.</p><p>Nowadays provisions are expected to be available for <i>user-defined</i> data-types in addition to the <i>built-in</i> ones provided by the system.</p></center>
+
+    <center><h3>Data Definition Language (<u>DDL</u>)</h3>Commands/Syntax used to setup the database <i>schema</i>.<br>Application use this to interact with the DBMS and executes queries.</center>
+    
+    <center><h3>Data Manipulation Language (<u>DML</u>)</h3>Programming syntax for using data. High level (abstract) language. Query Language.</center>
+  
+    <center><h3>Data Model</h3>How the data is structered.</center>
+
+    <hr>
+  </div>
 
 
-<center><h2>Data Model</h2>
 
-How the data is structered.</center>
-
-
-<hr>
+  <div id="relation1">
+  <hr>
+  <center><h2><u>The Relational Model</u></h2></center>
 
 
-<center><h2>Data Definition Language (<u>DDL</u>)</h2>
-Used to setup <i>Schema</i>. Write applications that interact with system. Executes Queries.</center>
+  <center><img src="http://i.imgur.com/CsslWeT.png"></center>
 
 
-<hr>
+  <p><b>Relational Model</b> (<b>RM</b>) for <b>database management</b> is an approach to managing data using a <b>structure</b> (<b>Data Model</b>) and <b>language</b>.</p>
 
 
-<center><h2>Data Manipulation Language (<u>DML</u>)</h2></center>
-<center>Programming syntax for using data. High level (abstract) language. Query Language.</center>
+  <ul>
+      <li>It is used by all major commerical database systems.</li>
+      <li>It is very simple.</li>
+      <li>Efficent Implementations.</li>
+  </ul>
 
+  <hr width=50%>
 
-<hr>
+  <center><h2>Relation = Table</h2>
+      <table>
+          <tr>
+              <th></th>
+              <th>Column 0</th>
+              <th>Column 1</th>
+              <th>Column 2</th>
+          </tr>
+          <tr>
+              <th>Row 0</th>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+      </table>
+  </center>
 
+  <p>A <b>table</b> is an accepted visual representation of a <b>relation</b>.</p>
 
-<center><h2>Data-Type</h2></center>
+  <hr width=50%>
 
-<p>Pretty much what <i>kind of</i> data a piece of information is.</p>
+  <center><h2>Attribute = Column</h2></center>
 
-<p>Like an integer (<b>number</b>), an array of characters (<b>string</b>), set of dates (<b>date</b>), or <i>true</i> and <i>false</i> (<b>boolean</b>). These are called <b>type names</b>.</p>
+  <center>
+      <table>
+          <tr>
+              <th></th>
+              <th>Attribute 0</th>
+              <th>Attribute 1</th>
+              <th>Attribute 2</th>
+          </tr>
+          <tr>
+              <th>-</th>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+      </table>
+  </center>
+  
+  <p>Each <b>relation</b> (<b>table</b>) has a set of named <b>attributes</b> (<b>columns</b>).<br />An <b>attribute</b> name might be "name" or "age".</p>
 
-<p>It is important to understand that relational theory <i>does not</i> dictate what types are to be supported.</p>
+  <p>Each <b>attribute</b> (<b>column</b>) has a <b>type</b> (or <b>domain</b>). Like an image, floating point number, integer, or a string.</p>
 
-<p>Nowadays provisions are expected to be available for <i>user-defined</i> data-types in addition to the <i>built-in</i> ones provided by the system.</p>
+  <hr width=50%>
 
+  <center><h2>Tuple = Row</h2></center>
 
-<hr>
-
-
-<center><h1><u>The Relational Model</u></h1></center>
-
-
-<center><img src="http://i.imgur.com/CsslWeT.png"></center>
-
-
-<p><b>Relational Model</b> (<b>RM</b>) for <b>database management</b> is an approach to managing data using a <b>structure</b> (<b>Data Model</b>) and <b>language</b>.</p>
-
-
-<ul>
-    <li>It is used by all major commerical database systems.</li>
-    <li>It is very simple.</li>
-    <li>Efficent Implementations.</li>
-</ul>
-
-<hr>
-
-
-<center><h2>Relation = Table</h2>
-    <table>
+  <center>
+      <table>
         <tr>
-            <th></th>
-            <th>Column 0</th>
-            <th>Column 1</th>
-            <th>Column 2</th>
+          <th></th>
+          <th>Attribute 0</th>
+          <th>Attribute 1</th>
+          <th>Attribute 2</th>
         </tr>
+
         <tr>
-            <th>Row 0</th>
-            <td></td>
-            <td></td>
-            <td></td>
+          <th>Tuple 0</th>
+          <td style="color: #FF0000; text-align: center;">Value</td>
+          <td style="color: #00FF00; text-align: center;">Value</td>
+          <td style="color: #0000FF; text-align: center;">Value</td>
         </tr>
-    </table>
-</center>
 
-<p>A <b>table</b> is an accepted visual representation of a <b>relation</b>.</p>
-
-
-<hr>
-
-
-<center><h2>Attribute = Column</h2></center>
-
-<center>
-    <table>
         <tr>
-            <th></th>
-            <th>Attribute 0</th>
-            <th>Attribute 1</th>
-            <th>Attribute 2</th>
+          <th>Tuple 1</th>
+          <td style="color: #FF0000; text-align: center;">Value</td>
+          <td style="color: #00FF00; text-align: center;">Value</td>
+          <td style="color: #0000FF; text-align: center;">Value</td>
         </tr>
+      </table>
+    </center>
+
+    <p>Each <b>tuple</b> (or <b>rows</b>) has a <b>value</b> for each <b>attribute</b> (<b>column</b>).</p>
+
+    <p>A <b>tuple</b> is basically the same thing as a <b>row</b>, except in an SQL DBMS, where the <b>column</b> values in a <b>row</b> are ordered.<br />(<b>Tuples</b> are <u>NOT</u> ordered. Instead, each <b>attribute</b> value is identified solely by the <b>attribute name</b> and <u>NEVER</u> by its ordinal position within the <b>tuple</b>).</p>
+
+    <hr width=50%>
+
+    <center><h2>Key</h2></center>
+
+    <center>
+      <table>
         <tr>
-            <th>-</th>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-</center>
-<p>Each <b>relation</b> (<b>table</b>) has a set of named <b>attributes</b> (<b>columns</b>).<br />
-
-An <b>attribute</b> name might be "name" or "age".</p>
-
-<p>Each <b>attribute</b> (<b>column</b>) has a <b>type</b> (or <b>domain</b>). Like an image, floating point number, integer, or a string.</p>
-
-<hr>
-
-<center><h2>Tuple = Row</h2></center>
-
-<center>
-    <table>
-        <tr>
-            <th></th>
-            <th>Attribute 0</th>
-            <th>Attribute 1</th>
-            <th>Attribute 2</th>
-        </tr>
-        <tr>
-            <th>Tuple 0</th>
-            <td style="color: #FF0000; text-align: center;">Value</td>
-            <td style="color: #00FF00; text-align: center;">Value</td>
-            <td style="color: #0000FF; text-align: center;">Value</td>
+          <th><i>Key</i></th>
+          <th>Attribute</th>
         </tr>
         
         <tr>
-            <th>Tuple 1</th>
-            <td style="color: #FF0000; text-align: center;">Value</td>
-            <td style="color: #00FF00; text-align: center;">Value</td>
-            <td style="color: #0000FF; text-align: center;">Value</td>
+          <td style="color: #FF0000; text-align: center;">Key 0</td>
+          <td style="border: 1px solid #FF0000; color: #FF0000; text-align: center;">Value</td>
         </tr>
-    </table>
-</center>
 
-<p>Each <b>tuple</b> (or <b>rows</b>) has a <b>value</b> for each <b>attribute</b> (<b>column</b>).</p>
-
-
-<p>A <b>tuple</b> is basically the same thing as a <b>row</b>, except in an SQL DBMS, where the <b>column</b> values in a <b>row</b> are ordered.<br />
-(<b>Tuples</b> are <u>NOT</u> ordered. Instead, each <b>attribute</b> value is identified solely by the <b>attribute name</b> and <u>NEVER</u> by its ordinal position within the <b>tuple</b>).</p>
-
-<hr>
-
-<center><h2>Key</h2></center>
-
-<center>
-    <table>
         <tr>
-            <th><i>Key</i></th>
-            <th>Attribute</th>
+          <td style="color: #0000FF; text-align: center;">Key 1</td>
+          <td style="border: 1px solid #0000FF; color: #0000FF; text-align: center;">Value</td>
         </tr>
-        <tr>
-            <td style="color: #FF0000; text-align: center;">Key 0</td>
-            <td style="border: 1px solid #FF0000; color: #FF0000; text-align: center;">Value</td>
-        </tr>
-        
-        <tr>
-            <td style="color: #0000FF; text-align: center;">Key 1</td>
-            <td style="border: 1px solid #0000FF; color: #0000FF; text-align: center;">Value</td>
-        </tr>
-    </table>
-</center>
+      </table>
+    </center>
 
-<p>Each <b>relation</b>/<b>tuple</b> can have a unqiue <b>Key</b>, an <b>attribute</b> (<b>column</b>) whose <b>value</b> is unique in each <b>tuple</b> (<b>row</b>). Or set of <b>attributes</b> whose combined <b>values</b> are unique.</p>
+    <p>Each <b>relation</b>/<b>tuple</b> can have a unqiue <b>Key</b>, an <b>attribute</b> (<b>column</b>) whose <b>value</b> is unique in each <b>tuple</b> (<b>row</b>). Or set of <b>attributes</b> whose combined <b>values</b> are unique.</p>
+
+    <center><img src="http://i.imgur.com/NO8vvd8.png"></center>
+
+    <hr width=50%>
+
+    <center><h2><font style="background: #CCCCCC; color: #204099;">NULL</font></h2></center>
+
+    <center>A special <b>value</b> data type for "unknown" or "undefined".<br/> <font style="background: #CCCCCC; color: #204099;">NULL</font> is part of <u>The Relational Model</u>.</center>
+
+    <p>When querying a database containing peoples <i>name</i> and <i>age</i> to return <b>tuples</b> (<b>rows</b>) with <i><u>age</u></i> (<b>attribute</b>):</p>
+
+    <div class="w3-example"><center><u>lesser</u> then <b>OR</b> <u>greater</u> then <b>OR</b> <u>equal</u> to <b>21</b></center></div>
+
+    <p>The <b>tuples</b> (<b>rows</b>) with <font style="background: #CCCCCC; color: #204099;">NULL</font> <i><u>age</u></i> (<b>attribute</b>) will <b>NOT</b> be returned.</p>
+
+    <br>
+  </div>
+  <div id="rdbms">
+    
+    <hr width=50%><center><h2><u>Relational Database Management System</u><br/> (RDBMS)</h2></center><hr width=50%>
+
+    <p>A <u>relational database management system</u> (RDBMS) is a program that lets you <i>create</i>, <i>update</i>, and <i>administer</i> a relational database. </p>
+
+    <p>Most relational database management systems use SQL to access the database.</p>
+
+    <p>There are more similarities than differences between the different RDBMS, but the SQL syntax may be slightly different depending on which RDBMS you are using.</p>
+
+    <hr width=50%>
+
+    <center><h2>Types of RDBMS</h2></center>
+
+    <hr width=50%>
+
+    <ul>
+      <li><u><h3>SQLite</h3></u></li>
+      <ul>
+        <li><strong>SQLite</strong> is a popular <i>open-source</i> SQL database.</li>
+        <li>It is able to store an entire database in a single file.</li>
+        <li>One of the biggest advantages this provides is that <u>all of the data can be stored locally without having to connect your database to a server</u>.</li>
+        <li><strong>SQLite</strong> is a popular choice for databases in cellphones, PDAs, MP3 players, set-top boxes, and other electronic gadgets.</li>
+      </ul>
+
+      <li><u><h3>MySQL</h3></u></li>
+      <ul>
+        <li><b>MySQL is the most popular</b> <i>open-source</i> SQL database.</li>
+        <li>It is typically used for web application development, and often accessed using PHP.</li>
+        <li>The main advantages of <strong>MySQL</strong> are that it is easy to use, inexpensive, reliable (has been around since 1995) and has a large community of developers who can help answer questions.</li>
+        <li>Some of the disadvantages are that it has been known to suffer from poor performance when scaling, open source development has lagged since <strong>Oracle</strong> has taken control of <strong>MySQL</strong>.</li>
+        <li>and it does not include some advanced features that developers may be used to.</li>
+      </ul>
+
+      <li><u><h3>PostgreSQL</h3></u></li>
+      <ul>
+        <li><strong>PostgreSQL</strong> is an <i>open-source</i> SQL database that is <u>not controlled by any corporation</u>. It is typically used for web application development.</li>
+        <li><strong>PostgreSQL</strong> shares many of the same advantages of <strong>MySQL</strong>. It is easy to use, inexpensive, reliable, and has a large community of developers.</li>
+        <li>It also provides some additional features such as foreign key support without requiring complex configuration.</li>
+        <li>The main disadvantage of <strong>PostgreSQL</strong> is that it is slower in performance than other databases such as <strong>MySQL</strong>.</li>
+        <li>It is also less popular than <strong>MySQL</strong>, which makes it harder to come by hosts or service providers that offer managed <strong>PostgreSQL</strong> instances.</li>
+      </ul>
 
 
-<center><img src="http://i.imgur.com/NO8vvd8.png"></center>
+      <li><u><h3>Oracle DB</h3></u></li>
+      <ul>
+        <li><strong>Oracle DB</strong> is owned by the Oracle corporation, and the code is <i style="color: #FF0000;">NOT open-source</i>.</li>
+        <li><strong>Oracle</strong> is used for large applications, particularly in the banking industry.</li>
+        <li>Most of the world’s top banks run <strong>Oracle</strong> applications because <strong>Oracle</strong> offers a powerful combination of technology and comprehensive, pre-integrated business applications, including key functionality built specifically for banks.</li>
+        <li>The main disadvantage of using <strong>Oracle</strong>  is that it is not free to use like its open-source competitors and can be quite expensive.</li>
+      </ul>
 
-<hr>
 
+      <li><u><h3>SQL Server</h3></u></li>
+      <ul>
+        <li><strong>SQL Server</strong> is owned by Microsoft. Like <strong>Oracle DB</strong>, the code is also <i style="color: #FF0000;">NOT open-source</i>.</li>
+        <li><strong>SQL Server</strong> is mainly used by large enterprise applications.</li>
+        <li>The major difference between <strong>Oracle DB</strong> and <strong>SQL Server</strong> is that <strong>SQL Server</strong> <u>only supports</u> <i style="color: #FF0000;">Windows OS</i>.</li>
+        <li>Microsoft offers a free entry level version called Express, but can become very expensive as you scale your application.</li>
+      </ul>
+
+    </ul>
+  </div>
+  <hr>
+  
+  
 <center><h2>Steps in creating and using a (relational) database.</h2></center>
 
 <b><i>1</i>.</b> Design the strucure of relations, and the attributes of those relations. Known as the <b>Schema</b>.<br />
 <b><i>2</i>.</b> Load inital data.<br />
 <b><i>3</i>.</b> Query and modify data. Repeat.<br />
-
-<hr>
+<hr width=50%>
 
 
     <center><h3>Creating Relations (Tables) in SQL</h3></center>
@@ -285,18 +419,6 @@ A <b>parameter</b> is a <u>list of <b>columns</b>, <b>data-type's</b>, or <b>val
 <p>Here, the <b>parameter</b> is a list of <b>column</b> names and the associated <b>data-type</b>.<br />
 The structure of SQL statements vary.<br />The number of lines used <b>do not</b> matter.</p>
 
-<hr>
-
-
-<center><h2><font style="background: #D5D5D5; color: #204056;">NULL</font></h2></center>
-
-<center>A special <b>value</b> data type for "unknown" or "undefined".<br/> <font style="background: #D5D5D5; color: #204056;">NULL</font> is part of <u>The Relational Model</u>.</center>
-
-<p>When querying a database containing peoples <i>name</i> and <i>age</i> to return <b>tuples</b> (<b>rows</b>) with <i><u>age</u></i> (<b>attribute</b>):</p>
-
-<div class="w3-example"><center><u>lesser</u> then <b>OR</b> <u>greater</u> then <b>OR</b> <u>equal</u> to <b>21</b></center></div>
-
-<p>The <b>tuples</b> (<b>rows</b>) with <font style="background: #D5D5D5; color: #204056;">NULL</font> <i><u>age</u></i> (<b>attribute</b>) will <b>NOT</b> be returned.</p>
 
 
 <hr>
@@ -561,7 +683,7 @@ The structure of SQL statements vary.<br />The number of lines used <b>do not</b
 <div class="w3-code notranslate jsHigh">
 <font style='color: #b3ccff;'>SELECT <font style='color: #ffffff;'>column_name(s)</font> FROM <font style='color: #ffffff;'>table1</font><br />
 UNION<br />
-SELECT <font style='color: #ffffff;'>column_name(s)</font> FROM <font style='color: #ffffff;'>table2</font>;
+SELECT <font style='color: #ffffff;'>column_name(s)</font> FROM <font style='color: #ffffff;'>table2</font>;</font>
 </div>
 
 <p>Each <font style="background: #D5D5D5; color: #204056;">SELECT</font> statement within the <font style="background: #D5D5D5; color: #204056;">UNION</font> must have the same number of columns with similar data types. The columns in each <font style="background: #D5D5D5; color: #204056;">SELECT</font> statement must be in the same order. By default, the <font style="background: #D5D5D5; color: #204056;">UNION</font> operator selects only distinct values.</p>
@@ -570,7 +692,7 @@ SELECT <font style='color: #ffffff;'>column_name(s)</font> FROM <font style='col
 
 
 <hr>
-<center><h1><u>Alternatives</u></h1></center>
+<center><h1><u>Alternative Database Management</u></h1></center>
 
 <p>Other models are the <font style='color: #AA00FF;'>Hierarchical Model</font> and <font style='color: #AA00FF;'>Network Model</font>. Some systems using these older architectures are still in use today in data centers with high data volume needs, or where existing systems are so complex and abstract, it would be cost-prohibitive to migrate to systems employing the relational model. Also of note are newer <font style='color: #AA00FF;'>Object-Oriented Database</font>.</p>
 
