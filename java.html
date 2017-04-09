@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Java - Nolen Felten</title>
+	<link rel='stylesheet' href="https://production.cdmycdn.com/webpack/vendor-c7a7e982526927246a3b.css">
+	<style>
+		body {
+			margin: 0;
+		}
+		#head {
+			text-align: center;
+		}
+		#inh {
+			margin: 0;
+			height: 632px;
+			background-color: #354551;
+		}
+		#ass {
+			margin: 0;
+			float: left;
+			width: 49%;
+			height: 500px;
+		}
+		#ass1 {
+			float: right;
+			width: 50.7%;
+			margin: 0;
+			height: 500px;
+		}
+		#ifout {
+			position: absolute;
+			margin-top: -195px;
+			right: -25%;
+			transform: translate(-50%, -50%);
+			width: 60%;
+			/* You can specify ANY width values here */
+			
+			height: 300px;
+		}
+		#inhout {
+			position: absolute;
+			margin-top: 425px;
+			left: 49.5%;
+			transform: translate(-50%, -50%);
+			width: 25%;
+			/* You can specify ANY width values here */
+		}
+		#switchout {
+			position: absolute;
+			right: 1%;
+			margin-top: -220px;
+			width: 54%;
+			height: 180px;
+		}
+		
+		#nameout {
+			position: absolute;
+			right: 1%;
+			margin-top: -120px;
+			width: 54%;
+			height: 80px;		
+		}
+		#whiteout {
+			position: absolute;
+			right: 1%;
+			margin-top: -220px;
+			width: 54%;
+			height: 180px;		
+		}
+		#varout {
+			position: absolute;
+			right: 1%;
+			margin-top: -220px;
+			width: 54%;
+			height: 180px;		
+		}
+		#arithout {
+			position: absolute;
+			right: 1%;
+			margin-top: -220px;
+			width: 54%;
+			height: 180px;		
+		}
+		
+		#boolout {
+			position: absolute;
+			margin-top: -390px;
+			right: -15%;
+			transform: translate(-50%, -50%);
+			width: 35%;
+			/* You can specify ANY width values here */
+			height: 350px;
+		}
+		
+		#ternaryout {
+			position: absolute;
+			margin-top: -115px;
+			right: -5%;
+			transform: translate(-50%, -50%);
+			width: 30%;
+			/* You can specify ANY width values here */
+			
+			height: 180px;
+		}
+		.output {
+			z-index: 2;
+			border: 3px double #00FF00;
+			width: 25%;
+			background: #000000;
+			color: #CCCCCC;
+			padding: 10px;
+			font-family: Courier;
+		}
+		.four {
+			margin-left: 40px;
+		}
+		.eighty {
+			margin-left: 80px;
+		}
+		.onetwenty {
+			margin-left: 120px;
+		}
+		.onesixty {
+			margin-left: 160px;
+		}
+		.w3-example {
+			border: 2px double #AA00AA;
+		}
+		.w3-code {
+			margin-top: 10px;
+			width: auto;
+			border: 1px solid #AA00AA;
+			background-color: #354551;
+			color: #FFFFFF;
+			text-shadow: 1px 1px 1px rgba(43, 56, 66, 0.3);
+			font-size: 11px;
+			font-family: Monaco, Menlo, Consolas, monospace;
+			font-weight: 300;
+		}
+		.w3-code,
+		.w3-codespan {
+			font-family: Consolas, "courier new";
+			font-size: 16px;
+		}
+		.blinking-cursor {
+			font-weight: 100;
+			color: #FFFFFF;
+			background: #000000;
+			-webkit-animation: 1s blink step-end infinite;
+			-moz-animation: 1s blink step-end infinite;
+			-ms-animation: 1s blink step-end infinite;
+			-o-animation: 1s blink step-end infinite;
+			animation: 1s blink step-end infinite;
+		}
+		@keyframes "blink" {
+			from, to {
+				background: transparent;
+			}
+			50% {
+				background: #CCCCCC;
+			}
+		}
+		@-webkit-keyframes "blink" {
+			from, to {
+				background: transparent;
+				color: transparent;
+			}
+			50% {
+				color: black;
+				background: #CCCCCC;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="head">
+		<hr width="15%">
+		<h1>Java</h1>
+		<hr width="15%">
+		<p><strong>Java</strong> is a Programming Language designed to build <u>secure applications</u> that <u>run across multiple operating systems</u>.</p>
+	</div>
+	<div id="helloworld" class="w3-code notranslate jsHigh">
+		<hr width="50%">
+		<center>
+			<h3>Print My Name</h3>
+		</center>
+		<hr width="50%">
+		<font color="#b3ccff">public class YourName</font> {
+		<p class="four"><font color="#b3ccff">public static</font> <font color="#ff8973">void main</font>(<font color="#ff8973">String</font>[] <font color="#ff8973">args</font>) {</p>
+		<p class="eighty"><font color="#ff897">System</font>.<font color="#ff897">out</font>.<font color="#ff897">println</font>(<font color="#ffe083">"Nolen"</font>);</p>
+		<p class="four">}</p>
+		}
+	</div>
+	<div id="nameout" class="output">
+		<center><b><u>OUTPUT</u></b>:</center>
+		<font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># javac YourName.java
+		<br><font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># java YourName
+		<br>Nolen
+		<span class="blinking-cursor">_</span>
+	</div>
+	<div id="datatype">
+		<hr width="45%">
+		<center>
+			<h2>Data Types</h2>
+		</center>
+		<hr width="45%">
+		<center>
+			<h3><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">int</code></h3>
+		</center>
+		<p><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">int</code> is short for <code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">Integer</code><b>:</b>
+			<br><strong>All positive and negative numbers</strong>, <i>including zero</i>!
+			<br>The <code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">int</code> data type <font color="#1111FF">only allows values between <font color="#FF0000">-2,147,483,648</font> and <font color="#00FF00">2,147,483,647</font></font>.
+			<br><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">int</code> data types do not need to be typed within quotes.</p>
+		<center>
+			<h3><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">boolean</code></h3>
+		</center>
+		<p><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">boolean</code> is a data type that can only be either <code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">true</code> or <code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">false</code>.</p>
+		<center>
+			<h3><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">char</code></h3>
+		</center>
+		<p><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">char</code> is short for <code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">character</code>, and can represent a single <code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">character</code> of text.</p>
+		<p><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">char</code> values must be enclosed in <u><font color="#FF0000">single quotes</font></u>, like this: 'G'.</p>
+		<div id="types" class="w3-code notranslate jsHigh">
+			<hr width="50%">
+			<center>
+				<h3>Print Different Types of Data</h3>
+			</center>
+			<hr width="50%">
+			<font color="#b3ccff">public class Variables</font> {
+			<p class="four"><font color="#b3ccff">public static</font> <font color="#ff8973">void main</font>(<font color="#ff8973">String</font>[] <font color="#ff8973">args</font>) {</p>
+			<p class="eighty"><font color="#ff8973">int myNumber</font>;
+				<br><font color="#ff8973">boolean isFun</font>;
+				<br> <font color="#ff8973">char movieRating</font>;</p>
+			<p class="eighty"><font color="#ff8973">myNumber </font>= <font color="#ff8973"> 42</font>;
+				<br> <font color="#ff8973">isFun</font> = <font color="#FF00FF">true</font>;
+				<br> <font color="#ff8973">movieRating</font> = <font color="#ffe083">'A'</font>;</p>
+			<p class="eighty"><font color="#ff897">System</font>.<font color="#ff897">out</font>.<font color="#ff897">println</font>(<font color="#ffe083">"myNumber = "</font> + <font color="#ff897">myNumber</font>);
+				<br><font color="#ff897">System</font>.<font color="#ff897">out</font>.<font color="#ff897">println</font>(<font color="#ffe083">"isFun = "</font> + <font color="#ff897">isFun</font>);
+				<br><font color="#ff897">System</font>.<font color="#ff897">out</font>.<font color="#ff897">println</font>(<font color="#ffe083">"movieRating = "</font> + <font color="#ff897">movieRating</font>);</p>
+			<p class="four">}</p>
+			<p>}</p>
+		</div>
+		<div id="varout" class="output">
+			<center><b><u>OUTPUT</u></b>:</center>
+			<font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># javac Variables.java
+			<br><font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># java Variables
+			<br>myNumber = 42
+			<br>isFun = true
+			<br>movieRating = A
+			<span class="blinking-cursor">_</span>
+		</div>
+	</div>
+	<hr>
+	<div id="white">
+		<hr width="45%">
+		<center>
+			<h2>Whitespace</h2>
+		</center>
+		<hr width="45%">
+		<p>Whitespace is one or more characters (such as a space, tab, enter, or return) that do not produce a visible mark or text.</p>
+		<p>Whitespace is often used to make code visually presentable.</p>
+		<p><strong>Java</strong> will ignore whitespace in code, but it is important to know how to use whitespace to structure code well.</p>
+		<p>If you use whitespace correctly, code will be easier for you and other programmers to read and understand.</p>
+		<div id="types" class="w3-code notranslate jsHigh">
+			<hr width="50%">
+			<center>
+				<h3>Whitespace Does Not Matter!</h3>
+			</center>
+			<hr width="50%">
+			<font color="#b3ccff">public class Whitespace</font> {
+			<p class="four"><font color="#b3ccff">public static</font> <font color="#ff8973">void main</font>(<font color="#ff8973">String</font>[] <font color="#ff8973">args</font>) {</p>
+			<p class="eighty"><font color="#ff8973">System</font>
+				<br>.
+				<br><font color="#ff8973">out</font>
+				<br>.
+				<br><font color="#ff8973">printIn</font>
+				<br>(
+				<br><font color="#ffe083">"This Works!"</font>
+				<br>);</p>
+			<p class="four">}</p>
+			<p>}</p>
+		</div>
+		<div id="whiteout" class="output">
+			<center><b><u>OUTPUT</u></b>:</center>
+			<font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># javac Whitespace.java
+			<br><font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># java Whitespace
+			<br>This Works!
+			<span class="blinking-cursor">_</span>
+		</div>
+	</div>
+	<div id="com">
+		<hr width="45%">
+		<center>
+			<h2>Comments</h2>
+		</center>
+		<hr width="45%">
+		<p>A comment is text you want <strong>Java</strong> to ignore. Comments allow you to describe code or keep notes.</p>
+		<p>By using comments in the <strong>Java</strong> code, you may help yourself and even other programmers understand the purpose of code that a comment refers to.</p>
+		<p>In <strong>Java</strong>, there are two styles of comments: single line comments and multi-line comments.</p>
+		<div id="comment" class="w3-code notranslate jsHigh">
+			<hr width="50%">
+			<center>
+				<h3>Run Nothing!</h3>
+			</center>
+			<hr width="50%">
+			<pre><font color="#cccccc">// I'm a single line comment!</font></pre>
+			<pre><font color="#cccccc">/*<br>Hello, <strong>Java</strong>!<br>My name is Nolen<br>*/</font></pre>
+		</div>
+	</div>
+	<div id="arithmetic">
+		<hr width="45%">
+		<center>
+			<h2>Arithmetic Operators</h2>
+		</center>
+		<hr width="45%">
+		<p>You can add, subtract, multiply, divide, and modulo in <strong>Java</strong>.</p>
+		<div id="marh" class="w3-code notranslate jsHigh">
+			<font color="#b3ccff">public class Arithmetic</font> {
+			<p class="four"><font color="#b3ccff">public static</font> <font color="#ff8973">void main</font>(<font color="#ff8973">String</font>[] <font color="#ff8973">args</font>) {</p>
+			<p class="eighty"><font color="#cccccc">// Addition</font>
+			</p>
+			<p class="eighty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ff8973">9 + 9</font>);</p>
+			<p class="eighty"><font color="#cccccc">// Subtract</font>
+			</p>
+			<p class="eighty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ff8973">9 - 9</font>);</p>
+			<p class="eighty"><font color="#cccccc">// Multiply</font>
+			</p>
+			<p class="eighty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ff8973">9 * 9</font>);</p>
+			<p class="eighty"><font color="#cccccc">// Modulo</font>
+			</p>
+			<p class="eighty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ff8973">9 % 9</font>);</p>
+			<p class="four">}</p>
+			<p>}</p>
+		</div>
+		<div id="arithout" class="output">
+			<center><b><u>OUTPUT</u></b>:</center>
+			<font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># javac Arithmetic.java
+			<br><font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># java Arithmetic
+			<br>18
+			<br>0
+			<br>81
+			<br>1
+			<span class="blinking-cursor">_</span>
+		</div>
+	</div>
+	<div id="relational">
+		<hr width="45%">
+		<center>
+			<h2>Relational Operators</h2>
+		</center>
+		<hr width="45%">
+		<p><strong>Relational Operators</strong> compare <i>data types</i> that have a defined ordering. Like numbers (since numbers are either smaller or larger than other numbers).</p>
+		<p><strong>Relational Operators</strong> will always return a <code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">boolean</code> value of <code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">true</code> or <code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">false</code>.</p>
+		<p>A <strong>Relational Operators</strong> is placed between the two <em>operands</em> (the terms that you want to compare using the relational operator).</p>
+		<h2>Comparitive Operators:</h2>
+		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">==</code> Equal to.</li>
+		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">&gt;</code> Greater than.</li>
+		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">&lt;</code> Less than.</li>
+		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">&gt;=</code> Greater <b>OR</b> equal to.</li>
+		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">&gt;=</code> Less <b>OR</b> equal to.</li>
+		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">&&</code> And (both must equal true to return true).</li>
+		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">||</code> Or (return true if one is true).</li>
+		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">!</code> Not (return the opposite of the expression immediately after it. It will return false if the expression is true, and true if the expression is false).</li>
+		<h2>Boolean Operator Precedence:</h2>
+		<p>Like numerical expressions, every expression within parentheses is evaluated first. Expressions are also read from left to right.</p>
+		<li>! is evaluated first</li>
+		<li>&& is evaluated second</li>
+		<li>|| is evaluated third</li>
+		<div id="marh" class="w3-code notranslate jsHigh">
+			<hr width="50%">
+			<center>
+				<h3>Evaluate Opperands</h3>
+			</center>
+			<hr width="50%">
+			<p><font color="#b3ccff">public class Evaluate </font>{</p>
+			<p class="four"><font color="#b3ccff">public static</font> <font color="#ff8973">void main</font>(<font color="#ff8973">String</font> []<font color="#ff8973">args</font>) {</p>
+			<p class="eighty"><font color="#ff8973">boolean equal</font> = <font color="#ff8973">2</font> == <font color="#ff8973">2</font>;<br><font color="#ff8973">boolean notequal</font> = <font color="#ff8973">1</font> != <font color="#ff8973">2</font>;</p>
+			<p class="eighty"><font color="#ff8973">boolean less</font> = <font color="#ff8973">1</font> &lt; <font color="#ff8973">2</font>;<br><font color="#ff8973">boolean lessequal</font> = <font color="#ff8973">4</font><font color="#ff8973">4</font>;</p>
+			<p class="eighty"><font color="#ff8973">boolean great</font> = <font color="#ff8973">9</font> &gt; <font color="#ff8973">4</font>;<br><font color="#ff8973">boolean greater</font> = <font color="#ff8973">9</font> >= <font color="#ff8973">4</font>;</p>
+			<p class="eighty"><font color="#ff8973">boolean and</font> = (<font color="#ff8973">2</font> &lt; <font color="#ff8973">3</font>) && (<font color="#ff8973">4</font> &lt; <font color="#ff8973">5</font>);<br><font color="#ff8973">boolean andtrue</font> = <font color="#ff00ff">true</font> && <font color="#ff00ff">true</font>;<br><font color="#ff8973">boolean andfalse</font> = <font color="#ff00ff">true</font> && <font color="#ff00ff">false</font>;<br><font color="#ff8973">boolean falseand</font> = <font color="#ff00ff">false</font> && <font color="#ff00ff">false</font>;</p>
+			<p class="eighty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ff8973">equal</font>);<br><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ff8973">notequal</font>);<br><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ff8973">less</font>);<br><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ff8973">lessequal</font>);<br><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ff8973">great</font>);<br><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ff8973">greater</font>);<br><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ff8973">andtrue</font>);<br><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ff8973">andfalse</font>);<br><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ff8973">falseand</font>);<br><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ff8973">and</font>);</p>
+			<p class="four">}</p>}
+		</div>
+		<div id="boolout" class="output">
+			<center><b><u>OUTPUT</u></b>:</center>
+			<font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># javac Evaluate.java
+			<br><font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># java Evaluate
+			<br>true
+			<br>true
+			<br>true
+			<br>true
+			<br>true
+			<br>true
+			<br>true
+			<br>false
+			<br>false
+			<br>true<span class="blinking-cursor">_</span>
+		</div>
+	</div>
+	<div id="tenary">
+		<hr width="45%">
+		<center>
+			<h2>Ternary Conditional Statements</h2>
+		</center>
+		<hr width="45%">
+		<p><b>if...else</b> statements can become lengthy, even when you simply want to return a value depending on a <strong>Boolean</strong> expression.
+			<br>Fortunately, <strong>Java</strong> provides a shortcut that allows you to write <b>if...else</b> statements in a single line of code.</p>
+		<p>The term <strong>ternary</strong> comes from a Latin word that means "composed of three parts".</p>
+		<p><b>These three parts are</b>:</p>
+		<li>A Boolean expression.</li>
+		<li>A single statement that gets executed if the Boolean expression is true.</li>
+		<li>A single statement that gets executed if the Boolean expression is false.</li>
+		<div id="ten" class="w3-code notranslate jsHigh">
+			<p><font color="#b3ccff">public class Ternary</font> {</p>
+			<p class="four"><font color="#b3ccff">public static</font> <font color="#ff8973">void main</font>(<font color="#ff8973">String</font>[] <font color="#ff8973">args</font>) {</p>
+			<p class="eighty"><font color="#ff8973">char ternary</font> = (<font color="#b3ccff">1</font> == <font color="#b3ccff">1</font>) ? <font color="#ffe083">'T'</font> : <font color="#ffe083">'F'</font>
+			</p>
+			<p class="eighty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ff8973">ternary</font>);</p>
+			<p class="four">}</p>
+			<p>}</p>
+		</div>
+		<div id="ternaryout" class="output">
+			<center><b><u>OUTPUT</u></b>:</center>
+			<font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># javac Ternary.java
+			<br><font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># java Ternary
+			<br>'T'<span class="blinking-cursor">_</span>
+		</div>
+	</div>
+	<div id="ifelse">
+		<hr width="50%">
+		<center>
+			<h1>if...else if...else</h1>
+		</center>
+		<hr width="50%">
+		<p>The function works <b>just the same</b> as Javascript.</p>
+		<div id="if" class="w3-code notranslate jsHigh">
+			<hr width="50%">
+			<center>
+				<h3>Is 1 == 1?</h3>
+			</center>
+			<hr width="50%">
+			<font color="#b3ccff">public class IfElse</font> {
+			<p class="four"><font color="#b3ccff">public static</font> <font color="#ff8973">void main</font>(<font color="#ff8973">String</font>[] <font color="#ff8973">args</font>) {</p>
+			<p class="eighty"><font color="#CCCCCC">if</font> (<font color="#ff8973">1</font> == <font color="#ff8973">1</font>) {</p>
+			<p class="onetwenty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ffe083">"True!"</font>);</p>
+			<p class="eighty">} <font color="#CCCCCC">else if</font> (<font color="#ff8973">10</font> &lt; <font color="#ff8973">1</font>) {</p>
+			<p class="onetwenty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ffe083">"False!"</font>);</p>
+			<p class="eighty">} <font color="#CCCCCC">else</font> {</p>
+			<p class="onetwenty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ffe083">"False!"</font>);</p>
+			<p class="eighty">}</p>
+			<p class="four">}</p>
+			<p>}</p>
+		</div>
+		
+		<div id="ifout" class="output">
+			<center><b><u>OUTPUT</u></b>:</center>
+			<font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># javac IfElse.java
+			<br><font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># java IfElse
+			<br>True!<span class="blinking-cursor">_</span>
+		</div>
+		
+	</div>
+	
+	<div id="switch">
+		<hr width="45%">
+		<center>
+			<h2>Switch</h2>
+		</center>
+		<hr width="45%">
+		<p>The conditional statements that we have covered so far <u>require</u> Boolean expressions to determine which code block to run.
+			<br><strong>Java</strong> also provides a way to execute code blocks based on whether a block is equal to a specific value.</p>
+		<p><strong>Switch</strong> statements allows to check equality of a variable or expression with a value that does not need to be a Boolean.</p>
+		<p>The <b>break</b> statement will exit the switch statement after a condition is met.
+			<br> The <b>break</b> statement will exit the switch statement after a conditon is met.</p>
+		<p>The <strong>default</strong> case is printed only if the <i>operand</i> is <i>not equal</i> to any of the cases.
+			<div id="switc" class="w3-code notranslate jsHigh">
+				<hr width="50%">
+				<center>
+					<h3>Output Text Variable</h3>
+				</center>
+				<hr width="50%">
+				<font color="#b3ccff">public class Switchs</font> {
+				<p class="four"><font color="#b3ccff">public static</font> <font color="#ff8973">void main</font>(<font color="#ff8973">String</font>[] <font color="#ff8973">args</font>) {</p>
+				<p class="eighty"><font color="#ff8973">char penaltyKick</font> = <font color="#ffe083">'L'</font>;</p>
+				<p class="eighty"><font color="#b3ccff">switch</font> (<font color="#ff8973">penaltyKick</font>) {</p>
+				<p class="onetwenty"><font color="#b3ccff">case</font> <font color="#ffe083">'L'</font>: </p>
+				<p class="onesixty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ffe083">"Messi shoots to the left and scores!"</font>);
+					<br><font color="#ff0000">break</font>;</p>
+				<p class="onetwenty"><font color="#b3ccff">case</font> <font color="#ffe083">'R'</font>: </p>
+				<p class="onesixty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ffe083">"Messi shoots to the right and misses the goal!"</font>);
+					<br><font color="#ff0000">break</font>;</p>
+				<p class="onetwenty"><font color="#b3ccff">case</font> <font color="#ffe083">'C'</font>: </p>
+				<p class="onesixty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ffe083">"Messi shoots down the center, but the keeper blocks it!"</font>);
+					<br><font color="#ff0000">break</font>;</p>
+				<p class="onetwenty"><font color="#b3ccff">default</font>:</font>
+				</p>
+				<p class="onesixty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">printIn</font>(<font color="#ffe083">"Messi is in position..."</font>);
+					<br><font color="#ff0000">break</font>;</p>
+				<p class="eighty">}</p>
+				<p class="four">}</p>
+				<p>}</p>
+			</div>
+			<div id="switchout" class="output">
+				<center><b><u>OUTPUT</u></b>:</center>
+				<font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># javac Switchs.java
+				<br><font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font># java Switchs
+				<br>Messi shoots down the center, but the keeper blocks it!<span class="blinking-cursor">_</span>
+			</div>
+	</div>
+	<div id="class">
+		<hr width="45%">
+		<center>
+			<h2>Class</h2>
+		</center>
+		<hr width="45%">
+		<p>A <strong>class</strong> is a set of instructions that describe how a data structure should behave.</p>
+		<p><strong>Class</strong> <i>constructors</i> will allow .</p>
+		<p>When no <strong>Class</strong> <i>constructor</i> is set, Java provides one that does not allow you to set initial information.</p>
+		<p>When Java runs your program, the code inside of the main <strong>method</strong> is executed.</p>
+		<h3>Object</h3>
+		<p>An <strong>object</strong> is instance of a <strong>class</strong> that stores the state of a <strong>class</strong>
+		</p>
+		<h3>Constructor</h3>
+		<p>A <strong>constructor</strong> instructs the <strong>class</strong> to set up the initial state of an <strong>object</strong>.</p>
+		<h3>Methods</h3>
+		<p>A <strong>method</strong> is a pre-defined set of instructions.
+			<br><strong>Method</strong>'s are declared within a <strong>class</strong>.
+			<br>Similar to <strong>constructors</strong>, you can customize <strong>method</strong>'s to accept <strong>parameters</strong>.</p>
+		<h3>Parameters</h3>
+		<p><strong>Parameters</strong> allow data types to be created with specified attributes.</p>
+		<h3>Void</h3>
+		<p>The <strong>void</strong> keyword indicates that no value should be returned by the <strong>method</strong> after it executes all the logic in the <strong>method</strong>.
+			<br>If we do want the <strong>method</strong> to return a value after it finishes running, we can specify the return type.</p>
+		<p>Alternatively, we can use data type keywords (such as <strong>int</strong>, <strong>char</strong>, etc.) to specify that a <strong>method</strong> should return a value of that type.</p>
+		<div id="inh" class="w3-code notranslate jsHigh">
+			<hr width="45%">
+			<center>
+				<h2>Inheritance</h2>
+			</center>
+			<hr width="45%">
+			<p>Inheritance in <strong>object</strong> oriented programming allows one <strong>class</strong> to use functionality defined in another <strong>class</strong>.</p>
+			<div id="inhout" class="output">
+				<center><b><u>OUTPUT</u></b>:</center>
+				<br><font color="#FF0000">kali@root</font>:<font color="#0000FF">~</font>#
+				<br>You added 2 sugar cubes.
+				<br>Your order is full! <span class="blinking-cursor">_</span>
+			</div>
+			<div id="ass" class="w3-code notranslate jsHigh">
+				<center>
+					File 1/2:
+					<hr width="45%">
+					<h3>Coffee.java</h3>
+					<hr width="45%">
+				</center>
+				<font color="#b3ccff">class </font><font color="#ff8973">Coffee</font> <font color="#b3ccff">extends</font> <font color="#ff8973">Beverage</font> {</font>
+				<p class="four"><font color="#b3ccff">public</font> <font color="#ff8973">Coffee</font>() {
+					<br>}</p>
+				<p class="four"><font color="#b3ccff">public void</font> <font color="#ff8973">addSugar</font>(<font color="#ff8973">int cubes</font>) {</p>
+				<p class="eighty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ffe083">"You added "</font> + <font color="#ff8973">cubes</font> + <font color="#ffe083">" sugar cubes."</font>);</p>
+				<p class="four">}</p>
+				<p class="four"><font color="#b3ccff">public static</font> <font color="#ff8973">void main</font>(<font color="#ff8973">String</font>[] <font color="#ff8973">args</font>) {</p>
+				<p class="eighty"><font color="#ff8973">Coffee myOrder</font> = <font color="#b3ccff">new</font> <font color="#ff8973">Coffee</font>();</p>
+				<p class="eighty"><font color="#ff8973">myOrder</font>.<font color="#b3ccff">addSugar</font>(<font color="#ff8973">2</font>);</p>
+				<p class="eighty"><font color="#ff8973">myOrder</font>.<font color="#b3ccff">isFull</font>(); </p>
+				<p class="four">}</p>
+				<p>}</p>
+			</div>
+			<div id="ass1" class="w3-code notranslate jsHigh">
+				<center>
+					File 2/2:
+					<hr width="45%">
+					<h3>
+					Beverage.java</h2>
+					<hr width="45%">
+				</center>
+				<font color="#b3ccff">class</font> <font color="#ff8973">Beverage</font> {
+				<p class="four"><font color="#b3ccff">public</font> <font color="#ff8973">Beverage</font>() {<br>}</p>
+				<p class="four"><font color="#b3ccff">public</font> <font color="#ff8973">void isFull</font>() {</p>
+				<p class="eighty"><font color="#ff8973">System</font>.<font color="#ff8973">out</font>.<font color="#ff8973">println</font>(<font color="#ffe083">"Your order is full!"</font>);</p>
+				<p class="four">}</p>
+				<p class="four"><font color="#b3ccff">public static</font> <font color="#ff8973">void main</font>(<font color="#ff8973">String</font>[] <font color="#ff8973">args</font>) {}</p>
+				<p>}</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
