@@ -1,4 +1,5 @@
 
+
 <html>
 	<head>
 		<title>Nolen James Felten</title>
@@ -54,6 +55,9 @@
               text-align: center;
               background: url("http://i.imgur.com/wlRgz77.png") no-repeat center; 
               background-size: cover;
+          }
+          #chess {
+            font-size: 25px;
           }
           #notes {
               background-color: rgb(87, 106, 145);
@@ -142,10 +146,11 @@
 
 	<body>
 		<div id="head">
-          <canvas id="gui" width="625px" height="250px" style="border: 2px dotted #ff00ff; z-index: 0;"></canvas>	
+          <canvas id="gui" width="625px" height="350px" style="border: 2px dotted #ff00ff; z-index: 0;"></canvas>	
           
 		</div>
        <script>
+          
           /* Constructs a CSS RGB value from an array of 3 elements. */
           function arrayToRGB(arr) {
               if( arr.length == 3 ) {
@@ -153,6 +158,7 @@
               }
               return "rgb(0,0,0)";
           }
+      
       </script>
 	   <script>
           // Screen
@@ -163,9 +169,9 @@
           var text1;
           var text2;
          
-          chart.lineWidth = "4"
+          chart.lineWidth = "1"
           chart.strokeStyle = "#DD0AFF"
-          chart.font = "23px Arial";
+          chart.font = "29px Arial";
           chart.fillStyle = "#ffffff";
           
           text = "Nolen James Felten"
@@ -178,7 +184,7 @@
           
           
           chart.font = "17px Helvetica";
-          text = "Developer"
+          text = "Web Developer and Chess Coach"
           
           chart.fillText(text, width / 2 -(chart.measureText(text).width / 2), 45)
                     
@@ -186,7 +192,7 @@
           chart.lineTo( width / 2 + (chart.measureText(text).width / 2) , 50)
           chart.stroke()
           
-          chart.font = "17px Helvetica";
+          chart.font = "19px Helvetica";
           text1 = "Phone: "
           text = "707-241-6221"
           text2 = "Email: "
@@ -196,166 +202,218 @@
           chart.fillText(text2, width - chart.measureText(text3).width - chart.measureText(text2).width - 5, height - 8)
           
           chart.fillStyle = "#FF66FF";
-         chart.fillText(text, width - chart.measureText(text).width - 5, height - 30) 
-         chart.fillText(text3, width - chart.measureText(text3).width - 5, height - 8)
-          
-          
+          chart.fillText(text, width - chart.measureText(text).width - 5, height - 30) 
+          chart.fillText(text3, width - chart.measureText(text3).width - 5, height - 8)
+                    
         </script>
       
       <script>
-        
-function Point3D(x,y,z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
-    this.rotateX = function(angle) {
-        var rad, cosa, sina, y, z
-        rad = angle * Math.PI / 180
-        
-        cosa = Math.cos(rad)
-        sina = Math.sin(rad)
-        
-        y = this.y * cosa - this.z * sina
-        z = this.y * sina + this.z * cosa
-       
-        return new Point3D(this.x, y, z)
-    }
-    this.rotateY = function(angle) {
-        var rad, cosa, sina, x, z
-        
-        rad = angle * Math.PI / 180
-        
-        cosa = Math.cos(rad)
-        sina = Math.sin(rad)
-        
-        z = this.z * cosa - this.x * sina
-        x = this.z * sina + this.x * cosa
-        
-        return new Point3D(x,this.y, z)
-    }
-    this.rotateZ = function(angle) {
-        var rad, cosa, sina, x, y
-        
-        rad = angle * Math.PI / 180
-        
-        cosa = Math.cos(rad)
-        sina = Math.sin(rad)
-        
-        x = this.x * cosa - this.y * sina
-        y = this.x * sina + this.y * cosa
-        
-        return new Point3D(x, y, this.z)
-    }
-    this.project = function(viewWidth, viewHeight, fov, viewDistance) {
-        var factor, x, y
-        
-        factor = fov / (viewDistance + this.z)
-        x = this.x * factor + viewWidth / 2
-        y = this.y * factor + viewHeight / 2
-        return new Point3D(x, y, this.z)
-    }
-}
+        function Point3D(x,y,z) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.rotateX = function(angle) {
+                var rad, cosa, sina, y, z
+                rad = angle * Math.PI / 180
+
+                cosa = Math.cos(rad)
+                sina = Math.sin(rad)
+
+                y = this.y * cosa - this.z * sina
+                z = this.y * sina + this.z * cosa
+
+                return new Point3D(this.x, y, z)
+            }
+            this.rotateY = function(angle) {
+                var rad, cosa, sina, x, z
+
+                rad = angle * Math.PI / 180
+
+                cosa = Math.cos(rad)
+                sina = Math.sin(rad)
+
+                z = this.z * cosa - this.x * sina
+                x = this.z * sina + this.x * cosa
+
+                return new Point3D(x,this.y, z)
+            }
+            this.rotateZ = function(angle) {
+                var rad, cosa, sina, x, y
+
+                rad = angle * Math.PI / 180
+
+                cosa = Math.cos(rad)
+                sina = Math.sin(rad)
+
+                x = this.x * cosa - this.y * sina
+                y = this.x * sina + this.y * cosa
+
+                return new Point3D(x, y, this.z)
+            }
+            this.project = function(viewWidth, viewHeight, fov, viewDistance) {
+                var factor, x, y
+
+                factor = fov / (viewDistance + this.z)
+                x = this.x * factor + viewWidth / 2
+                y = this.y * factor + viewHeight / 2
+                return new Point3D(x, y, this.z)
+            }
+        }
       </script>
       
-<script>
-function loop() {
-	var t = new Array();
-	
-	// background
-	chart.fillStyle = "rgb(1, 1, 1)";
-	chart.fillRect(250, 250, 4, 5);
-	for( var i = 0; i < vertices.length; i++ ) {
-		var v = vertices[i];
-		var r = v.rotateX(angle).rotateY(angle);
-		var p = r.project((width), (height + 55), 200, 4.9);
-		t.push(p)
-		
-	}
-	var avg_z = new Array();
-	for( var i = 0; i < faces.length; i++ ) {
-		var f = faces[i];
-		avg_z[i] = {"index":i, "z":(t[f[0]].z + t[f[1]].z + t[f[2]].z + t[f[3]].z) / 4.0};
-	}
-	avg_z.sort(function(a,b) { return b.z - a.z;} );
-	for( var i = 0; i < faces.length; i++ ) {
-		var f = faces[avg_z[i].index]
-		// Faces
-		chart.fillStyle = arrayToRGB(colors[avg_z[i].index]);
-		chart.beginPath()
-		chart.moveTo(t[f[0]].x,t[f[0]].y)
-		chart.lineTo(t[f[1]].x,t[f[1]].y)
-		chart.lineTo(t[f[2]].x,t[f[2]].y)
-		chart.lineTo(t[f[3]].x,t[f[3]].y)
-		chart.closePath()
-		chart.fill()
-		
-		// Edges
-		chart.strokeStyle = "rgba(255, 255, 255, 0.12)";
-		chart.lineWidth = "9"
-		chart.beginPath()
-		chart.moveTo(t[f[0]].x,t[f[0]].y)
-		chart.lineTo(t[f[1]].x,t[f[1]].y)
-		chart.lineTo(t[f[2]].x,t[f[2]].y)
-		chart.lineTo(t[f[3]].x,t[f[3]].y)
-		chart.closePath()
-		chart.stroke()
-		
-		// Vertex
-		chart.strokeStyle = "rgba(0, 0, 255, 1)";
-		chart.lineWidth = "0.1"
-		chart.beginPath()
-		chart.moveTo(t[f[0]].x,t[f[0]].y)
-		chart.lineTo(t[f[1]].x,t[f[1]].y)
-		chart.lineTo(t[f[2]].x,t[f[2]].y)
-		chart.lineTo(t[f[3]].x,t[f[3]].y)
-		chart.closePath()
-		chart.stroke()
-	}
-	angle += 3
-}
-var vertices = [
-	new Point3D(-1,1,-1),
-	new Point3D(1,1,-1),
-	new Point3D(1,-1,-1),
-	new Point3D(-1,-1,-1),
-	new Point3D(-1,1,1),
-	new Point3D(1,1,1),
-	new Point3D(1,-1,1),
-	new Point3D(-1,-1,1)
-];
-// Define the vertices that compose each of the 6 faces. These numbers are
-// indices to the vertex list defined above.
-var faces  = [
-	[0,1,2,3],
-	[1,5,6,2],
-	[5,4,7,6],
-	[4,0,3,7],
-	[0,4,5,1],
-	[3,2,6,7]
-];
-// Define the colors for each face.
-var colors = [
-	[255,0,20],
-	[30,255,0],
-	[0,0,0],
-	[105,205,205],
-	[0,0,255],
-	[86,26,139]
-];
-var angle = 0;
-setInterval(loop,33);
-</script>
+       <script>
+        function loop() {
+            var t = new Array();
+
+            // background
+            chart.fillStyle = "rgb(1, 1, 1)";
+            chart.fillRect(350, 350, 4, 5);
+            for( var i = 0; i < vertices.length; i++ ) {
+                var v = vertices[i];
+                var r = v.rotateX(angle).rotateY(angle);
+                var p = r.project((width), (height + 55), 200, 3.6);
+                t.push(p)
+
+            }
+            var avg_z = new Array();
+            for( var i = 0; i < faces.length; i++ ) {
+                var f = faces[i];
+                avg_z[i] = {"index":i, "z":(t[f[0]].z + t[f[1]].z + t[f[2]].z + t[f[3]].z) / 4.0};
+            }
+            avg_z.sort(function(a,b) { return b.z - a.z;} );
+            
+          for( var i = 0; i < faces.length; i++ ) {
+                
+            var f = faces[avg_z[i].index];
+
+            // Faces
+            chart.fillStyle = arrayToRGB(colors[avg_z[i].index]);
+            chart.beginPath()
+            chart.moveTo(t[f[0]].x,t[f[0]].y)
+            chart.lineTo(t[f[1]].x,t[f[1]].y)
+            chart.lineTo(t[f[2]].x,t[f[2]].y)
+            chart.lineTo(t[f[3]].x,t[f[3]].y)
+            chart.closePath()
+            chart.fill()
+
+            // Edges
+            chart.strokeStyle = "rgba(255, 255, 255, 1)";
+            chart.lineWidth = "7"
+            chart.beginPath()
+            chart.moveTo(t[f[0]].x,t[f[0]].y)
+            chart.lineTo(t[f[1]].x,t[f[1]].y)
+            chart.lineTo(t[f[2]].x,t[f[2]].y)
+            chart.lineTo(t[f[3]].x,t[f[3]].y)
+            chart.closePath()
+            chart.stroke()
+
+            // Vertex
+            chart.strokeStyle = "rgba(255, 255, 255, 0.18)";
+            chart.lineWidth = "0.1"
+            chart.beginPath()
+            chart.moveTo(t[f[0]].x,t[f[0]].y)
+            chart.lineTo(t[f[1]].x,t[f[1]].y)
+            chart.lineTo(t[f[2]].x,t[f[2]].y)
+            chart.lineTo(t[f[3]].x,t[f[3]].y)
+            chart.closePath()
+            chart.stroke()
+          }
+          angle += 3
+        }
+         var vertices = [
+           new Point3D(-1,1,-1),
+           new Point3D(1,1,-1),
+           new Point3D(1,-1,-1),
+           new Point3D(-1,-1,-1),
+           new Point3D(-1,1,1),
+           new Point3D(1,1,1),
+           new Point3D(1,-1,1),
+           new Point3D(-1,-1,1)
+         ];
+         // Define the vertices that compose each of the 6 faces. These numbers are
+         // indices to the vertex list defined above.
+         var faces  = [
+           [0,1,2,3],
+           [1,5,6,2],
+           [5,4,7,6],
+           [4,0,3,7],
+           [0,4,5,1],
+           [3,2,6,7]
+         ];
+         // Define the colors for each face.
+         var colors = [
+           [255,0,20],
+           [30,255,0],
+           [0,0,0],
+           [105,205,205],
+           [0,0,255],
+           [86,26,139]
+         ];
+         var angle = 0;
+         setInterval(loop, 1000 / 30);
+      </script>
       <br>
-		
+      </div>
 
 		<center>
-			<div id="web">
+			
+          <div id="chess">
+            <br>
+            <img src="http://i.imgur.com/jKDs9LP.png" style="border: 1px double #00FF00;">
+            <h2 style="color:#0000FF">Price: <i>Negotiable</i></h2>
+            <h1 style="color:#0000FF">Call or Text <u>707-241-6221</u></h1>
+            (<u><i>Please don't spam my number, I am a Ninja!</u></i>)
+            <p><img src="http://i.imgur.com/MxRz9U5.png" height="200px" width="200px" style="border: 6px double #00FFFF;"></p>
+            <p>In <u><b>4th grade</b></u>, I had won <u><b>1st</b></u> place in the Oregon <u>state</u> Chess tournament.<br>Double-elimination style, <b>7 wins</b> with <b>0 loss</b>.</p>
+            <h2>Facts</h2>
+            
+            <li><strong>My Favorite:</strong> Chess teaches you patience.</li>  
+            <li>Chess is a game for people of all ages.</li>
+              <li>Chess develops memory.</li>
+              <li><u>Chess improves concentration</u>.</li>
+              <li>Chess teaches independence.</li>
+              <li><u><b>Chess improves school work and grades</b></u>.</li>
+              <li>Chess makes you understand actions and consequences.</li>
+            <li>Chess teaches you to take responsibility.</li>
+            <li>Chess teachs to see the other person’s perspective.</li>
+            <li>Chess teaches you how to cope with failure.</li>
+            <li>Chess can uncover your inner genius.</li>
+            <li><strong>Chess has shown to improve recovery from stroke or disability.</strong></li>
+            <li>Losing expands your knowledge!</li>
+            <li>Enhances reading and math skills.</li>
+            <h3>It’s just plain fun!</h3>
+              
+            <p><a href="https://www.chess.com/member/tacomcbell"><img style="border: 2px solid #00FF00;" src="http://i.imgur.com/aiUHC5P.png" height="150px" width="400px"><br>Find me on Chess.com</a></p>
+          </div>
+          
+			<div id="codecademy">
+              <br>
+              <h2><span class="rainbow">Education:</span></h2>
+              
+              <a href="https://www.codecademy.com/nolenf/"><img src="https://p5.zdassets.com/hc/settings_assets/1030455/200272088/1muBAt6udX37m4Ihlik09w-CC_Logotype_Lockup_Blue_Alpha.png" width="750px" height="250px"></a>
+			
+			  <p><a href="https://www.codecademy.com/nolenf/"><img src="http://i.imgur.com/9aA2Ca8.png"></a></p>
+                               
+
+              <h1><span class="rainbow">SQL Notes</span></h1>
+              <iframe src="http://nolenfelten.github.io/database.html" id="dbf" style="width: 80%;"></iframe>
+		
+			  <br>
+              <h1><span class="rainbow" >C / C ++ Notes</span></h1>
+              <iframe src="http://nolenfelten.github.io/cpp.html" style="width: 80%;" id="cpp"></iframe>
+			  
+              <br>
+              <h1><span class="rainbow" >Java Notes</span></h1>
+              <iframe src="http://nolenfelten.github.io/java.html" style="width: 80%;" id="cpp"></iframe>
+			  <br>
+			</div>	
+             <div id="web">
 				<h3>
 					<span class="rainbow">Web Developer:</span>
 				</h3>
 			
 			
-				<p style="border: 2px solid black;"><a href="https://delewpaint.github.io/">Delew Paint</a> | <a href="http://nolenfelten.com">Nolen Felten</a> | <a href="https://ziggybuilt.com/">Ziggy Built Performance</a> | <a href="http://pacificretail.com/">Pacific Retail Capital Partners</a> | <a href="http://ventek-intl.com/">Ventek International</a> | <a href="http://www.ecig101.com/">E-Cig 101</a> | <a href="http://cblsalon.com/">Chandelier Beauty Lounge Salon</a></p>
+				<p style="border: 2px solid black;"><a href="http://nolenfelten.com">Nolen Felten</a> | <a href="https://delewpaint.github.io/">Delew Paint</a> | (More coming)</p>
 			
 			</div>
 
@@ -379,31 +437,6 @@ setInterval(loop,33);
 				<br>
 			</div>
 
-
-
-			<div id="codecademy">
-              <br>
-              <h2><span class="rainbow">Education:</span></h2>
-              
-              <a href="https://www.codecademy.com/nolenf/"><img src="https://p5.zdassets.com/hc/settings_assets/1030455/200272088/1muBAt6udX37m4Ihlik09w-CC_Logotype_Lockup_Blue_Alpha.png" width="750px" height="250px"></a>
-			
-			  <p><a href="https://www.codecademy.com/nolenf/"><img src="http://i.imgur.com/9aA2Ca8.png"></a></p>
-              
-              <hr>
-              <a href="http://www.webglacademy.com/"><u><b><font size="26px" style="color: #204056;">WebGL Academy</font></b></u></a>
-  		      <hr>
-              
-                  
-
-              <h1><span class="rainbow">SQL</span></h1>
-              <iframe src="http://nolenfelten.github.io/database.html" id="dbf" style="width: 100%;"></iframe>
-		
-			   <br>
-              <h1><span class="rainbow" >C / C ++</span></h1>
-              <iframe src="http://nolenfelten.github.io/cpp.html" style="width: 100%;" id="cpp"></iframe>
-					
-			</div>	
-
 			<div id="gallery">
 
 				<br>
@@ -411,7 +444,7 @@ setInterval(loop,33);
 					<span class="rainbow">Graphical User Interface Design:</span>
 				</h3>
 
-                <p>Click an image to view the project page.</p>
+              <h2>Click an image to view the project page.</h2>
 				
 				<br>
 
@@ -535,8 +568,7 @@ setInterval(loop,33);
 				};
 				function change() {
 					if (seq == 6) {
-						blue--;
-	
+						blue--;	
 						if (blue == 0) { seq = 1; };
 					};
 					if (seq == 5){
@@ -562,8 +594,7 @@ setInterval(loop,33);
 					};
 					changetext();
 				};
-				function starteffect() {
-	
+				function starteffect() {	
 					flash = setInterval("change()", speed);
 				};
 				starteffect();
