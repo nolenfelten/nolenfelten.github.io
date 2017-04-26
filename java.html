@@ -88,11 +88,9 @@
 		}
 
 		#arithout {
-			position: absolute;
-			right: 1%;
-			margin-top: -220px;
-			width: 54%;
-			height: 180px;
+			margin-top: -20px;
+			width: 99%;
+			height: 150px;
 		}
 
 		#boolout {
@@ -450,7 +448,129 @@
 		</div>
 		
 	</div>
+<div id="arithmetic">
+		<hr width="45%">
+		<center>
+			<h2>Arithmetic Operators</h2>
+		</center>
+		<hr width="45%">
+		<p>You can add, subtract, multiply, divide, and modulo in <strong>Java</strong>.</p>
+     
+		<div id="marh" class="w3-code notranslate jsHigh">
+			<hr width="50%">
+			<center>
+				<h3>Math</h3>
+			</center>
+			<hr width="50%">
+           <table border="1" summary="Arithmetic operators">
+            <tbody>
+              <tr>
+                <th id="h1">Operator</th>
+                <th id="h2">Description</th>
+              </tr>
+  
+              <tr>
+                <td headers="h1"><code>+</code></td><td>Additive operator (also used for String concatenation)</td>
+              </tr>
+  
+              <tr>
+                <td headers="h1"><code>-</code></td><td>Subtraction operator</td>
+              </tr>
 
+              <tr>
+                <td headers="h1"><code>*</code></td><td>Multiplication operator</td>
+              </tr>
+  
+              <tr>
+                <td headers="h1"><code>/</code></td><td>Division operator</td>
+              </tr>
+  
+              <tr>
+                <td headers="h1"><code>%</code></td><td>Remainder operator</td>
+              </tr>  
+  
+             </tbody>
+          </table>
+          
+			<script src="https://gist.github.com/nolenfelten/52c4c4b86ddc66dff4a559153cdd6fc8.js"></script>
+		</div>
+		<div id="arithout" class="output">
+			<center><b><u>OUTPUT</u></b>:</center>
+			<font color="#FF0000">kali@root</font>:
+			<font color="#0000FF">~</font># javac Arithmetic.java
+			<br>
+			<font color="#FF0000">kali@root</font>:
+			<font color="#0000FF">~</font># java Arithmetic
+			<br>18
+			<br>0
+			<br>81
+			<br>1
+			<span class="blinking-cursor">_</span>
+		</div>
+	</div>
+  
+  
+	<div id="unary">
+		<hr width="45%">
+		<center>
+			<h2>The Unary Operators</h2>
+		</center>
+		<hr width="45%">
+  <p>The unary operators require only one operand; they perform various operations such as incrementing/decrementing a value by one, negating an expression, or inverting the value of a boolean.</p>
+ <p>The increment/decrement operators can be applied before (prefix) or after (postfix) the operand.<br> The code result++; and ++result; will both end in result being incremented by one. <br>The only difference is that the prefix version (++result) evaluates to the incremented value, whereas the postfix version (result++) evaluates to the original value.<br> If you are just performing a simple increment/decrement, it doesn't really matter which version you choose.<br> But if you use this operator in part of a larger expression, the one that you choose may make a significant difference.</p>
+      
+      <div id="marh" class="w3-code notranslate jsHigh">
+			<hr width="50%">
+			<center>
+				<h3>Unary</h3>
+			</center>
+			<hr width="50%">
+             <table border="1" summary="Unary operators">
+            <tbody><tr>
+              <th id="h101">Operator</th>
+              <th id="h102">Description</th>
+            </tr>
+            <tr>
+              <td headers="h101"><code>+</code></td><td>Unary plus operator; indicates 
+                  positive value (numbers are 
+                  positive without this, however)</td>
+            </tr>
+            <tr>
+              <td headers="h101"><code>-</code></td><td>Unary minus operator; negates
+                  an expression</td>
+            </tr>
+            <tr>
+              <td headers="h101"><code>++</code></td><td>Increment operator; increments
+                  a value by 1</td>
+            </tr>
+            <tr>
+              <td headers="h101"><code>--</code></td><td>Decrement operator; decrements
+                  a value by 1</td>
+            </tr>
+            <tr>
+              <td headers="h101"><code>!</code></td><td>Logical complement operator; 
+                  inverts the value of a boolean</td>
+            </tr>
+          </tbody></table>
+        <script src="https://gist.github.com/nolenfelten/381bb57cd137f47d1d42bf5d60540224.js"></script>
+        <div id="UnaryDemo" class="output">
+			<center><b><u>OUTPUT</u></b>:</center>
+			<font color="#FF0000">kali@root</font>:
+			<font color="#0000FF">~</font># javac UnaryDemo.java
+			<br>
+			<font color="#FF0000">kali@root</font>:
+			<font color="#0000FF">~</font># java UnaryDemo
+			<br>1
+            <br>0
+            <br>1
+            <br>-1
+            <br>false
+            <br>true
+			<span class="blinking-cursor">_</span>
+		</div>
+      </div>
+  </div>
+  
 	<div id="cmd">
 		<hr width="45%">
 		<center>
@@ -669,16 +789,61 @@
 			</div>
 		</div>
 	</div>
+
   
   
   
-<hr>
-	<div id="white">
+	<div id="access">
 		<hr width="45%">
 		<center>
 			<h2>Access Modifiers</h2>
          </center>
-      
+		<hr width="45%">
+      <p>Access level modifiers determine whether other classes can use a particular variable or invoke a particular method.</p>
+            
+          <p>Access levels affect you in two ways.
+            <br>First, when you use classes that come from another source, such as the classes in the Java platform, <u>access levels determine which members of those classes your own classes can use</u>.
+            <br>Second, when you write a class, you need to decide what access level every member variable and every method in your class should have.</p>
+                    
+            
+            <p>The two levels of access control:</p>
+          
+            <li>At the top level: <b>public</b>, or package-private</li>
+            <li>At the member level: <b>public</b>, <b>private</b>, <b>protected</b>, or package-private</li>
+          
+          <p>If a class has no modifier (the default, also known as package-private), it is visible only within its own package.</p>
+          <p>A class may be declared with the modifier <b>public</b>, in which case, that class is visible to all classes everywhere.</p>
+          
+          <p>If other programmers use your class, you want to ensure that errors from misuse cannot happen. Access levels can help you do this.</p>
+          <p>Use the most restrictive access level that makes sense for a particular member. <u>Use <b>private</b> unless you have a good reason not to</u>.</p>
+            
+          <table class="alt">
+            <tbody><tr><th><h2>Access Modifier</h2></th>
+              <th style="border: 1px solid #000000;">within class</th><th style="border: 1px solid #000000;">within package</th><th style="border: 1px solid #000000;">outside package by subclass only</th><th style="border: 1px solid #000000;">outside package</th></tr>
+<tr><td style="border: 1px solid #000000;"><b>Private</b></td>
+  <td style="border: 1px solid #000000; background: #00FF00;">Y</td>
+  <td style="border: 1px solid #000000; background: #FF0000;">N</td>
+  <td style="border: 1px solid #000000; background: #FF0000;">N</td>
+  <td style="border: 1px solid #000000; background: #FF0000;">N</td></tr>
+<tr><td style="border: 1px solid #000000;"><b>Default</b></td>
+  <td style="border: 1px solid #000000; background: #00FF00;">Y</td>
+  <td style="border: 1px solid #000000; background: #00FF00;">Y</td>
+  <td style="border: 1px solid #000000; background: #FF0000;">N</td>
+  <td style="border: 1px solid #000000; background: #FF0000;">N</td></tr>
+<tr>
+  <td style="border: 1px solid #000000;"><b>Protected</b></td>
+  <td style="border: 1px solid #000000; background: #00FF00;">Y</td>
+  <td style="border: 1px solid #000000; background: #00FF00;">Y</td>
+  <td style="border: 1px solid #000000; background: #00FF00;">Y</td>
+  <td style="border: 1px solid #000000; background: #FF0000;">N</td></tr>
+<tr>
+  <td style="border: 1px solid #000000;"><b>Public</b></td>
+  <td style="border: 1px solid #000000; background: #00FF00;">Y</td>
+  <td style="border: 1px solid #000000; background: #00FF00;">Y</td>
+  <td style="border: 1px solid #000000; background: #00FF00;">Y</td>
+  <td style="border: 1px solid #000000; background: #00FF00;">Y</td></tr>
+</tbody></table>
+        
   </div>
               
      <hr>
@@ -686,136 +851,6 @@
   
   
   
-	
-  
-  
-  
-  
-	<div id="arithmetic">
-		<hr width="45%">
-		<center>
-			<h2>Arithmetic Operators</h2>
-		</center>
-		<hr width="45%">
-		<p>You can add, subtract, multiply, divide, and modulo in <strong>Java</strong>.</p>
-     
-		<div id="marh" class="w3-code notranslate jsHigh">
-			<hr width="50%">
-			<center>
-				<h3>Math</h3>
-			</center>
-			<hr width="50%">
-           <table border="1" summary="Arithmetic operators">
-            <tbody>
-              <tr>
-                <th id="h1">Operator</th>
-                <th id="h2">Description</th>
-              </tr>
-  
-              <tr>
-                <td headers="h1"><code>+</code></td><td>Additive operator (also used for String concatenation)</td>
-              </tr>
-  
-              <tr>
-                <td headers="h1"><code>-</code></td><td>Subtraction operator</td>
-              </tr>
-
-              <tr>
-                <td headers="h1"><code>*</code></td><td>Multiplication operator</td>
-              </tr>
-  
-              <tr>
-                <td headers="h1"><code>/</code></td><td>Division operator</td>
-              </tr>
-  
-              <tr>
-                <td headers="h1"><code>%</code></td><td>Remainder operator</td>
-              </tr>  
-  
-             </tbody>
-          </table>
-          
-			<script src="https://gist.github.com/nolenfelten/52c4c4b86ddc66dff4a559153cdd6fc8.js"></script>
-		</div>
-		<div id="arithout" class="output">
-			<center><b><u>OUTPUT</u></b>:</center>
-			<font color="#FF0000">kali@root</font>:
-			<font color="#0000FF">~</font># javac Arithmetic.java
-			<br>
-			<font color="#FF0000">kali@root</font>:
-			<font color="#0000FF">~</font># java Arithmetic
-			<br>18
-			<br>0
-			<br>81
-			<br>1
-			<span class="blinking-cursor">_</span>
-		</div>
-	</div>
-  
-  
-  
-  
-  
-	<div id="unary">
-		<hr width="45%">
-		<center>
-			<h2>The Unary Operators</h2>
-		</center>
-		<hr width="45%">
-  <p>The unary operators require only one operand; they perform various operations such as incrementing/decrementing a value by one, negating an expression, or inverting the value of a boolean.</p>
- <p>The increment/decrement operators can be applied before (prefix) or after (postfix) the operand.<br> The code result++; and ++result; will both end in result being incremented by one. <br>The only difference is that the prefix version (++result) evaluates to the incremented value, whereas the postfix version (result++) evaluates to the original value.<br> If you are just performing a simple increment/decrement, it doesn't really matter which version you choose.<br> But if you use this operator in part of a larger expression, the one that you choose may make a significant difference.</p>
-      
-      <div id="marh" class="w3-code notranslate jsHigh">
-			<hr width="50%">
-			<center>
-				<h3>Unary</h3>
-			</center>
-			<hr width="50%">
-             <table border="1" summary="Unary operators">
-            <tbody><tr>
-              <th id="h101">Operator</th>
-              <th id="h102">Description</th>
-            </tr>
-            <tr>
-              <td headers="h101"><code>+</code></td><td>Unary plus operator; indicates 
-                  positive value (numbers are 
-                  positive without this, however)</td>
-            </tr>
-            <tr>
-              <td headers="h101"><code>-</code></td><td>Unary minus operator; negates
-                  an expression</td>
-            </tr>
-            <tr>
-              <td headers="h101"><code>++</code></td><td>Increment operator; increments
-                  a value by 1</td>
-            </tr>
-            <tr>
-              <td headers="h101"><code>--</code></td><td>Decrement operator; decrements
-                  a value by 1</td>
-            </tr>
-            <tr>
-              <td headers="h101"><code>!</code></td><td>Logical complement operator; 
-                  inverts the value of a boolean</td>
-            </tr>
-          </tbody></table>
-        <script src="https://gist.github.com/nolenfelten/381bb57cd137f47d1d42bf5d60540224.js"></script>
-        <div id="UnaryDemo" class="output">
-			<center><b><u>OUTPUT</u></b>:</center>
-			<font color="#FF0000">kali@root</font>:
-			<font color="#0000FF">~</font># javac UnaryDemo.java
-			<br>
-			<font color="#FF0000">kali@root</font>:
-			<font color="#0000FF">~</font># java UnaryDemo
-			<br>1
-            <br>0
-            <br>1
-            <br>-1
-            <br>false
-            <br>true
-			<span class="blinking-cursor">_</span>
-		</div>
-      </div>
-  </div>
   
   
   
@@ -838,7 +873,7 @@
 		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">&gt;=</code> Greater <b>OR</b> equal to.</li>
 		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">&gt;=</code> Less <b>OR</b> equal to.</li>
 		
-        <h2>Conditional Operators</h2>
+        <h2>Conditional Operators:</h2>
         <li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">&&</code> And (both must equal true to return true).</li>
 		<li><code style="padding: 0 0.25rem; margin: 0 0.0625rem; border-radius: 0.125rem; color: #204056; background-color: #D4D5D6; white-space: normal; vertical-align: baseline; font-family: Monaco,Menlo,Consolas,monospace; font-size: .95em;">||</code> Or (return true if one is true).</li>
 		
@@ -977,12 +1012,53 @@
 			<hr width="45%">
 			
           <p>One fundamental concept of object-oriented programming in Java is the class.</p>
+          
           <p>Java provides us with its own set of pre-defined classes, but we are also free to create our own custom classes.</p>
+          
           <p>A <strong>class</strong> is a set of instructions that describe how a data structure should behave.</p>
+          
           <p>When Java runs your program, the code inside of the <b>main</b> <strong>method</strong> is executed.</p>
+<table class="wikitable">
+<tbody>
+  <tr>
+    <th>Top-level class</th>
+    <td>
+      <script src="https://gist.github.com/nolenfelten/698cd563eeeee645e9ccdc7432a79542.js"></script>
+    </td>
+  </tr>
+  
+  <tr>
+    <th>Inner class</th>
 
-          <script src="https://gist.github.com/nolenfelten/9d38bbf6c272614506276ddd40ef2e17.js"></script>
-						
+    <td>
+      <script src="https://gist.github.com/nolenfelten/fbd6c15bf15f2f9e4c71c9be02be1b22.js"></script>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Nested class</th>
+
+    <td>
+      <script src="https://gist.github.com/nolenfelten/255b3f62d347cf81e22f1755a18ad7b2.js"></script>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Local class</th>
+
+    <td>
+      <script src="https://gist.github.com/nolenfelten/eaba7914c5f6ba42a123f58694290993.js"></script>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Anonymous class</th>
+    <td>
+      <script src="https://gist.github.com/nolenfelten/40bd36eb033ab99b983003f0eb96db46.js"></script>
+    </td>
+  </tr>
+</tbody>
+</table>
 			
             <h3>Object</h3>
             <p>An <strong>object</strong> is an <i>instance</i> of a <strong>class</strong> that stores the state of a <strong>class</strong>.</p>
@@ -1098,34 +1174,39 @@
 			</div>
 		</div>
   
+
   
-  Java developers typically organize their classes…in packages.…A package is a unique identifier…that goes at the top of the class declaration.…But it actually matches a folder hierarchy.…As you've seen, you can create your Java classes…in a project root folder,…also known as the base package,…but to keep your classes well organized,…you should start with packages from the very beginning
-		<div id="access"><br>
+  
+  <div id="packages"><br>
 			<hr width="45%">
 			<center>
-				<h2>Controlling Access to Members of a Class</h2>
+				<h2>Packages</h2>
 			</center>
 			<hr width="45%">
-            <p>Access level modifiers determine whether other classes can use a particular variable or invoke a particular method.</p>
-            
-          <p>Access levels affect you in two ways.
-            <br>First, when you use classes that come from another source, such as the classes in the Java platform, <u>access levels determine which members of those classes your own classes can use</u>.
-            <br>Second, when you write a class, you need to decide what access level every member variable and every method in your class should have.</p>
-                    
-            
-            <p>The two levels of access control:</p>
-          
-            <li>At the top level: <b>public</b>, or package-private</li>
-            <li>At the member level: <b>public</b>, <b>private</b>, <b>protected</b>, or package-private</li>
-          
-          <p>If a class has no modifier (the default, also known as package-private), it is visible only within its own package.</p>
-          <p>A class may be declared with the modifier <b>public</b>, in which case, that class is visible to all classes everywhere.</p>
-          
-          <p>If other programmers use your class, you want to ensure that errors from misuse cannot happen. Access levels can help you do this.</p>
-          <p>Use the most restrictive access level that makes sense for a particular member. <u>Use <b>private</b> unless you have a good reason not to</u>.</p>
-            
-          
-        </div>
+    <p>Java developers typically organize their classes in packages.</p>
+    <p>A package is a unique identifier (that goes at the top of the class declaration).</p>
+    <p>It actually matches a folder hierarchy, you can create your Java classes in a project root folder, also known as the base package.</p>
+    <p>But to keep your classes well organized, you should start with packages from the very beginning.</p>
+  </div>
+  
+  
+  
+  
+  <hr>
+  
+  
+  <div id="except"><br>
+			<hr width="45%">
+			<center>
+              <h2>Exception Handling</h2>
+            </center>
+            <hr width="45%">
+    
+    <p>Java SE 7 also introduced multi-catch clauses besides uni-catch clauses. This type of catch clauses allows Java to handle different types of exceptions in a single block provided they are not subclasses of each other.</p>
+    <script src="https://gist.github.com/nolenfelten/a0f1795e6c4823e65fb64338692b48cc.js"></script>
+    <p> There may be multiple catch blocks, in which case the first block with an exception variable whose type matches the type of the thrown exception is executed.</p>
+    <script src="https://gist.github.com/nolenfelten/f15a1f63003d92ac04b259548fd9fbd2.js"></script>
+    <script src="https://gist.github.com/nolenfelten/6d801e2de860df63f6729e6efa9a3128.js"></script>
 </body>
 
 
