@@ -1,634 +1,569 @@
-
-
-
-
-
 <html>
 	<head>
 		<title>Nolen James Felten</title>
 		<style>
-          body {
-              margin: 0px;
-              padding: 0px;
-          }
-          #head {
-              background-color: #000000;
-              text-align: center;
-              margin: 0px;
-              padding: 15px;
-          }
-          #code {
-              border: 1px dotted #000000;
-          }
-          #xbox {
-              color: black;
-              background-color: black;
-              text-decoration: none;
-              text-align: center;
-          }
-          ul li {
-              text-decoration: none;
-              display: inline;
-              background-color: black;
-              color: white;
-              padding: 10px 10px;
-              text-decoration: none;
-              border-radius: 4px 4px 0 0;
-              transition: 2s; 
-          }
-          a:link {
-              text-decoration: none;
-          }
-          a:visited {
-              color: #0099CC;
-          }
-          ul li:hover {
-              background-color: orange;
-              transition: 2s; 
-          }
-          #gallery {
-              background-color: rgb(200, 191, 231);
-          }
-          #codecademy {
-              align: center;
-              text-align: center;
-              background-color: rgb(52, 179, 160);
-          } 
-          #government {
-              text-align: center;
-              background: url("http://i.imgur.com/wlRgz77.png") no-repeat center; 
-              background-size: cover;
-          }
-          #secret {
-            background: #FFFFFF;
-            margin: 0;
-          }
-          #chess {
-            font-size: 25px;
-          }
-          #notes {
-              background-color: rgb(87, 106, 145);
-              align: center;
-              text-align: center;
-              background-size: cover;
-          }
-          #cpp {
-              overflow: hidden;
-              width: 100%;
-              z-index: 1;
-              margin: 0px;
-              background-color: #FFFFFF;
-          }
-           #thesis {
-             background-color: rgb(0, 0, 0);
-              align: center;
-              text-align: center;
-               z-index: -4;
-           }
-          #thesis img {
-              margin: 0px;
-              z-index: -5;
-              align: center;
-              width: 80%;
-          }
-          #db {
-            margin: 0;
-            background-color: rgb(95, 6, 45);
-            align: center;
-            text-align: center;
-            background-size: cover;            
-          }
-          #dbf {
-            margin: 0;
-            background-color: rgb(255, 255, 255);
-            background-size: cover;            
-          }
-		#xbox_notes {
+			body {
+			margin: 0px;
+			padding: 0px;
+			}
+			#head {
+			background-color: #000000;
+			text-align: center;
+			margin: 0px;
+			padding: 15px;
+			}
+			#code {
+			border: 1px dotted #000000;
+			}
+			#xbox {
+			color: black;
+			background-color: black;
+			text-decoration: none;
+			text-align: center;
+			}
+			ul li {
+			text-decoration: none;
+			display: inline;
+			background-color: black;
+			color: white;
+			padding: 10px 10px;
+			text-decoration: none;
+			border-radius: 4px 4px 0 0;
+			transition: 2s; 
+			}
+			a:link {
+			text-decoration: none;
+			}
+			a:visited {
+			color: #0099CC;
+			}
+			ul li:hover {
+			background-color: orange;
+			transition: 2s; 
+			}
+			#gallery {
+			background-color: rgb(200, 191, 231);
+			}
+			#codecademy {
+			align: center;
+			text-align: center;
+			background-color: rgb(52, 179, 160);
+			} 
+			#government {
+			text-align: center;
+			background: url("http://i.imgur.com/wlRgz77.png") no-repeat center; 
+			background-size: cover;
+			}
+			#secret {
+			background: #FFFFFF;
+			margin: 0;
+			}
+			#chess {
+			font-size: 25px;
+			}
+			#notes {
+			background-color: rgb(87, 106, 145);
+			align: center;
+			text-align: center;
+			background-size: cover;
+			}
+			#cpp {
+			overflow: hidden;
+			width: 100%;
+			z-index: 1;
+			margin: 0px;
+			background-color: #FFFFFF;
+			}
+			#thesis {
+			background-color: rgb(0, 0, 0);
+			align: center;
+			text-align: center;
+			z-index: -4;
+			}
+			#thesis img {
+			margin: 0px;
+			z-index: -5;
+			align: center;
+			width: 80%;
+			}
+			#db {
+			margin: 0;
+			background-color: rgb(95, 6, 45);
+			align: center;
+			text-align: center;
+			background-size: cover;            
+			}
+			#dbf {
+			margin: 0;
+			background-color: rgb(255, 255, 255);
+			background-size: cover;            
+			}
+			#xbox_notes {
 			width: 80%;
 			z-index: 1;
 			position: relative;
 			bottom: 75;
 			height: 250px;
 			background-color: #FFFFFF;
-		}
-          
-        .programSectionModule {
-          width: 300px;
-          border: 1px solid white;
-          margin: 10px;
-          display: inline-block;
-          vertical-align: top;
-  `     }
-          
-          
-        .programSectionHead {
-            background-color: #f50;
-            color: white;
-            font-family: 'Vollkorn', serif;
-            text-align: center;
-            width: 300px;
-            float: left;
-            font-size: 16pt;
-            font-variant: small-caps;
-            padding-bottom: 3px;
-        }
-        
-        .programSectionCourse {
-          width: 300px;
-          text-align: left;
-          float: left;
-          cursor: pointer;
-          font-size: 10pt;
-        }
-          
-         .programSection {
-            width: 100%;
-            float: left;
-            overflow: auto;
-            text-align: center;
-            display: table;
-          }
+			}
+			.programSectionModule {
+			width: 300px;
+			border: 1px solid white;
+			margin: 10px;
+			display: inline-block;
+			vertical-align: top;
+			`     }
+			.programSectionHead {
+			background-color: #f50;
+			color: white;
+			font-family: 'Vollkorn', serif;
+			text-align: center;
+			width: 300px;
+			float: left;
+			font-size: 16pt;
+			font-variant: small-caps;
+			padding-bottom: 3px;
+			}
+			.programSectionCourse {
+			width: 300px;
+			text-align: left;
+			float: left;
+			cursor: pointer;
+			font-size: 10pt;
+			}
+			.programSection {
+			width: 100%;
+			float: left;
+			overflow: auto;
+			text-align: center;
+			display: table;
+			}
 		</style>
 	</head>
-
 	<body>
 		<div id="head">
-          <canvas id="gui" width="625px" height="350px" style="border: 2px dotted #ff00ff; z-index: 0;"></canvas>	
-          
+			<canvas id="gui" width="625px" height="350px" style="border: 2px dotted #ff00ff; z-index: 0;"></canvas>
 		</div>
-       <script>
-          
-          /* Constructs a CSS RGB value from an array of 3 elements. */
-          function arrayToRGB(arr) {
-              if( arr.length == 3 ) {
-                  return "rgba(" + arr[0] + "," + arr[1] + "," + arr[2] + ", 0.4)";
-              }
-              return "rgb(0,0,0)";
-          }
-      
-      </script>
-	   <script>
-          // Screen
-          var chart = document.getElementById("gui").getContext("2d");
-          var width = document.getElementById("gui").width
-          var height = document.getElementById("gui").height
-          var text;
-          var text1;
-          var text2;
-         
-          chart.lineWidth = "1"
-          chart.strokeStyle = "#DD0AFF"
-          chart.font = "29px Arial";
-          chart.fillStyle = "#ffffff";
-          
-          text = "Nolen James Felten"
-          chart.fillText(text, width / 2 -(chart.measureText(text).width / 2), 20)
-                    
-          
-          chart.moveTo( width / 2 - (chart.measureText(text).width / 2) , 24)
-          chart.lineTo( width / 2 + (chart.measureText(text).width / 2) , 24)
-          chart.stroke()
-          
-          
-          chart.font = "17px Helvetica";
-          text = "Web Developer and Chess Coach"
-          
-          chart.fillText(text, width / 2 -(chart.measureText(text).width / 2), 45)
-                    
-          chart.moveTo( width / 2 - (chart.measureText(text).width / 2) , 50)
-          chart.lineTo( width / 2 + (chart.measureText(text).width / 2) , 50)
-          chart.stroke()
-          
-          chart.font = "19px Helvetica";
-          text1 = "Phone: "
-          text = "707-241-6221"
-          text2 = "Email: "
-          text3 = "nolenf@gmail.com"
-          
-          chart.fillText(text1, width - chart.measureText(text1).width - chart.measureText(text).width - 5, height - 30)
-          chart.fillText(text2, width - chart.measureText(text3).width - chart.measureText(text2).width - 5, height - 8)
-          
-          chart.fillStyle = "#FF66FF";
-          chart.fillText(text, width - chart.measureText(text).width - 5, height - 30) 
-          chart.fillText(text3, width - chart.measureText(text3).width - 5, height - 8)
-                    
-        </script>
-      
-      <script>
-        function Point3D(x,y,z) {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-            this.rotateX = function(angle) {
-                var rad, cosa, sina, y, z
-                rad = angle * Math.PI / 180
-
-                cosa = Math.cos(rad)
-                sina = Math.sin(rad)
-
-                y = this.y * cosa - this.z * sina
-                z = this.y * sina + this.z * cosa
-
-                return new Point3D(this.x, y, z)
-            }
-            this.rotateY = function(angle) {
-                var rad, cosa, sina, x, z
-
-                rad = angle * Math.PI / 180
-
-                cosa = Math.cos(rad)
-                sina = Math.sin(rad)
-
-                z = this.z * cosa - this.x * sina
-                x = this.z * sina + this.x * cosa
-
-                return new Point3D(x,this.y, z)
-            }
-            this.rotateZ = function(angle) {
-                var rad, cosa, sina, x, y
-
-                rad = angle * Math.PI / 180
-
-                cosa = Math.cos(rad)
-                sina = Math.sin(rad)
-
-                x = this.x * cosa - this.y * sina
-                y = this.x * sina + this.y * cosa
-
-                return new Point3D(x, y, this.z)
-            }
-            this.project = function(viewWidth, viewHeight, fov, viewDistance) {
-                var factor, x, y
-
-                factor = fov / (viewDistance + this.z)
-                x = this.x * factor + viewWidth / 2
-                y = this.y * factor + viewHeight / 2
-                return new Point3D(x, y, this.z)
-            }
-        }
-      </script>
-      
-       <script>
-        function loop() {
-            var t = new Array();
-
-            // background
-            chart.fillStyle = "rgb(1, 1, 1)";
-            chart.fillRect(350, 350, 4, 5);
-            for( var i = 0; i < vertices.length; i++ ) {
-                var v = vertices[i];
-                var r = v.rotateX(angle).rotateY(angle);
-                var p = r.project((width), (height + 55), 200, 3.6);
-                t.push(p)
-
-            }
-            var avg_z = new Array();
-            for( var i = 0; i < faces.length; i++ ) {
-                var f = faces[i];
-                avg_z[i] = {"index":i, "z":(t[f[0]].z + t[f[1]].z + t[f[2]].z + t[f[3]].z) / 4.0};
-            }
-            avg_z.sort(function(a,b) { return b.z - a.z;} );
-            
-          for( var i = 0; i < faces.length; i++ ) {
-                
-            var f = faces[avg_z[i].index];
-
-            // Faces
-            chart.fillStyle = arrayToRGB(colors[avg_z[i].index]);
-            chart.beginPath()
-            chart.moveTo(t[f[0]].x,t[f[0]].y)
-            chart.lineTo(t[f[1]].x,t[f[1]].y)
-            chart.lineTo(t[f[2]].x,t[f[2]].y)
-            chart.lineTo(t[f[3]].x,t[f[3]].y)
-            chart.closePath()
-            chart.fill()
-
-            // Edges
-            chart.strokeStyle = "rgba(255, 255, 255, 1)";
-            chart.lineWidth = "7"
-            chart.beginPath()
-            chart.moveTo(t[f[0]].x,t[f[0]].y)
-            chart.lineTo(t[f[1]].x,t[f[1]].y)
-            chart.lineTo(t[f[2]].x,t[f[2]].y)
-            chart.lineTo(t[f[3]].x,t[f[3]].y)
-            chart.closePath()
-            chart.stroke()
-
-            // Vertex
-            chart.strokeStyle = "rgba(255, 255, 255, 0.18)";
-            chart.lineWidth = "0.1"
-            chart.beginPath()
-            chart.moveTo(t[f[0]].x,t[f[0]].y)
-            chart.lineTo(t[f[1]].x,t[f[1]].y)
-            chart.lineTo(t[f[2]].x,t[f[2]].y)
-            chart.lineTo(t[f[3]].x,t[f[3]].y)
-            chart.closePath()
-            chart.stroke()
-          }
-          angle += 3
-        }
-         var vertices = [
-           new Point3D(-1,1,-1),
-           new Point3D(1,1,-1),
-           new Point3D(1,-1,-1),
-           new Point3D(-1,-1,-1),
-           new Point3D(-1,1,1),
-           new Point3D(1,1,1),
-           new Point3D(1,-1,1),
-           new Point3D(-1,-1,1)
-         ];
-         // Define the vertices that compose each of the 6 faces. These numbers are
-         // indices to the vertex list defined above.
-         var faces  = [
-           [0,1,2,3],
-           [1,5,6,2],
-           [5,4,7,6],
-           [4,0,3,7],
-           [0,4,5,1],
-           [3,2,6,7]
-         ];
-         // Define the colors for each face.
-         var colors = [
-           [255,0,20],
-           [30,255,0],
-           [0,0,0],
-           [105,205,205],
-           [0,0,255],
-           [86,26,139]
-         ];
-         var angle = 0;
-         setInterval(loop, 1000 / 30);
-      </script>
-      <br>
-      </div>
-
+		<script>
+			/* Constructs a CSS RGB value from an array of 3 elements. */
+			function arrayToRGB(arr) {
+			    if( arr.length == 3 ) {
+			        return "rgba(" + arr[0] + "," + arr[1] + "," + arr[2] + ", 0.4)";
+			    }
+			    return "rgb(0,0,0)";
+			}
+			
+		</script>
+		<script>
+			// Screen
+			var chart = document.getElementById("gui").getContext("2d");
+			var width = document.getElementById("gui").width
+			var height = document.getElementById("gui").height
+			var text;
+			var text1;
+			var text2;
+			
+			chart.lineWidth = "1"
+			chart.strokeStyle = "#DD0AFF"
+			chart.font = "29px Arial";
+			chart.fillStyle = "#ffffff";
+			
+			text = "Nolen James Felten"
+			chart.fillText(text, width / 2 -(chart.measureText(text).width / 2), 28)
+			          
+			
+			chart.moveTo( width / 2 - (chart.measureText(text).width / 2) , 30)
+			chart.lineTo( width / 2 + (chart.measureText(text).width / 2) , 30)
+			chart.stroke()
+			
+			
+			chart.font = "17px Helvetica";
+			text = "Web Developer and Chess Coach"
+			
+			chart.fillText(text, width / 2 -(chart.measureText(text).width / 2), 50)
+			          
+			chart.moveTo( width / 2 - (chart.measureText(text).width / 2) , 53)
+			chart.lineTo( width / 2 + (chart.measureText(text).width / 2) , 53)
+			chart.stroke()
+			
+			chart.font = "19px Helvetica";
+			text1 = "Phone: "
+			text = "707-241-6221"
+			text2 = "Email: "
+			text3 = "nolenf@gmail.com"
+			
+			chart.fillText(text1, width - chart.measureText(text1).width - chart.measureText(text).width - 5, height - 30)
+			chart.fillText(text2, width - chart.measureText(text3).width - chart.measureText(text2).width - 5, height - 8)
+			
+			chart.fillStyle = "#FF66FF";
+			chart.fillText(text, width - chart.measureText(text).width - 5, height - 30) 
+			chart.fillText(text3, width - chart.measureText(text3).width - 5, height - 8)
+			          
+		</script>
+		<script>
+			function Point3D(x,y,z) {
+			    this.x = x;
+			    this.y = y;
+			    this.z = z;
+			    this.rotateX = function(angle) {
+			        var rad, cosa, sina, y, z
+			        rad = angle * Math.PI / 180
+			
+			        cosa = Math.cos(rad)
+			        sina = Math.sin(rad)
+			
+			        y = this.y * cosa - this.z * sina
+			        z = this.y * sina + this.z * cosa
+			
+			        return new Point3D(this.x, y, z)
+			    }
+			    this.rotateY = function(angle) {
+			        var rad, cosa, sina, x, z
+			
+			        rad = angle * Math.PI / 180
+			
+			        cosa = Math.cos(rad)
+			        sina = Math.sin(rad)
+			
+			        z = this.z * cosa - this.x * sina
+			        x = this.z * sina + this.x * cosa
+			
+			        return new Point3D(x,this.y, z)
+			    }
+			    this.rotateZ = function(angle) {
+			        var rad, cosa, sina, x, y
+			
+			        rad = angle * Math.PI / 180
+			
+			        cosa = Math.cos(rad)
+			        sina = Math.sin(rad)
+			
+			        x = this.x * cosa - this.y * sina
+			        y = this.x * sina + this.y * cosa
+			
+			        return new Point3D(x, y, this.z)
+			    }
+			    this.project = function(viewWidth, viewHeight, fov, viewDistance) {
+			        var factor, x, y
+			
+			        factor = fov / (viewDistance + this.z)
+			        x = this.x * factor + viewWidth / 2
+			        y = this.y * factor + viewHeight / 2
+			        return new Point3D(x, y, this.z)
+			    }
+			}
+		</script>
+		<script>
+			function loop() {
+			    var t = new Array();
+			
+			    // background
+			    chart.fillStyle = "rgb(1, 1, 1)";
+			    chart.fillRect(350, 350, 4, 5);
+			    for( var i = 0; i < vertices.length; i++ ) {
+			        var v = vertices[i];
+			        var r = v.rotateX(angle).rotateY(angle);
+			        var p = r.project((width), (height + 55), 200, 3.6);
+			        t.push(p)
+			
+			    }
+			    var avg_z = new Array();
+			    for( var i = 0; i < faces.length; i++ ) {
+			        var f = faces[i];
+			        avg_z[i] = {"index":i, "z":(t[f[0]].z + t[f[1]].z + t[f[2]].z + t[f[3]].z) / 4.0};
+			    }
+			    avg_z.sort(function(a,b) { return b.z - a.z;} );
+			    
+			  for( var i = 0; i < faces.length; i++ ) {
+			        
+			    var f = faces[avg_z[i].index];
+			
+			    // Faces
+			    chart.fillStyle = arrayToRGB(colors[avg_z[i].index]);
+			    chart.beginPath()
+			    chart.moveTo(t[f[0]].x,t[f[0]].y)
+			    chart.lineTo(t[f[1]].x,t[f[1]].y)
+			    chart.lineTo(t[f[2]].x,t[f[2]].y)
+			    chart.lineTo(t[f[3]].x,t[f[3]].y)
+			    chart.closePath()
+			    chart.fill()
+			
+			    // Edges
+			    chart.strokeStyle = "rgba(255, 255, 255, 1)";
+			    chart.lineWidth = "7"
+			    chart.beginPath()
+			    chart.moveTo(t[f[0]].x,t[f[0]].y)
+			    chart.lineTo(t[f[1]].x,t[f[1]].y)
+			    chart.lineTo(t[f[2]].x,t[f[2]].y)
+			    chart.lineTo(t[f[3]].x,t[f[3]].y)
+			    chart.closePath()
+			    chart.stroke()
+			
+			    // Vertex
+			    chart.strokeStyle = "rgba(255, 255, 255, 0.18)";
+			    chart.lineWidth = "0.1"
+			    chart.beginPath()
+			    chart.moveTo(t[f[0]].x,t[f[0]].y)
+			    chart.lineTo(t[f[1]].x,t[f[1]].y)
+			    chart.lineTo(t[f[2]].x,t[f[2]].y)
+			    chart.lineTo(t[f[3]].x,t[f[3]].y)
+			    chart.closePath()
+			    chart.stroke()
+			  }
+			  angle += 3
+			}
+			 var vertices = [
+			   new Point3D(-1,1,-1),
+			   new Point3D(1,1,-1),
+			   new Point3D(1,-1,-1),
+			   new Point3D(-1,-1,-1),
+			   new Point3D(-1,1,1),
+			   new Point3D(1,1,1),
+			   new Point3D(1,-1,1),
+			   new Point3D(-1,-1,1)
+			 ];
+			 // Define the vertices that compose each of the 6 faces. These numbers are
+			 // indices to the vertex list defined above.
+			 var faces  = [
+			   [0,1,2,3],
+			   [1,5,6,2],
+			   [5,4,7,6],
+			   [4,0,3,7],
+			   [0,4,5,1],
+			   [3,2,6,7]
+			 ];
+			 // Define the colors for each face.
+			 var colors = [
+			   [255,0,20],
+			   [30,255,0],
+			   [0,0,0],
+			   [105,205,205],
+			   [0,0,255],
+			   [86,26,139]
+			 ];
+			 var angle = 0;
+			 setInterval(loop, 1000 / 30);
+		</script>
+		<br>
+		</div>
 		<center>
-		            
-          <div id="chess">
-            <br>
-            <img src="http://i.imgur.com/jKDs9LP.png" style="border: 1px double #00FF00;">
-          
-            <h1 style="color:#0000FF">Call or Text <u>707-241-6221</u></h1>
-            (<u><i>Please don't spam my number, I am a Ninja!</u></i>)
-            <p><img src="http://i.imgur.com/MxRz9U5.png" height="200px" width="200px" style="border: 6px double #00FFFF;"></p>
-            <p>About me:</p>
-            <p>In <u><b>4th grade</b></u>, I had won <u><b>1st</b></u> place in the Oregon <u>state</u> Chess tournament.<br>Double-elimination style, <b>7 wins</b> with <b>0 loss</b>.</p>
-            
-            <p>Book an appointment (pay with cash after lesson):</p>
-            <iframe src="https://ihatekaylahmissen.wixsite.com/nolenf" width="982px" height="2000px"></iframe>
-            
-            <h2>Facts</h2>
-            
-            <li><strong>My Favorite:</strong> Chess teaches you patience.</li>  
-            <li>Chess is a game for people of all ages.</li>
-              <li>Chess develops memory.</li>
-              <li><u>Chess improves concentration</u>.</li>
-              <li>Chess teaches independence.</li>
-              <li><u><b>Chess improves school work and grades</b></u>.</li>
-              <li>Chess makes you understand actions and consequences.</li>
-            <li>Chess teaches you to take responsibility.</li>
-            <li>Chess teachs to see the other person’s perspective.</li>
-            <li>Chess teaches you how to cope with failure.</li>
-            <li>Chess can uncover your inner genius.</li>
-            <li><strong>Chess has shown to improve recovery from stroke or disability.</strong></li>
-            <li>Losing expands your knowledge!</li>
-            <li>Enhances reading and math skills.</li>
-            <h3>It’s just plain fun!</h3>
-              
-            <p><a href="https://www.chess.com/member/tacomcbell"><img style="border: 2px solid #00FF00;" src="http://i.imgur.com/aiUHC5P.png" height="150px" width="400px"><br>Find me on Chess.com</a></p>
-          </div>
-          
+			<div id="chess">
+				<br>
+				<img src="http://i.imgur.com/jKDs9LP.png" style="border: 1px double #00FF00;">
+				<h1 style="color:#0000FF">Call or Text <u>707-241-6221</u></h1>
+				(<u><i>Please don't spam my number, I am a Ninja!</u></i>)
+				<p><img src="http://i.imgur.com/MxRz9U5.png" height="200px" width="200px" style="border: 6px double #00FFFF;"></p>
+				<p>About me:</p>
+				<p>In <u><b>4th grade</b></u>, I had won <u><b>1st</b></u> place in the Oregon <u>state</u> Chess tournament.<br>Double-elimination style, <b>7 wins</b> with <b>0 loss</b>.</p>
+				<p>Book an appointment (pay with cash after lesson):</p>
+				<iframe src="https://calendar.google.com/calendar/embed?title=Schedule&amp;showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23339999&amp;src=jab20d680200umeegiu5mm119c%40group.calendar.google.com&amp;color=%2342104A&amp;ctz=America%2FLos_Angeles" style="border:solid 1px #777; background: #AA00AA;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+				<iframe src="https://ihatekaylahmissen.wixsite.com/nolenf" width="982px" height="1400px"></iframe>
+				<h2>Facts</h2>
+				<li><strong>My Favorite:</strong> Chess teaches you patience.</li>
+				<li>Chess is a game for people of all ages.</li>
+				<li>Chess develops memory.</li>
+				<li><u>Chess improves concentration</u>.</li>
+				<li>Chess teaches independence.</li>
+				<li><u><b>Chess improves school work and grades</b></u>.</li>
+				<li>Chess makes you understand actions and consequences.</li>
+				<li>Chess teaches you to take responsibility.</li>
+				<li>Chess teachs to see the other person’s perspective.</li>
+				<li>Chess teaches you how to cope with failure.</li>
+				<li>Chess can uncover your inner genius.</li>
+				<li><strong>Chess has shown to improve recovery from stroke or disability.</strong></li>
+				<li>Losing expands your knowledge!</li>
+				<li>Enhances reading and math skills.</li>
+				<h3>It’s just plain fun!</h3>
+				<p><a href="https://www.chess.com/member/tacomcbell"><img style="border: 2px solid #00FF00;" src="http://i.imgur.com/aiUHC5P.png" height="150px" width="400px"><br>Find me on Chess.com</a></p>
+			</div>
 			<div id="government">
-		
 				<hr>
 				<br>
 				<h2>
 					<span class="rainbow" style="background: none; color: rgb(0, 40, 240);">Government:</span>
 				</h2>
-				
-                <b>Sonoma County Volunteer</b>
+				<b>Sonoma County Volunteer</b>
 				<p>
 					<a href="https://github.com/OpenSantaRosa">
-						<img src="http://i.imgur.com/kEskccT.png" style="opacity: 0.9; border: 2px solid black;">
+					<img src="http://i.imgur.com/kEskccT.png" style="opacity: 0.9; border: 2px solid black;">
 					</a>
 				</p>
-				
 				<br>
 			</div>
-                    
-             <div id="web">
-				<p style="border: 1px solid #000000;"><a href="https://standards.usa.gov/"><h1>U.S. Standards Compilent Web Developer</h1></a></p>
-			
-			
+			<div id="web">
+				<p style="border: 1px solid #000000;">
+					<a href="https://standards.usa.gov/">
+				<h1>U.S. Standards Compilent Web Developer</h1></a></p>
 				<p style="border: 2px solid black;"><a href="http://nolenfelten.com">Nolen Felten</a> | <a href="https://delewpaint.github.io/">Delew Paint</a> | (More coming)</p>
-			
-               
-               
 			</div>
-
-		
-          <div id="codecademy">
-              <br>
-              <h2><span class="rainbow">Education:</span></h2>
-              
-              <a href="https://www.codecademy.com/nolenf/"><img src="https://p5.zdassets.com/hc/settings_assets/1030455/200272088/1muBAt6udX37m4Ihlik09w-CC_Logotype_Lockup_Blue_Alpha.png" width="750px" height="250px"></a>
-			
-			  <p><a href="https://www.codecademy.com/nolenf/"><img src="http://i.imgur.com/9aA2Ca8.png"></a></p>
-                               
-
-              <h1><span class="rainbow">SQL Notes</span></h1>
-              <iframe src="http://nolenfelten.github.io/database.html" id="dbf" style="width: 80%;"></iframe>
-		
-			  <br>
-              <h1><span class="rainbow" >C / C ++ Notes</span></h1>
-              <iframe src="http://nolenfelten.github.io/cpp.html" style="width: 80%;" id="cpp"></iframe>
-			  
-              <br>
-              <h1><span class="rainbow" >Java Notes</span></h1>
-              <iframe src="http://nolenfelten.github.io/java.html" style="width: 80%;" id="cpp"></iframe>
-		  
-		  
-              <br>
-              <h1><span class="rainbow" >Git</span></h1>
-              <iframe src="https://services.github.com/resources/learning-path/" style="width: 80%;" id="cpp"></iframe>
-			  <br>
-			</div>	
-          
-
-		
-
+			<div id="codecademy">
+				<br>
+				<h2><span class="rainbow">Education:</span></h2>
+				<a href="https://www.codecademy.com/nolenf/"><img src="https://p5.zdassets.com/hc/settings_assets/1030455/200272088/1muBAt6udX37m4Ihlik09w-CC_Logotype_Lockup_Blue_Alpha.png" width="750px" height="250px"></a>
+				<p><a href="https://www.codecademy.com/nolenf/"><img src="http://i.imgur.com/9aA2Ca8.png"></a></p>
+				<h1><span class="rainbow">SQL Notes</span></h1>
+				<iframe src="http://nolenfelten.github.io/database.html" id="dbf" style="width: 80%;"></iframe>
+				<br>
+				<h1><span class="rainbow" >C / C ++ Notes</span></h1>
+				<iframe src="http://nolenfelten.github.io/cpp.html" style="width: 80%;" id="cpp"></iframe>
+				<br>
+				<h1><span class="rainbow" >Java Notes</span></h1>
+				<iframe src="http://nolenfelten.github.io/java.html" style="width: 80%;" id="cpp"></iframe>
+				<br>
+				<h1><span class="rainbow" >Git</span></h1>
+				<iframe src="https://services.github.com/resources/learning-path/" style="width: 80%;" id="cpp"></iframe>
+				<br>
+			</div>
 			<div id="gallery">
-
 				<br>
 				<h3>
 					<span class="rainbow">Graphical User Interface Design:</span>
 				</h3>
-
 				<br>
-
-
-				
-<table border="">
-						<tbody>
-							<tr>
-								<td style="background: #000000;">
-									<center>
-										<h2 style="padding-top: 20px;">
-											<a href="https://github.com/nolenfelten/SMS-Bomb" style="color: #FF0000;">SMS Bomb!</a>
-										</h2>
-									
-						
-										<p style="color: #FFFFFF">
-											Fun project that uses STMP to send text messages.<br />
-											Built with HTML, JS, and PyQt Designer.
-										</p>
-									</center>
-								</td>
-							</tr>
-
-							<tr>
-								<td>
-									<a href="https://github.com/nolenfelten/SMS-Bomb" style="color: #FF0000;">
-										<img src="http://i.imgur.com/PKoz6lM.gif" style="max-width: 100%; min-height: 321px;">
-									</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-
-                
-                <br>
-
-			</div>	
-		
-			
-
-
-            		    
-		<div id='thesis'>
-            <br>
-            <h1><span class="rainbow">Original Xbox</span></h1>
-			<img src="http://i.imgur.com/FuH8fOD.png">
-          <iframe src="http://nolenfelten.github.io/xbox.html" id="xbox_notes"></iframe>
-            
-		</div>
-
-
-        
-          <div id="secret">
-           
-<h2>I'd Like To Tell You About The Strangest Secret in The World</h2> 
-	  <iframe width="560" height="315" src="https://www.youtube.com/embed/lRygtVJrelM" frameborder="0" allowfullscreen></iframe>
-            <p>Some years ago, the late Nobel prize-winning Dr. Albert Schweitzer was being interviewed in London, and a reporter asked him:<br>"Doctor, what's wrong with men today?"<br>The great doctor was silent a moment and said, "Men simply don't think"</p> 
-            <p>It's about this, that I want to talk with you.</p> 
-            <p>We live today in a golden age.<br>This is an era that humanity has looked forward to, dreamed of, died for, and worked toward for thousands of years.<br>But since it's here, we pretty well take it for granted.</p> 
-            <p>We in America are particularly fortunate, to live in the richest land on the face of the earth.<br>A land of abundant opportunity for everyone.</p> 
-            <p><b>But, do you know what happens?</b></p> 
-            <p><u>Let's take 100 individuals who start <i>even</i> at the age of <b>25</b>, do you have any idea what will happen to those men and women by the time they are <b>65</b>?</u></p> 
-            <p>These 100 individuals who all start <i>even</i> at the age of <b>25</b> believe they're going to be successful.<br>If you asked anyone of them if they wanted to be a success, they would tell you they did.<br>
-		    They are eager toward life, there is a certain sparkle in their eye, an directness to their carriage, and life seems like a pretty interesting adventure to them.</p> 
-            <p>But by the time they're 65,<br><u><b>only 1 will be rich</b></u>,<br>4 <b><u>will be financially independent</b></u>,<br>5 <b><u>will still be working</b></u>, <br>54 <b><i>will be broke</b></i>.</p> 
-             
-            <p>Now, wait a moment, how do only 5 make the grade?</p> 
-            <p>Why do so many fail?<br> What has happened to the sparkle that was there when they were 25? <br>What has become of the dreams, the hopes, the plans, and why is there such a large disparity between what these people intended to do and what they actually accomplished?</p> 
-            <p>When we say only 5% achieve success, we have to define success. And here is the best definition I've been able to find:</p> 
-            <p><b>"Success is the progressive realization of a worthy ideal"</b><br>If a man is working toward a predetermined goal, and knows where he is going, that man is a success. If not, he is a failure.<br><b>"Success is the progressive realization of a worthy ideal"</b></p> 
-            <p>Rollo May, the distinguished psychiatrist, wrote a wonderful book called "Man's Search for Himself", and in this book he says:<br>"The opposite of courage in our society is not cowardice...it is conformity".</p> 
-            <p>And there you have the trouble today.</p> 
-            <p><u><b>Conformity</b> - people acting like everyone else, without knowing why, or where they are going</u>.</p> 
-             
-            <h2><u>Think of it</u><br>Right now in America, there are over 18 million people age 65 or older.<br>And most of them, are <i>broke</i>.</h2> 
-             
-            <p>They are <b>dependent on someone else for life's necessities</b>.</p> 
-             
-            <p>We learn to read by the time we're <b>7</b>.<br>We learn to make a living by the time we're <b>25</b>.<br>Often by that time we're not only making a living, we're <u>supporting a family</u>. <br>And yet by the time we're <b>65</b>, we <u>haven't</u> learned how to become financially independent in the richest land that has ever been known.</p> 
-            <p><u>Why</u>?</p> 
-            <p><b>We conform</b>.</p> 
-            <p>And the trouble is most of us are acting like the wrong percentage group - the 95 who don't succeed.</p> 
-             
-            <p>Why do these people conform? Well, they really don’t know. These people believed that their lives are shaped by circumstances, by things that happen to them by exterior forces. They are outer-directed people.</p> 
-	  <p>Read "The Giving Tree" by Shel Silverstein. The illustrated version, to be exact.</p>
-           <p>A survey was made one time that covered a lot of men, working men, and these men were asked, “Why do you work?” “Why do you get up in the morning?” 19 out of 20 had no idea.</p> 
-            <p>If you ask them they will say, “Well, everyone goes to work in the morning,” and that’s the reason they do it – because everyone else is doing it.</p> 
-            <p>Now, let’s get back to our definition of success. Who succeeds?</p> 
-            <p>The only person who succeeds is the person who is progressively realizing a worthy ideal. It is the person who says, “I am going to become this,” and then begins to work towards that goal.</p> 
-            <p>I’ll tell you who the successful people are. A success is the school teacher who is teaching school because that’s what he or she wants to do. A success is the woman who is a wife and mother because she wanted to become a wife and mother and is doing a good job of it. A success is the man who runs the corner gas station because that was his dream. That’s what he wanted to do.</p> 
-            <p>A success is the successful salesman who wants to become a top-notch salesman and grow and build with in his organization. A success is anyone who is doing deliberately a pre-determined job because that’s what he decided to do deliberately. But only 1 out of 20 does that.</p> 
-            <p><strong>That’s why today there isn’t really any competition unless we make it for ourselves. Instead of competing, all we have to do is create. </strong>For 20 years, I looked for the key which would determine what would happen to a human being.</p> 
-            <p>Was there a key, I wanted to know, which would make the future a promise that we could foretell to a large extent. Was there a key that would guarantee a person’s becoming successful if he only knew about it and knew how to use it?</p> 
-            <p>Well, there is such a key. And I found it.</p> 
-            <p>Have you ever wondered why so many men work so hard and honestly without ever achieving anything in particular, and others don’t seem to work hard and yet seem to get everything? They seem to have a magic touch.</p> 
-            <p>You’ve heard them say that about someone. “Everything he touches turns to gold.” Have you ever noticed that a man who becomes successful tends to continue to become successful?</p> 
-            <p>On the other hand, have you noticed how a man who’s a failure tends to continue to fail? Well, it’s because of goals. Some of us have goals; some don’t. People with goals succeed because they know where they’re going. It’s that simple.</p> 
-            <p>Think of a ship leaving a harbor and think of it with a complete voyage mapped out and planned. The captain and crew know exactly where it’s going and how long it will take. It has a definite goal. 9,999 times out of 10,000 it will get to where it started out to get.<br> 
-Now let’s take another ship, just like the first, only let’s not put a crew on it, or a captain at the helm. Let’s give it no aiming point, no goal, and no destination. We just start the engines and let it go.</p> 
-            <p>I think you’ll agree with me that if it gets out of the harbor at all, it will either sink or wind up on some deserted beach, a derelict. It can’t go any place because it has no destination and no guidance.</p> 
-            <p>It’s the same with a human being. Take the salesman for example. There is no other person in the world today with the future of a good salesman. Selling is the world’s highest paid profession, if we’re good at it and if we know where we’re going.</p> 
-            <p>Every company needs top-notch salesmen, and they reward those men. The sky is the limit for them. But how many can you find?<br> 
-Someone once said the human race is fixed. Not to prevent the strong from winning, but to prevent the weak from losing.</p> 
-            <p>The American economy today can be likened to a convoy in time of war. The entire economy is slowed down to protect its weakest link, just as the convoy had to go at the speed that will permit its slowest vessel to remain in formation.</p> 
-            <p>That’s why it’s so easy to make a living today. It takes no particular brains or talent to make a living and support a family today. We have a plateau on so-called security, if that’s what person is looking for.&nbsp; But we do have to decide how high above this plateau we want to aim.</p> 
-            <p>Now let’s get back to the Strangest Secret in the World, the story I wanted to tell you today.</p> 
-            <p>Why do men with goals succeed in life, and men without them fail? Well, let me tell you something which, if you really understand it, will alter your life immediately. If you understand completely what I’m going to tell you from this moment on, your life will never be the same again.</p> 
-            <p>You will suddenly find that good luck just seems to be attracted to you, the things you want just seem to fall in line, and from now on you won’t have the problems, the worries, the gnawing lump of anxiety that perhaps you’ve experienced before. Doubt and fear will now be things of the past.</p> 
-	  <h2>Here is the key to success, and, the key to failure:</h2>
-	  <p>We become, what we think about.</p>
-	  <p>I'll say that again.</p>
-	  <p>We become, what we think about.</p>
-            <p>Throughout history, the great wise men and teachers, philosophers, and prophets have disagreed with one another on many different things. It’s only on this one point that they are in complete and unanimous agreement.</p> 
-            <p>Listen to what Marcus Aurelius, the great Roman Emperor said: “A man’s life is what his thoughts make of it.”</p> 
-            <p>Disraeli said this: “Everything comes if a man will only wait. I’ve brought myself by long meditation to the conviction that a human being with a settled purpose must accomplish it, and nothing can resist a will that will stake even existence for its fulfillment.”</p> 
-            <p>Ralph Waldo Emerson said this: “A man is what he thinks about all day long.”</p> 
-            <p>William James said, “The greatest discovery of my generation is that human beings can alter their lives by altering their attitudes of mind.”<br> 
-And he also said, “We need only in cold blood act as if the thing in question were real, and it will become infallibly real by growing into such a connection with our life that it will become real. It will become so knit with habit and emotion that our interests in it will be those which characterize belief.”</p> 
-            <p>He also said, “If you only care enough for a result, you will almost certainly obtain it. If you wish to be rich, you will be rich. If you wish to be learned, you will be learned. If you wish to be good, you will be good. Only you must, then, really wish these things, and wish them exclusively, and not wish at the same time a hundred other incompatible things just as strongly.”</p> 
-            <p>In the Bible you will read in Mark 9-23: “If thou wishs to believe, all things are possible to him that believeth.”</p> 
-            <p>My old friend Dr. Norman Vincent Peale put it this way: “This is one of the greatest laws in the universe. Fervently do I wish I had discovered it as a very young man. It dawned upon me much later in life, and I found it to be the greatest discovery, if not my greatest discovery, outside my relationship to God. The great law briefly and simply stated is if you think in negative terms, you will get negative results. If you think in positive terms, you will achieve positive results.”</p> 
-            <p>“That is the simple fact,” he went on to say, “Which is of the basis of an astonishing law of prosperity and success. In three words: Believe and Succeed.”</p> 
-            <p>William Shakespeare put it this way: “Our doubts are traitors and make us lose the good we oft might win by fearing to attempt.”<br> 
-George Bernard Shaw said: “People are always blaming their circumstances for what they are. I don’t believe in circumstances. The people who get on in this world are the people who get up and look for the circumstances they want, and if they can’t find them, make them.”</p> 
-            <p>Well, it’s pretty apparent, isn’t it? And every person who discovered this, for a while, believed that they were the first to work it out. We become what we think about.</p> 
-            <p>It stands to reason that a person who is thinking about a concrete and worthwhile goal is going to reach it, because that’s what he’s thinking about. And we become what we think about.</p> 
-            <p>Conversely, the man who has no goal, who doesn’t know where they are going, and whose thoughts must therefore be thoughts of confusion, anxiety, fear, and worry becomes what they think about. His life becomes one of frustration, fear, anxiety, and worry. And if he thinks about nothing, he becomes nothing.</p> 
-            <p>Now how does it work? Why do we become what we think about?</p> 
-            <p>Well, I’ll tell you how it works as far as we know. To do this, I want to talk about a situation that parallels the human mind. You won't understand it now, you will after re-hearing it, 1 time a day, for 7 days in a row.</p> 
-            <p>Suppose a farmer has some land and it’s good, fertile land. Now, the land gives the farmer a choice. He may plant in that land whatever he chooses. The land doesn’t care. It’s up to the farmer to make the decision.</p> 
-            <p>Remember, we’re comparing the human mind with the land because, the mind, like the land, doesn’t care what you plant in it. It will return what you plant, but it doesn’t care what you plant.</p> 
-            <p>Now let’s say that the farmer has two seeds in his hand – one a seed of corn; the other is nightshade, a deadly poison. He digs two little holes in the earth and he plants both seeds; one corn, the other nightshade. He covers up the holes, waters, and takes care of the land.<br> 
-What will happen? Invariably, the land will return what’s planted. As it’s written in the Bible, “As ye sow, so shall ye reap.”</p> 
-            <p>Remember, the land doesn’t care. It will return poison in just as wonderful abundance as it will corn. So up come the two plants – one corn, one poison.</p> 
-            <p>The human mind is far more fertile, far more incredible and mysterious than the land, but it works the same way. It doesn’t care what we plant – success, failure. A concrete, worthwhile goal or confusion, misunderstanding, fear, anxiety, and so on. But what we plant, it must return to us.</p> 
-            <p>You see, the human mind is the last great unexplored continent on earth. It contains riches beyond our wildest dreams. It will return anything we want to plant. So you may say, if that is true, why don’t people use their minds more?</p> 
-            <p>Well, I think they’ve figured out an answer to that one too. Our mind comes as standard equipment at birth. It’s free. And things that are given to us for nothing, we place little value on. Things that we pay money for, we value.</p> 
-            <p><strong>The paradox is that exactly the reverse is true. Everything that’s really worthwhile in life came to us free: our minds, our souls, our bodies, our hopes, our dreams, our ambitions, our intelligence, our love of family and children and friends and country. All these priceless possessions are free.</strong></p> 
-            <p>But the things that cost us money are actually very cheap and can be replaced at any time. A good man can be completely wiped out and make another fortune. He can do that several times. Even if our home burns down, we can rebuild it. <strong>But the things we got for nothing, we can never replace.</strong></p> 
-            <p>The human mind is not used because we take it for granted. Familiarity breeds contempt. It can do any kind of job we assign to it, but generally speaking, we use it for little jobs instead of big important ones. Universities have proved that most of us are operating on about ten percent or less of our abilities.</p> 
-            <p>So decide now. What is it you want? Plant your goal in your mind. It’s the most important decision you’ll ever make in your entire life.<br> 
-What is it you want? Do you want to be an outstanding salesman, a better worker at your particular job?</p> 
-            <p>Do you want to go places in your company, in your community? Do you want to get rich?</p> 
-            <p>All you have got to do is plant that seed in your mind, care for it, work steadily towards your goal, and it will become a reality. It not only will, there’s no way that it cannot.</p> 
-            <p>You see, that’s a law, like the laws of Sir Isaac Newton, the laws of gravity. If you get on top of a building and jump off, you’ll always go down. You’ll never go up.</p> 
-            <p>And it’s the same with all the other laws of nature. They always work. They’re inflexible.</p> 
-            <p>Think about your goal in a relaxed, positive way. Picture yourself in your mind’s eye as having already achieved this goal. See yourself doing the things you will be doing when you have reached your goal.</p> 
-            <p>Ours has been called a Phenobarbitals Age, the age of ulcers and nervous breakdowns and tranquilizers. At a time when medical research has raised us to a new plateau of good health and longevity, far too many of us worry ourselves into an early grave trying to cope with things in our own little personal ways, without learning a few great laws that will take care of everything for us.</p> 
-            <p>These things we bring on ourselves through our habitual way of thinking. Every one of us is the sum total of our own thoughts. </p>
-	  <h2>He is, where he is, because, <i>that is exactly where he really wants to be</i>, <u>whether he’ll admit that or not</u>.</h2> 
-            <p>Each of us must live off the fruit of his thoughts in the future, because what you think today and tomorrow, next month and next year, will mold your life and determine your future. You’re guided by your mind.</p> 
-            <p>I remember one time I was driving through eastern Arizona and I saw one of those giant earth-moving machines roaring along the road at about 35 miles an hour with what looked like 30 tons of dirt in it – a tremendous, incredible machine – and there was a little man perched way up on top with the wheel in his hands, guiding it.</p> 
-            <p>As I drove along, I was struck by the similarity of that machine with the human mind. Just suppose you are sitting at the controls of such a vast source of energy. Are you going to sit back and fold your arms and let it run itself into a ditch or are you going to keep both hands firmly on the wheel and control and direct this power to a specific, worthwhile purpose?</p> 
-            <p>It’s up to you. You’re in the driver’s seat.</p> 
-            <p>You see, the very law that gives us success is a two-edged sword. We must control our thinking. The same rule that can lead a man to a life of success, wealth, happiness, and all the things they ever dreamed of for themselves and his family, that very same law can lead them into the gutter. It’s all in how he uses it – for good or for bad.</p> 
-            <p>This is The Strangest Secret in the world. Why do I say it’s strange, and why do I call it a secret?</p> 
-            <p>Actually, it isn’t a secret at all. It was first promulgated by some of the earliest wise men, and it appears again and again throughout the Bible. But very few people have learned it or understand it. That’s why it’s strange, and why for some equally strange reason it virtually remains a secret.</p> 
-            <p>I believe you could go out and walk down the main street of your town and ask one person after another what the secret of success is and you probably wouldn’t run into one person in a month that could tell you.</p> 
-            <p>This information is enormously valuable to us if we really understand it and apply it. It’s valuable to us not only for our own lives, but the lives of those around us, our families, employees, associates, and friends.</p> 
-            <p>Life should be an exciting adventure. It should never be a bore. A man should work fully, be alive. He should be glad to get out of bed in the morning. He should be doing a job he likes to do because he does it well.</p> 
-            <p>One time I heard Grove Patterson, the great late editor-in-chief of the Toledo Daily Blade make a speech and as he concluded his speech he said something I’ve never forgotten. He said, “My years in the newspaper business have convinced me of several things. Among them, that people are basically good, and that we came from someplace and we are going someplace. So we should make our time here an exciting adventure. The architect of the universe didn’t build a stairway leading nowhere. The greatest teacher of all, the carpenter from the Plains of Galilee of all gave us the secret time and time again: As ye believe, so shall it be done – unto you.”</p> 
-            <p><u>Here's the great challenge of life:  You can have more than you've got because you can become more than you are.</u></p> 
-          </div>
-          
-          
-          
+				<table border="">
+					<tbody>
+						<tr>
+							<td style="background: #000000;">
+								<center>
+									<h2 style="padding-top: 20px;">
+										<a href="https://github.com/nolenfelten/SMS-Bomb" style="color: #FF0000;">SMS Bomb!</a>
+									</h2>
+									<p style="color: #FFFFFF">
+										Fun project that uses STMP to send text messages.<br />
+										Built with HTML, JS, and PyQt Designer.
+									</p>
+								</center>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="https://github.com/nolenfelten/SMS-Bomb" style="color: #FF0000;">
+								<img src="http://i.imgur.com/PKoz6lM.gif" style="max-width: 100%; min-height: 321px;">
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br>
+			</div>
+			<div id='thesis'>
+				<br>
+				<h1><span class="rainbow">Original Xbox</span></h1>
+				<img src="http://i.imgur.com/FuH8fOD.png">
+				<iframe src="http://nolenfelten.github.io/xbox.html" id="xbox_notes"></iframe>
+			</div>
+			<div id="secret">
+				<h2>I'd Like To Tell You About The Strangest Secret in The World</h2>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/lRygtVJrelM" frameborder="0" allowfullscreen></iframe>
+				<p>Some years ago, the late Nobel prize-winning Dr. Albert Schweitzer was being interviewed in London, and a reporter asked him:<br>"Doctor, what's wrong with men today?"<br>The great doctor was silent a moment and said, "Men simply don't think"</p>
+				<p>It's about this, that I want to talk with you.</p>
+				<p>We live today in a golden age.<br>This is an era that humanity has looked forward to, dreamed of, died for, and worked toward for thousands of years.<br>But since it's here, we pretty well take it for granted.</p>
+				<p>We in America are particularly fortunate, to live in the richest land on the face of the earth.<br>A land of abundant opportunity for everyone.</p>
+				<p><b>But, do you know what happens?</b></p>
+				<p><u>Let's take 100 individuals who start <i>even</i> at the age of <b>25</b>, do you have any idea what will happen to those men and women by the time they are <b>65</b>?</u></p>
+				<p>These 100 individuals who all start <i>even</i> at the age of <b>25</b> believe they're going to be successful.<br>If you asked anyone of them if they wanted to be a success, they would tell you they did.<br>
+					They are eager toward life, there is a certain sparkle in their eye, an directness to their carriage, and life seems like a pretty interesting adventure to them.
+				</p>
+				<p>But by the time they're 65,<br><u><b>only 1 will be rich</b></u>,<br>4 <b><u>will be financially independent</b></u>,<br>5 <b><u>will still be working</b></u>, <br>54 <b><i>will be broke</b></i>.</p>
+				<p>Now, wait a moment, how do only 5 make the grade?</p>
+				<p>Why do so many fail?<br> What has happened to the sparkle that was there when they were 25? <br>What has become of the dreams, the hopes, the plans, and why is there such a large disparity between what these people intended to do and what they actually accomplished?</p>
+				<p>When we say only 5% achieve success, we have to define success. And here is the best definition I've been able to find:</p>
+				<p><b>"Success is the progressive realization of a worthy ideal"</b><br>If a man is working toward a predetermined goal, and knows where he is going, that man is a success. If not, he is a failure.<br><b>"Success is the progressive realization of a worthy ideal"</b></p>
+				<p>Rollo May, the distinguished psychiatrist, wrote a wonderful book called "Man's Search for Himself", and in this book he says:<br>"The opposite of courage in our society is not cowardice...it is conformity".</p>
+				<p>And there you have the trouble today.</p>
+				<p><u><b>Conformity</b> - people acting like everyone else, without knowing why, or where they are going</u>.</p>
+				<h2><u>Think of it</u><br>Right now in America, there are over 18 million people age 65 or older.<br>And most of them, are <i>broke</i>.</h2>
+				<p>They are <b>dependent on someone else for life's necessities</b>.</p>
+				<p>We learn to read by the time we're <b>7</b>.<br>We learn to make a living by the time we're <b>25</b>.<br>Often by that time we're not only making a living, we're <u>supporting a family</u>. <br>And yet by the time we're <b>65</b>, we <u>haven't</u> learned how to become financially independent in the richest land that has ever been known.</p>
+				<p><u>Why</u>?</p>
+				<p><b>We conform</b>.</p>
+				<p>And the trouble is most of us are acting like the wrong percentage group - the 95 who don't succeed.</p>
+				<p>Why do these people conform? Well, they really don’t know. These people believed that their lives are shaped by circumstances, by things that happen to them by exterior forces. They are outer-directed people.</p>
+				<p>Read "The Giving Tree" by Shel Silverstein. The illustrated version, to be exact.</p>
+				<p>A survey was made one time that covered a lot of men, working men, and these men were asked, “Why do you work?” “Why do you get up in the morning?” 19 out of 20 had no idea.</p>
+				<p>If you ask them they will say, “Well, everyone goes to work in the morning,” and that’s the reason they do it – because everyone else is doing it.</p>
+				<p>Now, let’s get back to our definition of success. Who succeeds?</p>
+				<p>The only person who succeeds is the person who is progressively realizing a worthy ideal. It is the person who says, “I am going to become this,” and then begins to work towards that goal.</p>
+				<p>I’ll tell you who the successful people are. A success is the school teacher who is teaching school because that’s what he or she wants to do. A success is the woman who is a wife and mother because she wanted to become a wife and mother and is doing a good job of it. A success is the man who runs the corner gas station because that was his dream. That’s what he wanted to do.</p>
+				<p>A success is the successful salesman who wants to become a top-notch salesman and grow and build with in his organization. A success is anyone who is doing deliberately a pre-determined job because that’s what he decided to do deliberately. But only 1 out of 20 does that.</p>
+				<p><strong>That’s why today there isn’t really any competition unless we make it for ourselves. Instead of competing, all we have to do is create. </strong>For 20 years, I looked for the key which would determine what would happen to a human being.</p>
+				<p>Was there a key, I wanted to know, which would make the future a promise that we could foretell to a large extent. Was there a key that would guarantee a person’s becoming successful if he only knew about it and knew how to use it?</p>
+				<p>Well, there is such a key. And I found it.</p>
+				<p>Have you ever wondered why so many men work so hard and honestly without ever achieving anything in particular, and others don’t seem to work hard and yet seem to get everything? They seem to have a magic touch.</p>
+				<p>You’ve heard them say that about someone. “Everything he touches turns to gold.” Have you ever noticed that a man who becomes successful tends to continue to become successful?</p>
+				<p>On the other hand, have you noticed how a man who’s a failure tends to continue to fail? Well, it’s because of goals. Some of us have goals; some don’t. People with goals succeed because they know where they’re going. It’s that simple.</p>
+				<p>Think of a ship leaving a harbor and think of it with a complete voyage mapped out and planned. The captain and crew know exactly where it’s going and how long it will take. It has a definite goal. 9,999 times out of 10,000 it will get to where it started out to get.<br> 
+					Now let’s take another ship, just like the first, only let’s not put a crew on it, or a captain at the helm. Let’s give it no aiming point, no goal, and no destination. We just start the engines and let it go.
+				</p>
+				<p>I think you’ll agree with me that if it gets out of the harbor at all, it will either sink or wind up on some deserted beach, a derelict. It can’t go any place because it has no destination and no guidance.</p>
+				<p>It’s the same with a human being. Take the salesman for example. There is no other person in the world today with the future of a good salesman. Selling is the world’s highest paid profession, if we’re good at it and if we know where we’re going.</p>
+				<p>Every company needs top-notch salesmen, and they reward those men. The sky is the limit for them. But how many can you find?<br> 
+					Someone once said the human race is fixed. Not to prevent the strong from winning, but to prevent the weak from losing.
+				</p>
+				<p>The American economy today can be likened to a convoy in time of war. The entire economy is slowed down to protect its weakest link, just as the convoy had to go at the speed that will permit its slowest vessel to remain in formation.</p>
+				<p>That’s why it’s so easy to make a living today. It takes no particular brains or talent to make a living and support a family today. We have a plateau on so-called security, if that’s what person is looking for.&nbsp; But we do have to decide how high above this plateau we want to aim.</p>
+				<p>Now let’s get back to the Strangest Secret in the World, the story I wanted to tell you today.</p>
+				<p>Why do men with goals succeed in life, and men without them fail? Well, let me tell you something which, if you really understand it, will alter your life immediately. If you understand completely what I’m going to tell you from this moment on, your life will never be the same again.</p>
+				<p>You will suddenly find that good luck just seems to be attracted to you, the things you want just seem to fall in line, and from now on you won’t have the problems, the worries, the gnawing lump of anxiety that perhaps you’ve experienced before. Doubt and fear will now be things of the past.</p>
+				<h2>Here is the key to success, and, the key to failure:</h2>
+				<p>We become, what we think about.</p>
+				<p>I'll say that again.</p>
+				<p>We become, what we think about.</p>
+				<p>Throughout history, the great wise men and teachers, philosophers, and prophets have disagreed with one another on many different things. It’s only on this one point that they are in complete and unanimous agreement.</p>
+				<p>Listen to what Marcus Aurelius, the great Roman Emperor said: “A man’s life is what his thoughts make of it.”</p>
+				<p>Disraeli said this: “Everything comes if a man will only wait. I’ve brought myself by long meditation to the conviction that a human being with a settled purpose must accomplish it, and nothing can resist a will that will stake even existence for its fulfillment.”</p>
+				<p>Ralph Waldo Emerson said this: “A man is what he thinks about all day long.”</p>
+				<p>William James said, “The greatest discovery of my generation is that human beings can alter their lives by altering their attitudes of mind.”<br> 
+					And he also said, “We need only in cold blood act as if the thing in question were real, and it will become infallibly real by growing into such a connection with our life that it will become real. It will become so knit with habit and emotion that our interests in it will be those which characterize belief.”
+				</p>
+				<p>He also said, “If you only care enough for a result, you will almost certainly obtain it. If you wish to be rich, you will be rich. If you wish to be learned, you will be learned. If you wish to be good, you will be good. Only you must, then, really wish these things, and wish them exclusively, and not wish at the same time a hundred other incompatible things just as strongly.”</p>
+				<p>In the Bible you will read in Mark 9-23: “If thou wishs to believe, all things are possible to him that believeth.”</p>
+				<p>My old friend Dr. Norman Vincent Peale put it this way: “This is one of the greatest laws in the universe. Fervently do I wish I had discovered it as a very young man. It dawned upon me much later in life, and I found it to be the greatest discovery, if not my greatest discovery, outside my relationship to God. The great law briefly and simply stated is if you think in negative terms, you will get negative results. If you think in positive terms, you will achieve positive results.”</p>
+				<p>“That is the simple fact,” he went on to say, “Which is of the basis of an astonishing law of prosperity and success. In three words: Believe and Succeed.”</p>
+				<p>William Shakespeare put it this way: “Our doubts are traitors and make us lose the good we oft might win by fearing to attempt.”<br> 
+					George Bernard Shaw said: “People are always blaming their circumstances for what they are. I don’t believe in circumstances. The people who get on in this world are the people who get up and look for the circumstances they want, and if they can’t find them, make them.”
+				</p>
+				<p>Well, it’s pretty apparent, isn’t it? And every person who discovered this, for a while, believed that they were the first to work it out. We become what we think about.</p>
+				<p>It stands to reason that a person who is thinking about a concrete and worthwhile goal is going to reach it, because that’s what he’s thinking about. And we become what we think about.</p>
+				<p>Conversely, the man who has no goal, who doesn’t know where they are going, and whose thoughts must therefore be thoughts of confusion, anxiety, fear, and worry becomes what they think about. His life becomes one of frustration, fear, anxiety, and worry. And if he thinks about nothing, he becomes nothing.</p>
+				<p>Now how does it work? Why do we become what we think about?</p>
+				<p>Well, I’ll tell you how it works as far as we know. To do this, I want to talk about a situation that parallels the human mind. You won't understand it now, you will after re-hearing it, 1 time a day, for 7 days in a row.</p>
+				<p>Suppose a farmer has some land and it’s good, fertile land. Now, the land gives the farmer a choice. He may plant in that land whatever he chooses. The land doesn’t care. It’s up to the farmer to make the decision.</p>
+				<p>Remember, we’re comparing the human mind with the land because, the mind, like the land, doesn’t care what you plant in it. It will return what you plant, but it doesn’t care what you plant.</p>
+				<p>Now let’s say that the farmer has two seeds in his hand – one a seed of corn; the other is nightshade, a deadly poison. He digs two little holes in the earth and he plants both seeds; one corn, the other nightshade. He covers up the holes, waters, and takes care of the land.<br> 
+					What will happen? Invariably, the land will return what’s planted. As it’s written in the Bible, “As ye sow, so shall ye reap.”
+				</p>
+				<p>Remember, the land doesn’t care. It will return poison in just as wonderful abundance as it will corn. So up come the two plants – one corn, one poison.</p>
+				<p>The human mind is far more fertile, far more incredible and mysterious than the land, but it works the same way. It doesn’t care what we plant – success, failure. A concrete, worthwhile goal or confusion, misunderstanding, fear, anxiety, and so on. But what we plant, it must return to us.</p>
+				<p>You see, the human mind is the last great unexplored continent on earth. It contains riches beyond our wildest dreams. It will return anything we want to plant. So you may say, if that is true, why don’t people use their minds more?</p>
+				<p>Well, I think they’ve figured out an answer to that one too. Our mind comes as standard equipment at birth. It’s free. And things that are given to us for nothing, we place little value on. Things that we pay money for, we value.</p>
+				<p><strong>The paradox is that exactly the reverse is true. Everything that’s really worthwhile in life came to us free: our minds, our souls, our bodies, our hopes, our dreams, our ambitions, our intelligence, our love of family and children and friends and country. All these priceless possessions are free.</strong></p>
+				<p>But the things that cost us money are actually very cheap and can be replaced at any time. A good man can be completely wiped out and make another fortune. He can do that several times. Even if our home burns down, we can rebuild it. <strong>But the things we got for nothing, we can never replace.</strong></p>
+				<p>The human mind is not used because we take it for granted. Familiarity breeds contempt. It can do any kind of job we assign to it, but generally speaking, we use it for little jobs instead of big important ones. Universities have proved that most of us are operating on about ten percent or less of our abilities.</p>
+				<p>So decide now. What is it you want? Plant your goal in your mind. It’s the most important decision you’ll ever make in your entire life.<br> 
+					What is it you want? Do you want to be an outstanding salesman, a better worker at your particular job?
+				</p>
+				<p>Do you want to go places in your company, in your community? Do you want to get rich?</p>
+				<p>All you have got to do is plant that seed in your mind, care for it, work steadily towards your goal, and it will become a reality. It not only will, there’s no way that it cannot.</p>
+				<p>You see, that’s a law, like the laws of Sir Isaac Newton, the laws of gravity. If you get on top of a building and jump off, you’ll always go down. You’ll never go up.</p>
+				<p>And it’s the same with all the other laws of nature. They always work. They’re inflexible.</p>
+				<p>Think about your goal in a relaxed, positive way. Picture yourself in your mind’s eye as having already achieved this goal. See yourself doing the things you will be doing when you have reached your goal.</p>
+				<p>Ours has been called a Phenobarbitals Age, the age of ulcers and nervous breakdowns and tranquilizers. At a time when medical research has raised us to a new plateau of good health and longevity, far too many of us worry ourselves into an early grave trying to cope with things in our own little personal ways, without learning a few great laws that will take care of everything for us.</p>
+				<p>These things we bring on ourselves through our habitual way of thinking. Every one of us is the sum total of our own thoughts. </p>
+				<h2>He is, where he is, because, <i>that is exactly where he really wants to be</i>, <u>whether he’ll admit that or not</u>.</h2>
+				<p>Each of us must live off the fruit of his thoughts in the future, because what you think today and tomorrow, next month and next year, will mold your life and determine your future. You’re guided by your mind.</p>
+				<p>I remember one time I was driving through eastern Arizona and I saw one of those giant earth-moving machines roaring along the road at about 35 miles an hour with what looked like 30 tons of dirt in it – a tremendous, incredible machine – and there was a little man perched way up on top with the wheel in his hands, guiding it.</p>
+				<p>As I drove along, I was struck by the similarity of that machine with the human mind. Just suppose you are sitting at the controls of such a vast source of energy. Are you going to sit back and fold your arms and let it run itself into a ditch or are you going to keep both hands firmly on the wheel and control and direct this power to a specific, worthwhile purpose?</p>
+				<p>It’s up to you. You’re in the driver’s seat.</p>
+				<p>You see, the very law that gives us success is a two-edged sword. We must control our thinking. The same rule that can lead a man to a life of success, wealth, happiness, and all the things they ever dreamed of for themselves and his family, that very same law can lead them into the gutter. It’s all in how he uses it – for good or for bad.</p>
+				<p>This is The Strangest Secret in the world. Why do I say it’s strange, and why do I call it a secret?</p>
+				<p>Actually, it isn’t a secret at all. It was first promulgated by some of the earliest wise men, and it appears again and again throughout the Bible. But very few people have learned it or understand it. That’s why it’s strange, and why for some equally strange reason it virtually remains a secret.</p>
+				<p>I believe you could go out and walk down the main street of your town and ask one person after another what the secret of success is and you probably wouldn’t run into one person in a month that could tell you.</p>
+				<p>This information is enormously valuable to us if we really understand it and apply it. It’s valuable to us not only for our own lives, but the lives of those around us, our families, employees, associates, and friends.</p>
+				<p>Life should be an exciting adventure. It should never be a bore. A man should work fully, be alive. He should be glad to get out of bed in the morning. He should be doing a job he likes to do because he does it well.</p>
+				<p>One time I heard Grove Patterson, the great late editor-in-chief of the Toledo Daily Blade make a speech and as he concluded his speech he said something I’ve never forgotten. He said, “My years in the newspaper business have convinced me of several things. Among them, that people are basically good, and that we came from someplace and we are going someplace. So we should make our time here an exciting adventure. The architect of the universe didn’t build a stairway leading nowhere. The greatest teacher of all, the carpenter from the Plains of Galilee of all gave us the secret time and time again: As ye believe, so shall it be done – unto you.”</p>
+				<p><u>Here's the great challenge of life:  You can have more than you've got because you can become more than you are.</u></p>
+			</div>
 			<script>
 				var speed = 20;
 				var hex = new Array("00", "14", "28", "3C", "50", "64", "78", "8C", "A0", "B4", "C8", "DC", "F0");
