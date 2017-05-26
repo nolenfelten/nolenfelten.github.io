@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    td {
+      border: 1px solid #000000;
+    }
+    sup {
+    vertical-align: super;
+    font-size: smaller;
+    }
+  </style>
+</head>
+<body>
+  <h1>Assembly Language Programming</h1>
+  <p><font style="border: 1px solid #000000; margin: 0;"><a href="https://www.vtc.com/products/Assembly-Language-Programming-Tutorials.htm">Course Link</a> - <a href="https://www.youtube.com/playlist?list=PL-7DHgCvU8GBvOtGjgYmpXKlTJuEIZUU3">Youtube Playlist</a></font></p>
+  <h2>The Reason for Assembly Language</h2>
+  <p>In the very beginning of computers, they had to be programmed by toggling 1's and 0's into memory to construct the instructions.</p>
+  <p>For example, say you want to perform the operation of adding the 8bit AC register to the bit value of 37. To do that on an 8086 chip, you would enter these bits:
+    <br><font style="border: 1px solid #000000; margin: 0;"><font color="#ff0000" style="border: 1px solid #000000; margin: 0;">00100100</font> <font color="#ff00ff" style="border: 1px solid #000000; margin: 0;">00100101</font></font>
+    <br>Base 16: <font style="border: 1px solid #000000; margin: 0;"><font color="#ff0000" style="border: 1px solid #000000; margin: 0;">23</font> <font color="#ff00ff" style="border: 1px solid #000000; margin: 0;">25</font></font>
+    <br>Base 10: <font style="border: 1px solid #000000; margin: 0;"><font color="#ff0000" style="border: 1px solid #000000; margin: 0;">35</font> <font color="#ff00ff" style="border: 1px solid #000000; margin: 0;">37</font></font>
+  </p>
+  <p><font color="#ff0000">The first 7 bits specify the arithmetic operation.</font><br><font color="#ff00ff">The second 7 bits is the data.</font></p>
+  <p>Assembly: AND AC, 37</p>
+  <p>It all started with someone punching in the bits.</p>
+  <p><u>Mnemonics</u> (<b>mne</b>·<b>mon</b>·<b>ics</b>) 
+    <br>"The study and development of systems for improving and assisting the memory."
+    <br>Mnenonics is using symbols to represent bit patterns.</p>
+  
+  <p>The big theory in Programming is that it is easier to write instrutions with words rather then bits. This is very true. <u>Compilers</u> take source code and convert it into the binary instructions. </p>
+  <h3><u>Assembly is the opposite of portable</u>!</h3>  
+  <p>Each CPU has its own Assembly Language. Rewriting an application to run on a different CPU is called <b>Porting</b>.</p>
+  <p>Data can be information or executable instructions. <b>Computers don't know the difference!</b>.</p>
+  <p>C was written for Assembly Language Programmers.</p>
+  <p>Everything is done one step at a time.</p>
+  
+  <h2>Binary/Hexadecimal/Octal</h2>
+  <p>Each digit in a binary number is called a <u>Bit</u>.</p>
+  
+  <center>
+    <h3><i>n</i> bits yield 2<sup>n</sup> patterns</h3>
+  </center>
+  
+  <p>Group 8 <b>bits</b> together to make 1 <u>Byte</u>.
+    <br>1 <u>Byte</u> can represent 256 different numbers.</p>
+
+  <center>
+  <table>
+    <tr><th>Bits</th><th>Patterns</th></tr>
+    <tr><td>1</td><td>2</td></tr>
+    <tr><td>2</td><td>4</td></tr>
+    <tr><td>3</td><td>8</td></tr>
+    <tr><td>4</td><td>16</td></tr>
+    <tr><td>5</td><td>32</td></tr>
+    <tr><td>6</td><td>64</td></tr>
+    <tr><td>7</td><td>128</td></tr>
+    <tr><td>8</td><td>256</td></tr>
+  </table>
+  </center>
+  
+  <table>
+	<tr><th>Binary</th><th>Base 10</th><th>Base 16</th></tr>
+	<tr><td>0000</td><td>0</td><td>0</td></tr>
+    <tr><td>0001</td><td>1</td><td>1</td></tr>
+    <tr><td>0010</td><td>2</td><td>2</td></tr>
+    <tr><td>0011</td><td>3</td><td>3</td></tr>
+    <tr><td>0100</td><td>4</td><td>4</td></tr>
+    <tr><td>0101</td><td>5</td><td>5</td></tr>
+    <tr><td>0110</td><td>6</td><td>6</td></tr>
+    <tr><td>0111</td><td>7</td><td>7</td></tr>
+    <tr><td>1000</td><td>8</td><td>8</td></tr>
+    <tr><td>1001</td><td>9</td><td>9</td></tr>
+    <tr><td>1010</td><td>10</td><td>A</td></tr>
+    <tr><td>1011</td><td>11</td><td>B</td></tr>
+    <tr><td>1100</td><td>12</td><td>C</td></tr>
+    <tr><td>1101</td><td>13</td><td>D</td></tr>
+    <tr><td>1110</td><td>14</td><td>E</td></tr>
+    <tr><td>1111</td><td>15</td><td>F</td></tr>
+  </table>
+  <p></p>
+  <p></p>
+  <p></p>
+  
+  <h1>The Computer</h1>
+  <h2>Memory</h2>
+  <p>Each byte in memory has an address of 8bits. 
+  <h2>CPU</h2>
+  <p>The CPU has locations for holding data. Called <u>Registers</u>.</p>
+  <p></p>
+  
+  <h1>The NASM Assembler</h1>
+  <p></p>
+  <p></p>
+  <p></p>
+  
+
+  <h1>Macros</h1>
+  <p></p>
+  <p></p>
+  <p></p>
+  
+  <h1>Boolean Operations</h1>
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <h1>Functions</h1>
+  <p></p>
+  <p></p>
+  <p></p>
+  
+  
+  <h1>Aggreates</h1>
+  <p></p>
+  <p></p>
+  <p></p>
+  
+  <h1>Floating Point Numbers</h1>
+  <p></p>
+  <p></p>
+  <p></p>
+  
+  
+</body>
+</html>
