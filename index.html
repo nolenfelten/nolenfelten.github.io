@@ -1,630 +1,1202 @@
-
+<!doctype html>
 <html>
-	<head>
-		<title>Nolen James Felten</title>
-		<style>
-			body {
-			margin: 0px;
-			padding: 0px;
-			}
-			#head {
-			background-color: #000000;
-			text-align: center;
-			margin: 0px;
-			padding: 15px;
-			}
-			#code {
-			border: 1px dotted #000000;
-			}
-			#xbox {
-			color: black;
-			background-color: black;
-			text-decoration: none;
-			text-align: center;
-			}
-			ul li {
-			text-decoration: none;
-			display: inline;
-			background-color: black;
-			color: white;
-			padding: 10px 10px;
-			text-decoration: none;
-			border-radius: 4px 4px 0 0;
-			transition: 2s; 
-			}
-			a:link {
-			text-decoration: none;
-			}
-			a:visited {
-			color: #0099CC;
-			}
-			ul li:hover {
-			background-color: orange;
-			transition: 2s; 
-			}
-			#gallery {
-			background-color: rgb(200, 191, 231);
-			}
-			#codecademy {
-			align: center;
-			text-align: center;
-			background-color: rgb(52, 179, 160);
-			} 
-			#government {
-			text-align: center;
-			background: url("http://i.imgur.com/wlRgz77.png") no-repeat center; 
-			background-size: cover;
-			}
-			#secret {
-			background: #FFFFFF;
-			margin: 0;
-			}
-			#chess {
-			font-size: 25px;
-			}
-			#notes {
-			background-color: rgb(87, 106, 145);
-			align: center;
-			text-align: center;
-			background-size: cover;
-			}
-			#cpp {
-			overflow: hidden;
-			width: 100%;
-			z-index: 1;
-			margin: 0px;
-			background-color: #FFFFFF;
-			}
-			#thesis {
-			background-color: rgb(0, 0, 0);
-			align: center;
-			text-align: center;
-			z-index: -4;
-			}
-			#thesis img {
-			margin: 0px;
-			z-index: -5;
-			align: center;
-			width: 80%;
-			}
-			#db {
-			margin: 0;
-			background-color: rgb(95, 6, 45);
-			align: center;
-			text-align: center;
-			background-size: cover;            
-			}
-			#dbf {
-			margin: 0;
-			background-color: rgb(255, 255, 255);
-			background-size: cover;            
-			}
-			#xbox_notes {
-			width: 80%;
-			z-index: 1;
-			position: relative;
-			bottom: 75;
-			height: 250px;
-			background-color: #FFFFFF;
-			}
-			.programSectionModule {
-			width: 300px;
-			border: 1px solid white;
-			margin: 10px;
-			display: inline-block;
-			vertical-align: top;
-			`     }
-			.programSectionHead {
-			background-color: #f50;
-			color: white;
-			font-family: 'Vollkorn', serif;
-			text-align: center;
-			width: 300px;
-			float: left;
-			font-size: 16pt;
-			font-variant: small-caps;
-			padding-bottom: 3px;
-			}
-			.programSectionCourse {
-			width: 300px;
-			text-align: left;
-			float: left;
-			cursor: pointer;
-			font-size: 10pt;
-			}
-			.programSection {
-			width: 100%;
-			float: left;
-			overflow: auto;
-			text-align: center;
-			display: table;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="head">
-			<canvas id="gui" width="625px" height="350px" style="border: 2px dotted #ff00ff; z-index: 0;"></canvas>
-		</div>
-		<script>
-			/* Constructs a CSS RGB value from an array of 3 elements. */
-			function arrayToRGB(arr) {
-			    if( arr.length == 3 ) {
-			        return "rgba(" + arr[0] + "," + arr[1] + "," + arr[2] + ", 0.4)";
-			    }
-			    return "rgb(0,0,0)";
-			}
-			
-		</script>
-		<script>
-			// Screen
-			var chart = document.getElementById("gui").getContext("2d");
-			var width = document.getElementById("gui").width
-			var height = document.getElementById("gui").height
-			var text;
-			var text1;
-			var text2;
-			
-			chart.lineWidth = "1"
-			chart.strokeStyle = "#DD0AFF"
-			chart.font = "29px Arial";
-			chart.fillStyle = "#ffffff";
-			
-			text = "Nolen James Felten"
-			chart.fillText(text, width / 2 -(chart.measureText(text).width / 2), 28)
-			          
-			
-			chart.moveTo( width / 2 - (chart.measureText(text).width / 2) , 30)
-			chart.lineTo( width / 2 + (chart.measureText(text).width / 2) , 30)
-			chart.stroke()
-			
-			
-			chart.font = "17px Helvetica";
-			text = "Web Developer and Chess Coach"
-			
-			chart.fillText(text, width / 2 -(chart.measureText(text).width / 2), 50)
-			          
-			chart.moveTo( width / 2 - (chart.measureText(text).width / 2) , 53)
-			chart.lineTo( width / 2 + (chart.measureText(text).width / 2) , 53)
-			chart.stroke()
-			
-			chart.font = "19px Helvetica";
-			text1 = "Phone: "
-			text = "707-241-6221"
-			text2 = "Email: "
-			text3 = "nolenf@gmail.com"
-			
-			chart.fillText(text1, width - chart.measureText(text1).width - chart.measureText(text).width - 5, height - 30)
-			chart.fillText(text2, width - chart.measureText(text3).width - chart.measureText(text2).width - 5, height - 8)
-			
-			chart.fillStyle = "#FF66FF";
-			chart.fillText(text, width - chart.measureText(text).width - 5, height - 30) 
-			chart.fillText(text3, width - chart.measureText(text3).width - 5, height - 8)
-			          
-		</script>
-		<script>
-			function Point3D(x,y,z) {
-			    this.x = x;
-			    this.y = y;
-			    this.z = z;
-			    this.rotateX = function(angle) {
-			        var rad, cosa, sina, y, z
-			        rad = angle * Math.PI / 180
-			
-			        cosa = Math.cos(rad)
-			        sina = Math.sin(rad)
-			
-			        y = this.y * cosa - this.z * sina
-			        z = this.y * sina + this.z * cosa
-			
-			        return new Point3D(this.x, y, z)
-			    }
-			    this.rotateY = function(angle) {
-			        var rad, cosa, sina, x, z
-			
-			        rad = angle * Math.PI / 180
-			
-			        cosa = Math.cos(rad)
-			        sina = Math.sin(rad)
-			
-			        z = this.z * cosa - this.x * sina
-			        x = this.z * sina + this.x * cosa
-			
-			        return new Point3D(x,this.y, z)
-			    }
-			    this.rotateZ = function(angle) {
-			        var rad, cosa, sina, x, y
-			
-			        rad = angle * Math.PI / 180
-			
-			        cosa = Math.cos(rad)
-			        sina = Math.sin(rad)
-			
-			        x = this.x * cosa - this.y * sina
-			        y = this.x * sina + this.y * cosa
-			
-			        return new Point3D(x, y, this.z)
-			    }
-			    this.project = function(viewWidth, viewHeight, fov, viewDistance) {
-			        var factor, x, y
-			
-			        factor = fov / (viewDistance + this.z)
-			        x = this.x * factor + viewWidth / 2
-			        y = this.y * factor + viewHeight / 2
-			        return new Point3D(x, y, this.z)
-			    }
-			}
-		</script>
-		<script>
-			function loop() {
-			    var t = new Array();
-			
-			    // background
-			    chart.fillStyle = "rgb(1, 1, 1)";
-			    chart.fillRect(350, 350, 4, 5);
-			    for( var i = 0; i < vertices.length; i++ ) {
-			        var v = vertices[i];
-			        var r = v.rotateX(angle).rotateY(angle);
-			        var p = r.project((width), (height + 55), 200, 3.6);
-			        t.push(p)
-			
-			    }
-			    var avg_z = new Array();
-			    for( var i = 0; i < faces.length; i++ ) {
-			        var f = faces[i];
-			        avg_z[i] = {"index":i, "z":(t[f[0]].z + t[f[1]].z + t[f[2]].z + t[f[3]].z) / 4.0};
-			    }
-			    avg_z.sort(function(a,b) { return b.z - a.z;} );
-			    
-			  for( var i = 0; i < faces.length; i++ ) {
-			        
-			    var f = faces[avg_z[i].index];
-			
-			    // Faces
-			    chart.fillStyle = arrayToRGB(colors[avg_z[i].index]);
-			    chart.beginPath()
-			    chart.moveTo(t[f[0]].x,t[f[0]].y)
-			    chart.lineTo(t[f[1]].x,t[f[1]].y)
-			    chart.lineTo(t[f[2]].x,t[f[2]].y)
-			    chart.lineTo(t[f[3]].x,t[f[3]].y)
-			    chart.closePath()
-			    chart.fill()
-			
-			    // Edges
-			    chart.strokeStyle = "rgba(255, 255, 255, 1)";
-			    chart.lineWidth = "7"
-			    chart.beginPath()
-			    chart.moveTo(t[f[0]].x,t[f[0]].y)
-			    chart.lineTo(t[f[1]].x,t[f[1]].y)
-			    chart.lineTo(t[f[2]].x,t[f[2]].y)
-			    chart.lineTo(t[f[3]].x,t[f[3]].y)
-			    chart.closePath()
-			    chart.stroke()
-			
-			    // Vertex
-			    chart.strokeStyle = "rgba(255, 255, 255, 0.18)";
-			    chart.lineWidth = "0.1"
-			    chart.beginPath()
-			    chart.moveTo(t[f[0]].x,t[f[0]].y)
-			    chart.lineTo(t[f[1]].x,t[f[1]].y)
-			    chart.lineTo(t[f[2]].x,t[f[2]].y)
-			    chart.lineTo(t[f[3]].x,t[f[3]].y)
-			    chart.closePath()
-			    chart.stroke()
-			  }
-			  angle += 3
-			}
-			 var vertices = [
-			   new Point3D(-1,1,-1),
-			   new Point3D(1,1,-1),
-			   new Point3D(1,-1,-1),
-			   new Point3D(-1,-1,-1),
-			   new Point3D(-1,1,1),
-			   new Point3D(1,1,1),
-			   new Point3D(1,-1,1),
-			   new Point3D(-1,-1,1)
-			 ];
-			 // Define the vertices that compose each of the 6 faces. These numbers are
-			 // indices to the vertex list defined above.
-			 var faces  = [
-			   [0,1,2,3],
-			   [1,5,6,2],
-			   [5,4,7,6],
-			   [4,0,3,7],
-			   [0,4,5,1],
-			   [3,2,6,7]
-			 ];
-			 // Define the colors for each face.
-			 var colors = [
-			   [255,0,20],
-			   [30,255,0],
-			   [0,0,0],
-			   [105,205,205],
-			   [0,0,255],
-			   [86,26,139]
-			 ];
-			 var angle = 0;
-			 setInterval(loop, 1000 / 30);
-		</script>
-		<br>
-		</div>
-		<center>
-			<div id="chess">
-				<br>
-				<img src="http://i.imgur.com/jKDs9LP.png" style="border: 1px double #00FF00;">
-				<h1 style="color:#0000FF">Call or Text <u>707-241-6221</u></h1>
-				(<u><i>Please don't spam my number, I am a Ninja!</u></i>)
-				<p><img src="http://i.imgur.com/MxRz9U5.png" height="200px" width="200px" style="border: 6px double #00FFFF;"></p>
-				<p>About me:</p>
-				<p>In <u><b>4th grade</b></u>, I had won <u><b>1st</b></u> place in the Oregon <u>state</u> Chess tournament.<br>Double-elimination style, <b>7 wins</b> with <b>0 loss</b>.</p>
-				<p>Book an appointment (pay with cash after lesson):</p>
-				<iframe src="https://calendar.google.com/calendar/embed?title=Appointments&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%233333ff&amp;src=nolenf%40gmail.com&amp;color=%23BE6D00&amp;src=jab20d680200umeegiu5mm119c%40group.calendar.google.com&amp;color=%2342104A&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FLos_Angeles" style="border:solid 1px #777" width="800" height="400" frameborder="0" scrolling="no"></iframe>
-				<h2>Facts</h2>
-				<li><strong>My Favorite:</strong> Chess teaches you patience.</li>
-				<li>Chess is a game for people of all ages.</li>
-				<li>Chess develops memory.</li>
-				<li><u>Chess improves concentration</u>.</li>
-				<li>Chess teaches independence.</li>
-				<li><u><b>Chess improves school work and grades</b></u>.</li>
-				<li>Chess makes you understand actions and consequences.</li>
-				<li>Chess teaches you to take responsibility.</li>
-				<li>Chess teachs to see the other person’s perspective.</li>
-				<li>Chess teaches you how to cope with failure.</li>
-				<li>Chess can uncover your inner genius.</li>
-				<li><strong>Chess has shown to improve recovery from stroke or disability.</strong></li>
-				<li>Losing expands your knowledge!</li>
-				<li>Enhances reading and math skills.</li>
-				<h3>It’s just plain fun!</h3>
-				<p><a href="https://www.chess.com/member/tacomcbell"><img style="border: 2px solid #00FF00;" src="http://i.imgur.com/aiUHC5P.png" height="150px" width="400px"><br>Find me on Chess.com</a></p>
-			</div>
-			<div id="government">
-				<hr>
-				<br>
-				<h2>
-					<span class="rainbow" style="background: none; color: rgb(0, 40, 240);">Government:</span>
-				</h2>
-				<b>Sonoma County Volunteer</b>
-				<p>
-					<a href="https://github.com/OpenSantaRosa">
-					<img src="http://i.imgur.com/kEskccT.png" style="opacity: 0.9; border: 2px solid black;">
-					</a>
-				</p>
-				<br>
-			</div>
-          
-			<div id="web">
-				<p style="border: 1px solid #000000;">
-					<a href="https://standards.usa.gov/">
-				<h1>U.S. Standards Compilent Web Developer</h1></a></p>
-				<p style="border: 2px solid black;"><a href="http://nolenfelten.com">Nolen Felten</a> | <a href="https://delewpaint.github.io/">Delew Paint</a> | (More coming)</p>
-              <hr>
-              <table style="border: 2px solid black; text-align: center;">
-                            <th>
-                            <td style="border: 2px solid black;">
-                            <h1 style="margin: 0;">Catalog</h2>
-                            </td>
-                            </th>
-                            
-                            <tr>
-                            <td style="border: 2px solid black;"><a href="https://grey-grouse.cloudvent.net/">Justice</a></td><td style="border: 2px solid black;"><a href="https://spring-bat.cloudvent.net/">Food/Baking</a></td><td style="border: 2px solid black;"><a href="http://www.pitchcardiff.com/">Cocktail</a></td></tr>
-              <tr><td style="border: 2px solid black;"><a href="http://www.willowstreet.com/">Pizza</a></td><td style="border: 2px solid black;"><a href="https://www.pactcoffee.com/">Coffee</a></td><td style="border: 2px solid black;"><a href="http://www.drinkcannonball.com/">Wine</a></td></tr></table>
-                <hr>
-			</div>
-			<div id="codecademy">
-				<br>
-				<h2><span class="rainbow">Education:</span></h2>
-				<a href="https://www.codecademy.com/nolenf/"><img src="https://p5.zdassets.com/hc/settings_assets/1030455/200272088/1muBAt6udX37m4Ihlik09w-CC_Logotype_Lockup_Blue_Alpha.png" width="750px" height="250px"></a>
-				<p><a href="https://www.codecademy.com/nolenf/"><img src="http://i.imgur.com/9aA2Ca8.png"></a></p>
-				<h2><span class="rainbow">Notes:</span></h2>
-				<h1><span class="rainbow">SQL Notes</span></h1>
-				<iframe src="http://nolenfelten.github.io/database.html" id="dbf" style="width: 80%; height: 500px;"></iframe>
-				<br>
-				<h1><span class="rainbow" >C / C ++ Notes</span></h1>
-				<iframe src="http://nolenfelten.github.io/cpp.html" style="width: 80%; height: 500px;" id="cpp"></iframe>
-				<br>
-				<h1><span class="rainbow" >Java Notes</span></h1>
-				<iframe src="http://nolenfelten.github.io/java.html" style="width: 80%; height: 500px;" id="cpp"></iframe>
-				<br>
-				<h1><span class="rainbow" >Counpons</span></h1>
-				<iframe src="http://nolenfelten.github.io/coupon.html" style="width: 80%; height: 500px;" id="cpp"></iframe>
-				<br>
-			</div>
-			<div id="gallery">
-				<br>
-				<h3>
-					<span class="rainbow">Graphical User Interface Design:</span>
-				</h3>
-				<br>
-				<table border="">
-					<tbody>
-						<tr>
-							<td style="background: #000000;">
-								<center>
-									<h2 style="padding-top: 20px;">
-										<a href="https://github.com/nolenfelten/SMS-Bomb" style="color: #FF0000;">SMS Bomb!</a>
-									</h2>
-									<p style="color: #FFFFFF">
-										Fun project that uses STMP to send text messages.<br />
-										Built with HTML, JS, and PyQt Designer.
-									</p>
-								</center>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="https://github.com/nolenfelten/SMS-Bomb" style="color: #FF0000;">
-								<img src="http://i.imgur.com/PKoz6lM.gif" style="max-width: 100%; min-height: 321px;">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+        <title>Nolen James Felten</title>
+        <link href="http://bootswatch.com/lumen/bootstrap.min.css"
+        rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:500,300' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+            	background: #fff;
+            	font-family: 'Roboto', sans-serif;
+            	font-weight: 300;
+            	line-height: 1.4;
+            }
+            em {
+            	color: #999;
+            }
+            p {
+            	line-height: 1.4;
+            }
+            ul {
+            	margin-bottom: 0;
+            }
+            section {
+            	margin-bottom: 2em;
+            }
+            blockquote {
+            	margin: 0;
+            	margin-bottom: 1em;
+            }
+            
+            strong, h1, h2, h3, h4, h5 {
+            	font-weight: 500;
+            	margin-top:0px;
+            }
+            
+            h2 {
+            	text-transform: uppercase;
+            	width: 75%;
+            	color: #939393;
+            	font-size: 2em;
+            }
+            
+            h2.section-title {
+            	margin-left: 15px;
+            	line-height: 1.8em;
+            }
+            
+            #work h2.section-title {
+            	line-height: 1.2em;
+            }
+            
+            #card {
+            	margin-bottom: 2em;
+            }
+            
+            #card h2 {
+            	font-size: 1.6em;
+            	margin-left: 0px;
+            }
+            
+            #resume {
+            	margin-top:2.5em;
+            }
+            
+            .avatar {
+            	border-radius: 50%;
+            	max-width:260px;
+            	margin-top:0em;
+            }
+            
+            .item {
+            	margin-bottom: 1em;
+            }
+            
+            #basics icon {
+            	margin-right:10px;
+            	font-size:1.2em;
+            }
+            
+            .address span:after {
+            	content: ",";
+            }
+            
+            .address span:last-of-type:after {
+            	content: "";
+            }
+            
+            .postalCode {
+            	margin-left:31px;
+            }
+            
+            #location {
+            	margin-bottom:1em;
+            }
+            
+            #profiles {
+            	margin-bottom:1em;
+            }
+            
+            #profiles .item {
+            	float:left;
+            	vertical-align:top;
+            	margin-right:0.25em;
+            }
+            
+            #profiles a {
+            	color: #4b4b4b;
+            }
+            
+            #profiles a:hover {
+            	text-decoration: none;
+            	color: #3b3b3b;
+            }
+            
+            #profiles [class*="entypo-"] {
+            	margin-right:10px;
+            	font-size: 2.8em;
+            	-webkit-transition: all 0.5s ease;
+            	-moz-transition: all 0.5s ease;
+            	-o-transition: all 0.5s ease;
+            	-ms-transition: all 0.5s ease;
+            }
+            
+            #profiles .entypo-twitter:hover {
+            	color: #55acee;
+            }
+            #profiles .entypo-facebook:hover {
+            	color: #3b5998;
+            }
+            #profiles .entypo-linkedin:hover {
+            	color: #0976b4;
+            }
+            #profiles .entypo-github:hover {
+            	color: #999;
+            }
+            #profiles .entypo-tumblr:hover {
+            	color: #35465c;
+            }
+            #profiles .entypo-pinterest:hover {
+            	color: #cc2127;
+            }
+            #profiles .entypo-dribble:hover {
+            	color: #ea4c89;
+            }
+            #profiles .entypo-rdio:hover {
+            	color: #007dc3;
+            }
+            #profiles .entypo-spotify:hover {
+            	color: #7ab800;
+            }
+            #profiles .entypo-stumbleupon:hover {
+            	color: #eb4924;
+            }
+            #profiles .entypo-soundcloud:hover {
+            	color: #f80;
+            }
+            #profiles .entypo-instagram:hover, #profiles .entypo-instagrem:hover {
+            	color: #3f729b;
+            }
+            #profiles .entypo-skype:hover {
+            	color: #00aff0;
+            }
+            #profiles .entypo-flickr:hover {
+            	color: #ff0084;
+            }
+            #profiles .entypo-vimeo:hover {
+            	color: #1ab7ea;
+            }
+            #profiles .entypo-gplus:hover {
+            	color: #dd4b39;
+            }
+            
+            #profiles {
+            	height: 50px;
+            	vertical-align:middle;
+            }
+            
+            .summary .lead {
+            	font-size: 1.3em;
+            }
+            
+            .position .lead, .area .lead, .awarder .lead, .publisher .lead {
+            	margin-bottom:5px;
+            }
+            
+            .date {
+            	margin-bottom: 5px;
+            	color: #939393;
+            	font-size: 1.1em;
+            }
+            
+            .awarder, .website {
+            	margin-bottom: 5px;
+            }
+            
+            #skills .item {
+            	display:inline-block;
+            	vertical-align:top;
+            	margin-right:2em;
+            }
+            
+            #interests .item {
+            	display:inline-block;
+            	vertical-align:top;
+            	margin-right:1em;
+            }
+            
+            icon.large {
+                font-size: 2em;
+                color: #fff;
+                background: #939393;
+                padding: 10px 39px 10px 11px;
+                border-radius:60px;
+                margin-top: 0px;
+                display:block;
+                width:50px;
+            }
+            
+            @media screen and (max-width: 1024px) and (min-width: 768px) {
+            	h2.section-title {
+            		font-size: 1.8em;
+            		margin-left: 30px;
+            	}
+            
+            	.avatar {
+            		margin-top:0px;
+            		max-width:95%;
+            	}
+            }
+            
+            @media screen and (max-width: 767px) {
+            	h2.section-title {
+            		font-size: 2.2em;
+            		line-height: 1.6em;
+            		margin-bottom: 1.4em;
+            	}
+            
+            	#work h2.section-title {
+            		line-height: 1.2em;
+            	}
+            
+            	.avatar {
+            		margin-top:0px;
+            		max-width:100%;
+            	}
+            }
+            
+            @font-face {
+                font-family: 'entypo';
+                src: url(data:application/x-font-ttf;charset=utf-8;base64,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IicmNjc+ATMyFhceAQcBNDY3NDYxBzAyMzoBMzI2Nz4BNQN4HBEQHNADBQUSEBAgEBAdDA0QBAUEAQkJCh8Vdg0VCAgJDgwNIRQMSSoqTQ8PDAIDAQQECwkJHhcYNBYWHgICAgICDg5YFxIOCQoPBQUFBCwaGi4CAgMDAwkEBA8VFEs/WUYGBhRhBA8LChgMDBgLCg8DAwMICB0XFyILCggD/hIBAQGzJxoZMQkJCwMDAgLwFhoHBwQNEg0MGgcIBgEBAQ4MDB0PDyAPDxwLExwJCQkBAgMDDQoKUzMyXRQLEwcHCCUWFiUVDg4bBgYHBQUSERYwFBQcAgQCFg0NFAFIAwYGISIgMBAQEwMECAQEBtuHiPAW/swDBAQECAUCAwQEIRISHSAVFCQEATwEMRscLLAEAwQIBQAAAAACAGYAMwOaA2YAJABJAAABNDY3PgE3PgEzOgEzFRwBMR4BFx4BMzI2NwEhIgYHDgEVETc1JRUUBgcOAQcOAQciJiM1PAE1LgEnLgEjIgYHASEyNjc+ATURBwEfCQsLJRwKHRAPIA0BAgIBBAICBQIBQP48R2okJCS5AcIJCwslHAodEA8gDQECAgEEAgMEAv7AAcVGaiQkJLkCFyAzExMYBQECgAEDAgQBAQECAgE/KCcndEz+V7nXQ9gfMxMTGAUCAQEBgAECAQIDAgEBAgP+wSgoJ3RMAai4AAAAAgAp/+ED1wO4AEgBUQAAAT4BNz4BNTQmJy4BIyIGBw4BBy4BJy4BIyIGBw4BFRQWFx4BFw4BBw4BFRQWFx4BMzI2Nz4BNx4BFx4BMzI2Nz4BNTQmJy4BJwcOAQcOAQcOAQcOASMiJicuAScuAScuAScuAScuATU0Njc+ATc+ATc+ATMyFhceARceARceARceARceARceARceARceARceATMyNjc+ATc+ATc+ATU0JicuAScuAScuAScuAScuAScuAScuAScuAScuAScuAScuATU0Njc+ATc+ATc+ATc+ATc+ATMyFhceARceARceARceARceARceARceARUUBgcOAQcOAQcOASMiJicuAScuAScuAScuAScuAScuAScuASMiBgcOAQcOAQcOARUUFhceARceARceARceARceARceARceARceARceARceARceARceARceARceARceARUUBgcOAQcDvAMDAgEBRj09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) format('truetype'),
+                     url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+            
+            [class^="entypo-"], [class*=" entypo-"] {
+                font-family: 'entypo';
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+            
+                /* Better Font Rendering =========== */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            
+            .entypo-phone2:before {
+                content: "\e60a";
+            }
+            
+            .entypo-phone:before {
+                content: "\e600";
+            }
+            
+            .entypo-mail:before {
+                content: "\e601";
+            }
+            
+            .entypo-compass:before {
+                content: "\e602";
+            }
+            
+            .entypo-heart:before {
+                content: "\e603";
+            }
+            
+            .entypo-thumbs-up:before {
+                content: "\e604";
+            }
+            
+            .entypo-chat:before {
+                content: "\e605";
+            }
+            
+            .entypo-home:before {
+                content: "\e606";
+            }
+            
+            .entypo-tools:before {
+                content: "\e607";
+            }
+            
+            .entypo-trophy:before {
+                content: "\e60b";
+            }
+            
+            .entypo-camera:before {
+                content: "\e60c";
+            }
+            
+            .entypo-music:before {
+                content: "\e60d";
+            }
+            
+            .entypo-graduation-cap:before {
+                content: "\e60e";
+            }
+            
+            .entypo-book:before {
+                content: "\e60f";
+            }
+            
+            .entypo-newspaper:before {
+                content: "\e610";
+            }
+            
+            .entypo-briefcase:before {
+                content: "\e611";
+            }
+            
+            .entypo-gauge:before {
+                content: "\e612";
+            }
+            
+            .entypo-rocket:before {
+                content: "\e613";
+            }
+            
+            .entypo-suitcase:before {
+                content: "\e608";
+            }
+            
+            .entypo-globe:before {
+                content: "\e609";
+            }
+            
+            .entypo-code:before {
+                content: "\e614";
+            }
+            
+            .entypo-light-bulb:before {
+                content: "\e615";
+            }
+            
+            .entypo-github:before {
+                content: "\e616";
+            }
+            
+            .entypo-flickr:before {
+                content: "\e617";
+            }
+            
+            .entypo-vimeo:before {
+                content: "\e618";
+            }
+            
+            .entypo-twitter:before {
+                content: "\e619";
+            }
+            
+            .entypo-facebook:before {
+                content: "\e61a";
+            }
+            
+            .entypo-googleplus:before {
+                content: "\e61b";
+            }
+            
+            .entypo-pinterest:before {
+                content: "\e61c";
+            }
+            
+            .entypo-tumblr:before {
+                content: "\e61d";
+            }
+            
+            .entypo-linkedin:before {
+                content: "\e61e";
+            }
+            
+            .entypo-dribbble:before {
+                content: "\e61f";
+            }
+            
+            .entypo-stumbleupon:before {
+                content: "\e620";
+            }
+            
+            .entypo-lastfm:before {
+                content: "\e621";
+            }
+            
+            .entypo-rdio:before {
+                content: "\e622";
+            }
+            
+            .entypo-spotify:before {
+                content: "\e623";
+            }
+            
+            .entypo-qq:before {
+                content: "\e624";
+            }
+            
+            .entypo-instagram:before {
+                content: "\e625";
+            }
+            
+            .entypo-dropbox:before {
+                content: "\e626";
+            }
+            
+            .entypo-evernote:before {
+                content: "\e627";
+            }
+            
+            .entypo-flattr:before {
+                content: "\e628";
+            }
+            
+            .entypo-skype:before {
+                content: "\e629";
+            }
+            
+            .entypo-skype2:before {
+                content: "\e62a";
+            }
+            
+            .entypo-renren:before {
+                content: "\e62b";
+            }
+            
+            .entypo-sina-weibo:before {
+                content: "\e62c";
+            }
+            
+            .entypo-paypal:before {
+                content: "\e62d";
+            }
+            
+            .entypo-picasa:before {
+                content: "\e62e";
+            }
+            
+            .entypo-soundcloud:before {
+                content: "\e62f";
+            }
+            
+            .entypo-mixi:before {
+                content: "\e630";
+            }
+            
+            .entypo-behance:before {
+                content: "\e631";
+            }
+            
+            .entypo-circles:before {
+                content: "\e632";
+            }
+            
+            .entypo-vk:before {
+                content: "\e633";
+            }
+            
+            .entypo-smashing:before {
+                content: "\e634";
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container" id="resume">
+            <div id="card" class="row">
+                <div class="col-xs-3 col-sm-4">
+                    <img class="avatar" src="nolen.png" />
+                </div>
+                <div class="col-xs-9 col-sm-8">
+                    	<h1>Nolen James Felten</h1>
+
+                    	<h2>Programmer</h2>
+
+                    <section id="basics">
+                        <div class="contact">
+                            <div class="website">
+                                <icon class="entypo-compass"></icon>	<a href="https://nolenfelten.github.com">https://nolenfelten.github.com</a>
+
+                            </div>
+                            <div class="email">
+                                <icon class="entypo-mail"></icon>	<a href="mailto:nolenf@gmail.com">nolenf@gmail.com</a>
+
+                            </div>
+                            <div class="phone">
+                                <icon class="entypo-phone"></icon>(707) 241 - 6221</div>
+                        </div>
+                        <section id="location">
+                            <icon class="entypo-home"></icon>	<span class="address">
+								7397 Boris Ct Apt #15
+								<br/>
+								<span class="postalCode">CA 94928</span>
+	<span class="city">Rohnert Park</span>
+
+                            <span
+                            class="region">California</span>	<span class="countryCode">US</span>
+							<hr>
+							<h3>Download Resume:</h3>
+							<a href="http://nolenfelten.github.io/resume.doc">DOC</a> | <a href="http://nolenfelten.github.io/resume,html">HTML</a> | <a href="http://nolenfelten.github.io/resume,json">JSON</a> | <a href="http://nolenfelten.github.io/resume,html">MD</a> | <a href="http://nolenfelten.github.io/resume.pdf">PDF</a> | <a href="http://nolenfelten.github.io/resume,html">TXT</a> | <a href="http://nolenfelten.github.io/resume.yml">YML</a>
+							<hr>
+</span>
+                        </section>
+                        <section id="profiles">
+                            <div class="item">	<a href="https://www.linkedin.com/in/nolenfelten/">
+								<icon class="entypo-linkedin"></icon>
 								</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<br>
-			</div>
-			<div id='thesis'>
-				<br>
-				<h1><span class="rainbow">Original Xbox</span></h1>
-				<img src="http://i.imgur.com/FuH8fOD.png">
-				<iframe src="http://nolenfelten.github.io/xbox.html" id="xbox_notes"></iframe>
-			</div>
-			<div id="secret">
-				<h2>I'd Like To Tell You About The Strangest Secret in The World</h2>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/lRygtVJrelM" frameborder="0" allowfullscreen></iframe>
-				<p>Some years ago, the late Nobel prize-winning Dr. Albert Schweitzer was being interviewed in London, and a reporter asked him:<br>"Doctor, what's wrong with men today?"<br>The great doctor was silent a moment and said, "Men simply don't think"</p>
-				<p>It's about this, that I want to talk with you.</p>
-				<p>We live today in a golden age.<br>This is an era that humanity has looked forward to, dreamed of, died for, and worked toward for thousands of years.<br>But since it's here, we pretty well take it for granted.</p>
-				<p>We in America are particularly fortunate, to live in the richest land on the face of the earth.<br>A land of abundant opportunity for everyone.</p>
-				<p><b>But, do you know what happens?</b></p>
-				<p><u>Let's take 100 individuals who start <i>even</i> at the age of <b>25</b>, do you have any idea what will happen to those men and women by the time they are <b>65</b>?</u></p>
-				<p>These 100 individuals who all start <i>even</i> at the age of <b>25</b> believe they're going to be successful.<br>If you asked anyone of them if they wanted to be a success, they would tell you they did.<br>
-					They are eager toward life, there is a certain sparkle in their eye, an directness to their carriage, and life seems like a pretty interesting adventure to them.
-				</p>
-				<p>But by the time they're 65,<br><u><b>only 1 will be rich</b></u>,<br>4 <b><u>will be financially independent</b></u>,<br>5 <b><u>will still be working</b></u>, <br>54 <b><i>will be broke</b></i>.</p>
-				<p>Now, wait a moment, how do only 5 make the grade?</p>
-				<p>Why do so many fail?<br> What has happened to the sparkle that was there when they were 25? <br>What has become of the dreams, the hopes, the plans, and why is there such a large disparity between what these people intended to do and what they actually accomplished?</p>
-				<p>When we say only 5% achieve success, we have to define success. And here is the best definition I've been able to find:</p>
-				<p><b>"Success is the progressive realization of a worthy ideal"</b><br>If a man is working toward a predetermined goal, and knows where he is going, that man is a success. If not, he is a failure.<br><b>"Success is the progressive realization of a worthy ideal"</b></p>
-				<p>Rollo May, the distinguished psychiatrist, wrote a wonderful book called "Man's Search for Himself", and in this book he says:<br>"The opposite of courage in our society is not cowardice...it is conformity".</p>
-				<p>And there you have the trouble today.</p>
-				<p><u><b>Conformity</b> - people acting like everyone else, without knowing why, or where they are going</u>.</p>
-				<h2><u>Think of it</u><br>Right now in America, there are over 18 million people age 65 or older.<br>And most of them, are <i>broke</i>.</h2>
-				<p>They are <b>dependent on someone else for life's necessities</b>.</p>
-				<p>We learn to read by the time we're <b>7</b>.<br>We learn to make a living by the time we're <b>25</b>.<br>Often by that time we're not only making a living, we're <u>supporting a family</u>. <br>And yet by the time we're <b>65</b>, we <u>haven't</u> learned how to become financially independent in the richest land that has ever been known.</p>
-				<p><u>Why</u>?</p>
-				<p><b>We conform</b>.</p>
-				<p>And the trouble is most of us are acting like the wrong percentage group - the 95 who don't succeed.</p>
-				<p>Why do these people conform? Well, they really don’t know. These people believed that their lives are shaped by circumstances, by things that happen to them by exterior forces. They are outer-directed people.</p>
-				<p>Read "The Giving Tree" by Shel Silverstein. The illustrated version, to be exact.</p>
-				<p>A survey was made one time that covered a lot of men, working men, and these men were asked, “Why do you work?” “Why do you get up in the morning?” 19 out of 20 had no idea.</p>
-				<p>If you ask them they will say, “Well, everyone goes to work in the morning,” and that’s the reason they do it – because everyone else is doing it.</p>
-				<p>Now, let’s get back to our definition of success. Who succeeds?</p>
-				<p>The only person who succeeds is the person who is progressively realizing a worthy ideal. It is the person who says, “I am going to become this,” and then begins to work towards that goal.</p>
-				<p>I’ll tell you who the successful people are. A success is the school teacher who is teaching school because that’s what he or she wants to do. A success is the woman who is a wife and mother because she wanted to become a wife and mother and is doing a good job of it. A success is the man who runs the corner gas station because that was his dream. That’s what he wanted to do.</p>
-				<p>A success is the successful salesman who wants to become a top-notch salesman and grow and build with in his organization. A success is anyone who is doing deliberately a pre-determined job because that’s what he decided to do deliberately. But only 1 out of 20 does that.</p>
-				<p><strong>That’s why today there isn’t really any competition unless we make it for ourselves. Instead of competing, all we have to do is create. </strong>For 20 years, I looked for the key which would determine what would happen to a human being.</p>
-				<p>Was there a key, I wanted to know, which would make the future a promise that we could foretell to a large extent. Was there a key that would guarantee a person’s becoming successful if he only knew about it and knew how to use it?</p>
-				<p>Well, there is such a key. And I found it.</p>
-				<p>Have you ever wondered why so many men work so hard and honestly without ever achieving anything in particular, and others don’t seem to work hard and yet seem to get everything? They seem to have a magic touch.</p>
-				<p>You’ve heard them say that about someone. “Everything he touches turns to gold.” Have you ever noticed that a man who becomes successful tends to continue to become successful?</p>
-				<p>On the other hand, have you noticed how a man who’s a failure tends to continue to fail? Well, it’s because of goals. Some of us have goals; some don’t. People with goals succeed because they know where they’re going. It’s that simple.</p>
-				<p>Think of a ship leaving a harbor and think of it with a complete voyage mapped out and planned. The captain and crew know exactly where it’s going and how long it will take. It has a definite goal. 9,999 times out of 10,000 it will get to where it started out to get.<br> 
-					Now let’s take another ship, just like the first, only let’s not put a crew on it, or a captain at the helm. Let’s give it no aiming point, no goal, and no destination. We just start the engines and let it go.
-				</p>
-				<p>I think you’ll agree with me that if it gets out of the harbor at all, it will either sink or wind up on some deserted beach, a derelict. It can’t go any place because it has no destination and no guidance.</p>
-				<p>It’s the same with a human being. Take the salesman for example. There is no other person in the world today with the future of a good salesman. Selling is the world’s highest paid profession, if we’re good at it and if we know where we’re going.</p>
-				<p>Every company needs top-notch salesmen, and they reward those men. The sky is the limit for them. But how many can you find?<br> 
-					Someone once said the human race is fixed. Not to prevent the strong from winning, but to prevent the weak from losing.
-				</p>
-				<p>The American economy today can be likened to a convoy in time of war. The entire economy is slowed down to protect its weakest link, just as the convoy had to go at the speed that will permit its slowest vessel to remain in formation.</p>
-				<p>That’s why it’s so easy to make a living today. It takes no particular brains or talent to make a living and support a family today. We have a plateau on so-called security, if that’s what person is looking for.&nbsp; But we do have to decide how high above this plateau we want to aim.</p>
-				<p>Now let’s get back to the Strangest Secret in the World, the story I wanted to tell you today.</p>
-				<p>Why do men with goals succeed in life, and men without them fail? Well, let me tell you something which, if you really understand it, will alter your life immediately. If you understand completely what I’m going to tell you from this moment on, your life will never be the same again.</p>
-				<p>You will suddenly find that good luck just seems to be attracted to you, the things you want just seem to fall in line, and from now on you won’t have the problems, the worries, the gnawing lump of anxiety that perhaps you’ve experienced before. Doubt and fear will now be things of the past.</p>
-				<h2>Here is the key to success, and, the key to failure:</h2>
-				<p>We become, what we think about.</p>
-				<p>I'll say that again.</p>
-				<p>We become, what we think about.</p>
-				<p>Throughout history, the great wise men and teachers, philosophers, and prophets have disagreed with one another on many different things. It’s only on this one point that they are in complete and unanimous agreement.</p>
-				<p>Listen to what Marcus Aurelius, the great Roman Emperor said: “A man’s life is what his thoughts make of it.”</p>
-				<p>Disraeli said this: “Everything comes if a man will only wait. I’ve brought myself by long meditation to the conviction that a human being with a settled purpose must accomplish it, and nothing can resist a will that will stake even existence for its fulfillment.”</p>
-				<p>Ralph Waldo Emerson said this: “A man is what he thinks about all day long.”</p>
-				<p>William James said, “The greatest discovery of my generation is that human beings can alter their lives by altering their attitudes of mind.”<br> 
-					And he also said, “We need only in cold blood act as if the thing in question were real, and it will become infallibly real by growing into such a connection with our life that it will become real. It will become so knit with habit and emotion that our interests in it will be those which characterize belief.”
-				</p>
-				<p>He also said, “If you only care enough for a result, you will almost certainly obtain it. If you wish to be rich, you will be rich. If you wish to be learned, you will be learned. If you wish to be good, you will be good. Only you must, then, really wish these things, and wish them exclusively, and not wish at the same time a hundred other incompatible things just as strongly.”</p>
-				<p>In the Bible you will read in Mark 9-23: “If thou wishs to believe, all things are possible to him that believeth.”</p>
-				<p>My old friend Dr. Norman Vincent Peale put it this way: “This is one of the greatest laws in the universe. Fervently do I wish I had discovered it as a very young man. It dawned upon me much later in life, and I found it to be the greatest discovery, if not my greatest discovery, outside my relationship to God. The great law briefly and simply stated is if you think in negative terms, you will get negative results. If you think in positive terms, you will achieve positive results.”</p>
-				<p>“That is the simple fact,” he went on to say, “Which is of the basis of an astonishing law of prosperity and success. In three words: Believe and Succeed.”</p>
-				<p>William Shakespeare put it this way: “Our doubts are traitors and make us lose the good we oft might win by fearing to attempt.”<br> 
-					George Bernard Shaw said: “People are always blaming their circumstances for what they are. I don’t believe in circumstances. The people who get on in this world are the people who get up and look for the circumstances they want, and if they can’t find them, make them.”
-				</p>
-				<p>Well, it’s pretty apparent, isn’t it? And every person who discovered this, for a while, believed that they were the first to work it out. We become what we think about.</p>
-				<p>It stands to reason that a person who is thinking about a concrete and worthwhile goal is going to reach it, because that’s what he’s thinking about. And we become what we think about.</p>
-				<p>Conversely, the man who has no goal, who doesn’t know where they are going, and whose thoughts must therefore be thoughts of confusion, anxiety, fear, and worry becomes what they think about. His life becomes one of frustration, fear, anxiety, and worry. And if he thinks about nothing, he becomes nothing.</p>
-				<p>Now how does it work? Why do we become what we think about?</p>
-				<p>Well, I’ll tell you how it works as far as we know. To do this, I want to talk about a situation that parallels the human mind. You won't understand it now, you will after re-hearing it, 1 time a day, for 7 days in a row.</p>
-				<p>Suppose a farmer has some land and it’s good, fertile land. Now, the land gives the farmer a choice. He may plant in that land whatever he chooses. The land doesn’t care. It’s up to the farmer to make the decision.</p>
-				<p>Remember, we’re comparing the human mind with the land because, the mind, like the land, doesn’t care what you plant in it. It will return what you plant, but it doesn’t care what you plant.</p>
-				<p>Now let’s say that the farmer has two seeds in his hand – one a seed of corn; the other is nightshade, a deadly poison. He digs two little holes in the earth and he plants both seeds; one corn, the other nightshade. He covers up the holes, waters, and takes care of the land.<br> 
-					What will happen? Invariably, the land will return what’s planted. As it’s written in the Bible, “As ye sow, so shall ye reap.”
-				</p>
-				<p>Remember, the land doesn’t care. It will return poison in just as wonderful abundance as it will corn. So up come the two plants – one corn, one poison.</p>
-				<p>The human mind is far more fertile, far more incredible and mysterious than the land, but it works the same way. It doesn’t care what we plant – success, failure. A concrete, worthwhile goal or confusion, misunderstanding, fear, anxiety, and so on. But what we plant, it must return to us.</p>
-				<p>You see, the human mind is the last great unexplored continent on earth. It contains riches beyond our wildest dreams. It will return anything we want to plant. So you may say, if that is true, why don’t people use their minds more?</p>
-				<p>Well, I think they’ve figured out an answer to that one too. Our mind comes as standard equipment at birth. It’s free. And things that are given to us for nothing, we place little value on. Things that we pay money for, we value.</p>
-				<p><strong>The paradox is that exactly the reverse is true. Everything that’s really worthwhile in life came to us free: our minds, our souls, our bodies, our hopes, our dreams, our ambitions, our intelligence, our love of family and children and friends and country. All these priceless possessions are free.</strong></p>
-				<p>But the things that cost us money are actually very cheap and can be replaced at any time. A good man can be completely wiped out and make another fortune. He can do that several times. Even if our home burns down, we can rebuild it. <strong>But the things we got for nothing, we can never replace.</strong></p>
-				<p>The human mind is not used because we take it for granted. Familiarity breeds contempt. It can do any kind of job we assign to it, but generally speaking, we use it for little jobs instead of big important ones. Universities have proved that most of us are operating on about ten percent or less of our abilities.</p>
-				<p>So decide now. What is it you want? Plant your goal in your mind. It’s the most important decision you’ll ever make in your entire life.<br> 
-					What is it you want? Do you want to be an outstanding salesman, a better worker at your particular job?
-				</p>
-				<p>Do you want to go places in your company, in your community? Do you want to get rich?</p>
-				<p>All you have got to do is plant that seed in your mind, care for it, work steadily towards your goal, and it will become a reality. It not only will, there’s no way that it cannot.</p>
-				<p>You see, that’s a law, like the laws of Sir Isaac Newton, the laws of gravity. If you get on top of a building and jump off, you’ll always go down. You’ll never go up.</p>
-				<p>And it’s the same with all the other laws of nature. They always work. They’re inflexible.</p>
-				<p>Think about your goal in a relaxed, positive way. Picture yourself in your mind’s eye as having already achieved this goal. See yourself doing the things you will be doing when you have reached your goal.</p>
-				<p>Ours has been called a Phenobarbitals Age, the age of ulcers and nervous breakdowns and tranquilizers. At a time when medical research has raised us to a new plateau of good health and longevity, far too many of us worry ourselves into an early grave trying to cope with things in our own little personal ways, without learning a few great laws that will take care of everything for us.</p>
-				<p>These things we bring on ourselves through our habitual way of thinking. Every one of us is the sum total of our own thoughts. </p>
-				<h2>He is, where he is, because, <i>that is exactly where he really wants to be</i>, <u>whether he’ll admit that or not</u>.</h2>
-				<p>Each of us must live off the fruit of his thoughts in the future, because what you think today and tomorrow, next month and next year, will mold your life and determine your future. You’re guided by your mind.</p>
-				<p>I remember one time I was driving through eastern Arizona and I saw one of those giant earth-moving machines roaring along the road at about 35 miles an hour with what looked like 30 tons of dirt in it – a tremendous, incredible machine – and there was a little man perched way up on top with the wheel in his hands, guiding it.</p>
-				<p>As I drove along, I was struck by the similarity of that machine with the human mind. Just suppose you are sitting at the controls of such a vast source of energy. Are you going to sit back and fold your arms and let it run itself into a ditch or are you going to keep both hands firmly on the wheel and control and direct this power to a specific, worthwhile purpose?</p>
-				<p>It’s up to you. You’re in the driver’s seat.</p>
-				<p>You see, the very law that gives us success is a two-edged sword. We must control our thinking. The same rule that can lead a man to a life of success, wealth, happiness, and all the things they ever dreamed of for themselves and his family, that very same law can lead them into the gutter. It’s all in how he uses it – for good or for bad.</p>
-				<p>This is The Strangest Secret in the world. Why do I say it’s strange, and why do I call it a secret?</p>
-				<p>Actually, it isn’t a secret at all. It was first promulgated by some of the earliest wise men, and it appears again and again throughout the Bible. But very few people have learned it or understand it. That’s why it’s strange, and why for some equally strange reason it virtually remains a secret.</p>
-				<p>I believe you could go out and walk down the main street of your town and ask one person after another what the secret of success is and you probably wouldn’t run into one person in a month that could tell you.</p>
-				<p>This information is enormously valuable to us if we really understand it and apply it. It’s valuable to us not only for our own lives, but the lives of those around us, our families, employees, associates, and friends.</p>
-				<p>Life should be an exciting adventure. It should never be a bore. A man should work fully, be alive. He should be glad to get out of bed in the morning. He should be doing a job he likes to do because he does it well.</p>
-				<p>One time I heard Grove Patterson, the great late editor-in-chief of the Toledo Daily Blade make a speech and as he concluded his speech he said something I’ve never forgotten. He said, “My years in the newspaper business have convinced me of several things. Among them, that people are basically good, and that we came from someplace and we are going someplace. So we should make our time here an exciting adventure. The architect of the universe didn’t build a stairway leading nowhere. The greatest teacher of all, the carpenter from the Plains of Galilee of all gave us the secret time and time again: As ye believe, so shall it be done – unto you.”</p>
-				<p><u>Here's the great challenge of life:  You can have more than you've got because you can become more than you are.</u></p>
-			</div>
-			<script>
-				var speed = 20;
-				var hex = new Array("00", "14", "28", "3C", "50", "64", "78", "8C", "A0", "B4", "C8", "DC", "F0");
-				var red = 1;
-				var green = 1;
-				var blue = 1;
-				var seq = 1;
-				var element = document.getElementsByClassName("rainbow");
-				function changetext() {
-					rainbow = "#" + hex[red] + hex[green] + hex[blue];
-					for (index = 0; index < element.length; ++index) {
-						element[index].style.color = rainbow;
-					};
-				};
-				function change() {
-					if (seq == 6) {
-						blue--;	
-						if (blue == 0) { seq = 1; };
-					};
-					if (seq == 5){
-						red++;
-						if (red == 12 ){ seq = 6; };
-					};
-				
-					if (seq == 4) {
-						green--;
-						if (green == 0) { seq = 5; };
-					};
-					if (seq == 3) {
-						blue++;
-						if (blue == 12){ seq = 4; };
-					};
-					if (seq == 2) { 
-						red--;
-						if (red == 0) { seq = 3; };
-					};
-					if (seq == 1) {
-						green++;
-						if (green == 12) { seq = 2; };
-					};
-					changetext();
-				};
-				function starteffect() {	
-					flash = setInterval("change()", speed);
-				};
-				starteffect();
-			</script>
-		</center>
-	</body>
+
+                            </div>
+                            <div class="item">	<a href="https://github.com/nolenfelten">
+								<icon class="entypo-github"></icon>
+								</a>
+
+                            </div>
+                            <div class="item">	<a href="https://thetacomcbell.tumblr.com">
+								<icon class="entypo-tumblr"></icon>
+								</a>
+
+                            </div>
+                            <div class="item">	<a href="https://www.facebook.com/tacomcbell">
+								<icon class="entypo-facebook"></icon>
+								</a>
+
+                            </div>
+                            <div class="item">	<a href="https://twitter.co,/TacoMcbell">
+								<icon class="entypo-twitter"></icon>
+								</a>
+
+                            </div>
+                            <div class="item">	<a href="https://soundcloud.com/nolenf">
+								<icon class="entypo-soundcloud"></icon>
+								</a>
+
+                            </div>
+                        </section>
+                    </section>
+                </div>
+            </div>
+            <div id="summary" class="row">
+                <div class="col-sm-8 col-sm-offset-4 col-xs-12">
+                    <div class="summary">
+                        <p class="lead">Nolen James Felten is a U.S. Standards Compliant Web Designer, Software
+                            Developer, Chess Coach, Math Tutor, and United Way Of The Wine Country
+                            Volunteer that lives and operates in the Rohnert Park/Cotati/Petaluma/Santa
+                            Rosa area.</p>
+                    </div>
+                </div>
+            </div>
+            <section id="work" class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <icon class="large entypo-briefcase"></icon>
+                        </div>
+                        <div class="col-xs-10">
+                            	<h2 class="section-title">Work Experience</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="item">
+                        	<h3 class="name">
+					Independent Contracting
+				</h3>
+
+                        <div class="position">
+                            <p class="lead">Freelance Developer</p>
+                        </div>
+                        <div class="date">	<span class="startDate">
+						February 2015
+					</span>
+	<span class="endDate">
+						- Present
+					</span>
+
+                        </div>
+                        <div class="website">	<a href="http://nolenfelten.github.com/">http://nolenfelten.github.com/</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>Worked remotely for MindModulations.com&#x27;s owner, Gary Bense.</p>
+                        </div>
+                        <ul class="highlights">
+                            <li>Lead generation</li>
+                            <li>Marketing solutions</li>
+                            <li>Web Design with Wordpress</li>
+                            <li>Strong verbal and writing skills</li>
+                            <li>Sales</li>
+                            <li>Budgeting</li>
+                            <li>Search Engine Optizmation</li>
+                            <li>PHP</li>
+                            <li>Paypal</li>
+                            <li>Bitcoin checkout</li>
+                            <li>Shopify</li>
+                            <li>Wordpress</li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        	<h3 class="name">
+					K-Mart
+				</h3>
+
+                        <div class="position">
+                            <p class="lead">Seasonal</p>
+                        </div>
+                        <div class="date">	<span class="startDate">
+						October 2014
+					</span>
+	<span class="endDate">
+						- December 2014
+					</span>
+
+                        </div>
+                        <div class="website">	<a href="http://www.kmart.com/">http://www.kmart.com/</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>Christmas job working night shift.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        	<h3 class="name">
+					Torn Ranch
+				</h3>
+
+                        <div class="position">
+                            <p class="lead">Production</p>
+                        </div>
+                        <div class="date">	<span class="startDate">
+						June 2013
+					</span>
+	<span class="endDate">
+						- August 2013
+					</span>
+
+                        </div>
+                        <div class="website">	<a href="https://www.tornranch.com/">https://www.tornranch.com/</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>Summer time job making gift baskets for cruise lines and gift shops.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        	<h3 class="name">
+					Target
+				</h3>
+
+                        <div class="position">
+                            <p class="lead">Electronics</p>
+                        </div>
+                        <div class="date">	<span class="startDate">
+						June 2011
+					</span>
+	<span class="endDate">
+						- December 2012
+					</span>
+
+                        </div>
+                        <div class="website">	<a href="http://www.target.com">http://www.target.com</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>Worked on a sales team of 6 to provide guest with high price items and
+                                extended warranties. Left position to return to studies.</p>
+                        </div>
+                        <ul class="highlights">
+                            <li>Open and closed department.</li>
+                            <li>Worked with Logistics team in warehouse.</li>
+                            <li>Created and updated inventory database.</li>
+                            <li>Offered high quality guest service.</li>
+                            <li>Worked closely with Asset Protection team.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="volunteer" class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <icon class="large entypo-globe"></icon>
+                        </div>
+                        <div class="col-xs-10">
+                            	<h2 class="section-title">Volunteer</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="item">
+                        	<h3 class="company">
+					United Way Of The Wine Country
+				</h3>
+
+                        <div class="position">
+                            <p class="lead"></p>
+                        </div>
+                        <div class="date">	<span class="startDate">
+						December 2011
+					</span>
+	<span class="endDate">
+						- Present
+					</span>
+
+                        </div>
+                        <div class="website">	<a href="https://www.unitedwaywinecountry.org/">https://www.unitedwaywinecountry.org/</a>
+
+                        </div>
+                        <div class="summary">
+                            <p></p>
+                        </div>
+                        <ul class="highlights">
+                            <li>Planted garden in John Reed Elementary School</li>
+                            <li>Put together backpacks for school children that couldn&#x27;t afford them
+                                at Agilent Technology.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="education" class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <icon class="large entypo-graduation-cap"></icon>
+                        </div>
+                        <div class="col-xs-10">
+                            	<h2 class="section-title">Education</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="item">
+                        	<h3 class="institution">Khan Academy</h3>
+
+                        <div class="area">
+                            <p class="lead">Math</p>
+                        </div>
+                        <div class="studyType">
+                            	<h4></h4>
+
+                        </div>
+                        <div class="date">	<span class="startDate">
+						June 2014
+					</span>
+	<span class="endDate">
+						- Present
+					</span>
+
+                        </div>
+                        <div class="gpa">GPA:</div>
+                        <ul class="courses">
+                            <li>Early Math</li>
+                            <li>Arithmetic</li>
+                            <li>Algebra</li>
+                            <li>Geometry</li>
+                            <li>Trigonometry</li>
+                            <li>Statistics</li>
+                            <li>Calculus (Currently studying)</li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        	<h3 class="institution">Codecademy</h3>
+
+                        <div class="area">
+                            <p class="lead">Full-stack Engineer</p>
+                        </div>
+                        <div class="studyType">
+                            	<h4></h4>
+
+                        </div>
+                        <div class="date">	<span class="startDate">
+						August 2013
+					</span>
+	<span class="endDate">
+						- December 2014
+					</span>
+
+                        </div>
+                        <div class="gpa">GPA: 100%</div>
+                        <ul class="courses">
+                            <li>Learn Java</li>
+                            <li>Learn SQL</li>
+                            <li>HTML &amp; CSS</li>
+                            <li>Python</li>
+                            <li>jQuery</li>
+                            <li>NPR API</li>
+                            <li>Evernote API</li>
+                            <li>OAuth2 with GitHub</li>
+                            <li>Dwolla API</li>
+                            <li>SendGrid API</li>
+                            <li>WePay API (Python)</li>
+                            <li>WePay API (Ruby)</li>
+                            <li>Box API</li>
+                            <li>Soundcloud API</li>
+                            <li>Youtube API</li>
+                            <li>Ruby</li>
+                            <li>Javascript</li>
+                            <li>NHTSA API</li>
+                            <li>PHP</li>
+                            <li>Learn the command line</li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        	<h3 class="institution">El Camino Highschool</h3>
+
+                        <div class="area">
+                            <p class="lead">Highschool Diploma</p>
+                        </div>
+                        <div class="studyType">
+                            	<h4></h4>
+
+                        </div>
+                        <div class="date">	<span class="startDate">
+						August 2007
+					</span>
+	<span class="endDate">
+						- June 2011
+					</span>
+
+                        </div>
+                        <div class="gpa">GPA: 3.3</div>
+                    </div>
+                </div>
+            </section>
+            <section id="awards" class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <icon class="large entypo-trophy"></icon>
+                        </div>
+                        <div class="col-xs-10">
+                            	<h2 class="section-title">Awards</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="item">
+                        	<h3 class="title">Oregon State Chess Tournament</h3>
+
+                        <div class="awarder">
+                            <p class="lead">1st Place</p>
+                        </div>
+                        <div class="date">October 2003</div>
+                        <div class="summary">
+                            <p>Competed against each chess club in Oregon state. Double elimination tournament.
+                                4th-12th Grade. 14 Wins and 0 Loses.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="publications" class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <icon class="large entypo-book"></icon>
+                        </div>
+                        <div class="col-xs-10">
+                            	<h2 class="section-title">Publications</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="item">
+                        <div class="name">
+                            	<h3>Coupons</h3>
+
+                        </div>
+                        <div class="publisher">
+                            <p class="lead"></p>
+                        </div>
+                        <div class="date">May 2017</div>
+                        <div class="website">	<a href="http://nolenfelten.github.io/coupon.html">Link</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>An article about the UPC and GS-128 barcodes and how they are made. Explores
+                                the interesting U.S laws around them. Original research.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">
+                            	<h3>Database Notes</h3>
+
+                        </div>
+                        <div class="publisher">
+                            <p class="lead"></p>
+                        </div>
+                        <div class="date">April 2017</div>
+                        <div class="website">	<a href="http://nolenfelten.github.io/database.html">Link</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>Notes taken from Codecademy.com&#x27;s SQL course, combined with an &quot;Introduction
+                                to Databases&quot; course from Stanford streamed online.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">
+                            	<h3>Java Notes</h3>
+
+                        </div>
+                        <div class="publisher">
+                            <p class="lead"></p>
+                        </div>
+                        <div class="date">April 2017</div>
+                        <div class="website">	<a href="http://nolenfelten.github.io/java.html">Link</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>Notes taken from Oracle tutorials and a course taught at Berkeley streamed
+                                online.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">
+                            	<h3>Original Xbox Security</h3>
+
+                        </div>
+                        <div class="publisher">
+                            <p class="lead"></p>
+                        </div>
+                        <div class="date">March 2017</div>
+                        <div class="website">	<a href="http://nolenfelten.github.io/xbox.html">Link</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>A brief overview of the software and hardware security that prevented
+                                owners from hacking the console.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">
+                            	<h3>C/C++ Notes</h3>
+
+                        </div>
+                        <div class="publisher">
+                            <p class="lead"></p>
+                        </div>
+                        <div class="date">January 2017</div>
+                        <div class="website">	<a href="http://nolenfelten.github.io/cpp.html">Link</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>Notes taken while studying C/C++ and the different paradigms used in programming.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">
+                            	<h3>SMS Bomber</h3>
+
+                        </div>
+                        <div class="publisher">
+                            <p class="lead"></p>
+                        </div>
+                        <div class="date">November 2016</div>
+                        <div class="website">	<a href="https://github.com/nolenfelten/SMS-Bomb">Link</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>Desktop application with full Graphical User Interface that logs into
+                                Gmail and sends text messages to a targets phone number. Can destroy older
+                                devices. Proof of concept. Built with HTML/CSS/JS/Python and PyQt.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">
+                            	<h3>Facebook Event Page Invite Flaw</h3>
+
+                        </div>
+                        <div class="publisher">
+                            <p class="lead"></p>
+                        </div>
+                        <div class="date">October 2016</div>
+                        <div class="website">	<a href="https://github.com/nolenfelten/Facebook-Event-Invite-Flaw-Bot">Link</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>There is a limit for how many invites one account can send for each event.
+                                However, if an account has a phone verified and an Android device is sending
+                                the request, a work around can be achieved.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">
+                            	<h3>Dailymotion Account Project</h3>
+
+                        </div>
+                        <div class="publisher">
+                            <p class="lead"></p>
+                        </div>
+                        <div class="date">August 2016</div>
+                        <div class="website">	<a href="https://github.com/nolenfelten/Dailymotion-Account-Framework">Link</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>Dailymotion.com is a video hosting service that is similar to Youtube.
+                                Users can upload their videos, and get a share of the ad revenue generated
+                                when said videos are viewed. The niche of the project is that Youtube requires
+                                several extra steps to enable monetization, while Dailymotion only ask
+                                that you verify the email account to the account. Cancelled due to fall
+                                of Dailymotions revenue systems.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">
+                            	<h3>Original Xbox Game Installer</h3>
+
+                        </div>
+                        <div class="publisher">
+                            <p class="lead"></p>
+                        </div>
+                        <div class="date">June 2016</div>
+                        <div class="website">	<a href="https://github.com/nolenfelten/Original-Xbox-Game-Installer">Link</a>
+
+                        </div>
+                        <div class="summary">
+                            <p>An article about a custom built application that ran on the Original Xbox
+                                video game console. The app would show a list of games released for the
+                                system, so that a title can be selected, downloaded to the hard drive,
+                                and installed into the games folder without the need for a PC. Built with
+                                Python 2.7 for XBMC4Xbox. My first project with a Graphical User Interface.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="skills" class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <icon class="large entypo-tools"></icon>
+                        </div>
+                        <div class="col-xs-10">
+                            	<h2 class="section-title">Skills</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="item">
+                        	<h3 class="name">Web Design</h3>
+
+                        <div class="level">
+                            <p><em>U.S. Web Designer Standards Compliant</em>
+                            </p>
+                        </div>
+                        <ul class="keywords">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                            <li>jQuery</li>
+                            <li>React.js</li>
+                            <li>Three.js</li>
+                            <li>PHP</li>
+                            <li>Wordpress</li>
+                            <li>Drupal</li>
+                            <li>Search Engine Optimization</li>
+                            <li>Web Application Front End</li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        	<h3 class="name">Software Development</h3>
+
+                        <div class="level">
+                            <p><em></em>
+                            </p>
+                        </div>
+                        <ul class="keywords">
+                            <li>Python</li>
+                            <li>Ruby</li>
+                            <li>Node.js</li>
+                            <li>Java</li>
+                            <li>C/C++</li>
+                            <li>SQL/SQLite</li>
+                            <li>Git</li>
+                            <li>Linux</li>
+                            <li>TCP/UDP</li>
+                            <li>Cryptocurrency specialist (since 2009)</li>
+                            <li>API</li>
+                            <li>OAuth2</li>
+                            <li>Command line interface</li>
+                            <li>Object Oriented</li>
+                            <li>Qt Framework</li>
+                            <li>Pretty Good Privacy</li>
+                            <li>GCC</li>
+                            <li>Assembly</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="languages" class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <icon class="large entypo-chat"></icon>
+                        </div>
+                        <div class="col-xs-10">
+                            	<h2 class="section-title">Languages</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="item">
+                        	<h3 class="language">English</h3>
+
+                        <div class="fluency">	<em>Native speaker</em>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="interests" class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <icon class="large entypo-heart"></icon>
+                        </div>
+                        <div class="col-xs-10">
+                            	<h2 class="section-title">Interests</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item">
+                        	<h3><span class="label label-default label-lg">Chess</span></h3>
+
+                    </div>
+                    <div class="item">
+                        	<h3><span class="label label-default label-lg">Code</span></h3>
+
+                    </div>
+                </div>
+            </section>
+            <section id="references" class="row">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <icon class="large entypo-thumbs-up"></icon>
+                        </div>
+                        <div class="col-xs-10">
+                            	<h2 class="section-title">References</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="item">
+                        <blockquote class="reference">You should be making at least $100,000 a year working at a high end tech
+                            firm.</blockquote>
+                        <div class="name">— Jason Ford (<a href="https://linkedin.com/in/jasonhford/">Linkedin</a>)</div>
+                    </div>
+                    <div class="item">
+                        <blockquote class="reference">	<a href="http://i.imgur.com/0do4TuM.png"><img src="http://i.imgur.com/0do4TuM.png" width="325px" height="250px" ></a>
+
+                        </blockquote>
+                        <div class="name">— Target Team</div>
+                    </div>
+                    <div class="item">
+                        <blockquote class="reference">You were an excellent employee. You fully automated most of our operations
+                            and increased sales by 300%. You really put Mind Modulations on the map!
+                            Revenue was at $1 million a year, amazing for such a small operation!</blockquote>
+                        <div
+                        class="name">— Gary Bense</div>
+                </div>
+        </div>
+        </section>
+        </div>
+		
+		
+      <iframe src="https://calendar.google.com/calendar/embed?title=Appointments&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23aa00ff&amp;color=%23ff0000&amp;src=nolenf%40gmail.com&amp;&amp;src=jab20d680200umeegiu5mm119c%40group.calendar.google.com&amp;color=%234210&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23295A&amp;ctz=America%2FLos_Angeles" style="margin: 0; width: 100%;" height="600" frameborder="0" scrolling="no"></iframe>
+    
+    </body>
+
 </html>
