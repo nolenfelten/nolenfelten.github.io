@@ -602,7 +602,7 @@
               <w:caps/>
               <w:spacing w:val="22"/>
             </w:rPr>
-            <w:t>HTML  CSS  Javascript  jQuery  React.js  Three.js  PHP  Wordpress  Drupal  Search Engine Optimization  Web Application Front End</w:t>
+            <w:t>Apache  CSS  Django  Drupal  FTP  HTML  Icecast  Javascript  jQuery  LAMP  Nginx  Online Marketing  OpenSSL  PHP  React.js  Search Engine Optimization  SFTP  Three.js  WebGL  WAMP  Wordpress</w:t>
           </w:r>
         </w:p>
       </w:tc>
@@ -661,7 +661,7 @@
               <w:caps/>
               <w:spacing w:val="22"/>
             </w:rPr>
-            <w:t>Python  Ruby  Node.js  Java  C/C++  SQL/SQLite  Git  Linux  TCP/UDP  Cryptocurrency specialist (since 2009)  API  OAuth2  Command line interface  Object Oriented  Qt Framework  Pretty Good Privacy  GCC  Assembly</w:t>
+            <w:t>API  Assembly  Asynchronous  Automation  BIOS  C/C++  Command line interface  Cryptanalysis  Cryptocurrency specialist (since 2009)  Debugging  Directx  Drivers  Firewall  Firmware  Functional Programming  Git  GNU  International Standards Orginization  Java  Lambda  Linux  Mainloop  Multiprocess  Multithread  Node.js  OAuth2  Object Oriented  OpenGL  Optical Character Recognition  Pretty Good Privacy  Python  Qt Framework  Reverse Engingeering  Ruby  SQL/SQLite  TCP/UDP  Virtual Box  Xbox Development Kit (Original Xbox)  XML</w:t>
           </w:r>
         </w:p>
       </w:tc>
@@ -754,9 +754,69 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Worked remotely for MindModulations.com&apos;s owner, Gary Bense.</w:t></w:r>
+      <w:r><w:rPr></w:rPr><w:t>Worked remotely for MindModulations.com&apos;s owner, Gary Bense, to create an online catalog and invoice system for product launch operation. Worked with family friend to create a simple website for his paint company (</w:t></w:r><w:hlink w:dest="http://bit.ly/2rHMDdk"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>http://bit.ly/2rHMDdk</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>). Contracted with Net Visibility Solutions for Web Design services to create pages for E-Cig 101, and Tattoo Vanish Inc. (</w:t></w:r><w:hlink w:dest="http://ecig101.com"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>http://ecig101.com</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t> and </w:t></w:r><w:hlink w:dest="http://tattoovanishinc.com"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>http://tattoovanishinc.com</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>).</w:t></w:r>
     </w:p>
 
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Bitcoin checkout</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Budgeting</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Deployment</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Entrepreneurship</w:t></w:r>
+    </w:p>
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
       <w:pPr>
         <w:pStyle w:val="ListParagraph"/>
@@ -800,67 +860,7 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Web Design with Wordpress</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Strong verbal and writing skills</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Sales</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Budgeting</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Search  Engine Optizmation</w:t></w:r>
+      <w:r><w:rPr></w:rPr><w:t>Paypal</w:t></w:r>
     </w:p>
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
       <w:pPr>
@@ -890,7 +890,7 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Paypal</w:t></w:r>
+      <w:r><w:rPr></w:rPr><w:t>Project Estimation</w:t></w:r>
     </w:p>
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
       <w:pPr>
@@ -905,7 +905,22 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Bitcoin checkout</w:t></w:r>
+      <w:r><w:rPr></w:rPr><w:t>Sales</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Search Engine Optimization</w:t></w:r>
     </w:p>
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
       <w:pPr>
@@ -921,6 +936,21 @@
         </w:rPr>
       </w:pPr>
       <w:r><w:rPr></w:rPr><w:t>Shopify</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Strong verbal and writing skills</w:t></w:r>
     </w:p>
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
       <w:pPr>
@@ -1076,51 +1106,6 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Open and closed department.</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Worked with Logistics team in warehouse.</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Created and updated inventory database.</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
       <w:r><w:rPr></w:rPr><w:t>Offered high quality guest service.</w:t></w:r>
     </w:p>
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
@@ -1136,7 +1121,52 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Open and closed department.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Used inventory database to search for items in all Target locations. Set prices, etc.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
       <w:r><w:rPr></w:rPr><w:t>Worked closely with Asset Protection team.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Worked with Logistics team in warehouse.</w:t></w:r>
     </w:p>
 
   </wx:sub-section>
@@ -1288,6 +1318,75 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
         <w:t>Full-stack Engineer, </w:t>
+      </w:r>
+    </w:p>
+
+
+  </wx:sub-section>
+
+
+  <wx:sub-section>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      
+        <w:r wsp:rsidR="009452CA" wsp:rsidRPr="00606071">
+          <w:t>Lynda.com</w:t>
+        </w:r>
+      
+      <w:r wsp:rsidR="00EA0B64">
+        <w:tab/>
+      </w:r>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:rPr>
+          <w:rStyle w:val="FromTo"/>
+        </w:rPr>
+        <w:t>2014 — Present</w:t>
+      </w:r>
+    </w:p>
+
+
+  </wx:sub-section>
+
+
+  <wx:sub-section>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      
+        <w:r wsp:rsidR="009452CA" wsp:rsidRPr="00606071">
+          <w:t>Other</w:t>
+        </w:r>
+      
+      <w:r wsp:rsidR="00EA0B64">
+        <w:tab/>
+      </w:r>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:rPr>
+          <w:rStyle w:val="FromTo"/>
+        </w:rPr>
+        <w:t>2012 — Present</w:t>
+      </w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="000A3AF0" wsp:rsidRDefault="00C146CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r wsp:rsidRPr="000A3AF0">
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+        <w:t>Computer Science, </w:t>
       </w:r>
     </w:p>
 
@@ -1721,7 +1820,7 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Dailymotion.com is a video hosting service that is similar to Youtube. Users can upload their videos, and get a share of the ad revenue generated when said videos are viewed. The niche of the project is that Youtube requires several extra steps to enable monetization, while Dailymotion only ask that you verify the email account to the account. Cancelled due to fall of Dailymotions revenue systems.</w:t></w:r>
+      <w:r><w:rPr></w:rPr><w:t>Dailymotion.com is a video hosting service that is similar to Youtube. Users can upload their videos, and get a share of the ad revenue generated when said videos are viewed. The niche of the project is that Youtube requires several extra steps to enable monetization, while Dailymotion only ask that you verify the email account to the account. Cancelled due to fall of Dailymotion&apos;s revenue systems.</w:t></w:r>
     </w:p>
 
 
