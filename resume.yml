@@ -1,271 +1,328 @@
-name: 'Nolen James Felten'
-info: {}
-meta:
-  format: FRESH@0.6.0
-  version: 0.1.0
-location:
-  city: 'Rohnert Park'
-  region: California
-  country: US
-  code: 'CA 94928'
-  address: '7397 Boris Ct Apt #15'
-employment:
-  history:
+basics:
+  name: 'Nolen James Felten'
+  label: Programmer
+  picture: nolen.png
+  email: nolenf@gmail.com
+  phone: '(707) 241 - 6221'
+  website: 'https://nolenfelten.github.com'
+  summary: 'Nolen James Felten is a  U.S. Standards Compliant Web Designer, Software Developer, Chess Coach, Math Tutor, and United Way Of The Wine Country Volunteer that lives and operates in the Rohnert Park/Cotati/Petaluma/Santa Rosa area.'
+  location:
+    address: '7397 Boris Ct Apt #15'
+    postalCode: 'CA 94928'
+    city: 'Rohnert Park'
+    countryCode: US
+    region: California
+  profiles:
     -
-      position: 'Freelance Developer'
-      employer: 'Independent Contracting'
-      summary: 'Worked remotely for MindModulations.com''s owner, Gary Bense.'
-      current: true
-      start: '2015-03-01'
-      end: ""
-      url: 'http://nolenfelten.github.com/'
-      keywords: []
-      highlights:
-        - 'Lead generation'
-        - 'Marketing solutions'
-        - 'Web Design with Wordpress'
-        - 'Strong verbal and writing skills'
-        - Sales
-        - Budgeting
-        - 'Search  Engine Optizmation'
-        - PHP
-        - Paypal
-        - 'Bitcoin checkout'
-        - 'Shopify '
-        - Wordpress
+      network: Linkedin
+      username: nolenfelten
+      url: 'https://www.linkedin.com/in/nolenfelten/'
     -
-      position: Production
-      employer: 'Torn Ranch'
-      summary: 'Summer time job making gift baskets for cruise lines and gift shops.'
-      start: '2013-07-01'
-      end: '2013-09-01'
-      url: 'https://www.tornranch.com/'
-      keywords: []
-      highlights: []
+      network: Github
+      username: nolenfelten
+      url: 'https://github.com/nolenfelten'
     -
-      position: Seasonal
-      employer: K-Mart
-      summary: 'Christmas job working night shift.'
-      start: '2014-11-01'
-      end: '2015-01-01'
-      url: 'http://www.kmart.com/'
-      keywords: []
-      highlights: []
+      network: Tumblr
+      username: thetacomcbell
+      url: 'https://thetacomcbell.tumblr.com'
     -
-      position: Electronics
-      employer: Target
-      summary: 'Worked on a sales team of 6 to provide guest with high price items and extended warranties. Left position to return to studies.'
-      start: '2011-07-01'
-      end: '2013-01-01'
-      url: 'http://www.target.com'
-      keywords: []
-      highlights:
-        - 'Open and closed department.'
-        - 'Worked with Logistics team in warehouse.'
-        - 'Created and updated inventory database.'
-        - 'Offered high quality guest service. '
-        - 'Worked closely with Asset Protection team.'
+      network: Facebook
+      username: tacomcbell
+      url: 'https://www.facebook.com/tacomcbell'
+    -
+      network: Twitter
+      username: TacoMcbell
+      url: 'https://twitter.co,/TacoMcbell'
+    -
+      network: Soundcloud
+      username: 'Taco McBell'
+      url: 'https://soundcloud.com/nolenf'
+work:
+  -
+    company: 'Independent Contracting'
+    position: 'Freelance Developer'
+    website: 'http://nolenfelten.github.com/'
+    startDate: '2015-03-01'
+    summary: 'Worked remotely for MindModulations.com''s owner, Gary Bense, to create an online catalog and invoice system for product launch operation. Worked with family friend to create a simple website for his paint company (http://bit.ly/2rHMDdk). Contracted with Net Visibility Solutions for Web Design services to create pages for E-Cig 101, and Tattoo Vanish Inc. (http://ecig101.com and http://tattoovanishinc.com).'
+    highlights:
+      - 'Bitcoin checkout'
+      - Budgeting
+      - Deployment
+      - Entrepreneurship
+      - 'Lead generation'
+      - 'Marketing solutions'
+      - Paypal
+      - PHP
+      - 'Project Estimation'
+      - Sales
+      - 'Search Engine Optimization'
+      - 'Shopify '
+      - 'Strong verbal and writing skills'
+      - 'Web Design with Wordpress'
+      - Wordpress
+  -
+    company: K-Mart
+    position: Seasonal
+    website: 'http://www.kmart.com/'
+    startDate: '2014-11-01'
+    endDate: '2015-01-01'
+    summary: 'Christmas job working night shift.'
+    highlights: []
+  -
+    company: 'Torn Ranch'
+    position: Production
+    website: 'https://www.tornranch.com/'
+    startDate: '2013-07-01'
+    endDate: '2013-09-01'
+    summary: 'Summer time job making gift baskets for cruise lines and gift shops.'
+    highlights: []
+  -
+    company: Target
+    position: Electronics
+    website: 'http://www.target.com'
+    startDate: '2011-07-01'
+    endDate: '2013-01-01'
+    summary: 'Worked on a sales team of 6 to provide guest with high price items and extended warranties. Left position to return to studies.'
+    highlights:
+      - 'Offered high quality guest service.'
+      - 'Open and closed department.'
+      - 'Used inventory database to search for items in all Target locations. Set prices, etc.'
+      - 'Worked closely with Asset Protection team.'
+      - 'Worked with Logistics team in warehouse.'
+volunteer:
+  -
+    organization: 'United Way Of The Wine Country'
+    position: ""
+    website: 'https://www.unitedwaywinecountry.org/'
+    startDate: '2012-01-01'
+    summary: ""
+    highlights:
+      - 'Planted garden in John Reed Elementary School'
+      - 'Put together backpacks for school children that couldn''t afford them at Agilent Technology.'
 education:
-  level: ""
-  history:
-    -
-      institution: 'El Camino Highschool'
-      start: '2007-09-01'
-      end: '2011-07-01'
-      grade: '3.3'
-      curriculum: []
-      summary: ""
-      area: 'Highschool Diploma'
-      studyType: ""
-    -
-      institution: 'Khan Academy'
-      start: '2014-07-01'
-      end: ""
-      grade: ""
-      curriculum:
-        - 'Early Math'
-        - Arithmetic
-        - Algebra
-        - Geometry
-        - Trigonometry
-        - Statistics
-        - 'Calculus (Currently studying)'
-      summary: ""
-      area: Math
-      studyType: ""
-    -
-      institution: Codecademy
-      start: '2013-09-01'
-      end: '2015-01-01'
-      grade: 100%
-      curriculum:
-        - 'Learn Java'
-        - 'Learn SQL'
-        - 'HTML & CSS'
-        - Python
-        - jQuery
-        - 'NPR API'
-        - 'Evernote API'
-        - 'OAuth2 with GitHub'
-        - 'Dwolla API'
-        - 'SendGrid API'
-        - 'WePay API (Python)'
-        - 'WePay API (Ruby)'
-        - 'Box API'
-        - 'Soundcloud API'
-        - 'Youtube API'
-        - Ruby
-        - Javascript
-        - 'NHTSA API'
-        - PHP
-        - 'Learn the command line'
-      summary: ""
-      area: 'Full-stack Engineer'
-      studyType: ""
-service:
-  history:
-    -
-      type: volunteer
-      position: ""
-      organization: 'United Way Of The Wine Country'
-      start: '2012-01-01'
-      end: ""
-      url: 'https://www.unitedwaywinecountry.org/'
-      summary: ""
-      highlights:
-        - 'Planted garden in John Reed Elementary School'
-        - 'Put together backpacks for school children that couldn''t afford them at Agilent Technology.'
-skills:
-  sets:
-    -
-      name: 'Web Design'
-      level: 'U.S. Web Designer Standards Compliant'
-      skills:
-        - HTML
-        - CSS
-        - Javascript
-        - jQuery
-        - React.js
-        - Three.js
-        - PHP
-        - Wordpress
-        - Drupal
-        - 'Search Engine Optimization'
-        - 'Web Application Front End'
-    -
-      name: 'Software Development'
-      level: ""
-      skills:
-        - Python
-        - Ruby
-        - Node.js
-        - Java
-        - C/C++
-        - SQL/SQLite
-        - Git
-        - Linux
-        - TCP/UDP
-        - 'Cryptocurrency specialist (since 2009)'
-        - API
-        - OAuth2
-        - 'Command line interface'
-        - 'Object Oriented'
-        - 'Qt Framework'
-        - 'Pretty Good Privacy'
-        - GCC
-        - Assembly
-writing:
   -
-    title: Coupons
-    publisher: ""
-    url: 'http://nolenfelten.github.io/coupon.html'
-    date: '2017-06-01'
-    summary: 'An article about the UPC and GS-128 barcodes and how they are made. Explores the interesting U.S laws around them. Original research.'
+    institution: 'Khan Academy'
+    area: Math
+    studyType: ""
+    startDate: '2014-07-01'
+    courses:
+      - Algebra
+      - Arithmetic
+      - 'Calculus (Currently studying)'
+      - 'Computer Animation'
+      - 'Computer Programming'
+      - 'Computer Science'
+      - 'Early Math'
+      - Geometry
+      - Statistics
+      - Trigonometry
   -
-    title: 'Database Notes'
-    publisher: ""
-    url: 'http://nolenfelten.github.io/database.html'
-    date: '2017-05-01'
-    summary: 'Notes taken from Codecademy.com''s SQL course, combined with an "Introduction to Databases" course from Stanford streamed online.'
+    institution: Lynda.com
+    area: ""
+    studyType: ""
+    startDate: '2014-05-01'
+    courses:
+      - 'C/C++ Essential Training'
+      - 'Foundations For Programming: Databases'
+      - 'Javascript Essential Training (2011) - http://archive.is/Ukcxg'
+      - 'Linux: Bash Shell and Scripts'
+      - 'Linux Kernel Fundamentals'
+      - 'Online Marketing Foundations'
+      - 'Programming Foundations: Fundamentals'
+      - 'Programming Foundations: Object-Oriented Design'
+      - 'Programming Foundations: Web Security'
+      - 'Python GUI Development with Tkinter'
+      - 'Python Programming Efficiently'
+      - 'Ruby on Rails Essential Training'
   -
-    title: 'Java Notes'
-    publisher: ""
-    url: 'http://nolenfelten.github.io/java.html'
-    date: '2017-05-01'
-    summary: 'Notes taken from Oracle tutorials and a course taught at Berkeley streamed online.'
+    institution: Codecademy
+    area: 'Full-stack Engineer'
+    studyType: ""
+    startDate: '2013-09-01'
+    endDate: '2015-01-01'
+    gpa: 100%
+    courses:
+      - 'Box API'
+      - 'Dwolla API'
+      - 'Evernote API'
+      - 'HTML & CSS'
+      - Javascript
+      - jQuery
+      - 'Learn Java'
+      - 'Learn SQL'
+      - 'Learn The Command Line'
+      - 'NHTSA API'
+      - 'NPR API'
+      - 'OAuth2 With GitHub'
+      - PHP
+      - Python
+      - Ruby
+      - 'SendGrid API'
+      - 'Soundcloud API'
+      - 'WePay API (Python)'
+      - 'WePay API (Ruby)'
+      - 'Youtube API'
   -
-    title: 'Original Xbox Security'
-    publisher: ""
-    url: 'http://nolenfelten.github.io/xbox.html'
-    date: '2017-04-01'
-    summary: 'A brief overview of the software and hardware security that prevented owners from hacking the console.'
+    institution: Other
+    area: 'Computer Science'
+    studyType: ""
+    startDate: '2012-01-01'
+    courses:
+      - 'Assembly Language Programming - Virtual Training Company - http://bit.ly/2rA3XPc'
+      - 'Building Dynamic Websites (CS E-75) - Harvard Extension School - http://bit.ly/2sFH1xm'
+      - 'Computer Graphics (CS E-175) - 2009 - UC Davis - http://bit.ly/1MVSiAW'
+      - 'Eloquent Javascript - http://bit.ly/1nWGbTp'
+      - 'Everything You Wanted To Know About Soldering and Desoldering, But Were Afraid To Ask - http://bit.ly/2stZNbH'
+      - 'Introduction to Cryptography and Data Security - 2010 - Ruhr-University Bochum - http://bit.ly/20bca6Z'
+      - 'Introduction to Databases - Stanford - http://bit.ly/2qW60Lv'
+      - 'Learning Three.js: The Javascript 3D Library for WebGL - http://amzn.to/2qOSYAq'
+      - 'Offensive Computer Security 2013 - Florida State University - http://bit.ly/2sFEzXD'
+      - 'Offensive Computer Security 2014 - Florida State University - http://bit.ly/2s7QzEG'
+      - 'Programming Paradigms (CS 107) - Stanford - http://bit.ly/2s7EFuC'
+      - 'The Rails 3 Way - http://amzn.to/2suiImV'
+      - 'WebGL Academy - WebGLAcademy.com - http://bit.ly/2suegV5'
   -
-    title: 'C/C++ Notes'
-    publisher: ""
-    url: 'http://nolenfelten.github.io/cpp.html'
-    date: '2017-02-01'
-    summary: 'Notes taken while studying C/C++ and the different paradigms used in programming.'
-  -
-    title: 'SMS Bomber'
-    publisher: ""
-    url: 'https://github.com/nolenfelten/SMS-Bomb'
-    date: '2016-12-01'
-    summary: 'Desktop application with full Graphical User Interface that logs into Gmail and sends text messages to a targets phone number. Can destroy older devices. Proof of concept. Built with HTML/CSS/JS/Python and PyQt.'
-  -
-    title: 'Facebook Event Page Invite Flaw'
-    publisher: ""
-    url: 'https://github.com/nolenfelten/Facebook-Event-Invite-Flaw-Bot'
-    date: '2016-11-01'
-    summary: 'There is a limit for how many invites one account can send for each event.  However, if an account has a phone verified and an Android device is sending the request, a work around can be achieved.'
-  -
-    title: 'Dailymotion Account Project'
-    publisher: ""
-    url: 'https://github.com/nolenfelten/Dailymotion-Account-Framework'
-    date: '2016-09-01'
-    summary: 'Dailymotion.com is a video hosting service that is similar to Youtube. Users can upload their videos, and get a share of the ad revenue generated when said videos are viewed. The niche of the project is that Youtube requires several extra steps to enable monetization, while Dailymotion only ask that you verify the email account to the account. Cancelled due to fall of Dailymotions revenue systems.'
-  -
-    title: 'Original Xbox Game Installer'
-    publisher: ""
-    url: 'https://github.com/nolenfelten/Original-Xbox-Game-Installer'
-    date: '2016-07-01'
-    summary: 'An article about a custom built application that ran on the Original Xbox video game console. The app would show a list of games released for the system, so that a title can be selected, downloaded to the hard drive, and installed into the games folder without the need for a PC. Built with Python 2.7 for XBMC4Xbox. My first project with a Graphical User Interface.'
-recognition:
+    institution: 'El Camino Highschool'
+    area: 'Highschool Diploma'
+    studyType: ""
+    startDate: '2007-09-01'
+    endDate: '2011-07-01'
+    gpa: '3.3'
+    courses: []
+awards:
   -
     title: 'Oregon State Chess Tournament'
     date: '2003-11-01'
-    from: '1st Place'
+    awarder: '1st Place'
     summary: 'Competed against each chess club in Oregon state. Double elimination tournament. 4th-12th Grade. 14 Wins and 0 Loses.'
-social:
+publications:
   -
-    label: Linkedin
-    network: Linkedin
-    url: 'https://www.linkedin.com/in/nolenfelten/'
-    user: nolenfelten
+    name: Coupons
+    publisher: ""
+    releaseDate: '2017-06-01'
+    website: 'http://nolenfelten.github.io/coupon.html'
+    summary: 'An article about the UPC and GS-128 barcodes and how they are made. Explores the interesting U.S laws around them. Original research.'
   -
-    label: Github
-    network: Github
-    url: 'https://github.com/nolenfelten'
-    user: nolenfelten
+    name: 'Database Notes'
+    publisher: ""
+    releaseDate: '2017-05-01'
+    website: 'http://nolenfelten.github.io/database.html'
+    summary: 'Notes taken from Codecademy.com''s SQL course, combined with an "Introduction to Databases" course from Stanford streamed online.'
   -
-    label: Tumblr
-    network: Tumblr
-    url: 'https://thetacomcbell.tumblr.com'
-    user: thetacomcbell
+    name: 'Java Notes'
+    publisher: ""
+    releaseDate: '2017-05-01'
+    website: 'http://nolenfelten.github.io/java.html'
+    summary: 'Notes taken from Oracle tutorials and a course taught at Berkeley streamed online.'
   -
-    label: Facebook
-    network: Facebook
-    url: 'https://www.facebook.com/tacomcbell'
-    user: tacomcbell
+    name: 'Original Xbox Security'
+    publisher: ""
+    releaseDate: '2017-04-01'
+    website: 'http://nolenfelten.github.io/xbox.html'
+    summary: 'A brief overview of the software and hardware security that prevented owners from hacking the console.'
   -
-    label: Twitter
-    network: Twitter
-    url: 'https://twitter.co,/TacoMcbell'
-    user: TacoMcbell
+    name: 'C/C++ Notes'
+    publisher: ""
+    releaseDate: '2017-02-01'
+    website: 'http://nolenfelten.github.io/cpp.html'
+    summary: 'Notes taken while studying C/C++ and the different paradigms used in programming.'
   -
-    label: Soundcloud
-    network: Soundcloud
-    url: 'https://soundcloud.com/nolenf'
-    user: 'Taco McBell'
+    name: 'SMS Bomber'
+    publisher: ""
+    releaseDate: '2016-12-01'
+    website: 'https://github.com/nolenfelten/SMS-Bomb'
+    summary: 'Desktop application with full Graphical User Interface that logs into Gmail and sends text messages to a targets phone number. Can destroy older devices. Proof of concept. Built with HTML/CSS/JS/Python and PyQt.'
+  -
+    name: 'Facebook Event Page Invite Flaw'
+    publisher: ""
+    releaseDate: '2016-11-01'
+    website: 'https://github.com/nolenfelten/Facebook-Event-Invite-Flaw-Bot'
+    summary: 'There is a limit for how many invites one account can send for each event.  However, if an account has a phone verified and an Android device is sending the request, a work around can be achieved.'
+  -
+    name: 'Dailymotion Account Project'
+    publisher: ""
+    releaseDate: '2016-09-01'
+    website: 'https://github.com/nolenfelten/Dailymotion-Account-Framework'
+    summary: 'Dailymotion.com is a video hosting service that is similar to Youtube. Users can upload their videos, and get a share of the ad revenue generated when said videos are viewed. The niche of the project is that Youtube requires several extra steps to enable monetization, while Dailymotion only ask that you verify the email account to the account. Cancelled due to fall of Dailymotion''s revenue systems.'
+  -
+    name: 'Original Xbox Game Installer'
+    publisher: ""
+    releaseDate: '2016-07-01'
+    website: 'https://github.com/nolenfelten/Original-Xbox-Game-Installer'
+    summary: 'An article about a custom built application that ran on the Original Xbox video game console. The app would show a list of games released for the system, so that a title can be selected, downloaded to the hard drive, and installed into the games folder without the need for a PC. Built with Python 2.7 for XBMC4Xbox. My first project with a Graphical User Interface.'
+skills:
+  -
+    name: 'Web Design'
+    level: 'U.S. Web Designer Standards Compliant'
+    keywords:
+      - Apache
+      - CSS
+      - Django
+      - Drupal
+      - FTP
+      - HTML
+      - Icecast
+      - Javascript
+      - jQuery
+      - LAMP
+      - Nginx
+      - 'Online Marketing'
+      - OpenSSL
+      - PHP
+      - React.js
+      - 'Search Engine Optimization'
+      - SFTP
+      - Three.js
+      - WebGL
+      - WAMP
+      - Wordpress
+  -
+    name: 'Software Development'
+    level: ""
+    keywords:
+      - API
+      - Assembly
+      - Asynchronous
+      - Automation
+      - BIOS
+      - C/C++
+      - 'Command line interface'
+      - Cryptanalysis
+      - 'Cryptocurrency specialist (since 2009)'
+      - Debugging
+      - Directx
+      - Drivers
+      - Firewall
+      - Firmware
+      - 'Functional Programming'
+      - Git
+      - GNU
+      - 'International Standards Orginization'
+      - Java
+      - Lambda
+      - Linux
+      - Mainloop
+      - Multiprocess
+      - Multithread
+      - Node.js
+      - OAuth2
+      - 'Object Oriented'
+      - OpenGL
+      - 'Optical Character Recognition'
+      - 'Pretty Good Privacy'
+      - Python
+      - 'Qt Framework'
+      - 'Reverse Engingeering'
+      - Ruby
+      - SQL/SQLite
+      - TCP/UDP
+      - 'Virtual Box'
+      - 'Xbox Development Kit (Original Xbox)'
+      - XML
+languages:
+  -
+    language: English
+    fluency: 'Native speaker'
 interests:
   -
     name: Chess
@@ -276,23 +333,13 @@ interests:
       - HTML
       - CSS
       - Javascript
-testimonials:
+references:
   -
     name: 'Jason Ford (linkedin.com/in/jasonhford/)'
-    flavor: professional
-    quote: 'You should be making at least $100,000 a year working at a high end tech firm.'
-    private: false
+    reference: 'You should be making at least $100,000 a year working at a high end tech firm.'
   -
     name: 'Target Team '
-    flavor: professional
-    quote: 'http://i.imgur.com/0do4TuM.png'
-    private: false
+    reference: 'http://i.imgur.com/0do4TuM.png'
   -
     name: 'Gary Bense'
-    flavor: professional
-    quote: 'You were an excellent employee. You fully automated most of our operations and increased sales by 300%. You really put Mind Modulations on the map! Revenue was at $1 million a year, amazing for such a small operation!'
-    private: false
-languages:
-  -
-    language: English
-    fluency: 'Native speaker'
+    reference: 'You were an excellent employee. You fully automated most of our operations and increased sales by 300%. You really put Mind Modulations on the map! Revenue was at $1 million a year, amazing for such a small operation!'
