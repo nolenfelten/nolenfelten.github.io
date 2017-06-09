@@ -25,6 +25,7 @@
         "highlights": [
           "Bitcoin checkout",
           "Budgeting",
+          "Content Management System",
           "Deployment",
           "Entrepreneurship",
           "Lead generation",
@@ -162,10 +163,12 @@
           "Everything You Wanted To Know About Soldering and Desoldering, But Were Afraid To Ask - http://bit.ly/2stZNbH",
           "Introduction to Cryptography and Data Security - 2010 - Ruhr-University Bochum - http://bit.ly/20bca6Z",
           "Introduction to Databases - Stanford - http://bit.ly/2qW60Lv",
+          "Learning Python Network Programming - http://amzn.to/2siSMxc",
           "Learning Three.js: The Javascript 3D Library for WebGL - http://amzn.to/2qOSYAq",
           "Offensive Computer Security 2013 - Florida State University - http://bit.ly/2sFEzXD",
           "Offensive Computer Security 2014 - Florida State University - http://bit.ly/2s7QzEG",
           "Programming Paradigms (CS 107) - Stanford - http://bit.ly/2s7EFuC",
+          "Security on Rails - http://amzn.to/2rYG6uO",
           "The Rails 3 Way - http://amzn.to/2suiImV",
           "WebGL Academy - WebGLAcademy.com - http://bit.ly/2suegV5"
         ],
@@ -207,70 +210,132 @@
         "name": "Web Design",
         "level": "U.S. Web Designer Standards Compliant",
         "skills": [
-          "Apache",
-          "CSS",
-          "Django",
-          "Drupal",
-          "FTP",
-          "HTML",
-          "Icecast",
-          "Javascript",
-          "jQuery",
-          "LAMP",
-          "Nginx",
-          "Online Marketing",
-          "OpenSSL",
-          "PHP",
-          "React.js",
-          "Search Engine Optimization",
-          "SFTP",
+          "Angular.js (2 years)",
+          "Django (3 years)",
+          "Drupal (3 years)",
+          "Icecast (4 years)",
+          "Javascript (8 years)",
+          "jQuery (8 years)",
+          "Online Marketing (3 years)",
+          "OpenSSL (4 years)",
+          "React.js (2 years)",
+          "Search Engine Optimization (3 years)",
+          "Wordpress (6 years)"
+        ]
+      },
+      {
+        "name": "Graphics",
+        "level": "",
+        "skills": [
+          "3DS Max",
+          "Directx",
+          "FFMPEG",
+          "GIMP",
+          "Maya",
+          "OpenGL Pipeline",
+          "Optical Character Recognition",
+          "Photoshop",
           "Three.js",
-          "WebGL",
-          "WAMP",
-          "Wordpress"
+          "WebGL"
+        ]
+      },
+      {
+        "name": "Programming Languages",
+        "level": "",
+        "skills": [
+          "CSS",
+          "C/C++",
+          "HTML",
+          "Java",
+          "Javascript",
+          "OpenGL Shading Language (GLSL)",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Intel x86 Assembly"
+        ]
+      },
+      {
+        "name": "Administration",
+        "level": "",
+        "skills": [
+          "Apache",
+          "Advanced Package Tool (APT)",
+          "BASH",
+          "Batch",
+          "CentOS",
+          "Cloud",
+          "Command line interface",
+          "Compression",
+          "Damn Small Linux",
+          "Debian",
+          "DHCP",
+          "DNS",
+          "Firewall",
+          "FTP/SFTP",
+          "LAMP",
+          "Linux",
+          "Logical Volume Management",
+          "Nginx",
+          "NFS configuration",
+          "NTP",
+          "OpenSSL",
+          "phpMyAdmin",
+          "Red Hat",
+          "Security Hardening",
+          "SMTP",
+          "SNMP",
+          "TCP/IP",
+          "Telnet",
+          "OpenSSH",
+          "Ubuntu",
+          "Virtual Box",
+          "VLAN",
+          "VMWare",
+          "WAMP (5 years)",
+          "Windows 95/98/98SE/XP/Vista/7/8/8.1/10",
+          "XAMPP",
+          "YUM"
         ]
       },
       {
         "name": "Software Development",
         "level": "",
         "skills": [
-          "API",
-          "Assembly",
+          "AJAX",
           "Asynchronous",
           "Automation",
           "BIOS",
-          "C/C++",
-          "Command line interface",
+          "CasperJS",
           "Cryptanalysis",
           "Cryptocurrency specialist (since 2009)",
+          "D3",
           "Debugging",
-          "Directx",
-          "Drivers",
-          "Firewall",
           "Firmware",
           "Functional Programming",
           "Git",
-          "GNU",
           "International Standards Orginization",
-          "Java",
           "Lambda",
-          "Linux",
           "Mainloop",
+          "MongoDB",
           "Multiprocess",
           "Multithread",
+          "MVC",
           "Node.js",
           "OAuth2",
           "Object Oriented",
-          "OpenGL",
-          "Optical Character Recognition",
+          "OSI Model",
+          "PhantomJS",
           "Pretty Good Privacy",
           "Python",
           "Qt Framework",
+          "REST",
           "Reverse Engingeering",
           "Ruby",
+          "Selenium",
           "SQL/SQLite",
-          "TCP/UDP",
-          "Virtual Box",
+          "UDP",
+          "Web Driver",
           "Xbox Development Kit (Original Xbox)",
           "XML"
         ]
@@ -395,10 +460,37 @@
     },
     {
       "name": "Code",
+      "keywords": []
+    },
+    {
+      "name": "Automation",
+      "keywords": []
+    },
+    {
+      "name": "Selenium",
+      "keywords": []
+    },
+    {
+      "name": "Marketing",
+      "keywords": []
+    },
+    {
+      "name": "Business",
+      "keywords": []
+    },
+    {
+      "name": "Bitcoin",
+      "keywords": []
+    },
+    {
+      "name": "Cryptography",
+      "keywords": []
+    },
+    {
+      "name": "Graphics",
       "keywords": [
-        "HTML",
-        "CSS",
-        "Javascript"
+        "Photoshop",
+        "GIMP"
       ]
     }
   ],

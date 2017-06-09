@@ -8,8 +8,11 @@ Nolen James Felten
 
 ## SKILLS
 
-  - Web Design: Apache CSS Django Drupal FTP HTML Icecast Javascript jQuery LAMP Nginx Online Marketing OpenSSL PHP React.js Search Engine Optimization SFTP Three.js WebGL WAMP Wordpress 
-  - Software Development: API Assembly Asynchronous Automation BIOS C/C++ Command line interface Cryptanalysis Cryptocurrency specialist (since 2009) Debugging Directx Drivers Firewall Firmware Functional Programming Git GNU International Standards Orginization Java Lambda Linux Mainloop Multiprocess Multithread Node.js OAuth2 Object Oriented OpenGL Optical Character Recognition Pretty Good Privacy Python Qt Framework Reverse Engingeering Ruby SQL/SQLite TCP/UDP Virtual Box Xbox Development Kit (Original Xbox) XML 
+  - Web Design: Angular.js (2 years) Django (3 years) Drupal (3 years) Icecast (4 years) Javascript (8 years) jQuery (8 years) Online Marketing (3 years) OpenSSL (4 years) React.js (2 years) Search Engine Optimization (3 years) Wordpress (6 years) 
+  - Graphics: 3DS Max Directx FFMPEG GIMP Maya OpenGL Pipeline Optical Character Recognition Photoshop Three.js WebGL 
+  - Programming Languages: CSS C/C++ HTML Java Javascript OpenGL Shading Language (GLSL) PHP Python Ruby Intel x86 Assembly 
+  - Administration: Apache Advanced Package Tool (APT) BASH Batch CentOS Cloud Command line interface Compression Damn Small Linux Debian DHCP DNS Firewall FTP/SFTP LAMP Linux Logical Volume Management Nginx NFS configuration NTP OpenSSL phpMyAdmin Red Hat Security Hardening SMTP SNMP TCP/IP Telnet OpenSSH Ubuntu Virtual Box VLAN VMWare WAMP (5 years) Windows 95/98/98SE/XP/Vista/7/8/8.1/10 XAMPP YUM 
+  - Software Development: AJAX Asynchronous Automation BIOS CasperJS Cryptanalysis Cryptocurrency specialist (since 2009) D3 Debugging Firmware Functional Programming Git International Standards Orginization Lambda Mainloop MongoDB Multiprocess Multithread MVC Node.js OAuth2 Object Oriented OSI Model PhantomJS Pretty Good Privacy Python Qt Framework REST Reverse Engingeering Ruby Selenium SQL/SQLite UDP Web Driver Xbox Development Kit (Original Xbox) XML 
 
 ## EMPLOYMENT
 
@@ -18,6 +21,7 @@ Nolen James Felten
 Worked remotely for MindModulations.com's owner, Gary Bense, to create an online catalog and invoice system for product launch operation. Worked with family friend to create a simple website for his paint company (http://bit.ly/2rHMDdk). Contracted with Net Visibility Solutions for Web Design services to create pages for E-Cig 101, and Tattoo Vanish Inc. (http://ecig101.com and http://tattoovanishinc.com).
   - Bitcoin checkout
   - Budgeting
+  - Content Management System
   - Deployment
   - Entrepreneurship
   - Lead generation
@@ -137,6 +141,20 @@ Competed against each chess club in Oregon state. Double elimination tournament.
 
 - CHESS
 
-- CODE: HTML CSS Javascript 
+- CODE
+
+- AUTOMATION
+
+- SELENIUM
+
+- MARKETING
+
+- BUSINESS
+
+- BITCOIN
+
+- CRYPTOGRAPHY
+
+- GRAPHICS: Photoshop GIMP 
 
 

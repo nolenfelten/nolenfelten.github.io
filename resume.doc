@@ -602,7 +602,184 @@
               <w:caps/>
               <w:spacing w:val="22"/>
             </w:rPr>
-            <w:t>Apache  CSS  Django  Drupal  FTP  HTML  Icecast  Javascript  jQuery  LAMP  Nginx  Online Marketing  OpenSSL  PHP  React.js  Search Engine Optimization  SFTP  Three.js  WebGL  WAMP  Wordpress</w:t>
+            <w:t>Angular.js (2 years)  Django (3 years)  Drupal (3 years)  Icecast (4 years)  Javascript (8 years)  jQuery (8 years)  Online Marketing (3 years)  OpenSSL (4 years)  React.js (2 years)  Search Engine Optimization (3 years)  Wordpress (6 years)</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+
+
+    <w:tr wsp:rsidR="00427ECC" wsp:rsidTr="00FD3B33">
+      <w:trPr>
+        <w:trHeight w:val="882"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="828" w:type="dxa"/>
+          <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        </w:tcPr>
+        <w:p wsp:rsidR="00427ECC" wsp:rsidRDefault="00427ECC" wsp:rsidP="00427ECC">
+          <w:r>
+            <w:rPr>
+              <w:noProof/>
+            </w:rPr>
+            <w:pict>
+              <v:rect id="_x0000_s1028" style="position:absolute;left:0;text-align:left;margin-left:20.6pt;margin-top:1.4pt;width:7.15pt;height:38.25pt;z-index:1" fillcolor="#FFFFFF"  strokeweight="0"/>
+            </w:pict>
+          </w:r>
+          <w:r>
+            <w:rPr>
+              <w:noProof/>
+            </w:rPr>
+            <w:pict>
+              <v:rect id="_x0000_s1026" style="position:absolute;left:0;text-align:left;margin-left:20.6pt;margin-top:1.4pt;width:7.15pt;height:38.25pt;z-index:2" fillcolor="#FFFFFF" strokeweight="0"/>
+            </w:pict>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="8748" w:type="dxa"/>
+          <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        </w:tcPr>
+        <w:p>
+          <w:pPr>
+            <w:spacing w:before="120"/>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:sz w:val="24"/>
+              <w:b/>
+              <w:caps/>
+            </w:rPr>
+            <w:t>Graphics</w:t>
+          </w:r>
+        </w:p>
+        <w:p wsp:rsidR="00427ECC" wsp:rsidRDefault="00427ECC" wsp:rsidP="00427ECC">
+          <w:r>
+            <w:rPr>
+              <w:caps/>
+              <w:spacing w:val="22"/>
+            </w:rPr>
+            <w:t>3DS Max  Directx  FFMPEG  GIMP  Maya  OpenGL Pipeline  Optical Character Recognition  Photoshop  Three.js  WebGL</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+
+
+    <w:tr wsp:rsidR="00427ECC" wsp:rsidTr="00FD3B33">
+      <w:trPr>
+        <w:trHeight w:val="882"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="828" w:type="dxa"/>
+          <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        </w:tcPr>
+        <w:p wsp:rsidR="00427ECC" wsp:rsidRDefault="00427ECC" wsp:rsidP="00427ECC">
+          <w:r>
+            <w:rPr>
+              <w:noProof/>
+            </w:rPr>
+            <w:pict>
+              <v:rect id="_x0000_s1028" style="position:absolute;left:0;text-align:left;margin-left:20.6pt;margin-top:1.4pt;width:7.15pt;height:38.25pt;z-index:1" fillcolor="#FFFFFF"  strokeweight="0"/>
+            </w:pict>
+          </w:r>
+          <w:r>
+            <w:rPr>
+              <w:noProof/>
+            </w:rPr>
+            <w:pict>
+              <v:rect id="_x0000_s1026" style="position:absolute;left:0;text-align:left;margin-left:20.6pt;margin-top:1.4pt;width:7.15pt;height:38.25pt;z-index:2" fillcolor="#FFFFFF" strokeweight="0"/>
+            </w:pict>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="8748" w:type="dxa"/>
+          <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        </w:tcPr>
+        <w:p>
+          <w:pPr>
+            <w:spacing w:before="120"/>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:sz w:val="24"/>
+              <w:b/>
+              <w:caps/>
+            </w:rPr>
+            <w:t>Programming Languages</w:t>
+          </w:r>
+        </w:p>
+        <w:p wsp:rsidR="00427ECC" wsp:rsidRDefault="00427ECC" wsp:rsidP="00427ECC">
+          <w:r>
+            <w:rPr>
+              <w:caps/>
+              <w:spacing w:val="22"/>
+            </w:rPr>
+            <w:t>CSS  C/C++  HTML  Java  Javascript  OpenGL Shading Language (GLSL)  PHP  Python  Ruby  Intel x86 Assembly</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+
+
+    <w:tr wsp:rsidR="00427ECC" wsp:rsidTr="00FD3B33">
+      <w:trPr>
+        <w:trHeight w:val="882"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="828" w:type="dxa"/>
+          <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        </w:tcPr>
+        <w:p wsp:rsidR="00427ECC" wsp:rsidRDefault="00427ECC" wsp:rsidP="00427ECC">
+          <w:r>
+            <w:rPr>
+              <w:noProof/>
+            </w:rPr>
+            <w:pict>
+              <v:rect id="_x0000_s1028" style="position:absolute;left:0;text-align:left;margin-left:20.6pt;margin-top:1.4pt;width:7.15pt;height:38.25pt;z-index:1" fillcolor="#FFFFFF"  strokeweight="0"/>
+            </w:pict>
+          </w:r>
+          <w:r>
+            <w:rPr>
+              <w:noProof/>
+            </w:rPr>
+            <w:pict>
+              <v:rect id="_x0000_s1026" style="position:absolute;left:0;text-align:left;margin-left:20.6pt;margin-top:1.4pt;width:7.15pt;height:38.25pt;z-index:2" fillcolor="#FFFFFF" strokeweight="0"/>
+            </w:pict>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="8748" w:type="dxa"/>
+          <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        </w:tcPr>
+        <w:p>
+          <w:pPr>
+            <w:spacing w:before="120"/>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:sz w:val="24"/>
+              <w:b/>
+              <w:caps/>
+            </w:rPr>
+            <w:t>Administration</w:t>
+          </w:r>
+        </w:p>
+        <w:p wsp:rsidR="00427ECC" wsp:rsidRDefault="00427ECC" wsp:rsidP="00427ECC">
+          <w:r>
+            <w:rPr>
+              <w:caps/>
+              <w:spacing w:val="22"/>
+            </w:rPr>
+            <w:t>Apache  Advanced Package Tool (APT)  BASH  Batch  CentOS  Cloud  Command line interface  Compression  Damn Small Linux  Debian  DHCP  DNS  Firewall  FTP/SFTP  LAMP  Linux  Logical Volume Management  Nginx  NFS configuration  NTP  OpenSSL  phpMyAdmin  Red Hat  Security Hardening  SMTP  SNMP  TCP/IP  Telnet  OpenSSH  Ubuntu  Virtual Box  VLAN  VMWare  WAMP (5 years)  Windows 95/98/98SE/XP/Vista/7/8/8.1/10  XAMPP  YUM</w:t>
           </w:r>
         </w:p>
       </w:tc>
@@ -661,7 +838,7 @@
               <w:caps/>
               <w:spacing w:val="22"/>
             </w:rPr>
-            <w:t>API  Assembly  Asynchronous  Automation  BIOS  C/C++  Command line interface  Cryptanalysis  Cryptocurrency specialist (since 2009)  Debugging  Directx  Drivers  Firewall  Firmware  Functional Programming  Git  GNU  International Standards Orginization  Java  Lambda  Linux  Mainloop  Multiprocess  Multithread  Node.js  OAuth2  Object Oriented  OpenGL  Optical Character Recognition  Pretty Good Privacy  Python  Qt Framework  Reverse Engingeering  Ruby  SQL/SQLite  TCP/UDP  Virtual Box  Xbox Development Kit (Original Xbox)  XML</w:t>
+            <w:t>AJAX  Asynchronous  Automation  BIOS  CasperJS  Cryptanalysis  Cryptocurrency specialist (since 2009)  D3  Debugging  Firmware  Functional Programming  Git  International Standards Orginization  Lambda  Mainloop  MongoDB  Multiprocess  Multithread  MVC  Node.js  OAuth2  Object Oriented  OSI Model  PhantomJS  Pretty Good Privacy  Python  Qt Framework  REST  Reverse Engingeering  Ruby  Selenium  SQL/SQLite  UDP  Web Driver  Xbox Development Kit (Original Xbox)  XML</w:t>
           </w:r>
         </w:p>
       </w:tc>
@@ -786,6 +963,21 @@
         </w:rPr>
       </w:pPr>
       <w:r><w:rPr></w:rPr><w:t>Budgeting</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Content Management System</w:t></w:r>
     </w:p>
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
       <w:pPr>
@@ -2008,11 +2200,88 @@
       <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
         <w:t>Code</w:t>
       </w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:t>Automation</w:t>
+      </w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:t>Selenium</w:t>
+      </w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:t>Marketing</w:t>
+      </w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:t>Business</w:t>
+      </w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:t>Bitcoin</w:t>
+      </w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:t>Cryptography</w:t>
+      </w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:t>Graphics</w:t>
+      </w:r>
       <w:r wsp:rsidR="00EA0B64">
         <w:tab/>
       </w:r>
       <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
-        <w:t>HTML, CSS, Javascript</w:t>
+        <w:t>Photoshop, GIMP</w:t>
       </w:r>
     </w:p>
 
