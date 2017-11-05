@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <title>JS Bin</title>
+  <style>
+            /* Colors */
+            canvas {
+                height: ;"100%";
+                width: "100%";
+                z-index: -1; 
+                position: fixed;
+            }
+            
+            @-webkit-keyframes rainbow {
+                0% {border-color: hsl(0, 100%, 60%);}
+                100% {border-color: hsl(255, 100%, 57%);}
+            }
+            
+            body {
+                border: 3px solid hsl(0%, 100%, 10%);
+                -webkit-animation: rainbow 9s infinite alternate;
+                margin: 0;
+            }
+    
+            #scream {
+              width: 100%;
+              z-index: 2;
+            }
+  </style>
+</head>
+<body>
+  
+<canvas id='c'></canvas>
+ 
+    <script>
+		var c = document.getElementById("c");
+		c.width = window.innerWidth;
+		c.height = window.innerHeight;
+		
+		var w = c.width
+		var h = c.height
+        
+        var img = new Image();
+  </script>
+
+  <script>
+        img.src = "http://static.tumblr.com/bfnykxv/gUEomx6j2/taco.png"
+        
+		ctx = c.getContext("2d");
+
+        opts = {
+            chars: '\1234567890ìqwertyuiopè+asdfghjklòàù<zxcvbnm,.-|!"£$%&/()=?^QWERTYUIOPé*ASDFGHJKLç°§>ZXCVBNM;:_[]@#€{}'.split(''), // every key in the italian keyboard layout. It sucks, we don't even have a backtick!
+      font: '10px Monospace',
+      charSize: 18,
+      lineHeight: 12,
+      
+      hueSpeed: 2,
+      repaintAlpha: .1,
+      
+      stripesParXxY: .12,
+      stripeSpeed: .9,
+      beforeSpawning: 50
+    },
+    
+    tick = 0,
+    endX = ( w / opts.charSize + 1 ) |0,
+    endY = ( h / opts.lineHeight + 1 ) |0,    
+    sum = w + h,
+    stripes = [];
+
+ctx.font = opts.font;
+ctx.fillStyle = '#f';
+ctx.fillRect( 0, 0, window.innerWidth, h );
+
+function loop() {
+  
+  window.requestAnimationFrame( loop );
+  
+  tick += opts.hueSpeed;
+  
+  ctx.fillStyle = 'rgba(0,0,0,alp)'.replace( 'alp', opts.repaintAlpha );
+  
+  ctx.fillRect( 0, 0, w, h );
+  
+  ctx.drawImage(img, 0, 0, w, h);
+
+  ctx.font = opts.font;
+
+  stripes.map( function( stripe ){ stripe.step(); } );
+
+ctx.font="30px Arial";
+ctx.lineWidth = 8;
+
+ctx.fillStyle="#000000"
+ctx.fillRect( window.innerWidth / 2 - (ctx.measureText("Please Disable Ad Block and Subscribe!").width / 2) - 30, window.innerHeight - 100, ctx.measureText("Please Disable Ad Block and Subscribe!").width + 60, 90);
+
+ctx.strokeStyle="#00FF00"
+ctx.strokeRect( window.innerWidth / 2 - (ctx.measureText("Please Disable Ad Block and Subscribe!").width / 2) -30, window.innerHeight - 100, ctx.measureText("Please Disable Ad Block and Subscribe!").width + 60, 90);
+
+
+ctx.fillStyle="#FF0000";
+
+ctx.fillText("Thanks For Watching!!!", (window.innerWidth / 2) - (ctx.measureText("Thanks or Watching!!!").width / 2), 610);
+ctx.fillText("Please Disable Ad Block and Subscribe!", (window.innerWidth / 2) - (ctx.measureText("Please Disable Ad Block and Subscribe!").width / 2), 650);
+  
+}
+
+function Stripe(){
+  
+  this.reset();
+}
+Stripe.prototype.reset = function() {
+  
+  this.x = ( Math.random() * endX ) |0;
+  this.y = -Math.random() * opts.beforeSpawning;
+}
+Stripe.prototype.step = function() {
+  
+  this.y += opts.stripeSpeed;
+  
+  drawLetter( this.x, this.y|0 );
+  
+  if( this.y > endX )
+    this.reset();
+}
+
+function drawLetter( x, y ){
+  
+  x *= opts.charSize;
+  y *= opts.lineHeight;
+  
+  ctx.fillStyle = 'hsl(hue,120%,65%)'.replace( 'hue', ( x + y ) / sum * 360 + tick );
+  ctx.fillText( opts.chars[ ( Math.random() * opts.chars.length ) |0], x, y );
+}
+
+for( var i = 0; i < endX*endX * opts.stripesParXxY; ++i )
+  stripes.push( new Stripe );
+
+loop();
+
+window.addEventListener( 'resize', function(){
+  
+  w = c.width = window.innerWidth;
+  h = c.height = window.innerHeight;
+  ctx.fillStyle = '#111';
+  ctx.fillRect( 0, 0, w, h );
+  ctx.font = opts.font;
+  
+  endX = ( w / opts.charSize + 1 ) |0;
+  endY = ( h / opts.lineHeight + 1 ) |0;  
+  sum = w + h;
+  
+  stripes.length = 0;
+  for( var i = 0; i < endX*endY * opts.stripesParXxY; ++i )
+    stripes.push( new Stripe );
+})
+		</script>
+
+    
+
+</body>
+  
+</html>
