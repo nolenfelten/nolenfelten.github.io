@@ -91,20 +91,6 @@ function loop() {
 
   stripes.map( function( stripe ){ stripe.step(); } );
 
-ctx.font="30px Arial";
-ctx.lineWidth = 8;
-
-ctx.fillStyle="#000000"
-ctx.fillRect( window.innerWidth / 2 - (ctx.measureText("Please Disable Ad Block and Subscribe!").width / 2) - 30, window.innerHeight - 100, ctx.measureText("Please Disable Ad Block and Subscribe!").width + 60, 90);
-
-ctx.strokeStyle="#00FF00"
-ctx.strokeRect( window.innerWidth / 2 - (ctx.measureText("Please Disable Ad Block and Subscribe!").width / 2) -30, window.innerHeight - 100, ctx.measureText("Please Disable Ad Block and Subscribe!").width + 60, 90);
-
-
-ctx.fillStyle="#FF0000";
-
-ctx.fillText("Thanks For Watching!!!", (window.innerWidth / 2) - (ctx.measureText("Thanks or Watching!!!").width / 2), 610);
-ctx.fillText("Please Disable Ad Block and Subscribe!", (window.innerWidth / 2) - (ctx.measureText("Please Disable Ad Block and Subscribe!").width / 2), 650);
   
 }
 
