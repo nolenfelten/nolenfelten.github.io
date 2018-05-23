@@ -1,0 +1,145 @@
+<script>
+  
+  function calculate() {
+      //  Let’s say that you are importing goods to the value of US $1,000. 
+      var GoodsValueUSD = document.getElementById("GoodsValueUSD").value;
+
+      // The exchange rate for the Chinese RMB against the US dollar is $0.150.
+      var RMBValue = document.getElementById("RMBValue").value;
+
+      // Sales Tax Lift
+      var SalesTaxLift = document.getElementById("SalesTaxLift").value;
+
+      // Sales Tax
+      var SalesTax = document.getElementById("SalesTax").value;
+
+      // Duty Percent
+      var DutyPercent = document.getElementById("DutyPercent").value;
+
+
+      // Next divide US $1,000 / 0.150 = 6666.66 RMB. 
+      var Convert = GoodsValueUSD / RMBValue;
+      document.getElementById("Convert").value = Convert;
+      console.log("Total Amount: " + Convert + " RMB");
+
+
+      // Duty is at 10% you take 10% of 6666.66 RMB = 666.66 RMB
+      var Duty = Convert * DutyPercent;
+      document.getElementById("Duty").value = Duty;
+      console.log("Duty Amount: " + Duty + " RMB");
+
+      // To work out the sales tax value you have to add the duty and uplift it by 20%:
+      var TaxLift = (Convert + Duty) + ((Convert + Duty) * SalesTaxLift);
+      document.getElementById("TaxLift").value = TaxLift;
+      console.log("Presales Tax Lift Amount: " + TaxLift + " RMB");
+
+
+      // Then we take that 20% lifted number, and of 21% of THAT is what the Sales Tax is. 
+      var Tax = TaxLift * SalesTax;
+      document.getElementById("Tax").value = Tax;
+      console.log("Sales Tax: " + Tax + "RMB");
+
+
+      document.getElementById("RMBFees").value = ((Convert + Duty + Tax) - Convert);
+      document.getElementById("Fees").value = (((Convert + Duty + Tax) * RMBValue) - GoodsValueUSD);
+      console.log("Fee's:" + (((Convert + Duty + Tax) * RMBValue) - GoodsValueUSD));
+
+
+      document.getElementById("FinalTotal").value = (Convert + Duty + Tax);
+      console.log("Total: " + (Convert + Duty + Tax) + " RMB");
+
+
+      document.getElementById("Total").value = ((Convert + Duty + Tax) * RMBValue);
+      console.log(GoodsValueUSD + " USD = " + ((Convert + Duty + Tax) * RMBValue) + " USD");
+
+  }
+</script>
+<h1>Formula</h1>
+<p>Here is the formula for working out the cost for importing a product into the US. 
+<br>This formula is just an example; please keep in mind that the duty will vary, depending on the product.
+<br>Your freight forwarder or the Customs Broker should tell you what duty and sales tax is for your particular item.</p>
+
+<p>Let’s say that you are importing goods to the value of US $1,000.
+<br>The exchange rate for the Chinese RMB against the US dollar is 0.150.
+<br>Next divide US $1,000 / 0.150 = 6666.66 RMB.
+<br>Duty is at 10% you take 10% of 6666.66 RMB = 666.66 RMB</p>
+<p>To work out the sales tax value you have to add the duty and uplift it by 20%:
+<br>6666.66 + 666.66 = 7333.32 
+<br>20% of 7333.32 = 1466.664 RMB
+<br>7333.32 + 1466.66 = 8799.98 RMB
+<br>Sales Tax: 21% of 8799.98 = 1847.99 RMB</p>
+
+<p>Total Amount: 6666.66 RMB + 666.66 RMB (duty) + 1847.99 RMB (sales tax) = 9181.32 RMB.</p>
+
+<h3>Calculator</h3>
+
+<table border="1">
+    <tr>
+        <td>Value of Goods:</td>
+        <td> <b>$</b> <input id="GoodsValueUSD" value=1000></input></td>
+    <tr>
+        <td>Chinese RMB against USD:</td> 
+        <td>￥<input id="RMBValue" value=0.150></input></td>
+    </tr>
+    <tr>
+        <td>Sales Tax Lift:</td> 
+        <td><input id="SalesTaxLift" value=0.20></input></td>
+    </tr>
+    <tr>
+        <td>Sales Tax:</td>
+        <td><input id="SalesTax" value=0.21></input></td>
+    </tr>
+    <tr>
+        <td>Duty Percent:</td>
+        <td><input id="DutyPercent" value="0.10"></input></td>
+    </tr>
+</table>
+
+<input type="button" onclick="calculate()" value="Calculate"></input>
+    
+    
+<table border="1">
+    <tr>
+        <td><u>Exchage</u>:</td> 
+        <td>￥<input id="Convert"></input></td>
+    </tr>
+    
+    <tr>
+        <td><u>Cost of Duty</u>:</td> 
+        <td>￥<input id="Duty"></input></td>
+    </tr>
+    
+    <tr>
+        <td><i>Sales Tax Lift</i>:</td> 
+        <td>￥<input id="TaxLift"></input></td>
+    </tr>
+    
+    <tr>
+        <td><u>Sales Tax</u>:</td>
+        <td>￥<input id="Tax"></input></td>
+    </tr>
+    <tr>
+        <td><hr></td>
+        <td><hr></td>
+    </tr>
+    <tr>
+        <td><u>Total Fees</u> ($):</td>
+        <td><input id="Fees"></input></td>
+    </tr>
+    <tr>
+        <td><u>Total Fees</u> (￥):</td>
+        <td><input id="RMBFees"></input></td>
+    </tr>
+    <tr>
+        <td><hr></td>
+        <td><hr></td>
+    </tr>
+    <tr>
+        <td><u>Final Total</u> ($):</td>
+        <td><input id="Total"></input></td>
+    </tr>
+    <tr>
+        <td><u>Final Total</u> (￥):</td>
+        <td><input id="FinalTotal"></input></td>
+    </tr>
+</table>
