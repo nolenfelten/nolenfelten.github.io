@@ -2,59 +2,17 @@
 
 	<head>
 
-		<title>Nolen James Felten</title>
-
+		<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 		<style type="text/css">
+	
 			body {
 				color: #00FF00;
 				background: #000000;
 				margin: 0px;
 				border: 4px ridge #00FF00;
 			}
-
-			a {
-				text-decoration: none;
-				color: #00FF00;
-			}
-
-			#div2>table {
-				text-align: center;
-			}
-
-			#headTable {
-				text-align: center;
-			}
-
-			#header {
-				width: auto;
-				margin-top: 12px;
-			}
-
-			#title {
-				margin: 0px;
-			}
-
-			#fire {
-				background: url('https://i.imgur.com/qp2t6bf.png');
-				color: #FFFFFF;
-				text-align: center;
-				border: 8px;
-				border-color: #FF0000 #FFFFFF;
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 1%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 45%;
-			}
-
-			#fire>u {
-				background: rgba(0, 0, 9, 0.7);
-			}
-
-			#div1 {
+			
+			.div1 {
 				background: rgba(55, 0, 55, 0.6);
 				border: 2px dashed rgba(0, 0, 255, 0.6);
 				text-align: justify;
@@ -65,685 +23,1256 @@
 				margin-bottom: 1%;
 				margin-left: auto;
 				margin-right: auto;
-				width: 65%;
+				width: 85%;
 			}
-
+			
 			#strong {
 				text-align: center;
 			}
-
-			#div2 {
-				background: rgba(55, 0, 55, 0.6);
-				border: 2px dashed rgba(0, 0, 255, 0.6);
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 1%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 80%;
-			}
-
-			#div3 {
-				background: rgba(55, 0, 55, 0.6);
-				border: 2px dashed rgba(0, 0, 255, 0.6);
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 1%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 70%;
-			}
-
-			#div4 {
-				background: rgba(55, 0, 55, 0.6);
-				border: 2px dashed rgba(0, 0, 255, 0.6);
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 1%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 65%;
-			}
-
-			#gallery {
-				width: 100%;
-			}
-
-			#ref {
-				width: 100%;
+			
+			#chartdiv {
 				color: #FFFFFF;
-			}
-
-			#div5 {
-				background: rgba(55, 0, 55, 0.6);
-				border: 2px dashed rgba(0, 0, 255, 0.6);
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 3%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 85%;
-			}
-
-			#codecamp {
-				color: #FFFFFF;
-				font-size: 16px;
-			}
-
-			#webgl {
-				width: 75%;
+				width: 500px;
+				height: 300px;
+				margin: 0;
+				border: 1px solid #000000;
+				background: url("https://pre00.deviantart.net/647c/th/pre/i/2015/010/0/3/chalkboard_texture_mc2015_by_mattiamc-d8dbnac.jpg");
 			}
 		</style>
 
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+
+		<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+
+		<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+
+		<script src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
+
+		<script>
+			var chart = AmCharts.makeChart("chartdiv", {
+				"type": "pie",
+				"theme": "dark",
+				"dataProvider": [{
+					"country": "ATV02",
+					"value": 8673.38
+				}, {
+					"country": "GSM-07",
+					"value": 9525.98
+				}, {
+					"country": "GSU-XXX",
+					"value": 3157.64
+				}, {
+					"country": "GSM-07 (6 Pack)",
+					"value": 16455.47
+				}, {
+					"country": "GSMO5 Samurai",
+					"value": 5935.75
+				}, {
+					"country": "GSMO5 Diablo ",
+					"value": 5194.64
+				}, {
+					"country": "ATV01",
+					"value": 2772.19
+				}, {
+					"country": "GSDO1",
+					"value": 6431.54
+				}, {					
+					"country": "GSM05 (6 Bikes)",
+					"value": 9273.65
+				}],
+				"valueField": "value",
+				"titleField": "country",
+				"outlineAlpha": 0.2,
+				"depth3D": 16,
+				"balloonText": "[[title]]<br><span style='font-size:20px'><b>$[[value]]</b> ([[percents]]%)</span>",
+				"angle": 50,
+				"export": {
+					"enabled": false
+				}
+			});
+			
+			function cell(value) {
+				document.write("<td>$" + value.toLocaleString() + "</td>");
+			}
+
+			function cell1(value) {
+				document.write("<th>$" + value.toLocaleString() + "</th>");
+			}
+		</script>
 	</head>
 
 	<body>
-
-		<center id="header">
-			<img src="https://i.imgur.com/ew4vOxT.jpg" style="border-radius: 50%; border: 4px double #00FF00;">
-			<table id="title" style="border-bottom: 1px solid #00ff00; border-top: 1px solid #00ff00;">
-				<tr>
-					<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-					<th><strong>Nolen James Felten</strong></th>
-					<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-				</tr>
-			</table>
-			<table style="border-bottom: 1px solid #00ff00;" id="headTable">
-				<tr>
-					<td><sup>Phone:<br>(707) - 703 - 8309</sup></td>
-					<td style="border: 1px solid #00ff00; margin: 0px;"></td>
-					<td><sup>Email:<br>nolenf@gmail.com</sup></td>
-				</tr>
-			</table>
-
-		</center>
-
-		<div id="div1">
-			<p id="strong"><strong>Welcome!</strong></p>
-			<hr width="25%">
-			<p>I am an American Web Developer located in Sacramento, California. I have had the pleasure of working with local government, small businesses, 5-star restaurants, and community volunteer foundations.</p>
-			<center><a href="https://github.com/nolenfelten/nolenfelten.github.io/raw/master/Resume%206-20-18.pdf"><u>My Resume</u></a></center>
-		</div>
-
-		<div id="div4">
-			<p id="strong"><strong>References</strong>
-				<br>(I'm really proud of this part!)</p>
-
-			<hr width="25%">
-
-			<center>
-				<table id="ref">
-					<tr>
-						<td width="40%">
-							<center><img src="https://i.imgur.com/ZuLdBSr.png" style="border-radius: 50%; border: 2px double #0000FF;" width="75%"></center>
-						</td>
-						<td width="50%">
-							<hr width="50%" color="#FF0000">
-							<center>
-								<table>
-									<tr>
-										<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-										<th>
-											<center><strong>Philip Swensen</strong>
-												<br><sup>Staff Sergeant <br> U.S Air Force</sup></center>
-										</th>
-										<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-									</tr>
-								</table>
-							</center>
-							<hr width="50%" color="#FF0000">
-							<p>Investor/Trader, Entrepreneur, and Author of "Mental Violation"</p>
-							<center><a href="https://www.linkedin.com/in/philip-swensen-15b99989/"><u>Philip Swensen's Linkedin</u></a></center>
-						</td>
-					</tr>
-				</table>
-			</center>
-
-			<hr width="95%" color="#0000FF">
-
-			<center>
-				<table id="ref">
-					<tr>
-						<td width="40%">
-							<center><img src="https://i.imgur.com/SpRAdDK.jpg" style="border-radius: 50%; border: 2px double #0000FF;" width="75%"></center>
-						</td>
-						<td width="50%">
-							<hr width="50%" color="#FF0000">
-							<center>
-								<table>
-									<tr>
-										<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-										<th>
-											<center><strong>Jason Ford</strong>
-												<br><sup>Electronic Warfare Specialist<br>U.S Air Force</sup></center>
-										</th>
-										<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-									</tr>
-								</table>
-							</center>
-							<hr width="50%" color="#FF0000">
-							<p>"<i>[Nolen] You should be working at some high-end tech firm making at least $100k a year!</i>"</p>
-							<center><a href="https://www.linkedin.com/in/jasonhford/"><u>Jason Ford's Linkedin Profile</u></a></p>
-							</center>
-						</td>
-					</tr>
-				</table>
-			</center>
-
-			<hr width="95%" color="#0000FF">
-
-			<center>
-				<table id="ref">
-					<tr>
-						<td width="40%">
-							<center><img src="https://i.imgur.com/hRGw2FQ.png?1" style="border-radius: 50%; border: 2px double #0000FF;" width="75%"></center>
-						</td>
-						<td width="50%">
-							<hr width="50%" color="#FF0000">
-							<center><strong>Jesse Busma</strong>
-								<br><sup>Quality Assurance - ProductOps</sup></center>
-							<hr width="50%" color="#FF0000">
-
-							<center><a href="https://docs.google.com/document/d/1nhE3uhmgB1MPdiCkMWKrpqx0m8gcX77sA3h5Uy8WFhs/edit?usp=sharing"><u>Jesse Busma's Resume</u></a></center>
-						</td>
-					</tr>
-				</table>
-			</center>
-
-			<hr width="95%" color="#0000FF">
-
-			<center>
-				<table id="ref">
-					<tr>
-						<td width="40%">
-							<center><img src="https://i.imgur.com/i7CLd3N.png" style="border-radius: 50%; border: 2px double #0000FF;" width="75%"></center>
-						</td>
-						<td width="50%">
-							<hr width="50%" color="#FF0000">
-							<center><strong>David Fiattarone</strong>
-								<br><sup>Account Operator/Junior Staff Accountant</sup></center>
-							<hr width="50%" color="#FF0000">
-
-							<center><a href="#">(831)-737-3286</a></center>
-						</td>
-					</tr>
-				</table>
-
-				<hr width="95%" color="#0000FF">
-
-				<center>
-					<table id="ref">
-						<tr>
-							<td width="40%">
-								<center><img src="https://i.imgur.com/2a9wDts.jpg?1" style="border-radius: 50%; border: 2px double #0000FF;" width="75%"></center>
-							</td>
-							<td width="50%">
-								<hr width="50%" color="#FF0000">
-								<center><strong>Cody Beggs</strong>
-									<br><sup>Cryptocurrency Pioneer</sup></center>
-								<hr width="50%" color="#FF0000">
-
-								<center><a href="#">(707)-708-0088</a></center>
-							</td>
-						</tr>
-					</table>
-		</div>
-
-		<div id="div1">
-			<p id="strong"><strong>Author</strong></p>
-
-			<hr width="25%">
-			<ul>
-				<li><b>Programming Notes:</b>
-					<br>
-					<ul>
-						<li><a href="https://nolenfelten.github.io/database.html" style="text-decoration: underline;">Database Management Systems</a></li>
-						<li><a href="https://nolenfelten.github.io/cpp.html" style="text-decoration: underline;">C / C++</a></li>
-						<li><a href="https://nolenfelten.github.io/Java.html" style="text-decoration: underline;">Java</a></li>
-						<li><a href="https://nolenfelten.github.io/bk.html" style="text-decoration: underline;">Banjo-Kazooie Three.js</a></li>
-					</ul>
-				</li>
-
-				<li><a href="https://nolenfelten.github.io/coupon.html" style="text-decoration: underline;">The Coupon Illusion</a> <sup>(Work in Progress!)</sup>
-					<br>
-					<i>A look into the history and making of retail coupons and UPC/GS-128 barcodes. Indepth report of fraudulent coupons and the interesting U.S law surrounding them.</i>
-				</li>
-
-				<li><a href="https://nolenfelten.github.io/duty.html" style="text-decoration: underline;">Product Import/Export Tariff Calculator</a>
-					<br>
-					<i>Your freight forwarder or the Customs Broker should tell you what duty and sales tax is for your particular item.</i>
-				</li>
-
-			</ul>
-			<hr width="25%">
-			<p id="strong"><strong><a href="https://nolenfelten.github.io/ChessBook.html">Currently Writing Book:<br><u>Chess Tournament Formula</u></a></h2><a href="https://i.imgur.com/f9DOboB.png"><img src="https://i.imgur.com/qjdIeqc.png" width="65%" border="1px"></a></strong></p>
-		</div>
-
-		<div id="div2">
-			<p id="strong"><strong>Project Gallery</strong>
-				<br>(Click an image for more information)</p>
-
-			<hr width="25%">
-
-			<table id="gallery">
-
-				<tr>
-					<td width="33%">
-						<a href="https://walkingnemo.com"><img src="https://i.imgur.com/8g7l821.png">
-							<br>WalkingNemo.com</a>
-					</td>
-					<td width="33%">
-						<a href="https://nolenfelten.github.io/bk.html"><img src="https://i.imgur.com/XT7tKLt.png" width="90%">
-							<br>Banjo-Kazooie Three.js</a>
-					</td>
-					<td width="33%">
-						<a href="https://github.com/nolenfelten/SMS-Bomb"><img src="http://i.imgur.com/PKoz6lM.gif" width="80%">
-							<br>SMS Bomb</a>
-					</td>
-				</tr>
-
-				<tr>
-
-					<td width="33%">
-						<a href="https://i.imgur.com/KEBirnl.png"><img src="https://i.imgur.com/KEBirnl.png" width="40%">
-							<br>Dailymotion
-							<br> Automation</a>
-					</td>
-					<td width="33%">
-						<a href="https://i.imgur.com/FuH8fOD.png"><img src="https://i.imgur.com/FuH8fOD.png" width="70%">
-							<br>My Original Xbox</a>
-					</td>
-					<td width="33%">
-						<a href="https://github.com/nolenfelten/Original-Xbox-Game-Installer"><img src="https://i.imgur.com/IB36ktm.png?1" width="40%">
-							<br>Original Xbox Game Installer</a>
-					</td>
-				</tr>
-
-				<tr>
-
-					<td width="33%">
-						<a href="http://nolenfelten.github.io/webgl.html"><img src="https://i.imgur.com/bwI4CIJ.png?1" width="80%">
-							<br>WebGL Dragon</a>
-						<br><sup><u>Do Not Open With Mobile Device!</u></sup></td>
-					<td width="33%">
-						<a href="http://nolenfelten.github.io/3dmesh.html"><img src="https://i.imgur.com/Va9EInd.png?1" width="40%">
-							<br>Rotating Cube
-							<br>(HTML5 Canvas)</a>
-					</td>
-					<td width="33%">
-						<a href="http://nolenfelten.github.io/Internet.html"><img src="https://i.imgur.com/w9HIBLh.png?2" width="50%">
-							<br>Rainbow Matrix</a>
-					</td>
-				</tr>
-			</table>
-		</div>
-
-		<div id="div1">
-			<p id="strong"><strong>Government & Volunteer</strong></p>
-			<hr width="25%">
-			<center><img src="https://i.imgur.com/Yg12Uvk.png">
-				<br>
-				<a href="https://github.com/OpenSantaRosa"><img src="https://i.imgur.com/KUnLl2M.png">
-		</div>
-
-		<div id="div5">
-
-			<hr width="55%">
-
-			<p id="strong"><strong>Education</strong></p>
-
-			<hr width="55%">
-
-			<p>
-				<a href="Codecademy.com/nolenf"><img src="https://i.imgur.com/5ME53Qa.png" height="64px"></a>
-			</p>
-
-			<ul>
-
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Welcome to Codecademy</a></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn the Command Line</a></li>
-
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn HTML</a></li>
-
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn CSS</a></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Introduction to Javascript</a></li>
-
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn PHP</a> <sup>(Discontinued)</sup></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn Python</a></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn Ruby</a></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn Java</a></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn SQL</a></li>
-
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">SQL: Table Transformation</a></li>
-			</ul>
-
-			<hr width="55%">
-
-			<p><a href="webglacademy.com"><font color="#0000FF" style="font-size: 28px;">WebGLAcademy.com</font></a></p>
-			<table id="webgl" border="1px">
-
-				<tr>
-					<td>HTML Hello World</td>
-					<td>Demo 1K</td>
-					<td>The Distance Mapping</td>
-				</tr>
-
-				<tr>
-					<td>2D Colored Triangle</td>
-					<td>Color Video Filter</td>
-					<td>Advanced Camera Movement with Three.js</td>
-				</tr>
-
-				<tr>
-					<td>3D Colored Triangle</td>
-					<td>Smoke Screen</td>
-					<td>Shadow Mapping</td>
-				</tr>
-
-				<tr>
-					<td>Rotating Cube</td>
-					<td>Video in a Glass Sphere</td>
-					<td>Shadow Mapping with PCF</td>
-				</tr>
-
-				<tr>
-					<td>Mouse Events</td>
-					<td>Optical Flow</td>
-					<td>Variance Shadow Mapping</td>
-				</tr>
-
-				<tr>
-					<td>Textures Apply</td>
-					<td>Gamma Correction</td>
-					<td>Deferred Shading</td>
-				</tr>
-
-				<tr>
-					<td>Import from Blender</td>
-					<td>Three.js Camera Movement</td>
-					<td>Optical Lens Simulation</td>
-				</tr>
-
-				<tr>
-					<td>Phong Shading Model</td>
-					<td>Rebuild the GLSL Sandbox</td>
-					<td>Three.js 3D Surface Viewer</td>
-				</tr>
-
-				<tr>
-					<td>Video as a Texture</td>
-					<td>Shallow Water Animation</td>
-					<td>Three.js Webcam Face Filter</td>
-				</tr>
-
-				<tr>
-					<td>Canvas as a Texture</td>
-					<td>Wireframe and Point Render</td>
-				</tr>
-
-				<tr>
-					<td>Render as a Texture</td>
-					<td>Duplicate Objects</td>
-				</tr>
-
-				<tr>
-					<td>The Blending</td>
-					<td>The Octree</td>
-				</tr>
-
-				<tr>
-					<td>FPS Counter</td>
-					<td>Three.js Picking</td>
-				</tr>
-			</table>
-
-			<hr width="55%">
-
-			<p>
-				<a href="https://www.linkedin.com/in/nolenfelten"><img src="https://i.imgur.com/Rp0qbIT.png" height="128px"></a>
-			</p>
-
-			<ul>
-				<li><a href="https://www.facebook.com/tacomcbell/posts/1609272112467541">Bitcoin and Cryptocurrency Technologies - University of Princeton</a></li>
-
-				<li><a href="https://www.coursera.org/specializations/agile-development">Agile Development Specialization</a> - University of Virginia</li>
-				<ul>
-					<li><a href="https://www.facebook.com/tacomcbell/posts/1763158910412193">Agile Meets Design Thinking</a></li>
-					<li><a href="https://www.facebook.com/story.php?story_fbid=1763271630400921&id=100001543038280">Running Product Design Sprints</a></li>
-					<li><a href="https://www.facebook.com/story.php?story_fbid=1763346263726791&id=100001543038280">Managing an Agile Team</a></li>
-					<li><a href="https://www.facebook.com/story.php?story_fbid=1763449093716508&id=100001543038280">Testing with Agile</a></li>
-				</ul>
-
-				<li><a href="https://www.coursera.org/specializations/software-development-lifecycle">Software Development Lifecycle Specialization</a> - University of Minnesota</li>
-				<ul>
-					<li><a href="https://m.facebook.com/story.php?story_fbid=1766956313365786&id=100001543038280">Software Development Processes and Methodologies</a></li>
-					<li><a href="https://m.facebook.com/story.php?story_fbid=1762994707095280&id=100001543038280">Agile Software Development</a></li>
-					<li><a href="https://www.facebook.com/story.php?story_fbid=1767350016659749&id=100001543038280">Lean Software Development</a></li>
-				</ul>
-				<li><a href="https://www.facebook.com/story.php?story_fbid=1574527055942047&id=100001543038280">Canine Theriogenology</a></li>
-			</ul>
-			</ul>
-
-			<hr width="55%">
-
-			<a id="codecamp" href="freecodecamp.org/nolenfelten">
-				<table>
-					<td>
-						<img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="32px">
-					</td>
-					<td>
-						<font color="white" style="font-size: 28px;">freeCodeCamp.org</font>
-					</td>
-				</table>
-			</a>
-
-			<ul>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/legacy-front-end"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Front End Development <sup>(Legacy)</sup></a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/legacy-back-end"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Back End Development <sup>(Legacy)</sup></a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/legacy-data-visualization"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Data Visualization <sup>(Legacy)</sup></a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/information-security-and-quality-assurance"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Information Security and Quality Assurance</a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/front-end-libraries"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Front End Libraries</a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/responsive-web-design"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Responsive Web Design</a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/javascript-algorithms-and-data-structures"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> JavaScript Algorithms and Data Structures</a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/data-visualization"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Data Visualization <sup>(2018)</sup></a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/apis-and-microservices"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> APIs and Microservices</a>
-			</ul>
-
-			<hr width="55%">
-
-			<p>
-				<a href="https://www.linkedin.com/in/nolenfelten"><img src="https://i.imgur.com/pMkZeCt.png" height="64px"></a>
-			</p>
-			<ul>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Advanced Node Js.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Advanced Node.js</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Angular Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Angular Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Angularjs 1 Adding Registration To Your Application 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">AngularJS 1: Adding Registration to Your Application</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Angularjs 1 Building A Data Driven App 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">AngularJS 1: Building A Data Driven App 2</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Building Restful Web Apis With Node Js And Express.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Building RESTful Web APIs with Node.js and Express</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_C Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">C Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_C Plus Plus Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">C++ Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Code Clinic Javascript.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Code Clinic: Javascript</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Css Essential Training 1.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">CSS Essential Training 1</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Css Essential Training 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">CSS Essential Training 2</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Css Essential Training 3.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">CSS Essential Training 3</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_D3 Js Data Visualization.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">D3.js: Data Visual Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Databases For Node Js Developers.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Databases for Node.js Developers</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Express Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Express.js Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Gulp Js Git And Browserify Web Project Workflows.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Gulp.Js, Git, and Browserify Web Project Workflows</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Html Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">HTML Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Installing Apache Mysql And Php 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Installing Apache, MySQL, and PHP</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Introduction To Css.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Introduction to CSS</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Javascript Closures.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Javascript: Closures</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Javascript Essential Training 3.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Javascript Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Jquery Essential Training 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">jQuery Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Learning Angularjs 1 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Learning AngularJS 1</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Learning Full Stack Javascript Development Mongodb Node And React.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Learning Full-Stack JavaScript Development: MongoDB, Node, and React</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Learning Functional Programming With Javascript.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Functional Programming with Javascript</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Learning Php 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Learning PHP</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Mean Stack And Mongodb Development Techniques.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">MEAN Stack and MongoDB: Development Techniques</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Node Js Build Your First Microservice.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Node.js: Build Your First Microservice</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Node Js Extend And Maintain Applications.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Node.js: Extend and Maintain Applications</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Node Js Testing And Code Quality.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Node.js: Testing and Code Quality</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Node Js Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Node.js Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Php Essential Training 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">PHP Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Php With Mysql Essential Training 1 The Basics.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">PHP with MySQL Essential Training: 1 The Basics</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Php With Mysql Essential Training 2 Build A Cms.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">PHP with MySQL Essential Training: 2 Build a CMS</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Programming Foundations Databases.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Programming Foundations: Databases</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Programming Foundations Fundamentals.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Programming Foundations: Fundamentals</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Programming Foundations Object Oriented Design.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Programming Foundations: Object Oriented Design</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Programming Foundations Open Source Licensing.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Programming Foundations: Open-Source Licensing</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Programming Foundations Web Security.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Programming Foundations: Web Security</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Python Gui Development With Tkinter.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Python GUI Development with Tkinter</a>
-				</li>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_React Js Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">React.js Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Ruby On Rails 5 Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Ruby On Rails 5 Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Setting Up Your Small Business As A Legal Entity.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Setting Up Your Small Business as a Legal Entity</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Understanding Copyright A Deeper Dive.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Understanding Copyright: A Deeper Dive</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Understanding Intellectual Property.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Understanding Intellectual Property</a>
-				</li>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Unit Testing And Test Driven Development In Python.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Unit Testing and Test Driven Development in Python</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Web Development Foundations Full Stack Vs Front End.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Web Development Foundations: Full-Stack Vs. Front-End</a>
-			</ul>
-
-			<hr width="55%">
-			<p>
-				<a href="thegreatcourses.com"><img src="https://i.imgur.com/A56xkYR.png"></a>
-			</p>
-			<ul>
-				<li>Economic History Since 1400</li>
-				<li>Understanding Japan</li>
-				<li>Understanding Gravity</li>
-				<li>American Military History</li>
-
-			</ul>
-
-			<hr width="55%">
-			<p>
-				<a href="https://www.redcross.org"><img src="https://www.redcross.org/on/demandware.static/Sites-RedCross-Site/-/default/dw82a3cbef/images/Arc-images/ARC-navigation-logo.png" height="42px"></a>
-			</p>
-			<ul>
-				<table>
-					<tr>
-						<td>
-							<a href="https://www.redcross.org/take-a-class/first-aid/cat-dog-first-aid"><img src="https://i.imgur.com/cdaKHD7.png" height="30px"></a>
-						</td>
-						<td><a href="https://www.redcross.org/take-a-class/first-aid/cat-dog-first-aid">Cat & Dog First-Aid</a></td>
-					</tr>
-				</table>
-			</ul>
-
-			<hr width="55%">
-
-			<p id="strong"><strong>Other Education</strong></p>
-
-			<hr width="55%">
-
-			<p>
-				<a href="https://chinaimportformula.com"><img src="https://i.imgur.com/tzCKp5v.jpg" height="124px"></a>
-			</p>
-
-			<p>Brendan Elias has taught me the most about business than any other teacher. This man always over delivers high quality information.</p>
-
-			<ul>
-				<li>China Import Academy (Value: $997)</li>
-				<p>"Insider interviews with importers, trade consultants, customs agents, insurance experts, shipping brokers, marketers and more. These video and audio interviews come with workbooks which are organized into an easy at-your-own-pace home study course."</p>
-
-				<li>Foundations (Valued $1,997)</li>
-				<p>"Everything starts with foundations. If you’re a beginner importer this will be the first video course you should watch. It covers all the essentials of importing from China. In this course we will cover selecting products, locating factories and avoiding scammers, shipping your good from China, legal ways to avoid customs and taxes and much more."</p>
-
-				<li>China Import Blueprint (Value: $2,997)</li>
-				<p>"Our newest program revealing our latest and advanced strategies on importing from China. Over two full days we filmed over 15 hours of live footage from a range of experts including ex-customs officers, importing experts, shipping advisors, warehousing experts, marketing professionals, accountants and many more. We let no stone unturned and ensure this program will educate the beginner to the advanced importer."</p>
-			</ul>
-
-			<hr width="55%">
-
-			<a id="codecamp" href="https://www.vtc.com">
-				<table>
-					<td>
-						<img src="https://www.vtc.com/images/vtc_logo_in.jpg" height="64px">
-					</td>
-					<td>
-						<font color="white" style="font-size: 28px;">Virtual Training Company</font>
-					</td>
-				</table>
-			</a>
-			<ul>
-				<li><a href="https://www.vtc.com/products/Assembly-Language-Programming-Tutorials.htm">Assembly Language Programming</li>
-			</ul>
-
-			<hr width="55%">
-
-			<p><a href="careeracademy.com"><img src="https://cdn.ymaws.com/www.careeracademy.com/graphics/logo.png"></a></p>
-
-		</div>
-
-		<center><img src="https://www.reliablecounter.com/count.php?page=nolenfelten.github.io12102066&digit=style/plain/24/&reloads=1" alt="" title="" border="0"></center>
-
-		<div id="fire"><u>2017 North Bay Area Fire Survivor</u></div>
+		
 		<center>
-			<iframe width="248px" height="250px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/315335196&color=%23ff00ff&auto_play=false&hide_related=true&show_comments=true&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>
+			<a href="https://chinaimportformula.com"><img src="https://i.imgur.com/tzCKp5v.jpg"></a>
 		</center>
+		
+		<div class="div1">
+			<center><h3>Table of Contents</h3></center>
+			<b>China Import Academy</b>
+			<ul>
+				<li>Advanced Videos</li>
+				<ul>
+					<li><a href="#AcademyAdvancedVideosGettingYourGoodsThroughCustoms">Getting Your Goods Through Customs</a></li>
+					<li><a href="#AcademyAdvancedVideosImportFromChina">Import From China</a></li>
+					<li><a href="#AcademyAdvancedVideosImportingFromChinaandTakingAdvantageofChineseSubsidies">Importing From China and Taking Advantage of Chinese Subsidies</a></li>
+					<li><a href="#AcademyAdvancedVideosWarehousingSecrets">Warehousing Secrets</a></li>
+				</ul>
+				
+				
+				<li>Bonuses</li>
+				<ul>
+					<li><a href="#AcademyBonusesImportingFromChinaQA">Importing From China Q & A</a></li>
+					<li><a href="#AcademyBonusesImportingFromChinaQAPart2">Importing From China Q & A Part 2</a></li>
+				</ul>
+					
+					
+				
+				<li>Copywriting Secrets</li>
+				<ul>
+					<li><a href="#AcademyCopywritingSecretsCopywritingEssentialsForYourImportBusinessWithJesseFPart1">Copywriting Essentials For Your Import Business With Jesse F Part 1</a></li>
+					<li><a href="#AcademyCopywritingSecretsCopywritingEssentialsForYourImportBusinessWithJesseFPart#2">Copywriting Essentials For Your Import Business With Jesse F Part 2</a></li>
+				</ul>
+					
+					
+				<li>Cultural Differences & Exporting to China</li>
+				<ul>
+					<li><a href="#AcademyCulturalDifferencesExportingtoChinaImportingExportingWithAmyKwongBrendanEliasPart1">Importing & Exporting With Amy Kwong & Brendan Elias Part 1</a></li>
+					<li><a href="#AcademyCulturalDifferencesExportingtoChinaImportingExportingWithAmyKwongBrendanEliasPart2">Importing & Exporting With Amy Kwong & Brendan Elias Part 2</a></li>
+				</ul>
+					
+					
+				<li>Customs Agents, Brokers & Compliance</li>
+				<ul>
+					<li><a href="#AcademyCustomsAgentsBrokersComplianceSteveandBrendanCustoms">Steve and Brendan Customs</a></li>
+				</ul>
+					
+					
+				<li>Shipping & Freight Forwarding</li>
+				<ul>
+					<li><a href="#AcademyShippingFreightForwardingBrendanandTonyPart1">Brendan and Tony Part 1</a></li>
+					<li><a href="#AcademyShippingFreightForwardingBrendanandTonyPart2">Brendan and Tony Part 2</a></li>
+				</ul>
+				
+			</ul>
+			
+			
+			
+			
+			<b>Foundations Online Course</b>
+			<ul>
+				<li><a href="#Foundations1">Part 1</a></li>
+				<li><a href="#Foundations2">Part 2</a></li>
+				<li><a href="#Foundations3">Part 3</a></li>
+				<li><a href="#Foundations4">Part 4</a></li>
+				<li><a href="#Foundations5">Part 5</a></li>
+				<li><a href="#Foundations6">Part 6</a></li>
+				<li><a href="#Foundations7">Part 7</a></li>
+				<li><a href="#Foundations8">Part 8</a></li>
+				<li><a href="#Foundations9">Part 9</a></li>
+				<li><a href="#Foundations10">Part 10</a></li>
+				<li><a href="#Foundations11">Part 11</a></li>
+				<li><a href="#Foundations12">Part 12</a></li>
+				<li><a href="#Foundations13">Part 13</a></li>
+			</ul>
+			
+			
+			<b>Other</b>
+			<ul>
+				<li><a href="#AustraliaWebinar">Australia Webinar</a></li>
+			</ul>
+				<li><a href=""></a></li>
+	
+		</div>
+
+		<div id="AcademyAdvancedVideosGettingYourGoodsThroughCustoms" class="div1">
+			<img src="https://i.imgur.com/uAOUwrP.jpg" height="250px">
+			<br>
+			Academy\Advanced Videos\Getting Your Goods Through Customs
+		</div>		
+		
+		
+		
+		
+		<div id="AcademyAdvancedVideosImportFromChina" class="div1">
+			<img src="https://i.imgur.com/b7A2XVU.jpg" height="250px">
+			<br>
+			Academy\Advanced Videos\Import From China
+
+			<ul>
+				<li>Email from a custom email. Not gmail or hotmail.</li>
+				<ul>
+					<li>Appears more professional and will get you a better deal.</li>
+				</ul>
+				<li>Specific email steps:</li>
+				<ol>
+					<li> Get a quote for large order prices <b><u>FIRST</u></b>.</li>
+					<li>Then ask for Trail Orders <b><u>SECOND</u></b>.</li>
+				</ol>
+				<li>Always do the trial orders.</li>
+			</ul>
+		</div>
+		
+		
+		
+		
+		
+		
+		<div id="AcademyAdvancedVideosImportingFromChinaandTakingAdvantageofChineseSubsidies" class="div1">
+
+			<img src="https://i.imgur.com/4ZCFuTw.jpg" height="250px">
+			<br> 
+			Academy\Advanced Videos\Importing From China and Taking Advantage of Chinese Subsidies
+
+			<ul>
+				<li>Brenden has a house on a ridge that over looks the famous Australian beach!
+				<br><img src="https://i.imgur.com/aw9Px7M.jpg" height="250px"></li>
+				<li>China wants other countries money.</li>
+				<li>The Chinese government help their import/export industry by giving large rebates and bonuses.</li>
+				<ul>
+					<li>Step 1: After you place the purchase order.</li>
+					<li>Step 2: Vendor will take the purchase order and proof of payment to their local government agency to apply for the rebate.</li>
+					<li>Step 3: They get the money. Largest percent amount mentioned was 17%. Said normal range was 13-17%.</li>
+					<ul>
+						<li>17% of $2,000,000 USD == $340,000,000 USD.</li>
+					</ul>
+				</ul>
+				<li>Chinese government offer incentives for investing in China.</li>
+				<ul>
+					<li>Tax breaks</li>
+					<li>Tax holidays</li>
+					<li>Low interest loans</li>
+					<li>Cheap freight</li>
+				</ul>
+				<li>They offer extra incentives for high tech product manufacturing.</li>
+				<li><u><b>Find a manufacturer/vendor/company that is able to get rebates</b></u>.</li>
+				<ul>
+					<li>Mention that you know that they get these rebates from their government and the factory will beg to work for free.</li>
+					<li>Because to them, the rebate is a guaranteed payment!</li>
+					<li><b>Very Smart!!!</b></li>
+				</ul>
+			</ul>
+
+		</div>
+		
+		
+		
+		
+		
+		<div id="AcademyAdvancedVideosWarehousingSecrets" class="div1">
+
+			<img src="https://i.imgur.com/JHZn47N.jpg" height="250px">
+			<br> 
+			Academy/Advanced Videos/Warehousing Secrets
+
+			<ul>
+				<li>Use an outsourced contract warehouse to store the goods.</li>
+				<li>Freight is usually 40% to 60% cheaper with an outsource warehouse because they have more buying power behind them to get discounts.</li>
+				<ul>
+					<li>Buying Power is an interesting concept.</li>
+				</ul>
+				<li>All you have to do is email the warehouse each day for them to ship the goods to the customer for you.</li>
+				<li>You can setup the warehouse to contact the manufacturer to restock your goods when you run out.</li>
+			</ul>
+		</div>
+		
+		
+
+		
+		<div id="AcademyBonusesImportingFromChinaQA" class="div1">
+
+			<img src="https://i.imgur.com/HZIvMKS.jpg" height="250px">
+			<br> 
+			Academy/Bonuses/Importing From China Q & A
+
+			<ul>
+				<li><b>Q</b>: What is up with import tax, duties, and fees?</li>
+				<li><b>A</b>:</li>
+				<ul>
+					<li>It depends on your country.</li>
+					<li>"First fees" are duties/tariffs TCIF. </li>
+					<li>Footwear and clothes have highest tariffs because China flooded the world with those products, tariffs on them can sometimes be 200%.</li>
+					<li>USA has high tariffs on imports to protect its local industry.</li>
+					<li>North America Free Trade Association (<b>NAFTA</b>).</li>
+					<li>Work around examples for tariffs:</li>
+					<ul>
+						<li>USA has tariffs on candles, but not on just wax or just wicks.</li>
+					</ul>
+					<li>When you actually import the goods, you pay for the tariffs on their arrival.</li>
+					<ul>
+						<li><i><b>If you have good credit with your freight forwarder</b>, you might be able to delay paying for 90 days.</i> <br>This could be useful.</li>
+					</ul>
+					<li>Because of an international agreement plan, tariffs were lowered in 2010, and <i>will be</i> again in 2020, and again in 2030.</li>
+				</ul>
+
+				<li><b>Q</b>: How do you avoid buying poor quality proucts?</li>
+				<li><b>A</b>:</li>
+				<ul>
+					<li>Do your duties on finding the right sources.</li>
+					<li>Search multiple factories for different prices.</li>
+					<li>Fly to china to meet with them.</li>
+					<li>Globalsources, Alibaba, Madeinchina are good websites.</li>
+					<li><b>Maybe</b> - Make a list of different prices and remove the lowest 20%.</li>
+					<li>You get what you pay for.</li>
+					<li>Send an inspection team to the factory and inspect legitimacy of company.</li>
+					<li>When you establish local presence with factory, they wont mess with you.</li>
+					<li>Contract with sources to create "purchase orders" that have phases.</li>
+					<li>Set clauses in the contract that penalize the vendor everyday an order is late.</li>
+					<ul>
+						<li>This will make the source speak up if they need more time.</li>
+					</ul>
+					<li>Pay the vendor at the different checkpoints in the deal, like $30 over 30 days.</li>
+					<li>Setup 3 phases.</li>
+					<li>"Dont shoot the hostage" == Dont pay all at once.</li>
+				</ul>
+
+				<li><b>Q</b>: How can you enter a market with established competition?</li>
+				<li><b>A</b>:</li>
+				<ul>
+					<li>Pick a niche.</li>
+					<li>Dont be a jack of all trades.</li>
+					<li>Pick a niche that is a <sup><b>1</b></sup>/<sub><b>4</b></sub><sup>th</sup> of an inch wide, but 8 miles deep.</li>
+					<li><u><b>You want a niche because you can keep the clients information for repeat purchasing leads</u>.</b></li>
+				</ul>
+			</ul>
+		</div>
+
+	
+	
+	
+		
+		<div id="AcademyBonusesImportingFromChinaQAPart2"class="div1">
+			<img src="https://i.imgur.com/SRi2QWd.jpg" height="250px">
+			<br>
+			Academy/Bonuses/Importing From China Q & A Part 2
+			<ul>
+				<li><b>Q</b>: How can you enter a market with established competition? (Continued)</li>
+				<li><b>A</b>:</li>
+				<ul>
+					<li>Brenden notes that the power is in the customers hands because of the cost to promote on source websites like Alibaba.</li>
+					<li>Use Telegraphic Transfer for money transfer.</li>
+					<ul>
+						<li>Get the bank details from supplier like bank name, bank number, bank account, swift code for identifying foreign banks.</li>
+						<li>Make sure there is a record for the swift code.</li>
+					</ul>
+					<li>When the transfer is sent, send supplier a photocopy of the tranfser receipt.</li>
+					<li>When you show you can be trusted by the vendor, prices will likely go down.</li>
+					<li>Warren Buffet has a net worth of $62,000,000,000, China exports $62,000,000,000 every week.</li>
+				</ul>
+			</ul>
+		</div>
+		
+		
+
+
+
+		<div id="AcademyCopywritingSecretsCopywritingEssentialsForYourImportBusinessWithJesseFPart1" class="div1">
+			<img src="https://i.imgur.com/scxx8wy.jpg" height="250px">
+			<br>
+			Academy\Copywriting Secrets\Copywriting Essentials For Your Import Business With Jesse F Part 1
+		</div>
+		
+		
+		
+		
+		
+		<div id="AcademyCopywritingSecretsCopywritingEssentialsForYourImportBusinessWithJesseFPart2" class="div1">
+
+			<img src="https://i.imgur.com/2tpoTZ4.jpg" height="250px">
+			Academy\Copywriting Secrets\Copywriting Essentials For Your Import Business With Jesse F Part 2
+
+		</div>
+		
+		
+		
+		
+		
+		<div id="AcademyCulturalDifferencesExportingtoChinaImportingExportingWithAmyKwongBrendanEliasPart1" class="div1">
+			<img src="https://i.imgur.com/UnrxOVo.jpg" height="250px">
+			<br>
+			Academy\Cultural Differences & Exporting to China\Importing & Exporting With Amy Kwong & Brendan Elias Part 1
+
+			<ul>
+				<li>Use 2 hands when giving and receiving business cards.</li>
+				<li>If working with Chinese, have one side of the card in English and other side Chinese (Mandarin).</li>
+				<ul>
+					<li>Use gold ink.</li>
+					<li>Be sure to have Chinese side facing up when handing over card.</li>
+				</ul>
+				<li>Plan meetings months prior. Everyone likes being prepared. It is a custom in Chinese business tradition.</li>
+				<li>Simple bow rather then handshake.</li>
+				<ul>
+					<li>If a handshake does take place, don't squeeze.</li>
+				</ul>
+				<li>Bring a gift! In fact, you should always bring gifts anyway. Don't show up to places empty handed.</li>
+				<li>Socialize by going out for drinks or a meal before discussing business.</li>
+				<ul>
+					<li>Don't discuss business at that time. Relationships come before business.</li>
+				</ul>
+				<li>Don't mention deadlines. Patients is key when doing business in China.</li>
+			</ul>
+		</div>
+		
+		
+		
+		<div id="AcademyCulturalDifferencesExportingtoChinaImportingExportingWithAmyKwongBrendanEliasPart2" class="div1">
+			<img src="https://i.imgur.com/VMd3Omw.jpg" height="250px">
+			<br>
+			Academy\Cultural Differences & Exporting to China\Importing & Exporting With Amy Kwong & Brendan Elias Part 2
+		</div>
+		
+		
+		
+		<div id="AcademyCustomsAgentsBrokersComplianceSteveandBrendanCustoms" class="div1">
+
+			<img src="https://i.imgur.com/QJPHWfI.jpg" height="250px">
+			<br> 
+			Academy\Customs Agents, Brokers & Compliance\Steve and Brendan Customs
+
+			<ul>
+				<li>Peter Brukener - CEO - Powerhouse Logistics (phl.net.au)</li>
+				<li>Steven Foster - Customs Broker (30 years experience) - Powerhouse Logistics (phl.net.au)</li>
+				<li>Customs protect a country from the illegal transportation of products and people. They administer the series of acts that prevent such cargo from entering a country.</li>
+				<li>Customs Agent/Broker/Officer are the same.</li>
+				<li>Customs Brokers research the product to see what regulations may effect it, and try to find ways to reduce the tariffs on shipments. The goal of a customs broker is to do everything possible to make a shipment duty free.</li>
+				<li>"The assumption is that it should be duty free"</li>
+				<li>The difference between an expert and novice Customs Broker is details.</li>
+				<li>In Australia, Customs could penalize up to 200% (months or years later) if proper duties are not correctly paid.</li>
+				<li>Customs Broker/Agents are licensed by Customs and are REQUIRED to report anyone they suspect is doing something illegal.</li>
+				<li>Sales Tax is paid on arrival of goods, or you can submit a Business Activity Statement monthly (which must be done electronically) if you do not have any other tax issues.</li>
+				<li>You get 3 (free) days to pick up a container before customs moves it to demarriage and it becomes very expensive quickly.</li>
+				<li></li>
+			</ul>
+
+		</div>
+		
+		
+		
+		<div id="AcademyShippingFreightForwardingBrendanandTonyPart1" class="div1">
+			<img src="https://i.imgur.com/UluJ1gq.jpg" height="250px">
+			<br>
+			Academy\Shipping & Freight Forwarding\Brendan and Tony Part 1
+
+			<ul>
+				<li>Peter Brueckner - Powerhouse Logistics - CEO.</li>
+				<ul>
+					<li>43 years in shipping and freight fowarding industry.</li>
+					<li>Started Apprentice in Austria.</li>
+				</ul>
+				<li>Tony Daniels - Powerhouse Logistics - Director.</li>
+				<ul>
+					<li>33 years in shipping and freight industry.</li>
+					<li>Found job listing one day in paper for Custom Brokerage.</li>
+					<li>4 or 5 years in freight fowarding Sales.</li>
+					<li>Joined Peter in starting Powerhouse Logistics in 1990.</li>
+				</ul>
+
+				<li>About 10 billion tons of cargo shipped every year.</li>
+				<li>4 billion tons of that is carried on container vessels.</li>
+				<li>Australia spends about 10 billion dollars a year on import/export shipping alone.</li>
+				<li>Employees 30,000 people Australia wide.</li>
+				<li>Around 5,000 container ships traveling the sea at any moment.</li>
+				<li>Air and Boat are the main ways are transported.</li>
+			</ul>
+		</div>
+
+
+
+		
+		<div id="AcademyShippingFreightForwardingBrendanandTonyPart2" class="div1">
+			<img src="https://i.imgur.com/aI4Ou89.jpg" height="250px">
+			<br>
+			Academy\Shpping & Freight Forwarding\Brendan and Tony Part 2
+		</div>
+
+
+
+		
+		<div id="Foundations1" class="div1">
+			<img src="https://i.imgur.com/1guXv6e.jpg" height="250px">
+			<br>
+			Foundations Online Course\Video 1
+
+			<ul>
+				<li>Brenden started his first operation with his mate Tristan in college because money was difficult.</li>
+				<ul>
+					<li>He bought 100 DVD Players and sold them one by one at markup on ebay, his ROI was double the princple.</li>
+					<li>Most of Brenden's business is done on ebay.com.au.</li>
+					<li>Newsletter and tips starting selling on ebay at homesuccess.com.au.</li>
+				</ul>
+				<li>Book: Import from china revealed - Brendon Elias</li>
+				<li><u>At age 22 Brenden was earning $250,000 a year</u>.</li>
+			</ul>
+
+		</div>
+		
+		
+		
+		
+		<div id="Foundations2" class="div1">
+
+			<img src="https://i.imgur.com/vLT8bK6.jpg" height="250px">
+			<br>
+			Foundations Online Course\Video 2
+
+			<ul>
+				<li>Work on projects that pay you multiple times rather than swapping time for dollars.</li>
+				<li>This guy sets goals, he knows about Earl Nightengale's "The Strangest Secret".</li>
+				<li>You can have meals paid by running in charity events with sponsorship from restaurants.</li>
+			</ul>
+		</div>
+		
+		
+		
+		
+		
+		<div id="Foundations3" class="div1">
+			<img src="https://i.imgur.com/SSf4XQY.jpg" height="250px">
+			<br>
+			Foundations Online Course\Video 3
+			<table border="1px">
+				<thead>
+					<th></th>
+					<th>Total Price</th>
+					<th>Annual</th>
+					<th>Monthly</th>
+					<th>Week</th>
+					<th>Daily</th>
+					<th>Hourly</th>
+					<th>Minute</th>
+					<th>Second</th>
+				</thead>
+				<tbody>
+					<tr>
+						<th>House</th>
+						<td>$200,000,000</td>
+						<td>$140,000</td>
+						<td>$10,000</td>
+						<td>$2,500</td>
+						<td>$360</td>
+						<td>$15</td>
+						<td>$0.25</td>
+						<td>$0.004</td>
+					</tr>
+					<tr>
+						<th>Yacht</th>
+						<td>$200,000</td>
+						<td>$19,000</td>
+						<td>$1,600</td>
+						<td>$400</td>
+						<td>$60</td>
+						<td>$2.50</td>
+						<td>$0.04</td>
+						<td>$0.0006</td>
+					</tr>
+					<tr>
+						<th>Car</th>
+						<td>$150,000</td>
+						<td>$30,000</td>
+						<td>$2,500</td>
+						<td>$428</td>
+						<td>$100</td>
+						<td>$4.16</td>
+						<td>$0.06</td>
+						<td>$0.001</td>
+					</tr>
+					<tr>
+						<th>Food</th>
+						<td>$35,000 <sup>/yr</sup></td>
+						<td>$35,000</td>
+						<td>$8,750</td>
+						<td>$1,250</td>
+						<td>$175</td>
+						<td>$7.29</td>
+						<td>$0.12</td>
+						<td>$0.002</td>
+					</tr>
+					<tr>
+						<th>Holidays</th>
+						<td>$30,000 <sup>/yr</sup></td>
+						<td>$30,000</td>
+						<td>$3,000</td>
+						<td>$750</td>
+						<td>$110</td>
+						<td>$4.58</td>
+						<td>$0.07</td>
+						<td>$0.001</td>
+					</tr>
+					<tr>
+						<th>Maid</th>
+						<td>$50,000 <sup>/yr</sup></td>
+						<td>$50,000</td>
+						<td>$4,000</td>
+						<td>$1,000</td>
+						<td>$142</td>
+						<td>$5.91</td>
+						<td>$0.09</td>
+						<td>$0.001</td>
+					</tr>
+					<tr>
+						<th>School</th>
+						<td>$20,000 <sup>/yr</sup></td>
+						<td>$20,000</td>
+						<td>$1,666</td>
+						<td>$416</td>
+						<td>$60</td>
+						<td>$2.50</td>
+						<td>$0.04</td>
+						<td>$0.0006</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>Total:</th>
+						<th>-</th>
+						<td>$324,000</td>
+						<td>$25,000</td>
+						<td>$6,000</td>
+						<td>$900</td>
+						<td>$42</td>
+						<td>$0.67</td>
+						<td>$0.01</td>
+					</tr>
+					<tr>
+						<th>Save 10%:</th>
+						<th>-</th>
+						<script>
+							cell(324000 * 0.10);
+							cell(25000 * 0.10);
+							cell(6000 * 0.10);
+							cell(900 * 0.10);
+							cell(42 * 0.10);
+							cell(0.67 * 0.10);
+							cell(0.01 * 0.10);
+						</script>
+					</tr>
+					<tr>
+						<th><u>GOAL</u>:</th>
+						<th>-</th>						
+						<script>
+							cell1(324000 + (324000 * 0.10));
+							cell1(25000 + (25000 * 0.10));
+							cell1(6000 + (6000 * 0.10));
+							cell1(900 + (900 * 0.10));
+							cell1(42 + (42 * 0.10));
+							cell1(0.67 + (0.67 * 0.10) - 0.0000000000000001);
+							cell1(0.01 + (0.01 * 0.10));
+						</script>
+					</tr>
+				</tfoot>
+			</table>
+
+
+			<ul>
+				<li>Hire a financial planner.</li>
+				<li>Get paid to travel. Tax write off for business trips.</li>
+				<li>To maintain this lifestyle is ~$1000/day.</li>
+				<li>How many goods need to be sold at __% profit each to earn $1000/day.</li>
+				<li>Brendens father imported Donkey Kong Arcade into Australia and was his mentor.</li>
+				<li>Brenden was almost a Lawyer.</li>
+				<ul>
+					<li>He studied at Political Sciences. 2 or 3 years into college he was needing money.</li>
+					<li>His brother was a Lawyer, named Jason. He told him that he hated his job no matter how much money he made.</li>
+					<li>His brother worked for Baker & McKenzie.</li>
+					<li>His brother is 10 yrs older and more disciplined.</li>
+				</ul>
+				<li>Brenden became an accidental millionaire when he discovered eBay to buy an obsecure DVD.
+				<br>He noticed the photos and descriptions of listed items were terrible quality, so he bought items and resold them for a markup with better images/description.</li>
+				<ul>
+					<li><b>Just from doing that, he became a top eBay Power Seller with +10,000 feedback</b>.</li>
+				</ul>
+				<li>When driving drunk became illegal in the AU, he started importing Breathalyzers when the demand started. He bought each breathalyzer for $5 or 2 for $15, earning ~200% profit.</li>
+				<li>His average day would be him driving to post office boxs with sacks of packages in his car (because he would fill multiple boxs).</li>
+				<ul>
+					<li><b><u>When he was done, he would drive to the beach for the day, with more than enough money for the week</b></u>.</li>
+				</ul>
+				<li>He was dependent on his vendors to order and receive products from their sources first. Then he could order and receive his inventory, which cost time.</li>
+				<ul>
+					<li>Cut out the middle man!</li>
+				</ul>		
+			</ul>
+	
+			<table>
+				<tr>
+					<th colspan="2">Brenden went to China on his father's advice.</th>
+				</tr>
+				<tr>
+					<td>
+						<ul>
+							<li><b><u>Beijing to study Chinese Contract law</u></b>.</li>
+							<li>Guangzhou</li>
+							<li>Hong Kong</li>
+							<li>Donguang City</li>
+							<li>Nanjing</li>
+							<li>Shanghai</li>
+							<li>Shenzhen</li>
+							<li>Syuoio</li>
+							<li>Xian</li>
+							<li>Yiwu + More</li>
+							<li>Visited factories, suppliers, trade events, trade shows, establishments, etc.</li>
+						</ul>
+					</td>
+					<td><a href="https://i.imgur.com/jbZiy2R.jpg"><img src="https://i.imgur.com/jbZiy2R.jpg" height="250px"></a></td>
+				</tr>
+			</table>
+			
+			<ul>
+				<li>His father asked him why doesnt he import bulky items, he was importing by air shipping only at the time.</li>
+				<li>He eventually wanted to import pocket motorbikes and bought his first 20 foot shipping container. Then quickly bought a 40 foot container. 160 pockets fit in one container.</li>
+				<li>Brenden would use his parents garage to store his products until his inventory took too much space. His father recommended he use a third party warehouse.</li>
+			</ul>
+
+		</div>
+		
+		
+		
+		
+		<div id="Foundations4" class="div1">
+
+		<img src="https://i.imgur.com/XbCjKnX.jpg" height="250px">
+		<br> Foundations Online Course\Video 4
+
+		<ul>
+			<li>Third party warehouses are shared with other clients.</li>
+			<li>Sometimes provide an office space :D</li>
+			<li>Third party warehousing allow you to avoid the overhead cost:</li>
+			<ul>
+				<li>Rent.</li>
+				<li>Occupational health and safety.</li>
+				<li>Employees.</li>
+				<li>Equipment like forklifts.</li>
+			</ul>
+			<li>Pass savings on to customer and gain advantage on competition.</li>
+			<li>Brenden hired a part time worker to handle postage on Monday's and Wednesday.</li>
+			<li>Enables a system where invoices are emailed to the warehouse and the shipment is dispatched that afternoon.</li>
+			<li>Price of shipping is discounted since warehouse arranges deal with postal service because they have more buying power.</li>
+			<li>Brenden finished his law degree because he promised his mother. <u>Was earning more then peers who were law firm partners 10 years out</u>.</li>
+			<li>Brenden shares thoughts on schools and universities conditioning people to become a "hard working employee" that trade time for dollars.</li>
+		</ul>
+		<table border="1px">
+			<thead>
+				<tr>
+					<th colspan="9">Hours Spent Communting</th>
+				</tr>
+				<tr>
+					<td>1 Work Day</td>
+					<td>1 Week <br><sup>(5 Days)</sup></td>
+					<td>1 Month <br><sup>(4 Weeks)</sup></td>
+					<td>1 Year <br><sup>(48 Weeks)</sup></td>
+					<td>2 Years</td>
+					<td>3 Years</td>
+					<td>4 Years</td>
+					<td>5 Years</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1.5</td>
+					<td>
+						<script>
+							document.write(1.5 * 5);
+						</script>
+					</td>
+					<td>
+						<script>
+							document.write((1.5 * 5) * 4);
+						</script>
+					</td>
+					<td>
+						<script>
+							document.write(((1.5 * 5) * 4) * 12);
+						</script>
+					</td>
+					<td>
+						<script>
+							document.write((((1.5 * 5) * 4) * 12) * 2);
+						</script>
+					</td>
+					<td>
+						<script>
+							document.write((((1.5 * 5) * 4) * 12) * 3);
+						</script>
+					</td>
+					<td>
+						<script>
+							document.write((((1.5 * 5) * 4) * 12) * 4);
+						</script>
+					</td>
+					<td>
+						<script>
+							document.write((((1.5 * 5) * 4) * 12) * 5);
+						</script>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>That is <b><u><script>document.write(( ( (1.5 * 5) * 4) * 12) / 24);</script> days a year</u></b> spent just <u><i>going to</i></u> work! <br><b><u><script>document.write((( ( (1.5 * 5) * 4) * 12) * 2) / 24);</script> days</u></b> for 2 years,<br><b><u><script>document.write((( ( (1.5 * 5) * 4) * 12) * 3) / 24);</script> days</u></b> for 3 years, <br><b><u><script>document.write((( ( (1.5 * 5) * 4) * 12) * 4) / 24);</script> days</u></b> for 4 years, <br><b><u><script>document.write((( ( (1.5 * 5) * 4) * 12) * 5) / 24);</script> days</u></b> for 5 years.</p>
+
+		<ul>
+			<li>Brenden recommends making your own brand name to put on products. His was called "Samurai".
+				<br><img src="https://i.imgur.com/j7OvFmj.jpg"></li>
+			<li>Brenden imported Electric Scooters.
+				<br><img src="https://i.imgur.com/Fbaqh18.jpg" height="150px"></li>
+			<ul>
+				<li>He would ride one to university and on the way home the battery would run out.</li>
+				<li>He got better batteries for only $4 extra per scooter on the next batch.</li>
+			</ul>
+			<li>Brenden wanted to sell quadbikes because his customers said they want to get their kids a pocket bike, but they were too dangerous with only 2 wheels.</li>
+			<ul>
+				<li>He contacted the factory and asked for quadbikes, but they said "sorry, no, can't do it".</li>
+				<li>Then he said "you know how the motorcycles have 2 years, could you maybe add 2 more wheels" and the factory said "of course, that would be really easy".</li>
+			</ul>
+			<li>In 2005 Brenden sold ~<b>12,000</b> Pocket Bikes. He imported 2 or 3 shipping containers per month.</li>
+			<li>Form a product niche that is a <sup>1</sup>/<sub>4</sub> inch wide and 8 miles deep.</li>
+			<ul>
+				<li>Sell around 10 similar products.</li>
+				<li>Use customer feedback to decide new products to sell.</li>
+				<li>Brenden's niche was recreational vehicles.</li>
+			</ul>
+			<li>Items that will be banned in near future sell very well. Get in before Governemnt bans.</li>
+			<li>The perk of using third party logistic services is that you can take advantage of the discounted freight rates available when you ship large volumes to start selling wholesale.</li>
+			<ul>
+				<li>This promotes you in the supply chain! ^_^ <br><img src="https://i.imgur.com/PegsI7u.jpg"></li>
+			</ul>
+			<li><u>When the savings on shipping offered by a third party warehouse</u> <b>is greater than</b> <u> the premium charged by a third party warehouse</u>, it pays for itself!</li>
+		</ul>
+
+		</div>
+		
+		
+		
+		<div id="Foundations5" class="div1">
+
+
+		<img src="https://i.imgur.com/fIoy7bA.jpg" height="250px">
+		<br> Foundations Online Course\Video 5
+
+		<table border="1px">
+			<tr>
+				<th style="background: #CCCCFF; color: #FFFFFF;">Sales Revenue November 21-27th, 2005 <br>$67,420</th>
+			</tr>
+			<tr>
+				<td>
+					<div id="chartdiv"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>Sales between $60,000 - $90,000 a week. <br><font color="#FF0000">That's $3,000,000 to $5,000,000 a year!</font></td>
+			</tr>
+		</table>
+
+		<ul>
+			<li>Pack of batteries is less than a dollar in China.</li>
+			<li>Brenden became a speaker for Australian Government Import/Export Body.</li>
+			<li>Hong Kong Trade and Development Council are supporters and sponsors of China Import Formula presentations because they promote doing business with China.</li>
+			<li>The Australian Financial Review made an article about Brenden:
+				<br><img src="https://i.imgur.com/WYP01P4.jpg" height="150px"></li>
+			<li>Brenden's mistakes:</li>
+			<ul>
+				<li>Ordered 7 containers of Faulty Goods.</li>
+				<li>Ordered items not as described,</li>
+				<li>Ordered stock that didn't work.</li>
+				<li>Non-delivery of goods.</li>
+				<li>Goods seized by Customs.</li>
+				<li>Brenden lost $90,000 in goods because his warehouse in China caught fire. The insurance to cover that would have cost only $380.</li>
+			</ul>
+			<li>Difference between stock that didnt work and broken stock is broken stock used to work, but stopped.</li>
+			<li>When goods are seized by Customs, they put them in a Customs bond.</li>
+			<li>A license from the government is needed to import vehicles.</li>
+
+		</ul>
+		
+		</div>
+		
+		
+		
+		<div id="Foundations6" class="div1">
+
+
+		<img src="https://i.imgur.com/Jagmn2L.jpg" height="250px">
+		<br> Foundations Online Course\Video 6
+
+		<ul>
+			<li>China is Australia's largest importer AND exporter partner.</li>
+			<ul>
+				<li>In 2009 China surpassed Japan to become Australia's largest ezport market, with total merchandise exports to China valued at $42,400,000,000. <br>An increase of 31.2% over the previous year.</li>
+				<li>China is also Australia's largest source of imports, with China's total merchandise exports valued at $35,800,000,000 in 2009, an increase of 1.5% on the previous year. Major imports from China include clothing, communication equipment, computers, prams, toys, games and sporting goods, furniture, and televisions.</li>
+			</ul>
+				
+			<li>When dealing with China, the goods price will be based in US Dollar. Especially raw materials.</li>
+
+			<li>Hire an Accountant.</li>
+			<ul>
+				<li>Put all receipts in a box to give to Accountant.</li>
+ 			</ul>
+ 			<li>Collect samples.</li>
+ 			<li>Leverage Time:</li>
+ 			<ul>
+ 				<li>Grow into Importing career, not go into it.</li>
+ 				<li>Am I making more money from my current job or importing?</li>
+ 				<li>Am I making more money than my current job?</li>
+			</ul>
+			<li>Visit Forbidden City and Great Wall of China.</li>
+			<li>Jetstar Airline.</li>
+			<li>Importing allows you to use tax strategies reserved for the rich.</li>
+		</ul>
+
+		</div>
+		
+		
+		
+		
+		<div id="Foundations7" class="div1">
+
+
+		<img src="https://i.imgur.com/Qdh3zPS.jpg" height="250px">
+		<br>
+		Foundations Online Course\Video 7
+		
+		<ul>
+			<li>Where to source products:</li>
+			<ul>
+				<li>Aliexpress.com</li>
+				<li>Alibaba.com</li>
+				<li>Tradekey.com</li>
+				<li>Madeinchina.com</li>
+				<li>Globalsources.com</li>
+			</ul>
+			<li>Only need $3,000 to $5,000 to start importing.</li>
+			<li>Need a phone and laptop.</li>			
+		</ul>
+				
+		</div>
+		
+		
+		
+		
+		
+		<div id="Foundations8" class="div1">
+
+		<img src="https://i.imgur.com/ROARYcp.jpg" height="250px">
+		<br> Foundations Online Course\Video 8
+		<ul>
+			<li>Choose your product:</li>
+			<ul>
+				<li>Are you "passionate" about it?</li>
+				<li>Are you a consumer of this product?</li>
+				<li>Does it support the need on the market?</li>
+				<li>Is it an accessory to something already popular?</li>
+				<li>Does it have a hign ticket price?</li>
+				<li>Can you sell a lot of them?</li>
+				<li>Does it belong to your niche?</li>
+				<li>Can you pick this one niche and concentrate on it?</li>
+			</ul>
+		</ul>		
+		
+		</div>
+		
+		
+		
+		
+		
+		<div id="Foundations9" class="div1">
+
+		<img src="https://i.imgur.com/NtQlOAp.jpg" height="250px">
+		<br> Foundations Online Course\Video 9
+		
+		<ul>
+			<li>You can not import brand name products. Anybody who says otherwise is lying.</li>
+			<li>By adding a brand to products, your are adding value.</li>
+			<ul>
+				<li>Brenden recommends creating different brands for products, even if they are same product and quality. <br>This can serve different market segments by offering them at different prices.</li>
+				<li>The value of your company increases when it owns brands.</li>
+				<li>It is way easier to sell products that have a brand.</li>
+				<li>Cost a little more.</li>
+				<li>The relationship with your company and a factory becomes an asset that can be sold.</li>
+				<li>Factories make equipment to build your orders <b>O</b>riginal <b>E</b>quipment <b>M</b>anufacturer (<b>O</b><b>E</b><b>M</b>).</li>
+				<li>Register Trademarks and Copyrights for brand names/logos, product names/logos, etc.</li>
+				<li>Lazy way to pick logo: Go out and ask 100 or 200 people which one of four graphics which is better.</li>
+				<li><b><u>EXIT STRATEGY</u></u></b></li>
+			</ul>			
+			<li>Brenden says the Chinese are the most honest to do business with.</li>
+		</ul>
+	
+		<b><u>How Factories Rip You Off</u></b>
+		<ul>	
+			<li>Take advantage of your lack of information.</li>
+			<li>Take the money and figure it out later.</li>
+			<li>Rope you in with cheap prices and give you cheaper materials.</li>
+			<li>Will keep your deposit and complain of production problems which never get resolved.</li>
+			<li>Solution: Audit the factory for variables. Like more than 20% capacity.</li>
+		</ul> 
+		
+		
+		<b><u>Behavior to Watch For</u></b>:
+		<ul>
+			<li>Willing to do anything to get business.</li>
+			<li>Dropping prices to match competitors.</li>
+			<li>If you ask to visit company and they are too busy.</li>
+			<li>Ask for payment via Western Union.</li>
+			<li>Refuse use of an escrow service.</li>
+		</ul> 
+		
+		
+		</div>
+		
+		
+		
+		
+		
+		<div id="Foundations10" class="div1">
+
+
+		<img src="https://i.imgur.com/OQumbiI.jpg" height="250px">
+		<br> Foundations Online Course\Video 10
+
+		<ul>
+			<li>If you can't complete a order(s). GIVE THE MONEY BACK PROMPTLY.</li>
+		</ul>
+		
+		<table border="1px">
+			<tr><th><b><u>Importance of Sample Testing:</u></b></th></tr>
+			<tr><td><p>"Hi Brenden,
+			<br>I have been watching your videos with great appreciation. They have helped me heaps already. I have never imported anything.</p>
+			<p>A small group here in Townsville have got together and formed a company and my part is importing stainless steel water bottles from China. 
+			<br>I have found a particular bottle I believe fits us perfectly.</p>
+			<p>My concern is that I received three samples, and all three leaked when lying on their side.
+			<br>The plain stainless steel one was the least, but still a leak. I contacted the company in China and he assured me that they were old stock and he guarantees the new ones do not leak.</p>
+			<p>I found another company with the same bottles, my concern here is they assured me they do not leak and would send samples. But, they are a bit more difficult to communicate with. I know I need to go over there, however I do not know enough.</p>
+			<p>I would like to know more about your coaching program. Unfortunately, I am unable to attend your seminar next week. Any assistance in this area would be greatly appreciated."</p></td></tr>
+		</table>
+		
+		<ul>
+			<li>Always make sure the sample is acceptable quality. Don't accept anything less.</li>
+			<li>Don't write long essays. Keep it "Point 1, Point 2, Point 3".</li>
+ 			<li>Hire professional translation of emails.</li>
+			<li>Give money to anti-child prostitution charity by selling a cheeky monkey puppet.</li>
+
+			<li>Brenden gives free key chains with the his brand logo to customers who spend more than $100.</li>
+			<ul>
+				<li>The factory produced 4 generations incorrectly to make get the products right. Thats okay!</li>
+				<li>Size was incorrect, logo spelt wrong, logo was inverted.</li>
+				<li>If sample quality is not perfect, tell the factory.</li>
+				<li>Don't order until sample is correct, otherwise why would they do anything after you pay them.</li>
+			</ul>
+			<li>Don't be aggressive about paying for things because people need to make their own money. The system will still produce large profit margins.</li>
+			<li>Have business cards with one side English, and the other Chinese!</li>
+  			
+  			<ul>
+  				<li>Makes you stand out and shows you are serious about doing business.</li>
+				<li>When vendor takes you serious, prices go down.</li>
+  				<li>Attach to signiture of emails:</li>
+			</ul>
+			
+		</ul>
+			
+		<img src="https://i.imgur.com/J27d8Ey.jpg" height="150px">
+
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		<div id="Foundations11" class="div1">
+
+		<img src="https://i.imgur.com/P3MERuZ.jpg" height="250px">
+		<br> Foundations Online Course\Video 11
+
+		<ul>
+			<li>When relationship with factory is strong, ask about their other clients orders quantities and prices. Ask to merge the production runs and offer to pay little more to gain profit margin.</li>
+			<ul>
+				<li>"Standing on the shoulders of gaints."</li>
+				<li>Called piggy backing.</li>
+			</ul>
+			<li>Go to China and meet face to face.</li>
+			<li>Get drunk with the factory owners and sing Karaoke to get better price.</li>
+		</ul>
+			<img src="https://i.imgur.com/Skjrk8d.jpg" height="200px">
+		<ul>
+			<li>The day after a Chinese national holiday, everybody dresses casually.</li>
+		</ul>
+			<img src="https://i.imgur.com/5ksRRK0.jpg" height="200px">
+		<ul>
+			<li>Hire a personal assistant to attend meeting with factory and be a guide on trip to China.</li>
+			<li>Thank everybody for meeting with you.</li>
+			<li>Exchange business cards with 2 hands.</li>
+			<ul>
+				<li>Appreciate both sides of the other persons business card.</li>
+				<li>Respectfully and carefully put other persons business card in card holder.</li>
+				<li>Carefully put card holder in pocket.</li>
+			</ul>
+			<li>Emphasize that market is competitive and customers are always seeking lowest price.</li>
+			<li>Say that your customers seek low price but large volume of product.</li>
+			<li>Mention you have samples from competitors.</li>
+			
+		</ul>
+		
+		</div>
+		
+		
+		
+		
+		
+		<div id="Foundations12" class="div1">
+
+		<img src="https://i.imgur.com/k2FwnuQ.jpg" height="250px">
+		<br> Foundations Online Course\Video 12
+		
+		<ul>
+			<li>The customer pays for shipping.</li>
+			<li>Shipping details are important because the price quotes given by a vendor are affected.</li>
+			<li>Have the vendor send photos before paying for shipping.</li>
+			<li>Instead of sending samples oversea for inspection in home country, have the vendor send them to an inspection service in their domestic country. Save LOTS of money on shipping.</li>
+			<li><b>Cool Tip</b>: Fill unused space in the shipping container with other products or samples.</li>
+			<ul>
+				<li>Meet other importers and consolidate freight space together!</li>
+			</ul>
+			<li>Make a list of things to inspect for the product before doing anything.</li>
+			<ul>
+				<li>Actually stop and write the list out so you can check it off later.</li>
+				<li>Customs broker will help with standards, regulations and requirements.</li>
+			</ul>
+			<li>Show the factory photos of a video camera that you give to the inspection team so they know they are watched.</li>
+			<li>Goods can only be shipped by air or sea.</li>
+			<li>Don't pay before inspection of product quality!</li>
+		</ul>
+			
+		</div>
+			
+			
+			
+			
+			
+			
+			
+			
+		<div id="Foundations13" class="div1">
+
+		<img src="https://i.imgur.com/Cb8P2LE.jpg" height="250px">
+		<br> Foundations Online Course\Video 13
+
+		<table border="1px">
+			<tr>
+				<th rowspan="2">Item</th>
+				<th colspan="5">Landed Cost</th>
+			</tr>
+			
+			<tr>
+				<th>Item Cost</th>
+				<th>Freight Cost</th>
+				<th>Clearing</th>
+				<th>Warehouse Fee</th>
+				<th>Total</th>
+			</tr>
+						
+			<tr>
+				<th>GSM-07</th>
+				<td>$98.64</td>
+				<td>$8.37</td>
+				<td>$2.68</td>
+				<td>$9.57</td>
+				<td>$119.26</td>
+			</tr>
+			
+			<tr>
+				<th>GSM05 Samurai</th>
+				<td>$120.56</td>
+				<td>$9.16</td>
+				<td>$2.90</td>
+				<td>$9.57</td>
+				<td>$142.19</td>
+			</tr>
+
+			<tr>
+				<th>GSM05 Diablo</th>
+				<td>$120.56</td>
+				<td>$9.16</td>
+				<td>$2.90</td>
+				<td>$9.57</td>
+				<td>$142.19</td>
+			</tr>
+			
+			<tr>
+				<th>GSD01</th>
+				<td>$147.96</td>
+				<td>$11.18</td>
+				<td>$5.07</td>
+				<td>$9.57</td>
+				<td>$173.78</td>
+			</tr>
+
+			<tr>
+				<th>GSM-XXX</th>
+				<td>$164.40</td>
+				<td>$8.27</td>
+				<td>$4.24</td>
+				<td>$9.57</td>
+				<td>$186.48</td>
+			</tr>
+			
+			<tr>
+				<th>ATV02</th>
+				<td>$178.10</td>
+				<td>$17.82</td>
+				<td>$4.24</td>
+				<td>$10.83</td>
+				<td>$210.99</td>
+			</tr>
+			
+			<tr>
+				<th>ATV01</th>
+				<td>$253.45</td>
+				<td>$21.59</td>
+				<td>$5.07</td>
+				<td>$11.93</td>
+				<td>$292.04</td>
+			</tr>
+			
+			<tr>
+				<th>GSM07 6 Pack</th>
+				<td>$591.84</td>
+				<td>$50.22</td>
+				<td>$16.08</td>
+				<td>$41.91</td>
+				<td>$700.05</td>
+			</tr>
+			<tr>
+				<th>GSM05 6 Bikes</th>
+				<td>$723.36</td>
+				<td>$54.96</td>
+				<td>$17.40</td>
+				<td>$41.91</td>
+				<td>$837.63</td>
+			</tr>
+		</table>			
+		
+		</div>
+		
+		
+		
+		
+		
+		<div id="AustraliaWebinar" class="div1">
+
+
+		<img src="https://i.imgur.com/I8EYnjz.jpg" height="250px">
+		<br>
+		Australia Webinar
+
+		<ul>
+			<li>This contract template for factories cost $40,000 AUD to draft:</li>
+			<a href="https://i.imgur.com/VnEoT2Z.jpg"><img src="https://i.imgur.com/VnEoT2Z.jpg" height="50px"></a>
+		</ul>
+
+		</div>
+		
 	</body>
 
 </html>
