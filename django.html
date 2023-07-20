@@ -1,0 +1,457 @@
+<html>
+  <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <div id="intro">
+      <p>Web frameworks are a type of software development tool that makes it easier and faster to develop web applications.</p>
+      <p>Django is a MTV framework:
+        <br><b>Models</b>, <b>Templates</b> and <b>Views</b>.
+      </p>
+      <p><b>Model</b>: deals with data and databases, it can retrieve, store, and change data in a database.
+        <br>
+        <b>Template</b>: determines how the data looks on a web page.
+        <br>
+        <b>View</b>: describes the data to be presented, and passes this information to the template.
+      </p>
+    </div>
+    <div id="request">
+      <p>When a <i>request</i> comes to a web server, Django will take the web address and pass it to its <b>urlresolver</b>.
+        <br>
+        Django will try to match the URL to a list of patterns, and if there is a match, then pass the <i>request</i> to the associated <b>View</b> function.
+        <br>
+        Django uses data from the <b>Model</b> and feeds it into the <b>View</b> function to determine what data is shown. 
+        <br>
+        That data is given to the <b>Template</b> and presented to us via the web page.
+      </p>
+      <p><i>Request</i> => <b>urlresolver</b> => <b>View</b>/<b>Model</b> => <b>Template</b>.</p>
+      <br>
+    </div>
+    <div id="project">
+      <p>To create a new <b>Project</b>:</p>
+      <pre><code class="language-bash">django-admin startproject projectname</code></pre>
+      <br>
+      <p>Inside the <b>Project</b> root folder is a Python file, <i>manage.py</i>.
+        <br>
+        That contains a collection of useful functions used to administer the <b>Project</b>. 
+        <br>
+        This file performs the same actions as <i>django-admin</i> but is set specifically to the <b>Project</b>.
+      </p>
+      <p>There is another directory with the same name as the <b>Project</b>. 
+        <br>
+        This folder is treated as a Python package because of the presence of <i>__init__.py</i>.
+        <br>
+        Inside this directory, contains important settings and configuration files for the <b>Project</b>.
+      </p>
+      <p><i>settings.py</i> is a Python file that contains a list called <b>INSTALLED_APPS</b> which contains the apps that make up the Django <b>Project</b>.</p>
+      <p><i>settings.py</i> should contain:</p>
+      <pre><code class="language-python">INSTALLED_APPS = [
+  'django.contrib.admin',
+  'django.contrib.auth',
+  'django.contrib.contenttypes',
+  'django.contrib.sessions',
+  'django.contrib.messages',
+  'django.contrib.staticfiles',
+]</code></pre>
+      <p>Further down in <i>settings.py</i>, is a dictionary named <b>DATABASES</b>.
+        <br>It looks like:
+      </p>
+      <pre><code class="language-python">DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': BASE_DIR / 'db.sqlite3',
+  }
+}</code></pre>
+      <p>Inside the same folder as <i>settings.py</i> is <i>urls.py</i>.
+        <br>
+        <i>urls.py</i> will include this:
+      </p>
+      <pre><code class="language-python">urlpatterns = [
+  path('admin/', admin.site.urls),
+]</code></pre>
+      <p>To start the server:</p>
+      <pre><code class="language-bash">python3 manage.py runserver &lt;port number&gt;</code></pre>
+      <p>A <b>migration</b> is a pending database change.
+        <br>
+        Whenever we make changes to the <b>Model</b> of the database, we must apply the changes by running:
+      </p>
+      <pre><code class="language-bash">python3 manage.py migrate</code></pre>
+    </div>
+    <br>
+    <div id="app">
+      <p>A Django <b>App</b> is a submodule to a project, that contains the code for a specific feature.
+        <br>
+        In the submodule, we’ll find things like: a <i>models.py</i> file, a <b>migration</b> directory, and other files and directories related to the application.
+      </p>
+      <p>A Django <b>Project</b> refers to the entire code base and its parts.
+        <br>
+        The Django <b>Project</b> folder holds <i>manage.py</i> and the other module that includes <i>settings.py</i>.
+      </p>
+      <p>A Django <b>App</b> can be created by running the <i>startapp</i> command in the <b>Project</b> root directory, the directory with <i>manage.py</i>, and providing the name of the <b>App</b> as an additional option.
+        <br>
+        This will create a new directory called myapp alongside the <b>Project</b> settings folder:
+      </p>
+      <pre><code class="language-bash">python3 manage.py startapp myapp</code></pre>
+      <p>In order for Django to be aware of the <b>App’s</b>, it needs to be added to the list of <b>INSTALLED_APPS</b> in the <b>Project’s</b> <i>settings.py</i> file.</p>
+      <pre><code class="language-python">INSTALLED_APPS = [
+  "myapp.apps.MyappConfig"
+]</code></pre>
+    </div>
+    <br>
+    <br>
+    <div id="view">
+      <p>A <b>View</b> is a class or function that processes a <i>request</i> and sends a <i>response</i> back.</p>
+      <p>When a page is requested:</p>
+      <ul>
+        <li>Django creates an <b>HttpRequest</b> object that contains information about the <i>request</i>.</li>
+        <li>Django loads the appropriate <b>View</b>, passing the <b>HttpRequest</b> as the first argument to the <b>View</b> function.</li>
+      </ul>
+      <p>Each <b>View</b> function is responsible for returning an <b>HttpResponse</b> object.
+        <br>
+        <b>HttpResponse</b> is responsible for generating a <i>response</i> that corresponds to a <i>request</i> and is returned to the client.
+      </p>
+    </div>
+    <br>
+    <div id="template">
+      <p>Django will look in each <b>App</b> folder inside <b>INSTALLED_APPS</b> for directories named <b>Templates</b>.
+        <br>
+        <b>Templates</b> are placed in the <b>templates</b> folder inside the <b>App</b>.
+      </p>
+      <pre><b>myapp</b>
+  -<b>templates</b>
+    -<b>myapp</b>
+      -<i>mytemplate.html</i></pre>
+      <br>
+      <pre><code class="language-python">from django.template import loader
+def home():
+  template = loader.get_template("myapp/mytemplate.html")
+  return HttpResponse(template.render())
+</code></pre>
+      <p>When we call a <b>View</b> function to <i>render</i> the <b>Template</b>, we use something called a <i>context</i>.
+        <br>
+        By default, a <i>context</i> is an empty <i>dictionary</i>.
+      </p>
+      <p>We then pass the <i>context</i> as an argument in the <i>render</i> function.
+        <br>
+        The <i>render()</i> function takes the <i>request</i> object as its first argument, 
+        <br>a <b>template</b> name as its second argument, 
+        <br>and a dictionary as an optional third argument that passes the <i>context</i> variables to the <b>Template</b>.
+      </p>
+      <pre><code class="language-python">from django.shortcuts import render
+def home(request):
+  context = {"name": "Junior"}
+  return render(request, "app/home.html", context)</code></pre>
+      <p>The first <b>Template</b> usually made is the homepage of the application.</p>
+      <p><b>Templates</b> can be plain HTML files and are stored inside of <i>appname/templates/appname/</i>.</p>
+      <p>When any <b>Template</b> is referenced inside another <b>Template</b>, it will be done by calling <i>appname/template_name.html</i>, rather then <i>appname/templates/appname/template_name.html</i>.</p>
+      <br>
+      <p>Once the <b>Template</b> is made, some of the code in <i>views.py</i> will have to be modified in order to render the template.</p>
+      <p>Rendering the <b>Template</b> is the Django application taking the <b>Template</b> and displaying it as a normal HTML page in a web browser.</p>
+      <pre><code class="language-html">&lt;div class="topnav" id="pageTopNav"&gt;
+  &lt;a href="#home" class="active"&gt;Home&lt;/a&gt;
+  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+      <br>
+      <p>Now imagine if we included even more links, this navigation bar could grow really large!</p>
+      <p>This means each page that contains this code would continue to grow along with it.</p>
+      <p>Django solves this issue of copying and pasting the same reused code from each <b>Template</b> into something one <b>Template</b> called a <b>base template</b>.</p>
+      <p>Some elements that might go into the <b>base template</b> are: headings, navigation bars, footers, etc — these elements show up on most, if not all of the web pages for the application.</p>
+      <p>A <b>base template</b> is created the same way as a normal <b>template</b>, starting with an HTML file.</p>
+      <p>By convention, the <b>base template</b> is usually called something like <i>base.html</i> or <i>base_template.html</i>.</p>
+      <p>Once the common elements have been moved to <i>base.html</i>, we can start talking about adding page-specific content.</p>
+      <p>Since the <i>base.html</i> will be used across several <b>templates</b>, we need to tell the application where we want our page-specific content to go.</p>
+      <p>To do this, we add <b>tags</b> to the body of the <b>base template</b>.</p>
+      <p><b>Tags</b> are used to help extend the <b>base template</b> to other <b>templates</b>.</p>
+      <p>Just need to know that <b>tags</b> are created using the <b>{% and %}</b> symbols.</p>
+      <p>Inside of these <b>tags</b>, we’ll be adding <b>block content</b>, and later another <b>tag</b> with the <b>content endblock</b>.</p>
+      <p>This creates a block that we can add code to in other <b>templates</b>.</p>
+      <p>This block gives us the ability to later insert content that is specific to individual pages.</p>
+      <p>It should look like this:</p>
+      <pre><code class="language-html">{% block content %}
+ 
+{% endblock %}</code></pre>
+      <p>Typically only page-specific content will go inside of these <b>tags</b> and is added from other <b>templates</b>.</p>
+      <p>These blocks are usually left empty in the <b>base template</b> though.</p>
+      <p>Multiple blocks can be created within the <b>base template</b> and then used in other <b>templates</b>.</p>
+      <p>Blocks can be put anywhere within the <b>base template</b>.</p>
+      <p>This is because not everything page-specific will necessarily go in the body.</p>
+      <br>
+      <p>Let’s say we wanted to refactor a <b>template</b> for an <i>about/</i> page, it might look like:</p>
+      <pre><code class="language-html">&lt;p&gt;Welcome to your local veterinarian's office!&lt;/p&gt;
+&lt;p&gt;Feel free to call us at 123-456-7890!&lt;/p&gt;</code></pre>
+      <p>To use our <b>base template</b> in other templates</b>, we need to include 
+      <pre><code class="language-python">{% extends "appname/base.html" %}</code></pre>
+      at the top of our <i>about/</i> page <b>template</b>:</p>
+      <pre><code class="language-python">{% extends "vetoffice/base.html" %}
+&lt;p&gt; We're all about caring for pets!&lt;/p&gt;
+&lt;p&gt; Contact us at: 123-456-7890 &lt;/p&gt;</code></pre>
+      <p>But this code isn’t complete, we still need to tell our <i>base.html</i> what block of content to include.</p>
+      <p>This can be done by adding two <b>tags</b> to our document before and after the paragraphs that says <b>block content</b> and <b>endblock</b>.</p>
+      <pre><code class="language-python">{% extends "vetoffice/base.html" %}
+{% block content %}
+&lt;p&gt;This will go inside the body&lt;/p&gt;
+&lt;p&gt;This will also be inside the body&lt;/p&gt;
+{% endblock %}</code></pre>
+      <p>Now that that both <b>Templates</b> are set up, all of our common code can go inside of <i>base.html,</i> and any page-specific content can go inside of <i>template.html</i>. </p>
+    </div>
+    <br>
+    <br> 
+    <div id="routes">
+      <p>An app’s <b>URLconf</b> is located in a file named <i>urls.py</i> inside the app’s directory.
+        <br>At the top of <i>urls.py</i>, we import the path object from <i>django.urls</i>, and we import the <b>View</b> functions from <i>views.py</i> and add <b>routes</b> that direct to each of our <b>View</b> functions.
+      </p>
+      <br>
+      <p>The urls.py will look like this:</p>
+      <br>
+      <pre><code class="language-python">from django.urls import path
+from . import views
+ 
+urlpatterns = [
+  path('', views.home),
+  path('profile/', views.profile, name="profile")  
+]</code></pre>
+      <p><i>urlpatterns</i> contains the <b>Routes</b> to each <b>View</b> function.
+        <br>
+        Each <b>Route</b> is provided as a <i>path()</i> object that has three arguments:
+      </p>
+      <ol>
+        <li> The URL <b>route</b> as a string.</li>
+        <li> The name of the function of the View.</li>
+        <li> An optional name used to refer to the View.</li>
+      </ol>
+      <p>To make Django aware of the app’s <b>URLconf</b>, it must be included in the project’s <b>URLconf</b>, also called <i>urls.py</i>.
+        <br>
+        The default <i>urls.py</i> folder for a <b>Project</b> looks like this:
+      </p>
+      <br>
+      <pre><code class="language-python">from django.contrib import admin
+from django.urls import path
+urlpatterns = [
+  path("admin/", admin.site.urls),
+]</code></pre>
+      <p>To include the app’s <b>URLconf</b> we import the <i>include path</i> from <i>django.urls</i> and add a <i>path()</i> to the <b>urlpatterns</b>.</p>
+      <pre><code class="language-python">from django.contrib import admin
+from django.urls import include, path
+ 
+urlpatterns = [
+  path("admin/", admin.site.urls),
+  path("", include("myapp.urls")),
+]</code></pre>
+    </div>
+    <br>
+    <div id="setup">
+      <pre><code class="language-bash">django-admin startproject fortuneteller
+cd fortuneteller
+python3 manage.py migrate
+python3 manage.py runserver 0.0.0.0:4001
+</code></pre>
+      <pre><code class="language-bash">python3 manage.py startapp randomfortune
+cd fortuneteller</code></pre>
+      <p>Add <i>randomfortune.apps.RandomfortuneConfig</i> to <i>settings.py</i></p>
+      <pre><code class="language-bash">cd ..
+cd randomfortune
+mkdir templates
+cd templates
+mkdir randomfortune
+cd randomfortune
+touch fortune.html</code></pre>
+      <p>Add to <i>fortune.html</i>:</p>
+      <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+ &lt;title&gt;Django Fortune Teller&lt;/title&gt;
+ &lt;style&gt;
+   body {
+     text-align: center;
+   }
+ &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+ &lt;h1&gt;Here is your fortune:&lt;/h1&gt;
+ 
+ &lt;p&gt;{{ fortune }}&lt;/p&gt;
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      <br>
+      <br>
+      <pre><code class="language-bash">
+cd ..
+cd ..
+touch urls.py</code></pre>
+      <p>Open <i>views.py</i> in <i>randomfortune</i> and add:</p>
+      <pre><code class="language-python">from django.shortcuts import render
+import random
+fortuneList = ["booo im a ghost","booo im a ghost 2","booo im a ghost 3","booo im a ghost 4","booo im a ghost 5","booo im a ghost 6","booo im a ghost 7"]
+# Create your views here.
+def fortune(request):
+  fortune = random.choice(fortuneList)
+  context = {
+    "fortune": fortune
+  }
+  return render(request, "randomfortune/fortune.html", context)
+</code></pre>
+      <br>
+      <p>Add to <i>urls.py</i> in <i>randomfortune</i>:</p>
+      <pre><code class="language-python">from django.urls import path
+from . import views
+urlpatterns = [
+  path("", views.fortune)
+]</code></pre>
+      <br>
+      <pre><code class="language-bash">cd ..
+cd fortuneteller</code></pre>
+      <p>Add to <i>urls.py</i> in <b>fortuneteller</b>:</p>
+      <pre><code class="language-python">from django.contrib import admin
+from django.urls import path, include
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path("", include("randomfortune.urls"))
+]</code></pre>
+    </div>
+    <div id="static">
+      <p>We need a folder to store our CSS files, this folder will be in the application’s main folder and called <i>static/</i>.</p>
+      <p>This folder will hold assets like pictures and CSS files. Another folder will be created inside of <i>static/</i> that will be named after our <b>application</b>.</p>
+      <p>
+      <pre><b>myProject</b>
+  -<b>myApp</b>
+    -<i>static</i>
+      -<b>myApp</b>
+        <i>file.css</i></pre>
+      </p>
+      <p>Once a CSS file is added to <i>static/appname</i>, it can be referenced within our <b>Templates</b> inside of blocks formed in the <i>base.html</i> &lt;head&gt; elements.</p>
+      <p>This is because <i>static</i> files will not be passed down to children of the <i>base.html</i> <b>Template</b>.</p>
+      <p>The files in our <i>static/</i> folder should be loaded in the &lt;header&gt;.</p>
+      <p>Therefore, we’ll add another <b>block tag</b>, like so:</p>
+      <pre><code class="language-python">&lt;!-- base.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+  {% block head %}
+ 
+  {% endblock %}
+&lt;/head&gt;</code></pre>
+      <p>Inside of the <b>template</b> we’ll be using, we first need to load in <i>static</i> files.</p>
+      <p>This is typically done at the beginning of the file after extending from <i>base.html</i>. </p>
+      <p>This will let us access all of our <i>static</i> files later. </p>
+      <p>Then the block created from <i>base.html</i> can be added to the document. </p>
+      <p>This is the block where the CSS will be loaded in. </p>
+      <p>This is done by loading a CSS file as normal, except setting the href to a <b>tag</b> that says <b>{%</b> <i>static</i> 'appname/file.css' <b>%}</b>.</p>
+      <p>It should look like the code below:</p>
+      <pre><code class="language-python">&lt;!-- base.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+  &lt;!-- Add your head block below: --&gt;
+  {% load static %}
+   
+  {% block head %}
+  &lt;link rel="stylesheet" href="{% static 'vetoffice/style.css' %}"&gt;
+  {% endblock %}
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to Vet Office!&lt;/h1&gt;
+  {% block content %}
+  {% endblock %}
+&lt;/body&gt;
+&lt;!-- base.html --&gt;</code></pre>
+      <br>
+      <pre><code class="language-python">&lt;!-- home.html --&gt;
+{% extends 'vetoffice/base.html' %}
+&lt;!-- Add your code below: --&gt;
+{% load static %}
+ 
+{% block head %}
+&lt;link rel="stylesheet" href="{% static 'vetoffice/style.css' %}"&gt;
+{% endblock %}
+
+{% block content %}
+&lt;p&gt;Welcome!&lt;/p&gt;
+{% endblock %}</code></pre>
+    </div>
+    <div id="dtl">
+      <p>Django Template Language, or <b>DTL</b>, is a <b>template</b> language created specifically for Django.</p>
+      <p>Its primary purpose is to help reduce the amount of code necessary for running a webpage.</p>
+      <p><b>{{</b> and <b>}}</b>, we call these symbols <b>variable tags</b>.</p>
+      <p>When we add a variable in between <b>variable tags</b>, Django knows that we want the value of that variable from our <i>views.py</i> file.</p>
+      <p>An <i>if</i> statement in <b>DTL</b> is very similar to Python <i>if</i> statements.</p>
+      <p>However, they consist of two necessary components and two optional components.</p>
+      <p>The major components are:</p>
+      <ul>
+        <li>An <i>if</i> keyword is used in every <i>if</i> statement and its purpose is the same as in Python.</li>
+        <li>An <i>endif</i> keyword is used to let <b>DTL</b> know that we are at the end of the <i>if</i> statement.</li>
+      </ul>
+      <p>The two optional components are:</p>
+      <ul>
+        <li><i>elif</i>, which is used if we want to check more than one condition within the <i>if</i> statement.</li>
+        <li><i>else</i>, which will execute whenever the <i>if</i> and all <i>elifs</i> evaluates as <b>false</b>.
+          <br>It will be the last thing included in an <i>if</i> statement before the <i>endif</i>.
+        </li>
+      </ul>
+      <p>To add an <i>if</i> statement to the <b>template</b>, we’ll need to set it up inside of <b>tags</b>.</p>
+      <p>Remember, <b>tags</b> are the <b>{%</b> and <b>%}</b> symbols we used earlier for extending our <b>base template</b> to other <b>templates</b>.</p>
+      <p>Generally, <b>tags</b> are used to tell the <b>DTL</b> that an expression needs to be executed or evaluated.</p>
+      <p>There is no need to use separate <b>variable tags</b> when accessing a variable in normal <b>tags</b>.</p>
+      <pre><code class="language-python">{% if city.name == "New York" %}
+  &lt;p&gt;Attractions for New York City are&lt;/p&gt;
+  
+{% elif city.name == "Los Angeles" %}
+  &lt;p&gt;Attractions for Los Angeles are&lt;/p&gt;
+  
+{% else %}
+  &lt;p&gt;We currently do not have any attractions for that city&lt;/p&gt;
+{% endif %}</code></pre>
+    </div>
+    <br>
+    <div id="for">
+      <p>When dealing with a dictionary in a Django <b>template</b>, we can save time by taking advantage of <b>DTL’s</b> <b>for</b> loop to iterate over individual items.</p>
+      <p>Loops in <b>DTL</b> work like regular Python <b>for</b> loops but still require <b>tags</b>.</p>
+      <p>To write a loop in <b>DTL</b> we’ll need to use our <b>{% %} tags</b> and insert the syntax for a <b>for</b> loop.</p>
+      <p>The syntax to start a <b>for</b> loop requires:</p>
+      <ul>
+        <li>The <b>for</b> keyword.</li>
+        <li>The name of the new variables we’ll be creating in the loop.</li>
+        <li>An indicator saying <b>in</b>.</li>
+        <li>The list we’ll be using in the loop.</li>
+      </ul>
+      <p>Those will all be listed out in that order, and will be followed with an <b>{% endfor %}</b> at the end of the loop.</p>
+      <p>It will look like this:</p>
+      <pre><code class="language-python">{% for item in list_name %}
+  &lt;p&gt;{{ item }}&lt;/p&gt;
+{% endfor %}</code></pre>
+      <p>Inside the loop’s body, during each iteration, we can access the current key using the temporary variable <b>key</b> inside <b>variable tags {{ }}</b>.</p>
+      <p>If our list contains dictionaries, we could even access the value of our dictionary if we change our loop:</p>
+      <pre><code class="language-python">{% for key, value in dictionary_list %}
+  &lt;p&gt;{{ key }} : {{ value }}&lt;/p&gt;
+{% endfor %}</code></pre>
+    </div>
+    <div id="a">
+      <p>When navigating between pages using HTML, we need the entire URL to be written out in a <b>&lt;a&lt;</b> element’s <i>href</i> attribute.</p>
+      <p>With Django, rather than using the full URL we get a shortcut by using <b>tags</b> and the name of predefined paths!</p>
+      <pre><code class="language-python">&lt;a href="{% url 'path_name' %}"&gt;Sample link&lt;/a&gt;</code></pre>
+      <br>
+      <p>When a path requires arguments to get to, like a username, it can be added to the <i>href</i> after the path.</p>
+      <p>In this case, arguments provide additional information to the URL to access more specific pages.</p>
+      <pre><code class="language-python">&lt;a href="{% url 'path_name' username %}"&gt;User Profile&lt;/a&gt;</code></pre>
+    </div>
+    <div id="filter">
+      <p>With Django, variables can be modified from within the template using a <a href="https://docs.djangoproject.com/en/3.1/ref/templates/builtins/">filter</a>.</p>
+      <p><b>Filters</b> modify variables passed in from <i>views.py</i> without the use of traditional methods like JavaScript.</p>
+      <pre><code class="language-python">&lt;p&gt;{{ username|upper }}&lt;/p&gt;</code></pre>
+      <p>The <b>filter</b> is added onto a variable by using the <b>|</b> symbol inside of the <b>variable tags</b> with the variable.</p>
+      <p>The symbol goes after the variable name, and is followed by the <b>filter</b> that you want to use.</p>
+      <p>In the above example, the upper <b>filter</b> converts the variable’s value to all uppercase characters.</p>
+      <p>Some <b>filters</b> also require arguments, however, arguments are handled differently with filters compared to how we handled arguments with URL.</p>
+      <p>A filter with an argument can be seen here:</p>
+      <pre><code class="language-python">{{ description|truncatewords_html:2 }}</code></pre>
+      <p>We were able to supply our argument after the <b>filter</b> name separated by a <b>:</b></p>
+      <p>The truncatewords_html <b>filter</b> requires an argument and will shorten text down to the integer supplied by our argument.</p>
+      <p>In our case, we want to display 2 words max.</p>
+      <p>Any other words in the description variable will be replaced with ....</p>
+      <p>Some <b>filters</b> also require certain data types in order to work.</p>
+      <p>For instance, the time <b>filter</b> requires a variable of data type <i>datetime.datetime.Now()</i>, and will not work with any other data type.</p>
+    </div>
+  </body>
+</html>
