@@ -1,42 +1,77 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<script src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<style>
-			body {
-			background: #0098ff;
-			display: flex;
-			height: 100vh;
-			margin: 0;
-			align-items: center;
-			justify-content: center;
-			padding: 0 50px;
-			font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-			}
-			video {
-			max-width: calc(50% - 100px);
-			margin: 0 50px;
-			box-sizing: border-box;
-			border-radius: 2px;
-			padding: 0;
-			background: white;
-			}
-			.copy {
-			position: fixed;
-			top: 10px;
-			left: 50%;
-			transform: translateX(-50%);
-			font-size: 16px;
-			color: white;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="copy">Send your URL to a friend to start a video call</div>
-		<video id="localVideo" autoplay></video>
-		<video id="remoteVideo" autoplay></video>
-		<script>
+<head>
+  <script src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #0098ff;
+      color: white;
+      font-size: 16px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .video-container {
+      display: flex;
+      width: 100%;
+      height: 50%;
+    }
+
+    .video-container video {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+      background: white;
+      border: 2px solid #FF0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <center>
+      <h1>Welcome!</h1>
+      <p>Room: <a id="room"></a></p>
+      <p>Share URL: <input type="text" id="roomurl" value=""><button id="copyButton">Copy</button></p>
+    </center>
+    <div class="video-container">
+      <video id="localVideo" autoplay></video>
+      <video id="remoteVideo" autoplay></video>
+    </div>
+  </div>
+  <script>
+    		document.getElementById("room").innerHTML = location.href.split("#")[1];
+			document.getElementById("roomurl").setAttribute("value", location.href);
+					
+			const textInput = document.getElementById('roomurl');
+			const copyButton = document.getElementById('copyButton');
+
+			copyButton.addEventListener('click', () => {
+				// Select the text in the input field
+				textInput.select();
+				textInput.setSelectionRange(0, 99999); // For mobile devices
+
+				// Copy the selected text to the clipboard
+				document.execCommand('copy');
+
+				// Clear the selection
+				window.getSelection().removeAllRanges();
+
+				// Provide feedback to the user
+				copyButton.innerText = 'Copied!';
+				setTimeout(() => {
+					copyButton.innerText = 'Copy';
+				}, 2000); // Reset button text after 2 seconds
+			});
 			let room;
 			let pc;
 
@@ -143,6 +178,10 @@
 
 
 
+
+
+
+
 				// Listen to signaling data from Scaledrone
 				room.on('data', (message, client) => {
 					// Message was sent by us
@@ -181,6 +220,7 @@
 					onError
 				);
 			}
-		</script>
-	</body>
+  </script>
+</body>
 </html>
+
