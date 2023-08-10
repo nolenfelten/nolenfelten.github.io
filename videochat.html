@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <script src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <style>
@@ -16,27 +17,452 @@
     }
 
     .container {
+      z-index: 1;
       display: flex;
       flex-direction: column;
       height: 100%;
+	  background-color: rgba(0, 0, 0, 0.2);
     }
 
+    center {
+      z-index: 1;
+      width: 100%;
+	  background-color: rgba(0, 0, 0, 0.1);
+    }
     .video-container {
+      z-index: 1;
       display: flex;
       width: 100%;
-      height: 50%;
+      height: 75%;
+	  background-color: rgba(0, 0, 0, 0.2);
     }
 
     .video-container video {
+      z-index: 1;
       width: 50%;
       height: 100%;
       object-fit: cover;
-      background: white;
+      background: rgba(0, 0, 0, 0.2);
       border: 2px solid #FF0000;
     }
+	
+	
+	
+	@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 16px) rotate(720deg);
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #0064ff;
+    overflow: hidden;
+}
+
+.background span {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 5vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation: move;
+    animation-duration: 39;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.background span:nth-child(0) {
+    color: #ffffff;
+    top: 41%;
+    left: 32%;
+    animation-duration: 66s;
+    animation-delay: -51s;
+    transform-origin: -17vw -24vh;
+    box-shadow: -10vmin 0 1.295942586774502vmin currentColor;
+}
+.background span:nth-child(1) {
+    color: #ffffff;
+    top: 43%;
+    left: 51%;
+    animation-duration: 26s;
+    animation-delay: -82s;
+    transform-origin: 9vw -4vh;
+    box-shadow: -10vmin 0 1.601424047052888vmin currentColor;
+}
+.background span:nth-child(2) {
+    color: #ffffff;
+    top: 79%;
+    left: 54%;
+    animation-duration: 70s;
+    animation-delay: -66s;
+    transform-origin: -2vw -21vh;
+    box-shadow: -10vmin 0 1.7451471232803264vmin currentColor;
+}
+.background span:nth-child(3) {
+    color: #ffffff;
+    top: 29%;
+    left: 80%;
+    animation-duration: 99s;
+    animation-delay: -6s;
+    transform-origin: -11vw 24vh;
+    box-shadow: 10vmin 0 1.2952681456815436vmin currentColor;
+}
+.background span:nth-child(4) {
+    color: #ffffff;
+    top: 12%;
+    left: 49%;
+    animation-duration: 39s;
+    animation-delay: -78s;
+    transform-origin: 7vw 24vh;
+    box-shadow: 10vmin 0 2.0374235668487453vmin currentColor;
+}
+.background span:nth-child(5) {
+    color: #ffffff;
+    top: 49%;
+    left: 54%;
+    animation-duration: 36s;
+    animation-delay: -50s;
+    transform-origin: -9vw -3vh;
+    box-shadow: 10vmin 0 1.4903637307362778vmin currentColor;
+}
+.background span:nth-child(6) {
+    color: #ffffff;
+    top: 30%;
+    left: 72%;
+    animation-duration: 35s;
+    animation-delay: -85s;
+    transform-origin: -6vw 0vh;
+    box-shadow: -10vmin 0 2.0328825516798683vmin currentColor;
+}
+.background span:nth-child(7) {
+    color: #ffffff;
+    top: 33%;
+    left: 41%;
+    animation-duration: 99s;
+    animation-delay: -21s;
+    transform-origin: 12vw 17vh;
+    box-shadow: -10vmin 0 1.3816601535293562vmin currentColor;
+}
+.background span:nth-child(8) {
+    color: #ffffff;
+    top: 82%;
+    left: 6%;
+    animation-duration: 81s;
+    animation-delay: -40s;
+    transform-origin: -17vw -11vh;
+    box-shadow: 10vmin 0 1.9220292285956186vmin currentColor;
+}
+.background span:nth-child(9) {
+    color: #ffffff;
+    top: 59%;
+    left: 40%;
+    animation-duration: 86s;
+    animation-delay: -37s;
+    transform-origin: 9vw 3vh;
+    box-shadow: -10vmin 0 1.6406431515069269vmin currentColor;
+}
+.background span:nth-child(10) {
+    color: #ffffff;
+    top: 90%;
+    left: 27%;
+    animation-duration: 108s;
+    animation-delay: -99s;
+    transform-origin: 13vw -9vh;
+    box-shadow: -10vmin 0 1.4011410130054118vmin currentColor;
+}
+.background span:nth-child(11) {
+    color: #ffffff;
+    top: 80%;
+    left: 28%;
+    animation-duration: 106s;
+    animation-delay: -9s;
+    transform-origin: -24vw 25vh;
+    box-shadow: 10vmin 0 1.6483375547051176vmin currentColor;
+}
+.background span:nth-child(12) {
+    color: #ffffff;
+    top: 35%;
+    left: 55%;
+    animation-duration: 39s;
+    animation-delay: -34s;
+    transform-origin: 10vw 11vh;
+    box-shadow: -10vmin 0 2.1665953308446664vmin currentColor;
+}
+.background span:nth-child(13) {
+    color: #ffffff;
+    top: 9%;
+    left: 68%;
+    animation-duration: 79s;
+    animation-delay: -12s;
+    transform-origin: 5vw 21vh;
+    box-shadow: -10vmin 0 1.67190206914705vmin currentColor;
+}
+.background span:nth-child(14) {
+    color: #ffffff;
+    top: 23%;
+    left: 61%;
+    animation-duration: 94s;
+    animation-delay: -98s;
+    transform-origin: 16vw 6vh;
+    box-shadow: 10vmin 0 1.5644260652908626vmin currentColor;
+}
+.background span:nth-child(15) {
+    color: #ffffff;
+    top: 15%;
+    left: 95%;
+    animation-duration: 115s;
+    animation-delay: -25s;
+    transform-origin: 2vw -3vh;
+    box-shadow: 10vmin 0 1.4745760943047443vmin currentColor;
+}
+.background span:nth-child(16) {
+    color: #ffffff;
+    top: 14%;
+    left: 54%;
+    animation-duration: 97s;
+    animation-delay: -12s;
+    transform-origin: -17vw -3vh;
+    box-shadow: -10vmin 0 1.8302508441687972vmin currentColor;
+}
+.background span:nth-child(17) {
+    color: #ffffff;
+    top: 38%;
+    left: 43%;
+    animation-duration: 62s;
+    animation-delay: -65s;
+    transform-origin: -13vw -6vh;
+    box-shadow: -10vmin 0 1.9031514845429163vmin currentColor;
+}
+.background span:nth-child(18) {
+    color: #ffffff;
+    top: 65%;
+    left: 42%;
+    animation-duration: 29s;
+    animation-delay: -92s;
+    transform-origin: -3vw -1vh;
+    box-shadow: 10vmin 0 2.0026824262588305vmin currentColor;
+}
+.background span:nth-child(19) {
+    color: #ffffff;
+    top: 6%;
+    left: 44%;
+    animation-duration: 29s;
+    animation-delay: -29s;
+    transform-origin: -13vw 6vh;
+    box-shadow: -10vmin 0 1.2689075024900829vmin currentColor;
+}
+.background span:nth-child(20) {
+    color: #ffffff;
+    top: 56%;
+    left: 76%;
+    animation-duration: 15s;
+    animation-delay: -60s;
+    transform-origin: -9vw -11vh;
+    box-shadow: -10vmin 0 1.4567786749341647vmin currentColor;
+}
+.background span:nth-child(21) {
+    color: #ffffff;
+    top: 86%;
+    left: 5%;
+    animation-duration: 37s;
+    animation-delay: -17s;
+    transform-origin: -16vw 11vh;
+    box-shadow: 10vmin 0 2.244131969236604vmin currentColor;
+}
+.background span:nth-child(22) {
+    color: #ffffff;
+    top: 64%;
+    left: 10%;
+    animation-duration: 82s;
+    animation-delay: -42s;
+    transform-origin: -21vw -5vh;
+    box-shadow: -10vmin 0 1.5677366442677014vmin currentColor;
+}
+.background span:nth-child(23) {
+    color: #ffffff;
+    top: 54%;
+    left: 35%;
+    animation-duration: 110s;
+    animation-delay: -57s;
+    transform-origin: -24vw 19vh;
+    box-shadow: -10vmin 0 1.8530898422977384vmin currentColor;
+}
+.background span:nth-child(24) {
+    color: #ffffff;
+    top: 58%;
+    left: 5%;
+    animation-duration: 96s;
+    animation-delay: -28s;
+    transform-origin: -20vw 11vh;
+    box-shadow: -10vmin 0 1.2733720137415636vmin currentColor;
+}
+.background span:nth-child(25) {
+    color: #ffffff;
+    top: 95%;
+    left: 6%;
+    animation-duration: 48s;
+    animation-delay: -90s;
+    transform-origin: -8vw 2vh;
+    box-shadow: 10vmin 0 2.2371133772335394vmin currentColor;
+}
+.background span:nth-child(26) {
+    color: #ffffff;
+    top: 96%;
+    left: 26%;
+    animation-duration: 42s;
+    animation-delay: -26s;
+    transform-origin: -6vw 3vh;
+    box-shadow: -10vmin 0 2.105670098435086vmin currentColor;
+}
+.background span:nth-child(27) {
+    color: #ffffff;
+    top: 45%;
+    left: 83%;
+    animation-duration: 63s;
+    animation-delay: -19s;
+    transform-origin: -22vw -21vh;
+    box-shadow: 10vmin 0 2.058186391595312vmin currentColor;
+}
+.background span:nth-child(28) {
+    color: #ffffff;
+    top: 74%;
+    left: 48%;
+    animation-duration: 67s;
+    animation-delay: -69s;
+    transform-origin: 23vw 6vh;
+    box-shadow: 10vmin 0 1.6803551935061831vmin currentColor;
+}
+.background span:nth-child(29) {
+    color: #ffffff;
+    top: 80%;
+    left: 28%;
+    animation-duration: 60s;
+    animation-delay: -109s;
+    transform-origin: -14vw -16vh;
+    box-shadow: 10vmin 0 1.9169389839721709vmin currentColor;
+}
+.background span:nth-child(30) {
+    color: #ffffff;
+    top: 51%;
+    left: 3%;
+    animation-duration: 91s;
+    animation-delay: -41s;
+    transform-origin: -17vw -17vh;
+    box-shadow: 10vmin 0 1.2586908346757786vmin currentColor;
+}
+.background span:nth-child(31) {
+    color: #ffffff;
+    top: 40%;
+    left: 62%;
+    animation-duration: 114s;
+    animation-delay: -45s;
+    transform-origin: 11vw 14vh;
+    box-shadow: 10vmin 0 2.04651972548183vmin currentColor;
+}
+.background span:nth-child(32) {
+    color: #ffffff;
+    top: 82%;
+    left: 64%;
+    animation-duration: 36s;
+    animation-delay: -72s;
+    transform-origin: 3vw -8vh;
+    box-shadow: 10vmin 0 1.7615924294477285vmin currentColor;
+}
+.background span:nth-child(33) {
+    color: #ffffff;
+    top: 43%;
+    left: 78%;
+    animation-duration: 98s;
+    animation-delay: -108s;
+    transform-origin: -6vw -8vh;
+    box-shadow: 10vmin 0 1.590359611658343vmin currentColor;
+}
+.background span:nth-child(34) {
+    color: #ffffff;
+    top: 53%;
+    left: 83%;
+    animation-duration: 24s;
+    animation-delay: -71s;
+    transform-origin: 12vw -18vh;
+    box-shadow: 10vmin 0 2.2425821310671394vmin currentColor;
+}
+.background span:nth-child(35) {
+    color: #ffffff;
+    top: 53%;
+    left: 43%;
+    animation-duration: 17s;
+    animation-delay: -106s;
+    transform-origin: 3vw 11vh;
+    box-shadow: -10vmin 0 1.9732733381677983vmin currentColor;
+}
+.background span:nth-child(36) {
+    color: #ffffff;
+    top: 5%;
+    left: 92%;
+    animation-duration: 31s;
+    animation-delay: -40s;
+    transform-origin: -24vw 19vh;
+    box-shadow: -10vmin 0 2.016432895931434vmin currentColor;
+}
+.background span:nth-child(37) {
+    color: #ffffff;
+    top: 27%;
+    left: 94%;
+    animation-duration: 17s;
+    animation-delay: -88s;
+    transform-origin: -14vw 8vh;
+    box-shadow: -10vmin 0 1.7862110231349515vmin currentColor;
+}
+
   </style>
 </head>
 <body>
+<div class="background">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+</div>
   <div class="container">
     <center>
       <h1>Welcome!</h1>
@@ -48,179 +474,217 @@
       <video id="remoteVideo" autoplay></video>
     </div>
   </div>
+  
   <script>
-    		document.getElementById("room").innerHTML = location.href.split("#")[1];
-			document.getElementById("roomurl").setAttribute("value", location.href);
+
+	let room;
+	let pc;
+
+
+
+	const chat = new Scaledrone('y0N6q0oVsjY9fEiu');
+	const configuration = { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] };
+
+
+	// Generate random room name if needed
+	if (!location.hash) {
+		location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+	};
+	
+	
+	const roomName = 'observable-' + location.hash.substring(1);
+	
+
+
+	function onSuccess() {};
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	const notifyBox = document.getElementById('notify-box');
+	const notifyText = document.getElementById('notify-text');
+
+	
+
+	function onError(error) {
+        console.error(error);
+    }
+	
+	
+	document.getElementById("room").innerHTML = location.href.split("#")[1];
+	document.getElementById("roomurl").setAttribute("value", location.href);
+
+const copyButton = document.getElementById("copyButton");
+
+  copyButton.addEventListener("click", () => {
+    const roomUrlInput = document.getElementById("roomurl");
+
+    // Select the text in the input field
+    roomUrlInput.select();
+
+    // For mobile devices
+    roomUrlInput.setSelectionRange(0, 99999);
+
+    // Copy the selected text to the clipboard
+    document.execCommand("copy");
+
+    // Clear the selection
+    window.getSelection().removeAllRanges();
+
+    // Provide feedback to the user
+    copyButton.innerText = "Copied!";
+
+    // Reset button text after 2 seconds
+    setTimeout(() => {
+      copyButton.innerText = "Copy";
+    }, 2000);
+  });
+
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+	// A connection has been opened. 
+	// The error argument indicates a problem with the connection.
+	chat.on('open', error => {
+
+		// Connect to room.
+		if (error) { return onError; }
+
+		room = chat.subscribe(roomName);
+
+		room.on('open', error => { if (error) { onError(error); } } );
+
+
+		// We're connected to the room and received an array of 'members' connected to the room (including us). 
+		room.on('members', members => {
+			console.log('MEMBERS', members);
+			
+			// If we are the second user to connect to the room we will be creating the offer
+			const isOfferer = members.length === 2;
+			startWebRTC(isOfferer);
+		});
+	});
+
+
+
+
+	// Send signaling data via Scaledrone
+	function sendMessage(message) {
+		chat.publish({
+			room: roomName,
+			message
+		});
+	}
+
+
+
+
+	function startWebRTC(isOfferer) {
+		pc = new RTCPeerConnection(configuration);
+
+		// 'onicecandidate' notifies us whenever an ICE agent needs to deliver a
+		// message to the other peer through the signaling server
+		pc.onicecandidate = event => {
+			if (event.candidate) {
+				sendMessage({
+					'candidate': event.candidate
+				});
+			}
+		};
+
+		// If user is offerer let the 'negotiationneeded' event create the offer
+		if (isOfferer) {
+		
+			pc.onnegotiationneeded = () => {
+			
+				pc.createOffer().then(localDescCreated).catch(onError);
+			
+			}
+		}
+
+		// When a remote stream arrives 
+		// display it in the #remoteVideo element
+		pc.onaddstream = event => {
+		
+			remoteVideo.srcObject = event.stream;
+			
+		};
+
+
+
+		navigator.mediaDevices.getUserMedia( { audio: true, video: true, } ).then( stream => {
+			
+			// Display your local video in #localVideo element
+			localVideo.srcObject = stream;
+			
+			// Add your stream to be sent to the conneting peer
+			pc.addStream(stream);
+						
+		}, onError);
+
+
+
+
+
+
+
+		// Listen to signaling data from Scaledrone
+		room.on('data', (message, client) => {
+
+		
+			// Message was sent by us
+			if (client.id === chat.clientId) { return; }
+
+
+
+			if (message.sdp) {
+			
+				// This is called after receiving an offer or answer from another peer
+				// When receiving an offer lets answer it
+				pc.setRemoteDescription(new RTCSessionDescription(message.sdp), () => { if (pc.remoteDescription.type === 'offer') { pc.createAnswer().then(localDescCreated).catch(onError); } }, onError );
 					
-			const textInput = document.getElementById('roomurl');
-			const copyButton = document.getElementById('copyButton');
-
-			copyButton.addEventListener('click', () => {
-				// Select the text in the input field
-				textInput.select();
-				textInput.setSelectionRange(0, 99999); // For mobile devices
-
-				// Copy the selected text to the clipboard
-				document.execCommand('copy');
-
-				// Clear the selection
-				window.getSelection().removeAllRanges();
-
-				// Provide feedback to the user
-				copyButton.innerText = 'Copied!';
-				setTimeout(() => {
-					copyButton.innerText = 'Copy';
-				}, 2000); // Reset button text after 2 seconds
-			});
-			let room;
-			let pc;
-
-			const configuration = {
-				iceServers: [{
-					urls: 'stun:stun.l.google.com:19302'
-				}]
-			};
-
-			const drone = new ScaleDrone('y0N6q0oVsjY9fEiu');
-
-
-
-
-			function onSuccess() {};
-
-			function onError(error) {
-				console.error(error);
-			};
-
-
-			// Generate random room name if needed
-			if (!location.hash) {
-				location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
-			};
-			const roomHash = location.hash.substring(1);
-
-
-
-
-			// Room name needs to be prefixed with 'observable-'
-			const roomName = 'observable-' + roomHash;
-
-
-
-
-			drone.on('open', error => {
-
-				if (error) {
-					return console.error(error);
-				}
-
-				room = drone.subscribe(roomName);
-
-				room.on('open', error => {
-					if (error) {
-						onError(error);
-					}
-				});
-
-
-				// We're connected to the room and received an array of 'members'
-				// connected to the room (including us). Signaling server is ready.
-				room.on('members', members => {
-					console.log('MEMBERS', members);
-					// If we are the second user to connect to the room we will be creating the offer
-					const isOfferer = members.length === 2;
-					startWebRTC(isOfferer);
-				});
-			});
-
-
-
-
-			// Send signaling data via Scaledrone
-			function sendMessage(message) {
-				drone.publish({
-					room: roomName,
-					message
-				});
+					
+			} else if (message.candidate) {
+			
+				// Add the new ICE candidate to our connections remote description
+				pc.addIceCandidate( new RTCIceCandidate(message.candidate), onSuccess, onError );
+				
 			}
-
-			function startWebRTC(isOfferer) {
-				pc = new RTCPeerConnection(configuration);
-
-				// 'onicecandidate' notifies us whenever an ICE agent needs to deliver a
-				// message to the other peer through the signaling server
-				pc.onicecandidate = event => {
-					if (event.candidate) {
-						sendMessage({
-							'candidate': event.candidate
-						});
-					}
-				};
-
-				// If user is offerer let the 'negotiationneeded' event create the offer
-				if (isOfferer) {
-					pc.onnegotiationneeded = () => {
-						pc.createOffer().then(localDescCreated).catch(onError);
-					}
-				}
-
-				// When a remote stream arrives display it in the #remoteVideo element
-				pc.onaddstream = event => {
-					remoteVideo.srcObject = event.stream;
-				};
-
-				navigator.mediaDevices.getUserMedia({ audio: true, video: true, }).then(stream => {
-					// Display your local video in #localVideo element
-					localVideo.srcObject = stream;
-					// Add your stream to be sent to the conneting peer
-					pc.addStream(stream);
-				}, onError);
+		
+		});
+		
+	}
 
 
 
 
 
 
-
-				// Listen to signaling data from Scaledrone
-				room.on('data', (message, client) => {
-					// Message was sent by us
-					if (client.id === drone.clientId) {
-						return;
-					}
-
-					if (message.sdp) {
-						// This is called after receiving an offer or answer from another peer
-						pc.setRemoteDescription(new RTCSessionDescription(message.sdp), () => {
-							// When receiving an offer lets answer it
-							if (pc.remoteDescription.type === 'offer') {
-								pc.createAnswer().then(localDescCreated).catch(onError);
-							}
-						}, onError);
-					} else if (message.candidate) {
-						// Add the new ICE candidate to our connections remote description
-						pc.addIceCandidate(
-							new RTCIceCandidate(message.candidate), onSuccess, onError
-						);
-					}
-				});
-			}
-
-
-
-
-
-
-			function localDescCreated(desc) {
-				pc.setLocalDescription(
-					desc,
-					() => sendMessage({
-						'sdp': pc.localDescription
-					}),
-					onError
-				);
-			}
+	function localDescCreated(desc) { pc.setLocalDescription( desc, () => sendMessage({ 'sdp': pc.localDescription }), onError ); }
+	
+	
   </script>
+  
 </body>
 </html>
 
