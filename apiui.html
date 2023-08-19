@@ -1,0 +1,690 @@
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <style id="jsbin-css">
+      <style>body {
+        font-family: Arial, sans-serif;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+      }
+
+      #app {
+        background-color: #f0f0f0;
+      }
+
+      /* Buttons and Links */
+      a {
+        display: block;
+        text-decoration: none;
+        color: black;
+        padding: 6px 12px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: background-color 0.2s, color 0.2s;
+      }
+
+      a:hover {
+        background-color: #007bff;
+        color: #fff;
+        border: 1px solid #007bff;
+      }
+
+      /* Table Headers */
+      #app th,
+      #app td {
+        width: 25%;
+      }
+
+      #app th {
+        font-weight: bold;
+      }
+
+      #app #User th {
+        background-color: #9e9e9e;
+        color: #fff;
+      }
+
+      #app #ExpertMode th {
+        background-color: #607d8b;
+        color: white;
+      }
+
+      /* Horizontal Rule */
+      #app hr {
+        border: none;
+        border-top: 1px solid black;
+      }
+
+      /* Centering Images and Buttons */
+      #splash img,
+      #portal img,
+      #profilesetup img,
+      #HomeTab img,
+      #ExpertsTab img,
+      #CalendarTab img,
+      #SettingsTab img,
+      #QuestionsTab img,
+      .center img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Additional Styles for Table Rows */
+      #app #splash a,
+      #app #portal a,
+      #app #profilesetup a,
+      #app #HomeTab a,
+      #app #ExpertsTab a,
+      #app #CalendarTab a,
+      #app #SettingsTab a,
+      #app #QuestionsTab a,
+      #app #ExpertMode a {
+        background-color: #f0f0f0;
+        color: black;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        transition: background-color 0.2s, color 0.2s;
+      }
+
+      #app #splash a:hover,
+      #app #portal a:hover,
+      #app #profilesetup a:hover,
+      #app #HomeTab a:hover,
+      #app #ExpertsTab a:hover,
+      #app #CalendarTab a:hover,
+      #app #SettingsTab a:hover,
+      #app #QuestionsTab a:hover,
+      #app #ExpertMode a:hover {
+        background-color: #007bff;
+        color: #fff;
+        border: 1px solid #007bff;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <th>Mobile App</th>
+          <th>Desktop App</th>
+          <th>API Endpoint</th>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <center>
+                      <table id="splash">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <a href="https://i.imgur.com/KN0E5Kt.jpeg">Splash Screen 1 <br>(Loading) </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="https://i.imgur.com/wRlX4RF.png" height="20px" style="transform: rotate(180deg);">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a href="https://i.imgur.com/EzIVQEy.png">Splash Screen 2 <br>Login/Register. </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="https://i.imgur.com/wRlX4RF.png" height="20px" style="transform: rotate(180deg);">
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </center>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="https://i.imgur.com/etwdA4B.png">Homepage</a>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </td>
+          <td rowspan="4">
+            
+<div id="table_of_contents">
+  <div class="DELETE">
+    <p><strong>DELETE</strong> <a href="#DELETE-sign_out">/api/v1/sign_out</a></p>
+  </div>
+
+  <div class="GET">
+    <p><strong>GET</strong> <a href="#GET-categories">/api/v1/categories</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-account_balance">/api/v1/expert/account_balance</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-availability">/api/v1/expert/availability</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-calendar_events">/api/v1/expert/calendar_events</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-expert_calls">/api/v1/expert/expert_calls</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-expert_calls-interaction_id-details">/api/v1/expert/expert_calls/{interaction_id}/details</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-quick_questions">/api/v1/expert/quick_questions</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-quick_questions-interaction_id-attachment">/api/v1/expert/quick_questions/{interaction_id}/attachment</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-rates">/api/v1/expert/rates</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-reviews">/api/v1/expert/reviews</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-transactions">/api/v1/expert/transactions</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-app_policies">/api/v1/individual/app_policies</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-calendar_events">/api/v1/individual/calendar_events</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-expert_calls">/api/v1/individual/expert_calls</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-expert_calls-uuid-details">/api/v1/individual/expert_calls/{interaction_id}/details</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-experts-featured">/api/v1/individual/experts/featured</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-experts-search">/api/v1/individual/experts/search</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-experts-interaction_id">/api/v1/individual/experts/{interaction_id}</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-experts-interaction_id-availability">/api/v1/individual/experts/{interaction_id}/availability</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-experts-interaction_id-reviews">/api/v1/individual/experts/{interaction_id}/reviews</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-payments-credit_cards">/api/v1/individual/payments/credit_cards</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-payments-ephemeral_key">/api/v1/individual/payments/ephemeral_key</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-quick_questions">/api/v1/individual/quick_questions</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-quick_questions-interaction_id-attachment">/api/v1/individual/quick_questions/{interaction_id}/attachment</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-transactions">/api/v1/individual/transactions</a></p>
+    <p><strong>GET</strong> <a href="#GET-territories">/api/v1/territories</a></p>
+    <p><strong>GET</strong> <a href="#GET-user">/api/v1/user</a></p>
+    <p><strong>GET</strong> <a href="#GET-user-two_factor_settings-new">/api/v1/user/two_factor_settings/new</a></p>
+  </div>
+
+  <div class="PATCH" id="PATCH">
+    <p><strong>PATCH</strong> <a href="#PATCH-individual-user">/api/v1/individual/user</a></p>
+    <p><strong>PATCH</strong> <a href="#PATCH-user-allow_notifications">/api/v1/user/allow_notifications</a></p>
+    <p><strong>PATCH</strong> <a href="#PATCH-user-change_profile">/api/v1/user/change_profile</a></p>
+    <p><strong>PATCH</strong> <a href="#PATCH-user-profile_picture-update">/api/v1/user/profile_picture/update</a></p>
+  </div>
+
+  <div class="POST" id="POST">
+    <p><strong>POST</strong> <a href="#POST-expert-payments-connect_account">/api/v1/expert/payments/connect_account</a></p>
+    <p><strong>POST</strong> <a href="#POST-expert-quick_questions-interaction_id-attachment">/api/v1/expert/quick_questions/{interaction_id}/attachment</a></p>
+    <p><strong>POST</strong> <a href="#POST-individual-expert_calls">/api/v1/individual/expert_calls</a></p>
+    <p><strong>POST</strong> <a href="#POST-individual-profiles">/api/v1/individual/profiles</a></p>
+    <p><strong>POST</strong> <a href="#POST-individual-quick_questions">/api/v1/individual/quick_questions</a></p>
+    <p><strong>POST</strong> <a href="#POST-password">/api/v1/password</a></p>
+    <p><strong>POST</strong> <a href="#POST-sign_in">/api/v1/sign_in</a></p>
+    <p><strong>POST</strong> <a href="#POST-sign_up">/api/v1/sign_up</a></p>
+  </div>
+
+  <div class="PUT" id="PUT">
+    <p><strong>PUT</strong> <a href="#PUT-expert-availability">/api/v1/expert/availability</a></p>
+    <p><strong>PUT</strong> <a href="#PUT-expert-quick_questions-interaction_id">/api/v1/expert/quick_questions/{interaction_id}</a></p>
+    <p><strong>PUT</strong> <a href="#PUT-expert-quick_questions-interaction_id-attachment">/api/v1/expert/quick_questions/{interaction_id}/attachment</a></p>
+    <p><strong>PUT</strong> <a href="#PUT-expert-quick_questions-interaction_id-Feedback">/api/v1/individual/quick_questions/{interaction_id}/feedback</a></p>
+    <p><strong>PUT</strong> <a href="#PUT-user-devices">/api/v1/user/devices</a></p>
+  </div>
+</div>
+
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <center>
+              <table id="portal">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="https://minnect.com/terms-conditions/">Terms and Conditions</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://minnect.com/privacy-policy/">Privacy Policy</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://i.imgur.com/emctY3H.jpg">User Forgot Password</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://i.imgur.com/1o5wa6c.jpg">User Registration</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://i.imgur.com/ghZLAzG.jpg">User Log In</a> - <a href="https://jsbin.com/befahojeci/1/edit?html,output" style="color: #FF0000">DONE!</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </center>
+          </td>
+          <td>
+            <center>
+              <table>
+                <tr>
+                  <td>
+                    <a href="https://minnect.com/terms-conditions/">Terms and Conditions</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://minnect.com/privacy-policy/">Privacy Policy</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="https://app.valuentainment.jafton.com/reset-password">User Forgot Password</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="https://app.valuentainment.jafton.com/sign-up">User Registration</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="https://app.valuentainment.jafton.com/sign-in">Log In</td>
+                </tr>
+
+              </table>
+            </center>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <center>
+              <table id="profilesetup">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="https://i.imgur.com/xmgDuYU.jpg">Email Verification Success.</a>
+                      <br><a href="https://api.minnect.com/success_confirmation">(Link)</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://i.imgur.com/65Bca6x.png">Profile Creation Form.</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </center>
+          </td>
+          <td>
+            <center>
+              <table id="profilesetup">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="https://i.imgur.com/xmgDuYU.jpg">Email Verification Success.</a>
+                      <br><a href="https://api.minnect.com/success_confirmation">(Link)</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </center>
+          </td>
+        </tr>
+        <tr id="app">
+          <td>
+            <table>
+              <tbody>
+                <tr id="User">
+                  <td>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th colspan="4">User Mode</th>
+                        </tr>
+                        <tr>
+                          <td>
+                            <table id="HomeTab">
+                              <tbody>
+                                <tr>
+                                  <th>
+                                    <a href="https://i.imgur.com/em70O8Y.png">Home Tab</a>
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/uv37RY5.png">Transaction History (Home Tab)</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table id="ExpertsTab">
+                              <tbody>
+                                <tr>
+                                  <th>
+                                    <center>
+                                      <a href="https://i.imgur.com/Nb9eS4A.png">Experts Tab</a>
+                                    </center>
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/biigXt1.jpg">Sort/Filter (Expert Tab)</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/yBDkd4J.png" width="110px">Expert Profile (Expert Tab)</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/8xDTXpd.png">Ask a question (Expert Profile)</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/OowrO6Z.png">Schedule a call (Expert Profile)</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+							<p><strong>GET</strong> <a href="#GET-categories">/api/v1/categories</a></p>
+                          </td>
+                          <td>
+                            <table id="CalendarTab">
+                              <tbody>
+                                <tr>
+                                  <th>
+                                    <a href="https://i.imgur.com/8ZnGg0N.png">Calendar Tab</a>
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/tu9fdBH.jpg" width="110px" height="100px">Past Events Tab (Calendar Tab)</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table id="SettingsTab">
+                              <tbody>
+                                <tr>
+                                  <th>
+                                    <a href="https://i.imgur.com/veRUHSb.png">Settings Tab</a>
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/v6o4Kgp.png" width="110px" height="250px">Edit Profile (Settings Tab)</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <hr>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table id="ExpertMode">
+                      <tbody>
+                        <tr>
+                          <th colspan="4">Expert Mode</th>
+                        </tr>
+                        <tr>
+                          <td>
+                            <table id="HomeTab">
+                              <tbody>
+                                <tr>
+                                  <th>
+                                    <a href="">Home Tab</a>
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/uv37RY5.png">Transaction History (Home Tab)</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table id="QuestionsTab">
+                              <tbody>
+                                <tr>
+                                  <th>
+                                    <a href="https://i.imgur.com/vxYkJrx.jpg">Questions Tab</a>
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/AqAIB0Q.jpg">Draft (Questions Tab)</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/qr21g2O.jpg">Completed (Questions Tab)</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/St6mlrp.jpg">Expired (Questions Tab)</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table id="CalendarTab">
+                              <tbody>
+                                <tr>
+                                  <th>
+                                    <a href="https://i.imgur.com/3oKfS0v.jpg">Calendar Tab</a>
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/lnF0FO9.jpg">Upcoming (Calendar Tab)</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/Y697Her.jpg">Past (Calendar Tab)</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/gGECqBu.jpg">Past Event (Past)</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table id="SettingsTab">
+                              <tbody>
+                                <tr>
+                                  <th>
+                                    <a href="https://i.imgur.com/CszwpdO.png">Settings Tab</a>
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/jMErfwf.png">Edit Profile (Settings Tab)</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/JH0y6gG.jpg">Rating and Reviews (Settings Tab)</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <a href="https://i.imgur.com/O3Yma9t.jpg">Availability (Settings Tab)</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+
+
+
+
+          <td>
+            <div style="display: grid; grid-template-columns: 20% 30%;">
+              <table style="grid-column: 1;">
+                <tr>
+                  <td style="background-color: #9e9e9e;">Individual + Expert</td>
+                  <td style="background-color: #607d8b;">Expert Only</td>
+                </tr>
+              </table>
+            </div>
+            <br>
+            <table>
+              <tr>
+                <th colspan="3">Acount Settings</th>
+              </tr>
+              <tr>
+                <td style="background-color: #9e9e9e;">
+                  <a href="https://i.imgur.com/7Tp6DJR.png">
+                    <img src="https://i.imgur.com/lLOQTQs.png">
+                    <br>
+                    General.
+                    <br>
+                    <br>
+                    Provide personal details and how we can reach you.
+                  </a>
+                </td>
+                <td style="background-color: #607d8b;">
+                  <a href="https://i.imgur.com/aziRXFX.png">
+                    <img src="https://i.imgur.com/gpibwje.png">
+                    <br>
+                    Expert Details.
+                    <br>
+                    <br>
+                    Provide details about your expertise for users.
+                  </a>
+                </td>
+                <td style="background-color: #607d8b;">
+                  <a href="https://i.imgur.com/MvapP7e.png">
+                    <img src="https://i.imgur.com/M5N9SfT.png">
+                    <br>
+                    Availability.
+                    <br>
+                    <br>
+                    Set your hours so users know when to book you.
+                  </a>
+              </tr>
+
+
+              <tr>
+                <td style="background-color: #607d8b;">
+                  <a href="https://i.imgur.com/sbJ4HlG.png">
+                    <img src="https://i.imgur.com/jphMAmZ.png">
+                    <br>
+                    Prices.
+                    <br>
+                    <br>
+                    Set prices for each of the engagement options.
+                </td>
+                <td style="background-color: #607d8b;">
+                  <a href="https://i.imgur.com/CzHAyKv.png">
+                    <img src="https://i.imgur.com/RpTanb4.png">
+                    <br>
+                    Reviews.
+                    <br>
+                    <br>
+                    Explore past reviews from users.
+                  </a>
+                </td>
+                <td style="background-color: #607d8b;">
+                  <a href="https://i.imgur.com/3gt1znH.png">
+                    <img src="https://i.imgur.com/Qtht1dT.png">
+                    <br>
+                    Bank Account.
+                    <br>
+                    <br>
+                    Link or modify your bank account for payouts.z
+                  </a>
+                </td>
+              </tr>
+
+
+              <tr>
+
+                <td style="background-color: #9e9e9e;">
+                  <a href="https://i.imgur.com/L8CIFeL.png">
+                    <img src="https://i.imgur.com/JVazb54.png">
+                    <br>
+                    Transactions.
+                    <br>
+                    <br>
+                    Review transactions.
+                  </a>
+                </td>
+
+                <td style="background-color: #9e9e9e;">
+                  <a href="https://i.imgur.com/UEuZzQy.png">
+                    <img src="https://i.imgur.com/L7Qf9XD.png">
+                    <br>
+                    Two Factor Authentication.
+                    <br>
+                    <br>
+                    Verify by phone number to provide an extra layer of security.
+					<p><strong>GET</strong> <a href="#GET-user-two_factor_settings-new">/api/v1/user/two_factor_settings/new</a></p>
+                  </a>
+                </td>
+
+                <td style="background-color: #9e9e9e;">
+                  <a href="/account/logout">
+                    <img src="https://i.imgur.com/CV8S75c.png">
+                    <br>
+                    Log Out
+                    <br>
+					<p><strong>DELETE</strong> <a href="#DELETE-sign_out">/api/v1/sign_out</a></p>
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
