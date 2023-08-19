@@ -1,0 +1,2889 @@
+
+<style>
+#table_of_contents {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+#table_of_contents .method {
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.method a {
+  text-decoration: none;
+  color: #333;
+}
+
+.method.DELETE {
+  background-color: #FFD6D6;
+}
+
+.method.GET {
+  background-color: #D5E8D4;
+}
+
+.method.PATCH {
+  background-color: #FEDCBA;
+}
+
+.method.POST {
+  background-color: #CCE5FF;
+}
+
+.method.PUT {
+  background-color: #FFFFCC;
+}
+
+
+</style>
+
+
+<div id="table_of_contents">
+  <div class="DELETE">
+    <p><strong>DELETE</strong> <a href="#DELETE-sign_out">/api/v1/sign_out</a></p>
+  </div>
+
+  <div class="GET">
+    <p><strong>GET</strong> <a href="#GET-categories">/api/v1/categories</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-account_balance">/api/v1/expert/account_balance</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-availability">/api/v1/expert/availability</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-calendar_events">/api/v1/expert/calendar_events</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-expert_calls">/api/v1/expert/expert_calls</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-expert_calls-interaction_id-details">/api/v1/expert/expert_calls/{interaction_id}/details</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-quick_questions">/api/v1/expert/quick_questions</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-quick_questions-interaction_id-attachment">/api/v1/expert/quick_questions/{interaction_id}/attachment</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-rates">/api/v1/expert/rates</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-reviews">/api/v1/expert/reviews</a></p>
+    <p><strong>GET</strong> <a href="#GET-expert-transactions">/api/v1/expert/transactions</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-app_policies">/api/v1/individual/app_policies</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-calendar_events">/api/v1/individual/calendar_events</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-expert_calls">/api/v1/individual/expert_calls</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-expert_calls-uuid-details">/api/v1/individual/expert_calls/{interaction_id}/details</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-experts-featured">/api/v1/individual/experts/featured</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-experts-search">/api/v1/individual/experts/search</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-experts-interaction_id">/api/v1/individual/experts/{interaction_id}</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-experts-interaction_id-availability">/api/v1/individual/experts/{interaction_id}/availability</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-experts-interaction_id-reviews">/api/v1/individual/experts/{interaction_id}/reviews</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-payments-credit_cards">/api/v1/individual/payments/credit_cards</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-payments-ephemeral_key">/api/v1/individual/payments/ephemeral_key</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-quick_questions">/api/v1/individual/quick_questions</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-quick_questions-interaction_id-attachment">/api/v1/individual/quick_questions/{interaction_id}/attachment</a></p>
+    <p><strong>GET</strong> <a href="#GET-individual-transactions">/api/v1/individual/transactions</a></p>
+    <p><strong>GET</strong> <a href="#GET-territories">/api/v1/territories</a></p>
+    <p><strong>GET</strong> <a href="#GET-user">/api/v1/user</a></p>
+    <p><strong>GET</strong> <a href="#GET-user-two_factor_settings-new">/api/v1/user/two_factor_settings/new</a></p>
+    <p><strong>GET</strong> <a href="#GET-users-confirmation/">/users/confirmation</a></p>
+  </div>
+
+  <div class="PATCH" id="PATCH">
+    <p><strong>PATCH</strong> <a href="#PATCH-individual-user">/api/v1/individual/user</a></p>
+    <p><strong>PATCH</strong> <a href="#PATCH-user-allow_notifications">/api/v1/user/allow_notifications</a></p>
+    <p><strong>PATCH</strong> <a href="#PATCH-user-change_profile">/api/v1/user/change_profile</a></p>
+    <p><strong>PATCH</strong> <a href="#PATCH-user-profile_picture-update">/api/v1/user/profile_picture/update</a></p>
+  </div>
+
+  <div class="POST" id="POST">
+    <p><strong>POST</strong> <a href="#POST-expert-payments-connect_account">/api/v1/expert/payments/connect_account</a></p>
+    <p><strong>POST</strong> <a href="#POST-expert-quick_questions-interaction_id-attachment">/api/v1/expert/quick_questions/{interaction_id}/attachment</a></p>
+    <p><strong>POST</strong> <a href="#POST-individual-expert_calls">/api/v1/individual/expert_calls</a></p>
+    <p><strong>POST</strong> <a href="#POST-individual-profiles">/api/v1/individual/profiles</a></p>
+    <p><strong>POST</strong> <a href="#POST-individual-quick_questions">/api/v1/individual/quick_questions</a></p>
+    <p><strong>POST</strong> <a href="#POST-password">/api/v1/password</a></p>
+    <p><strong>POST</strong> <a href="#POST-sign_in">/api/v1/sign_in</a></p>
+    <p><strong>POST</strong> <a href="#POST-sign_up">/api/v1/sign_up</a></p>
+  </div>
+
+  <div class="PUT" id="PUT">
+    <p><strong>PUT</strong> <a href="#PUT-expert-availability">/api/v1/expert/availability</a></p>
+    <p><strong>PUT</strong> <a href="#PUT-expert-quick_questions-interaction_id">/api/v1/expert/quick_questions/{interaction_id}</a></p>
+    <p><strong>PUT</strong> <a href="#PUT-expert-quick_questions-interaction_id-attachment">/api/v1/expert/quick_questions/{interaction_id}/attachment</a></p>
+    <p><strong>PUT</strong> <a href="#PUT-expert-quick_questions-interaction_id-Feedback">/api/v1/individual/quick_questions/{interaction_id}/feedback</a></p>
+    <p><strong>PUT</strong> <a href="#PUT-user-devices">/api/v1/user/devices</a></p>
+  </div>
+</div>
+
+
+<div class="method DELETE" id="DELETE-request">
+  <div class="DELETE" id="DELETE-sign_out">
+    <pre>
+      <code>
+DELETE /api/v1/sign_out HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjY5NiwiZXhwIjo0ODQ3NjYxODk2LCJqdGkiOiIwZmZlZTAwNy1kMmQ0LTQ2YjItOGQwMy0yNjhiZmViNmUxMGMifQ.HunuCHxAhqWqaEIEcpq6fEPAwnj-YjkQ8D7xkLdjvZs
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+      </code>
+    </pre>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="method GET" id="GET-request">
+
+<div class="GET" id="GET-categories">
+    <pre>
+      <code>      </code>
+    </pre>
+
+	<pre>
+		<code>
+
+GET /api/v1/categories HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MjY5NywiZXhwIjo0ODQ3NjU3ODk3LCJqdGkiOiIxOTMxY2ExMS01MmZjLTQxNjYtYmQzOC02MjVmNGZmMTIxY2UifQ.DmQV5X-DdtFaHnUMiKUoE9Uzr6ZbdHcXmPrqpl-M3aI
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "categories": [
+      {
+        "id": 42,
+        "name": "Business",
+        "description": null
+      },
+      {
+        "id": 43,
+        "name": "Celebrity",
+        "description": null
+      },
+      {
+        "id": 44,
+        "name": "Coaching",
+        "description": null
+      },
+      {
+        "id": 45,
+        "name": "Counseling",
+        "description": null
+      },
+      {
+        "id": 46,
+        "name": "Crypto",
+        "description": null
+      },
+      {
+        "id": 47,
+        "name": "Entrepreneurship",
+        "description": null
+      },
+      {
+        "id": 48,
+        "name": "Finance",
+        "description": null
+      },
+      {
+        "id": 49,
+        "name": "Health",
+        "description": null
+      },
+      {
+        "id": 50,
+        "name": "Legal",
+        "description": null
+      },
+      {
+        "id": 51,
+        "name": "Marketing",
+        "description": null
+      },
+      {
+        "id": 52,
+        "name": "Politics",
+        "description": null
+      },
+      {
+        "id": 53,
+        "name": "Real Estate",
+        "description": null
+      },
+      {
+        "id": 54,
+        "name": "Social Media",
+        "description": null
+      },
+      {
+        "id": 56,
+        "name": "Sports",
+        "description": null
+      },
+      {
+        "id": 55,
+        "name": "Technology",
+        "description": null
+      }
+    ]
+  }
+}
+      </code>
+    </pre>
+  </div>
+
+  <div class="GET" id="GET-expert-account_balance">
+    <pre>
+      <code>
+	<pre>
+		<code>
+GET /api/v1/expert/account_balance HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjQwOSwiZXhwIjo0ODQ3NjYxNjA5LCJqdGkiOiJjYjMzY2VkMy1iODk0LTRiMDktODdiZS03MWIyMjQ0ZTU2Y2YifQ.Mgs9IrOUa8_eBdaV-2Od6GbHxFI-nSGWYcOGD19bmbo
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "expert": {
+      "id": "bf24353a-7c39-431b-bf79-74716b371711",
+      "first_name": "Nolen",
+      "last_name": "Felten",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+      "status": "pending",
+      "total_earnings": 12,
+      "pending_events": 24,
+      "pending_quick_questions": 0
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-expert-availability">
+	<pre>
+		<code>
+GET /api/v1/expert/availability HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjQwOSwiZXhwIjo0ODQ3NjYxNjA5LCJqdGkiOiJjYjMzY2VkMy1iODk0LTRiMDktODdiZS03MWIyMjQ0ZTU2Y2YifQ.Mgs9IrOUa8_eBdaV-2Od6GbHxFI-nSGWYcOGD19bmbo
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "expert_availability": {
+      "weekdays": {
+        "days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ],
+        "time_start": "12:11:00-05:00",
+        "time_end": "23:59:00-05:00"
+      },
+      "weekend": {
+        "days": [
+          "saturday",
+          "sunday"
+        ],
+        "time_start": "00:00:00-05:00",
+        "time_end": "11:59:00-05:00"
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-expert-calendar_events">
+	<pre>
+		<code>
+GET /api/v1/expert/calendar_events?page=1&per_page=20&status=pending HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjQwOSwiZXhwIjo0ODQ3NjYxNjA5LCJqdGkiOiJjYjMzY2VkMy1iODk0LTRiMDktODdiZS03MWIyMjQ0ZTU2Y2YifQ.Mgs9IrOUa8_eBdaV-2Od6GbHxFI-nSGWYcOGD19bmbo
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "results": 0,
+  "has_more": true,
+  "total": 0,
+  "current_page": 1,
+  "data": {
+    "events": []
+  }
+}
+
+
+      </code>
+    </pre>
+
+	<pre>
+		<code>
+
+GET /api/v1/expert/calendar_events?page=1&per_page=20&status=upcoming HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "results": 0,
+  "has_more": true,
+  "total": 0,
+  "current_page": 1,
+  "data": {
+    "events": []
+  }
+}
+
+
+      </code>
+    </pre>
+
+	<pre>
+		<code>
+
+GET /api/v1/expert/calendar_events?page=1&per_page=20&status=past HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "results": 1,
+  "has_more": false,
+  "total": 1,
+  "current_page": 1,
+  "data": {
+    "events": [
+      {
+        "id": "8a4fc6b6-0e35-4552-88e3-39990eacb3f9",
+        "room_id": "RMd21419e34aec9b8c3fa45abdc7659c81",
+        "call_type": "1-1",
+        "title": "test ",
+        "description": "test",
+        "scheduled_call_duration": 15,
+        "scheduled_time_start": "2023-07-03T05:00:00.000Z",
+        "scheduled_time_end": "2023-07-03T05:15:00.000Z",
+        "time_start": "2023-07-03T04:59:40.557Z",
+        "time_end": "2023-07-03T05:14:41.000Z",
+        "call_status": "transfered",
+        "payment_status": "succeeded",
+        "rate": 15,
+        "created_at": "2023-07-02T23:30:43.481Z",
+        "time_addition_duration_in_seconds": 900,
+        "was_helpful": true,
+        "rating": 5,
+        "feedback": "",
+        "reviewed_at": "2023-07-03T11:01:30.350Z",
+        "expert": {
+          "id": "bf24353a-7c39-431b-bf79-74716b371711",
+          "first_name": "Nolen",
+          "last_name": "Felten",
+          "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+          "rating": 5,
+          "reviews_count": 0,
+          "status": "pending"
+        },
+        "individual": {
+          "id": "40a4fd88-d0e2-450e-85dd-066915088e5c",
+          "first_name": "Nolen",
+          "last_name": "Felten",
+          "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic"
+        },
+        "guests": [],
+        "category": [],
+        "time_left_to_accept": 0,
+        "time_left_in_start": "",
+        "call_status_label": "Completed",
+        "cancellable": false,
+        "refundable_amount": 0,
+        "reschedulable": false,
+        "time_change_allowed": false,
+        "sub_text": null,
+        "ask_for_feedback": false
+      }
+    ]
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-expert-expert_calls">
+	<pre>
+		<code>
+GET /api/v1/expert/expert_calls?page=1&per_page=50 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MjY5NywiZXhwIjo0ODQ3NjU3ODk3LCJqdGkiOiIxOTMxY2ExMS01MmZjLTQxNjYtYmQzOC02MjVmNGZmMTIxY2UifQ.DmQV5X-DdtFaHnUMiKUoE9Uzr6ZbdHcXmPrqpl-M3aI
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "results": 0,
+  "has_more": true,
+  "data": {
+    "expert_calls": []
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-expert-expert_calls-interaction_id-details">
+	<pre>
+		<code>
+GET /api/v1/expert/expert_calls/8a4fc6b6-0e35-4552-88e3-/details HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjQwOSwiZXhwIjo0ODQ3NjYxNjA5LCJqdGkiOiJjYjMzY2VkMy1iODk0LTRiMDktODdiZS03MWIyMjQ0ZTU2Y2YifQ.Mgs9IrOUa8_eBdaV-2Od6GbHxFI-nSGWYcOGD19bmbo
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "expert_call": {
+    "id": "8a4fc6b6-0e35-4552-88e3-39990eacb3f9",
+    "room_id": "RMd21419e34aec9b8c3fa45abdc7659c81",
+    "call_type": "1-1",
+    "title": "test ",
+    "description": "test",
+    "scheduled_call_duration": 15,
+    "scheduled_time_start": "2023-07-03T05:00:00.000Z",
+    "scheduled_time_end": "2023-07-03T05:15:00.000Z",
+    "time_start": "2023-07-03T04:59:40.557Z",
+    "time_end": "2023-07-03T05:14:41.000Z",
+    "call_status": "transfered",
+    "payment_status": "succeeded",
+    "rate": 15,
+    "created_at": "2023-07-02T23:30:43.481Z",
+    "time_addition_duration_in_seconds": 900,
+    "was_helpful": true,
+    "rating": 5,
+    "feedback": "",
+    "reviewed_at": "2023-07-03T11:01:30.350Z",
+    "expert": {
+      "id": "bf24353a-7c39-431b-bf79-74716b371711",
+      "first_name": "Nolen",
+      "last_name": "Felten",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+      "rating": 5,
+      "reviews_count": 2,
+      "status": "pending"
+    },
+    "individual": {
+      "id": "40a4fd88-d0e2-450e-85dd-066915088e5c",
+      "first_name": "Nolen",
+      "last_name": "Felten",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic"
+    },
+    "guests": [],
+    "category": [],
+    "time_left_to_accept": 0,
+    "time_left_in_start": "",
+    "call_status_label": "Completed",
+    "cancellable": false,
+    "refundable_amount": 0,
+    "reschedulable": false,
+    "time_change_allowed": false,
+    "sub_text": null,
+    "ask_for_feedback": false
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-expert-quick_questions">
+	<pre>
+		<code>
+GET /api/v1/expert/quick_questions?completed=true&per_page=1000&page=1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+
+{
+  "status": "success",
+  "data": {
+    "quick_questions": [
+      {
+        "id": "848756bc-6e80-4da7-bb07-afcbba0da5f2",
+        "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "question": "Title",
+        "description": "Question.",
+        "answer": "Beep Boop",
+        "answer_type": "text",
+        "parsed_answer": "Beep Boop",
+        "answer_date": "2023-08-13T22:28:05.554Z",
+        "payment_status": "succeeded",
+        "time_left": "0",
+        "rate": 10,
+        "is_answered": true,
+        "created_at": "2023-08-13T22:19:09.654Z",
+        "was_helpful": null,
+        "rating": null,
+        "feedback": null,
+        "reviewed_at": null,
+        "status": "answered",
+        "has_attachment": false,
+        "individual_name": "Just Haw",
+        "individual_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic",
+        "category_id": null,
+        "category_name": null,
+        "ask_for_feedback": true
+      }
+    ]
+  }
+}
+      </code>
+    </pre>
+
+	<pre>
+		<code>
+
+GET /api/v1/expert/quick_questions?per_page=4&page=1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MjY5NywiZXhwIjo0ODQ3NjU3ODk3LCJqdGkiOiIxOTMxY2ExMS01MmZjLTQxNjYtYmQzOC02MjVmNGZmMTIxY2UifQ.DmQV5X-DdtFaHnUMiKUoE9Uzr6ZbdHcXmPrqpl-M3aI
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "quick_questions": [
+      {
+        "id": "96f5e569-dd4c-411c-911d-2962160323db",
+        "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "question": "Video",
+        "description": "Description",
+        "answer": null,
+        "answer_type": "video",
+        "parsed_answer": null,
+        "answer_date": null,
+        "payment_status": "requires_capture",
+        "time_left": "4 days",
+        "rate": 20,
+        "is_answered": false,
+        "created_at": "2023-08-13T22:21:28.097Z",
+        "was_helpful": null,
+        "rating": null,
+        "feedback": null,
+        "reviewed_at": null,
+        "status": "pending",
+        "has_attachment": false,
+        "individual_name": "Just Haw",
+        "individual_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic",
+        "category_id": null,
+        "category_name": null,
+        "ask_for_feedback": false
+      },
+      {
+        "id": "848756bc-6e80-4da7-bb07-afcbba0da5f2",
+        "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "question": "Title",
+        "description": "Question.",
+        "answer": null,
+        "answer_type": "text",
+        "parsed_answer": null,
+        "answer_date": null,
+        "payment_status": "requires_capture",
+        "time_left": "4 days",
+        "rate": 10,
+        "is_answered": false,
+        "created_at": "2023-08-13T22:19:09.654Z",
+        "was_helpful": null,
+        "rating": null,
+        "feedback": null,
+        "reviewed_at": null,
+        "status": "pending",
+        "has_attachment": false,
+        "individual_name": "Just Haw",
+        "individual_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic",
+        "category_id": null,
+        "category_name": null,
+        "ask_for_feedback": false
+      }
+    ]
+  }
+}
+
+
+      </code>
+    </pre>
+
+	<pre>
+		<code>
+
+GET /api/v1/expert/quick_questions?query%5Bstatus_eq%5D=draft_answered&per_page=1000&page=1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "quick_questions": []
+  }
+}
+
+{
+  "status": "success",
+  "data": {
+    "quick_questions": [
+      {
+        "id": "96f5e569-dd4c-411c-911d-2962160323db",
+        "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "question": "Video",
+        "description": "Description",
+        "answer": "scasca",
+        "answer_type": "video",
+        "parsed_answer": "scasca",
+        "answer_date": null,
+        "payment_status": "requires_capture",
+        "time_left": "4 days",
+        "rate": 20,
+        "is_answered": false,
+        "created_at": "2023-08-13T22:21:28.097Z",
+        "was_helpful": null,
+        "rating": null,
+        "feedback": null,
+        "reviewed_at": null,
+        "status": "draft_answered",
+        "has_attachment": false,
+        "individual_name": "Just Haw",
+        "individual_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic",
+        "category_id": null,
+        "category_name": null,
+        "ask_for_feedback": false
+      }
+    ]
+  }
+}
+
+      </code>
+    </pre>
+
+	<pre>
+		<code>
+
+GET /api/v1/expert/quick_questions?query%5Bstatus_eq%5D=expired&per_page=1000&page=1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "quick_questions": []
+  }
+}
+
+
+      </code>
+    </pre>
+
+	<pre>
+		<code>
+
+GET /api/v1/expert/quick_questions?query%5Bstatus_eq%5D=pending&per_page=1000&page=1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "quick_questions": [
+      {
+        "id": "96f5e569-dd4c-411c-911d-2962160323db",
+        "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "question": "Video",
+        "description": "Description",
+        "answer": null,
+        "answer_type": "video",
+        "parsed_answer": null,
+        "answer_date": null,
+        "payment_status": "requires_capture",
+        "time_left": "4 days",
+        "rate": 20,
+        "is_answered": false,
+        "created_at": "2023-08-13T22:21:28.097Z",
+        "was_helpful": null,
+        "rating": null,
+        "feedback": null,
+        "reviewed_at": null,
+        "status": "pending",
+        "has_attachment": false,
+        "individual_name": "Just Haw",
+        "individual_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic",
+        "category_id": null,
+        "category_name": null,
+        "ask_for_feedback": false
+      },
+      {
+        "id": "848756bc-6e80-4da7-bb07-afcbba0da5f2",
+        "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "question": "Title",
+        "description": "Question.",
+        "answer": null,
+        "answer_type": "text",
+        "parsed_answer": null,
+        "answer_date": null,
+        "payment_status": "requires_capture",
+        "time_left": "4 days",
+        "rate": 10,
+        "is_answered": false,
+        "created_at": "2023-08-13T22:19:09.654Z",
+        "was_helpful": null,
+        "rating": null,
+        "feedback": null,
+        "reviewed_at": null,
+        "status": "pending",
+        "has_attachment": false,
+        "individual_name": "Just Haw",
+        "individual_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic",
+        "category_id": null,
+        "category_name": null,
+        "ask_for_feedback": false
+      }
+    ]
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-expert-quick_questions-interaction_id-attachment">
+	<pre>
+		<code>
+GET /api/v1/expert/quick_questions/96f5e569-dd4c-411c-911d-2962160323db/attachment HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "url": "https://valuentainment-quick-questions-prod.s3.amazonaws.com/96f5e569-dd4c-411c-911d-2962160323db/17_29_Nolen%20Felten.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZWIFNH35KX3PLDFU%2F20230813%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230813T223023Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=86b1d8dd07a670343538bcdecbd0ee6b0b81cc64245fc6cf8b6675fb01a44682",
+    "headers": null,
+    "file_type": "mp4",
+    "file_size": "1.72 MB"
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-expert-rates">
+	<pre>
+		<code>
+GET /api/v1/expert/rates HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjY5NiwiZXhwIjo0ODQ3NjYxODk2LCJqdGkiOiIwZmZlZTAwNy1kMmQ0LTQ2YjItOGQwMy0yNjhiZmViNmUxMGMifQ.HunuCHxAhqWqaEIEcpq6fEPAwnj-YjkQ8D7xkLdjvZs
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "max_video_call_rate": 99999,
+  "min_video_call_rate": 1,
+  "min_quick_question_text_rate": 10,
+  "max_quick_question_text_rate": 99999,
+  "min_quick_question_video_rate": 20,
+  "max_quick_question_video_rate": 99999
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-expert-reviews">
+	<pre>
+		<code>
+GET /api/v1/expert/reviews HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "next_page": null,
+  "last_page": false,
+  "rating": 5,
+  "reviews_count": 0,
+  "total_reviews": 0,
+  "total_ratings": 1,
+  "data": {
+    "reviews": []
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-expert-transactions">
+    <pre>
+		<code>
+GET /api/v1/expert/transactions HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "transactions": [
+      {
+        "id": 1833,
+        "created_at": "2023-08-13T22:21:29.515Z",
+        "paid": true,
+        "expert": {
+          "id": "bf24353a-7c39-431b-bf79-74716b371711",
+          "first_name": "Nolen",
+          "last_name": "Felten"
+        },
+        "individual": {
+          "id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+          "first_name": "Just",
+          "last_name": "Haw"
+        },
+        "expert_interaction": {
+          "interaction_id": "96f5e569-dd4c-411c-911d-2962160323db",
+          "interaction_type": "QuickQuestion",
+          "rate": 20
+        }
+      },
+      {
+        "id": 1832,
+        "created_at": "2023-08-13T22:19:11.121Z",
+        "paid": true,
+        "expert": {
+          "id": "bf24353a-7c39-431b-bf79-74716b371711",
+          "first_name": "Nolen",
+          "last_name": "Felten"
+        },
+        "individual": {
+          "id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+          "first_name": "Just",
+          "last_name": "Haw"
+        },
+        "expert_interaction": {
+          "interaction_id": "848756bc-6e80-4da7-bb07-afcbba0da5f2",
+          "interaction_type": "QuickQuestion",
+          "rate": 10
+        }
+      },
+      {
+        "id": 1354,
+        "created_at": "2023-07-02T23:30:45.029Z",
+        "paid": true,
+        "expert": {
+          "id": "bf24353a-7c39-431b-bf79-74716b371711",
+          "first_name": "Nolen",
+          "last_name": "Felten"
+        },
+        "individual": {
+          "id": "40a4fd88-d0e2-450e-85dd-066915088e5c",
+          "first_name": "Nolen",
+          "last_name": "Felten"
+        },
+        "expert_interaction": {
+          "interaction_id": "8a4fc6b6-0e35-4552-88e3-39990eacb3f9",
+          "interaction_type": "ExpertCall",
+          "call_type": "1-1",
+          "extra_user": false,
+          "extra_user_rate": 0,
+          "is_time_addition": false,
+          "rate": 15
+        }
+      }
+    ],
+    "results": 3,
+    "has_more": false
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-app_policies">
+	<pre>
+		<code>
+GET /api/v1/individual/app_policies HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjY5NiwiZXhwIjo0ODQ3NjYxODk2LCJqdGkiOiIwZmZlZTAwNy1kMmQ0LTQ2YjItOGQwMy0yNjhiZmViNmUxMGMifQ.HunuCHxAhqWqaEIEcpq6fEPAwnj-YjkQ8D7xkLdjvZs
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "policies": {
+    "cancellation_policy": {
+      "title": "Cancellation Policy",
+      "description": [
+        "You will receive a full refund for calls canceled at least 24 hours before the scheduled start time.",
+        "You will receive a 50% refund for calls canceled between 12 and 24 hours before the scheduled start time",
+        "There is no refund for calls canceled within 12 hours of the scheduled start time"
+      ],
+      "expert": false,
+      "individual": true,
+      "global": false,
+      "has_changed": true,
+      "version": "1.0",
+      "status": "active",
+      "updated_at": "2023-03-15T14:28:27.280Z",
+      "created_at": "2023-03-07T13:17:38.651Z"
+    },
+    "rescheduling_policy": {
+      "title": "Rescheduling Policy",
+      "description": [
+        "You can request to change the call time up to 24 hours before its scheduled to start.",
+        "The new time must be at least 24 hours in the future.",
+        "If the expert accepts your request to change the time, the scheduled start time will automatically update on your calendar.",
+        "If the expert declines your request to change the time, the call will stay scheduled for the original time.",
+        "There is no limit on the number of reschedule requests you can send.",
+        "If the expert has not responded within 24 hours of the scheduled start time or the proposed time, whichever is sooner, the call stays set for the initially scheduled time"
+      ],
+      "expert": false,
+      "individual": true,
+      "global": false,
+      "has_changed": true,
+      "version": "1.0",
+      "status": "active",
+      "updated_at": "2023-03-15T14:28:27.282Z",
+      "created_at": "2023-03-07T13:17:38.656Z"
+    },
+    "scheduling_policy": {
+      "title": "Scheduling Policy",
+      "description": [
+        "The expert has 5 days to accept your booking request call.",
+        "If you are booking a call that is less than 5 days away the expert has up to 24 hours in advance of the call to accept.",
+        "An authorization on your form of payment will be made when you send a booking request.",
+        "If a call request expires, or is declined, the authorization will be released.",
+        "If the expert accepts your call request, the authorized funds will transfer"
+      ],
+      "expert": false,
+      "individual": true,
+      "global": false,
+      "has_changed": true,
+      "version": "1.0",
+      "status": "active",
+      "updated_at": "2023-03-15T14:28:27.283Z",
+      "created_at": "2023-03-07T13:17:38.662Z"
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-calendar_events">
+	<pre>
+		<code>
+GET /api/v1/individual/calendar_events?page=1&per_page=20&status=upcoming HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MzUwOCwiZXhwIjo0ODQ3NjU4NzA4LCJqdGkiOiI5YzE1ZDdhZi04NTk3LTQ2ZTMtOGZjZS02YTk0MzkwOWNhOTYifQ.MVBORhOwkZr1nYeanrDfbGBo2ha17bFkNeCyEVlS5M8
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "results": 0,
+  "has_more": true,
+  "total": 0,
+  "current_page": 1,
+  "data": {
+    "events": []
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-expert_calls-interaction_id-details">
+	<pre>
+		<code>
+GET /api/v1/expert/expert_calls/8a4fc6b6-0e35-4552-88e3-39990eacb3f9/details HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjQwOSwiZXhwIjo0ODQ3NjYxNjA5LCJqdGkiOiJjYjMzY2VkMy1iODk0LTRiMDktODdiZS03MWIyMjQ0ZTU2Y2YifQ.Mgs9IrOUa8_eBdaV-2Od6GbHxFI-nSGWYcOGD19bmbo
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "expert_call": {
+    "id": "8a4fc6b6-0e35-4552-88e3-39990eacb3f9",
+    "room_id": "RMd21419e34aec9b8c3fa45abdc7659c81",
+    "call_type": "1-1",
+    "title": "test ",
+    "description": "test",
+    "scheduled_call_duration": 15,
+    "scheduled_time_start": "2023-07-03T05:00:00.000Z",
+    "scheduled_time_end": "2023-07-03T05:15:00.000Z",
+    "time_start": "2023-07-03T04:59:40.557Z",
+    "time_end": "2023-07-03T05:14:41.000Z",
+    "call_status": "transfered",
+    "payment_status": "succeeded",
+    "rate": 15,
+    "created_at": "2023-07-02T23:30:43.481Z",
+    "time_addition_duration_in_seconds": 900,
+    "was_helpful": true,
+    "rating": 5,
+    "feedback": "",
+    "reviewed_at": "2023-07-03T11:01:30.350Z",
+    "expert": {
+      "id": "bf24353a-7c39-431b-bf79-74716b371711",
+      "first_name": "Nolen",
+      "last_name": "Felten",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+      "rating": 5,
+      "reviews_count": 2,
+      "status": "pending"
+    },
+    "individual": {
+      "id": "40a4fd88-d0e2-450e-85dd-066915088e5c",
+      "first_name": "Nolen",
+      "last_name": "Felten",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic"
+    },
+    "guests": [],
+    "category": [],
+    "time_left_to_accept": 0,
+    "time_left_in_start": "",
+    "call_status_label": "Completed",
+    "cancellable": false,
+    "refundable_amount": 0,
+    "reschedulable": false,
+    "time_change_allowed": false,
+    "sub_text": null,
+    "ask_for_feedback": false
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-experts-featured">
+	<pre>
+		<code>
+GET /api/v1/individual/experts/featured HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTk1NywiZXhwIjo0ODQ3NjYxMTU3LCJqdGkiOiIwMmVmMzIxNS1iMTNjLTQwOWQtYTBiMy1kOGRiYWQyMmEyOWUifQ.JcGhk22CeXFIrc86itQtX7nkW6wvjMf6RvGQIMb60XE
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{"status":"success","data":{"featured_experts":[{"id":"30e932af-c916-4568-a8b8-671701dab5bb","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fa19fcba7a35a7ff3bf9a2ae1fd3de0a0b6d6546/imagename.png","rating":4.97,"reviews_count":37,"slug":"AdamSosnick","first_name":"Adam ","last_name":"Sosnick","consultation_count":394,"total_reviews":37,"total_ratings":65},{"id":"784dfce8-a407-438a-b5db-c774181311e9","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbVVmIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--48938767551bc94a6570beb670e124e14454fe72/imagename.png","rating":4.78,"reviews_count":23,"slug":"AndrewTate","first_name":"Andrew","last_name":"Tate","consultation_count":333,"total_reviews":23,"total_ratings":36},{"id":"5091426f-1cce-494f-acc6-37402f1d3b60","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBZZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b7ce9f8a8071547a835d11c4fc6e9e70448bbc06/PatrickBetDavid.jpg","rating":4.94,"reviews_count":24,"slug":"PatrickBetDavid","first_name":"Patrick","last_name":"BetDavid","consultation_count":188,"total_reviews":24,"total_ratings":33},{"id":"65c5d580-7ffb-445f-a023-6b2e37ef47ad","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdWdnIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f41f6b2938c4870bf911c20c437a7f623925450e/imagename.png","rating":4.98,"reviews_count":37,"slug":"TristanTate","first_name":"Tristan","last_name":"Tate","consultation_count":162,"total_reviews":37,"total_ratings":53},{"id":"754b283d-29a8-4ec9-a556-61ee3aae3431","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbjRmIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--447f9ea7922131e92edad477ee79f7ede191eaee/imagename.png","rating":5.0,"reviews_count":19,"slug":"ThomasEllsworth","first_name":"Thomas","last_name":"Ellsworth ","consultation_count":149,"total_reviews":19,"total_ratings":26},{"id":"b45d3d7d-93e6-4f30-94a4-6b02a9d66f89","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcW9rIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--041440d2455cdd081912eaf2fc3a5942136e006d/imagename.png","rating":4.88,"reviews_count":5,"slug":"AaronMont","first_name":"Aaron","last_name":"Mont","consultation_count":36,"total_reviews":5,"total_ratings":8},{"id":"36573870-959e-4611-9787-f9e49dc1586a","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWXM9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--76b39db9224891a507b53de3617caf03cee94c96/imagename.png","rating":5.0,"reviews_count":6,"slug":"VincentOshana","first_name":"Vincent","last_name":"Oshana","consultation_count":26,"total_reviews":6,"total_ratings":9},{"id":"f1a75716-f220-41c9-aacb-d8ff9dfe3369","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaWtXIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3eda98771489c793a6b150b5c95a05ed20042214/imagename.png","rating":0.0,"reviews_count":0,"slug":"SalvatoreGravano","first_name":"Salvatore","last_name":"Gravano","consultation_count":24,"total_reviews":0,"total_ratings":0},{"id":"3218f19a-4c10-4a83-a85b-f7d2046a5f46","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBQQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b6840dd0f4ff31040db2acd5dbfb7d61fbb91ad1/imagename.png","rating":5.0,"reviews_count":1,"slug":"MichaelFranzese","first_name":"Michael","last_name":"Franzese","consultation_count":20,"total_reviews":1,"total_ratings":1},{"id":"bb0566f0-7f64-45a2-87c7-6a5d54005bd8","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaGtCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--847d256a0ebf5f32fb74c817c9253061f1312d79/imagename.png","rating":0.0,"reviews_count":0,"slug":"LeoMartinezJr","first_name":"Leo","last_name":"Martinez Jr","consultation_count":16,"total_reviews":0,"total_ratings":0},{"id":"1e84fa77-ec1f-48cf-bba5-f0aa1a490cd6","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb28wIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--911e60a35831b5e1ace0fef8ca8ed05e561929cb/imagename.png","rating":5.0,"reviews_count":1,"slug":"AaronSingerman","first_name":"Aaron","last_name":"Singerman","consultation_count":10,"total_reviews":1,"total_ratings":2},{"id":"ae9d88bc-706c-460b-90a2-eea6109017df","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ2dlIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--16be40579511a52a6abee4de666dbc52760e92f5/imagename.png","rating":null,"reviews_count":null,"slug":"JasonMiller","first_name":"Jason","last_name":"Miller","consultation_count":9,"total_reviews":0,"total_ratings":0},{"id":"4f218a10-e189-496b-9a1b-df9da1bcd08b","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ3dCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0c6e92fb695e97150a86aec0f8ce82ac0df98643/imagename.png","rating":0.0,"reviews_count":0,"slug":"ChazzPalminteri","first_name":"Chazz","last_name":"Palminteri","consultation_count":6,"total_reviews":0,"total_ratings":0},{"id":"3fae4c4a-5a9b-4e29-9aa9-d5d08965c487","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYWs9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a2304a0d66e50323c07ce46eb121847a8c361f5e/imagename.png","rating":0.0,"reviews_count":0,"slug":"KevinConnolly","first_name":"Kevin","last_name":"Connolly","consultation_count":4,"total_reviews":0,"total_ratings":0},{"id":"f03d4634-7794-430c-85dc-f4ad50ad8654","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcDRlIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5dbf2b823785f79984d6d17c6748bd0b2aa31132/imagename.png","rating":5.0,"reviews_count":2,"slug":"JenniferBetdavid","first_name":"Jennifer","last_name":"Betdavid","consultation_count":4,"total_reviews":2,"total_ratings":2},{"id":"93128aeb-83ee-4265-a5d9-5ad4fa05ad16","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBblUxIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7096e8266e9964e25845b5bc53c4518c764ce24d/imagename.png","rating":0.0,"reviews_count":null,"slug":"CharlieKirk","first_name":"Charlie","last_name":"Kirk","consultation_count":1,"total_reviews":0,"total_ratings":0},{"id":"9da43a77-1d01-408c-a9b8-627865516651","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdkkxIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6df7c59d8138fb8ee1d605e8f76634acdf99f05a/imagename.png","rating":0.0,"reviews_count":null,"slug":"SeanKelly","first_name":"Sean","last_name":"Kelly","consultation_count":1,"total_reviews":0,"total_ratings":0},{"id":"b3416e9e-cffb-4c87-ab80-85fd94f97766","status":"verified","url_picture":"https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbTRxIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--825418fc2691c785323b8af91ee13a53c8ce1e9f/imagename.png","rating":0.0,"reviews_count":null,"slug":"ChristianGuzman","first_name":"Christian","last_name":"Guzman","consultation_count":1,"total_reviews":0,"total_ratings":0}]},"results":18,"total_pages":1,"current_page":1,"next_page":null,"prev_page":null,"has_more":false}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-experts-search">
+	<pre>
+		<code>
+GET /api/v1/individual/experts/search?name=nolen&pagination%5Bpage%5D=1&pagination%5Bper_page%5D=20 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjY5NiwiZXhwIjo0ODQ3NjYxODk2LCJqdGkiOiIwZmZlZTAwNy1kMmQ0LTQ2YjItOGQwMy0yNjhiZmViNmUxMGMifQ.HunuCHxAhqWqaEIEcpq6fEPAwnj-YjkQ8D7xkLdjvZs
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "results": 2,
+    "total_pages": 1,
+    "current_page": 1,
+    "next_page": null,
+    "prev_page": null,
+    "has_more": false,
+    "experts": [
+      {
+        "email": "nolenf@gmail.com",
+        "first_name": "Nolen",
+        "last_name": "Felten",
+        "date_of_birth": "1993-05-13",
+        "phone_number": "17079710122",
+        "phone": "7079710122",
+        "country_code": "1",
+        "city": "Galv",
+        "zip_code": "61434",
+        "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+        "active": true,
+        "gender": "male",
+        "country": "US",
+        "flag_url": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBhQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c58746ff84e1826d5d1c69690457daf0333018f/US.png",
+        "id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "biography": "Mycologist",
+        "website_url": "",
+        "linkedin_url": "",
+        "twitter_url": "",
+        "instagram_url": "",
+        "quick_question_rate": 50,
+        "one_to_one_video_call_rate": 10,
+        "one_to_five_video_call_rate": 10,
+        "quick_question_text_rate": 10,
+        "quick_question_video_rate": 20,
+        "video_call_rate": 2,
+        "extra_user_rate": 5,
+        "rating": 5,
+        "reviews_count": 2,
+        "status": "pending",
+        "slug": "NolenFelten",
+        "age": 30,
+        "consultation_count": 3,
+        "categories": [
+          {
+            "id": 55,
+            "name": "Technology",
+            "description": null
+          }
+        ],
+        "total_reviews": 2,
+        "total_ratings": 3,
+        "ios_app_download_url": "https://apps.apple.com/us/app/minnect/id1583104411",
+        "android_app_download_url": "https://play.google.com/store/apps/details?id=com.koombea.valuetainment&hl=en&gl=US&pli=1"
+      },
+      {
+        "email": "fisherchemic@gmail.com",
+        "first_name": "Nolen",
+        "last_name": "Felten",
+        "date_of_birth": "1993-05-13",
+        "phone_number": "17079710122",
+        "phone": "7079710122",
+        "country_code": "1",
+        "city": "Galva",
+        "zip_code": "61434",
+        "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdWcxIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--97ee96d7cf4032a71235d343b5ac3be49e84963e/profile_pic",
+        "active": true,
+        "gender": "male",
+        "country": "US",
+        "flag_url": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBhQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c58746ff84e1826d5d1c69690457daf0333018f/US.png",
+        "id": "757bac78-984b-4a58-9667-a956cc3564be",
+        "biography": "This is a test account.",
+        "website_url": "",
+        "linkedin_url": "",
+        "twitter_url": "",
+        "instagram_url": "",
+        "quick_question_rate": 50,
+        "one_to_one_video_call_rate": 10,
+        "one_to_five_video_call_rate": 10,
+        "quick_question_text_rate": 10,
+        "quick_question_video_rate": 20,
+        "video_call_rate": 1,
+        "extra_user_rate": 5,
+        "rating": 5,
+        "reviews_count": 1,
+        "status": "pending",
+        "slug": "NolenFelten2",
+        "age": 30,
+        "consultation_count": 1,
+        "categories": [
+          {
+            "id": 42,
+            "name": "Business",
+            "description": null
+          },
+          {
+            "id": 50,
+            "name": "Legal",
+            "description": null
+          }
+        ],
+        "total_reviews": 1,
+        "total_ratings": 1,
+        "ios_app_download_url": "https://apps.apple.com/us/app/minnect/id1583104411",
+        "android_app_download_url": "https://play.google.com/store/apps/details?id=com.koombea.valuetainment&hl=en&gl=US&pli=1"
+      }
+    ]
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-experts-interaction_id">
+	<pre>
+		<code>
+GET /api/v1/individual/experts/bf24353a-7c39-431b-bf79-74716b371711 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjY5NiwiZXhwIjo0ODQ3NjYxODk2LCJqdGkiOiIwZmZlZTAwNy1kMmQ0LTQ2YjItOGQwMy0yNjhiZmViNmUxMGMifQ.HunuCHxAhqWqaEIEcpq6fEPAwnj-YjkQ8D7xkLdjvZs
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "expert": {
+      "email": "nolenf@gmail.com",
+      "first_name": "Nolen",
+      "last_name": "Felten",
+      "date_of_birth": "1993-05-13",
+      "phone_number": "17079710122",
+      "phone": "7079710122",
+      "country_code": "1",
+      "city": "Galv",
+      "zip_code": "61434",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+      "active": true,
+      "gender": "male",
+      "country": "US",
+      "flag_url": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBhQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c58746ff84e1826d5d1c69690457daf0333018f/US.png",
+      "id": "bf24353a-7c39-431b-bf79-74716b371711",
+      "biography": "Mycologist",
+      "website_url": "",
+      "linkedin_url": "",
+      "twitter_url": "",
+      "instagram_url": "",
+      "quick_question_rate": 50,
+      "one_to_one_video_call_rate": 10,
+      "one_to_five_video_call_rate": 10,
+      "quick_question_text_rate": 10,
+      "quick_question_video_rate": 20,
+      "video_call_rate": 2,
+      "extra_user_rate": 5,
+      "rating": 5,
+      "reviews_count": 2,
+      "status": "pending",
+      "slug": "NolenFelten",
+      "age": 30,
+      "consultation_count": 3,
+      "categories": [
+        {
+          "id": 55,
+          "name": "Technology",
+          "description": null
+        }
+      ],
+      "total_reviews": 2,
+      "total_ratings": 3,
+      "ios_app_download_url": "https://apps.apple.com/us/app/minnect/id1583104411",
+      "android_app_download_url": "https://play.google.com/store/apps/details?id=com.koombea.valuetainment&hl=en&gl=US&pli=1"
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-experts-interaction_id-availability">
+	<pre>
+		<code>
+GET /api/v1/individual/experts/bf24353a-7c39-431b-bf79-74716b371711/availability?call_duration=15&date_end=2023-08-14&date_initial=2023-08-14 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjY5NiwiZXhwIjo0ODQ3NjYxODk2LCJqdGkiOiIwZmZlZTAwNy1kMmQ0LTQ2YjItOGQwMy0yNjhiZmViNmUxMGMifQ.HunuCHxAhqWqaEIEcpq6fEPAwnj-YjkQ8D7xkLdjvZs
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "expert_availability": {
+      "date_initial": "2023-08-14",
+      "date_end": "2023-08-14",
+      "call_duration": 15,
+      "days": [
+        {
+          "day": "2023-08-14",
+          "available_time": [
+            {
+              "time_start": "12:11:00-05:00",
+              "time_end": "12:26:00-05:00"
+            },
+            {
+              "time_start": "12:26:00-05:00",
+              "time_end": "12:41:00-05:00"
+            },
+            {
+              "time_start": "12:41:00-05:00",
+              "time_end": "12:56:00-05:00"
+            },
+            {
+              "time_start": "12:56:00-05:00",
+              "time_end": "13:11:00-05:00"
+            },
+            {
+              "time_start": "13:11:00-05:00",
+              "time_end": "13:26:00-05:00"
+            },
+            {
+              "time_start": "13:26:00-05:00",
+              "time_end": "13:41:00-05:00"
+            },
+            {
+              "time_start": "13:41:00-05:00",
+              "time_end": "13:56:00-05:00"
+            },
+            {
+              "time_start": "13:56:00-05:00",
+              "time_end": "14:11:00-05:00"
+            },
+            {
+              "time_start": "14:11:00-05:00",
+              "time_end": "14:26:00-05:00"
+            },
+            {
+              "time_start": "14:26:00-05:00",
+              "time_end": "14:41:00-05:00"
+            },
+            {
+              "time_start": "14:41:00-05:00",
+              "time_end": "14:56:00-05:00"
+            },
+            {
+              "time_start": "14:56:00-05:00",
+              "time_end": "15:11:00-05:00"
+            },
+            {
+              "time_start": "15:11:00-05:00",
+              "time_end": "15:26:00-05:00"
+            },
+            {
+              "time_start": "15:26:00-05:00",
+              "time_end": "15:41:00-05:00"
+            },
+            {
+              "time_start": "15:41:00-05:00",
+              "time_end": "15:56:00-05:00"
+            },
+            {
+              "time_start": "15:56:00-05:00",
+              "time_end": "16:11:00-05:00"
+            },
+            {
+              "time_start": "16:11:00-05:00",
+              "time_end": "16:26:00-05:00"
+            },
+            {
+              "time_start": "16:26:00-05:00",
+              "time_end": "16:41:00-05:00"
+            },
+            {
+              "time_start": "16:41:00-05:00",
+              "time_end": "16:56:00-05:00"
+            },
+            {
+              "time_start": "16:56:00-05:00",
+              "time_end": "17:11:00-05:00"
+            },
+            {
+              "time_start": "17:11:00-05:00",
+              "time_end": "17:26:00-05:00"
+            },
+            {
+              "time_start": "17:26:00-05:00",
+              "time_end": "17:41:00-05:00"
+            },
+            {
+              "time_start": "17:41:00-05:00",
+              "time_end": "17:56:00-05:00"
+            },
+            {
+              "time_start": "17:56:00-05:00",
+              "time_end": "18:11:00-05:00"
+            },
+            {
+              "time_start": "18:11:00-05:00",
+              "time_end": "18:26:00-05:00"
+            },
+            {
+              "time_start": "18:26:00-05:00",
+              "time_end": "18:41:00-05:00"
+            },
+            {
+              "time_start": "18:41:00-05:00",
+              "time_end": "18:56:00-05:00"
+            },
+            {
+              "time_start": "18:56:00-05:00",
+              "time_end": "19:11:00-05:00"
+            },
+            {
+              "time_start": "19:11:00-05:00",
+              "time_end": "19:26:00-05:00"
+            },
+            {
+              "time_start": "19:26:00-05:00",
+              "time_end": "19:41:00-05:00"
+            },
+            {
+              "time_start": "19:41:00-05:00",
+              "time_end": "19:56:00-05:00"
+            },
+            {
+              "time_start": "19:56:00-05:00",
+              "time_end": "20:11:00-05:00"
+            },
+            {
+              "time_start": "20:11:00-05:00",
+              "time_end": "20:26:00-05:00"
+            },
+            {
+              "time_start": "20:26:00-05:00",
+              "time_end": "20:41:00-05:00"
+            },
+            {
+              "time_start": "20:41:00-05:00",
+              "time_end": "20:56:00-05:00"
+            },
+            {
+              "time_start": "20:56:00-05:00",
+              "time_end": "21:11:00-05:00"
+            },
+            {
+              "time_start": "21:11:00-05:00",
+              "time_end": "21:26:00-05:00"
+            },
+            {
+              "time_start": "21:26:00-05:00",
+              "time_end": "21:41:00-05:00"
+            },
+            {
+              "time_start": "21:41:00-05:00",
+              "time_end": "21:56:00-05:00"
+            },
+            {
+              "time_start": "21:56:00-05:00",
+              "time_end": "22:11:00-05:00"
+            },
+            {
+              "time_start": "22:11:00-05:00",
+              "time_end": "22:26:00-05:00"
+            },
+            {
+              "time_start": "22:26:00-05:00",
+              "time_end": "22:41:00-05:00"
+            },
+            {
+              "time_start": "22:41:00-05:00",
+              "time_end": "22:56:00-05:00"
+            },
+            {
+              "time_start": "22:56:00-05:00",
+              "time_end": "23:11:00-05:00"
+            },
+            {
+              "time_start": "23:11:00-05:00",
+              "time_end": "23:26:00-05:00"
+            },
+            {
+              "time_start": "23:26:00-05:00",
+              "time_end": "23:41:00-05:00"
+            },
+            {
+              "time_start": "23:41:00-05:00",
+              "time_end": "23:56:00-05:00"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-experts-interaction_id-reviews">
+	<pre>
+		<code>
+GET /api/v1/individual/experts/bf24353a-7c39-431b-bf79-74716b371711/reviews?page=1&per_page=3 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjY5NiwiZXhwIjo0ODQ3NjYxODk2LCJqdGkiOiIwZmZlZTAwNy1kMmQ0LTQ2YjItOGQwMy0yNjhiZmViNmUxMGMifQ.HunuCHxAhqWqaEIEcpq6fEPAwnj-YjkQ8D7xkLdjvZs
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "next_page": null,
+  "last_page": true,
+  "rating": 5,
+  "reviews_count": 2,
+  "total_reviews": 2,
+  "total_ratings": 3,
+  "data": {
+    "reviews": [
+      {
+        "was_helpful": true,
+        "rating": 5,
+        "feedback": "Epic!",
+        "created_at": "2023-08-13T22:21:29.506Z",
+        "updated_at": "2023-08-13T22:33:48.447Z",
+        "reviewed_at": "2023-08-13T22:33:48.444Z",
+        "individual": {
+          "id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+          "has_stripe_payment_method": false,
+          "username": "JustHawk",
+          "first_name": "Just",
+          "last_name": "Haw",
+          "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic"
+        }
+      },
+      {
+        "was_helpful": true,
+        "rating": 5,
+        "feedback": "Brilliant man! ",
+        "created_at": "2023-08-13T22:19:11.108Z",
+        "updated_at": "2023-08-13T22:33:21.441Z",
+        "reviewed_at": "2023-08-13T22:33:21.438Z",
+        "individual": {
+          "id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+          "has_stripe_payment_method": false,
+          "username": "JustHawk",
+          "first_name": "Just",
+          "last_name": "Haw",
+          "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic"
+        }
+      }
+    ]
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-payments-credit_cards">
+	<pre>
+		<code>
+GET /api/v1/individual/payments/credit_cards HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjY5NiwiZXhwIjo0ODQ3NjYxODk2LCJqdGkiOiIwZmZlZTAwNy1kMmQ0LTQ2YjItOGQwMy0yNjhiZmViNmUxMGMifQ.HunuCHxAhqWqaEIEcpq6fEPAwnj-YjkQ8D7xkLdjvZs
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "customer_id": "cus_ORfWuT0blB73fa",
+    "credit_cards": [
+      {
+        "id": "pm_1NemaPA3xt8sfcfksPHAM9zy",
+        "brand": "discover",
+        "last_digits": "9893"
+      }
+    ],
+    "has_more": false
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-payments-ephemeral_key">
+	<pre>
+		<code>
+GET /api/v1/individual/payments/ephemeral_key HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjY5NiwiZXhwIjo0ODQ3NjYxODk2LCJqdGkiOiIwZmZlZTAwNy1kMmQ0LTQ2YjItOGQwMy0yNjhiZmViNmUxMGMifQ.HunuCHxAhqWqaEIEcpq6fEPAwnj-YjkQ8D7xkLdjvZs
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "ephemeral_key": {
+      "id": "ephkey_1Nen2dA3xt8sfcfkH5AQX99S",
+      "object": "ephemeral_key",
+      "associated_objects": [
+        {
+          "id": "cus_ORfWuT0blB73fa",
+          "type": "customer"
+        }
+      ],
+      "created": 1691966747,
+      "expires": 1691970347,
+      "livemode": true,
+      "secret": "ek_live_YWNjdF8xSjdQVkpBM3h0OHNmY2ZrLG5iVkdnT1ZhUDhTMkthR1R2OFlETVRZZGVVTDNjSW8_00GbtAdKa5"
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-quick_questions">
+	<pre>
+		<code>
+
+GET /api/v1/individual/quick_questions HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MjY5NywiZXhwIjo0ODQ3NjU3ODk3LCJqdGkiOiIxOTMxY2ExMS01MmZjLTQxNjYtYmQzOC02MjVmNGZmMTIxY2UifQ.DmQV5X-DdtFaHnUMiKUoE9Uzr6ZbdHcXmPrqpl-M3aI
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "quick_questions": [
+      {
+        "id": "96f5e569-dd4c-411c-911d-2962160323db",
+        "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "question": "Video",
+        "description": "Description",
+        "answer": "scascacca",
+        "answer_type": "video",
+        "parsed_answer": "scascacca",
+        "answer_date": "2023-08-13T22:30:27.782Z",
+        "payment_status": "succeeded",
+        "time_left": "0",
+        "rate": 20,
+        "is_answered": true,
+        "was_helpful": true,
+        "rating": 5,
+        "feedback": "Epic!",
+        "created_at": "2023-08-13T22:21:28.097Z",
+        "status": "answered",
+        "has_attachment": true,
+        "expert_name": "Nolen Felten",
+        "expert_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+        "expert_status": "pending",
+        "category_id": null,
+        "category_name": null,
+        "ask_for_feedback": false,
+        "expert_rating": 5,
+        "expert_reviews_count": 2,
+        "total_ratings": 3,
+        "total_reviews": 2
+      },
+      {
+        "id": "848756bc-6e80-4da7-bb07-afcbba0da5f2",
+        "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "question": "Title",
+        "description": "Question.",
+        "answer": "Beep Boop",
+        "answer_type": "text",
+        "parsed_answer": "Beep Boop",
+        "answer_date": "2023-08-13T22:28:05.554Z",
+        "payment_status": "succeeded",
+        "time_left": "0",
+        "rate": 10,
+        "is_answered": true,
+        "was_helpful": true,
+        "rating": 5,
+        "feedback": "Brilliant man! ",
+        "created_at": "2023-08-13T22:19:09.654Z",
+        "status": "answered",
+        "has_attachment": false,
+        "expert_name": "Nolen Felten",
+        "expert_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+        "expert_status": "pending",
+        "category_id": null,
+        "category_name": null,
+        "ask_for_feedback": false,
+        "expert_rating": 5,
+        "expert_reviews_count": 2,
+        "total_ratings": 3,
+        "total_reviews": 2
+      }
+    ]
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-quick_questions-interaction_id-attachment">
+	<pre>
+		<code>
+GET /api/v1/individual/quick_questions/96f5e569-dd4c-411c-911d-2962160323db/attachment HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTk1NywiZXhwIjo0ODQ3NjYxMTU3LCJqdGkiOiIwMmVmMzIxNS1iMTNjLTQwOWQtYTBiMy1kOGRiYWQyMmEyOWUifQ.JcGhk22CeXFIrc86itQtX7nkW6wvjMf6RvGQIMb60XE
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "url": "https://valuentainment-quick-questions-prod.s3.amazonaws.com/96f5e569-dd4c-411c-911d-2962160323db/17_29_Nolen%20Felten.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZWIFNH35KX3PLDFU%2F20230813%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230813T223334Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=6d31476e9292e27b701d857725d4d2556b3353ae982af4ec1df7688f2b295b65",
+    "headers": null,
+    "file_type": "mp4",
+    "file_size": "1.72 MB"
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-individual-transactions">
+	<pre>
+		<code>
+GET /api/v1/individual/transactions HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NjQwOSwiZXhwIjo0ODQ3NjYxNjA5LCJqdGkiOiJjYjMzY2VkMy1iODk0LTRiMDktODdiZS03MWIyMjQ0ZTU2Y2YifQ.Mgs9IrOUa8_eBdaV-2Od6GbHxFI-nSGWYcOGD19bmbo
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "transactions": [
+      {
+        "id": 1708,
+        "created_at": "2023-08-04T08:44:03.266Z",
+        "paid": true,
+        "expert": {
+          "id": "757bac78-984b-4a58-9667-a956cc3564be",
+          "first_name": "Nolen",
+          "last_name": "Felten"
+        },
+        "individual": {
+          "id": "40a4fd88-d0e2-450e-85dd-066915088e5c",
+          "first_name": "Nolen",
+          "last_name": "Felten"
+        },
+        "expert_interaction": {
+          "interaction_id": "9ae4b760-95bf-44f5-83bf-5f53a6c7f1c6",
+          "interaction_type": "ExpertCall",
+          "call_type": "1-1",
+          "extra_user": false,
+          "extra_user_rate": 0,
+          "is_time_addition": false,
+          "rate": 15
+        }
+      },
+      {
+        "id": 1354,
+        "created_at": "2023-07-02T23:30:45.029Z",
+        "paid": true,
+        "expert": {
+          "id": "bf24353a-7c39-431b-bf79-74716b371711",
+          "first_name": "Nolen",
+          "last_name": "Felten"
+        },
+        "individual": {
+          "id": "40a4fd88-d0e2-450e-85dd-066915088e5c",
+          "first_name": "Nolen",
+          "last_name": "Felten"
+        },
+        "expert_interaction": {
+          "interaction_id": "8a4fc6b6-0e35-4552-88e3-39990eacb3f9",
+          "interaction_type": "ExpertCall",
+          "call_type": "1-1",
+          "extra_user": false,
+          "extra_user_rate": 0,
+          "is_time_addition": false,
+          "rate": 15
+        }
+      }
+    ],
+    "results": 2,
+    "has_more": false
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-territories">
+	<pre>
+		<code>
+GET /api/v1/territories HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MjY5NywiZXhwIjo0ODQ3NjU3ODk3LCJqdGkiOiIxOTMxY2ExMS01MmZjLTQxNjYtYmQzOC02MjVmNGZmMTIxY2UifQ.DmQV5X-DdtFaHnUMiKUoE9Uzr6ZbdHcXmPrqpl-M3aI
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "territories": [
+      {
+        "id": 2,
+        "name": "United States",
+        "alpha2_code": "US",
+        "phone_code": "1",
+        "active": true,
+        "flag_url": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBhQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c58746ff84e1826d5d1c69690457daf0333018f/US.png"
+      }
+    ]
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-user">
+	<pre>
+		<code>
+GET /api/v1/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MjY5NywiZXhwIjo0ODQ3NjU3ODk3LCJqdGkiOiIxOTMxY2ExMS01MmZjLTQxNjYtYmQzOC02MjVmNGZmMTIxY2UifQ.DmQV5X-DdtFaHnUMiKUoE9Uzr6ZbdHcXmPrqpl-M3aI
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+    "status": "success",
+    "data": {
+        "user": {
+            "email": "nolenf@gmail.com",
+            "first_name": "Nolen",
+            "last_name": "Felten",
+            "active": true,
+            "date_of_birth": "1993-05-10",
+            "gender": "male",
+            "phone_number": "1123456789",
+            "phone": "123456789",
+            "country_code": "1",
+            "country": "US",
+            "flag_url": "https://staging.valuentainment.koombea.io/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc29CIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--916d02bea59664257e63cc999e36117214043592/US.png",
+            "city": "San Francisco",
+            "zip_code": "94928",
+            "url_picture": "https://staging.valuentainment.koombea.io/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdGdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f8a9b89a6c47f03e1d18a8d6af18a3b1ed64e5e/avatar@2x.jpg",
+            "allow_notifications": true,
+            "account_verified": true,
+            "status": "profile_set",
+            "two_factor_enabled": false,
+            "role": "expert",
+            "has_both_profiles": true,
+            "requires_confirmation": false,
+            "expert": {
+                "id": "80444236-395d-45f2-8ec7-d2b5672c6414",
+                "biography": "Description",
+                "website_url": null,
+                "linkedin_url": null,
+                "quick_question_rate": null,
+                "one_to_one_video_call_rate": null,
+                "one_to_five_video_call_rate": null,
+                "quick_question_text_rate": 50,
+                "quick_question_video_rate": 70,
+                "video_call_rate": 15,
+                "extra_user_rate": null,
+                "status": "pending",
+                "twitter_url": null,
+                "instagram_url": null,
+                "rating": 0.0,
+                "reviews_count": null,
+                "stripe_account_set": true,
+                "can_receive_stripe_transfers": true,
+                "slug": "NolenFelten",
+                "bank_account_last4": "6789",
+                "url_picture": "https://staging.valuentainment.koombea.io/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdGdDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f8a9b89a6c47f03e1d18a8d6af18a3b1ed64e5e/avatar@2x.jpg",
+                "consultation_count": 0,
+                "categories": [
+                    {
+                        "id": 42,
+                        "name": "Business",
+                        "description": null
+                    },
+                    {
+                        "id": 43,
+                        "name": "Celebrity",
+                        "description": null
+                    },
+                    {
+                        "id": 44,
+                        "name": "Coaching",
+                        "description": null
+                    }
+                ],
+                "total_reviews": 0,
+                "total_ratings": 0
+            }
+        }
+    }
+}
+
+      </code>
+    </pre>
+
+	<pre>
+		<code>
+
+GET /api/v1/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MjY5NywiZXhwIjo0ODQ3NjU3ODk3LCJqdGkiOiIxOTMxY2ExMS01MmZjLTQxNjYtYmQzOC02MjVmNGZmMTIxY2UifQ.DmQV5X-DdtFaHnUMiKUoE9Uzr6ZbdHcXmPrqpl-M3aI
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "user": {
+      "email": "nolenf@gmail.com",
+      "first_name": "Nolen",
+      "last_name": "Felten",
+      "active": true,
+      "date_of_birth": "1993-05-13",
+      "gender": "male",
+      "phone_number": "17079710122",
+      "phone": "7079710122",
+      "country_code": "1",
+      "country": "US",
+      "flag_url": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBhQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c58746ff84e1826d5d1c69690457daf0333018f/US.png",
+      "city": "Galv",
+      "zip_code": "61434",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+      "allow_notifications": true,
+      "account_verified": true,
+      "status": "profile_set",
+      "two_factor_enabled": false,
+      "role": "individual",
+      "has_both_profiles": true,
+      "requires_confirmation": false,
+      "individual": {
+        "id": "40a4fd88-d0e2-450e-85dd-066915088e5c",
+        "has_stripe_payment_method": false,
+        "username": "NolenFelten",
+        "first_name": "Nolen",
+        "last_name": "Felten",
+        "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic"
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="GET" id="GET-user-two_factor_settings-new">
+	<pre>
+		<code>
+GET /api/v1/user/two_factor_settings/new HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MzUwOCwiZXhwIjo0ODQ3NjU4NzA4LCJqdGkiOiI5YzE1ZDdhZi04NTk3LTQ2ZTMtOGZjZS02YTk0MzkwOWNhOTYifQ.MVBORhOwkZr1nYeanrDfbGBo2ha17bFkNeCyEVlS5M8
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "error",
+  "message": "Invalid phone number to send code"
+}
+      </code>
+    </pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="PATCH" id="PATCH-individual-user">
+	<pre>
+		<code>
+PATCH /api/v1/individual/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MzUwOCwiZXhwIjo0ODQ3NjU4NzA4LCJqdGkiOiI5YzE1ZDdhZi04NTk3LTQ2ZTMtOGZjZS02YTk0MzkwOWNhOTYifQ.MVBORhOwkZr1nYeanrDfbGBo2ha17bFkNeCyEVlS5M8
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 230
+
+{"user":{"city":"Portland","country":"US","country_code":"1","date_of_birth":"2005-8-13","first_name":"Justin","gender":"male","last_name":"Hawk","phone":"1234567890","phone_number":"11234567890","username":"","zip_code":"61434"}}
+
+{
+  "status": "success",
+  "data": {
+    "user": {
+      "email": "pidgesadjhiqcercdg@cazlp.com",
+      "first_name": "Justin",
+      "last_name": "Hawk",
+      "active": true,
+      "date_of_birth": "2005-08-13",
+      "gender": "male",
+      "phone_number": "11234567890",
+      "phone": "1234567890",
+      "country_code": "1",
+      "country": "US",
+      "flag_url": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBhQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c58746ff84e1826d5d1c69690457daf0333018f/US.png",
+      "city": "Portland",
+      "zip_code": "61434",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic",
+      "allow_notifications": true,
+      "account_verified": true,
+      "status": "profile_set",
+      "two_factor_enabled": false,
+      "role": "individual",
+      "has_both_profiles": false,
+      "requires_confirmation": false,
+      "individual": {
+        "id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "has_stripe_payment_method": false,
+        "username": null,
+        "first_name": "Justin",
+        "last_name": "Hawk",
+        "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic"
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="PATCH" id="PATCH-user-allow_notifications">
+	<pre>
+		<code>
+PATCH /api/v1/user/allow_notifications HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 38
+
+{"user":{"allow_notifications":false}}
+
+{
+  "status": "success",
+  "data": {
+    "user": {
+      "email": "nolenf@gmail.com",
+      "first_name": "Nolen",
+      "last_name": "Felten",
+      "active": true,
+      "date_of_birth": "1993-05-13",
+      "gender": "male",
+      "phone_number": "17079710122",
+      "phone": "7079710122",
+      "country_code": "1",
+      "country": "US",
+      "flag_url": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBhQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c58746ff84e1826d5d1c69690457daf0333018f/US.png",
+      "city": "Galv",
+      "zip_code": "61434",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+      "allow_notifications": false,
+      "account_verified": true,
+      "status": "profile_set",
+      "two_factor_enabled": false,
+      "role": "expert",
+      "has_both_profiles": true,
+      "requires_confirmation": false,
+      "expert": {
+        "id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "biography": "Mycologist",
+        "website_url": "",
+        "linkedin_url": "",
+        "quick_question_rate": 50,
+        "one_to_one_video_call_rate": 10,
+        "one_to_five_video_call_rate": 10,
+        "quick_question_text_rate": 10,
+        "quick_question_video_rate": 20,
+        "video_call_rate": 2,
+        "extra_user_rate": 5,
+        "status": "pending",
+        "twitter_url": "",
+        "instagram_url": "",
+        "rating": 5,
+        "reviews_count": 0,
+        "stripe_account_set": true,
+        "can_receive_stripe_transfers": true,
+        "slug": "NolenFelten",
+        "bank_account_last4": "1813",
+        "consultation_count": 3,
+        "categories": [
+          {
+            "id": 55,
+            "name": "Technology",
+            "description": null
+          }
+        ],
+        "total_reviews": 0,
+        "total_ratings": 1
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="PATCH" id="PATCH-user-change_profile">
+	<pre>
+		<code>
+PATCH /api/v1/user/change_profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MjY5NywiZXhwIjo0ODQ3NjU3ODk3LCJqdGkiOiIxOTMxY2ExMS01MmZjLTQxNjYtYmQzOC02MjVmNGZmMTIxY2UifQ.DmQV5X-DdtFaHnUMiKUoE9Uzr6ZbdHcXmPrqpl-M3aI
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "user": {
+      "email": "nolenf@gmail.com",
+      "first_name": "Nolen",
+      "last_name": "Felten",
+      "active": true,
+      "date_of_birth": "1993-05-13",
+      "gender": "male",
+      "phone_number": "17079710122",
+      "phone": "7079710122",
+      "country_code": "1",
+      "country": "US",
+      "flag_url": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBhQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c58746ff84e1826d5d1c69690457daf0333018f/US.png",
+      "city": "Galv",
+      "zip_code": "61434",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+      "allow_notifications": true,
+      "account_verified": true,
+      "status": "profile_set",
+      "two_factor_enabled": false,
+      "role": "expert",
+      "has_both_profiles": true,
+      "requires_confirmation": false,
+      "expert": {
+        "id": "bf24353a-7c39-431b-bf79-74716b371711",
+        "biography": "Mycologist",
+        "website_url": "",
+        "linkedin_url": "",
+        "quick_question_rate": 50,
+        "one_to_one_video_call_rate": 10,
+        "one_to_five_video_call_rate": 10,
+        "quick_question_text_rate": 10,
+        "quick_question_video_rate": 20,
+        "video_call_rate": 2,
+        "extra_user_rate": 5,
+        "status": "pending",
+        "twitter_url": "",
+        "instagram_url": "",
+        "rating": 5,
+        "reviews_count": 0,
+        "stripe_account_set": true,
+        "can_receive_stripe_transfers": true,
+        "slug": "NolenFelten",
+        "bank_account_last4": "1813",
+        "consultation_count": 1,
+        "categories": [
+          {
+            "id": 55,
+            "name": "Technology",
+            "description": null
+          }
+        ],
+        "total_reviews": 0,
+        "total_ratings": 1
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="PATCH" id="PATCH-user-profile_picture-update">
+	<pre>
+		<code>
+PATCH /api/v1/user/profile_picture/update HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MzUwOCwiZXhwIjo0ODQ3NjU4NzA4LCJqdGkiOiI5YzE1ZDdhZi04NTk3LTQ2ZTMtOGZjZS02YTk0MzkwOWNhOTYifQ.MVBORhOwkZr1nYeanrDfbGBo2ha17bFkNeCyEVlS5M8
+Content-Type: multipart/form-data; boundary=37907563-bcc5-4c86-94aa-465b3fd16079
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 78
+
+!!! UNREPRESENTABLE BINARY REQUEST BODY - BODY MUST BE EXPORTED SEPARATELY !!!
+
+{
+  "status": "success",
+  "data": {
+    "user": {
+      "email": "pidgesadjhiqcercdg@cazlp.com",
+      "first_name": "Justin",
+      "last_name": "Hawk",
+      "active": true,
+      "date_of_birth": null,
+      "gender": null,
+      "phone_number": null,
+      "phone": null,
+      "country_code": "+1",
+      "country": null,
+      "flag_url": null,
+      "city": null,
+      "zip_code": null,
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic",
+      "allow_notifications": true,
+      "account_verified": true,
+      "status": "registered",
+      "two_factor_enabled": false,
+      "role": "individual",
+      "has_both_profiles": false,
+      "requires_confirmation": false,
+      "individual": {
+        "id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "has_stripe_payment_method": false,
+        "username": null,
+        "first_name": "Justin",
+        "last_name": "Hawk",
+        "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic"
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="method POST" id="POST">
+
+<div class="POST" id="POST-expert-payments-connect_account">
+	<pre>
+		<code>
+POST /api/v1/expert/payments/connect_account HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MzUwOCwiZXhwIjo0ODQ3NjU4NzA4LCJqdGkiOiI5YzE1ZDdhZi04NTk3LTQ2ZTMtOGZjZS02YTk0MzkwOWNhOTYifQ.MVBORhOwkZr1nYeanrDfbGBo2ha17bFkNeCyEVlS5M8
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+
+{
+  "status": "success",
+  "data": {
+    "account_link": "https://connect.stripe.com/setup/e/acct_1NemLnPIhJfTBcqj/ayn4ZYikUE9b"
+  }
+}
+
+      </code>
+    </pre>
+  </div>
+<div class="POST" id="POST-expert-quick_questions-interaction_id-attachment">
+	<pre>
+		<code>
+POST /api/v1/expert/quick_questions/96f5e569-dd4c-411c-911d-2962160323db/attachment HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 97
+
+{"attachment":{"file_name":"17_29_Nolen Felten.mp4","file_size":1802611,"file_type":"video/mp4"}}
+
+{
+  "status": "success",
+  "data": {
+    "url": "https://valuentainment-quick-questions-prod.s3.amazonaws.com/96f5e569-dd4c-411c-911d-2962160323db/17_29_Nolen%20Felten.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZWIFNH35KX3PLDFU%2F20230813%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230813T222945Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=6fc74df76936bac147e9d6d2b85d5f95727126ced4abbe4f7bed58b4e1e81ed8",
+    "headers": {
+      "Content-Type": "video/mp4",
+      "Content-Disposition": "inline; filename=\"17_29_Nolen_Felten.mp4\"; filename*=UTF-8''17_29_Nolen_Felten.mp4"
+    },
+    "file_type": "mp4",
+    "file_size": "1.72 MB"
+  }
+}
+
+      </code>
+    </pre>
+  </div>
+<div class="POST" id="POST-individual-expert_calls">
+	<pre>
+		<code>
+POST /api/v1/individual/expert_calls HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTk1NywiZXhwIjo0ODQ3NjYxMTU3LCJqdGkiOiIwMmVmMzIxNS1iMTNjLTQwOWQtYTBiMy1kOGRiYWQyMmEyOWUifQ.JcGhk22CeXFIrc86itQtX7nkW6wvjMf6RvGQIMb60XE
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 271
+
+{"expert_call":{"call_type":"1-1","description":"Description","expert_id":"bf24353a-7c39-431b-bf79-74716b371711","scheduled_call_duration":"15","scheduled_time_start":"2023-08-14T14:56:00-05:00","stripe_payment_method_id":"pm_1NemaPA3xt8sfcfksPHAM9zy","title":"Subject"}}
+
+{
+  "status": "error",
+  "message": "A payment error occurred: Your card was declined."
+}
+      </code>
+    </pre>
+  </div>
+<div class="POST" id="POST-individual-profiles">
+	<pre>
+		<code>
+POST /api/v1/individual/profiles HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2MzUwOCwiZXhwIjo0ODQ3NjU4NzA4LCJqdGkiOiI5YzE1ZDdhZi04NTk3LTQ2ZTMtOGZjZS02YTk0MzkwOWNhOTYifQ.MVBORhOwkZr1nYeanrDfbGBo2ha17bFkNeCyEVlS5M8
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 456
+
+{"profile":{"category_ids":[42],"extra_user_rate":5,"date_of_birth":"2005-08-13","quick_question_text_rate":10,"twitter_url":"","video_call_rate":1,"zip_code":"61434","city":"Portland","linkedin_url":"","gender":"male","biography":"Hey! I'm on minnect!","quick_question_video_rate":20,"phone_number":"11234567890","one_to_one_video_call_rate":10,"country":"US","website_url":"","instagram_url":"","quick_question_rate":50,"one_to_five_video_call_rate":10}}
+
+{
+  "status": "success",
+  "data": {
+    "user": {
+      "email": "pidgesadjhiqcercdg@cazlp.com",
+      "first_name": "Justin",
+      "last_name": "Hawk",
+      "active": true,
+      "date_of_birth": "2005-08-13",
+      "gender": "male",
+      "phone_number": "11234567890",
+      "phone": "1234567890",
+      "country_code": "1",
+      "country": "US",
+      "flag_url": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBhQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c58746ff84e1826d5d1c69690457daf0333018f/US.png",
+      "city": "Portland",
+      "zip_code": "61434",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic",
+      "allow_notifications": true,
+      "account_verified": true,
+      "status": "profile_set",
+      "two_factor_enabled": false,
+      "role": "expert",
+      "has_both_profiles": true,
+      "requires_confirmation": false,
+      "expert": {
+        "id": "9743f2a1-4cf6-4a83-9760-f54517bdb3c0",
+        "biography": "Hey! I'm on minnect!",
+        "website_url": "",
+        "linkedin_url": "",
+        "quick_question_rate": 50,
+        "one_to_one_video_call_rate": 10,
+        "one_to_five_video_call_rate": 10,
+        "quick_question_text_rate": 50,
+        "quick_question_video_rate": 70,
+        "video_call_rate": 15,
+        "extra_user_rate": 5,
+        "status": "pending",
+        "twitter_url": "",
+        "instagram_url": "",
+        "rating": 0,
+        "reviews_count": null,
+        "stripe_account_set": false,
+        "can_receive_stripe_transfers": false,
+        "slug": "JustinHawk",
+        "bank_account_last4": null,
+        "consultation_count": 0,
+        "categories": [
+          {
+            "id": 42,
+            "name": "Business",
+            "description": null
+          }
+        ],
+        "total_reviews": 0,
+        "total_ratings": 0
+      },
+      "individual": {
+        "id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "has_stripe_payment_method": false,
+        "username": null,
+        "first_name": "Justin",
+        "last_name": "Hawk",
+        "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm8yIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd6f9aee85ac9889de7cb6505837edbac7627461/profile_pic"
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="POST" id="POST-individual-quick_questions">
+	<pre>
+		<code>
+POST /api/v1/individual/quick_questions HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NDM2MywiZXhwIjo0ODQ3NjU5NTYzLCJqdGkiOiI1ZDUxOWQwYS1kM2VhLTRmNDAtOWFkYi1mYTNiOTVmOTdhNDMifQ.ImivTSFMIuGs8RxLfaAL0jt3XGaEjiiNPQDJjrGNldE
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 175
+
+{"answer_type":"text","description":"Question.","expert_id":"bf24353a-7c39-431b-bf79-74716b371711","question":"Title","stripe_payment_method_id":"pm_1NemaPA3xt8sfcfksPHAM9zy"}
+
+{
+  "status": "success",
+  "data": {
+    "quick_question": {
+      "id": "848756bc-6e80-4da7-bb07-afcbba0da5f2",
+      "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+      "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+      "question": "Title",
+      "description": "Question.",
+      "answer": null,
+      "answer_type": "text",
+      "parsed_answer": null,
+      "answer_date": null,
+      "payment_status": "requires_capture",
+      "time_left": "4 days",
+      "rate": 10,
+      "is_answered": false,
+      "was_helpful": null,
+      "rating": null,
+      "feedback": null,
+      "created_at": "2023-08-13T22:19:09.654Z",
+      "status": "pending",
+      "has_attachment": false,
+      "expert_name": "Nolen Felten",
+      "expert_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+      "expert_status": "pending",
+      "category_id": null,
+      "category_name": null,
+      "ask_for_feedback": false,
+      "expert_rating": 5,
+      "expert_reviews_count": 0,
+      "total_ratings": 1,
+      "total_reviews": 0
+    },
+    "expert": [],
+    "client_secret": "pi_3NemcrA3xt8sfcfk0SWslPbN_secret_qka5YhVM6kX6uKESFVkrkNHtU"
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="POST" id="POST-password">
+	<pre>
+		<code>
+POST /api/v1/password HTTP/1.1
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 49
+
+{"user":{"email":"pidgesadjhiqcercdg@cazlp.com"}}
+
+{}
+
+      </code>
+    </pre>
+  </div>
+<div class="POST" id="POST-sign_in">
+	<pre>
+		<code>
+POST /api/v1/sign_in HTTP/1.1
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 82
+
+{"user":{"email":"nolenf@gmail.com","password":"Stargate513","role":"individual"}}
+
+{
+  "status": "success",
+  "data": {
+    "user": {
+      "email": "nolenf@gmail.com",
+      "first_name": "Nolen",
+      "last_name": "Felten",
+      "active": true,
+      "date_of_birth": "1993-05-13",
+      "gender": "male",
+      "phone_number": "17079710122",
+      "phone": "7079710122",
+      "country_code": "1",
+      "country": "US",
+      "flag_url": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBhQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c58746ff84e1826d5d1c69690457daf0333018f/US.png",
+      "city": "Galv",
+      "zip_code": "61434",
+      "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic",
+      "allow_notifications": true,
+      "account_verified": true,
+      "status": "profile_set",
+      "two_factor_enabled": false,
+      "role": "individual",
+      "has_both_profiles": true,
+      "requires_confirmation": false,
+      "individual": {
+        "id": "40a4fd88-d0e2-450e-85dd-066915088e5c",
+        "has_stripe_payment_method": false,
+        "username": "NolenFelten",
+        "first_name": "Nolen",
+        "last_name": "Felten",
+        "url_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdTgyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4a5f74528841991d8179a4579839470b54c691fe/profile_pic"
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="POST" id="POST-sign_up">
+	<pre>
+		<code>
+POST /api/v1/sign_up HTTP/1.1
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 202
+
+{"user":{"email":"pidgesadjhiqcercdg@cazlp.com","first_name":"Justin","last_name":"Hawk","password":"stargate513","password_confirmation":"stargate513","requires_confirmation":true,"role":"individual"}}
+
+{
+  "status": "success",
+  "data": {
+    "user": {
+      "email": "pidgesadjhiqcercdg@cazlp.com",
+      "first_name": "Justin",
+      "last_name": "Hawk",
+      "active": true,
+      "date_of_birth": null,
+      "gender": null,
+      "phone_number": null,
+      "phone": null,
+      "country_code": "+1",
+      "country": null,
+      "flag_url": null,
+      "city": null,
+      "zip_code": null,
+      "url_picture": null,
+      "allow_notifications": true,
+      "account_verified": false,
+      "status": "registered",
+      "two_factor_enabled": false,
+      "role": "individual",
+      "has_both_profiles": false,
+      "requires_confirmation": true,
+      "individual": {
+        "id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+        "has_stripe_payment_method": false,
+        "username": null,
+        "first_name": "Justin",
+        "last_name": "Hawk",
+        "url_picture": null
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+
+      </code>
+    </pre>
+  </div>
+
+
+
+
+
+
+
+<div class="method PUT" id="PUT">
+
+<div class="PUT" id="PUT-expert-availability">
+	<pre>
+		<code>
+PUT /api/v1/expert/availability HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 255
+
+{"expert_availability":{"weekdays":{"days":["monday","tuesday","wednesday","thursday","friday"],"time_end":"23:59:00-05:00","time_start":"12:11:00-05:00"},"weekend":{"days":["saturday","sunday"],"time_end":"11:59:00-05:00","time_start":"00:00:00-05:00"}}}
+
+{
+  "status": "success",
+  "data": {
+    "expert_availability": {
+      "weekdays": {
+        "days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ],
+        "time_start": "12:11:00-05:00",
+        "time_end": "23:59:00-05:00"
+      },
+      "weekend": {
+        "days": [
+          "saturday",
+          "sunday"
+        ],
+        "time_start": "00:00:00-05:00",
+        "time_end": "11:59:00-05:00"
+      }
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="PUT" id="PUT-expert-quick_questions-interaction_id">
+	<pre>
+		<code>
+PUT /api/v1/expert/quick_questions/96f5e569-dd4c-411c-911d-2962160323db HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 63
+
+{"quick_question":{"answer":"scasca","answered_as_draft":true}}
+
+
+{
+  "status": "success",
+  "data": {
+    "quick_question": {
+      "id": "96f5e569-dd4c-411c-911d-2962160323db",
+      "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+      "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+      "question": "Video",
+      "description": "Description",
+      "answer": "scasca",
+      "answer_type": "video",
+      "answer_date": null,
+      "payment_status": "requires_capture",
+      "time_left": "4 days",
+      "rate": 20,
+      "is_answered": false,
+      "created_at": "2023-08-13T22:21:28.097Z",
+      "was_helpful": null,
+      "rating": null,
+      "feedback": null,
+      "reviewed_at": null,
+      "status": "draft_answered",
+      "has_attachment": false,
+      "individual_name": "Just Haw",
+      "category_id": null,
+      "category_name": null,
+      "ask_for_feedback": false
+    }
+  }
+}
+
+      </code>
+    </pre>
+
+	<pre>
+		<code>
+
+PUT /api/v1/expert/quick_questions/96f5e569-dd4c-411c-911d-2962160323db HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 63
+
+{"quick_question":{"answer":"scasca","answered_as_draft":true}}
+
+{
+  "status": "success",
+  "data": {
+    "quick_question": {
+      "id": "96f5e569-dd4c-411c-911d-2962160323db",
+      "expert_id": "bf24353a-7c39-431b-bf79-74716b371711",
+      "individual_id": "40c0bf86-dd90-4223-9869-097500bd55f5",
+      "question": "Video",
+      "description": "Description",
+      "answer": "scasca",
+      "answer_type": "video",
+      "answer_date": null,
+      "payment_status": "requires_capture",
+      "time_left": "4 days",
+      "rate": 20,
+      "is_answered": false,
+      "created_at": "2023-08-13T22:21:28.097Z",
+      "was_helpful": null,
+      "rating": null,
+      "feedback": null,
+      "reviewed_at": null,
+      "status": "draft_answered",
+      "has_attachment": false,
+      "individual_name": "Just Haw",
+      "category_id": null,
+      "category_name": null,
+      "ask_for_feedback": false
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+<div class="PUT" id="PUT-expert-quick_questions-quick_question_id-attachment">
+	<pre>
+		<code>
+PUT /api/v1/expert/quick_questions/96f5e569-dd4c-411c-911d-2962160323db/attachment HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mzk1MyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTU0MSwiZXhwIjo0ODQ3NjYwNzQxLCJqdGkiOiIwZGM3Nzg3ZC01OTBiLTQ2ZTMtYjFkMS1jNzlmYTYxZjMwZDcifQ.J729HvnpASmmagpAKSgZSHF1-JTeTtJEudjFN9x_y9Y
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 118
+
+{"attachment":{"file_name":"17_29_Nolen Felten.mp4","file_size":"1802611","file_type":"video/mp4","in_bucket":"true"}}
+
+{
+  "status": "success",
+  "data": {
+    "url": "https://valuentainment-quick-questions-prod.s3.amazonaws.com/96f5e569-dd4c-411c-911d-2962160323db/17_29_Nolen%20Felten.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZWIFNH35KX3PLDFU%2F20230813%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230813T222946Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=0abed17e9729870c64e2a9e8aa5f998ebb953a1b95c389ba9e77de84b3dea830",
+    "headers": null,
+    "file_type": "mp4",
+    "file_size": "1.72 MB"
+  }
+}
+
+      </code>
+    </pre>
+  </div>
+
+<div class="PUT" id="PUT-individual-quick_questions/quick_question_id/feedback">
+	<pre>
+		<code>
+PUT /api/v1/individual/quick_questions/848756bc-6e80-4da7-bb07-afcbba0da5f2/feedback HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTk1NywiZXhwIjo0ODQ3NjYxMTU3LCJqdGkiOiIwMmVmMzIxNS1iMTNjLTQwOWQtYTBiMy1kOGRiYWQyMmEyOWUifQ.JcGhk22CeXFIrc86itQtX7nkW6wvjMf6RvGQIMb60XE
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 39
+
+{"quick_question":{"was_helpful":true}}
+
+{
+  "success": true,
+  "message": "Your request has been successfully submitted."
+}
+
+      </code>
+    </pre>
+
+	<pre>
+		<code>
+
+PUT /api/v1/individual/quick_questions/848756bc-6e80-4da7-bb07-afcbba0da5f2/feedback HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDYyMCIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5MTk2NTk1NywiZXhwIjo0ODQ3NjYxMTU3LCJqdGkiOiIwMmVmMzIxNS1iMTNjLTQwOWQtYTBiMy1kOGRiYWQyMmEyOWUifQ.JcGhk22CeXFIrc86itQtX7nkW6wvjMf6RvGQIMb60XE
+Content-Type: application/json
+Host: api.minnect.com
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/4.10.0
+Content-Length: 81
+
+{"quick_question":{"feedback":"Brilliant man! ","rating":5.0,"was_helpful":true}}
+
+{
+  "success": true,
+  "message": "Your request has been successfully submitted."
+}
+      </code>
+    </pre>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
