@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <style>
+    
+    
+    .page-content {
+    --bg-white: #FFFFFF;
+    --primary: #027335;
+    
+    }
+    
+    
+    
+    .banner-wrapper{
+    padding: 15vh;
+    padding-top: 0vh;
+    margin-bottom: -15vh;
+    text-align: center;
+    background: #CCCCCC;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    }
+    
+    
+    
+    
+    
+    
+    
+    .account-box {
+      border-radius: 5vw;
+      background-color: var(--bg-white);
+      position: relative;
+      z-index: 2;
+    }
+    
+    #banner {
+      height: 25vh;
+    }
+    
+    .title {
+      text-align: center;
+    }
+  </style>  
+  
+</head>
+<body>
+   
+  <div class="page-content">
+    <div class="banner-wrapper">
+      <div class="container inner-wrapper">
+                <img id="banner" src="https://minnect.com/wp-content/uploads/2023/02/red-logo-horizontal-e1676666092745.png">
+            </div>
+    </div>
+    <div class="account-box">
+      <div class="container">
+        <div class="account-area">
+                    <h2 class="title">Login</h2>
+                    <p class="text-soft">Please enter your credentials to proceed.</p>
+					<form>
+						<div class="mb-3 input-group input-group-icon">
+							<input type="text" class="form-control" placeholder="Email">
+						</div>
+						<div class="mb-3 input-group input-group-icon">
+							<input type="password" class="form-control dz-password" placeholder="Password">	
+						</div>
+						<div class="input-group">
+							<a href="index.html" class="btn mt-2 btn-primary w-100">SIGN IN</a>
+						</div>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+								<label class="form-check-label" for="flexCheckChecked">
+									Remember me.
+								</label>
+							</div>
+							<a href="forgot-password.html" class="btn-link">Forgot password?</a>
+						</div>
+					</form>  
+                    <div class="text-center mb-auto p-tb20">
+                        <p>Don’t have an account? <a href="register.html" class="saprate text-soft">Sign up!</a></p>
+                    </div>
+                </div>
+            </div>
+    </div>
+  </div>
+</body>
+</html>
