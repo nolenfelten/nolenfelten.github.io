@@ -1,0 +1,288 @@
+
+Objective: Build a new social media platform called "Minnect". Minnect will have an API and browser based web application.
+
+0. Create a Django Project called "minnect_project" with a single app folder called "minnect_app".
+    - minnect/
+        - minnect_project/
+            - __init__.py
+            - settings.py
+            - urls.py
+            - asgi.py
+            - wsgi.py
+        - minnect_app/
+            - migrations/
+                - __init__.py
+            - static/
+            - templates/
+            - __init__.py
+            - admin.py
+            - apps.py
+            - models.py
+            - tests.py
+            - views.py
+            - urls.py
+        - manage.py
+
+1. Build Templates while explaining the user experiance.
+    - base.html
+        - Contains styles.css, jquery, bootstrap, etc, the header and footer navbar, between those is <div id="content"></div>.
+            - Top navbar has a height of 95px and stays at the top while scrolling.
+                - The left side has <img src="https://app.valuentainment.jafton.com/images/logo.svg" width="154px">.
+                - The center has <form height="54px" width="450px"><input type="search" placeholder="Search..."></form>.
+                - The right side has <a href="/sign-up" class="btn btn--black"> Sign Up </a><a href="/sign-in" class="btn"> Sign In </a><div class="dropdown"><button class="dropbtn" onclick="myFunction()">Dropdown<i class="fa fa-caret-down"></i></button><div class="dropdown-content" id="myDropdown"><a href="#">Download App</a><a href="#">Become an Expert</a><a href="#">About us</a><a href="#">FAQ</a></div></div></div>
+                    - If a user is signed in, the Sign Up and Sign In links will be replaced with <a href="/account">{{first_name}} {{last_name}}</a>. .dropdown stays.
+            - Bottom navbar has a height of 44px, a small solid border only on top, and does not stay when scrolling.
+                - On the right side has <a href="/terms"> Terms </a><a href="/privacy"> Privacy </a>.
+        - The idea is to recreate "https://app.valuentainment.jafton.com/". All templates will output inside <div id="content"></div>.
+        - Browser sends request to "/api/user" if valid JWT is present in request headers for every template.
+
+    - index.html
+        - Everything centered.
+        - <h2>Browse Featured Experts</h2>.
+        - <br>
+        - Table element (9 <td> elements in 3 <tr> elements) containing expert users information: profile picture <br> first and last name <br> (if expert user has not 0 amount of reviews with rating not equal to null, take each review's rating integer and output the average with max rating being 10, as a string, + " - Average Rating". If there are no 0 reviews with rating just skip.) - {{ number of "interactions" with "status": "completed" }} - Interactions.
+            - The table is comprised of the expert users with the highest number of "interactions" with "status": "completed".
+            - If there is less then 9 expert users, just output each expert profile to the table, in the same formation style.
+        - The idea is to recreate "https://app.valuentainment.jafton.com/".
+
+    - sign_up.html
+        - Everything centered.
+            - <h2>Sign Up</h2>
+            - <br>
+            - <form><input name="first_name" placeholder="First Name"><br><input name="last_name" placeholder="Last Name"><br><input name="email" placeholder="Email"><br><input name="password" placeholder="Password"><br><input name="confirm_password" placeholder="Repeat Password"><br><input name="check" type="checkbox"><label for="check">I agree with <a href="/privacy-policy/"> Privacy Policy </a> and <a href="/terms-conditions/" target="_blank"> Terms &amp; Conditions </a></label>.<br><input type="submit" value="Submit"></form>
+            - <p> Already have an account? <a href="/sign-in">Sign In</a></p>
+        - Recreate "https://app.valuentainment.jafton.com/sign-up".
+        - A user can sign up an account by providing a First Name, Last Name, Email, and Password to /api/sign_up.
+        - An email verification link is sent to the users email.
+            - When the link is visited, the "requires_confirmation" is set to true in the user object.
+        - This is a platform where users ("individual") purchase messages and video calls from other users ("experts").
+            - There are 2 products:
+                - Message:
+                    - Response with text.
+                    - Video response to a message. 
+                - 1 on 1 video call.
+                    - 15 mins.
+                    - 30 mins.
+                    - 45 mins.
+                    - 60 mins.
+            - For both, the individual submits the message (subject + body) and payment goes to the platform.
+                - When the expert responds to the message or accepts the call request, then the call date and time has passed, the platform sends payment to the expert.
+        - Since this is a prototype, all "individual" users have 1000 "points" they use to transact.
+        - When a user has signed up, they are in "individual" mode. 
+            - "individual" means the user browses experts profiles to contact.
+
+        - "individual" user object looks like this:
+            - { 
+                "user": {
+                    "email": "example@test.com",
+                    "first_name": "First",
+                    "last_name": "Last",
+                    "requires_confirmation": true,
+                    "date_of_birth": null,
+                    "gender": null,
+                    "phone_number": null,
+                    "phone": null,
+                    "country_code": "+1",
+                    "country": null,
+                    "city": null, 
+                    "zip_code": null,
+                    "url_picture": null,
+                    "account_verified": false,
+                    "role": "individual",
+                    "has_both_profiles": false,
+                    "individual": {
+                        "id": "40c0bf86-dd90-4223-9869-097500bd55f5"
+                    }
+                } 
+            }
+        
+        - A JSON Web Token is made and signed and sent to the user for authorization. 
+        - Example of JWT header.payload: 
+            { "alg": "HS256" }.{ "sub": "70620", "scp": "user", "aud": null, "iat": 1691966696,"exp": 4847661896, "jti": "0ffee007-d2d4-46b2-8d03-268bfeb6e10c" }
+
+        - When signed up, the browser redirects to index.html signed in.
+
+    - sign_in.html
+        - Everything centered.
+            - <h2>Sign Up</h2>
+            - <br>
+            - <form><input name="email" placeholder="Email"><br><input name="password" placeholder="Password"><br><input type="submit" value="Submit"></form>
+            - <br>
+            - <a href="/reset-password" class="block-actions-forgot_Xbzz-">Forgot password?</a>
+        - Recreate "https://app.valuentainment.jafton.com/sign-in".
+        - Redirect to index.htnk signed in
+        
+    - reset-password.html
+        - <h2>Reset Password</h2>
+        - <br>
+        - <form><input name="password" placeholder="Password"><br><input type="submit" value="Submit"></form>
+        - After submit, an email is sent containing a link which to a form: 
+            - New Password.
+            - Confirm Password.
+            - Submit
+    
+    - become-an-expert.html
+        - recreate the form on "https://app.valuentainment.jafton.com/account/become-an-expert"
+        - when successfully submitted, set the user object key "has_both_profiles" to true and "roll" to "expert".
+        - only when a user is signed in and their "has_both_profiles" is false, can the user submit the form, otherwise just forward to index.html.
+        - Expert user object looks like this:
+            - "user": {
+                "email": "example@test.com",
+                "first_name": "First",
+                "last_name": "Last",
+                "requires_confirmation": true,
+                "date_of_birth": year-month-day,
+                "gender": male,
+                "phone": "707-703-8309",
+                "country_code": "+1",
+                "country": "United States",
+                "city": "Galva", 
+                "zip_code": "61434",
+                "profile_picture": "https://api.minnect.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdEVyIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f43df8795af39d7d9c7a4f60281ce68c9e86e8a5/profile_pic",
+                "role": "expert",
+                "has_both_profiles": "true",
+                "expert": {
+                    "id": "4d3ee627-b6d8-44a9-b670-85faa6e176e0",
+                    "biography": "",
+                    "quick_question_text_rate": 1,
+                    "quick_question_video_rate": 1,
+                    "one_to_one_video_call_rate": 1,
+                    "website_url": "",
+                    "linkedin_url": "",
+                    "twitter_url": "",
+                    "instagram_url": "",
+                    "rating": 0,
+                    "consultation_count": 0,
+                    "total_reviews": 0,
+                    "total_ratings": 0
+                }
+            }
+            
+
+
+    - search.html
+        - /search?name=
+            - Browser sends request to "/api/experts?name=&pagination%5Bpage%5D=1&pagination%5Bper_page%5D=10"
+                - Returns search results of all expert users first_name + " " + last_name. If name= contains no string, return all expert users.
+                - Top of page is <h2>Search Results:</h2><br> {{ number of results }} Experts.
+                - Table element (2 <td> elements, 5 <tr> element formation) is populated with each expert users <a href="/expert/{{ user['expert']['id'] }}">profile picture and first and last name</a>.
+            - When page is scrolled to bottom, the browser request "/web/experts?name=&pagination%5Bpage%5D=2&pagination%5Bper_page%5D=10" and if more expert users are returned, their <td> element will populate the table in correct formation.
+            - Repeat and increment page%D= number by 1 until request return 0 expert users.
+                - Then scrolling to bottom of page does not trigger request.
+        - Recreate "https://app.minnect.com/search?name=Y"
+
+
+    - expert.html
+        - Recreate "https://app.minnect.com/expert/AdamSosnick"
+        - Browser sends request to "/api/expert/{expert_id}" for expert object:
+            - "expert": {
+                "email": "1wolfgang555@gmail.com",
+                "first_name": "Expert Nikita ",
+                "last_name": "Fursov",
+                "date_of_birth": "2005-06-22",
+                "phone_number": "18036190424",
+                "phone": "8036190424",
+                "country_code": "1",
+                "city": "Tashkent",
+                "zip_code": "100102",
+                "url_picture": "",
+                "active": true,
+                "gender": "male",
+                "country": "US",
+                "id": "54d1ba06-28d7-4d9c-a85e-5afd670df80c",
+                "biography": "",
+                "website_url": "https://http://google.com/",
+                "linkedin_url": "",
+                "twitter_url": "https://www.twitter.com/https://twitter.com/",
+                "instagram_url": "https://www.instagram.com/https://instagram.com/",
+                "quick_question_text_rate": 1500,
+                "quick_question_video_rate": 2000,
+                "video_call_rate": 1,
+                "rating": 4.22,
+                "status": "verified",
+                "slug": "ExpertNikitaFursov",
+                "age": 18,
+                "consultation_count": 586,
+                "total_reviews": 23,
+                "total_ratings": 38,
+            }
+        - Browser sends request to "/api/expert/{expert_id}/reviews".
+            - { "rating": 5.0, "reviews_count": 1, "total_reviews": 1,"total_ratings": 2, "data": { "reviews": [ { "was_helpful": true, "rating": 5.0, "feedback": "I truly appreciate the fact how quick he delivered the answer. Aaron really seems to care.", "created_at": "2023-08-03T07:15:14.571Z", "reviewed_at": "2023-08-04T09:19:18.259Z", "individual": { "id": "85487e45-3b89-44cd-acf9-14881aba7359", "first_name": "Nauris", "last_name": "Spulgis",}}]}}
+
+        - Instead of "AdamSosnick" in url, use expert_id.
+        - Remove "Where I can help" section.
+        - Add a button link that says "Ask Question" that links to "/expert/{expert_id}/question"
+
+    - question.html
+        - <h2>Ask Question</h2>
+        - Expert first and last name.
+        - Expert profile picture.
+        - Expert rating average.
+        - Expert consultation count.
+        - Expert quick_question_text_rate
+        - Expert quick_question_video_rate
+        - <form>
+            - <input placeholder="Question Subject" name="subject">
+            - <input placeholder="Question" name="question">
+            - <h3>Choose Format</h3>
+            - <select><option value="text">Text</option><option value="video">Video</option></select>
+            - <button type="submit">Send Question</button>
+        - </form>
+
+
+
+
+
+
+    - account.html
+        - Unless user has signed in (sent request to /account with valid JWT), browser redirects to index.html.
+        
+        - <h2>Account Settings</h2><br>{{ User first and last name }}, {{ User email }}<br>
+
+        - Link to switch user role. 
+            - if user["has_both_profiles"] == true:
+                - The link to switch user role sends PATCH request to /account, and with a valid JWT and has_both_profiles, will change user["role"] and refresh page.
+                    - if user["role"] == "individual" and user["has_both_profiles"] == true:
+                        - "Switch to Expert."
+                    - if user["role"] == "expert" and user["has_both_profiles"] == true:
+                        - "Switch to Individual."
+            - if user["role"] == "individual" and user["has_both_profiles"] == false:
+                - "Become an expert." -> /become-an-expert.html
+        
+        - if user["role"] == "individual":
+            - Page looks like: "https://nolenfelten.github.io/account.html"
+            - Link to general.html
+            - Link to transactions.html
+            - Link to log out that sends a DELETE request to /api/sign_out which invalidates the JWT and redirects browser to index.html
+        - if user["role"] == "expert":
+            - Page looks like: "https://nolenfelten.github.io/account-expert.html"
+                
+
+
+    - general.html
+        - Individual and expert.
+    
+    
+    - transactions.html
+        - Individual and expert.
+
+    - expert-details.html
+
+    - availability.html
+        - Recreate "https://nolenfelten.github.io/availability.html"
+
+    - prices.html
+        - Recreate "https://nolenfelten.github.io/prices.html" with users price rate as placeholder.
+
+    
+    - reviews.html
+        - Recreate "https://nolenfelten.github.io/prices.html"
+
+        
+    
+
+
+2. Write /minnect_project/urls.py and /minnect_app/urls.py
+
+
+3. 
