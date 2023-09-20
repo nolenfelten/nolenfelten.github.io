@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Token-Based Authentication: A Programmer's First-Person Experience</title>
+  <style>
+    /* Global */
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e;
+      color: #b5b5b5;
+    }
+
+    /* Header */
+    header {
+      background-color: #333;
+      color: #cddc39;
+      text-align: center;
+      padding: 1rem;
+      border-bottom: 2px solid #cddc39;
+    }
+
+    /* Sections */
+    section {
+      padding: 2rem;
+      border-bottom: 1px dashed #696969;
+    }
+
+    /* Code Blocks */
+    code, pre {
+      background-color: #282828;
+      color: #a6e22e;
+      border-radius: 5px;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    pre {
+      overflow-x: auto;
+    }
+
+    /* Horizontal Rules */
+    hr {
+      border: 1px dashed #FF0000;
+      width: 80%;
+      margin: 2rem auto;
+    }
+
+    /* Center Elements */
+    center {
+      text-align: center;
+    }
+
+    /* Links */
+    a {
+      color: #61dafb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Highlighted Text */
+    b {
+      color: #e6db74;
+    }
+
+    /* Buttons */
+    button {
+      background-color: #333;
+      color: #cddc39;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>What They Don't Want You To Know About Token Authentication/Authorization: Revealed!</h1>
+    <hr>
+    
+    <h3>Nolen James Felten</h3>
+    
+  </header>
+  
+  
+    <section>
+        <h2>The Challenge</h2>
+        <p>
+            This was too simple and took way too much time to solve, so I am writing about it.
+        </p>
+      <p>
+         I guess I was asking too much when I set out to build a simple 3 page web app. <br>1. Sign Up Page. 2. Sign In Page. 3. Page you can only access if you signed in.
+    </p>
+      <p>I am in a situation where I had to meet this exact criteria: POST request to Sign Up & Sign In rewards correct user/password with a response header named "authorization" that javascript must extract the value of and store it for use in future request.</p>
+      
+      <p>That set of rules forced me to solution because otherwise I would have just said fuck it and used simple cookies to move on.</p>
+
+      <p>
+        What pissed me off about the whole thing is that <b>I understood JSON Web Tokens</b>, they are not complicated. <br>Like, at all...<br>It is the same thing as a cookie, only its difference and purpose is that a JWT can not be tampered with by the client. I have dicked around with them before in a previous project. Maybe that was my problem! I had dicked around with JWT's in a previous project, involving an existing web application that used them. But I never implemented it myself. Moving forward.</p>
+
+<p>I am using Vue 3 client side and Express server side. But the thing about this was that I had experianced this issue in Django too.</p>
+  </section>
+  <hr>
+  <section>
+    <center><button><h2><a href="#" id="downloadLink">Download Working Code!</a></h2></button><br><h3>Everything below is not the working code!</h3><br><img src="https://i.imgur.com/GsPVD71.png"></center>
+    
+     <script>
+    const zipBase64 = "UEsDBBQAAAAAAK+iM1c+KbbiTgQAAE4EAAARAAAAZXhwcmVzc19zZXJ2ZXIuanMKY29uc3QgZXhwcmVzcyA9IHJlcXVpcmUoJ2V4cHJlc3MnKTsKY29uc3QgY29ycyA9IHJlcXVpcmUoJ2NvcnMnKTsKY29uc3Qgand0ID0gcmVxdWlyZSgnanNvbndlYnRva2VuJyk7Cgpjb25zdCBhcHAgPSBleHByZXNzKCk7CmNvbnN0IFBPUlQgPSAzMDAwOwoKY29uc3QgU0VDUkVUX0tFWSA9ICd5b3VyLXNlY3JldC1rZXknOwoKYXBwLnVzZShjb3JzKHsKICAgIGV4cG9zZWRIZWFkZXJzOiBbJ0F1dGhvcml6YXRpb24nXSwKICAgIG9yaWdpbjogJyonLCAvLyBDaGFuZ2UgdGhpcyB0byB0aGUgZG9tYWluIG9mIHlvdXIgVnVlLmpzIGFwcCBmb3IgcHJvZHVjdGlvbgp9KSk7CgphcHAuZ2V0KCcvZ2V0LXRva2VuJywgKHJlcSwgcmVzKSA9PiB7CiAgICBjb25zdCB0b2tlbiA9IGp3dC5zaWduKHsgdXNlcm5hbWU6ICdqb2huLmRvZScgfSwgU0VDUkVUX0tFWSwgeyBleHBpcmVzSW46ICcxaCcgfSk7CiAgICByZXMuc2V0SGVhZGVyKCdBdXRob3JpemF0aW9uJywgYEJlYXJlciAke3Rva2VufWApOwogICAgcmVzLmpzb24oeyBtZXNzYWdlOiAnVG9rZW4gc2VudCBpbiBBdXRob3JpemF0aW9uIGhlYWRlci4nIH0pOwp9KTsKCmFwcC5nZXQoJy9wcm90ZWN0ZWQtcm91dGUnLCAocmVxLCByZXMpID0+IHsKICAgIGNvbnN0IGF1dGhIZWFkZXIgPSByZXEuaGVhZGVycy5hdXRob3JpemF0aW9uOwoKICAgIGlmICghYXV0aEhlYWRlcikgewogICAgICAgIHJldHVybiByZXMuc3RhdHVzKDQwMSkuanNvbih7IG1lc3NhZ2U6ICdObyB0b2tlbiBwcm92aWRlZC4nIH0pOwogICAgfQoKICAgIGNvbnN0IFtzY2hlbWUsIHRva2VuXSA9IGF1dGhIZWFkZXIuc3BsaXQoJyAnKTsKCiAgICB0cnkgewogICAgICAgIGp3dC52ZXJpZnkodG9rZW4sIFNFQ1JFVF9LRVkpOwogICAgICAgIHJlcy5qc29uKHsgbWVzc2FnZTogJ1lvdSBhcmUgYXV0aG9yaXplZCEnIH0pOwogICAgfSBjYXRjaCAoZSkgewogICAgICAgIHJlcy5zdGF0dXMoNDAxKS5qc29uKHsgbWVzc2FnZTogJ1VuYXV0aG9yaXplZC4nIH0pOwogICAgfQp9KTsKCmFwcC5saXN0ZW4oUE9SVCwgKCkgPT4gewogICAgY29uc29sZS5sb2coYFNlcnZlciBpcyBydW5uaW5nIG9uIHBvcnQgJHtQT1JUfWApOwp9KTsKUEsDBBQAAAAAAK+iM1cwJOURWAQAAFgEAAAOAAAAdnVlX2NsaWVudC52dWUKPHRlbXBsYXRlPgogIDxkaXY+CiAgICA8YnV0dG9uIEBjbGljaz0iZ2V0VG9rZW4iPkdldCBUb2tlbjwvYnV0dG9uPgogICAgPGJ1dHRvbiBAY2xpY2s9ImFjY2Vzc1Byb3RlY3RlZFJvdXRlIj5BY2Nlc3MgUHJvdGVjdGVkIFJvdXRlPC9idXR0b24+CiAgPC9kaXY+CjwvdGVtcGxhdGU+Cgo8c2NyaXB0PgpleHBvcnQgZGVmYXVsdCB7CiAgZGF0YSgpIHsKICAgIHJldHVybiB7CiAgICAgIHRva2VuOiBudWxsLAogICAgfTsKICB9LAogIG1ldGhvZHM6IHsKICAgIGFzeW5jIGdldFRva2VuKCkgewogICAgICB0cnkgewogICAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goJ2h0dHA6Ly9sb2NhbGhvc3Q6MzAwMC9nZXQtdG9rZW4nKTsKICAgICAgICB0aGlzLnRva2VuID0gcmVzcG9uc2UuaGVhZGVycy5nZXQoJ0F1dGhvcml6YXRpb24nKS5zcGxpdCgnICcpWzFdOwogICAgICAgIGNvbnNvbGUubG9nKCdSZWNlaXZlZCBUb2tlbjonLCB0aGlzLnRva2VuKTsKICAgICAgfSBjYXRjaCAoZXJyb3IpIHsKICAgICAgICBjb25zb2xlLmVycm9yKCdBbiBlcnJvciBvY2N1cnJlZDonLCBlcnJvcik7CiAgICAgIH0KICAgIH0sCiAgICBhc3luYyBhY2Nlc3NQcm90ZWN0ZWRSb3V0ZSgpIHsKICAgICAgaWYgKCF0aGlzLnRva2VuKSB7CiAgICAgICAgY29uc29sZS5sb2coJ05vIHRva2VuIGF2YWlsYWJsZS4nKTsKICAgICAgICByZXR1cm47CiAgICAgIH0KICAgICAgdHJ5IHsKICAgICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKCdodHRwOi8vbG9jYWxob3N0OjMwMDAvcHJvdGVjdGVkLXJvdXRlJywgewogICAgICAgICAgaGVhZGVyczogewogICAgICAgICAgICAnQXV0aG9yaXphdGlvbic6IGBCZWFyZXIgJHt0aGlzLnRva2VufWAsCiAgICAgICAgICB9LAogICAgICAgIH0pOwogICAgICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5qc29uKCk7CiAgICAgICAgY29uc29sZS5sb2coJ1Byb3RlY3RlZCByb3V0ZSByZXNwb25zZTonLCBkYXRhKTsKICAgICAgfSBjYXRjaCAoZXJyb3IpIHsKICAgICAgICBjb25zb2xlLmVycm9yKCdBbiBlcnJvciBvY2N1cnJlZDonLCBlcnJvcik7CiAgICAgIH0KICAgIH0sCiAgfSwKfTsKPC9zY3JpcHQ+ClBLAQIUAxQAAAAAAK+iM1c+KbbiTgQAAE4EAAARAAAAAAAAAAAAAACkgQAAAABleHByZXNzX3NlcnZlci5qc1BLAQIUAxQAAAAAAK+iM1cwJOURWAQAAFgEAAAOAAAAAAAAAAAAAACkgX0EAAB2dWVfY2xpZW50LnZ1ZVBLBQYAAAAAAgACAHsAAAABCQAAAAA=";
+
+    document.getElementById('downloadLink').addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const zipBlob = base64ToBlob(zipBase64, 'application/zip');
+      
+      const url = window.URL.createObjectURL(zipBlob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.download = 'express_vue_example.zip';
+
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+    });
+
+    function base64ToBlob(base64, mimeType = '') {
+      const byteCharacters = atob(base64);
+      const byteArrays = [];
+
+      for (let offset = 0; offset < byteCharacters.length; offset += 512) {
+        const slice = byteCharacters.slice(offset, offset + 512);
+
+        const byteNumbers = new Array(slice.length);
+        for (let i = 0; i < slice.length; i++) {
+          byteNumbers[i] = slice.charCodeAt(i);
+        }
+
+        const byteArray = new Uint8Array(byteNumbers);
+        byteArrays.push(byteArray);
+      }
+
+      return new Blob(byteArrays, { type: mimeType });
+    }
+    </script>
+  </section>
+
+  </section>
+      <hr>
+    <section>
+  <center><h3>Server-Side: Express</h3></center>
+  <pre>
+    <code>
+      <span style="color: #0000CC;">const</span> express = require('express');
+      <span style="color: #0000CC;">const</span> cors = require('cors');
+      <span style="color: #0000CC;">const</span> jwt = require('jsonwebtoken');
+
+      <span style="color: #0000CC;">const</span> app = express();
+      <span style="color: #0000CC;">const</span> PORT = 3000;
+
+      <span style="color: #FFFFFF;">// Consider this whole thing pseudocode. M'kay.</span>
+      <span style="color: #0000CC;">const</span> SECRET_KEY = 'your-secret-key';
+
+      app.use(cors({
+        <span style="color: #FFFFFF;">// So, I guess the unspoken rule here is that when you send headers, the name of the header is not case sensitive.</span>
+        <span style="color: #FFFFFF;">// However!</span>
+        <span style="color: #FFFFFF;">// When you receive a header that you are about to write a bunch of code to work on, you want to set the string to lower-case before you work on it.</span>
+        <span style="color: #FFFFFF;">// Right here, right now, this is case sensitive.</span>
+        exposedHeaders: ['Authorization'],
+        origin: '*', <span style="color: #FFFFFF;">// Reason for this, read about it somewhere else.</span>
+      }));
+      
+      <span style="color: #FFFFFF;">// Step 0: Generate JWT.</span>
+      <span style="color: #FFFFFF;">// Somewhere on the internet is an official way of doing this.</span>
+      <span style="color: #FFFFFF;">// Go read up on that.</span>
+      
+      <span style="color: #0000CC;">function</span> JWT(userID, SECRET_KEY) { }
+      <span style="color: #0000CC;">const</span> jwtHeader = { alg: "HS256", };
+      <span style="color: #0000CC;">const</span> jwtPayload = {
+        sub: userID, <span style="color: #FFFFFF;">// Replace with a unique identifier you can use to select a user from the database.</span>
+        scp: "user",
+        aud: null,
+        iat: Math.floor(Date.now() / 1000), <span style="color: #FFFFFF;">// Current timestamp in seconds since Unix epoch</span>
+        exp: Math.floor(Date.now() / 1000) + 3600, <span style="color: #FFFFFF;">// Expiration in one hour (adjust as needed)</span>
+        jti: uuid.v4(), <span style="color: #FFFFFF;">// Generate a UUIDv4 for JWT.</span>
+      };
+
+      <span style="color: #FF0000;">return</span> jwt.sign(jwtPayload, SECRET_KEY, { header: jwtHeader });
+    }
+    
+    <span style="color: #FFFFFF;"> You have to sign up before you can sign in, so, step 1, sign up!</span>
+
+    <span style="color: #FFFFFF;">// There is a bunch of little bits of information you are going to have to figure out somewhere else because we would be here for too long to explain EVERYTHING.</span>
+    <span style="color: #FFFFFF;">// Like validating user data, creating a user model schema, etc, etc, etc.</span>
+    app.post("/api/v1/sign_up", (request, response) => {
+
+      <span style="color: #FFFFFF;">// Demonstration purposes:</span>
+      <span style="color: #0000CC;">const</span> { email, password } = request.body;
+
+      <span style="color: #FFFFFF;">// Before we go and flip a bunch of bits for nothing, let's see if this email is already in the database:</span>
+      <span style="color: #0000CC;">const</span> existingUser = await User.findOne({ email });
+      <span style="color: #0000CC;">if</span> (existingUser) {
+        <span style="color: #FF0000;">return</span> res.status(420) <span style="color: #FFFFFF;">// Get the heck up out of here.</span>
+      } <span style="color: #0000CC;">else</span> {
+
+        <span style="color: #FFFFFF;">// Hash the password.</span>
+        <span style="color: #0000CC;">const</span> saltRounds = 10;
+        <span style="color: #0000CC;">const</span> hashedPassword = await bcrypt.hash(password, saltRounds);
+
+        <span style="color: #FFFFFF;">// Bunch of very specific and personal steps would go here.</span>
+
+        <span style="color: #FFFFFF;">// Save the new user to the database.</span>
+        <span style="color: #FFFFFF;">// Yay!</span>
+        await newUser.save();
+
+        <span style="color: #FFFFFF;">// Set the JWT token to the Authorization header with the "Bearer" scheme.</span>
+        <span style="color: #FFFFFF;">// Header name in this situation is case insensitive.</span>
+        response.setHeader("Authorization", `Bearer ${JWT(userID, SECRET_KEY)}`).send('Token sent');
+      }
+    })
+
+    <span style="color: #FFFFFF;">// Step 2, sign in.</span>
+    app.post("/api/v1/sign_in", (request, response) => {
+
+      <span style="color: #FFFFFF;">// Demonstration purposes:</span>
+      <span style="color: #0000CC;">const</span> { email, password } = request.body;
+
+      <span style="color: #FFFFFF;">// Okay, first of all, WHO THE HECK ARE YOU?!</span>
+      <span style="color: #0000CC;">const</span> userByEmail = await User.findOne({ email });
+      <span style="color: #0000CC;">if</span> (!userByEmail) {
+        <span style="color: #FF0000;">return</span> res.status(420) <span style="color: #FFFFFF;">// Get the heck up out of here.</span>
+      } <span style="color: #0000CC;">else</span> {
+
+        <span style="color: #FFFFFF;">// Still inside the first if's else statement.</span>
+
+        <span style="color: #FFFFFF;">// Prove you are whom you say you are.</span>
+        <span style="color: #0000CC;">const</span> passwordMatch = await bcrypt.compare(password, userByEmail.password);
+        <span style="color: #0000CC;">if</span> (!passwordMatch) {
+          <span style="color: #FF0000;">return</span> res.status(420) <span style="color:#FFFFFF;">// Get the heck up out of here.</span>
+        } <span style="color: #0000CC;">else</span> {
+
+          <span style="color:#FFFFFF;">// Still inside the second if's else statement.</span>
+
+          <span style="color:#FFFFFF;">// Set the JWT token to the Authorization header with the "Bearer" scheme.</span>
+          <span style="color:#FFFFFF;">// Don't forget about what I said last time.</span>
+          <span style="color:#FFFFFF;">// Nah, it was not really that important, I was just messing with you.</span>
+          response.setHeader("Authorization", `Bearer ${JWT(userID, SECRET_KEY)}`).send('Token sent');
+        }
+      }
+    })
+
+    <span style="color:#FFFFFF;">// Let's see if we just wasted a bunch of time by moving on to step 3.</span>
+
+    <span style="color:#FFFFFF;">// Protected route</span>
+    app.get('/protected', (request, response) => {
+
+      <span style="color:#FFFFFF;">// Grab the Authorization header.</span>
+      <span style="color: #0000CC;">const</span> authorizationHeader = request.headers.authorization;
+
+      <span style="color:#FFFFFF;">// See if AuthorizationHeader has a value and if it does, extract it out of the value.</span>
+      <span style="color: #0000CC;">const</span> token = authorizationHeader && authorizationHeader.split(' ')[1];
+      <span style="color: #0000CC;">if</span> (!token) {
+        <span style="color: #FF0000;">return</span> res.sendStatus(420); <span style="color: #FFFFFF;">// Get the heck up out of here with that no token-ass nonsense, motherfudger!</span>
+      } <span style="color: #0000CC;">else</span> {
+
+        jwt.verify(token, SECRET_KEY, (err, user) => {
+          <span style="color: #0000CC;">if</span> (err) <span style="color: #FF0000;">return</span> res.sendStatus(403);
+          res.send('Protected content');
+        });
+      }
+    });
+
+    <span style="color: #FFFFFF;">// Run the trap!</span>
+    app.listen(PORT, () => {
+      console.log(`Server running on http://localhost:${PORT}`);
+    });
+    </code>
+  </pre>
+</section>
+<hr>
+<section>
+  <center><h3>Client-Side: Vue</h3></center>
+  <code>
+    <pre>
+
+<span style="color: #FF0000;">&lt;</span><span style="color: #FFFFFF>;">template<span style="color: #FF0000;">&gt;</span>
+  <span style="color: #FF0000;">&lt;</span><span style="color: #FFFFFF>;">div<span style="color: #FF0000;">&gt;</span>
+    <span style="color: #FF0000;">&lt;</span><span style="color: #FFFFFF>;">button @click=&quot;getToken&quot;<span style="color: #FF0000;">&gt;</span>Get Token<span style="color: #FF0000;">&lt;</span><span style="color: #FFFFFF>;">/button<span style="color: #FF0000;">&gt;</span>
+    <span style="color: #FF0000;">&lt;</span><span style="color: #FFFFFF>;">button @click=&quot;accessProtectedRoute&quot;<span style="color: #FF0000;">&gt;</span>Access Protected Route<span style="color: #FF0000;">&lt;</span><span style="color: #FFFFFF>;">/button<span style="color: #FF0000;">&gt;</span>
+  <span style="color: #FF0000;">&lt;</span><span style="color: #FFFFFF>;">/div<span style="color: #FF0000;">&gt;</span>
+<span style="color: #FF0000;">&lt;</span><span style="color: #FFFFFF>;">/template<span style="color: #FF0000;">&gt;</span>
+
+<span style="color: #FF0000;">&lt;</span><span style="color: #FFFFFF>;">script<span style="color: #FF0000;">&gt;</span>
+export default {
+  data() {
+    return {
+      token: null,
+    };
+  },
+  methods: {
+    <span style="color: #FFFFFF;">// This is like sign up and sign in.</span>
+    async getToken() {
+      <span style="color: #FFFFFF;">try</span> {
+        <span style="color: #0000CC;">const</span> response = await fetch('http://localhost:3000/get-token');
+        this.token = response.headers.get('Authorization').split(' ')[1];
+        console.log('Received Token:', this.token);
+      } <span style="color: #0000CC;">catch</span> (error) {
+        console.error('An error occurred:', error);
+      }
+    },
+
+    <span style="color: #FFFFFF;">// This is like /protected in the server-side code.</span>
+    async accessProtectedRoute() {
+      <span style="color: #0000CC;">if</span> (!this.token) {
+        console.log('No token available.');
+        <span style="color: #FF0000;">return;</span>
+      }
+      <span style="color: #0000CC;">try</span> {
+        <span style="color: #0000CC;">const</span> response = await fetch('http://localhost:3000/protected-route', {
+          headers: {
+            'Authorization': `Bearer ${this.token}`,
+          },
+        });
+        <span style="color: #0000CC;">const</span> data = await response.json();
+        console.log('Protected route response:', data);
+      } <span style="color: #0000CC;">catch</span> (error) {
+        console.error('An error occurred:', error);
+      }
+    },
+  },
+};
+<span style="color: #FF0000;">&lt;</span><span style="color: #FFFFFF>;">/script<span style="color: #FF0000;">&gt;</span>
+</pre>
+  </code>
+</pre>
+
+  </section>
+    
+   
+</body>
+</html>
