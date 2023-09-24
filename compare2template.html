@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    width: 100%;
+  }
+
+  .text-area {
+    flex: 1;
+    padding: 10px;
+    height: 100vh;
+    border: none;
+    resize: none;
+    font-family: monospace;
+  }
+
+  .black-bg {
+    background-color: black;
+    color: yellow;
+    counter-reset: line-counter;
+    white-space: pre-line;
+  }
+
+  .gray-bg {
+    background-color: #222222;
+    color: green;
+    counter-reset: line-counter;
+    white-space: pre-line;
+  }
+
+  .line-number::before {
+    content: counter(line-counter);
+    counter-increment: line-counter;
+    padding-right: 10px;
+    color: inherit;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="text-area black-bg" contenteditable="true">
+      <pre><code>Python</code></pre>
+      <div class="line-number"></div>
+      
+      <!-- Add your content here -->
+    </div>
+    <div class="text-area gray-bg" contenteditable="true">
+      <pre><code>Vue</code></pre>
+      <div class="line-number"></div>
+      
+    </div>
+  </div>
+</body>
+</html>
