@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<schedule-calendar-container _nghost-ng-c1719109971="" style="box-sizing:border-box;position:relative;display:block;">
+    <!---->
+    <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;"><span _ngcontent-ng-c1719109971="" style="box-sizing:border-box;display:flex;align-items:center;">
+            <schedule-month-selector _ngcontent-ng-c1719109971="" _nghost-ng-c3631589987="" style="box-sizing:border-box;margin-left:15px;display:flex;align-items:center;">
+                <h1 _ngcontent-ng-c3631589987="" data-e2e="schedule-calendar-date" style="font-size:30px;margin:15px 0px;box-sizing:border-box;font-weight:700;margin-top:15px;margin-bottom:15px;padding:0px 0px 5px;font-family:Circular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, sans-serif;line-height:33px;color:rgb(38, 35, 33);"> November 2023 </h1>
+                <adp-button _ngcontent-ng-c3631589987="" data-e2e="previous-month" analyticson="" icontype="chevron-left" _nghost-ng-c3438161838="" role="presentation" style="box-sizing:border-box;display:block;">
+                    <div _ngcontent-ng-c3438161838="" style="box-sizing:border-box;display:inline-block;font-size:14px;"><button _ngcontent-ng-c3438161838="" type="button" tabindex="0" aria-label="" style="border-radius:50%;padding:2.28571px;color:rgb(71, 107, 195);text-transform:none;font-size:16px;box-sizing:content-box;justify-content:center;font-weight:500;transition:all 0.2s ease 0s;appearance:button;cursor:pointer;overflow:visible;margin:0px;background-color:rgba(0, 0, 0, 0);outline:rgb(71, 107, 195) none 0px;min-width:40px;position:relative;display:inline-flex;align-items:center;height:40px;text-align:center;line-height:40px;touch-action:manipulation;font-family:Circular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, sans-serif;">
+                            <!---->
+                            <adp-icon _ngcontent-ng-c3438161838="" _nghost-ng-c3924687234="" style="box-sizing:border-box;margin-left:3.33333px;margin-right:3.33333px;"><i _ngcontent-ng-c3924687234="" aria-hidden="true" role="presentation" tabindex="-1" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></adp-icon>
+                            <!----><span _ngcontent-ng-c3438161838="" style="box-sizing:border-box;"></span>
+                            <!---->
+                        </button></div>
+                </adp-button>
+                <adp-button _ngcontent-ng-c3631589987="" data-e2e="next-month" analyticson="" icontype="chevron-right" _nghost-ng-c3438161838="" role="presentation" style="box-sizing:border-box;margin-left:5.71429px;display:block;">
+                    <div _ngcontent-ng-c3438161838="" style="box-sizing:border-box;display:inline-block;font-size:14px;"><button _ngcontent-ng-c3438161838="" type="button" tabindex="0" aria-label="" style="border-radius:50%;padding:2.28571px;color:rgb(71, 107, 195);text-transform:none;font-size:16px;box-sizing:content-box;justify-content:center;font-weight:500;transition:all 0.2s ease 0s;appearance:button;cursor:pointer;overflow:visible;margin:0px;background-color:rgba(0, 0, 0, 0);outline:rgb(71, 107, 195) none 0px;min-width:40px;position:relative;display:inline-flex;align-items:center;height:40px;text-align:center;line-height:40px;touch-action:manipulation;font-family:Circular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, sans-serif;">
+                            <!---->
+                            <adp-icon _ngcontent-ng-c3438161838="" _nghost-ng-c3924687234="" style="box-sizing:border-box;margin-left:3.33333px;margin-right:3.33333px;"><i _ngcontent-ng-c3924687234="" aria-hidden="true" role="presentation" tabindex="-1" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></adp-icon>
+                            <!----><span _ngcontent-ng-c3438161838="" style="box-sizing:border-box;"></span>
+                            <!---->
+                        </button></div>
+                </adp-button>
+                <adp-button _ngcontent-ng-c3631589987="" data-e2e="today-button" analyticson="" _nghost-ng-c3438161838="" role="presentation" style="box-sizing:border-box;margin-left:5.71429px;display:block;">
+                    <div _ngcontent-ng-c3438161838="" style="box-sizing:border-box;display:inline-block;font-size:14px;"><button _ngcontent-ng-c3438161838="" type="button" tabindex="0" aria-label="" style="background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;box-shadow:rgb(124, 161, 230) 0px 0px 0px 2px inset;color:rgb(50, 79, 165);border:0px none rgb(50, 79, 165);border-radius:8px;text-transform:none;font-size:16px;box-sizing:content-box;justify-content:center;padding:0px 18.2857px;font-weight:500;transition:all 0.2s ease 0s;appearance:button;cursor:pointer;overflow:visible;margin:0px;background-color:rgb(255, 255, 255);position:relative;display:inline-flex;align-items:center;height:40px;text-align:center;line-height:40px;touch-action:manipulation;min-width:56px;font-family:Circular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif, sans-serif;">
+                            <!---->
+                            <!----><span _ngcontent-ng-c3438161838="" style="box-sizing:border-box;margin:0px;"> Today </span>
+                            <!---->
+                        </button></div>
+                </adp-button>
+            </schedule-month-selector>
+            <!---->
+            <!---->
+        </span>
+        <!---->
+        <schedule-requests-bar _ngcontent-ng-c1719109971="" displaytype="modal" _nghost-ng-c2950779533="" style="box-sizing:border-box;text-align:start;">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+        </schedule-requests-bar>
+    </div>
+    <section _ngcontent-ng-c1719109971="" style="display:block;box-sizing:border-box;font-feature-settings:'tnum';margin:0px 15px;position:relative;min-height:1170px;">
+        <schedule-error _ngcontent-ng-c1719109971="" style="box-sizing:border-box;">
+            <!---->
+            <!---->
+            <!---->
+        </schedule-error>
+        <!---->
+        <section _ngcontent-ng-c1719109971="" style="display:flex;box-sizing:border-box;border-bottom:1px solid rgb(242, 240, 237);">
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-of-week-header" style="box-sizing:border-box;background-color:rgb(242, 240, 237);color:rgb(84, 78, 74);line-height:32px;text-align:center;font-weight:600;width: 14.2857%;padding:5px;border-top-left-radius:15px;overflow:hidden;"> Sun </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-of-week-header" style="box-sizing:border-box;background-color:rgb(242, 240, 237);color:rgb(84, 78, 74);line-height:32px;text-align:center;font-weight:600;width: 14.2857%;padding:5px;overflow:hidden;"> Mon </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-of-week-header" style="box-sizing:border-box;background-color:rgb(242, 240, 237);color:rgb(84, 78, 74);line-height:32px;text-align:center;font-weight:600;width: 14.2857%;padding:5px;overflow:hidden;"> Tue </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-of-week-header" style="box-sizing:border-box;background-color:rgb(242, 240, 237);color:rgb(84, 78, 74);line-height:32px;text-align:center;font-weight:600;width: 14.2857%;padding:5px;overflow:hidden;"> Wed </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-of-week-header" style="box-sizing:border-box;background-color:rgb(242, 240, 237);color:rgb(84, 78, 74);line-height:32px;text-align:center;font-weight:600;width: 14.2857%;padding:5px;overflow:hidden;"> Thu </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-of-week-header" style="box-sizing:border-box;background-color:rgb(242, 240, 237);color:rgb(84, 78, 74);line-height:32px;text-align:center;font-weight:600;width: 14.2857%;padding:5px;overflow:hidden;"> Fri </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-of-week-header" style="box-sizing:border-box;background-color:rgb(242, 240, 237);color:rgb(84, 78, 74);line-height:32px;text-align:center;font-weight:600;width: 14.2857%;padding:5px;border-top-right-radius:15px;overflow:hidden;"> Sat </div>
+            <!---->
+        </section>
+        <div _ngcontent-ng-c1719109971="" data-e2e="calendar-week" style="box-sizing:border-box;display:flex;border-bottom:1px solid rgb(242, 240, 237);">
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-10-29" style="box-sizing:border-box;background-color:rgb(227, 223, 218);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">29</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:15 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-10-30" style="box-sizing:border-box;background-color:rgb(227, 223, 218);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">30</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:5px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-10-31" style="box-sizing:border-box;background-color:rgb(227, 223, 218);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">31</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 10:00 AM - 4:00 PM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-01" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">1</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:15 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-02" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">2</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 7:00 AM - 8:00 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-03" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">3</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 11:00 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-04" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">4</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:30 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <!---->
+        </div>
+        <div _ngcontent-ng-c1719109971="" data-e2e="calendar-week" style="box-sizing:border-box;display:flex;border-bottom:1px solid rgb(242, 240, 237);">
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-05" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">5</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:45 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-06" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">6</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:5px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-07" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">7</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:00 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-08" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">8</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:5px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-09" style="box-sizing:border-box;background-color:rgb(216, 229, 249);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;color:rgb(50, 79, 165);font-weight:700;">9</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:00 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-10" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">10</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:30 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-11" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">11</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:45 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <!---->
+        </div>
+        <div _ngcontent-ng-c1719109971="" data-e2e="calendar-week" style="box-sizing:border-box;display:flex;border-bottom:1px solid rgb(242, 240, 237);">
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-12" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">12</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:15 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-13" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">13</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:00 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-14" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">14</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:00 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-15" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">15</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:5px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-16" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">16</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:15 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-17" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">17</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:5px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-18" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">18</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 10:00 AM - 4:00 PM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <!---->
+        </div>
+        <div _ngcontent-ng-c1719109971="" data-e2e="calendar-week" style="box-sizing:border-box;display:flex;border-bottom:1px solid rgb(242, 240, 237);">
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-19" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">19</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 9:30 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-20" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">20</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:5px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-21" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">21</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:00 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-22" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">22</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:5px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-23" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">23</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-holidays" style="box-sizing:border-box;color:rgb(164, 148, 214);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;">Thanksgiving Day
+                                    <!---->
+                                    <!---->
+                                </div>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-24" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">24</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:30 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-25" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">25</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 10:15 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <!---->
+        </div>
+        <div _ngcontent-ng-c1719109971="" data-e2e="calendar-week" style="box-sizing:border-box;display:flex;border-bottom:1px solid rgb(242, 240, 237);">
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-26" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">26</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:62.5625px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 7:00 AM - 10:15 AM </div>
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 10:15 AM - 10:45 AM </div>
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 10:45 AM - 2:15 PM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-27" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">27</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:62.5625px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:30 PM - 6:30 PM </div>
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 6:30 PM - 7:00 PM </div>
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 7:00 PM - 11:15 PM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-28" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">28</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:62.5625px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 7:15 AM - 10:15 AM </div>
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 10:15 AM - 10:45 AM </div>
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 10:45 AM - 3:00 PM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-29" style="box-sizing:border-box;border:2px solid rgba(0, 0, 0, 0);background-color:rgb(255, 255, 255);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">29</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:5px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-11-30" style="box-sizing:border-box;background-color:rgb(247, 246, 244);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">30</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:62.5625px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:30 PM - 6:30 PM </div>
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 6:30 PM - 7:00 PM </div>
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 7:00 PM - 11:15 PM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-12-01" style="box-sizing:border-box;background-color:rgb(227, 223, 218);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">1</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:62.5625px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 11:30 AM - 2:30 PM </div>
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 2:30 PM - 3:00 PM </div>
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:00 PM - 7:15 PM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div _ngcontent-ng-c1719109971="" data-e2e="schedule-calendar-day-cell-2023-12-02" style="box-sizing:border-box;background-color:rgb(227, 223, 218);border:2px solid rgba(0, 0, 0, 0);width: 14.2857%;padding:5px;overflow:hidden;">
+                <div _ngcontent-ng-c1719109971="" style="box-sizing:border-box;min-height:120px;padding-left:5px;padding-right:5px;padding-bottom:5px;"><span _ngcontent-ng-c1719109971="" data-e2e="day-number" style="box-sizing:border-box;">2</span>
+                    <calendar-day _ngcontent-ng-c1719109971="" _nghost-ng-c2472217113="" style="box-sizing:border-box;">
+                        <article _ngcontent-ng-c2472217113="" data-e2e="day-summary" style="display:flex;box-sizing:border-box;height:24.1875px;width: 100%;cursor:pointer;flex-direction:column;align-items:center;">
+                            <section _ngcontent-ng-c2472217113="" style="display:flex;box-sizing:border-box;height:20px;text-align:right;margin-top:-20px;align-items:flex-end;justify-content:flex-end;width: 100%;">
+                                <!---->
+                                <!----><span _ngcontent-ng-c2472217113="" style="box-sizing:border-box;color:rgb(32, 51, 125);padding:5px 5px 0px;flex: 0 0 auto;"><i _ngcontent-ng-c2472217113="" style="display:inline-block;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:16px;font-family:FontAwesome;font-size:16px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i></span>
+                                <!---->
+                                <!---->
+                            </section>
+                            <section _ngcontent-ng-c2472217113="" style="display:block;box-sizing:border-box;margin-top:5px;text-align:left;font-weight:600;font-size:16px;line-height:19.2px;max-width:100%;">
+                                <!---->
+                                <div _ngcontent-ng-c2472217113="" data-e2e="day-summary-shift-info" style="box-sizing:border-box;color:rgb(32, 51, 125);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width: 100%;"> 3:45 AM - 8:00 AM </div>
+                                <!---->
+                                <!---->
+                            </section>
+                        </article>
+                        <!---->
+                        <!---->
+                    </calendar-day>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+    </section>
+    <schedule-detail-overlay _ngcontent-ng-c1719109971="" _nghost-ng-c937421411="" style="box-sizing:border-box;">
+        <!---->
+        <!---->
+        <!---->
+    </schedule-detail-overlay>
+    <!---->
+    <!---->
+</schedule-calendar-container>
+</body>
+</html>
