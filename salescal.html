@@ -33,7 +33,7 @@
       margin: 5px 0;
       border: 1px solid #ddd;
       border-radius: 4px;
-      width: calc(100% - 24px);
+      width: 100%;
     }
     button {
       background-color: #28a745;
@@ -48,6 +48,21 @@
       margin-top: 10px;
       font-size: 1.1em;
       color: #555;
+    }
+
+    /* Mobile Styles */
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      table {
+        font-size: 14px;
+      }
+      input[type=number], button {
+        padding: 8px;
+        margin: 3px 0;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -69,12 +84,12 @@
         <td colspan="2"><b>Profit % Start:</b> <input type="number" id="profitStart" value="300"> <b>Profit % End:</b> <input type="number" id="profitEnd" value="150"></td>
       </tr>
     </table>
-    
+
     <h2>Sales Prices</h2>
     <table id="salesPrices">
       
     </table>
-<hr>
+    <hr>
     <h2>Quantity From Price Calculator</h2>
     <input type="number" id="amountSpent" placeholder="Enter amount in dollars">
     <button id="calculateQuantity">Calculate Quantity</button>
