@@ -5,11 +5,12 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #14A4A4;
+      background-color: #228922;
       margin: 0;
       padding: 20px;
-    }
+    }    
     .container {
+      position: relative; 
       max-width: 500px;
       margin: auto;
       background: #FFFF;
@@ -18,11 +19,12 @@
     }
     
     .container1 {
+      position: relative;
       max-width: 500px;
       margin: auto;
       background: #BBBBFF;
       padding: 20px;
-      box-shadow: 0 0 150px #BBBBFF;
+      box-shadow: 0 0 90px #BBBBFF;
     }
     
     table {
@@ -63,6 +65,54 @@
       padding: 4px;
       text-align: left;
     }
+    .icon {
+      position: absolute; /* Position the icon within the container */
+      top: 0;
+      right: 0;
+      width: 90px; /* Size of the icon */
+      height: 99px; /* Size of the icon */
+      background-image: url('https://i.imgur.com/3PVmeq5.png');
+      background-size: cover; /* Ensure the icon covers the entire area */
+      opacity: 0.35; /* 75% opacity */
+      margin: 5px;
+    }
+    .icontag {
+      position: absolute; /* Position the icon within the container */
+      top: 0;
+      right: 0;
+      width: 80px; /* Size of the icon */
+      height: 80px; /* Size of the icon */
+      background-image: url('https://i.imgur.com/JGIWesk.png');
+      background-size: cover; /* Ensure the icon covers the entire area */
+      opacity: 0.35; /* 75% opacity */
+      margin: 1px;
+    }
+    
+    .iconscale {
+      position: absolute; /* Position the icon within the container */
+      top: 0;
+      right: 0;
+      width: 80px; /* Size of the icon */
+      height: 80px; /* Size of the icon */
+      background-image: url('https://i.imgur.com/fscIQDX.png');
+      background-size: cover; /* Ensure the icon covers the entire area */
+      opacity: 0.35; /* 75% opacity */
+      margin: 1px;
+    }
+    
+    
+    #settings {
+      position: relative; 
+      max-width: 500px;
+      margin: auto;
+      background: rgba(255, 255, 255, 1);
+      padding: 20px;
+      box-shadow: 0 0 90px #FF00FF;
+      z-index: -1;
+    }
+    #settings::before {
+      
+    }
     #investmentInfo {
       
     }
@@ -74,13 +124,16 @@
       border-radius: 4px;
       width: calc(100% - 24px);
     }
+    
     #calculateQuantity {
+      
       padding: 10px;
       margin: 5px 0;
       border: 1px solid #CCCC;
       border-radius: 4px;
       width: calc(100%);
     }
+    
     #profitStart {
       padding: 4px;
       margin: 0px 0;
@@ -99,8 +152,9 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Retail Quantity Price Calculator</h2>
+  <div id="settings">
+    <div class="icon"></div>
+    
     <table id="investmentInfo">
       <tr>
         <td>
@@ -123,10 +177,14 @@
         <td colspan="2"><b>Price Per Gram:</b> <span id="pricePerGram"></span></td>
         
       </tr>
-      <tr>
-        <td colspan="2"><hr></td>
-      </tr>
+      
     </table>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="icontag"></div>
+    <h3>Retail Quantity Price Table:</h3>
+  
     <table id="salesPrices">
       <tr>
         <th class="retailHeader">Quantity</th>
@@ -135,17 +193,22 @@
       </tr>
     </table>
   </div>
+  
   <hr>
-<div class="container1">
+  
+  <div class="container1">
+    <div class="iconscale"></div>
     <h2>Quantity From Price Calculator</h2>
-    <input type="number" id="amountSpent" placeholder="Enter amount in dollars">
+    <input type="number" id="amountSpent" placeholder='Enter Dollar Amount (Example:"How much would $100 get me?")'>
     <button id="calculateQuantity">Calculate Quantity</button>
-    <table>
+    <center>
+      <table>
       <tr>
-        <td><div class="result" id="resultQuantity">Quantity to sell: <span id="quantityResult"></span> <sub><b>g</b></sub></div></td>
-        <td><div class="result" id="resultProfit">Profit from sale: <sup><b>$</b></sup><span id="quantityResultProfit"></span></div></td>
+        <td><div class="result" id="resultQuantity">Quantity: <span id="quantityResult"></span> <sub><b>g</b></sub></div></td>
+        <td><div class="result" id="resultProfit">Profit: <sup><b>$</b></sup><span id="profitResult"></span></div></td>
     </tr>
   </table>
+      </center>
   </div>
 
   <script>
@@ -208,8 +271,8 @@
     const totalRevenue = amountSpent;
     const profit = totalRevenue - totalCost;
 
-    document.getElementById('resultQuantity').textContent = quantity.toFixed(2);
-    document.getElementById('resultProfit').textContent = profit.toFixed(2);
+    document.getElementById('quantityResult').textContent = quantity.toFixed(2);
+    document.getElementById('profitResult').textContent = profit.toFixed(2);
   }
 
   calculateAndDisplayPrices();
@@ -222,3 +285,4 @@
   </script>
 </body>
 </html>
+
