@@ -5,130 +5,220 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #14A4A4;
       margin: 0;
       padding: 20px;
     }
     .container {
-      max-width: 800px;
+      max-width: 500px;
       margin: auto;
-      background: white;
+      background: #FFFF;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 90px #FFFFFF;
     }
+    
+    .container1 {
+      max-width: 500px;
+      margin: auto;
+      background: #BBBBFF;
+      padding: 20px;
+      box-shadow: 0 0 150px #BBBBFF;
+    }
+    
     table {
       width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 8px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
     }
     h2 {
       color: #333;
     }
-    input[type=number], button {
-      padding: 10px;
-      margin: 5px 0;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      width: 100%;
-    }
+    
     button {
       background-color: #28a745;
       color: white;
       border: none;
       cursor: pointer;
     }
+    
     button:hover {
       background-color: #218838;
     }
+    
+    .initialInput {
+      padding: 2px;
+      margin: 0px 0;
+      width: 20%;
+    }
+    
     .result {
-      margin-top: 10px;
+      margin-top: 30px;
       font-size: 1.1em;
       color: #555;
     }
-
-    /* Mobile Styles */
-    @media screen and (max-width: 600px) {
-      .container {
-        padding: 10px;
-      }
-      table {
-        font-size: 14px;
-      }
-      input[type=number], button {
-        padding: 8px;
-        margin: 3px 0;
-        font-size: 14px;
-      }
+    
+    .retailHeader {
+      border: 1px solid #000000;
+      
     }
+    .retail th, td {
+      padding: 4px;
+      text-align: left;
+    }
+    #investmentInfo {
+      
+    }
+    
+    #amountSpent {
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #CCCC;
+      border-radius: 4px;
+      width: calc(100% - 24px);
+    }
+    #calculateQuantity {
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #CCCC;
+      border-radius: 4px;
+      width: calc(100%);
+    }
+    #profitStart {
+      padding: 4px;
+      margin: 0px 0;
+      
+      width: 20%;
+    }
+    #profitEnd {
+      padding: 4px;
+      margin: 0px 0;
+      width: 20%;
+    }    
+    #salesPrices {
+      text-align: center;
+    }
+    
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Product Price Calculator</h2>
-    <table>
+    <h2>Retail Quantity Price Calculator</h2>
+    <table id="investmentInfo">
       <tr>
-        <td><b>Initial Inventory:</b> 108g (Grams)</td>
-        <td><b>Invested:</b> $1400 (Principle)</td>
-      </tr>
-      <tr>
-        <td colspan="2"><b>Price Per Gram:</b> <span id="pricePerGram"></span></td>
-      </tr>
+        <td>
+          <table>
+            <tr>
+              <td>Principle: <b>$</b><input type="number" value="1400" class="initialInput" id="invested"></td>
+              <td>Initial Inventory: <input type="number" value="108" class="initialInput" id="initialInventory"><sub><b>g</b></sub></td>
+            </tr>
+            <td colspan="2"><center><hr width="50%"></center></td>
+            <tr>
+              <td>Profit Start: <input type="number" id="profitStart" class="initialInput" value="300"><b>%</b></td>
+              <td>Profit End: <input type="number" id="profitEnd" class="initialInput" value="150"><b>%</b></td>
+            </tr>
+          </table>
+        </td>
       <tr>
         <td colspan="2"><hr></td>
       </tr>
       <tr>
-        <td colspan="2"><b>Profit % Start:</b> <input type="number" id="profitStart" value="300"> <b>Profit % End:</b> <input type="number" id="profitEnd" value="150"></td>
+        <td colspan="2"><b>Price Per Gram:</b> <span id="pricePerGram"></span></td>
+        
+      </tr>
+      <tr>
+        <td colspan="2"><hr></td>
       </tr>
     </table>
-
-    <h2>Sales Prices</h2>
     <table id="salesPrices">
-      
+      <tr>
+        <th class="retailHeader">Quantity</th>
+        <th class="retailHeader">Price</th>
+        <th class="retailHeader">Profit</th>
+      </tr>
     </table>
-    <hr>
+  </div>
+  <hr>
+<div class="container1">
     <h2>Quantity From Price Calculator</h2>
     <input type="number" id="amountSpent" placeholder="Enter amount in dollars">
     <button id="calculateQuantity">Calculate Quantity</button>
-    <div class="result">Quantity to sell: <span id="quantityResult"></span> grams</div>
+    <table>
+      <tr>
+        <td><div class="result" id="resultQuantity">Quantity to sell: <span id="quantityResult"></span> <sub><b>g</b></sub></div></td>
+        <td><div class="result" id="resultProfit">Profit from sale: <sup><b>$</b></sup><span id="quantityResultProfit"></span></div></td>
+    </tr>
+  </table>
   </div>
 
   <script>
+    
+    
+    // When the web page loads, run this code.
     window.onload = function() {
-      var invested = 1400;
-      var initialInventory = 108;
-      var pricePerGram = invested / initialInventory;
-      document.getElementById('pricePerGram').innerText = '$' + pricePerGram.toFixed(2);
 
-      var quantities = [1, 1.75, 3.5, 7, 14, 28];
-      var salesPricesTable = document.getElementById('salesPrices');
+      // How much did you invest. (Dollar)
+      const invested = document.getElementById("invested").value;
 
-      function calculateAndDisplayPrices() {
-        var startProfit = document.getElementById('profitStart').value / 100;
-        var endProfit = document.getElementById('profitEnd').value / 100;
-        salesPricesTable.innerHTML = '';
+      // How much product did you get when you invested. (Grams)
+      const initialInventory = document.getElementById("initialInventory").value;
 
-        quantities.forEach(function(qty, index) {
-          var profitMargin = startProfit - (index / (quantities.length - 1)) * (startProfit - endProfit);
-          var sellingPrice = pricePerGram * qty * (1 + profitMargin);
-          var row = '<tr><td>' + qty + 'g:</td><td>$' + sellingPrice.toFixed(2) + '</td></tr>';
-          salesPricesTable.innerHTML += row;
-        });
-      }
+      // Price of gram based on how you spent and how much you got.
+      const pricePerGram = invested / initialInventory;
+  document.getElementById('pricePerGram').textContent = `$${pricePerGram.toFixed(2)}`;
 
-      calculateAndDisplayPrices();
-      document.getElementById('profitStart').onchange = calculateAndDisplayPrices;
-      document.getElementById('profitEnd').onchange = calculateAndDisplayPrices;
+  const quantities = [1, 1.75, 3.5, 7, 14, 28];
+  const salesPricesTable = document.getElementById('salesPrices');
 
-      document.getElementById('calculateQuantity').onclick = function() {
-        var amountSpent = document.getElementById('amountSpent').value;
-        var quantity = amountSpent / pricePerGram;
-        document.getElementById('quantityResult').innerText = quantity.toFixed(2);
-      };
-    };
+  function calculateProfitMargin(quantity) {
+    const startProfit = parseFloat(document.getElementById('profitStart').value) / 100;
+    const endProfit = parseFloat(document.getElementById('profitEnd').value) / 100;
+    const index = quantities.findIndex(q => q >= quantity);
+    return startProfit - (index / (quantities.length - 1)) * (startProfit - endProfit);
+  }
+
+  function calculateAndDisplayPrices() {
+    let tableRows = '';
+
+    quantities.forEach((qty, index) => {
+      const profitMargin = calculateProfitMargin(qty);
+      const sellingPrice = pricePerGram * qty * (1 + profitMargin);
+      tableRows += `<tr><td class="retail">${qty}g:</td><td>$${sellingPrice.toFixed(2)}</td></tr>`;
+    });
+
+    salesPricesTable.innerHTML += tableRows;
+  }
+
+      
+      
+      
+
+   // Calculator 2
+   function calculateQuantity() {
+
+     const amountSpent = parseFloat(document.getElementById('amountSpent').value);
+
+    // Assume the smallest quantity for initial profit margin calculation
+    let profitMargin = calculateProfitMargin(quantities[0]);
+    let quantity = amountSpent / (pricePerGram * (1 + profitMargin));
+
+    // Find the closest higher quantity in the array to get a more accurate profit margin
+    profitMargin = calculateProfitMargin(quantity);
+    quantity = amountSpent / (pricePerGram * (1 + profitMargin));
+
+    // Calculate profit
+    const totalCost = pricePerGram * quantity;
+    const totalRevenue = amountSpent;
+    const profit = totalRevenue - totalCost;
+
+    document.getElementById('resultQuantity').textContent = quantity.toFixed(2);
+    document.getElementById('resultProfit').textContent = profit.toFixed(2);
+  }
+
+  calculateAndDisplayPrices();
+
+  document.getElementById('profitStart').addEventListener('change', calculateAndDisplayPrices);
+  document.getElementById('profitEnd').addEventListener('change', calculateAndDisplayPrices);
+  document.getElementById('calculateQuantity').addEventListener('click', calculateQuantity);
+};
+
   </script>
 </body>
 </html>
