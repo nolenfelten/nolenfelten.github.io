@@ -13,7 +13,7 @@
         }    
         .container {
             position: relative; 
-            max-width: 500px;
+            max-width: 550px;
             margin: auto;
             background: #FFFF;
             padding: 20px;
@@ -22,7 +22,7 @@
         
         .container1 {
             position: relative;
-            max-width: 500px;
+            max-width: 550px;
             margin: auto;
             background: #BBBBFF;
             padding: 20px;
@@ -163,7 +163,7 @@
                     <table>
                         <tr>
                             <td>Principle: <b>$</b><input type="number" value="1400" class="initialInput" id="invested"></td>
-                            <td>Initial Inventory: <input type="number" value="108" class="initialInput" id="initialInventory"><sub><b>g</b></sub></td>
+                            <td>Inventory: <input type="number" value="108" class="initialInput" id="initialInventory"><sub><b>g</b></sub></td>
                         </tr>
                         <td colspan="2"><center><hr width="50%"></center></td>
                         <tr>
@@ -176,7 +176,7 @@
                     <td colspan="2"><hr width="50%"></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><b>Price Per Gram:</b> <span id="pricePerGram"></span></td>
+                    <td colspan="2"><center><b>Price Per Gram:</b> <span id="pricePerGram"></span> | <b>Price Per mg:</b> <span id="pricePerMGram"></span></center></td>
                     
                 </tr>
                 
@@ -230,7 +230,9 @@
                 
                 // Price of gram based on how you spent and how much you got.
                 const pricePerGram = invested / initialInventory;
+                const pricePerMGram = pricePerGram / 1000;
                 document.getElementById('pricePerGram').textContent = `$${pricePerGram.toFixed(2)}`;
+                document.getElementById('pricePerMGram').textContent = `$${pricePerMGram.toFixed(3)}`;
                 
                 // Create an array containing the quantities (1, 1.75, 3.5, 7, 14, 28) and assign it to a variable named quantities.
                 const quantities = [1, 1.75, 3.5, 7, 14, 28];
