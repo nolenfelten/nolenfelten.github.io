@@ -112,12 +112,6 @@
             box-shadow: 0 0 90px #FF00FF;
             z-index: -1;
         }
-        #settings::before {
-            
-        }
-        #investmentInfo {
-            
-        }
         
         #amountSpent {
             padding: 10px;
@@ -182,146 +176,146 @@
                 
             </table>
         </div>
-        
+    </div>
+    
+    <hr width="50%">
+    
+    <div class="container">
+        <div class="icontag"></div>
         <hr width="50%">
-        
-        <div class="container">
-            <div class="icontag"></div>
-            <hr width="50%">
-            <center><h3>Retail Quantity Price Table:</h3></center>
-            <hr width="50%">
-            <br>
-            <table id="salesPrices">
+        <center><h3>Retail Quantity Price Table:</h3></center>
+        <hr width="50%">
+        <br>
+        <table id="salesPrices">
+            <tr>
+                <th class="retailHeader">Quantity</th>
+                <th class="retailHeader">Price</th>
+                <th class="retailHeader">Profit</th>
+            </tr>
+        </table>
+    </div>
+    
+    <hr width="50%">
+    
+    <div class="container1">
+        <div class="iconscale"></div>
+        <h2>Quantity From Price Calculator</h2>
+        <input type="number" id="amountSpent" placeholder='Enter Dollar Amount (Example:"How much would $100 get me?")'>
+        <button id="calculateQuantity">Calculate Quantity</button>
+        <center>
+            <table>
                 <tr>
-                    <th class="retailHeader">Quantity</th>
-                    <th class="retailHeader">Price</th>
-                    <th class="retailHeader">Profit</th>
+                    <td><div class="result" id="resultQuantity">Quantity: <span id="quantityResult"></span> <sub><b>g</b></sub></div></td>
+                    <td><div class="result" id="resultProfit">Profit: <sup><b>$</b></sup><span id="profitResult"></span></div></td>
                 </tr>
             </table>
-        </div>
-        
-        <hr width="50%">
-        
-        <div class="container1">
-            <div class="iconscale"></div>
-            <h2>Quantity From Price Calculator</h2>
-            <input type="number" id="amountSpent" placeholder='Enter Dollar Amount (Example:"How much would $100 get me?")'>
-            <button id="calculateQuantity">Calculate Quantity</button>
-            <center>
-                <table>
-                    <tr>
-                        <td><div class="result" id="resultQuantity">Quantity: <span id="quantityResult"></span> <sub><b>g</b></sub></div></td>
-                        <td><div class="result" id="resultProfit">Profit: <sup><b>$</b></sup><span id="profitResult"></span></div></td>
-                    </tr>
-                </table>
-            </center>
-        </div>
-        
-        <script>
-            
-            // When the web page loads, run this code.
-            window.onload = function() {
-                
-                // How much did you invest. (Dollar)
-                const invested = document.getElementById("invested").value;
-                
-                // How much product did you get when you invested. (Grams)
-                const initialInventory = document.getElementById("initialInventory").value;
-                
-                // Price of gram based on how you spent and how much you got.
-                const pricePerGram = invested / initialInventory;
-                const pricePerMGram = pricePerGram / 1000;
-                document.getElementById('pricePerGram').textContent = `$${pricePerGram.toFixed(2)}`;
-                document.getElementById('pricePerMGram').textContent = `$${pricePerMGram.toFixed(3)}`;
-                
-                // Create an array containing the quantities (1, 1.75, 3.5, 7, 14, 28) and assign it to a variable named quantities.
-                const quantities = [1, 1.75, 3.5, 7, 14, 28];
-                
-                // Create a variable named salesPricesTable and assign it the table element with id="salesPrices".
-                const salesPricesTable = document.getElementById('salesPrices');
-                
-                // Create a function named calculateProfitMargin that accepts a quantity parameter.
-                function calculateProfitMargin(quantity) {
-                    
-                    // In the function, create a variable named startProfit and assign it the value of the profitStart input box divided by 100.
-                    const startProfit = parseFloat(document.getElementById('profitStart').value) / 100;
-                    
-                    // In the function, create a variable named endProfit and assign it the value of the profitEnd input box divided by 100.
-                    const endProfit = parseFloat(document.getElementById('profitEnd').value) / 100;
-                    
-                    // In the function, create a variable named index and assign it the index of the quantity in the quantities array.
-                    const index = quantities.findIndex(q => q >= quantity);
-                    
-                    // In the function, create a variable named profitMargin and assign it the result of the following calculation:
-                    // startProfit - (index / (quantities.length - 1)) * (startProfit - endProfit)
-                    const profitMargin = startProfit - (index / (quantities.length - 1)) * (startProfit - endProfit);
-                    
-                    // In the function, return the value of profitMargin.
-                    return profitMargin;
-                }
-  
-              
-              
-                // Create a function named calculateAndDisplayPrices.
-                function calculateAndDisplayPrices() {
-                    
-                    // In the function, create a variable named tableRows and assign it an empty string.
-                    let tableRows = '';
-                    
-                    // In the function, use forEach() to iterate over the quantities array.
-                    quantities.forEach((qty, index) => {
-                        
-                        // In the forEach() callback function, create a variable named profitMargin and assign it the result of calling the calculateProfitMargin() function and passing in the current quantity.
-                        const profitMargin = calculateProfitMargin(qty);
-                        
-                        // In the forEach() callback function, create a variable named sellingPrice and assign it the result of the following calculation:
-                        // pricePerGram * qty * (1 + profitMargin)
-                        const sellingPrice = pricePerGram * qty * (1 + profitMargin);
-                        
-                        // In the forEach() callback function, concatenate the following HTML to the tableRows string:
-                        // <tr><td class="retail">${qty}g:</td><td>$${sellingPrice.toFixed(2)}</td></tr>
-                        tableRows += `<tr><td class="retail">${qty}g:</td><td>$${sellingPrice.toFixed(2)}</td><td>$${(sellingPrice - (pricePerGram * qty)).toFixed(2)}</td></tr>`;
-                    });
-                    
-                    // After the forEach() method call, set the innerHTML of the salesPricesTable to the value of tableRows.
-                    salesPricesTable.innerHTML += tableRows;
-                }
-                
-                
-                
-                
-                
-                // Calculator 2
-                function calculateQuantity() {
-                    
-                    const amountSpent = parseFloat(document.getElementById('amountSpent').value);
-                    
-                    // Assume the smallest quantity for initial profit margin calculation
-                    let profitMargin = calculateProfitMargin(quantities[0]);
-                    let quantity = amountSpent / (pricePerGram * (1 + profitMargin));
-                    
-                    // Find the closest higher quantity in the array to get a more accurate profit margin
-                    profitMargin = calculateProfitMargin(quantity);
-                    quantity = amountSpent / (pricePerGram * (1 + profitMargin));
-                    
-                    // Calculate profit
-                    const totalCost = pricePerGram * quantity;
-                    const totalRevenue = amountSpent;
-                    const profit = totalRevenue - totalCost;
-                    
-                    document.getElementById('quantityResult').textContent = quantity.toFixed(2);
-                    document.getElementById('profitResult').textContent = profit.toFixed(2);
-                }
-                
-                calculateAndDisplayPrices();
-                
-                document.getElementById('profitStart').addEventListener('change', calculateAndDisplayPrices);
-                document.getElementById('profitEnd').addEventListener('change', calculateAndDisplayPrices);
-                document.getElementById('calculateQuantity').addEventListener('click', calculateQuantity);
-            };
-            
-        </script>
-  
-    </body>
-    </html>
+        </center>
+    </div>
     
+    <script>
+        
+        // When the web page loads, run this code.
+        window.onload = function() {
+            
+            // How much did you invest. (Dollar)
+            const invested = document.getElementById("invested").value;
+            
+            // How much product did you get when you invested. (Grams)
+            const initialInventory = document.getElementById("initialInventory").value;
+            
+            // Price of gram based on how you spent and how much you got.
+            const pricePerGram = invested / initialInventory;
+            const pricePerMGram = pricePerGram / 1000;
+            document.getElementById('pricePerGram').textContent = `$${pricePerGram.toFixed(2)}`;
+            document.getElementById('pricePerMGram').textContent = `$${pricePerMGram.toFixed(3)}`;
+            
+            // Create an array containing the quantities (1, 1.75, 3.5, 7, 14, 28) and assign it to a variable named quantities.
+            const quantities = [1, 1.75, 3.5, 7, 14, 28];
+            
+            // Create a variable named salesPricesTable and assign it the table element with id="salesPrices".
+            const salesPricesTable = document.getElementById('salesPrices');
+            
+            // Create a function named calculateProfitMargin that accepts a quantity parameter.
+            function calculateProfitMargin(quantity) {
+                
+                // In the function, create a variable named startProfit and assign it the value of the profitStart input box divided by 100.
+                const startProfit = parseFloat(document.getElementById('profitStart').value) / 100;
+                
+                // In the function, create a variable named endProfit and assign it the value of the profitEnd input box divided by 100.
+                const endProfit = parseFloat(document.getElementById('profitEnd').value) / 100;
+                
+                // In the function, create a variable named index and assign it the index of the quantity in the quantities array.
+                const index = quantities.findIndex(q => q >= quantity);
+                
+                // In the function, create a variable named profitMargin and assign it the result of the following calculation:
+                // startProfit - (index / (quantities.length - 1)) * (startProfit - endProfit)
+                const profitMargin = startProfit - (index / (quantities.length - 1)) * (startProfit - endProfit);
+                
+                // In the function, return the value of profitMargin.
+                return profitMargin;
+            }
+            
+            
+            
+            // Create a function named calculateAndDisplayPrices.
+            function calculateAndDisplayPrices() {
+                
+                // In the function, create a variable named tableRows and assign it an empty string.
+                let tableRows = '';
+                
+                // In the function, use forEach() to iterate over the quantities array.
+                quantities.forEach((qty, index) => {
+                    
+                    // In the forEach() callback function, create a variable named profitMargin and assign it the result of calling the calculateProfitMargin() function and passing in the current quantity.
+                    const profitMargin = calculateProfitMargin(qty);
+                    
+                    // In the forEach() callback function, create a variable named sellingPrice and assign it the result of the following calculation:
+                    // pricePerGram * qty * (1 + profitMargin)
+                    const sellingPrice = pricePerGram * qty * (1 + profitMargin);
+                    
+                    // In the forEach() callback function, concatenate the following HTML to the tableRows string:
+                    // <tr><td class="retail">${qty}g:</td><td>$${sellingPrice.toFixed(2)}</td></tr>
+                    tableRows += `<tr><td class="retail">${qty}g:</td><td>$${sellingPrice.toFixed(2)}</td><td>$${(sellingPrice - (pricePerGram * qty)).toFixed(2)}</td></tr>`;
+                });
+                
+                // After the forEach() method call, set the innerHTML of the salesPricesTable to the value of tableRows.
+                salesPricesTable.innerHTML += tableRows;
+            }
+            
+            
+            
+            
+            
+            // Calculator 2
+            function calculateQuantity() {
+                
+                const amountSpent = parseFloat(document.getElementById('amountSpent').value);
+                
+                // Assume the smallest quantity for initial profit margin calculation
+                let profitMargin = calculateProfitMargin(quantities[0]);
+                let quantity = amountSpent / (pricePerGram * (1 + profitMargin));
+                
+                // Find the closest higher quantity in the array to get a more accurate profit margin
+                profitMargin = calculateProfitMargin(quantity);
+                quantity = amountSpent / (pricePerGram * (1 + profitMargin));
+                
+                // Calculate profit
+                const totalCost = pricePerGram * quantity;
+                const totalRevenue = amountSpent;
+                const profit = totalRevenue - totalCost;
+                
+                document.getElementById('quantityResult').textContent = quantity.toFixed(2);
+                document.getElementById('profitResult').textContent = profit.toFixed(2);
+            }
+            
+            calculateAndDisplayPrices();
+            
+            document.getElementById('profitStart').addEventListener('change', calculateAndDisplayPrices);
+            document.getElementById('profitEnd').addEventListener('change', calculateAndDisplayPrices);
+            document.getElementById('calculateQuantity').addEventListener('click', calculateQuantity);
+        };
+        
+    </script>
+    
+</body>
+</html>
