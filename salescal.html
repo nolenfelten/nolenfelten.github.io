@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -142,20 +143,34 @@
 
         .iconclock {
             position: absolute;
-            /* Position the icon within the container */
             top: 0;
             right: 0;
             width: 80px;
-            /* Size of the icon */
             height: 80px;
-            /* Size of the icon */
             background-image: url('https://i.imgur.com/ukDzeGl.png');
             background-size: cover;
-            /* Ensure the icon covers the entire area */
             opacity: 0.35;
-            /* 75% opacity */
             margin: 1px;
             z-index: 1;
+        }
+        .count {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            margin: 1px;
+            z-index: 1;
+        }
+        .round-date sup {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 75px;
+            height: 80px;
+            margin: 1px;
+            z-index: 1;
+            border: 1px #FFFFFF;
         }
 
         #settings {
@@ -257,14 +272,18 @@
                  let amount = 500;
                  const maxAmount = 200000;
                  let eventsHtml = '';
-                 
+                 let oz = 28;
+               
                  for (let i = 0; amount <= maxAmount * 2; i++) {
                      let eventDate = startDate.clone().add(i * 2, 'weeks');
                      let timeLeft = calculateTimeLeft(eventDate);
                      let countdown = `${timeLeft.months} months, ${timeLeft.days} days, ${timeLeft.hours} hours, ${timeLeft.minutes} minutes, ${timeLeft.seconds} seconds`;
                      let eventHtml = `
                      <div class="event">
-                         <div class="event-info"><center><b>$${amount.toLocaleString()}</b><br><sup>${eventDate.format("YYYY-MM-DD")}</sup><hr></center></div>
+                         <div class="count"><sup>Round: <b>${i + 1}</b></sup></div>
+                         <div class="round-date"><sup><b>${eventDate.format("YYYY-MM-DD")}</b></sup></div>
+                         <div class="event-info"><center><b>$${amount.toLocaleString()}</b><br><sup></sup></center></div>
+                         <hr>
                          <div class="countdown"><center>${countdown}</center></div>
                      </div>`;
                      eventsHtml += eventHtml;
@@ -319,8 +338,8 @@
                <td>
                   <table>
                      <tr>
-                        <td>Principle: <b>$</b><input type="number" value="500" class="initialInput" id="invested"></td>
-                        <td>Inventory: <input type="number" value="46.72" class="initialInput" id="initialInventory"><sub><b>g</b></sub></td>
+                        <td>Principle: <b>$</b><input type="number" value="1000" class="initialInput" id="invested"></td>
+                        <td>Inventory: <input type="number" value="114" class="initialInput" id="initialInventory"><sub><b>g</b></sub></td>
                      </tr>
                      <td colspan="2">
                         <center>
