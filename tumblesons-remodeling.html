@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Tumblesons Remodeling</title>
     
   <style>body {
@@ -117,9 +119,31 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+      .call-to-action {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .call-to-action:hover {
+            background-color: #0056b3;
+        }
 </style>
 </head>
 <body>
+    
+    <section id="contact">
+        <a href="tel:707-971-0122">
+            <h1>Felten Summers<br>Paint</h1>
+            <b class="call-to-action">707-971-0122</b>
+            <h3>Proudly Serving Henry County, Illinois</h3>
+        </a>
+    </section>
     <header>
         <h1>Tumblesons Remodeling</h1>
         <nav>
@@ -146,39 +170,6 @@ footer {
         <p>With over 20 years of experience, Tumblesons Remodeling has been providing top-quality remodeling and general construction services. Our team is dedicated to transforming your home with exceptional craftsmanship and attention to detail.</p>
     </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Kitchen Remodeling</li>
-            <li>Bathroom Remodeling</li>
-            <li>Home Additions</li>
-            <li>General Construction</li>
-            <li>Roofing</li>
-            <li>Flooring</li>
-        </ul>
-    </section>
-
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <p>Check out some of our recent projects.</p>
-        <!-- Add images of completed projects here -->
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form action="submit_form.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </section>
 
     <footer>
         <p>&copy; 2024 Tumblesons Remodeling. All rights reserved.</p>
