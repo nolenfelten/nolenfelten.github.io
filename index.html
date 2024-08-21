@@ -1,760 +1,247 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nolen James Felten - Web Developer & Businessman</title>
+    <script src="
+https://cdn.jsdelivr.net/npm/@loadingio/loading-bar@0.1.1/dist/loading-bar.min.js
+"></script>
+<link href="https://cdn.jsdelivr.net/npm/@loadingio/loading-bar@0.1.1/dist/loading-bar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-	<head>
+        header {
+            background-color: #008800; 
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 1em;
+            
+        }
 
-		<title>Nolen James Felten</title>
+        header h2 {
+            margin: 0;
+            font-size: 2.5em;
+        }
 
-		<style type="text/css">
-			body {
-				color: #00FF00;
-				background: #000000;
-				margin: 0px;
-				border: 4px ridge #00FF00;
-			}
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 5em;
+        }
 
-			a {
-				text-decoration: none;
-				color: #00FF00;
-			}
+        .social-icons a {
+            color: #00FF00;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
 
-			#div2>table {
-				text-align: center;
-			}
+        main {
+            padding: 1em;
+            padding-top: 2em;
+            background-color: #fff;
+            max-width: 800px; 
+            margin: 2em auto;
+            margin-top: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-			#headTable {
-				text-align: center;
-			}
+        section {
+            margin-bottom: 2em;
+        }
 
-			#header {
-				width: auto;
-				margin-top: 12px;
-			}
+        section h2,
+        section h3, 
+        section h4 { 
+            color: #370037; 
+        }
 
-			#title {
-				margin: 0px;
-			}
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
 
-			#fire {
-				background: url('https://i.imgur.com/qp2t6bf.png');
-				color: #FFFFFF;
-				text-align: center;
-				border: 8px;
-				border-color: #FF0000 #FFFFFF;
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 1%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 45%;
-			}
+        section h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
 
-			#fire>u {
-				background: rgba(0, 0, 9, 0.7);
-			}
+        section h4 {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
 
-			#div1 {
-				background: rgba(55, 0, 55, 0.6);
-				border: 2px dashed rgba(0, 0, 255, 0.6);
-				text-align: justify;
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 1%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 65%;
-			}
+        section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+        }
 
-			#strong {
-				text-align: center;
-			}
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #370037;
+            color: #00FF00;
+        }
 
-			#div2 {
-				background: rgba(55, 0, 55, 0.6);
-				border: 2px dashed rgba(0, 0, 255, 0.6);
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 1%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 80%;
-			}
+        footer a {
+            color: #00FF00;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-			#div3 {
-				background: rgba(55, 0, 55, 0.6);
-				border: 2px dashed rgba(0, 0, 255, 0.6);
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 1%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 70%;
-			}
+        /* Project gallery (keep the same as before) */
+        #project-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1em;
+        }
 
-			#div4 {
-				background: rgba(55, 0, 55, 0.6);
-				border: 2px dashed rgba(0, 0, 255, 0.6);
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 1%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 85%;
-			}
+        .project-item {
+            flex: 1 0 200px; 
+            text-align: center;
+            margin-bottom: 1em;
+        }
 
-			#gallery {
-				width: 100%;
-			}
+        .project-item img {
+            max-width: 100%;
+            height: auto;
+        }
 
-			#ref {
-				width: 100%;
-				color: #FFFFFF;
-			}
+        .project-item p {
+            font-size: 0.9em;
+        }
 
-			#div5 {
-				background: rgba(55, 0, 55, 0.6);
-				border: 2px dashed rgba(0, 0, 255, 0.6);
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 3%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 85%;
-			}
-			#div6 {
-				background: rgba(55, 0, 55, 0.6);
-				border: 2px dashed rgba(0, 0, 255, 0.6);
-				display: block;
-				padding-left: 3%;
-				padding-right: 3%;
-				margin-top: 3%;
-				margin-bottom: 1%;
-				margin-left: auto;
-				margin-right: auto;
-				width: 85%;
-			}
+        /* About Me section (modified) */
+        #about {
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            margin-left: 1rem; 
+        }
 
-			#codecamp {
-				color: #FFFFFF;
-				font-size: 16px;
-			}
+        #nolen {
+            max-width: 14.5rem; /* Adjust image size as needed */
+            height: auto;
+            margin-right: -1.5rem; 
+            margin-left: 22px;
+        }
 
-			#webgl {
-				width: 75%;
-			}
-		</style>
+        #about > div { 
+            flex: 1; 
+        }
+        
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-	</head>
+    <header>
+        <h3>Nolen James Felten</h3>
+      
+        <div class="social-icons">
+            <a href="https://github.com/nolenfelten" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/nolenfelten" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        
+    </header>
 
-	<body>
-
-		<center id="header">
-			<img src="https://i.imgur.com/ew4vOxT.jpg" style="border-radius: 50%; border: 4px double #00FF00;">
-			<table id="title" style="border-bottom: 1px solid #00ff00; border-top: 1px solid #00ff00;">
-				<tr>
-					<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-					<th><strong>Nolen James Felten</strong></th>
-					<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-				</tr>
-			</table>
-			<table style="border-bottom: 1px solid #00ff00;" id="headTable">
-				<tr>
-					<td><sup>Phone:</sup><center>(707) - 703 - 8309</center></td>
-					<td style="border: 1px solid #00ff00; margin: 0px;"></td>
-					<td><sup>Email:</sup><br>nolenf@gmail.com</sup></td>
-				</tr>
-			</table>
-
-		</center>
-
-		<div id="div1">
-			<p id="strong"><strong>Welcome!</strong></p>
-			<hr width="25%">
-			<p>I am an American Businessman with a background in Web Design and Project Management located in Sacramento, California. <br>I have had the pleasure of working with local government, small businesses, 5-star restaurants, and community volunteer foundations.</p>
-			<p><font color="#FF0000">Due to the 2017 <a href="https://en.wikipedia.org/wiki/Tubbs_Fire">Tubbs Fire</a>, I had experienced a massive loss of data and hardware. Currently working to recover and rebuild.</font></p>
-	<center><a href="https://github.com/nolenfelten/nolenfelten.github.io/raw/master/Resume%206-20-18.pdf"><u>My Resume</u></a></center>
-		</div>
-
-
-		<div id="div1">
-			<p id="strong"><strong>Articles/Notes/Ramblings</strong></p>
-
-			<hr width="25%">
-			<ul>
-                <li><b style="text-decoration: underline;"><a href="https://nolenfelten.github.io/buyandsell.html">Notes from "Buying and Selling a Business"</b> <sup>- Garrett Sutton, Esq.</sup></a></li>
-				<li><b style="text-decoration: underline;"><a href="https://nolenfelten.github.io/chinanotes.html">My Epic Note Collection on International Trade</b> <sup>- China Import Formula</sup></a>	
-				<br>
-				<i>Information about importing and exporting products, the art of negotiationing deals, shipping logistics, and so much more!</i></li>
-
-				<li><b>Programming Notes:</b>
-					<br>
-					<ul>
-						<li><a href="https://nolenfelten.github.io/database.html" style="text-decoration: underline;">Database Management Systems</a></li>
-						<li><a href="https://nolenfelten.github.io/cpp.html" style="text-decoration: underline;">C / C++</a></li>
-						<li><a href="https://nolenfelten.github.io/Java.html" style="text-decoration: underline;">Java</a></li>
-						<li><a href="https://nolenfelten.github.io/bk.html" style="text-decoration: underline;">Banjo-Kazooie Three.js</a></li>
-					</ul>
-				</li>
-
-				<li><b><a href="https://nolenfelten.github.io/coupon.html" style="text-decoration: underline;">The Coupon Illusion</a></b> <sup>(Work in Progress!)</sup>
-					<br>
-					<i>A look into the history and making of retail coupons and UPC/GS-128 barcodes. Indepth report of fraudulent coupons and the interesting U.S law surrounding them.</i>
-				</li>
-
-				
-			</ul>
-			<hr width="25%">
-			<p id="strong"><a href="https://i.imgur.com/f9DOboB.png"><img src="https://i.imgur.com/qjdIeqc.png" width="65%" border="1px"></a></strong></p>
-		</div>
-
-		<div id="div2">
-			<p id="strong"><strong>Project Gallery</strong>
-				<br>(Click an image for more information)</p>
-
-			<hr width="25%">
-
-			<table id="gallery">
-
-				<tr>
-					<td width="33%">
-						<a href="https://walkingnemo.com"><img src="https://i.imgur.com/8g7l821.png">
-							<br>WalkingNemo.com</a>
-					</td>
-					<td width="33%">
-						<a href="https://nolenfelten.github.io/bk.html"><img src="https://i.imgur.com/XT7tKLt.png" width="90%">
-							<br>Banjo-Kazooie Three.js</a>
-					</td>
-					<td width="33%">
-						<a href="https://github.com/nolenfelten/SMS-Bomb"><img src="http://i.imgur.com/PKoz6lM.gif" width="80%">
-							<br>SMS Bomb</a>
-					</td>
-				</tr>
-
-				<tr>
-
-					<td width="33%">
-						<a href="https://i.imgur.com/KEBirnl.png"><img src="https://i.imgur.com/KEBirnl.png" width="40%">
-							<br>Dailymotion
-							<br> Automation</a>
-					</td>
-					<td width="33%">
-						<a href="https://i.imgur.com/FuH8fOD.png"><img src="https://i.imgur.com/FuH8fOD.png" width="70%">
-							<br>My Original Xbox</a>
-					</td>
-					<td width="33%">
-						<a href="https://github.com/nolenfelten/Original-Xbox-Game-Installer"><img src="https://i.imgur.com/IB36ktm.png?1" width="40%">
-							<br>Original Xbox Game Installer</a>
-					</td>
-				</tr>
-
-				<tr>
-
-					<td width="33%">
-						<a href="http://nolenfelten.github.io/webgl.html"><img src="https://i.imgur.com/bwI4CIJ.png?1" width="80%">
-							<br>WebGL Dragon</a>
-						<br><sup><u>Do Not Open With Mobile Device!</u></sup></td>
-					<td width="33%">
-						<a href="http://nolenfelten.github.io/3dmesh.html"><img src="https://i.imgur.com/Va9EInd.png?1" width="40%">
-							<br>Rotating Cube
-							<br>(HTML5 Canvas)</a>
-					</td>
-					<td width="33%">
-						<a href="http://nolenfelten.github.io/Internet.html"><img src="https://i.imgur.com/w9HIBLh.png?2" width="50%">
-							<br>Rainbow Matrix</a>
-					</td>
-				</tr>
-			</table>
-		</div>
-
-		<div id="div1">
-			<p id="strong"><strong>Government & Volunteer</strong></p>
-			<hr width="25%">
-			<center><img src="https://i.imgur.com/fD1JSks.png" height="125px">
-				<br>
-				<a href="https://github.com/OpenSantaRosa"><img src="https://i.imgur.com/KUnLl2M.png"></a></center>
-		</div>
-
-<div id="div4">
-	<p id="strong"><strong>References</strong>
-		<br>(I'm really proud of this part!)</p>
-
-	<hr width="25%">
-
-	<center>
-		<table id="ref">
-			<tr>
-				<td width="40%">
-					<center><img src="https://i.imgur.com/ZuLdBSr.png" style="border-radius: 50%; border: 2px double #0000FF;" width="75%"></center>
-				</td>
-				<td width="50%">
-					<hr width="50%" color="#FF0000">
-					<center>
-						<table>
-							<tr>
-								<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-								<th>
-									<center><strong>Philip Swensen</strong>
-										<br><sup>Staff Sergeant <br> U.S Air Force</sup></center>
-								</th>
-								<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-							</tr>
-						</table>
-					</center>
-					<hr width="50%" color="#FF0000">
-					<p>Investor/Trader, Entrepreneur, and Author of "Mental Violation"</p>
-					<center><a href="https://www.linkedin.com/in/philip-swensen-15b99989/"><u>Philip Swensen's Linkedin</u></a></center>
-				</td>
-			</tr>
-		</table>
-	</center>
-
-	<hr width="95%" color="#0000FF">
-
-	<center>
-		<table id="ref">
-			<tr>
-				<td width="40%">
-					<center><img src="https://i.imgur.com/SpRAdDK.jpg" style="border-radius: 50%; border: 2px double #0000FF;" width="75%"></center>
-				</td>
-				<td width="50%">
-					<hr width="50%" color="#FF0000">
-					<center>
-						<table>
-							<tr>
-								<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-								<th>
-									<center><strong>Jason Ford</strong>
-										<br><sup>Electronic Warfare Specialist<br>U.S Air Force</sup></center>
-								</th>
-								<th><img src="http://i.imgur.com/W6FUs47.gif"></th>
-							</tr>
-						</table>
-					</center>
-					<hr width="50%" color="#FF0000">
-					<p>"<i>[Nolen] You should be working at some high-end tech firm making at least $100k a year!</i>"</p>
-					<center><a href="https://www.linkedin.com/in/jasonhford/"><u>Jason Ford's Linkedin Profile</u></a></p>
-					</center>
-				</td>
-			</tr>
-		</table>
-	</center>
-
-	<hr width="95%" color="#0000FF">
-
-	<center>
-		<table id="ref">
-			<tr>
-				<td width="40%">
-					<center><img src="https://i.imgur.com/hRGw2FQ.png?1" style="border-radius: 50%; border: 2px double #0000FF;" width="75%"></center>
-				</td>
-				<td width="50%">
-					<hr width="50%" color="#FF0000">
-					<center><strong>Jesse Busma</strong>
-						<br><sup>Quality Assurance - ProductOps</sup></center>
-					<hr width="50%" color="#FF0000">
-
-					<center><a href="https://docs.google.com/document/d/1nhE3uhmgB1MPdiCkMWKrpqx0m8gcX77sA3h5Uy8WFhs/edit?usp=sharing"><u>Jesse Busma's Resume</u></a></center>
-				</td>
-			</tr>
-		</table>
-	</center>
-
-	<hr width="95%" color="#0000FF">
-
-	<center>
-		<table id="ref">
-			<tr>
-				<td width="40%">
-					<center><img src="https://i.imgur.com/i7CLd3N.png" style="border-radius: 50%; border: 2px double #0000FF;" width="75%"></center>
-				</td>
-				<td width="50%">
-					<hr width="50%" color="#FF0000">
-					<center><strong>David Fiattarone</strong>
-						<br><sup>Account Operator/Junior Staff Accountant</sup></center>
-					<hr width="50%" color="#FF0000">
-
-					<center><a href="#">(831)-737-3286</a></center>
-				</td>
-			</tr>
-		</table>
-	</center>
-		<hr width="95%" color="#0000FF">
-
-		<center>
-			<table id="ref">
-				<tr>
-					<td width="40%">
-						<center><img src="https://i.imgur.com/2a9wDts.jpg?1" style="border-radius: 50%; border: 2px double #0000FF;" width="75%"></center>
-					</td>
-					<td width="50%">
-						<hr width="50%" color="#FF0000">
-						<center><strong>Cody Beggs</strong>
-							<br><sup>Cryptocurrency Pioneer</sup></center>
-						<hr width="50%" color="#FF0000">
-
-						<center><a href="#">(707)-708-0088</a></center>
-					</td>
-				</tr>
-			</table>
-			</center>
+    <main>
+        <section id="about">
+            <img id="nolen" src="https://i.imgur.com/AiYo2C4.png" alt="Nolen James Felten">
+            <div id="business-card"> 
+                <div style="font-family: 'Roboto', sans-serif; background-color: #1e1e1e; color: #f5f5f5; border: 2px solid #444; padding: 0.5rem; width: 400px;">
+  <div style="border: 1px solid #FFFFFF;">
+    <div style="text-align: center;">
+      <div style="font-size: 1.1rem; font-weight: bold; color: #ffcc00; margin-top: 0.8rem;">NOLEN JAMES FELTEN ENTERPRISES<br><u>UNLIMITED</u></div>
+      <div style="font-size: 0.9rem; margin-top: 0.5rem;">Cutting edge consultant, and also all round nice guy.</div>
+      <div style="font-size: 1rem; font-weight: bold; color: #ffcc00; margin-top: 0.5rem;">Nolen James Felten</div>
+      <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">nolenfelten.github.io</div>
+      <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">707-971-0122</div>
+      <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">
+        <i class="fab fa-instagram" style="margin-right: 0.4rem;"></i>@nolenfelten
+        <i class="fab fa-facebook" style="margin-right: 0.4rem;"></i>FB.com/nolenfelten
+      </div>
+    </div>
+  </div>
 </div>
+                <br>
+<div style="font-family: 'Roboto', sans-serif; background-color: #1e1e1e; color: #f5f5f5; border: 2px solid #444; padding: 0.5rem; margin-top: -0.5rem; width: 400px; text-align: center;">
+  <div style="border: 1px solid #FFFFFF; padding: 0.7rem;">
+    <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The difficult done immediately</div>
+    <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The impossible takes a little longer</div>
+    <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">Miracles by appointment</div>
+    <div style="font-size: 0.7rem; color: #FFFFFF; margin-bottom: 0.5rem; text-align: center;">
+      <div style="font-size: 0.8rem; color: #00FFFF; margin-top: 0.8rem;">THERE IS NO LIMIT TO WHAT I CAN DO</div>
+      <div style="margin-top: 0.5rem;">
+        <table style="width: 90%; margin: 0 auto;">
+          <tr>
+            <td style="padding: 0 10px;">Web Design</td>
+            <td style="padding: 0 10px;">Threat Intelligence</td>
+            <td style="padding: 0 10px;">Marketing Guru</td>
+          </tr>
+          <tr>
+            <td style="padding: 0 10px;">Lead Generation</td>
+            <td style="padding: 0 10px;">Lead Conversion</td>
+            <td style="padding: 0 10px;">Lead Retention</td>
+          </tr>
+          <tr>
+            <td style="padding: 0 10px;">Millionaire Lifestyle</td>
+            <td style="padding: 0 10px;">Stud Service</td>
+            <td style="padding: 0 10px;">Expert Opinion</td>
+          </tr>
+          <tr>
+            <td style="padding: 0 10px;">Tigers Tamed</td>
+            <td style="padding: 0 10px;">Hacker</td>
+            <td style="padding: 0 10px;">Helicopter Hire</td>
+          </tr>
+          <tr>
+            <td style="padding: 0 10px;">Model Exposure</td>
+            <td style="padding: 0 10px;">Free Money</td>
+            <td style="padding: 0 10px;">Secret Societies</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+            
+        </section>
 
+        <section id="projects">
+            <h4>Book Reports</h4>
+            <div id="project-gallery">
+                <div class="project-item">
+                    <a href="https://walkingnemo.com"><img src="https://i.imgur.com/8g7l821.png" alt="WalkingNemo.com"></a>
+                    <p>WalkingNemo.com</p>
+                </div>
+                <div class="project-item">
+                    <a href="https://nolenfelten.github.io/bk.html"><img src="https://i.imgur.com/XT7tKLt.png" alt="Banjo-Kazooie Three.js"></a>
+                    <p>Banjo-Kazooie Three.js</p>
+                </div>
+            </div>
+        </section>
 
-		<div id="div6">
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>
+                You can reach me by email at <a href="mailto:nolenf@gmail.com">nolenf@gmail.com</a> or by phone at (707) - 703 - 8309.
+            </p>
+        </section>
+    </main>
 
-			<hr width="55%">
+    <footer>
+        <p>© 2024 Nolen James Felten</p>
+        <p>Email: <a href="mailto:nolenf@gmail.com">nolenf@gmail.com</a></p>
+    </footer>
 
-			<p id="strong"><strong>Education</strong></p>
-
-			<hr width="55%">
-
-			<p>
-				<a href="Codecademy.com/nolenf"><img src="https://i.imgur.com/5ME53Qa.png" height="64px"></a>
-			</p>
-
-			<ul>
-
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Welcome to Codecademy</a></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn the Command Line</a></li>
-
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn HTML</a></li>
-
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn CSS</a></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Introduction to Javascript</a></li>
-
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn PHP</a> <sup>(Discontinued)</sup></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn Python</a></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn Ruby</a></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn Java</a></li>
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">Learn SQL</a></li>
-
-				<li><a href="https://www.codecademy.com/learn/learn-the-command-line">SQL: Table Transformation</a></li>
-			</ul>
-
-			<hr width="55%">
-
-			<a id="codecamp" href="freecodecamp.org/nolenfelten">
-				<table>
-					<td>
-						<img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="32px">
-					</td>
-					<td>
-						<font color="white" style="font-size: 28px;">freeCodeCamp.org</font>
-					</td>
-				</table>
-			</a>
-
-			<ul>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/legacy-front-end"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Front End Development <sup>(Legacy)</sup></a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/legacy-back-end"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Back End Development <sup>(Legacy)</sup></a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/legacy-data-visualization"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Data Visualization <sup>(Legacy)</sup></a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/information-security-and-quality-assurance"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Information Security and Quality Assurance</a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/front-end-libraries"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Front End Libraries</a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/responsive-web-design"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Responsive Web Design</a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/javascript-algorithms-and-data-structures"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> JavaScript Algorithms and Data Structures</a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/data-visualization"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> Data Visualization <sup>(2018)</sup></a>
-				<br>
-				<a href="https://www.freecodecamp.org/certification/nolenfelten/apis-and-microservices"><img src="https://s3.amazonaws.com/freecodecamp/FFCFire.png" height="20px"> APIs and Microservices</a>
-			</ul>
-			<hr width="55%">
-			
-
-			<p><a href="webglacademy.com"><font color="#0000FF" style="font-size: 28px;">WebGLAcademy.com</font></a></p>
-			<table id="webgl" border="1px">
-
-				<tr>
-					<td>HTML Hello World</td>
-					<td>Demo 1K</td>
-					<td>The Distance Mapping</td>
-				</tr>
-
-				<tr>
-					<td>2D Colored Triangle</td>
-					<td>Color Video Filter</td>
-					<td>Advanced Camera Movement with Three.js</td>
-				</tr>
-
-				<tr>
-					<td>3D Colored Triangle</td>
-					<td>Smoke Screen</td>
-					<td>Shadow Mapping</td>
-				</tr>
-
-				<tr>
-					<td>Rotating Cube</td>
-					<td>Video in a Glass Sphere</td>
-					<td>Shadow Mapping with PCF</td>
-				</tr>
-
-				<tr>
-					<td>Mouse Events</td>
-					<td>Optical Flow</td>
-					<td>Variance Shadow Mapping</td>
-				</tr>
-
-				<tr>
-					<td>Textures Apply</td>
-					<td>Gamma Correction</td>
-					<td>Deferred Shading</td>
-				</tr>
-
-				<tr>
-					<td>Import from Blender</td>
-					<td>Three.js Camera Movement</td>
-					<td>Optical Lens Simulation</td>
-				</tr>
-
-				<tr>
-					<td>Phong Shading Model</td>
-					<td>Rebuild the GLSL Sandbox</td>
-					<td>Three.js 3D Surface Viewer</td>
-				</tr>
-
-				<tr>
-					<td>Video as a Texture</td>
-					<td>Shallow Water Animation</td>
-					<td>Three.js Webcam Face Filter</td>
-				</tr>
-
-				<tr>
-					<td>Canvas as a Texture</td>
-					<td>Wireframe and Point Render</td>
-				</tr>
-
-				<tr>
-					<td>Render as a Texture</td>
-					<td>Duplicate Objects</td>
-				</tr>
-
-				<tr>
-					<td>The Blending</td>
-					<td>The Octree</td>
-
-				</tr>
-
-				<tr>
-					<td>FPS Counter</td>
-					<td>Three.js Picking</td>
-				</tr>
-			</table>
-
-			<hr width="55%">
-
-			<p>
-				<a href="https://www.linkedin.com/in/nolenfelten"><img src="https://i.imgur.com/Rp0qbIT.png" height="128px"></a>
-			</p>
-
-			<ul>
-				<li><a href="https://www.facebook.com/tacomcbell/posts/1609272112467541">Bitcoin and Cryptocurrency Technologies - University of Princeton</a></li>
-
-				<li><a href="https://www.coursera.org/specializations/agile-development">Agile Development Specialization</a> - University of Virginia</li>
-				<ul>
-					<li><a href="https://www.facebook.com/tacomcbell/posts/1763158910412193">Agile Meets Design Thinking</a></li>
-					<li><a href="https://www.facebook.com/story.php?story_fbid=1763271630400921&id=100001543038280">Running Product Design Sprints</a></li>
-					<li><a href="https://www.facebook.com/story.php?story_fbid=1763346263726791&id=100001543038280">Managing an Agile Team</a></li>
-					<li><a href="https://www.facebook.com/story.php?story_fbid=1763449093716508&id=100001543038280">Testing with Agile</a></li>
-				</ul>
-
-				<li><a href="https://www.coursera.org/specializations/software-development-lifecycle">Software Development Lifecycle Specialization</a> - University of Minnesota</li>
-				<ul>
-					<li><a href="https://m.facebook.com/story.php?story_fbid=1766956313365786&id=100001543038280">Software Development Processes and Methodologies</a></li>
-					<li><a href="https://m.facebook.com/story.php?story_fbid=1762994707095280&id=100001543038280">Agile Software Development</a></li>
-					<li><a href="https://www.facebook.com/story.php?story_fbid=1767350016659749&id=100001543038280">Lean Software Development</a></li>
-				</ul>
-				<li><a href="https://www.facebook.com/story.php?story_fbid=1574527055942047&id=100001543038280">Canine Theriogenology</a></li>
-			</ul>
-			</ul>
-
-
-			<hr width="55%">
-
-			<p>
-				<a href="https://www.linkedin.com/in/nolenfelten"><img src="https://i.imgur.com/pMkZeCt.png" height="64px"></a>
-			</p>
-			<ul>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Advanced Node Js.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Advanced Node.js</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Angular Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Angular Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Angularjs 1 Adding Registration To Your Application 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">AngularJS 1: Adding Registration to Your Application</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Angularjs 1 Building A Data Driven App 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">AngularJS 1: Building A Data Driven App 2</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Building Restful Web Apis With Node Js And Express.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Building RESTful Web APIs with Node.js and Express</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_C Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">C Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_C Plus Plus Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">C++ Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Code Clinic Javascript.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Code Clinic: Javascript</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Css Essential Training 1.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">CSS Essential Training 1</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Css Essential Training 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">CSS Essential Training 2</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Css Essential Training 3.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">CSS Essential Training 3</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_D3 Js Data Visualization.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">D3.js: Data Visual Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Databases For Node Js Developers.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Databases for Node.js Developers</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Express Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Express.js Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Gulp Js Git And Browserify Web Project Workflows.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Gulp.Js, Git, and Browserify Web Project Workflows</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Html Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">HTML Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Installing Apache Mysql And Php 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Installing Apache, MySQL, and PHP</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Introduction To Css.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Introduction to CSS</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Javascript Closures.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Javascript: Closures</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Javascript Essential Training 3.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Javascript Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Jquery Essential Training 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">jQuery Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Learning Angularjs 1 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Learning AngularJS 1</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Learning Full Stack Javascript Development Mongodb Node And React.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Learning Full-Stack JavaScript Development: MongoDB, Node, and React</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Learning Functional Programming With Javascript.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Functional Programming with Javascript</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Learning Php 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Learning PHP</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Mean Stack And Mongodb Development Techniques.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">MEAN Stack and MongoDB: Development Techniques</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Node Js Build Your First Microservice.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Node.js: Build Your First Microservice</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Node Js Extend And Maintain Applications.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Node.js: Extend and Maintain Applications</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Node Js Testing And Code Quality.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Node.js: Testing and Code Quality</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Node Js Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Node.js Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Php Essential Training 2.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">PHP Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Php With Mysql Essential Training 1 The Basics.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">PHP with MySQL Essential Training: 1 The Basics</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Php With Mysql Essential Training 2 Build A Cms.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">PHP with MySQL Essential Training: 2 Build a CMS</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Programming Foundations Databases.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Programming Foundations: Databases</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Programming Foundations Fundamentals.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Programming Foundations: Fundamentals</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Programming Foundations Object Oriented Design.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Programming Foundations: Object Oriented Design</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Programming Foundations Open Source Licensing.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Programming Foundations: Open-Source Licensing</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Programming Foundations Web Security.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Programming Foundations: Web Security</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Python Gui Development With Tkinter.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Python GUI Development with Tkinter</a>
-				</li>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_React Js Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">React.js Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Ruby On Rails 5 Essential Training.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Ruby On Rails 5 Essential Training</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Setting Up Your Small Business As A Legal Entity.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Setting Up Your Small Business as a Legal Entity</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Understanding Copyright A Deeper Dive.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Understanding Copyright: A Deeper Dive</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Understanding Intellectual Property.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Understanding Intellectual Property</a>
-				</li>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Unit Testing And Test Driven Development In Python.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Unit Testing and Test Driven Development in Python</a>
-				<br>
-				<a href="https://nolenfelten.github.io/CertificateOfCompletion_Web Development Foundations Full Stack Vs Front End.pdf"><img src="https://i.imgur.com/Ksjteel.png" height="20px">Web Development Foundations: Full-Stack Vs. Front-End</a>
-			</ul>
-
-			<hr width="55%">
-			<p>
-				<a href="thegreatcourses.com"><img src="https://i.imgur.com/A56xkYR.png"></a>
-			</p>
-			<ul>
-				<li>Economic History Since 1400</li>
-				<li>Understanding Japan</li>
-				<li>Understanding Gravity</li>
-				<li>American Military History</li>
-
-			</ul>
-
-			<hr width="55%">
-
-			<a id="codecamp" href="https://www.vtc.com">
-				<table>
-					<td><img src="https://www.vtc.com/images/vtc_logo_in.jpg" height="64px"></td>
-					<td><font color="white" style="font-size: 28px;">Virtual Training Company</font></td>
-				</table>
-			</a>
-			<ul>
-				<li><a href="https://www.vtc.com/products/Assembly-Language-Programming-Tutorials.htm">Assembly Language Programming</a></li>
-			</ul>
-
-			<hr width="55%">
-			<p>
-				<a href="https://www.redcross.org"><img src="https://www.redcross.org/on/demandware.static/Sites-RedCross-Site/-/default/dw82a3cbef/images/Arc-images/ARC-navigation-logo.png" height="42px"></a>
-			</p>
-			<ul>
-				<table>
-					<tr>
-						<td>
-							<a href="https://www.redcross.org/take-a-class/first-aid/cat-dog-first-aid"><img src="https://i.imgur.com/cdaKHD7.png" height="30px"></a>
-						</td>
-						<td><a href="https://www.redcross.org/take-a-class/first-aid/cat-dog-first-aid">Cat & Dog First-Aid</a></td>
-					</tr>
-				</table>
-			</ul>
-
-
-			<hr width="55%">
-
-
-			<p id="strong"><strong>Information Products</strong></p>
-
-			<hr width="55%">
-
-			<p>
-				<a href="https://chinaimportformula.com"><img src="https://i.imgur.com/tzCKp5v.jpg" height="124px"></a>
-			</p>
-
-
-			<ul>
-				<li>China Import Academy (Value: $997)</li>
-			
-				<li>Foundations (Valued $1,997)</li>
-				
-				<li>China Import Blueprint (Value: $2,997)</li>
-		</ul>
-
-
-		</div>
-
-		<center><img src="https://www.reliablecounter.com/count.php?page=nolenfelten.github.io12102066&digit=style/plain/24/&reloads=1" alt="" title="" border="0"></center>
-
-		<div id="fire"><u>2017 North Bay Area Fire Survivor</u></div>
-		<center>
-			<iframe width="248px" height="250px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/315335196&color=%23ff00ff&auto_play=false&hide_related=true&show_comments=true&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>
-		</center>
-		
-	</body>
-
+</body>
 </html>
