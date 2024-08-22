@@ -1,242 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nolen James Felten - Web Developer & Businessman</title>
-    <script src="
-https://cdn.jsdelivr.net/npm/@loadingio/loading-bar@0.1.1/dist/loading-bar.min.js
-"></script>
-<link href="https://cdn.jsdelivr.net/npm/@loadingio/loading-bar@0.1.1/dist/loading-bar.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@loadingio/loading-bar@0.1.1/dist/loading-bar.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@loadingio/loading-bar@0.1.1/dist/loading-bar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-    body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #f4f4f4;
+      }
 
-        header {
-            background-color: #008800; 
-            color: white;
-            width: 100%;
-            text-align: center;
-            padding: 1em;
-            
-        }
+      header {
+        background-color: #aa0000;
+        color: white;
+        width: 100%;
+        text-align: center;
+      }
 
-        header h2 {
-            margin: 0;
-            font-size: 2.5em;
-        }
+      h2 {
+        padding: 1em;
+        font-size: 2.5em;
+        text-shadow: -1px 0 #FF00FF, 0 1px #FF00FF, 1px 0 #FF00FF, 0 -1px #FF00FF;
+      }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 5em;
-        }
+      main {
+        background-color: #fff;
+        width: 95%;
+        margin: 0 auto;
+      }
 
-        .social-icons a {
-            color: #00FF00;
-            font-size: 1.5em;
-            text-decoration: none;
-        }
+      section h2,
+      section h3,
+      section h4 {
+        color: #370037;
+      }
 
-        main {
-            padding: 1em;
-            padding-top: 2em;
-            background-color: #fff;
-            max-width: 800px; 
-            margin: 2em auto;
-            margin-top: 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+      section h2 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+      }
 
-        section {
-            margin-bottom: 2em;
-        }
+      section h3 {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+      }
 
-        section h2,
-        section h3, 
-        section h4 { 
-            color: #370037; 
-        }
+      section h4 {
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+      }
 
-        section h2 {
-            font-size: 2em;
-            margin-bottom: 0.5em;
-        }
+      section p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #333;
+      }
 
-        section h3 {
-            font-size: 1.5em;
-            margin-bottom: 0.5em;
-        }
+      footer {
+        text-align: center;
+        padding: 1em 0;
+        background-color: #370037;
+        color: #00FF00;
+        width: 100%;
+      }
 
-        section h4 {
-            font-size: 1.2em;
-            margin-bottom: 0.5em;
-        }
+      footer a {
+        color: #00FF00;
+        text-decoration: none;
+        font-weight: bold;
+      }
 
-        section p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: #333;
-        }
+      #project-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+      }
 
-        footer {
-            text-align: center;
-            padding: 1em 0;
-            background-color: #370037;
-            color: #00FF00;
-        }
+      .project-item {
+        flex: 1 0 200px;
+        text-align: center;
+        margin-bottom: 1em;
+      }
 
-        footer a {
-            color: #00FF00;
-            text-decoration: none;
-            font-weight: bold;
-        }
+      .project-item img {
+        max-width: 100%;
+        height: auto;
+      }
 
-        /* Project gallery (keep the same as before) */
-        #project-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1em;
-        }
+      .project-item p {
+        font-size: 0.9em;
+      }
 
-        .project-item {
-            flex: 1 0 200px; 
-            text-align: center;
-            margin-bottom: 1em;
-        }
+      /* About Me section (modified) */
+      #about {
+        display: flex;
+        flex-direction: column;
+        /* Stack elements vertically by default */
+        align-items: center;
+        /* Center horizontally */
+        margin-left: 0;
+        /* Remove left margin for mobile */
+      }
 
-        .project-item img {
-            max-width: 100%;
-            height: auto;
-        }
+      #nolen {
+        display: none;
+        /* Hide image on mobile by default */
+      }
 
-        .project-item p {
-            font-size: 0.9em;
-        }
+      #about>div {
+        text-align: center;
+          
+      }
 
-        /* About Me section (modified) */
+      #business-card {
+        width: 100%;
+      }
+
+      #business-card-back {
+        width: 100%;
+      }
+
+      #about>p {
+        margin: 1em 0;
+        /* Add margin top and bottom */
+      }
+
+      /* Media query for larger screens */
+      @media (min-width: 768px) {
         #about {
-            display: flex;
-            align-items: flex-start; /* Align items to the top */
-            margin-left: 1rem; 
-            padding-right: 0.5rem;
+          display: flex;
+          flex-direction: row;
+          /* Switch to row layout */
+          
+            
         }
 
         #nolen {
-            
-            max-width: 11rem; /* Adjust image size as needed */
-            height: auto;
+          max-width: 16rem;
+          height: auto;
+          display: block;
+          
         }
 
-        #about > div { 
-            flex: 1; 
+        #about>div {
+          
         }
-        
+
+        #about>p {
+          margin: 1em 0;
+          /* Add margin top and bottom */
+        }
+          #nolen-pair {
+              margin-left: 5rem;
+              align-items: flex-start;
+          }
+
+        .shine-business-card {
+          margin-top: 7.8rem;
+          width: 400px;
+        }
+        .shine-business-card-back {
+          
+          width: 400px;
+        }
+      }
+
+      .rainbow {
+        text-shadow:
+          -15px -15px 5px red,
+          -10.71px -10.71px 5px orange,
+          -6.43px -6.43px 5px yellow,
+          -2.14px -2.14px 5px lime,
+          2.14px 2.14px 5px green,
+          6.43px 6.43px 5px blue,
+          10.71px 10.71px 5px indigo,
+          15px 15px 5px violet;
+        animation: rainbow 5s infinite linear;
+      }
+
+      @keyframes rainbow {
+        0% {
+          text-shadow:
+            -15px -15px 5px red,
+            -10.71px -10.71px 5px orange,
+            -6.43px -6.43px 5px yellow,
+            -2.14px -2.14px 5px lime,
+            2.14px 2.14px 5px green,
+            6.43px 6.43px 5px blue,
+            10.71px 10.71px 5px indigo,
+            15px 15px 5px violet;
+        }
+
+        14.3% {
+          text-shadow:
+            -15px -15px 5px violet,
+            -10.71px -10.71px 5px red,
+            -6.43px -6.43px 5px orange,
+            -2.14px -2.14px 5px yellow,
+            2.14px 2.14px 5px green,
+            6.43px 6.43px 5px blue,
+            10.71px 10.71px 5px indigo,
+            15px 15px 5px lime;
+        }
+
+        28.6% {
+          text-shadow:
+            -15px -15px 5px indigo,
+            -10.71px -10.71px 5px violet,
+            -6.43px -6.43px 5px red,
+            -2.14px -2.14px 5px orange,
+            2.14px 2.14px 5px yellow,
+            6.43px 6.43px 5px green,
+            10.71px 10.71px 5px blue,
+            15px 15px 5px lime;
+        }
+
+        42.9% {
+          text-shadow:
+            -15px -15px 5px blue,
+            -10.71px -10.71px 5px indigo,
+            -6.43px -6.43px 5px violet,
+            -2.14px -2.14px 5px red,
+            2.14px 2.14px 5px orange,
+            6.43px 6.43px 5px yellow,
+            10.71px 10.71px 5px green,
+            15px 15px 5px lime;
+        }
+
+        57.1% {
+          text-shadow:
+            -15px -15px 5px green,
+            -10.71px -10.71px 5px blue,
+            -6.43px -6.43px 5px indigo,
+            -2.14px -2.14px 5px violet,
+            2.14px 2.14px 5px red,
+            6.43px 6.43px 5px orange,
+            10.71px 10.71px 5px yellow,
+            15px 15px 5px lime;
+        }
+
+        71.4% {
+          text-shadow:
+            -15px -15px 5px yellow,
+            -10.71px -10.71px 5px green,
+            -6.43px -6.43px 5px blue,
+            -2.14px -2.14px 5px indigo,
+            2.14px 2.14px 5px violet,
+            6.43px 6.43px 5px red,
+            10.71px 10.71px 5px orange,
+            15px 15px 5px lime;
+        }
+
+        85.7% {
+          text-shadow:
+            -15px -15px 5px orange,
+            -10.71px -10.71px 5px yellow,
+            -6.43px -6.43px 5px green,
+            -2.14px -2.14px 5px blue,
+            2.14px 2.14px 5px indigo,
+            6.43px 6.43px 5px violet,
+            10.71px 10.71px 5px red,
+            15px 15px 5px lime;
+        }
+
+        100% {
+          text-shadow:
+            -15px -15px 5px red,
+            -10.71px -10.71px 5px orange,
+            -6.43px -6.43px 5px yellow,
+            -2.14px -2.14px 5px lime,
+            2.14px 2.14px 5px green,
+            6.43px 6.43px 5px blue,
+            10.71px 10.71px 5px indigo,
+            15px 15px 5px violet;
+        }
+      }
+
+      .shine-business-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shine-business-card::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 200%;
+        width: 200%;
+        /* Slightly narrower */
+        height: 200%;
+        /* Slightly narrower */
+        background: linear-gradient(15deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 70%,
+            /* More apparent shine */
+            rgba(255, 255, 255, 0) 100%);
+        transform: rotate(30deg);
+        animation: shine 2s infinite;
+      }
+
+      .shine-business-card-back {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shine-business-card-back::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 200%;
+        width: 200%;
+        /* Slightly narrower */
+        height: 200%;
+        /* Slightly narrower */
+        background: linear-gradient(15deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 70%,
+            /* More apparent shine */
+            rgba(255, 255, 255, 0) 100%);
+        transform: rotate(30deg);
+        animation: shine1 2s infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          left: 100%;
+          top: -90%;
+        }
+
+        100% {
+          left: -250%;
+          top: 90%;
+        }
+      }
+
+      @keyframes shine1 {
+        0% {
+          left: 100%;
+          top: -90%;
+        }
+
+        100% {
+          left: -250%;
+          top: 90%;
+        }
+      }
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h3>Nolen James Felten</h3>
-      
-        
+      <h2>Nolen James Felten</h2>
     </header>
-
     <main>
-        <section id="about">
-            <img id="nolen" src="https://i.imgur.com/dHhqUDs.png" alt="Nolen James Felten">
-            <div id="business-card"> 
-                <div style="font-family: 'Roboto', sans-serif; background-color: #1e1e1e; color: #f5f5f5; border: 2px solid #444; padding: 0.5rem; width: 400px;">
-  <div style="border: 1px solid #FFFFFF;">
-    <div style="text-align: center;">
-      <div style="font-size: 1.1rem; font-weight: bold; color: #ffcc00; margin-top: 0.8rem;">NOLEN JAMES FELTEN ENTERPRISES<br><u>UNLIMITED</u></div>
-      <div style="font-size: 0.9rem; margin-top: 0.5rem;">Cutting edge consultant, and also all round nice guy.</div>
-      <div style="font-size: 1rem; font-weight: bold; color: #ffcc00; margin-top: 0.5rem;">Nolen James Felten</div>
-      <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">nolenfelten.github.io</div>
-      <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">707-971-0122</div>
-      <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">
-          <i class="fab fa-instagram" style="margin-right: 0.5em;"></i>@nolenfelten <i class="fab fa-facebook" style="margin-left: 8rem; margin-right: 0.5rem;"></i>FB.com/nolenfelten
-      </div>
-    </div>
-  </div>
-</div>
-                
-<div style="font-family: 'Roboto', sans-serif; background-color: #1e1e1e; color: #f5f5f5; border: 2px solid #444; padding: 0.5rem; margin-top: -0.5rem; width: 400px; text-align: center;">
-  <div style="border: 1px solid #FFFFFF; padding: 0.7rem;">
-    <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The difficult done immediately</div>
-    <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The impossible takes a little longer</div>
-    <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">Miracles by appointment</div>
-    <div style="font-size: 0.7rem; color: #FFFFFF; margin-bottom: 0.5rem; text-align: center;">
-      <div style="font-size: 0.8rem; color: #00FFFF; margin-top: 0.8rem;">THERE IS NO LIMIT TO WHAT I CAN DO</div>
-      <div style="margin-top: 0.8rem;">
-        <table style="width: 90%; margin: 0 auto;">
-          <tr>
-            <td style="padding: 0 10px;">Web Design</td>
-            <td style="padding: 0 10px;">Threat Intelligence</td>
-            <td style="padding: 0 10px;">Marketing Guru</td>
-          </tr>
-          <tr>
-            <td style="padding: 0 10px;">Lead Generation</td>
-            <td style="padding: 0 10px;">Lead Conversion</td>
-            <td style="padding: 0 10px;">Lead Retention</td>
-          </tr>
-          <tr>
-            <td style="padding: 0 10px;">Millionaire Lifestyle</td>
-            <td style="padding: 0 10px;">Stud Service</td>
-            <td style="padding: 0 10px;">Expert Opinion</td>
-          </tr>
-          <tr>
-            <td style="padding: 0 10px;">Tigers Tamed</td>
-            <td style="padding: 0 10px;">Hacker</td>
-            <td style="padding: 0 10px;">Helicopter Hire</td>
-          </tr>
-          <tr>
-            <td style="padding: 0 10px;">Model Exposure</td>
-            <td style="padding: 0 10px;">Free Money</td>
-            <td style="padding: 0 10px;">Secret Societies</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-            </div>
-            
-        </section>
-
-        <section id="projects">
-            <h4>Book Reports</h4>
-            <div id="project-gallery">
-                <div class="project-item">
-                    <a href="https://walkingnemo.com"><img src="https://i.imgur.com/8g7l821.png" alt="WalkingNemo.com"></a>
-                    <p>WalkingNemo.com</p>
+      <section id="about">
+        <!-- Moved the paragraph above the business card for mobile -->
+        <div>
+          <p>My name is <span class="rainbow">Nolen James Felten</span>, I currently live in Henry County, Galva, Illinois, United States of America. </p>
+          <p>And I <b style="color: red;">LOVE</b> to read. </p>
+          <p>Reading has allowed me to develop a skillset and grow an international network.</p>
+        </div>
+        <img id="nolen" src="https://i.imgur.com/dHhqUDs.png" alt="Nolen James Felten">
+        <div id="business-card">
+          <div class="shine-business-card" style="font-family: 'Roboto', sans-serif; background-color: #1e1e1e; color: #f5f5f5; border: 2px solid #444; padding: 0.5rem;">
+            <div style="border: 1px solid #FFFFFF;">
+              <div style="text-align: center;">
+                <div id="golden_name" style="font-size: 1.1rem; font-weight: bold; color: #ffcc00; margin-top: 0.8rem;">NOLEN JAMES FELTEN ENTERPRISES <br>
+                  <u>UNLIMITED</u>
                 </div>
-                <div class="project-item">
-                    <a href="https://nolenfelten.github.io/bk.html"><img src="https://i.imgur.com/XT7tKLt.png" alt="Banjo-Kazooie Three.js"></a>
-                    <p>Banjo-Kazooie Three.js</p>
+                <div style="font-size: 0.9rem; margin-top: 0.5rem;">Cutting edge consultant, and also all round nice guy. </div>
+                <div style="font-size: 1rem; font-weight: bold; color: #ffcc00; margin-top: 0.5rem;">Nolen James Felten </div>
+                <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">nolenfelten.github.io </div>
+                <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">707-971-0122</div>
+                <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">
+                  <i class="fab fa-instagram" style="margin-right: 0.5em;"></i>@nolenfelten <i class="fab fa-facebook" style="margin-left: 8rem; margin-right: 0.5rem;"></i>FB.com/nolenfelten
                 </div>
+              </div>
             </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>
-                You can reach me by email at <a href="mailto:nolenf@gmail.com">nolenf@gmail.com</a> or by phone at (707) - 703 - 8309.
-            </p>
-        </section>
+          </div>
+            <div id="nolenpair">
+          <div class="shine-business-card-back" style="font-family: 'Roboto', sans-serif; background-color: #1e1e1e; color: #f5f5f5; border: 2px solid #444; padding: 0.5rem; margin-top: -0.5rem;  text-align: center;">
+            <div style="border: 1px solid #FFFFFF; padding: 0.7rem;">
+              <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The difficult done immediately </div>
+              <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The impossible takes a little longer </div>
+              <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">Miracles by appointment</div>
+              <div style="font-size: 0.7rem; color: #FFFFFF; margin-bottom: 0.5rem; text-align: center;">
+                <div style="font-size: 0.8rem; color: #00FFFF; margin-top: 0.8rem;">THERE IS NO LIMIT TO WHAT I CAN DO </div>
+                <div style="margin-top: 0.8rem;">
+                  <table style="width: 90%; margin: 0 auto;">
+                    <tr>
+                      <td style="padding: 0 10px;">Web Design</td>
+                      <td style="padding: 0 10px;">Threat Intelligence</td>
+                      <td style="padding: 0 10px;">Marketing Guru</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 0 10px;">Lead Generation</td>
+                      <td style="padding: 0 10px;">Lead Conversion</td>
+                      <td style="padding: 0 10px;">Lead Retention</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 0 10px;">Millionaire Lifestyle</td>
+                      <td style="padding: 0 10px;">Stud Service</td>
+                      <td style="padding: 0 10px;">Expert Opinion</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 0 10px;">Tigers Tamed</td>
+                      <td style="padding: 0 10px;">Hacker</td>
+                      <td style="padding: 0 10px;">Helicopter Hire</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 0 10px;">Model Exposure</td>
+                      <td style="padding: 0 10px;">Free Money</td>
+                      <td style="padding: 0 10px;">Secret Societies</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <div id="project-gallery">
+          <div class="project-item">
+            <a href="https://walkingnemo.com">
+              <img src="https://i.imgur.com/8g7l821.png" alt="WalkingNemo.com">
+            </a>
+            <p>WalkingNemo.com</p>
+          </div>
+          <div class="project-item">
+            <a href="https://nolenfelten.github.io/bk.html">
+              <img src="https://i.imgur.com/XT7tKLt.png" alt="Banjo-Kazooie Three.js">
+            </a>
+            <p>Banjo-Kazooie Three.js</p>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <p> You can reach me by email at <a href="mailto:nolenf@gmail.com">nolenf@gmail.com</a> or by phone at (707) - 703 - 8309. </p>
+      </section>
     </main>
-
     <footer>
-        <p>© 2024 Nolen James Felten</p>
-        <p>Email: <a href="mailto:nolenf@gmail.com">nolenf@gmail.com</a></p>
+      <p>© 2024 Nolen James Felten</p>
+      <p>Email: <a href="mailto:nolenf@gmail.com">nolenf@gmail.com</a>
+      </p>
     </footer>
-
-</body>
+  </body>
 </html>
