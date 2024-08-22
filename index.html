@@ -138,32 +138,27 @@
           display: flex;
           flex-direction: row;
           /* Switch to row layout */
-          
-            
+          align-items: flex-start;
+          margin-left: 4rem;
+            width: auto;
         }
-
+          #intro {
+              
+              background: #BB0000;
+              color: #FFFFFF;
+          }
         #nolen {
           max-width: 16rem;
           height: auto;
           display: block;
-          
+          margin-left: 12rem;
+          padding-left: -5rem;
         }
 
-        #about>div {
-          
-        }
 
-        #about>p {
-          margin: 1em 0;
-          /* Add margin top and bottom */
-        }
-          #nolen-pair {
-              margin-left: 5rem;
-              align-items: flex-start;
-          }
 
         .shine-business-card {
-          margin-top: 7.8rem;
+          margin-top: 7.5rem;
           width: 400px;
         }
         .shine-business-card-back {
@@ -362,7 +357,8 @@
     <main>
       <section id="about">
         <!-- Moved the paragraph above the business card for mobile -->
-        <div>
+        
+          <div id="intro">
           <p>My name is <span class="rainbow">Nolen James Felten</span>, I currently live in Henry County, Galva, Illinois, United States of America. </p>
           <p>And I <b style="color: red;">LOVE</b> to read. </p>
           <p>Reading has allowed me to develop a skillset and grow an international network.</p>
@@ -385,7 +381,7 @@
               </div>
             </div>
           </div>
-            <div id="nolenpair">
+            
           <div class="shine-business-card-back" style="font-family: 'Roboto', sans-serif; background-color: #1e1e1e; color: #f5f5f5; border: 2px solid #444; padding: 0.5rem; margin-top: -0.5rem;  text-align: center;">
             <div style="border: 1px solid #FFFFFF; padding: 0.7rem;">
               <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The difficult done immediately </div>
@@ -426,7 +422,7 @@
             </div>
           </div>
             </div>
-        </div>
+        
       </section>
       <section id="projects">
         <h2>Projects</h2>
