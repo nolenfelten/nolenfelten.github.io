@@ -21,17 +21,38 @@
         color: white;
         width: 100%;
         text-align: center;
+          margin: auto;
       }
 
       h2 {
         padding: 1em;
+          margin: 0;
         font-size: 2.5em;
         text-shadow: -1px 0 #FF00FF, 0 1px #FF00FF, 1px 0 #FF00FF, 0 -1px #FF00FF;
       }
+        
+      /* Apply matrix rain to all sections */
+      section {
+        position: relative; /* Create stacking context for canvas */
+        background-color: #FFFFFF; /* White background for the section */
+          
+      }
+
+      /* Canvas for matrix rain */
+      section canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Allow interaction with content below */
+          z-index: 1;
+      }
+
 
       main {
         background-color: #fff;
-        width: 95%;
+        width: 97%;
         margin: 0 auto;
       }
 
@@ -107,20 +128,26 @@
         /* Center horizontally */
         margin-left: 0;
         /* Remove left margin for mobile */
+          background: rgba(255, 255, 255, 0.1);
+          z-index: 0;
+
       }
 
       #nolen {
         display: none;
         /* Hide image on mobile by default */
+          z-index: 1;
       }
 
       #about>div {
         text-align: center;
+          z-index: 2;
           
       }
 
       #business-card {
         width: 100%;
+          z-index: 2;
       }
 
       #business-card-back {
@@ -130,8 +157,12 @@
       #about>p {
         margin: 1em 0;
         /* Add margin top and bottom */
+          z-index: 2;
       }
 
+      #d {
+            font-size: 0.6em;
+      }
       /* Media query for larger screens */
       @media (min-width: 768px) {
         #about {
@@ -141,10 +172,19 @@
           align-items: flex-start;
           margin-left: 4rem;
             width: auto;
-        }
+            z-index: 0;
+          }
+          
+          
+      #d {
+            font-size: 0.5em;
+      }
           #intro {
+            
+            background: rgba(0.8, 0, 0, 0.2);
+            
               
-              background: #BB0000;
+          border: thick double #ff0000;
               color: #FFFFFF;
           }
         #nolen {
@@ -153,6 +193,7 @@
           display: block;
           margin-left: 12rem;
           padding-left: -5rem;
+            z-index: 2;
         }
 
 
@@ -211,7 +252,7 @@
             -10.71px -10.71px 5px violet,
             -6.43px -6.43px 5px red,
             -2.14px -2.14px 5px orange,
-            2.14px 2.14px 5px yellow,
+            2.14px 2.14px 15px yellow,
             6.43px 6.43px 5px green,
             10.71px 10.71px 5px blue,
             15px 15px 5px lime;
@@ -247,7 +288,7 @@
             -10.71px -10.71px 5px green,
             -6.43px -6.43px 5px blue,
             -2.14px -2.14px 5px indigo,
-            2.14px 2.14px 5px violet,
+            2.14px 2.14px 15px violet,
             6.43px 6.43px 5px red,
             10.71px 10.71px 5px orange,
             15px 15px 5px lime;
@@ -347,10 +388,147 @@
           top: 90%;
         }
       }
+        #split {
+            
+            border: 4px dotted red;
+        }
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+      <script>
+    (function() {
+      var _onload = function() {
+        
+        var pretag = document.getElementById('d');
+        var canvastag = document.getElementById('canvasdonut');
+
+        var tmr1 = undefined;
+        var tmr2 = undefined;
+        var A = 1;
+        var B = 1;
+
+        var frame = function() {
+          var b = [];
+          var z = [];
+          
+          A += 0.07;
+          B += 0.03;
+          
+          var cA = Math.cos(A);
+          var sA = Math.sin(A);
+          
+          var cB = Math.cos(B); 
+          var sB = Math.sin(B);
+    
+          for(var k = 0; k < 1760; k++) {
+            b[k] = k%80 == 79 ? "\n" : " ";
+            z[k] = 0;
+          }
+        
+        
+          for(var j = 0; j < 6.28; j += 0.07) {
+            var ct = Math.cos(j);
+            var st = Math.sin(j);
+          
+          
+          for(i = 0; i < 6.28; i += 0.02) {
+            var sp = Math.sin(i);
+            var cp = Math.cos(i);
+            var h = ct+2;
+            var D = 1 / (sp * h * sA + st * cA + 5);
+            var t = sp * h * cA - st * sA;
+
+            var x = 0 | (40 + 30 * D * (cp * h * cB - t * sB));
+            var y = 0 | (12 + 15 * D * (cp * h * sB + t * cB));
+            var o = x + 80 * y;
+            var N = 0 | (8 * ((st * sA - sp * ct * cA) * cB - sp * ct * sA - st * cA - cp * ct *sB));
+            
+            if(y < 22 && y >= 0 && x >= 0 && x < 79 && D > z[o]) {
+            z[o] = D;
+             b[o] = ".,-~:;=!*#$@"[N > 0 ? N:0];
+            }
+      }
+    }
+    pretag.innerHTML = b.join("");
+  };
+
+  window.anim1 = function() {
+    if(tmr1 === undefined) {
+      var tmr1 = setInterval(frame, 50);
+    } else {
+      clearInterval(tmr1);
+      var tmr1 = undefined;
+    };
+  };
+
+  // This is a reimplementation according to my math derivation on the page
+  var R1 = 1;
+  var R2 = 2;
+  var K1 = 150;
+  var K2 = 5;
+  var canvasframe=function() {
+    var ctx = canvastag.getContext('2d');
+    ctx.fillStyle='#000';
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    if(tmr1 === undefined) { // only update A and B if the first animation isn't doing it already
+      A += 0.07;
+      B += 0.03;
+    };
+    // precompute cosines and sines of A, B, theta, phi, same as before
+    var cA = Math.cos(A);
+    var sA = Math.sin(A);
+    var cB = Math.cos(B);
+    var sB = Math.sin(B);
+    
+    
+    for(var j=0;j<6.28;j+=0.3) { // j <=> theta
+      var ct = Math.cos(j);
+      var st = Math.sin(j);
+      for(var i = 0; i < 6.28;i += 0.1) {   // i <=> phi
+        var sp = Math.sin(i);
+        var cp = Math.cos(i); // cosine phi, sine phi
+        
+        var ox = R2 + R1*ct; // object x, y = (R2,0,0) + (R1 cos theta, R1 sin theta, 0)
+        var oy = R1*st;
+        
+        var x = ox*(cB*cp + sA*sB*sp) - oy*cA*sB; // final 3D x coordinate
+        var y = ox*(sB*cp - sA*cB*sp) + oy*cA*cB; // final 3D y
+        var ooz = 1/(K2 + cA*ox*sp + sA*oy); // one over z
+        var xp=(150+K1*ooz*x); // x' = screen space coordinate, translated and scaled to fit our 320x240 canvas element
+        var yp=(120-K1*ooz*y); // y' (it's negative here because in our output, positive y goes down but in our 3D space, positive y goes up)
+        // luminance, scaled back to 0 to 1
+        var L=0.7*(cp*ct*sB - cA*ct*sp - sA*st + cB*(cA*st - ct*sA*sp));
+        if(L > 0) {
+          ctx.fillStyle = 'rgba(255,255,255,'+L+')';
+          ctx.fillRect(xp, yp, 1.5, 1.5);
+        }
+      }
+    }
+  }
+
+
+  window.anim2 = function() {
+    if(tmr2 === undefined) {
+      tmr2 = setInterval(canvasframe, 50);
+    } else {
+      clearInterval(tmr2);
+      tmr2 = undefined;
+    }
+  };
+
+  frame();
+  canvasframe();
+}
+
+if(document.all) {
+  window.attachEvent('onload',_onload);
+}
+else {
+  window.addEventListener("load",_onload,false);
+}})();</script>
+      
   </head>
-  <body>
+  <body onload="window.anim1()">
     <header>
       <h2>Nolen James Felten</h2>
     </header>
@@ -358,8 +536,8 @@
       <section id="about">
         <!-- Moved the paragraph above the business card for mobile -->
         
-          <div id="intro">
-          <p>My name is <span class="rainbow">Nolen James Felten</span>, I currently live in Henry County, Galva, Illinois, United States of America. </p>
+          <div id="intro" class="bg-about">
+              <p><span class="rainbow">My name is Nolen James Felten</span>,</p> <p>I currently live in Henry County, Galva, Illinois, United States of America. </p>
           <p>And I <b style="color: red;">LOVE</b> to read. </p>
           <p>Reading has allowed me to develop a skillset and grow an international network.</p>
         </div>
@@ -375,8 +553,7 @@
                 <div style="font-size: 1rem; font-weight: bold; color: #ffcc00; margin-top: 0.5rem;">Nolen James Felten </div>
                 <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">nolenfelten.github.io </div>
                 <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">707-971-0122</div>
-                <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">
-                  <i class="fab fa-instagram" style="margin-right: 0.5em;"></i>@nolenfelten <i class="fab fa-facebook" style="margin-left: 8rem; margin-right: 0.5rem;"></i>FB.com/nolenfelten
+                <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;"><i class="fab fa-facebook" style=""></i>
                 </div>
               </div>
             </div>
@@ -424,22 +601,39 @@
             </div>
         
       </section>
+        <hr id="split">
       <section id="projects">
-        <h2>Projects</h2>
+        <h2>Work</h2>
         <div id="project-gallery">
+            <div class="project-item">
+                <a href="https://delewpaint.github.io/">
+                    <img src="https://i.imgur.com/w7ddyX1.png">
+                    <p>Delew Painting Co.</p>
+                </a>
+            </div>
+          <div class="project-item">
+            <a href="https://nolenfelten.github.io/tumblesons-remodeling.html">
+                <br>
+            <img src="https://i.imgur.com/rwQLhyF.png">
+            <b>Tumblesons Remodeling</b>
+                </a>
+          </div>
+            
           <div class="project-item">
             <a href="https://walkingnemo.com">
               <img src="https://i.imgur.com/8g7l821.png" alt="WalkingNemo.com">
             </a>
             <p>WalkingNemo.com</p>
           </div>
-          <div class="project-item">
-            <a href="https://nolenfelten.github.io/bk.html">
-              <img src="https://i.imgur.com/XT7tKLt.png" alt="Banjo-Kazooie Three.js">
-            </a>
-            <p>Banjo-Kazooie Three.js</p>
-          </div>
         </div>
+          <div id="project-gallery">
+            <div class="project-item">
+                <!-- 3D ASCII Donut -->
+                <a href="nolenfelten.com/dough.html">
+                    <pre id="d"></pre>
+                </a>
+            </div>
+          </div>
       </section>
       <section id="contact">
         <h2>Contact Me</h2>
@@ -451,5 +645,47 @@
       <p>Email: <a href="mailto:nolenf@gmail.com">nolenf@gmail.com</a>
       </p>
     </footer>
+      <script>
+      // Matrix Rain Script
+      var d = document;
+      var a = 255 / 2;
+
+      // Create canvas for each section
+      var section = document.getElementById("about");
+      
+        var el = d.createElement('canvas');
+        el.width = screen.width;
+        el.height = screen.height;
+        section.appendChild(el);
+
+        var columns = Array(screen.width).join().split(',');
+        var draw = requestAnimationFrame;
+        var ctx = el.getContext('2d');
+        var random = Math.random;
+        var s = Math.sin;
+        var p = parseInt;
+        ctx.translate(screen.width, 0);
+        ctx.scale(-1, 1);
+
+        function getColour(f) {
+          return 'rgb(' + [p(s(3 * f) * a + a), p(s(3 * f + 2) * a + a), p(s(3 * f + 4) * a + a)].join(',') + ')';
+        }
+
+        function fill(now) {
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
+          ctx.fillRect(0, 0, el.width, el.height);
+          ctx.fillStyle = getColour(now);
+          columns.map(function(y, index) {
+            text = String.fromCharCode(12448 + random() * 196);
+            ctx.fillText(text, (index * 10) + 10, (y || 0));
+            columns[index] = (y || 0) > 100 + random() * 1e4 ? 0 : y + 10;
+          });
+
+          draw(fill);
+        }
+
+        draw(fill);
+      
+          </script>
   </body>
 </html>
