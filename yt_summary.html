@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Summarization Process</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        .step {
+            margin-bottom: 20px;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #007bff; /* Blue */
+        }
+
+        .highlight {
+            background-color: #f8f9fa; /* Light gray */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .tool {
+            color: #dc3545; /* Red */
+            font-weight: bold;
+        }
+
+        .ai {
+            color: #28a745; /* Green */
+            font-weight: bold;
+        }
+
+        .output {
+            color: #ffc107; /* Yellow */
+            font-weight: bold;
+        }
+        img {
+            width: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+    </style>
+</head>
+<body>
+
+<h1>YouTube Summarization Process</h1>
+    
+    <h2><a href="https://nolenfelten.github.io">By Nolen James Felten</a></h2>
+<img src="https://i.imgur.com/foPSD3b.png">
+<div class="step">
+    <h2 class="step-title">1. Download & Extract</h2>
+    <ul>
+        <li><b>Download YouTube Video/Thumbnail/Subtitles:</b> The process begins by acquiring the core elements of the YouTube video: the video file itself, its thumbnail, and any available subtitles.</li>
+        <li><b>Extract Frame Every 30 Seconds w/ <span class="tool">FFMPEG</span>:</b> Using <span class="tool">FFMPEG</span>, a powerful multimedia framework, key frames are extracted at regular intervals (every 30 seconds). These frames will be crucial for visual representation and further processing.</li>
+    </ul>
+</div>
+
+<div class="step">
+    <h2 class="step-title">2. Image Enhancement</h2>
+    <div class="highlight">
+        <b><span class="ai">Stable Diffusion XL Turbo</span> via Huggingface API (Thumbnail & Each Frame):</b> This stage utilizes <span class="ai">Stable Diffusion XL Turbo</span>, a cutting-edge AI model for image generation and enhancement, accessed through the Huggingface API. It's likely used to enhance the quality of the extracted frames and potentially the thumbnail, making them more visually appealing.
+    </div>
+</div>
+
+<div class="step">
+    <h2 class="step-title">3. Summarization Loop (For each 5 minutes of video)</h2>
+    <ul>
+        <li><b>Prompt <span class="ai">LLM</span> to summarize:</b> A Large Language Model (<span class="ai">LLM</span>) is employed to generate summaries. The <span class="ai">LLM</span> is provided with a "prompt," likely constructed from:</li>
+        <ul>
+            <li><b>Subtitles:</b> Text extracted from the video's subtitles.</li>
+            <li><b>Large Language Model:</b> Possibly using the <span class="ai">LLM</span> itself to analyze the subtitles and generate more focused prompts.</li>
+            <li><b>Output as Input:</b> The output of the <span class="ai">LLM</span> (the initial summary) could be fed back as input for further refinement.</li>
+        </ul>
+    </ul>
+</div>
+
+<div class="step">
+    <h2 class="step-title">4. Text-to-Speech & Video Generation</h2>
+    <ul>
+        <li><b>Edge Text-to-Speech:</b> Microsoft Edge's built-in text-to-speech engine converts the <span class="ai">LLM</span>-generated summaries into spoken audio (MP3).</li>
+        <li><b><span class="tool">FFMPEG</span>:</b> <span class="tool">FFMPEG</span> is used again, this time to combine the various elements:</li>
+        <ul>
+            <li><b>MP3 (Audio):</b> The spoken summary.</li>
+            <li><b>Modified Extracted Frames:</b> The enhanced key frames.</li>
+            <li><b>Thumbnail:</b> The (potentially enhanced) video thumbnail.</li>
+        </ul>
+    </ul>
+</div>
+
+<div class="step">
+    <h2 class="step-title">5. Output</h2>
+    <p><b>Product: <span class="output">MP4</span> (Original Content):</b> The final output is an <span class="output">MP4</span> video file, which is essentially a summarized version of the original YouTube video.</p>
+</div>
+
+<h3>Overall Goal: Summarize YouTube Video</h3>
+
+<p>This process aims to create concise and engaging summaries of YouTube videos by combining:</p>
+<ul>
+    <li><b>Visuals:</b> Enhanced key frames and thumbnails.</li>
+    <li><b>Audio:</b> Spoken summaries generated from AI analysis.</li>
+    <li><b>AI-powered summarization:</b> Leveraging <span class="ai">LLMs</span> to extract the essence of the video content.</li>
+</ul>
+
+<p>This approach has potential applications in creating short-form video content, educational materials, and accessibility tools.</p>
+
+</body>
+</html>
