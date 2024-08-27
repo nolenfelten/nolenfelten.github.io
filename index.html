@@ -101,7 +101,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1em;
+        gap: 0.5em;
       }
 
       .project-item {
@@ -169,9 +169,8 @@
           display: flex;
           flex-direction: row;
           /* Switch to row layout */
-          margin: 0;
+          align-items: flex-start;
             
-          
             width: 100%;
             z-index: 0;
           }
@@ -181,7 +180,7 @@
             font-size: 0.5em;
       }
           #intro {
-            margin-left: 4rem;
+            margin: 4rem;
               
            width: 69%;   
               
@@ -617,7 +616,7 @@ else {
             </div>
           <div class="project-item">
             <a href="https://nolenfelten.github.io/tumblesons-remodeling.html">
-            <img src="https://i.imgur.com/rwQLhyF.png" width="50%">
+            <img src="https://i.imgur.com/rwQLhyF.png" width="80%">
             <p>Tumblesons Remodeling</p>
                 </a>
           </div>
@@ -631,7 +630,7 @@ else {
         </div>
           <div id="project-gallery">
               <div class="project-item">
-                  <a href="https://github.com/nolenfelten/SMS-Bomb"><img src="https://i.imgur.com/c5AuXoM.gif" width="50%">
+                  <a href="https://github.com/nolenfelten/SMS-Bomb"><img src="https://i.imgur.com/c5AuXoM.gif" width="80%">
                       <p>SMS Bomb</p>
                   </a>
                   
@@ -643,16 +642,17 @@ else {
                     <p>Donut</p>
                 </a>
             </div>
-          </div>
-          
-          <div id="project-gallery">
-            <div class="project-item">
+              <div class="project-item">
                 <!-- 3D ASCII Donut -->
                 <a href="https://nolenfelten.github.io/yt_summary.html">
-                    <img src="https://i.imgur.com/foPSD3b.png" width="20%">
+                    <img src="https://i.imgur.com/foPSD3b.png" width="80%">
                     <p>Summarize Youtube Videos</p>
                 </a>
             </div>
+          </div>
+          
+          <div id="project-gallery">
+            
           </div>
       </section>
       <section id="contact">
