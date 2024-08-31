@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product List</title>
+<style>
+  .product-list {
+    
+    
+  }
+
+  .product-list td {
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ddd;
+  }
+
+  .product-list tr.highlight {
+    background-color: #ffff00;
+  }
+  
+  .product-list tr.highlight td {
+    background-color: #ffff00;
+  }
+</style>
+</head>
+<body>
+<table class="product-list">
+  <tr>
+	<th>Index</th><th>Brand</th><th>Product</th><th>Product Code</th>
+  </tr>
+  <tr><td>1</td> <td>Marlboro</td> <td>Red Label KS Bx</td> <td>614810-4</td></tr>
+  <tr><td>2</td> <td>Marlboro</td> <td>Red Label 100 Bx</td> <td>614260-8</td></tr>
+  <tr class="highlight"><td>3</td> <td>Marlboro</td><td>KS Bx</td><td>614580-1</td></tr>
+  <tr class="highlight"><td>4</td> <td>Marlboro</td> <td>KS Bx</td> <td>614560-1</td></tr>
+  <tr class="highlight"><td>5</td> <td>Marlboro</td> <td>KS Bx</td> <td>614560-1</td></tr>
+  <tr class="highlight"><td>6</td> <td>Marlboro</td> <td>KS Bx</td> <td>614560-1</td></tr>
+  <tr class="highlight"><td>7</td> <td>Marlboro</td> <td>KS Bx</td> <td>614560-1</td></tr>
+  <tr class="highlight"><td>8</td> <td>Marlboro</td> <td>Silver KS Bx</td> <td>614710-2</td></tr>
+  <tr class="highlight"><td>9</td> <td>Marlboro</td> <td>Silver KS Bx</td> <td>614710-2</td></tr>
+  <tr><td>10</td> <td>Marlboro</td> <td>Silver 100 Bx</td> <td>614310-1</td></tr>
+  <tr class="highlight"><td>11</td> <td>Marlboro</td> <td>Gold KS Bx</td> <td>614520-5</td></tr>
+  <tr class="highlight"><td>12</td> <td>Marlboro</td> <td>Gold KS Bx</td> <td>614520-5</td></tr>
+  <tr class="highlight"><td>13</td> <td>Marlboro</td> <td>Gold KS Bx</td> <td>614520-5</td></tr>
+  <tr class="highlight"><td>14</td> <td>Marlboro</td> <td>Gold KS Bx</td> <td>614520-5</td></tr>
+  <tr class="highlight"><td>15</td> <td>Marlboro</td> <td>Gold KS Bx</td> <td>614520-5</td></tr>
+  <tr><td>16</td> <td>Marlboro</td> <td>Men Smooth KS Bx</td> <td>614420-8</td></tr>
+  <tr class="highlight"><td>17</td> <td>Marlboro</td> <td>Men KS Bx</td> <td>614030-1</td></tr>
+  <tr class="highlight"><td>18</td> <td>Marlboro</td> <td>Men KS Bx</td> <td>614030-1</td></tr>
+  <tr class="highlight"><td>19</td> <td>Marlboro</td> <td>Men Gold KS Bx</td> <td>614300-2</td></tr>
+  <tr class="highlight"><td>20</td> <td>Marlboro</td> <td>Men Gold KS Bx</td> <td>614300-2</td></tr>
+  <tr class="highlight"><td>21</td> <td>Marlboro</td> <td>Men Gold KS Bx</td> <td>614300-2</td></tr>
+  <tr><td>22</td> <td>Marlboro</td> <td>Men Silver KS Bx</td> <td>618470-9</td></tr>
+  <tr class="highlight"><td>23</td> <td>Marlboro</td> <td>Black Men KS Bx</td> <td>951070-2</td></tr>
+  <tr class="highlight"><td>24</td> <td>Marlboro</td> <td>Black Men KS Bx</td> <td>951070-2</td></tr>
+  <tr><td>25</td> <td>Marlboro</td> <td>Black Men 100 Bx</td> <td>951100-7</td></tr>
+  <tr><td>26</td> <td>Marlboro</td> <td>Black Men 100 Bx</td> <td>951100-7</td></tr>
+  <tr class="highlight"><td>27</td> <td>Marlboro</td> <td>Black Gold KS Bx</td> <td>955480-9</td></tr>
+  <tr class="highlight"><td>28</td> <td>Marlboro</td> <td>Black Gold 100 Bx</td> <td>955470-0</td></tr>
+  <tr class="highlight"><td>29</td> <td>Marlboro</td> <td>Black Gold 100 Bx</td> <td>955470-0</td></tr>
+  
+  
+  <tr><td>30</td> <td>Marlboro</td> <td>Eighty-Three's KS Bx</td> <td>951110-6</td></tr>
+  <tr class="highlight"><td>31</td> <td>Marlboro</td> <td>KS Bx</td> <td>614560-1</td></tr>
+  <tr class="highlight"><td>32</td> <td>Marlboro</td> <td>KS Bx</td> <td>614560-1</td></tr>
+  <tr class="highlight"><td>33</td> <td>Marlboro</td> <td>KS Bx</td> <td>614560-1</td></tr>
+  <tr class="highlight"><td>34</td> <td>Marlboro</td> <td>100 Bx</td> <td>614590-8</td></tr>
+  <tr class="highlight"><td>35</td> <td>Marlboro</td> <td>100 Bx</td> <td>614590-8</td></tr>
+  <tr class="highlight"><td>36</td> <td>Marlboro</td> <td>100 Bx</td> <td>614590-8</td></tr>
+  <tr><td>37</td> <td>Marlboro</td> <td>Blend 27 KS Bx</td> <td>613440-7</td></tr>
+  <tr><td>38</td> <td>Marlboro</td> <td>Blend 27 KS Bx</td> <td>613440-7</td></tr>
+  <tr><td>39</td> <td>Marlboro</td> <td>Southern Cut Bx</td> <td>951140-3</td></tr>
+  <tr class="highlight"><td>40</td> <td>Marlboro</td> <td>Gold KS Bx</td> <td>614520-5</td></tr>
+  <tr class="highlight"><td>41</td> <td>Marlboro</td> <td>Gold KS Bx</td> <td>614520-5</td></tr>
+  <tr class="highlight"><td>42</td> <td>Marlboro</td> <td>Gold 100 Bx</td> <td>614510-6</td></tr>
+  <tr class="highlight"><td>43</td> <td>Marlboro</td> <td>Gold 100 Bx</td> <td>614510-6</td></tr>
+  <tr class="highlight"><td>44</td> <td>Marlboro</td> <td>Gold 100 Bx</td> <td>614510-6</td></tr>
+  <tr><td>45</td> <td>Marlboro</td> <td>Men Smooth 100 Bx</td> <td>614430-7</td></tr>
+  <tr><td>46</td> <td>Marlboro</td> <td>Men 100 Bx</td> <td>618460-0</td></tr>
+  <tr><td>47</td> <td>Marlboro</td> <td>Men 100 Bx</td> <td>618460-0</td></tr>
+  <tr><td>48</td> <td>Marlboro</td> <td>Men Gold 100 Bx</td> <td>614270-7</td></tr>
+  <tr><td>49</td> <td>Marlboro</td> <td>Men Gold 100 Bx</td> <td>614270-7</td></tr>
+  <tr><td>50</td> <td>Marlboro</td> <td>Men Gold 100 Bx</td> <td>614270-7</td></tr>
+  <tr><td>51</td> <td>Marlboro</td> <td>Men Silver 100 Bx</td> <td>610310-5</td></tr>
+  <tr class="highlight"><td>52</td> <td>Marlboro</td> <td>Black KS Bx</td> <td>951060-3</td></tr>
+  <tr class="highlight"><td>53</td> <td>Marlboro</td> <td>Black KS Bx</td> <td>951060-3</td></tr>
+  <tr class="highlight"><td>54</td> <td>Marlboro</td> <td>Black 100 Bx</td> <td>951080-1</td></tr>
+  <tr class="highlight"><td>55</td> <td>Marlboro</td> <td>Black 100 Bx</td> <td>951080-1</td></tr>
+  <tr class="highlight"><td>56</td> <td>Marlboro</td> <td>Black 100 Bx</td> <td>951080-1</td></tr>
+  <tr class="highlight"><td>57</td> <td>Marlboro</td> <td>Black 100 Bx</td> <td>951080-1</td></tr>
+  <tr class="highlight"><td>58</td> <td>Marlboro</td> <td>Black Special Blend KS Bx</td> <td>951070-2</td></tr>
+  
+  
+  
+  <tr><td>59</td> <td>Marlboro</td> <td>Men Blue KS Bx</td> <td>613360-7</td></tr>
+  <tr>
+    <td>60</td>
+    <td rowspan="8" colspan="3">
+      <span><b>Manager's Choice - Approved Brands</b>:</span>
+      <ul>
+      <li>Marlboro</li>
+      <li>Virgina Slim</li>
+      <li>Basic</li>
+      <li>Parliament</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>61</td>
+  </tr>
+  <tr>
+    <td>62</td>
+  </tr>
+  <tr>
+    <td>63</td>
+  </tr>
+  <tr>
+    <td>64</td>
+  </tr>
+  <tr>
+    <td>65</td>
+  </tr>
+    
+  <tr>
+    <td>66</td>
+  </tr>
+  <tr>
+    <td>67</td>
+  </tr>
+    
+  </tr>  
+  <tr><td>68</td> <td>Parliament</td> <td>White 100 Bx</td> <td>611590-1</td></tr>
+  <tr>
+    <td>69</td>
+    <td rowspan="14" colspan="3">
+      <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    </td>
+  </tr>
+  <tr><td>70</td></tr>
+  <tr><td>71</td></tr>
+  <tr><td>72</td></tr>
+  <tr><td>73</td></tr>
+  <tr><td>74</td></tr>
+  <tr><td>75</td></tr>
+  <tr><td>76</td></tr>
+  <tr><td>77</td></tr>
+  <tr><td>78</td></tr>
+  <tr><td>79</td></tr>
+  <tr><td>80</td></tr>
+  <tr><td>81</td></tr>
+  <tr><td>82</td></tr>
+      
+<tr><td>83</td> <td>NJOY</td> <td>Ace 2 pod Menthol 5%</td> <td>97945-0</td></tr>
+<tr><td>84</td> <td>NJOY</td> <td>Ace 2 pod Menthol 2.4%</td> <td>98131-6</td></tr>
+<tr><td>85</td> <td>NJOY</td> <td>Ace 2 pod Tobacco 5%</td> <td>97944-3</td></tr>
+<tr><td>86</td> <td>NJOY</td> <td>Ace 2 pod Tobacco 2.4%</td> <td>98132-4</td></tr>
+<tr><td>87</td> <td>NJOY</td> <td>Ace 2 pod Rich Tobacco 5%</td> <td>98154-8</td></tr>
+<tr class="highlight"><td>88</td> <td>Marlboro</td> <td>Special Select Red KS Bx</td> <td>951000-9</td></tr>
+<tr class="highlight"><td>89</td> <td>Marlboro</td> <td>Special Select Red KS Bx</td> <td>951000-9</td></tr>
+<tr class="highlight"><td>90</td> <td>Marlboro</td> <td>Special Select Red KS Bx</td> <td>951000-9</td></tr>
+<tr class="highlight"><td>91</td> <td>Marlboro</td> <td>Special Select Red KS Bx</td> <td>951000-9</td></tr>
+<tr class="highlight"><td>92</td> <td>Marlboro</td> <td>Special Select Red KS Bx</td> <td>951000-9</td></tr>
+<tr class="highlight"><td>93</td> <td>Marlboro</td> <td>Special Select Red 100 Bx</td> <td>951010-8</td></tr>
+<tr class="highlight"><td>94</td> <td>Marlboro</td> <td>Special Select Red 100 Bx</td> <td>951010-8</td></tr>
+<tr class="highlight"><td>95</td> <td>Marlboro</td> <td>Special Select Gold KS Bx</td> <td>951020-7</td></tr>
+<tr class="highlight"><td>96</td> <td>Marlboro</td> <td>Special Select Gold KS Bx</td> <td>951020-7</td></tr>
+<tr class="highlight"><td>97</td> <td>Marlboro</td> <td>Special Select Gold KS Bx</td> <td>951020-7</td></tr>
+<tr class="highlight"><td>98</td> <td>Marlboro</td> <td>Special Select Gold KS Bx</td> <td>951020-7</td></tr>
+<tr class="highlight"><td>99</td> <td>Marlboro</td> <td>Special Select Gold KS Bx</td> <td>951020-7</td></tr>
+<tr class="highlight"><td>100</td> <td>Marlboro</td> <td>Special Select Gold 100 Bx</td> <td>951030-6</td></tr>
+<tr class="highlight"><td>101</td> <td>Marlboro</td> <td>Special Select Gold 100 Bx</td> <td>951030-6</td></tr>
+<tr class="highlight"><td>102</td> <td>Marlboro</td> <td>Special Select Gold 100 Bx</td> <td>951030-6</td></tr>
+<tr><td>103</td> <td>Marlboro</td> <td>Men Bold Ice KS Bx</td> <td>953270-6</td></tr>
+<tr><td>104</td> <td>Marlboro</td> <td>Men Bold Ice KS Bx</td> <td>953270-6</td></tr>
+<tr><td>105</td> <td>Marlboro</td> <td>Men Bold Ice KS Bx</td> <td>953270-6</td></tr>
+<tr><td>106</td> <td>Marlboro</td> <td>Men Ice KS Bx</td> <td>617690-3</td></tr>
+<tr><td>107</td> <td>Marlboro</td> <td>Men Ice KS Bx</td> <td>617690-3</td></tr>
+<tr><td>108</td> <td>Marlboro</td> <td>Men Smooth Ice KS Bx</td> <td>953120-3</td></tr>
+<tr><td>109</td> <td>Marlboro</td> <td>Men Smooth Ice KS Bx</td> <td>953120-3</td></tr>
+<tr><td>110</td> <td>Marlboro</td> <td>Men Slate KS Bx</td> <td>951710-3</td></tr>
+<tr><td>111</td> <td>Marlboro</td> <td>Men Slate 100 Bx</td> <td>951720-2</td></tr>
+<tr><td>112</td> <td>Marlboro</td> <td>Men Slate 100 Bx</td> <td>951720-2</td></tr>
+<tr><td>113</td> <td>Marlboro</td> <td>Midnight Menthol KS Bx</td> <td>951790-5</td></tr>
+<tr><td>114</td> <td>Marlboro</td> <td>Midnight Menthol KS Bx</td> <td>951790-5</td></tr>
+<tr><td>115</td> <td>Marlboro</td> <td>NXT KS Bx</td> <td>951130-4</td></tr>
+<tr><td>116</td> <td>Marlboro</td> <td>NXT KS Bx</td> <td>951130-4</td></tr>
+<tr class="highlight"><tr><td>117</td> <td>Marlboro</td> <td>72 Red Bx</td> <td>613500-8</td></tr>
+<tr class="highlight"><td>118</td> <td>Marlboro</td> <td>72 Red Bx</td> <td>613500-8</td></tr>
+<tr class="highlight"><td>119</td> <td>Marlboro</td> <td>72 Gold Bx</td> <td>613510-7</td></tr>
+<tr class="highlight"><td>120</td> <td>Marlboro</td> <td>72 Gold Bx</td> <td>613510-7</td></tr>
+<tr><td>121</td> <td>Marlboro</td> <td>72 Silver Bx</td> <td>613509-9</td></tr>
+<tr><td>122</td> <td>Marlboro</td> <td>72 Silver Bx</td> <td>613509-9</td></tr>
+<tr><td>123</td> <td>Marlboro</td> <td>72 Green Bx</td> <td>613430-8</td></tr>
+<tr><td>124</td> <td>Marlboro</td> <td>72 Green Bx</td> <td>613430-8</td></tr>
+<tr><td>125</td> <td>Marlboro</td> <td>72 Men Black Bx</td> <td>953040-3</td></tr>
+<tr><td>126</td> <td>Marlboro</td> <td>72 Men Black Bx</td> <td>953040-3</td></tr>
+<tr><td>127</td> <td>V. Slim</td> <td>Gold Men 100 Bx</td> <td>619660-4</td></tr>
+<tr><td>128</td> <td>V. Slim</td> <td>Men Silver 100 Bx</td> <td>619710-7</td></tr>
+<tr><td>129</td> <td>Parliament</td> <td>White KS Bx</td> <td>610850-0</td></tr>
+<tr><td>130</td> <td>L&M</td> <td>KS Bx</td> <td>613600-6</td></tr>
+<tr><td>131</td> <td>L&M</td> <td>KS Bx</td> <td>613600-6</td></tr>
+<tr><td>132</td> <td>L&M</td> <td>99 Bx</td> <td>613610-5</td></tr>
+<tr><td>133</td> <td>L&M</td> <td>100 Bx</td> <td>613610-5</td></tr>
+<tr><td>134</td> <td>L&M</td> <td>Blue KS Bx</td> <td>613620-4</td></tr>
+<tr><td>135</td> <td>L&M</td> <td>Blue KS Bx</td> <td>613620-4</td></tr>
+<tr><td>136</td> <td>L&M</td> <td>Blue 100 Bx</td> <td>613630-3</td></tr>
+<tr><td>137</td> <td>L&M</td> <td>Blue 100 Bx</td> <td>613630-3</td></tr>
+<tr><td>138</td> <td>L&M</td> <td>Turkish Blend KS Bx</td> <td>617260-5</td></tr>
+<tr><td>139</td> <td>L&M</td> <td>Turkish Blend KS Bx</td> <td>617260-5</td></tr>
+<tr><td>140</td> <td>L&M</td> <td>Turkish Blend 100 Bx</td> <td>617270-4</td></tr>
+<tr><td>141</td> <td>L&M</td> <td>Turkish Blend 100 Bx</td> <td>617270-4</td></tr>
+<tr><td>142</td> <td>L&M</td> <td>Men KS Bx</td> <td>613640-2</td></tr>
+<tr><td>143</td> <td>L&M</td> <td>Men KS Bx</td> <td>613640-2</td></tr>
+<tr><td>144</td> <td>L&M</td> <td>Men 100 Bx</td> <td>613650-1</td></tr>
+<tr><td>145</td> <td>L&M</td> <td>Men 100 Bx</td> <td>613650-1</td></tr>
+
+
+<tr>
+  <td>146</td> 
+  <td rowspan="13" colspan="3">
+    <span><b>Manager's Choice - Approved Brands</b>:</span>
+      <ul>
+        <li>Camel</li>
+        <li>Pall Mall</li>
+        <li>GPC</li>
+        <li>Doral</li>
+        <li>Misty</li>
+        <li>Newport</li>
+      </ul>
+    </td>
+</tr>
+<tr><td>147</td></tr>
+<tr><td>148</td></tr>
+<tr><td>149</td></tr>
+<tr><td>150</td></tr>
+<tr><td>151</td></tr>
+<tr><td>152</td></tr>
+<tr><td>153</td></tr>
+<tr><td>154</td></tr>
+<tr><td>155</td></tr>
+<tr><td>156</td></tr>
+<tr><td>157</td></tr>
+<tr><td>158</td></tr>
+  
+  
+  
+  <tr><td>159</td> <td>Pall Mall</td> <td>Men Blk KS Bx</td> <td>952060-2</td></tr>
+  <tr><td>160</td> <td>Pall Mall</td> <td>Men KS Bx</td> <td>616640-9</td></tr>
+  <tr><td>161</td> <td>Pall Mall</td> <td>Men Whtie KS Bx</td> <td>952080-0</td></tr>
+
+  
+<tr>
+  <td>162</td> 
+  <td rowspan="5" colspan="3">
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    </td>
+</tr>
+<tr><td>163</td></tr>
+<tr><td>164</td></tr>
+<tr><td>165</td></tr>
+<tr><td>166</td></tr>
+  
+  
+  
+    <tr><td>167</td> <td>Camel</td> <td>Wide Filter Bx</td> <td>610690-0</td></tr>
+    <tr><td>168</td> <td>Camel</td> <td>Wide Blue Bx</td> <td>610700-7</td></tr>
+    <tr><td>169</td> <td>Camel</td> <td>Royal KS Bx</td> <td>951770-7</td></tr>
+    <tr><td>170</td> <td>Camel</td> <td>Gold KS Bx</td> <td>951780-6</td></tr>
+  
+  
+  <tr>
+  <td>171</td> 
+  <td rowspan="4" colspan="3">
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    </td>
+</tr>
+  
+  
+  
+  
+  <tr><td>172</td></tr>
+  <tr><td>173</td></tr>
+  <tr><td>174</td></tr>
+  
+  <tr class="highlight"><td>175</td><td>Newport</td><td>100 Bx</td><td>615550-1</td></tr>
+  <tr class="highlight"><td>176</td><td>Newport</td><td>100 Bx</td><td>615550-1</td></tr>
+<tr class="highlight"><td>177</td> <td>Newport</td> <td>100 Bx</td> <td>615550-1</td></tr>
+<tr class="highlight"><td>178</td> <td>Newport</td> <td>100 Bx</td> <td>615550-1</td></tr>
+<tr class="highlight"><td>179</td> <td>Newport</td> <td>100 Bx</td> <td>615550-1</td></tr>
+<tr class="highlight"><td>180</td> <td>Newport</td> <td>100 Bx</td> <td>615550-1</td></tr>
+<tr class="highlight"><td>181</td> <td>Newport</td> <td>100 Bx</td> <td>615550-1</td></tr>
+<tr class="highlight"><td>182</td> <td>Newport</td> <td>100 Bx</td> <td>615550-1</td></tr>
+<tr class="highlight"><td>183</td> <td>Newport</td> <td>Men Gold KS Bx</td> <td>615220-1</td></tr>
+<tr class="highlight"><td>184</td> <td>Newport</td> <td>Men Gold 100 Bx</td> <td>615700-2</td></tr>
+<tr class="highlight"><td>185</td> <td>American Spirit</td> <td>Turquoise KS Bx</td> <td>951370-6</td></tr>
+<tr class="highlight"><td>186</td> <td>American Spirit</td> <td>Gold KS BX</td> <td>953380-5</td></tr>
+<tr class="highlight"><td>187</td> <td>American Spirit</td> <td>Sky KS Bx</td> <td>953340-7</td></tr>
+<tr class="highlight"><td>188</td> <td>American Spirit</td> <td>Men Dark Green KS Bx</td> <td>612570-2</td></tr>
+<tr class="highlight"><td>189</td> <td>American Spirit</td> <td>Men Mellow KS Bx</td> <td>612300-5</td></tr>
+<tr class="highlight"><td>190</td> <td>Lucky Strike</td> <td>Red KS Bx</td> <td>953440-5</td></tr>
+<tr class="highlight"><td>191</td> <td>Lucky Strike</td> <td>Red KS Bx</td> <td>953440-5</td></tr>
+<tr class="highlight"><td>192</td> <td>Lucky Strike</td> <td>Red 100 Bx</td> <td>953430-6</td></tr>
+<tr class="highlight"><td>193</td> <td>Lucky Strike</td> <td>Red 100 Bx</td> <td>953430-6</td></tr>
+<tr class="highlight"><td>194</td> <td>Lucky Strike</td> <td>Red 100 Bx</td> <td>953430-6</td></tr>
+<tr class="highlight"><td>195</td> <td>Camel</td> <td>Crush KS Bx</td> <td>612380-6</td></tr>
+<tr class="highlight"><td>196</td> <td>Camel</td> <td>Crush KS Bx</td> <td>612380-6</td></tr>
+<tr class="highlight"><td>197</td> <td>Camel</td> <td>Crush Rich KS Bx</td> <td>953190-6</td></tr>
+<tr class="highlight"><td>198</td> <td>Camel</td> <td>Crush Men KS Bx</td> <td>612320-2</td></tr>
+<tr class="highlight"><td>199</td> <td>Camel</td> <td>Crush Men KS Bx</td> <td>612320-2</td></tr>
+<tr class="highlight"><td>200</td> <td>Camel</td> <td>Crush Men Silver KS Bx</td> <td>612300-4</td></tr>
+<tr class="highlight"><td>201</td> <td>Camel</td> <td>Crush Men Silver KS Bx</td> <td>612300-4</td></tr>
+<tr class="highlight"><td>202</td> <td>Camel</td> <td>Crush Smooth Men KS Bx</td> <td>953290-4</td></tr>
+<tr class="highlight"><td>203</td> <td>Camel</td> <td>Crush Smooth Men Silver KS BX</td> <td>953280-5</td></tr>
+
+  
+  
+  <tr class="highlight"><td>204</td> <td>Newport</td> <td>KS Bx</td> <td>615540-2</td></tr>
+<tr class="highlight"><td>205</td> <td>Newport</td> <td>KS Bx</td> <td>615540-2</td></tr>
+<tr class="highlight"><td>206</td> <td>Newport</td> <td>KS Bx</td> <td>615540-2</td></tr>
+<tr class="highlight"><td>207</td> <td>Newport</td> <td>KS Bx</td> <td>615540-2</td></tr>
+<tr class="highlight"><td>208</td> <td>Newport</td> <td>KS Bx</td> <td>615540-2</td></tr>
+<tr class="highlight"><td>209</td> <td>Newport</td> <td>KS Bx</td> <td>615540-2</td></tr>
+<tr class="highlight"><td>210</td> <td>Newport</td> <td>Non Men KS Bx</td> <td>612640-3</td></tr>
+<tr class="highlight"><td>211</td> <td>Newport</td> <td>Non Men 100 Bx</td> <td>612650-2</td></tr>
+<tr class="highlight"><td>212</td> <td>Newport</td> <td>Non Men Gold KS Bx</td> <td>951250-0</td></tr>
+<tr class="highlight"><td>213</td> <td>Newport</td> <td>Non Men Gold 100 Bx</td> <td>951260-9</td></tr>
+<tr class="highlight"><td>214</td> <td>American Spirit</td> <td>Perique KS Bx</td> <td>617310-8</td></tr>
+<tr class="highlight"><td>215</td> <td>American Spirit</td> <td>FB KS Bx</td> <td>616870-2</td></tr>
+<tr class="highlight"><td>216</td> <td>American Spirit</td> <td>Mellow KS Bx</td> <td>616830-6</td></tr>
+<tr class="highlight"><td>217</td> <td>American Spirit</td> <td>Mellow KS Bx</td> <td>616830-6</td></tr>
+<tr class="highlight"><td>218</td> <td>American Spirit</td> <td>Smooth Mellow KS Bx</td> <td>616780-3</td></tr>
+<tr class="highlight"><td>219</td> <td>Lucky Strike</td> <td>Gold KS Bx</td> <td>953420-7</td></tr>
+<tr class="highlight"><td>220</td> <td>Lucky Strike</td> <td>Gold KS Bx</td> <td>953420-7</td></tr>
+<tr class="highlight"><td>221</td> <td>Lucky Strike</td> <td>Gold 100 Bx</td> <td>953410-8</td></tr>
+<tr class="highlight"><td>222</td> <td>Lucky Strike</td> <td>Gold 100 Bx</td> <td>953410-8</td></tr>
+<tr class="highlight"><td>223</td> <td>Lucky Strike</td> <td>Gold 100 Bx</td> <td>953410-8</td></tr>
+<tr class="highlight"><td>224</td> <td>Camel</td> <td>Blue KS Bx</td> <td>610740-3</td></tr>
+<tr class="highlight"><td>225</td> <td>Camel</td> <td>Blue KS Bx</td> <td>610740-3</td></tr>
+<tr class="highlight"><td>226</td> <td>Camel</td> <td>Blue 99 Bx</td> <td>619680-2</td></tr>
+<tr class="highlight"><td>227</td> <td>Camel</td> <td>Filter KS Bx</td> <td>610710-6</td></tr>
+<tr class="highlight"><td>228</td> <td>Camel</td> <td>Filter KS Bx</td> <td>610710-6</td></tr>
+<tr class="highlight"><td>229</td> <td>Camel</td> <td>Filter 99 Bx</td> <td>610760-3</td></tr>
+<tr class="highlight"><td>230</td> <td>Camel</td> <td>Classic Gold KS Bx</td> <td>953470-2</td></tr>
+<tr class="highlight"><td>231</td> <td>Camel</td> <td>Classic Gold KS Bx</td> <td>953470-2</td></tr>
+<tr class="highlight"><td>232</td> <td>Camel</td> <td>Classic Gold 99 Bx</td> <td>953480-1</td></tr>
+  
+  
+  
+  <tr><td>233</td> <td>Winston</td> <td>Red KS Bx</td> <td>619860-0</td></tr>
+<tr><td>234</td> <td>Winston</td> <td>Red KS Bx</td> <td>619860-0</td></tr>
+<tr><td>235</td> <td>Winston</td> <td>Gold 100 Bx</td> <td>619830-2</td></tr>
+<tr><td>236</td> <td>Winston</td> <td>Red 100 Bx</td> <td>619840-3</td></tr>
+<tr><td>237</td> <td>Winston</td> <td>Gold 100 Bx</td> <td>619820-5</td></tr>
+<tr><td>238</td> <td>Winston</td> <td>White KS Bx</td> <td>619820-4</td></tr>
+<tr><td>239</td> <td>Winston</td> <td>White 100 Bx</td> <td>619930-1</td></tr>
+<tr><td>240</td> <td>Winston</td> <td>Black KS Bx</td> <td>953090-8</td></tr>
+<tr><td>241</td> <td>Maverick</td> <td>KS Bx</td> <td>950660-1</td></tr>
+<tr><td>242</td> <td>Maverick</td> <td>Menthol KS Bx</td> <td>950690-2</td></tr>
+<tr class="highlight"><td>243</td> <td>American Spirit</td> <td>FB KS Bx</td> <td>616870-2</td></tr>
+<tr class="highlight"><td>244</td> <td>American Spirit</td> <td>Mellow KS Bx</td> <td>616830-6</td></tr>
+<tr class="highlight"><td>245</td> <td>American Spirit</td> <td>Mellow KS Bx</td> <td>616830-6</td></tr>
+<tr class="highlight"><td>246</td> <td>American Spirit</td> <td>Smooth Mellow KS Bx</td> <td>616780-3</td></tr>
+<tr class="highlight"><td>247</td> <td>American Spirit</td> <td>Smooth Mellow KS Bx</td> <td>616780-3</td></tr>
+<tr class="highlight"><td>248</td> <td>Lucky Strike</td> <td>Men KS Bx</td> <td>953380-4</td></tr>
+<tr class="highlight"><td>249</td> <td>Lucky Strike</td> <td>Men 100 Bx</td> <td>953370-4</td></tr>
+<tr class="highlight"><td>250</td> <td>Lucky Strike</td> <td>Men 100 Bx</td> <td>953370-4</td></tr>
+<tr class="highlight"><td>251</td> <td>Lucky Strike</td> <td>Men Silver KS Bx</td> <td>953360-5</td></tr>
+<tr class="highlight"><td>252</td> <td>Lucky Strike</td> <td>Men Silver 100 Bx</td> <td>953350-6</td></tr>
+<tr class="highlight"><td>253</td> <td>Lucky Strike</td> <td>Red KS Bx</td> <td>616600-3</td></tr>
+<tr class="highlight"><td>254</td> <td>Pall Mall</td> <td>Red 100 Bx</td> <td>616610-2</td></tr>
+<tr class="highlight"><td>255</td> <td>Pall Mall</td> <td>Blue KS Bx</td> <td>616620-1</td></tr>
+<tr class="highlight"><td>256</td> <td>Pall Mall</td> <td>Blue 100 Bx</td> <td>616630-0</td></tr>
+<tr class="highlight"><td>257</td> <td>Pall Mall</td> <td>Orange KS Bx</td> <td>616670-6</td></tr>
+<tr class="highlight"><td>258</td> <td>Pall Mall</td> <td>Orange 100 Bx</td> <td>616680-5</td></tr>
+<tr class="highlight"><td>259</td> <td>Pall Mall</td> <td>Men Blk 100 Bx</td> <td>952070-1</td></tr>
+<tr class="highlight"><td>260</td> <td>Pall Mall</td> <td>Men 100 Bx</td> <td>616650-8</td></tr>
+<tr class="highlight"><td>261</td> <td>Pall Mall</td> <td>Men White 100 Bx</td> <td>952090-9</td></tr>
+
+  
+  
+  <tr><td>262</td> <td>Kool</td> <td>KS Bx</td> <td>613300-3</td></tr>
+<tr><td>263</td> <td>Kool</td> <td>100 Bx</td> <td>613860-6</td></tr>
+<tr><td>264</td> <td>Kool</td> <td>Blue KS Bx</td> <td>612830-0</td></tr>
+<tr><td>265</td> <td>Kool</td> <td>Blue 100 Bx</td> <td>613990-9</td></tr>
+<tr><td>266</td> <td>Salem</td> <td>Gold Men KS BX</td> <td>617900-6</td></tr>
+<tr><td>267</td> <td>Salem</td> <td>Gold Men 100 Bx</td> <td>617920-4</td></tr>
+<tr><td>268</td> <td>Salem</td> <td>Slim 100 Bx</td> <td>617870-1</td></tr>
+<tr><td>269</td> <td>Maverick</td> <td>Gold 100 Bx</td> <td>950680-9</td></tr>
+<tr><td>270</td> <td>Maverick</td> <td>Men 100 Bx</td> <td>950670-0</td></tr>
+<tr><td>271</td> <td>Maverick</td> <td>Men KS Bx</td> <td>950700-5</td></tr>
+<tr><td>272</td> <td>Montego</td> <td>Red 100 Bx</td> <td>953490-0</td></tr>
+<tr><td>273</td> <td>Montego</td> <td>Red KS Bx</td> <td>953500-6</td></tr>
+<tr><td>274</td> <td>Montego</td> <td>Blue KS Bx</td> <td>953510-5</td></tr>
+<tr><td>275</td> <td>Montego</td> <td>Blue 100 Bx</td> <td>953520-4</td></tr>
+<tr><td>276</td> <td>Montego</td> <td>Men Gold 100 Bx</td> <td>953530-3</td></tr>
+<tr><td>277</td> <td>Eagle 20's</td> <td>Red KS Bx</td> <td>953050-2</td></tr>
+<tr><td>278</td> <td>Eagle 20's</td> <td>Red 100 Bx</td> <td>953060-1</td></tr>
+<tr><td>279</td> <td>Eagle 20's</td> <td>Blue KS Bx</td> <td>953070-0</td></tr>
+<tr><td>280</td> <td>Eagle 20's</td> <td>Blue 100 Bx</td> <td>953080-9</td></tr>
+<tr><td>281</td> <td>Pyramid</td> <td>Red 100 Bx</td> <td>950810-2</td></tr>
+<tr><td>282</td> <td>Pyramid</td> <td>Red KS Bx</td> <td>950800-3</td></tr>
+<tr><td>283</td> <td>Pyramid</td> <td>Blue KS Bx</td> <td>950820-1</td></tr>
+<tr><td>284</td> <td>Pyramid</td> <td>Blue 100 Bx</td> <td>950830-0</td></tr>
+<tr><td>285</td> <td>Kool</td> <td>KS</td> <td>613300-0</td></tr>
+<tr><td>286</td> <td>USA Gold</td> <td>Red KS Bx</td> <td>611920-0</td></tr>
+<tr><td>287</td> <td>USA Gold</td> <td>Gold KS Bx</td> <td>611900-0</td></tr>
+<tr><td>288</td> <td>Misty</td> <td>Blue Slim 120 Bx</td> <td>614790-8</td></tr>
+<tr><td>289</td> <td>Misty</td> <td>Men Green Slim 120 Bx</td> <td>614760-7</td></tr>
+<tr><td>290</td> <td>Misty</td> <td>Men Silver Slim 100 Bx</td> <td>617650-7</td></tr>
+
+  
+  
+  <tr><td>291</td> <td>Cheyenne</td> <td>HW FF Cigar</td> <td>097080-6</td></tr>
+<tr><td>292</td> <td>Cheyenne</td> <td>HW Classic Cigar</td> <td>097081-4</td></tr>
+<tr><td>293</td> <td>Cheyenne</td> <td>HW Wild Cherry</td> <td>097083-0</td></tr>
+<tr><td>294</td> <td>Cheyenne</td> <td>HW Menthol Cigar</td> <td>097082-2</td></tr>
+<tr><td>295</td> <td>Cheyenne</td> <td>HW Peach Cigar</td> <td>097085-5</td></tr>
+<tr><td>296</td> <td>Cheyenne</td> <td>HW Vanilla Cigar</td> <td>097084-8</td></tr>
+<tr><td>297</td> <td>Cheyenne</td> <td>HW Grape Cigar</td> <td>097086-3</td></tr>
+<tr><td>298</td> <td>Santa Fe</td> <td>Mild Cigar</td> <td>618058-2</td></tr>
+<tr><td>299</td> <td>Swisher</td> <td>Little Cigar</td> <td>618000-4</td></tr>
+<tr><td>300</td> <td>Swisher</td> <td>Little Cigar Box</td> <td>618020-2</td></tr>
+<tr><td>301</td> <td>Swisher</td> <td>Little Cigar Box</td> <td>618020-2</td></tr>
+<tr><td>302</td> <td>Swisher</td> <td>Little Cigar Silver Hard Pack</td> <td>618096-2</td></tr>
+<tr><td>303</td> <td>Swisher</td> <td>Menthol Box</td> <td>618216-6</td></tr>
+<tr><td>304</td> <td>Swisher</td> <td>Mellow Little Cigar</td> <td>618010-3</td></tr>
+<tr><td>305</td> <td>Swisher</td> <td>Cherry Little Cigar</td> <td>618001-2</td></tr>
+<tr><td>306</td> <td>Swisher</td> <td>Grape Little Cigar</td> <td>618016-0</td></tr>
+<tr><td>307</td> <td>Swisher</td> <td>Peach Little Cigar</td> <td>618003-8</td></tr>
+<tr><td>308</td> <td>Swisher</td> <td>Sweet Little Cigar</td> <td>618016-6</td></tr>
+<tr><td>309</td> <td>Captain Black</td> <td>Sweet Little Cigar</td> <td>097976-5</td></tr>
+<tr><td>310</td> <td>Wrangler</td> <td>LT 100 Cigar</td> <td>618155-6</td></tr>
+<tr><td>311</td> <td>Pyramid</td> <td>Men Silver 100 Bx</td> <td>950850-8</td></tr>
+<tr><td>312</td> <td>Pyramid</td> <td>Orange 100 Bx</td> <td>950860-7</td></tr>
+
+  
+  <tr>
+  <td>313</td> 
+  <td rowspan="7" colspan="3">
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
+    <center><b>Manager's Choice - Approved Brands</b></center>
+  </td>
+</tr>
+  
+  <tr><td>314</td></tr>
+<tr><td>315</td></tr>
+<tr><td>316</td></tr>
+<tr><td>317</td></tr>
+<tr><td>318</td></tr>
+<tr><td>319</td></tr>
+
+  
+</table>
+</body>
+</html>
