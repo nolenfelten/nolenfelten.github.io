@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hustlers University Mind Map</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
+        .mind-map {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .node {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .node h2 {
+            margin-top: 0;
+        }
+        .branch {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .branch .node {
+            margin: 10px;
+        }
+        .connector {
+            width: 2px;
+            background-color: #ccc;
+            margin: 10px;
+        }
+        /* Style for different levels */
+        .level-1 {
+            font-size: 1.2em;
+        }
+        .level-2 {
+            font-size: 1em;
+        }
+        .level-3 {
+            font-size: 0.8em;
+        }
+        /* Style for timestamps */
+        .timestamp {
+            font-size: 0.8em;
+            color: #666;
+        }
+        /* Add icons based on content */
+        .node:before {
+            display: inline-block;
+            margin-right: 5px;
+            font-size: 1.5em;
+        }
+        .node[data-icon="speed"]:before {
+            content: "🚀";
+        }
+        .node[data-icon="money-in"]:before {
+            content: "💰";
+        }
+        .node[data-icon="start-cheap"]:before {
+            content: "💡";
+        }
+        .node[data-icon="family"]:before {
+            content: "👨‍👩‍👧‍👦";
+        }
+        .node[data-icon="respect"]:before {
+            content: "💪";
+        }
+        .node[data-icon="resell"]:before {
+            content: "🔄";
+        }
+        .node[data-icon="legal"]:before {
+            content: "⚖️";
+        }
+        .node[data-icon="use-what-you-got"]:before {
+            content: "🧰";
+        }
+        .node[data-icon="staff-objective"]:before {
+            content: "🎯";
+        }
+        .node[data-icon="dont-spend"]:before {
+            content: "🚫💸";
+        }
+        .node[data-icon="dont-last"]:before {
+            content: "⏳";
+        }
+        .node[data-icon="reputation"]:before {
+            content: "🌟";
+        }
+        .node[data-icon="think-money"]:before {
+            content: "🧠💰";
+        }
+        .node[data-icon="improve-job"]:before {
+            content: "📈";
+        }
+        .node[data-icon="dont-compete-price"]:before {
+            content: "🚫💰";
+        }
+        .node[data-icon="shut-up-listen"]:before {
+            content: "👂";
+        }
+        .node[data-icon="attention"]:before {
+            content: "📣";
+        }
+        .node[data-icon="insecurities"]:before {
+            content: "🎭";
+        }
+        .node[data-icon="network"]:before {
+            content: "🌐";
+        }
+        .node[data-icon="stay-calm"]:before {
+            content: "🧘";
+        }
+        .node[data-icon="send-money-back"]:before {
+            content: "↩️💰";
+        }
+        .node[data-icon="hard-close"]:before {
+            content: "🤝";
+        }
+        .node[data-icon="paid"]:before {
+            content: "💳";
+        }
+        .node[data-icon="stress"]:before {
+            content: "😩";
+        }
+        .node[data-icon="sell-need"]:before {
+            content: "🧲";
+        }
+        .node[data-icon="contracts"]:before {
+            content: "📄";
+        }
+        .node[data-icon="mutual-need"]:before {
+            content: "🤝";
+        }
+        .node[data-icon="impulse"]:before {
+            content: "⚡";
+        }
+        .node[data-icon="future"]:before {
+            content: "🔮";
+        }
+        .node[data-icon="outsource"]:before {
+            content: "👨‍💻";
+        }
+        .node[data-icon="no-burnout"]:before {
+            content: "🔥🚫";
+        }
+        .node[data-icon="winning"]:before {
+            content: "🏆";
+        }
+        .node[data-icon="not-broke"]:before {
+            content: "💸";
+        }
+        .node[data-icon="fix-it"]:before {
+            content: "🛠️";
+        }
+        .node[data-icon="say-yes"]:before {
+            content: "✅";
+        }
+        .node[data-icon="diversify"]:before {
+            content: "🌐";
+        }
+        .node[data-icon="staff-lazy"]:before {
+            content: "😴";
+        }
+        .node[data-icon="do-something"]:before {
+            content: "🏃";
+        }
+        .node[data-icon="mystery"]:before {
+            content: "❓";
+        }
+        .node[data-icon="take-credit"]:before {
+            content: "👑";
+        }
+        .node[data-icon="loyalty"]:before {
+            content: "❤️";
+        }
+        .node[data-icon="feed-yourself"]:before {
+            content: "🍽️";
+        }
+        .node[data-icon="debt"]:before {
+            content: "💳";
+        }
+        .node[data-icon="dont-pay"]:before {
+            content: "🚫💰";
+        }
+        .node[data-icon="no-hr"]:before {
+            content: "🚫👩‍💼";
+        }
+        .node[data-icon="sell-how"]:before {
+            content: "📢";
+        }
+        .node[data-icon="play-strengths"]:before {
+            content: "💪";
+        }
+        .node[data-icon="immediate-need"]:before {
+            content: "🔥";
+        }
+        .node[data-icon="dont-assume"]:before {
+            content: "🚫🤔";
+        }
+        .node[data-icon="love-winner"]:before {
+            content: "🥇";
+        }
+        .node[data-icon="steal-ideas"]:before {
+            content: "🥷";
+        }
+        .node[data-icon="life-is-work"]:before {
+            content: "💼";
+        }
+        .node[data-icon="phone"]:before {
+            content: "📱";
+        }
+        .node[data-icon="amazing"]:before {
+            content: "🤩";
+        }
+        .node[data-icon="spot-bs"]:before {
+            content: "🕵️";
+        }
+        .node[data-icon="why"]:before {
+            content: "❓";
+        }
+        .node[data-icon="always-sell"]:before {
+            content: "💰";
+        }
+        .node[data-icon="take-offers"]:before {
+            content: "👂";
+        }
+        .node[data-icon="dont-understand"]:before {
+            content: "🤷";
+        }
+        .node[data-icon="no-politics"]:before {
+            content: "🚫🏛️";
+        }
+        .node[data-icon="famous"]:before {
+            content: "🦆";
+        }
+        .node[data-icon="sharpen"]:before {
+            content: "🔪";
+        }
+        .node[data-icon="sell-problem"]:before {
+            content: "⚠️";
+        }
+        .node[data-icon="happy-important"]:before {
+            content: "😊🏆";
+        }
+    </style>
+</head>
+<body>
+    <div class="mind-map">
+        <div class="node level-1" data-icon="main">
+            <h2>Hustlers University 1.0</h2>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="speed">
+                <div class="timestamp">00:03:48</div>
+              <h3>If you want to learn about business...</h3>
+              <h2>Congratulations!</h2>
+              
+                You are about to save a bunch of time.
+              
+              <p>This knowledge took me <i><u>over a decade of sleepless nights</u></i> to acquire.</p>
+              <p>You want real, no-BS strategies that cut through the noise and deliver results.</p>
+              <p><b>Good!</b>
+              <p>When I pass away, I want to be remembered as someone who helped society.<p>
+              <p>Let's work together! <b>Quid pro quo</b></p>
+            </div>
+        </div>
+      
+      
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="speed">
+              <h2>You <i><u>Will</u></i> Learn...</h2>
+              <ul>
+                <li><b>People will say about you</b>: "That guy knows how to make money".</li>
+                <li><b>How to Start a Business TODAY for $0</b>: Get cash now!</li>
+                <li><b>The Power of Speed</b>: Why being fast is the ultimate weapon in today's cut-throat market.</li>
+                <li><b>Why Money In, and Not Money Out</b>: Prioritize cash flow with this sophisticated accounting trick that every CPA agrees with.</li>
+                <li><b>The Staff Equation</b>: Build a loyal, high-performing team that makes you money or saves you time.</li>
+                <li><b>Don't Get Legal Until You Get Rich</b>: Laugh at the clueless idiots on "Shark Tank" and "Dragons Den" who only "<i>feel</i>" like they have a business because they wasted money registering intellectual property.</li>
+                <li><b>How to Use What You Got</b>: How to get work done with FREE employees.</li>
+                <li><b>How to Overthrow Competition</b>: Learn what multi-billion dollar companies wish they knew about how to destroy competition.</li>
+              </ul>
+              <h2>...AND SO MUCH MORE!</h2>
+              <p><u>This course is raw, unfiltered, and not for the faint of heart</u>!</p>
+              <p>I don't want to waste your time with stupid copywrite.</p>
+              <p>"<i>You will master the secrets to writing a course description that attracts customers who buy <b>AS SEEN ON TV</b> products.</i>"</p>
+            </div>
+        </div>
+      
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="speed">
+              <h2>You <i><u>Will NOT</u></i> Learn...</h2>
+              <ul>
+                <li><b>How to Choose 
+                <li><b>Building a "Lifestyle Business"</b>: The emphasis is on rapid growth and profit, not a slow-and-steady, work-life balance approach.</li>
+                <li><b>Seeking Investment</b>: The course emphasizes bootstrapping and using existing resources, not pitching investors or seeking external funding.</li>
+            </div>
+        </div>
+      
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="speed">
+              
+              <p>Most people will tell you they want to make money, 
+                <br>but they don't want to stop for a moment to understand the law: 
+                <br>The only people who make money work at the Mint. The rest of us must earn money.
+                <br>Only way to earn money is by providing people, with services and products that are needed and useful.
+                <br>And selling is the worlds highest paid profession.
+                <br>There is no one in the world with a future 
+                
+              
+              
+            </div>
+        </div>
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="speed">
+                <div class="timestamp">00:03:48</div>
+                <h2>Lesson 1: Speed</h2>
+                <ul>
+                  <li><u>This is the most important lesson in this course</u>!</li>
+                  <li>everything must be done quickly while maintaining quality.</li>
+                    <li>Speed is important for getting things online and making money faster.</li>
+                  <li>The faster you produce, the faster you get results.</li>
+                  
+                    <li>Don't conflate speed with quality; you can do things quickly and well.</li>
+                  <li>Getting things done early, creates time to get the next thing done sooner.</li>
+                  
+                  <li>Always be moving forward.</li>
+                  <li>Always be producing content.</li>
+                  
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2">
+            
+                <canvas id="arrowCanvas" width="800" height="200"></canvas>
+
+    <script>
+        const canvas = document.getElementById('arrowCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Canvas dimensions
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
+
+        // Margins (10% on each side)
+        const margin = canvasWidth * 0.3;
+
+        // Arrow starting and ending points
+        const startX = margin;
+        const endX = canvasWidth - margin;
+        const centerY = canvasHeight / 2;
+
+        // Arrow settings
+        const arrowLength = 10; // Length of the arrowhead
+        const arrowWidth = 17;  // Width of the arrowhead
+
+        // Draw the arrow line
+        ctx.beginPath();
+        ctx.moveTo(startX, centerY);
+        ctx.lineTo(endX - 9, centerY);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        // Draw the arrowhead
+        ctx.beginPath();
+        ctx.moveTo(endX, centerY);
+        ctx.lineTo(endX - arrowLength - 9, centerY - arrowWidth - 8);
+        ctx.lineTo(endX - arrowLength - 9, centerY + arrowWidth + 8);
+        ctx.closePath();
+        ctx.fillStyle = 'black';
+        ctx.fill();
+      
+       // Set text settings
+    ctx.font = 'bold 20px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    ctx.fillStyle = 'black';
+
+    // Draw the text above the line
+    ctx.fillText('AIRPLANE', canvasWidth / 2, centerY - 10);
+    </script>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="money-in">
+                <div class="timestamp">00:15:35</div>
+                <h2>Lesson 2: A Business Is Money In</h2>
+                <ul>
+                    <li>Focus on making money, not spending it at the start.</li>
+                    <li>Prioritize getting money in before fulfilling orders.</li>
+                    <li>Don't get caught up in vanity metrics like logos and offices before generating revenue.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="start-cheap">
+                <div class="timestamp">00:21:02</div>
+                <h2>Lesson 3: Start Ideas for Free</h2>
+                <ul>
+                    <li>You can start businesses cheaply by prioritizing money in.</li>
+                    <li>Test the viability of your business plan before heavy investment.</li>
+                    <li>Reinvest profits to build your company from the ground up.</li>
+                  <li>never spends more than $5,000 launching a company.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="family">
+                <div class="timestamp">00:33:13</div>
+                <h2>Lesson 4: Staff: Family and Friends</h2>
+                <ul>
+                    <li>Utilize young family and friends who are tech-savvy and have time.</li>
+                    <li>They have less to lose and are often more motivated.</li>
+                    <li>You can offer them equity and mentorship in exchange for their work.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="respect">
+                <div class="timestamp">00:41:50</div>
+                <h2>Lesson 5: Command Respect</h2>
+                <ul>
+                    <li>Physical presence and discipline command respect in business.</li>
+                    <li>People trust those who are fit and assertive.</li>
+                    <li>Investing in your physical appearance will make your words have more weight.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="resell">
+                <div class="timestamp">00:48:22</div>
+                <h2>Lesson 6: Resell to Existing Customers</h2>
+                <ul>
+                    <li>The easiest sales come from existing customers.</li>
+                    <li>Upsell them on additional products or services.</li>
+                    <li>Use email campaigns to re-engage past buyers.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="legal">
+                <div class="timestamp">00:51:56</div>
+                <h2>Lesson 7: Don't Get Legal Before You Get Rich</h2>
+                <ul>
+                    <li>Prioritize proving the viability of your business before legal formalities.</li>
+                    <li>Focus on generating revenue before worrying about taxes and accountants.</li>
+                    <li>Don't spend money on legal entities until your business is generating cash.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="use-what-you-got">
+                <div class="timestamp">00:54:52</div>
+                <h2>Lesson 8: Use What You Got</h2>
+                <ul>
+                    <li>Identify your existing resources: people, skills, assets.</li>
+                    <li>Find ways to leverage them to start a business without spending much.</li>
+                    <li>Utilize your network, skills, and possessions to generate income.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="staff-objective">
+                <div class="timestamp">01:02:23</div>
+                <h2>Lesson 9: Staff Objectives</h2>
+                <ul>
+                    <li>Staff should either make you money or save you time.</li>
+                    <li>Regularly audit your staff's performance based on these criteria.</li>
+                    <li>Be ruthless in firing those who are not adding value.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="dont-spend">
+                <div class="timestamp">01:16:58</div>
+                <h2>Lesson 10: You Can't Fuck Up If You Don't Spend Money</h2>
+                <ul>
+                    <li>Avoid investing large sums at the beginning of your business.</li>
+                    <li>Minimize expenses and only spend on things that directly generate more revenue.</li>
+                    <li>Being broke is liberating because you have less to lose.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="outsource">
+                <div class="timestamp">01:11:00</div>
+                <h2>Lesson 11: Outsource Cheaply</h2>
+                <ul>
+                    <li>Utilize students or freelancers on platforms like Fiverr.</li>
+                    <li>Avoid hiring companies whenever possible, as they are more expensive and less focused on your success.</li>
+                    <li>Build a team of individuals you can trust and who have a vested interest in your success.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="dont-last">
+                <div class="timestamp">01:25:09</div>
+                <h2>Lesson 12: Businesses Won't Last Forever</h2>
+                <ul>
+                    <li>Get rich quickly and prioritize yourself over the business.</li>
+                    <li>Don't be afraid to take profits and secure your financial well-being.</li>
+                    <li>No business lasts forever, so make sure you benefit while it's running.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="reputation">
+                <div class="timestamp">01:32:50</div>
+                <h2>Lesson 13: Reputation Control</h2>
+                <ul>
+                    <li>Do more good than bad to maintain a positive reputation.</li>
+                    <li>Respond to criticism and address complaints directly.</li>
+                    <li>Don't ignore negative feedback; engage with it to prevent further damage.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="think-money">
+                <div class="timestamp">01:34:37</div>
+                <h2>Lesson 14: Always Think About Money</h2>
+                <ul>
+                    <li>Analyze every business you interact with, identify their strengths and weaknesses.</li>
+                    <li>Train your mind to see opportunities and potential improvements.</li>
+                    <li>Use this knowledge to inform your own business decisions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="improve-job">
+                <div class="timestamp">01:37:54</div>
+                <h2>Lesson 15: Identify Ways to Improve Your Job</h2>
+                <ul>
+                    <li>If you're employed, find ways to do your job better and more efficiently.</li>
+                    <li>Negotiate for rewards or incentives based on your improvements.</li>
+                    <li>Use downtime at your job to work on your side hustle.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="dont-compete-price">
+                <div class="timestamp">01:42:40</div>
+                <h2>Lesson 16: Don't Compete on Price</h2>
+                <ul>
+                    <li>Sell on brand, quality, and reputation, not price.</li>
+                    <li>Don't undervalue your product or services; aim for a premium price point.</li>
+                    <li>Building a strong brand will allow you to charge more and attract better customers.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="shut-up-listen">
+                <div class="timestamp">01:47:02</div>
+                <h2>Lesson 17: Shut Up and Listen</h2>
+                <ul>
+                    <li>Learn from people who are making money, even if they're in different industries.</li>
+                    <li>Listen more than you talk, especially when interacting with successful individuals.</li>
+                    <li>Absorb knowledge and adapt it to your own business.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="attention">
+                <div class="timestamp">01:50:18</div>
+                <h2>Lesson 18: Attention Is Free Advertising</h2>
+                <ul>
+                    <li>Find ways to get attention for your business, even if it's unconventional.</li>
+                    <li>Don't be afraid to be bold and creative to stand out.</li>
+                    <li>Attention is the currency of the modern world; leverage it to your advantage.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="insecurities">
+                <div class="timestamp">01:56:21</div>
+                <h2>Lesson 19: Play on People's Insecurities</h2>
+                <ul>
+                    <li>Identify what people want and are insecure about.</li>
+                    <li>Position your product or service as a solution to their problems and desires.</li>
+                    <li>Sell the result, not just the features of your product.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="network">
+                <div class="timestamp">02:00:47</div>
+                <h2>Lesson 20: Network Is Everything</h2>
+                <ul>
+                    <li>Surround yourself with people who are hustling and thinking about money.</li>
+                    <li>Build a network of like-minded individuals who can support and challenge you.</li>
+                    <li>Losers roll with losers; winners roll with winners.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="stay-calm">
+                <div class="timestamp">02:04:44</div>
+                <h2>Lesson 21: Keep Your Panties Dry Till the Big Gun Hard</h2>
+                <ul>
+                    <li>Don't get overly excited about money or potential deals.</li>
+                    <li>Stay calm, professional, and focused on the next step.</li>
+                    <li>Don't count your chickens before they hatch; celebrate success when the money is in the bank.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="send-money-back">
+                <div class="timestamp">02:11:49</div>
+                <h2>Lesson 22: Send People Their Money Back</h2>
+                <ul>
+                    <li>Build trust by offering refunds or delaying purchases strategically.</li>
+                    <li>Use this tactic to create a sense of obligation and increase future sales.</li>
+                    <li>People are more likely to spend more when they feel you've gone the extra mile.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="hard-close">
+                <div class="timestamp">02:18:33</div>
+                <h2>Lesson 23: Hard Close</h2>
+                <ul>
+                    <li>Don't be afraid to push for a decision; close deals aggressively.</li>
+                    <li>A definite sale is better than a potential maybe.</li>
+                    <li>Give clear deadlines and create a sense of urgency.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="paid">
+                <div class="timestamp">02:20:48</div>
+                <h2>Lesson 24: It Ain't Real Till They Pay</h2>
+                <ul>
+                    <li>Don't count your money until it's in the bank.</li>
+                    <li>Contracts and verbal agreements are not guarantees of payment.</li>
+                    <li>Celebrate success only when you have received the funds.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="stress">
+                <div class="timestamp">02:24:26</div>
+                <h2>Lesson 25: Stress Tolerance</h2>
+                <ul>
+                    <li>Success in business requires a high tolerance for stress.</li>
+                    <li>Learn to care mentally but not emotionally; stay calm under pressure.</li>
+                    <li>The more stress you can handle, the more successful you can become.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="sell-need">
+                <div class="timestamp">02:27:17</div>
+                <h2>Lesson 26: Sell the Need, Not the Product</h2>
+                <ul>
+                    <li>Focus on the problem your product solves and the benefits it provides.</li>
+                    <li>Convince people they need what you're selling, even if they don't realize it yet.</li>
+                    <li>Identify the need and make it clear how your product satisfies it.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="contracts">
+                <div class="timestamp">02:32:01</div>
+                <h2>Lesson 27: Contracts Aren't Real</h2>
+                <ul>
+                    <li>Don't rely heavily on contracts; they can be time-consuming and expensive to enforce.</li>
+                    <li>Focus on building trust and mutual interest with your partners and clients.</li>
+                    <li>Legality is slow; prioritize speed and cash flow over legal formalities.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="mutual-need">
+                <div class="timestamp">02:35:20</div>
+                <h2>Lesson 28: Ensure Mutual Need in Partnerships</h2>
+                <ul>
+                    <li>Make sure your partners need you, and you need them, for the business to succeed.</li>
+                    <li>If there's no mutual need, consider going solo or finding a loyal second-in-command.</li>
+                    <li>Avoid partnerships where one party becomes dispensable.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="impulse">
+                <div class="timestamp">02:37:06</div>
+                <h2>Lesson 29: Every Purchase Is an Impulse Purchase</h2>
+                <ul>
+                    <li>Even considered purchases have an element of impulsivity at the moment of decision.</li>
+                    <li>Use tactics that trigger impulse buying, such as scarcity and urgency.</li>
+                    <li>Understand the psychology of impulse buying to increase your sales.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="future">
+                <div class="timestamp">02:39:37</div>
+                <h2>Lesson 30: Promise a Future</h2>
+                <ul>
+                    <li>Sell clients on the long-term benefits and future possibilities of your product or service.</li>
+                    <li>By preempting the future, you make the present sale more appealing.</li>
+                    <li>Paint a picture of a brighter future that they can achieve with your help.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="dont-last">
+                <div class="timestamp">01:25:09</div>
+                <h2>Lesson 31: Businesses Won't Last Forever (Repeat)</h2>
+                <!-- Content is the same as Lesson 12 -->
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="reputation">
+                <div class="timestamp">01:32:50</div>
+                <h2>Lesson 32: Reputation Control (Repeat)</h2>
+                <!-- Content is the same as Lesson 13 -->
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="dont-spend">
+                <div class="timestamp">01:16:58</div>
+                <h2>Lesson 33: You Can't Fuck Up If You Don't Spend Money (Repeat)</h2>
+                <!-- Content is the same as Lesson 10 -->
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="family">
+                <div class="timestamp">00:33:13</div>
+                <h2>Lesson 34: Staff: Family and Friends (Repeat)</h2>
+                <!-- Content is the same as Lesson 4 -->
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="no-burnout">
+                <div class="timestamp">02:23:52</div>
+                <h2>Lesson 35: Burnout Ain't Real</h2>
+                <ul>
+                    <li>Don't use burnout as an excuse for laziness.</li>
+                    <li>Work hard and rest only when you've earned it.</li>
+                    <li>If you're not rich yet, you haven't worked hard enough to experience burnout.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="winning">
+                <div class="timestamp">02:27:01</div>
+                <h2>Lesson 36: You're Never Tired When You're Winning</h2>
+                <ul>
+                    <li>Motivation comes from success; making money will energize you.</li>
+                    <li>If you're struggling with motivation, it's because you're not winning yet.</li>
+                    <li>Push harder during the tough times; the rewards will fuel your drive.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="staff-objective">
+                <div class="timestamp">01:02:23</div>
+                <h2>Lesson 37: Staff Objectives (Repeat)</h2>
+                <!-- Content is the same as Lesson 9 -->
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="not-broke">
+                <div class="timestamp">02:51:45</div>
+                <h2>Lesson 38: Nobody Is Broke</h2>
+                <ul>
+                    <li>People who say they can't afford it are simply prioritizing other purchases.</li>
+                    <li>Make your offer more appealing than their current spending habits.</li>
+                    <li>Convince them that your product will lead to more money, food, or satisfaction in the long run.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="fix-it">
+                <div class="timestamp">02:57:07</div>
+                <h2>Lesson 39: Nothing Ever Fixes Itself</h2>
+                <ul>
+                    <li>Don't wait for problems to resolve themselves; take immediate action.</li>
+                    <li>Be proactive in identifying and addressing issues in your business.</li>
+                    <li>Speed is key to fixing problems and minimizing losses.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="say-yes">
+                <div class="timestamp">02:57:07</div>
+                <h2>Lesson 40: Never Say No to Money</h2>
+                <ul>
+                    <li>Accept payment in any form, even if it's unconventional.</li>
+                    <li>Make it easy for people to give you money; don't limit your payment options.</li>
+                    <li>Find ways to convert non-traditional payments into cash.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="diversify">
+                <div class="timestamp">04:11:21</div>
+                <h2>Lesson 41: Diversify to Become Antifragile</h2>
+                <ul>
+                    <li>Don't rely on a single bank account, payment processor, or advertising platform.</li>
+                    <li>Diversify your income streams and online presence to protect yourself from attacks and bans.</li>
+                    <li>Being antifragile means being able to thrive in the face of chaos.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="diversify">
+                <div class="timestamp">04:13:08</div>
+                <h2>Lesson 42: Put Yourself on as Many Grids as Possible</h2>
+                <ul>
+                    <li>Don't try to go off-grid; instead, diversify your legal identity and financial footprint.</li>
+                    <li>Obtain multiple passports, driver's licenses, and bank accounts in different countries.</li>
+                    <li>This will make you less vulnerable to government control and restrictions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="staff-lazy">
+                <div class="timestamp">04:21:36</div>
+                <h2>Lesson 43: Your Staff Don't Work Hard</h2>
+                <ul>
+                    <li>As the boss, you should always be working the hardest.</li>
+                    <li>Don't assume your staff are putting in 100% effort; push them to do more.</li>
+                    <li>Most companies are inefficient; optimize your team by demanding high performance.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="no-burnout">
+                <div class="timestamp">04:23:22</div>
+                <h2>Lesson 44: Burnout Ain't Real (Repeat)</h2>
+                <!-- Content is the same as Lesson 35 -->
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="winning">
+                <div class="timestamp">04:27:01</div>
+                <h2>Lesson 45: You're Never Tired When You're Winning (Repeat)</h2>
+                <!-- Content is the same as Lesson 36 -->
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="loyalty">
+                <div class="timestamp">04:30:16</div>
+                <h2>Lesson 46: Special Forces Over Army, Loyalty Over Smarts</h2>
+                <ul>
+                    <li>Build a small team of loyal and highly skilled individuals.</li>
+                    <li>Prioritize loyalty over intelligence or experience; you can train for skills, but not for loyalty.</li>
+                    <li>A small, dedicated team is more effective than a large, unmotivated one.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="do-something">
+                <div class="timestamp">04:32:19</div>
+                <h2>Lesson 47: Something Is Better Than Nothing</h2>
+                <ul>
+                    <li>Always be taking action; doing something, even if imperfect, is better than doing nothing.</li>
+                    <li>Don't wait for the perfect plan; start executing and adjust as you go.</li>
+                    <li>Constant activity will lead to more opportunities and faster progress.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="mystery">
+                <div class="timestamp">04:35:54</div>
+                <h2>Lesson 48: Mystery Sales</h2>
+                <ul>
+                    <li>Create curiosity about your product or service; don't reveal everything upfront.</li>
+                    <li>Use intrigue and exclusivity to make people want to know more.</li>
+                    <li>Curiosity is a powerful motivator for purchases.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="take-credit">
+                <div class="timestamp">04:39:07</div>
+                <h2>Lesson 49: Always Take Credit</h2>
+                <ul>
+                    <li>Take credit for your successes, even if there was an element of luck involved.</li>
+                    <li>Own your failures, but don't dwell on them; focus on the next win.</li>
+                    <li>People are attracted to those who seem to have a winning formula.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="loyalty">
+                <div class="timestamp">04:41:27</div>
+                <h2>Lesson 50: Loyalty Is Everything (Repeat)</h2>
+                <!-- Content is the same as Lesson 46 -->
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="feed-yourself">
+                <div class="timestamp">04:46:07</div>
+                <h2>Lesson 51: Feed Yourself First</h2>
+                <ul>
+                    <li>Don't be afraid to take profits from your business and secure your financial well-being.</li>
+                    <li>Don't prioritize the company over your personal financial security.</li>
+                    <li>Look after yourself first; the business is a means to an end.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="debt">
+                <div class="timestamp">04:48:25</div>
+                <h2>Lesson 52: Debt Isn't Always Real</h2>
+                <ul>
+                    <li>Don't be overly concerned about debt, especially if you're generating consistent revenue.</li>
+                    <li>Debt collection takes time; prioritize cash flow and negotiate settlements when necessary.</li>
+                    <li>Don't let debt cripple your business; leverage it strategically to grow.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="dont-pay">
+                <div class="timestamp">04:52:44</div>
+                <h2>Lesson 53: Don't Pay Unless You Have To</h2>
+                <ul>
+                    <li>Manage your reputation, but don't be afraid to delay payments or negotiate if it benefits your business.</li>
+                    <li>Prioritize your financial needs; don't be a pushover for aggressive creditors.</li>
+                    <li>Assess the impact on your reputation before making payment decisions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="no-hr">
+                <div class="timestamp">04:54:06</div>
+                <h2>Lesson 54: HR Is Bullshit</h2>
+                <ul>
+                    <li>Lead by example and create a positive work environment.</li>
+                    <li>Don't rely on traditional HR practices; motivate through leadership and incentives.</li>
+                    <li>Positive energy and a strong culture are more effective than bureaucratic rules.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="sell-how">
+                <div class="timestamp">04:55:41</div>
+                <h2>Lesson 55: How You Sell Is More Important Than What You Sell</h2>
+                <ul>
+                    <li>Focus on developing effective sales and marketing strategies.</li>
+                    <li>You can sell anything if you know how to market it effectively.</li>
+                    <li>Identify your strengths and find a way to provide a product or service that aligns with them.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="play-strengths">
+                <div class="timestamp">04:59:49</div>
+                <h2>Lesson 56: Play to People's Strengths</h2>
+                <ul>
+                    <li>Identify and leverage the strengths of your staff, clients, and competitors.</li>
+                    <li>Exploit weaknesses to gain an advantage in negotiations and business deals.</li>
+                    <li>Play to your strengths and outsource your weaknesses.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="immediate-need">
+                <div class="timestamp">05:06:04</div>
+                <h2>Lesson 57: Satisfy an Immediate Need</h2>
+                <ul>
+                    <li>Focus on the immediate benefits your product or service provides.</li>
+                    <li>Don't rely on long-term promises; create a sense of urgency and immediate value.</li>
+                    <li>Identify the client's immediate pain points and position your offering as the solution.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="dont-assume">
+                <div class="timestamp">05:09:25</div>
+                <h2>Lesson 58: Don't Assume Work</h2>
+                <ul>
+                    <li>Verify that tasks are completed; don't assume things are done without proof.</li>
+                    <li>Check on your staff's progress regularly and hold them accountable.</li>
+                    <li>If you didn't see it, it didn't happen.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="love-winner">
+                <div class="timestamp">05:11:13</div>
+                <h2>Lesson 59: Everybody Loves a Winner</h2>
+                <ul>
+                    <li>Project confidence and success; never admit weakness or struggle to clients.</li>
+                    <li>People are attracted to those who are winning; exude an aura of competence and prosperity.</li>
+                    <li>Never show your cards; always maintain a facade of strength and optimism.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="steal-ideas">
+                <div class="timestamp">05:13:38</div>
+                <h2>Lesson 60: Steal Ideas</h2>
+                <ul>
+                    <li>Keep an eye on your competitors and borrow their successful strategies.</li>
+                    <li>Implement their ideas quickly and efficiently, leveraging your own strengths.</li>
+                    <li>Stealing ideas and executing them better can give you a competitive advantage.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="life-is-work">
+                <div class="timestamp">05:16:34</div>
+                <h2>Lesson 61: Money and Business Are Your Life</h2>
+                <ul>
+                    <li>Integrate your business into every aspect of your life; always be hustling.</li>
+                    <li>Combine work and pleasure; find opportunities to network and make money while enjoying yourself.</li>
+                    <li>Never turn off your money-making mindset.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="phone">
+                <div class="timestamp">05:18:29</div>
+                <h2>Lesson 62: Develop a Phone Addiction</h2>
+                <ul>
+                    <li>Use your phone as a tool for productivity and money-making.</li>
+                    <li>Delete unproductive apps and prioritize those that can generate income.</li>
+                    <li>Embrace constant connectivity and use your phone to find opportunities and execute tasks.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="amazing">
+                <div class="timestamp">05:20:25</div>
+                <h2>Lesson 63: Nothing Is Too Good to Be True</h2>
+                <ul>
+                    <li>Believe in your product and sell it with absolute confidence.</li>
+                    <li>Don't be afraid to make bold claims and promise exceptional results.</li>
+                    <li>Speak success into existence; believe in your offering, and others will too.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="spot-bs">
+                <div class="timestamp">05:23:15</div>
+                <h2>Lesson 64: Spot Bullshitters</h2>
+                <ul>
+                    <li>Be skeptical of those who claim to be successful without evidence.</li>
+                    <li>Use critical thinking to identify lies and exaggerations.</li>
+                    <li>Don't be afraid to call people out on their bullshit.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="why">
+                <div class="timestamp">05:27:17</div>
+                <h2>Lesson 65: Ask "Why?"</h2>
+                <ul>
+                    <li>Understand why people buy from you; ask your customers for their reasons.</li>
+                    <li>Identify the key motivators for purchases to improve your marketing and sales strategies.</li>
+                    <li>The "why" is more important than the "what" when it comes to selling.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="always-sell">
+                <div class="timestamp">05:35:19</div>
+                <h2>Lesson 66: Everything Is a Sell</h2>
+                <ul>
+                    <li>Look for opportunities to sell in every interaction.</li>
+                    <li>Turn challenges into sales opportunities by showcasing your problem-solving skills.</li>
+                    <li>Create a perception of value and service by "selling" even the smallest tasks.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="take-offers">
+                <div class="timestamp">05:40:07</div>
+                <h2>Lesson 67: Take Every Offer Seriously</h2>
+                <ul>
+                    <li>Listen to every pitch, even if you have no intention of buying.</li>
+                    <li>Use these opportunities to learn new tactics and gain valuable insights.</li>
+                    <li>Don't dismiss offers out of hand; you never know where the next opportunity might come from.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="dont-understand">
+                <div class="timestamp">05:43:22</div>
+                <h2>Lesson 68: You Don't Have to Understand It to Make Money</h2>
+                <ul>
+                    <li>Don't get bogged down in technical details; focus on the fundamentals of business.</li>
+                    <li>Hire experts to handle the areas you don't understand.</li>
+                    <li>Prioritize making money over becoming an expert in every aspect of your business.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="no-politics">
+                <div class="timestamp">05:50:18</div>
+                <h2>Lesson 69: Forget Politics</h2>
+                <ul>
+                    <li>Politics is a distraction; focus on building your business and making money.</li>
+                    <li>Don't waste energy on political debates; your success is determined by your actions, not the political climate.</li>
+                    <li>Politics matters only when you're wealthy enough to influence it.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="famous">
+                <div class="timestamp">05:51:47</div>
+                <h2>Lesson 70: Famoose the Goose</h2>
+                <ul>
+                    <li>Take advantage of opportunities to make money, even if it means being aggressive or unconventional.</li>
+                    <li>Don't let potential future earnings stop you from securing profits today.</li>
+                    <li>Be willing to "famoose" (take advantage of) those who are willing to be "famoosed."</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="sharpen">
+                <div class="timestamp">06:07:38</div>
+                <h2>Lesson 71: Always Sharpen Your Tools</h2>
+                <ul>
+                    <li>Continuously improve your skills, strategies, and processes.</li>
+                    <li>Don't become complacent; stay ahead of the competition by refining your methods.</li>
+                    <li>Sharpen your tools to ensure you're always operating at peak performance.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="sell-problem">
+                <div class="timestamp">06:12:19</div>
+                <h2>Lesson 72: Create Problems and Instantly Solve Them</h2>
+                <ul>
+                    <li>Identify problems your target audience has, even if they're not aware of them.</li>
+                    <li>Position your product or service as the solution to their problems.</li>
+                    <li>Selling on problems creates a sense of urgency and need.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2" data-icon="happy-important">
+                <div class="timestamp">06:14:49</div>
+                <h2>Lesson 73: Make People Feel Happy and Important</h2>
+                <ul>
+                    <li>Go the extra mile to make your customers feel valued and appreciated.</li>
+                    <li>Create a sense of exclusivity and prestige around your brand.</li>
+                    <li>Happy and important customers are loyal customers.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conclusion Branch -->
+        <div class="branch">
+            <div class="connector"></div>
+            <div class="node level-2">
+                <div class="timestamp">06:19:01</div>
+                <h2>Conclusion</h2>
+                <ul>
+                    <li>Internalize these lessons and apply them to your business.</li>
+                    <li>Watch this course multiple times to fully grasp the concepts.</li>
+                    <li>Get ready for the upcoming tasks and challenges.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
