@@ -96,12 +96,51 @@
         text-decoration: none;
         font-weight: bold;
       }
+        
+        #work {
+            background-color: #aa0000;
+            width: auto;
+            color: white;
+        text-align: center;
+          margin: auto;
+            background-image: url('https://i.imgur.com/9w2a8Ps.gif'); /* Replace with your image URL */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+  background-size: contain; /* Scales the image to fit within the element */
+        }
+        
+        #radar_section {
+            background-image: url('https://i.imgur.com/kjcm6VL.gif');
+            margin: auto;
+            width: 60%;
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+  background-size: contain; /* Scales the image to fit within the element */
+            background-color: black;
+            border-radius: 4em;
+
+            border: 0.4rem solid green;
+        }
+        #radar_section h2 {
+            
+  backdrop-filter: blur(2px);
+        text-align: center;
+            color: Yellow;
+            
+        }
+        #radar_section p {
+            
+  backdrop-filter: blur(3px);
+        text-align: center;
+            color: white;
+        }
 
       #project-gallery {
+          margin-top: 2em;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5em;
+        
       }
 
       .project-item {
@@ -123,12 +162,10 @@
       #about {
         display: flex;
         flex-direction: column;
-        /* Stack elements vertically by default */
         align-items: center;
-        /* Center horizontally */
         
         /* Remove left margin for mobile */
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.3);
           z-index: 0;
         margin: 0;
       }
@@ -154,10 +191,9 @@
         width: 100%;
       }
 
-      #about>p {
-        margin: 1em 0;
-        /* Add margin top and bottom */
-          z-index: 2;
+      #about > p {
+        margin: 15em 0;
+        z-index: 2;
       }
 
       #d {
@@ -184,14 +220,13 @@
               
            width: 69%;   
               
-            background: rgba(0.8, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.8);
             
-              
           border: thick double #ff0000;
               color: #FFFFFF;
           }
         #nolen {
-          max-width: 16rem;
+          max-width: 15.7rem;
           height: auto;
           display: block;
           margin-left: 12rem;
@@ -211,116 +246,7 @@
         }
       }
 
-      .rainbow {
-        text-shadow:
-          -15px -15px 5px red,
-          -10.71px -10.71px 5px orange,
-          -6.43px -6.43px 5px yellow,
-          -2.14px -2.14px 5px lime,
-          2.14px 2.14px 5px green,
-          6.43px 6.43px 5px blue,
-          10.71px 10.71px 5px indigo,
-          15px 15px 5px violet;
-        animation: rainbow 5s infinite linear;
-      }
-
-      @keyframes rainbow {
-        0% {
-          text-shadow:
-            -15px -15px 5px red,
-            -10.71px -10.71px 5px orange,
-            -6.43px -6.43px 5px yellow,
-            -2.14px -2.14px 5px lime,
-            2.14px 2.14px 5px green,
-            6.43px 6.43px 5px blue,
-            10.71px 10.71px 5px indigo,
-            15px 15px 5px violet;
-        }
-
-        14.3% {
-          text-shadow:
-            -15px -15px 5px violet,
-            -10.71px -10.71px 5px red,
-            -6.43px -6.43px 5px orange,
-            -2.14px -2.14px 5px yellow,
-            2.14px 2.14px 5px green,
-            6.43px 6.43px 5px blue,
-            10.71px 10.71px 5px indigo,
-            15px 15px 5px lime;
-        }
-
-        28.6% {
-          text-shadow:
-            -15px -15px 5px indigo,
-            -10.71px -10.71px 5px violet,
-            -6.43px -6.43px 5px red,
-            -2.14px -2.14px 5px orange,
-            2.14px 2.14px 15px yellow,
-            6.43px 6.43px 5px green,
-            10.71px 10.71px 5px blue,
-            15px 15px 5px lime;
-        }
-
-        42.9% {
-          text-shadow:
-            -15px -15px 5px blue,
-            -10.71px -10.71px 5px indigo,
-            -6.43px -6.43px 5px violet,
-            -2.14px -2.14px 5px red,
-            2.14px 2.14px 5px orange,
-            6.43px 6.43px 5px yellow,
-            10.71px 10.71px 5px green,
-            15px 15px 5px lime;
-        }
-
-        57.1% {
-          text-shadow:
-            -15px -15px 5px green,
-            -10.71px -10.71px 5px blue,
-            -6.43px -6.43px 5px indigo,
-            -2.14px -2.14px 5px violet,
-            2.14px 2.14px 5px red,
-            6.43px 6.43px 5px orange,
-            10.71px 10.71px 5px yellow,
-            15px 15px 5px lime;
-        }
-
-        71.4% {
-          text-shadow:
-            -15px -15px 5px yellow,
-            -10.71px -10.71px 5px green,
-            -6.43px -6.43px 5px blue,
-            -2.14px -2.14px 5px indigo,
-            2.14px 2.14px 15px violet,
-            6.43px 6.43px 5px red,
-            10.71px 10.71px 5px orange,
-            15px 15px 5px lime;
-        }
-
-        85.7% {
-          text-shadow:
-            -15px -15px 5px orange,
-            -10.71px -10.71px 5px yellow,
-            -6.43px -6.43px 5px green,
-            -2.14px -2.14px 5px blue,
-            2.14px 2.14px 5px indigo,
-            6.43px 6.43px 5px violet,
-            10.71px 10.71px 5px red,
-            15px 15px 5px lime;
-        }
-
-        100% {
-          text-shadow:
-            -15px -15px 5px red,
-            -10.71px -10.71px 5px orange,
-            -6.43px -6.43px 5px yellow,
-            -2.14px -2.14px 5px lime,
-            2.14px 2.14px 5px green,
-            6.43px 6.43px 5px blue,
-            10.71px 10.71px 5px indigo,
-            15px 15px 5px violet;
-        }
-      }
+/* Main text-shadow setup */
 
       .shine-business-card {
         position: relative;
@@ -339,7 +265,6 @@
         background: linear-gradient(15deg,
             rgba(255, 255, 255, 0) 0%,
             rgba(255, 255, 255, 0.5) 70%,
-            /* More apparent shine */
             rgba(255, 255, 255, 0) 100%);
         transform: rotate(30deg);
         animation: shine 2s infinite;
@@ -395,6 +320,119 @@
             
             border: 4px dotted red;
         }
+        
+      .rainbow {
+        text-shadow:
+          -15px -15px 5px red,
+          -10.71px -10.71px 5px orange,
+          -6.43px -6.43px 5px yellow,
+          -2.14px -2.14px 5px lime,
+          2.14px 2.14px 5px green,
+          6.43px 6.43px 5px blue,
+          10.71px 10.71px 5px indigo,
+          20px 20px 5px cyan;
+        animation: rainbow 5s infinite linear;
+      }
+
+      @keyframes rainbow {
+        0% {
+          text-shadow:
+            -15px -15px 5px red,
+            -10.71px -10.71px 5px orange,
+            -6.43px -6.43px 5px yellow,
+            -2.14px -2.14px 5px lime,
+            2.14px 2.14px 5px green,
+            6.43px 6.43px 5px blue,
+            10.71px 10.71px 5px cyan,
+            20px 20px 5px violet;
+        }
+
+        14.3% {
+          text-shadow:
+            -15px -15px 5px cyan,
+            -10.71px -10.71px 5px red,
+            -6.43px -6.43px 5px orange,
+            -2.14px -2.14px 5px yellow,
+            2.14px 2.14px 5px green,
+            6.43px 6.43px 5px pink,
+            10.71px 10.71px 5px indigo,
+            20px 20px 5px lime;
+        }
+
+        28.6% {
+          text-shadow:
+            -15px -15px 5px indigo,
+            -10.71px -10.71px 5px cyan,
+            -6.43px -6.43px 5px red,
+            -2.14px -2.14px 5px orange,
+            2.14px 2.14px 15px yellow,
+            6.43px 6.43px 5px green,
+            10.71px 10.71px 5px blue,
+            20px 20px 5px pink;
+        }
+
+        42.9% {
+          text-shadow:
+            -15px -15px 5px blue,
+            -10.71px -10.71px 5px indigo,
+            -6.43px -6.43px 5px cyan,
+            -2.14px -2.14px 5px red,
+            2.14px 2.14px 5px orange,
+            6.43px 6.43px 5px yellow,
+            10.71px 10.71px 5px green,
+            20px 20px 5px lime;
+        }
+
+        57.1% {
+          text-shadow:
+            -15px -15px 5px green,
+            -10.71px -10.71px 5px pink,
+            -6.43px -6.43px 5px indigo,
+            -2.14px -2.14px 5px cyan,
+            2.14px 2.14px 5px red,
+            6.43px 6.43px 5px orange,
+            10.71px 10.71px 5px yellow,
+            20px 20px 5px lime;
+        }
+
+        71.4% {
+          text-shadow:
+            -15px -15px 5px yellow,
+            -10.71px -10.71px 5px green,
+            -6.43px -6.43px 5px blue,
+            -2.14px -2.14px 5px indigo,
+            2.14px 2.14px 15px cyan,
+            6.43px 6.43px 5px red,
+            10.71px 10.71px 5px orange,
+            20px 20px 5px lime;
+        }
+
+        85.7% {
+          text-shadow:
+            -15px -15px 5px orange,
+            -10.71px -10.71px 5px yellow,
+            -6.43px -6.43px 5px green,
+            -2.14px -2.14px 5px pink,
+            2.14px 2.14px 5px indigo,
+            6.43px 6.43px 5px cyan,
+            10.71px 10.71px 5px pink,
+            20px 20px 5px lime;
+        }
+
+        100% {
+          text-shadow:
+            -15px -15px 5px red,
+            -10.71px -10.71px 5px orange,
+            -6.43px -6.43px 5px yellow,
+            -2.14px -2.14px 5px lime,
+            2.14px 2.14px 5px green,
+            6.43px 6.43px 5px blue,
+            10.71px 10.71px 5px pink,
+            20px 20px 5px cyan;
+        }
+      }
+
+	  
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
       <script>
@@ -402,8 +440,9 @@
       var _onload = function() {
         
         var pretag = document.getElementById('d');
+        
         var canvastag = document.getElementById('canvasdonut');
-
+        
         var tmr1 = undefined;
         var tmr2 = undefined;
         var A = 1;
@@ -540,7 +579,7 @@ else {
         <!-- Moved the paragraph above the business card for mobile -->
         
           <div id="intro" class="bg-about">
-              <p><span class="rainbow">My name is Nolen James Felten</span>,</p> <p>I currently live in Henry County, Galva, Illinois, United States of America. </p>
+              <p><span class="rainbow">My name is Nolen James Felten</span></p> <p>I currently live in Henry County, Galva, Illinois, United States of America. </p>
           <p>And I <b style="color: red;">LOVE</b> to read. </p>
           <p>Reading has allowed me to develop a skillset and grow an international network.</p>
         </div>
@@ -552,20 +591,18 @@ else {
                 <div id="golden_name" style="font-size: 1.1rem; font-weight: bold; color: #ffcc00; margin-top: 0.8rem;">NOLEN JAMES FELTEN ENTERPRISES <br>
                   <u>UNLIMITED</u>
                 </div>
-                <div style="font-size: 0.9rem; margin-top: 0.5rem;">Cutting edge consultant, and also all round nice guy. </div>
+                <div style="font-size: 0.9rem; margin-top: 0.5rem;">Your Competitive Advantage in Business,<br> And Also All Around Nice Guy. </div>
                 <div style="font-size: 1rem; font-weight: bold; color: #ffcc00; margin-top: 0.5rem;">Nolen James Felten </div>
                 <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">nolenfelten.github.io </div>
                 <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;">707-971-0122</div>
-                <div style="font-size: 0.9rem; color: #ffcc00; margin-top: 0.5rem;"><i class="fab fa-facebook" style=""></i>
-                </div>
               </div>
             </div>
           </div>
             
           <div class="shine-business-card-back" style="font-family: 'Roboto', sans-serif; background-color: #1e1e1e; color: #f5f5f5; border: 2px solid #444; padding: 0.5rem; margin-top: -0.5rem;  text-align: center;">
             <div style="border: 1px solid #FFFFFF; padding: 0.7rem;">
-              <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The difficult done immediately </div>
-              <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The impossible takes a little longer </div>
+              <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The difficult done immediately,</div>
+              <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">The impossible takes a little longer,</div>
               <div style="font-size: 0.8rem; font-weight: bold; color: #FFFFFF;">Miracles by appointment</div>
               <div style="font-size: 0.7rem; color: #FFFFFF; margin-bottom: 0.5rem; text-align: center;">
                 <div style="font-size: 0.8rem; color: #00FFFF; margin-top: 0.8rem;">THERE IS NO LIMIT TO WHAT I CAN DO </div>
@@ -573,8 +610,8 @@ else {
                   <table style="width: 90%; margin: 0 auto;">
                     <tr>
                       <td style="padding: 0 10px;">Web Design</td>
-                      <td style="padding: 0 10px;">Threat Intelligence</td>
-                      <td style="padding: 0 10px;">Marketing Guru</td>
+                      <td style="padding: 0 10px;">Assassin</td>
+                      <td style="padding: 0 10px;">Marketing Genuis</td>
                     </tr>
                     <tr>
                       <td style="padding: 0 10px;">Lead Generation</td>
@@ -583,20 +620,17 @@ else {
                     </tr>
                     <tr>
                       <td style="padding: 0 10px;">Millionaire Lifestyle</td>
-                      <td style="padding: 0 10px;">Stud Service</td>
-                      <td style="padding: 0 10px;">Expert Opinion</td>
-                    </tr>
-                    <tr>
-                      <td style="padding: 0 10px;">Tigers Tamed</td>
-                      <td style="padding: 0 10px;">Hacker</td>
-                      <td style="padding: 0 10px;">Helicopter Hire</td>
-                    </tr>
-                    <tr>
                       <td style="padding: 0 10px;">Model Exposure</td>
+                      <td style="padding: 0 10px;">A.I Expert</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 0 10px;">Original Hacker</td>
+                      <td style="padding: 0 10px;">Secret Society</td>
                       <td style="padding: 0 10px;">Free Money</td>
-                      <td style="padding: 0 10px;">Secret Societies</td>
                     </tr>
                   </table>
+                    
+                    "<i><u>Never! Ever! Ever! Say 'No' To Money!</u></i>"
                 </div>
               </div>
             </div>
@@ -605,54 +639,106 @@ else {
         
       </section>
         <hr id="split">
+        <header>
+              <h2 id="work">Work</h2>
+          </header>
       <section id="projects">
-        <h2>Work</h2>
-        <div id="project-gallery">
-            <div class="project-item">
-                <a href="https://delewpaint.github.io/">
-                    <img src="https://i.imgur.com/w7ddyX1.png">
-                    <p>Delew Painting Co.</p>
-                </a>
-            </div>
-          <div class="project-item">
-            <a href="https://nolenfelten.github.io/tumblesons-remodeling.html">
-            <img src="https://i.imgur.com/rwQLhyF.png" width="80%">
-            <p>Tumblesons Remodeling</p>
-                </a>
-          </div>
+        <div id="project-gallery">  
             
-          <div class="project-item">
-            <a href="https://walkingnemo.com">
-              <img src="https://i.imgur.com/8g7l821.png" alt="WalkingNemo.com">
-            </a>
-            <p>WalkingNemo.com</p>
-          </div>
-        </div>
-          <div id="project-gallery">
               <div class="project-item">
-                  <a href="https://github.com/nolenfelten/SMS-Bomb"><img src="https://i.imgur.com/c5AuXoM.gif" width="80%">
-                      <p>SMS Bomb</p>
-                  </a>
-                  
-              </div>
-            <div class="project-item">
-                <!-- 3D ASCII Donut -->
-                <a href="nolenfelten.com/dough.html">
-                    <pre id="d"></pre>
-                    <p>Donut</p>
+                <a href="https://nolenfelten.github.io/hu.html">
+                    <img src="https://i.imgur.com/e6wqydB.png" width="70%">
+                    <p>Udemy Business Course</p>
                 </a>
             </div>
+            
               <div class="project-item">
-                <!-- 3D ASCII Donut -->
-                <a href="https://nolenfelten.github.io/yt_summary.html">
-                    <img src="https://i.imgur.com/foPSD3b.png" width="80%">
-                    <p>Summarize Youtube Videos</p>
+                <a href="https://nolenfelten.github.io/chinanotes0.html">
+                    <img src="https://i.imgur.com/79KopRo.png" width="50%">
+                    <p>International Business (China Import Formula)<br>I put a lot of work in writing these notes,<br> because the content was so valuable.</p>
                 </a>
             </div>
           </div>
           
-          <div id="project-gallery">
+        <div id="project-gallery">  
+              <div class="project-item">
+                <a href="https://nolenfelten.github.io/videochat.html">
+                    <img src="https://i.imgur.com/XEfwLXD.png" width="50%">
+                    <p>WebRTC Video Chat</p>
+                </a>
+            </div>
+        
+            <div class="project-item">
+                <a href="https://delewpaint.github.io/">
+                    <img src="https://i.imgur.com/w7ddyX1.png" width="40%">
+                    <p>Delew Painting Co.</p>
+                </a>
+            </div>
             
+          
+          <div class="project-item">
+            <a href="https://nolenfelten.github.io/tumblesons-remodeling.html">
+            <img src="https://i.imgur.com/rwQLhyF.png" width="40%">
+            <p>Tumblesons Remodeling</p>
+                </a>
+          </div>
+            
+        </div>
+          
+        <section id="radar_section">
+            <h2>Yo!</h2>
+            <p id="radar">Most code I have written belongs to PRIVATE closed source projects.
+                <br>
+                My solution: 
+                <br>
+                I will share photos of my designs drawn on a whiteboard! 
+                <br>
+                This avoids search engines and should allow me to remain under the radar.</p>
+        </section>
+          <div id="project-gallery">
+          <div class="project-item">
+            <a href="https://nolenfelten.github.io/feltensummerspaint.html">
+              <img src="https://i.imgur.com/MWS55G6.png" width="40%">
+            </a>
+            <p>Felten Summers Paint</p>
+          </div>
+              <div class="project-item">
+                  <a href="https://github.com/nolenfelten/SMS-Bomb"><img src="https://i.imgur.com/c5AuXoM.gif" width="40%">
+                      <p>SMS Bomb</p>
+                  </a>
+                  
+              </div>
+              <div class="project-item">
+                <a href="https://nolenfelten.github.io/yt_summary.html">
+                    <img src="https://i.imgur.com/foPSD3b.png" width="50%">
+                    <p>Summarize Youtube Videos</p>
+                </a>
+            
+          </div>
+          </div>
+          
+          <div id="project-gallery">  
+          
+              <div class="project-item">
+                <a href="https://github.com/nolenfelten/Codecademy-Python-Notes/wiki">
+                    <img src="https://i.imgur.com/XpaX4TI.png" width="50%">
+                    <p>2015 Python Notes</p>
+                </a>
+            </div>
+          
+            <div class="project-item">
+                <!-- 3D ASCII Donut -->
+                <a href="nolenfelten.com/dough.html">
+                    <pre id="d" width="40%"></pre>
+                    <p>Donut</p>
+                </a>
+            </div>
+          
+          </div>
+          <div id="project-gallery">
+            <div class="project-item" id="cubediv">
+            
+              </div>
           </div>
       </section>
       <section id="contact">
@@ -697,8 +783,8 @@ else {
           ctx.fillStyle = getColour(now);
           columns.map(function(y, index) {
             text = String.fromCharCode(102498 + random() * 196);
-            ctx.fillText(text, (index * 6) + -12, (y || 0));
-            columns[index] = (y || 2) > 100 + random() * 1e4 ? 0 : y + 10;
+            ctx.fillText(text, (index * 6), (y || 990));
+            columns[index] = (y || 999) > 100 + random() * 1e4 ? 0 : y + 10;
           });
 
           draw(fill);
