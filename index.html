@@ -110,7 +110,8 @@
         }
         
         #radar_section {
-            background-image: url('https://i.imgur.com/kjcm6VL.gif');
+            /*background-image: url('https://i.imgur.com/kjcm6VL.gif');*/
+            background-color: black;
             margin: auto;
             width: 60%;
   background-position: center; /* Centers the image */
@@ -118,23 +119,10 @@
   background-size: contain; /* Scales the image to fit within the element */
             background-color: black;
             border-radius: 4em;
-
+overflow: hidden;
             border: 0.4rem solid green;
         }
-        #radar_section h2 {
-            
-  backdrop-filter: blur(2px);
-        text-align: center;
-            color: Yellow;
-            
-        }
-        #radar_section p {
-            
-  backdrop-filter: blur(3px);
-        text-align: center;
-            color: white;
-        }
-
+        
       #project-gallery {
           margin-top: 2em;
         display: flex;
@@ -684,10 +672,152 @@ else {
           </div>
             
         </div>
-          
+          <style>
+              
+#radar_section {
+  /*background-image: url('https://i.imgur.com/kjcm6VL.gif');*/
+  background-color: black;
+  /*margin: auto;*/
+  width: 60%;
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+  background-size: contain; /* Scales the image to fit within the element */
+  background-color: black;
+  border-radius: 4em;
+  border: 0.4rem solid green;
+  position: relative; /* To position radar within it */
+  z-index: 1; /* Ensure radar is above background */
+}
+
+#radar_section h2 {
+  
+  text-align: center;
+  color: Yellow;
+    z-index: 0;
+}
+
+#radartxt {
+  
+  text-align: center;
+  color: white;
+    z-index: 0;
+}
+
+.radar {
+  transform: translate(-50%, -50%); /* Center radar */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid green;
+  overflow: hidden;
+    z-index: -1;
+}
+
+.radar-sweep {
+  
+  position: absolute;
+  top: 50%;
+    left: 15%;
+  transform: translate(50%, -50%);
+  width: 75%;
+    
+  border: 0.1em solid green;
+  height: 0.1em;
+  animation: radar-sweep-animation 9s linear infinite;
+  background-color: linear-gradient(180deg, white, green);
+    overflow: hidden;
+    z-index: 0;
+}
+
+@keyframes radar-sweep-animation {
+  0% {
+    transform: rotate(0deg) translate(-50%, 50%);
+  }
+  100% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}
+
+.plane {
+  width: 5em;
+  height: 0.5em;
+    
+  background-color: green;
+  
+}
+
+.plane.one {
+  color: red;
+    background-color: rgba(0, 0, 255, 0.3);
+  animation: plane-animation 3s linear infinite;
+    z-index: -2;
+}
+
+
+@keyframes plane-animation {
+  0% {
+      transform: translate(95%, 95%);
+  }
+  50% {
+    transform: translate(0%, 710%);
+    
+  }
+   100% {
+      transform: translate(95%, 95%);
+  }
+}
+
+.radar-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* Responsive width */
+  height: 100%; /* Responsive height */
+  border-radius: 50%;
+  border: 2px solid green;
+  opacity: 1;
+    z-index: -3;
+}
+
+.radar-circle.two {
+  width: 50%; /* Responsive width */
+  height: 50%; /* Responsive height */
+    z-index: -3;
+  border: 2px solid green;
+  animation: circle-animation 18s linear infinite;
+}
+
+.radar-circle.three {
+  width: 75%; /* Responsive width */
+  height: 75%; /* Responsive height */
+    z-index: -3;
+  border: 2px solid green;
+  animation: circle-animation 18s linear infinite;
+}
+
+@keyframes circle-animation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+          </style>
         <section id="radar_section">
+            <div id="radar">
+                
+  <div class="radar-sweep"></div>
+  <div class="plane"></div>
+  <div class="plane one">Google</div>
+  
+  <div class="radar-circle one"></div>
+  <div class="radar-circle two"></div>
+  <div class="radar-circle three"></div>
+            </div>
             <h2>Yo!</h2>
-            <p id="radar">Most code I have written belongs to PRIVATE closed source projects.
+            <p id="radartxt">Most code I have written belongs to PRIVATE closed source projects.
                 <br>
                 My solution: 
                 <br>
