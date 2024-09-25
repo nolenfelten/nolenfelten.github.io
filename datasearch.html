@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="[add your bin description]">
+  <title>Data Search</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #222;
+      color: #eee;
+      width: 100%;
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden; 
+    }
+
+    .container {
+      background-color: #333;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 190px #FF0000;
+      text-align: center;        
+      width: 50%;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    h1 {
+      color: #6495ED;
+      
+    }
+      
+
+    input[type="text"], 
+    button, 
+    input[type="checkbox"] + label {
+      padding: 12px;
+      display: inline-block;
+      margin: 5px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      background-color: #444;
+      color: #eee;
+      
+    }
+      
+      input[type="text"] {
+          width: 90%;
+          margin: auto;
+      }
+
+    /* Search Options */
+    .search-options {
+      display: flex;
+      flex-wrap: wrap; 
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .option-button {
+      background-color: #444;
+      color: #eee;
+      border: 1px solid #550055;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px; 
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .option-button:hover {
+      background-color: #555;
+    }
+
+    .option-button.active {
+      background-color: #6495ED;
+      color: white;
+      border-color: #6495ED;
+    }
+
+    /* Search and Wildcard */
+    button {
+      background-color: #6495ED;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4169E1;
+    }
+
+    input[type="checkbox"] {
+      display: inline-block;
+      width: auto;
+      margin: 5px;
+    }
+
+    #search-button, #domain {
+      width: 98%; 
+      
+      min-width: 120px;
+    }
+
+    /* Result Items */
+    .result-item {
+      background-color: #282828;
+      border: 1px solid #444;
+      padding: 15px;
+      margin: 10px auto; 
+      border-radius: 4px;
+      text-align: left;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      position: relative; 
+      max-width: 45%;  
+      width: 100%;
+    }
+
+    .result-item:hover {
+      background-color: #383838;
+    }
+
+    /* Expanded Result Item */
+    .result-item.expanded {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      transform: translateX(0); 
+      z-index: 10; 
+      width: calc(100% - 40px); 
+      max-width: none; 
+    }
+
+    /* Faded Result Items */
+    .result-item.faded {
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    /* Back Button */
+    #back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #6495ED;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      font-size: 20px;
+      display: none;
+      text-decoration: none; 
+      transition: opacity 0.3s ease;
+    }
+
+    #back-button:hover {
+      background-color: #4169E1;
+      cursor: pointer;
+    }
+
+    /* Related Results */
+    .related-results {
+      margin-top: 20px;
+    }
+
+    .related-results .result-item {
+      margin: 10px 0;
+      max-width: 90%;
+    }
+
+    /* Connection Lines */
+    .connection-line {
+      position: absolute;
+      background-color: #6495ED;
+      z-index: 5;
+      height: 2px; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="#" id="back-button" style="display: none;">← Back</a>
+    <h1>Data Search</h1>
+
+    <input type="text" id="search-input" placeholder="Enter search term">
+      <br>
+      <button id="search-button">Search</button>
+
+    <div class="search-options">  
+        
+      <button class="option-button active" data-category="Username">Username</button>
+      <button class="option-button" data-category="UUID">UUID</button>
+      <button class="option-button" data-category="IP">IP</button>
+      <button class="option-button" data-category="Email">Email</button>
+      <button class="option-button" data-category="Password">Password</button>
+      <button class="option-button" data-category="Steam ID">Steam ID</button>
+      <button class="option-button" data-category="Name">Name</button>
+      <button class="option-button" data-category="Phone">Phone</button>
+    
+      <button class="option-button" id="domain" data-category="Domain">Domain</button>    
+    
+    <label for="wildcard-checkbox"><input type="checkbox" id="wildcard-checkbox">Wildcard</label>
+    </div>
+    
+    
+    
+
+    <div id="results-container"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+    
+    <script>
+        const resultsContainer = document.getElementById('results-container');
+const backButton = document.getElementById('back-button');
+const searchButton = document.getElementById('search-button');
+const optionButtons = document.querySelectorAll('.option-button');
+let selectedCategory = 'Username'; // Default selected category
+
+// Activate the Username button by default
+const defaultButton = document.querySelector('.option-button[data-category="Username"]');
+defaultButton.classList.add('active');
+
+optionButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove active class from previously selected button
+    const currentlyActive = document.querySelector('.option-button.active');
+    if (currentlyActive) {
+      currentlyActive.classList.remove('active');
+    }
+
+    // Add active class to the clicked button
+    button.classList.add('active');
+    selectedCategory = button.getAttribute('data-category');
+  });
+});
+
+searchButton.addEventListener('click', async () => {
+  const searchTerm = document.getElementById('search-input').value;
+  const isWildcard = document.getElementById('wildcard-checkbox').checked;
+
+  try {
+    const response = await fetch(`/search?term=${searchTerm}&category=${selectedCategory}&wildcard=${isWildcard}`);
+    const data = await response.json();
+    displayResults(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+});
+
+function displayResults(results) {
+  resultsContainer.innerHTML = '';
+
+  if (results.length === 0) {
+    resultsContainer.innerHTML = '<p>No results found.</p>';
+    return;
+  }
+
+  results.forEach(result => {
+    const resultElement = createResultElement(result);
+    resultsContainer.appendChild(resultElement);
+  });
+}
+
+function createResultElement(result) {
+  const resultElement = document.createElement('div');
+  resultElement.className = 'result-item';
+
+  let resultString = '';
+  for (const key in result) {
+    if (result.hasOwnProperty(key)) {
+      resultString += `${key}: ${result[key]}<br>`;
+    }
+  }
+  resultElement.innerHTML = resultString;
+
+  resultElement.addEventListener('click', () => {
+    expandResultCard(resultElement, result);
+  });
+
+  return resultElement;
+}
+
+function expandResultCard(card, resultData) {
+  const otherCards = Array.from(document.querySelectorAll('.result-item')).filter(item => item !== card);
+  otherCards.forEach(otherCard => otherCard.classList.add('faded'));
+
+  card.classList.add('expanded');
+  backButton.style.display = 'block';
+
+  displayRelatedData(card, resultData);
+}
+
+function displayRelatedData(card, resultData) {
+  const relatedResultsContainer = document.createElement('div');
+  relatedResultsContainer.className = 'related-results';
+
+  for (const key in resultData) {
+    if (resultData.hasOwnProperty(key)) {
+      fetchRelatedData(key, resultData[key])
+        .then(relatedResults => {
+          if (relatedResults.length > 0) {
+            const relatedResultsElement = createRelatedResultsElement(key, relatedResults);
+            relatedResultsContainer.appendChild(relatedResultsElement);
+            connectElements(card, relatedResultsElement, key);
+          }
+        })
+        .catch(error => console.error(`Error fetching related data for ${key}:`, error));
+    }
+  }
+
+  card.appendChild(relatedResultsContainer);
+}
+
+function createRelatedResultsElement(key, results) {
+  const container = document.createElement('div');
+  container.innerHTML = `<h3>Related to: ${key}</h3>`; 
+
+  results.slice(0, 3).forEach(relatedResult => { 
+    const resultElement = createResultElement(relatedResult);
+    container.appendChild(resultElement);
+  });
+
+  return container;
+}
+
+function fetchRelatedData(key, value) {
+  return fetch(`/search?term=${value}&category=${key}&wildcard=true`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    });
+}
+
+backButton.addEventListener('click', () => {
+  const expandedCard = document.querySelector('.result-item.expanded');
+  if (expandedCard) {
+    expandedCard.classList.remove('expanded');
+    backButton.style.display = 'none';
+
+    const fadedCards = document.querySelectorAll('.result-item.faded');
+    fadedCards.forEach(card => card.classList.remove('faded'));
+
+    const connectionLines = document.querySelectorAll('.connection-line');
+    connectionLines.forEach(line => line.remove());
+  }
+});
+
+function getOffset(el) {
+  const rect = el.getBoundingClientRect();
+  return {
+    left: rect.left + window.scrollX,
+    top: rect.top + window.scrollY
+  };
+}
+
+function connectElements(element1, element2, key) {
+  const line = document.createElement('div');
+  line.classList.add('connection-line');
+  positionLine(line, element1, element2);
+  document.body.appendChild(line);
+}
+
+function positionLine(line, element1, element2) {
+  const el1Off = getOffset(element1);
+  const el2Off = getOffset(element2);
+
+  const x1 = el1Off.left + element1.offsetWidth / 2;
+  const y1 = el1Off.top + element1.offsetHeight;
+  const x2 = el2Off.left + element2.offsetWidth / 2;
+  const y2 = el2Off.top;
+
+  const length = Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+
+  line.style.width = length + 'px';
+  line.style.top = y1 + 'px';
+  line.style.left = x1 + 'px';
+
+  const angle = Math.atan2((y2 - y1), (x2 - x1)) * (180 / Math.PI);
+  line.style.transform = 'rotate(' + angle + 'deg)';
+}
+    </script>
+</html>
